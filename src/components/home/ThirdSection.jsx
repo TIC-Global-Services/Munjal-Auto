@@ -530,12 +530,12 @@ const Investors = () => {
 };
 
 import { useState } from "react";
-import expand1 from "../../assets/expand1.jpeg";
-import expand2 from "../../assets/expand2.jpeg";
-import expand3 from "../../assets/expand3.jpeg";
-import expand4 from "../../assets/expand4.jpeg";
-import expand5 from "../../assets/expand5.jpeg";
-import expand6 from "../../assets/expand6.jpeg";
+import expand1 from "../../assets/capabilities/image1.png";
+import expand2 from "../../assets/capabilities/image2.png";
+import expand3 from "../../assets/capabilities/image3.png";
+import expand4 from "../../assets/capabilities/image4.png";
+import expand5 from "../../assets/capabilities/image5.png";
+import expand6 from "../../assets/capabilities/image6.png";
 
 const ColumnLayout = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
