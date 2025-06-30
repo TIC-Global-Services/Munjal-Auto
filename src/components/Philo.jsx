@@ -5,6 +5,13 @@ import pilo2 from "../assets/pilo2.jpeg";
 import Footer from "./Footer";
 import { motion, useInView } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
+import TopNav from "./TopNav";
+import { FooterMain } from "./FooterMain";
+
+import icon1 from "../assets/hero/icon.png";
+import icon2 from "../assets/hero/icon2.png";
+import youtube from "../assets/hero/youtube.png";
+import insta from "../assets/hero/insta.png";
 
 const Philo = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -32,7 +39,7 @@ const Philo = () => {
     <div className="bg-gray-50 overflow-hidden">
       <div className="h-screen w-full flex flex-col items-center justify-center relative">
         {/* Left Navigation */}
-        <div className="absolute text-sm left-20 top-20 transform -translate-y-1/2 md:flex hidden justify-between items-center z-[100] space-x-20">
+        {/* <div className="absolute text-sm left-20 top-20 transform -translate-y-1/2 md:flex hidden justify-between items-center z-[100] space-x-20">
           <Link
             to="/"
             className={`hover:text-gray-300 ${
@@ -69,10 +76,10 @@ const Philo = () => {
           >
             philosophy
           </Link>
-        </div>
+        </div> */}
 
         {/* Right Navigation */}
-        <div className="absolute text-sm right-20 top-20 transform -translate-y-1/2 md:flex hidden  items-center justify-between z-[100] space-x-12">
+        {/* <div className="absolute text-sm right-20 top-20 transform -translate-y-1/2 md:flex hidden  items-center justify-between z-[100] space-x-12">
           <Link
             to="/quality"
             className={`hover:text-gray-300 ${
@@ -113,7 +120,11 @@ const Philo = () => {
           >
             Contact
           </Link>
-        </div>
+        </div> */}
+
+<div className="z-[100] absolute w-full top-20 flex justify-between items-center ">
+  <TopNav />
+</div>
 
         {/* Background Image with Logo */}
         <div
@@ -125,6 +136,54 @@ const Philo = () => {
             backgroundRepeat: "no-repeat",
           }}
         >
+
+
+          
+<div className="absolute bottom-5 right-5 flex flex-col items-center space-y-5 z-[999]">
+              <Link to="/contact">
+                <img
+                  src={icon1}
+                  alt="contact"
+                  className="w-[30px] md:w-[40px] cursor-pointer hover:scale-125"
+                />
+              </Link>
+
+              <Link to="/contact">
+                <img
+                  src={icon2}
+                  alt="contact"
+                  className="w-[55px] cursor-pointer hover:scale-125"
+                />
+              </Link>
+            </div>
+
+            <div className="absolute top-[28%] left-5 flex flex-col items-center space-y-4 z-[999]">
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={youtube}
+                  alt="YouTube"
+                  className="w-[40px] cursor-pointer hover:scale-105"
+                />
+              </a>
+
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={insta}
+                  alt="Instagram"
+                  className="w-[40px] cursor-pointer hover:scale-105"
+                />
+              </a>
+            </div>
+
+          
           <Link to="/">
             <img
               src={logo}
@@ -137,7 +196,18 @@ const Philo = () => {
               Innovation with <br /> Integrity
             </h1>
           </div>
+
+
+          
+
+          
+
+          
+
+          
         </div>
+
+        
       </div>
 
       {/* Vision Section */}
@@ -222,7 +292,7 @@ const Philo = () => {
         </motion.p>
       </div>
 
-      <Footer />
+      <FooterMain  />
     </div>
   );
 };

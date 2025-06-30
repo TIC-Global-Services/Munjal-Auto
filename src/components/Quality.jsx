@@ -1,8 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
+
 import img from "../assets/quality.jpeg";
 import logo from "../assets/logo.png";
 import Footer from "./Footer";
 import { Link, useLocation } from "react-router-dom";
+import * as THREE from "three";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import TopNav from "./TopNav";
+
+import icon1 from "../assets/hero/icon.png";
+import icon2 from "../assets/hero/icon2.png";
+import youtube from "../assets/hero/youtube.png";
+import insta from "../assets/hero/insta.png";
 
 const Quality = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -21,7 +30,7 @@ const Quality = () => {
     <div className=" overflow-hidden ">
       <div className="h-screen w-full   flex flex-col items-center justify-center relative">
         {/* Left Navigation */}
-        <div className="absolute text-sm left-20 top-20 transform -translate-y-1/2 md:flex hidden justify-between items-center z-[100] space-x-20">
+        {/* <div className="absolute text-sm left-20 top-20 transform -translate-y-1/2 md:flex hidden justify-between items-center z-[100] space-x-20">
           <Link
             to="/"
             className={`hover:text-gray-300 ${
@@ -56,10 +65,10 @@ const Quality = () => {
           >
             philosophy
           </Link>
-        </div>
+        </div> */}
 
         {/* Right Navigation */}
-        <div className="absolute text-sm right-20 top-20 transform -translate-y-1/2 md:flex hidden  items-center justify-between z-[100] space-x-12">
+        {/* <div className="absolute text-sm right-20 top-20 transform -translate-y-1/2 md:flex hidden  items-center justify-between z-[100] space-x-12">
           <Link
             to="/quality"
             className={`hover:text-gray-300 ${
@@ -100,7 +109,12 @@ const Quality = () => {
           >
             Contact
           </Link>
-        </div>
+        </div> */}
+
+
+<div className="z-[100] absolute w-full top-20 flex justify-between items-center ">
+  <TopNav />
+</div>
 
         {/* Background Image with Logo */}
         <div
@@ -122,6 +136,52 @@ const Quality = () => {
               className="absolute top-0 w-[60%] md:w-1/3 left-1/2 transform -translate-x-1/2"
             />
           </Link>
+
+
+          <div className="absolute bottom-5 right-5 flex flex-col items-center space-y-5 z-[999]">
+              <Link to="/contact">
+                <img
+                  src={icon1}
+                  alt="contact"
+                  className="w-[30px] md:w-[40px] cursor-pointer hover:scale-125"
+                />
+              </Link>
+
+              <Link to="/contact">
+                <img
+                  src={icon2}
+                  alt="contact"
+                  className="w-[55px] cursor-pointer hover:scale-125"
+                />
+              </Link>
+            </div>
+
+            <div className="absolute top-[30%] left-5 flex flex-col items-center space-y-4 z-[999]">
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={youtube}
+                  alt="YouTube"
+                  className="w-[40px] cursor-pointer hover:scale-105"
+                />
+              </a>
+
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={insta}
+                  alt="Instagram"
+                  className="w-[40px] cursor-pointer hover:scale-105"
+                />
+              </a>
+            </div>
+
           {/* <div className="absolute inset-0 flex flex-col items-center justify-center"> */}
           {/* Timeline Line with Animation */}
 
@@ -144,7 +204,7 @@ const Quality = () => {
       {/* <Testi/> */}
       {/* <MunjalAutoGroup />
       <BoardOfDirectors /> */}
-      <Footer />
+      <FooterMain />
     </div>
   );
 };
@@ -221,11 +281,17 @@ const QualityPolicy = () => {
                 time right, every time right."
               </p>
             </div>
-            <img
+            
+            <div className="md:-mt-[200px] md:-ml-[360px] -mt-[20px] -ml-[200px] md:block hidden">
+            <ModelViewer />
+
+
+            </div> 
+            {/* <img
               src={qualityImage}
               alt="Quality Product"
               className="w-full md:block hidden h-auto lg:scale-150 md:scale-[1.2] xl:scale-[2] relative  lg:top-10 xl:top-20 left-20 rounded-[24px]"
-            />
+            /> */}
           </div>
           <div className="      grid grid-cols-2 text-sm md:grid-cols-2 gap-4 p-4">
             <motion.div
@@ -333,11 +399,12 @@ const QualityPolicy = () => {
           </div>
         </motion.div>
       </div>
-      <img
+  
+      {/* <img
               src={qualityImage}
               alt="Quality Product"
               className=" md:hidden block !z-[1000] -mt-20"
-                    />
+                    /> */}
       <img
         src={vector}
         alt="Vector"
@@ -350,9 +417,9 @@ const QualityPolicy = () => {
 import standroom from "../assets/standroom.png";
 const Testing = () => {
   return (
-    <div className=" my-28 md:px-0 px-4 rounded-xl flex max-w-7xl mx-auto flex-col items-center justify-center">
+    <div className=" my-28 md:px-0 px-4 rounded-xl flex max-w-7xl mx-auto flex-col items-center justify-center md:mt-0 mt-[300px] ">
       <div className="  text-center flex flex-col items-center justify-center max-w-2xl">
-        <h1 className=" text-2xl md:text-[40px]  font-medium">Testing & Facilities Lab</h1>
+        <h1 className=" text-2xl md:text-[40px]  font-medium text-[#ED1C24]">Testing & Facilities Lab</h1>
         <p className=" md:text-base   leading-[20px] text-xs md:w-full w-[80%] text-[#82848A] mt-4">
           MAIL’s advanced Standard Room houses cutting-edge testing and
           measuring instruments. Our metallurgical and chemical labs ensure
@@ -395,6 +462,7 @@ const Testing = () => {
 import cer1 from "../assets/cer1.jpeg"
 import cer2 from "../assets/cer2.jpeg"
 import cer3 from "../assets/cer3.jpeg"
+import { FooterMain } from "./FooterMain";
 
 const Certification = ()=>{
   return(
@@ -444,14 +512,175 @@ const Certification = ()=>{
         </div>
         <div>
           <img src={cer1} className=" rounded-lg w-[70%] " alt="" />
-          <div>
+          <div> 
             <h1 className=" text-[#ED1C24] mt-2 text-2xl">2012</h1>
             <h2 className=" mt-1">Certification of OHSAS 18001-2007</h2>
           </div>
         </div>
         </div>
 
+        
+
       </div>
     </div>
   )
+}
+
+
+
+function ModelViewer() {
+  const [loading, setLoading] = useState(true);
+  const modelContainerRef = useRef(null);
+  const modelRef = useRef(null);
+  const animationFrameRef = useRef(null);
+
+  useEffect(() => {
+    const scene = new THREE.Scene();
+    scene.background = null;
+
+    const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 1000);
+    camera.position.set(0, 1.3, 5);
+
+    const renderer = new THREE.WebGLRenderer({ 
+      antialias: true, 
+      alpha: true,
+      physicallyCorrectLights: true, // Enable physically correct lighting
+    });
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.outputEncoding = THREE.sRGBEncoding;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 6.5;
+
+    const container = modelContainerRef.current;
+    if (container) {
+      container.innerHTML = '';
+      container.appendChild(renderer.domElement);
+    }
+
+    // Enhanced lighting setup
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(ambientLight);
+
+    // Main directional light
+    const mainLight = new THREE.DirectionalLight(0xffffff, 2);
+    mainLight.position.set(7, 7, 5);
+    mainLight.castShadow = true;
+    scene.add(mainLight);
+
+    // Add rim light for better definition
+    const rimLight = new THREE.DirectionalLight(0x9ca3af, 1);
+    rimLight.position.set(-5, 5, -5);
+    scene.add(rimLight);
+
+    // Add point lights for dynamic lighting
+    const pointLight1 = new THREE.PointLight(0xffffff, 1);
+    pointLight1.position.set(2, 2, 2);
+    scene.add(pointLight1);
+
+    const pointLight2 = new THREE.PointLight(0xffffff, 1);
+    pointLight2.position.set(-2, -2, -2);
+    scene.add(pointLight2);
+
+    const modelGroup = new THREE.Group();
+    scene.add(modelGroup);
+
+    // Load model with enhanced materials
+    const loader = new GLTFLoader();
+    loader.load(
+      '/3.gltf',
+      (gltf) => {
+        const model = gltf.scene;
+        
+        // Enhance materials for all meshes
+        model.traverse((child) => {
+          if (child.isMesh) {
+            // Enhance existing materials
+            if (child.material) {
+              child.material.roughness = 0.3;
+              child.material.metalness = 0.8;
+              child.material.envMapIntensity = 1.5;
+              child.material.needsUpdate = true;
+            }
+          }
+        });
+
+        // Center and scale model
+        const box = new THREE.Box3().setFromObject(model);
+        const center = box.getCenter(new THREE.Vector3());
+        const size = box.getSize(new THREE.Vector3());
+        const maxDim = Math.max(size.x, size.y, size.z);
+        const scale = 3 / maxDim;
+        
+        model.position.set(-center.x, -center.y + 1, -center.z);
+        model.scale.setScalar(scale);
+        
+        modelGroup.add(model);
+        modelRef.current = modelGroup;
+        setLoading(false);
+      },
+      undefined,
+      (error) => console.error('Model loading error:', error)
+    );
+
+    // Animate lights
+    let time = 0;
+    function animateLights() {
+      time += 0.01;
+      
+      // Animate point lights in a circular pattern
+      pointLight1.position.x = Math.sin(time) * 3;
+      pointLight1.position.z = Math.cos(time) * 3;
+      
+      pointLight2.position.x = Math.sin(time + Math.PI) * 3;
+      pointLight2.position.z = Math.cos(time + Math.PI) * 3;
+    }
+
+    function updateSize() {
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, height);
+    }
+    
+    window.addEventListener('resize', updateSize);
+    updateSize();
+
+    function animate() {
+      animationFrameRef.current = requestAnimationFrame(animate);
+      if (modelRef.current) {
+        modelRef.current.rotation.y += 0.01;
+        animateLights();
+      }
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    return () => {
+      window.removeEventListener('resize', updateSize);
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+      renderer.dispose();
+    };
+  }, []);
+
+  return (
+    <div className="absolute md:w-[900px] md:h-[800px] w-[500px] h-[600px]" style={{ zIndex: 50 }}>
+      <div
+        ref={modelContainerRef}
+        className="w-full h-full"
+        style={{
+          background: 'transparent',
+          position: 'relative',
+          zIndex: 50,
+        }}
+      />
+      {loading && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-white font-medium">Loading 3D Model...</div>
+        </div>
+      )}
+    </div>
+  );
 }

@@ -10,6 +10,7 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import logo from "../../assets/MunjalAutologo-.png";
+import { Link } from "react-router-dom";
 
 const Secondsection = () => {
   const containerRef = useRef(null);
@@ -156,9 +157,12 @@ const WhyMunjal = () => {
               Munjal Auto, we merge engineering excellence with forward-thinking
               design to deliver products that lead industries into the future.
             </p>
-            <button className="bg-black text-white px-8 py-3 md:text-base text-xs rounded-full hover:bg-gray-800 transition-colors">
+            <Link to='/about-us'>
+            <button className="bg-black text-white px-8 py-3 md:text-base text-xs rounded-full hover:bg-gray-800 transition-colors mt-5">
               More About Us
             </button>
+            </Link>
+          
           </div>
 
           <motion.div className="md:flex-row flex-col items-center w-full flex">
@@ -515,9 +519,12 @@ const Stayconnected = () => {
             <br />
             our manufacturing expertise.
           </p>
+          <Link to='/about-us'>
           <button className="bg-white text-black  px-8 py-3 rounded-full hover:bg-gray-100 transition-colors">
             More About Us
           </button>
+          </Link>
+        
         </div>
       </div>
 
@@ -531,9 +538,12 @@ const Stayconnected = () => {
             <br />
             our manufacturing expertise.
           </p>
+          <Link to='/about-us'>
           <button className="bg-white text-xs text-black px-6 py-2 rounded-full hover:bg-gray-100 transition-colors">
             More About Us
           </button>
+          </Link>
+          
         </div>
       </div>
     </div>

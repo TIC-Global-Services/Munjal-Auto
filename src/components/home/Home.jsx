@@ -3,10 +3,15 @@ import img from "../../assets/homebanner.png";
 import logo from "../../assets/logo.png";
 import Secondsection from "../home/Secondsection";
 import ThirdSection from "../home/ThirdSection";
-import { Link } from "react-router-dom";
+
 import { useLocation } from "react-router-dom";
 import videoSrc from "../../assets/heroVideo.mp4";
-
+import icon1 from "../../assets/hero/icon.png";
+import icon2 from "../../assets/hero/icon2.png";
+import youtube from "../../assets/hero/youtube.png";
+import insta from "../../assets/hero/insta.png";
+import TopNav from "../TopNav";
+import { Link } from "react-router-dom";
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -41,7 +46,7 @@ const Home = () => {
   // Attempt to play video when loaded
   const handleCanPlay = () => {
     if (videoRef.current) {
-      videoRef.current.play().catch(e => {
+      videoRef.current.play().catch((e) => {
         console.log("Autoplay prevented:", e);
       });
     }
@@ -52,7 +57,7 @@ const Home = () => {
       <div className="mx-auto max-w-[2500px]">
         <div className="h-screen w-full flex flex-col items-center justify-center relative">
           {/* Left Navigation */}
-          <div className="absolute text-sm left-20 top-20 transform -translate-y-1/2 md:flex hidden justify-between items-center z-[100] space-x-20">
+          {/* <div className="absolute text-sm left-20 top-20 transform -translate-y-1/2 md:flex hidden justify-between items-center z-[100] space-x-20">
             <Link
               to="/"
               className={`hover:text-gray-300 transition-colors duration-300 ${
@@ -91,10 +96,10 @@ const Home = () => {
             >
               Philosophy
             </Link>
-          </div>
+          </div> */}
 
           {/* Right Navigation */}
-          <div className="absolute text-sm right-20 top-20 transform -translate-y-1/2 md:flex hidden items-center justify-between z-[100] space-x-12">
+          {/* <div className="absolute text-sm right-20 top-20 transform -translate-y-1/2 md:flex hidden items-center justify-between z-[100] space-x-12">
             <Link
               to="/quality"
               className={`hover:text-gray-300 transition-colors duration-300 ${
@@ -124,7 +129,9 @@ const Home = () => {
             <Link
               to="/facilities"
               className={`hover:text-gray-300 transition-colors duration-300 ${
-                isActive("/facilities") ? "text-[#FF0000] font-bold" : "text-white"
+                isActive("/facilities")
+                  ? "text-[#FF0000] font-bold"
+                  : "text-white"
               }`}
             >
               Facilities
@@ -137,8 +144,11 @@ const Home = () => {
             >
               Contact
             </Link>
-          </div>
+          </div> */}
 
+          <div className="z-[100] absolute w-full top-20 flex justify-between items-center ">
+            <TopNav />
+          </div>
           {/* Background Video Container */}
           <div className="h-[90%] w-[94%] flex flex-col items-center justify-center rounded-[24px] relative overflow-hidden bg-gray-900">
             {/* Video Background */}
@@ -154,13 +164,57 @@ const Home = () => {
               onError={handleVideoError}
               onCanPlay={handleCanPlay}
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
-                videoLoaded && !videoError ? 'opacity-100' : 'opacity-0'
+                videoLoaded && !videoError ? "opacity-100" : "opacity-0"
               }`}
             >
               <source src={videoSrc} type="video/mp4" />
               <source src="../../assets/heroVideo.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
+
+            <div className="absolute bottom-5 right-5 flex flex-col items-center space-y-5 z-[999]">
+              <Link to="/contact">
+                <img
+                  src={icon1}
+                  alt="contact"
+                  className="w-[30px] md:w-[40px] cursor-pointer hover:scale-125"
+                />
+              </Link>
+
+              <Link to="/contact">
+                <img
+                  src={icon2}
+                  alt="contact"
+                  className="w-[55px] cursor-pointer hover:scale-125"
+                />
+              </Link>
+            </div>
+
+            <div className="absolute top-[38%] left-5 flex flex-col items-center space-y-4 z-[999]">
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={youtube}
+                  alt="YouTube"
+                  className="w-[40px] cursor-pointer hover:scale-105"
+                />
+              </a>
+
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={insta}
+                  alt="Instagram"
+                  className="w-[40px] cursor-pointer hover:scale-105"
+                />
+              </a>
+            </div>
 
             {/* Fallback Background Image */}
             {(videoError || !videoLoaded) && (
@@ -178,36 +232,47 @@ const Home = () => {
             <img
               src={logo}
               alt="Company Logo"
-              className="absolute top-4 md:top-0 w-[60%] md:w-1/3 max-w-md left-1/2 transform -translate-x-1/2 z-20"
+              className="absolute top-0 md:top-0 w-[60%] md:w-1/3 max-w-md left-1/2 transform -translate-x-1/2 z-20"
             />
 
             {/* Centered Content */}
             <div className="text-center relative z-20 px-4 max-w-4xl mx-auto">
-              <h1 className={`text-white text-xl md:text-5xl font-bold drop-shadow-2xl mb-4 transition-all duration-1000 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}>
-                Pioneering Lightweight{" "}
-                <br className="md:hidden block" />
-                Solutions{" "}
-                <br className="md:block hidden" />
+              <h1
+                className={`text-white text-xl md:text-5xl  font-bold drop-shadow-2xl mb-4 transition-all  duration-1000 ${
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-8"
+                }`}
+              >
+                Pioneering Lightweight <br className="md:hidden block" />
+                Solutions <br className="md:block hidden" />
                 with Cutting-
                 <br className="md:hidden block" />
                 Edge Technology
               </h1>
-              
-              <p className={`md:hidden block text-white text-sm mt-4 mb-6 max-w-xs mx-auto leading-relaxed transition-all duration-1000 delay-300 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}>
+
+              <p
+                className={`md:hidden block text-white text-sm mt-4 mb-6 max-w-xs mx-auto leading-relaxed transition-all duration-1000 delay-300 ${
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-8"
+                }`}
+              >
                 From automotive breakthroughs to renewable energy solutions,
                 Munjal Auto Industries delivers quality and cutting-edge
                 technology that drives progress.
               </p>
-              
-              <button className={`mt-6 px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-gray-200 hover:scale-105 transition-all duration-300 shadow-lg ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}>
-                Explore Our Innovations
-              </button>
+              <Link to="/products">
+                <button
+                  className={`mt-6 px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-gray-200 hover:scale-105 transition-all duration-300 shadow-lg ${
+                    isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-8"
+                  }`}
+                >
+                  Explore Our Innovations
+                </button>
+              </Link>
             </div>
 
             {/* Loading indicator for video */}
@@ -220,10 +285,12 @@ const Home = () => {
         </div>
 
         {/* Second Section */}
-        <div className={`py-10 md:py-40 md:leading-[80px] text-[18px] flex items-center justify-center text-center md:text-[60px] transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
-          <h1 className="w-[80%] font-bold text-gray-800">
+        <div
+          className={`py-10 md:py-40 md:leading-[80px] text-[18px] flex items-center justify-center text-center md:text-[60px] transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          <h1 className="w-[80%] font-normal text-gray-800">
             Designing the Future with Lightweight Solutions and Advanced
             Technology
           </h1>

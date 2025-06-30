@@ -1,6 +1,6 @@
 import React ,{useRef ,useEffect}from "react";
 import { motion, useInView,useMotionValue,animate,useTransform } from "framer-motion";
- 
+ import { Link } from "react-router-dom";
 import machine from "../../assets/machine.png";
 import contactus from "../../assets/contactus.png";
 import mobilesec1 from "../../assets/mobileinovationsecimg1.png";
@@ -506,10 +506,12 @@ const Investors = () => {
             <motion.p variants={itemVariants} className="text-black mt-4 text-sm md:text-lg md:w-[60%] leading-relaxed">
               Driven by innovation and precision, Munjal Auto creates long-term value for investors. Stay updated on our financial performance and growth strategy.
             </motion.p>
-
-            <motion.button variants={itemVariants} className="bg-black md:block hidden mt-10 w-fit text-white px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
+<Link to='/contact'>
+<motion.button variants={itemVariants} className="bg-black md:block hidden mt-10 w-fit text-white px-6 py-3 rounded-full font-medium hover:bg-gray-900 transition-colors">
               Contact Us
             </motion.button>
+</Link>
+    
           </motion.div>
 
           {/* Right Section */}
@@ -520,9 +522,12 @@ const Investors = () => {
               className="w-full h-full object-cover"
             />
           </motion.div>
+          <Link to='/contact'>
           <motion.button variants={itemVariants} className="bg-black flex items-start justify-start md:hidden relative -left-[30%] w-fit text-white px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
             Contact Us
           </motion.button>
+          </Link>
+          
         </motion.div>
       </motion.div>
     </>
@@ -595,6 +600,7 @@ const ColumnLayout = () => {
 };
 
 import map from "../../assets/home/india.png";
+import Map from "./Map";
 const GlobalPresence = () => {
   return (
     <div className=" flex items-center  md:py-20 justify-center">
@@ -610,13 +616,15 @@ const GlobalPresence = () => {
             footprint spans across continents, delivering tailored engineering
             solutions to markets in Asia, Europe, North America, and beyond.
           </p>
-          <button className="bg-white text-black md:text-base  text-sm px-6 py-2 rounded-full hover:bg-gray-200 transition-colors">
-            More About Us
-          </button>
+          <Link to="/about-us">
+  <button className="bg-white text-black md:text-base text-sm px-6 py-2 rounded-full hover:bg-gray-200 transition-colors">
+    More About Us
+  </button>
+</Link>
         </div>
 
         <div className="  md:w-1/3 ">
-          <img src={map} alt="Global Presence" className="w-full h-full mb-8" />
+          <Map />
         </div>
       </div>
     </div>

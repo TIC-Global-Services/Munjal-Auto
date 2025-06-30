@@ -4,7 +4,11 @@ import logo from "../assets/logo.png";
 import Footer from "./Footer";
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
-
+import TopNav from "./TopNav";
+import icon1 from "../assets/hero/icon.png";
+import icon2 from "../assets/hero/icon2.png";
+import youtube from "../assets/hero/youtube.png";
+import insta from "../assets/hero/insta.png";
 
 const Contact = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -16,14 +20,13 @@ const Contact = () => {
     };
   
     useEffect(() => {
-      // Trigger animation after component mount
       setIsVisible(true);
     }, []);
     return (
       <div className=" ">
         <div className="h-screen w-full   flex flex-col items-center justify-center relative">
           {/* Left Navigation */}
-          <div className="absolute text-sm left-20 top-20 transform -translate-y-1/2 md:flex hidden justify-between items-center z-[100] space-x-20">
+          {/* <div className="absolute text-sm left-20 top-20 transform -translate-y-1/2 md:flex hidden justify-between items-center z-[100] space-x-20">
             <Link
               to="/"
               className={`hover:text-gray-300 ${
@@ -58,10 +61,10 @@ const Contact = () => {
             >
               philosophy
             </Link>
-          </div>
+          </div> */}
   
           {/* Right Navigation */}
-          <div className="absolute text-sm right-20 top-20 transform -translate-y-1/2 md:flex hidden  items-center justify-between z-[100] space-x-12">
+          {/* <div className="absolute text-sm right-20 top-20 transform -translate-y-1/2 md:flex hidden  items-center justify-between z-[100] space-x-12">
             <Link
               to="/quality"
               className={`hover:text-gray-300 ${
@@ -102,7 +105,10 @@ const Contact = () => {
             >
               Contact
             </Link>
-          </div>
+          </div> */}
+          <div className="z-[100] absolute w-full top-20 flex justify-between items-center ">
+  <TopNav />
+</div>
   
           {/* Background Image with Logo */}
           <div
@@ -124,6 +130,53 @@ const Contact = () => {
                 className="absolute top-0 w-[60%] md:w-1/3 left-1/2 transform -translate-x-1/2"
               />
             </Link>
+
+
+            
+          <div className="absolute bottom-5 right-5 flex flex-col items-center space-y-5 z-[999]">
+              <Link to="/contact">
+                <img
+                  src={icon1}
+                  alt="contact"
+                  className="w-[30px] md:w-[40px] cursor-pointer hover:scale-125"
+                />
+              </Link>
+
+              <Link to="/contact">
+                <img
+                  src={icon2}
+                  alt="contact"
+                  className="w-[55px] cursor-pointer hover:scale-125"
+                />
+              </Link>
+            </div>
+
+            <div className="absolute top-[30%] left-5 flex flex-col items-center space-y-4 z-[999]">
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={youtube}
+                  alt="YouTube"
+                  className="w-[40px] cursor-pointer hover:scale-105"
+                />
+              </a>
+
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={insta}
+                  alt="Instagram"
+                  className="w-[40px] cursor-pointer hover:scale-105"
+                />
+              </a>
+            </div>
+
             {/* <div className="absolute inset-0 flex flex-col items-center justify-center"> */}
             {/* Timeline Line with Animation */}
   
@@ -132,7 +185,7 @@ const Contact = () => {
             {/* Centered Text and Timeline Container */}
             <div className=" md:block flex items-center justify-center flex-col absolute text-left left-0">
               <h1 className="text-[#FFFCFC] rounded-[10px] px-10 py-4 text-[54px] font-[500] mb-12">
-              Our Finance
+              Contact Us
               </h1>
   
               {/* Timeline Line with Animation */}
@@ -144,7 +197,7 @@ const Contact = () => {
         {/* <AnnualReport/> */}
         {/* <MunjalAutoGroup />
         <BoardOfDirectors /> */}
-        <Footer />
+        <FooterMain />
       </div>
     );
   };
@@ -154,6 +207,7 @@ export default Contact
 
 import carPic from "../assets/CarPic.png"
 import carPic2 from "../assets/Carpic2.png"
+import { FooterMain } from "./FooterMain";
 
 const TabNavigation = () => {
   const [activeTab, setActiveTab] = useState('office');
@@ -165,7 +219,7 @@ const TabNavigation = () => {
   ];
   
   return (
-    <div className="w-full max-w-6xl mx-auto bg-white">
+    <div className="w-full max-w-6xl mx-auto bg-#2E2E2E">
 
       {/* Navigation Tabs */}
       <div className="flex border-b">
@@ -183,7 +237,7 @@ const TabNavigation = () => {
       </div>
       
       {/* Tab Content */}
-      <div className="py-8">
+      <div className="md:py-8 md:px-5 px-4 md:mt-10 mt-5">
         {/* Office & Works Tab */}
         {activeTab === 'office' && (
           <motion.div
@@ -193,81 +247,81 @@ const TabNavigation = () => {
             className="space-y-6"
           >
             {/* Corporate Office */}
-            <div className="flex flex-col md:flex-row bg-white rounded-lg overflow-hidden shadow-sm">
-              <div className="w-full md:w-1/3 bg-gradient-to-r from-pink-300 to-white p-8 flex items-center">
-                <h3 className="text-xl md:text-2xl text-white font-bold">Corporate office</h3>
+            <div className="flex flex-col md:flex-row md:h-[380px] py-2 h-full bg-[#2E2E2E] rounded-lg overflow-hidden shadow-sm items-center justify-center">
+              <div className="w-full md:w-1/3  p-8 flex items-center ">
+                <h3 className="text-[32px] text-white font-bold">Corporate office</h3>
               </div>
-              <div className="w-full md:w-2/3 p-6">
-                <h4 className="text-red-500 font-medium mb-3">Contact now</h4>
-                <p className="mb-1">2nd Floor, Tower "C", Unitech Business Zone,</p>
-                <p className="mb-1">Nirvana Country, South City – 2, Sector-50,</p>
-                <p className="mb-1">Gurugram – 122018, Haryana</p>
-                <p className="mb-1">Phone: +91 124 4057891/92</p>
-                <p className="mb-1">Fax: +91 124 4057892</p>
-                <p className="mb-1">E-mail: <a href="mailto:mail@munjalauto.com" className="text-red-500">mail@munjalauto.com</a></p>
+              <div className="w-full md:w-2/3 px-6">
+                <h4 className="text-[#ED1C24] font-medium mb-3 text-[25px]">Contact now</h4>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">2nd Floor, Tower "C", Unitech Business Zone,</p>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Nirvana Country, South City – 2, Sector-50,</p>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Gurugram – 122018, Haryana</p>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Phone: +91 124 4057891/92</p>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Fax: +91 124 4057892</p>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">E-mail: <a href="mailto:mail@munjalauto.com" className="text-[#ED1C24]">mail@munjalauto.com</a></p>
               </div>
             </div>
             
             {/* Waghodia Plant */}
-            <div className="flex flex-col md:flex-row bg-white rounded-lg overflow-hidden shadow-sm">
-              <div className="w-full md:w-1/3 bg-gradient-to-r from-pink-300 to-white p-8 flex items-center">
-                <h3 className="text-xl md:text-2xl text-white font-bold">Waghodia plant</h3>
+            <div className="flex flex-col md:flex-row md:h-[380px] bg-[#2E2E2E] rounded-lg overflow-hidden shadow-sm items-center justify-center">
+              <div className="w-full md:w-1/3   md:p-8 p-8 flex items-center">
+                <h3 className="text-[32px] text-white font-bold">Waghodia plant</h3>
               </div>
               <div className="w-full md:w-2/3 p-6">
-                <h4 className="text-red-500 font-medium mb-3">Contact now</h4>
-                <p className="mb-1">187, GIDC Industrial Estate,</p>
-                <p className="mb-1">Waghodia -391 760, Vadodara (Gujarat)</p>
-                <p className="mb-1">Phone: +91 (2668) 262421</p>
-                <p className="mb-1">Phone: +91 (2668) 262422</p>
-                <p className="mb-1">Fax: +91 (2668) 262427</p>
-                <p className="mb-1">Mobile: +91 9099978936</p>
-                <p className="mb-1">Mobile: +91 9099978937</p>
-                <p className="mb-1">E-mail: <a href="mailto:mail@munjalauto.com" className="text-red-500">mail@munjalauto.com</a></p>
+                <h4 className="text-red-500 font-medium mb-3 text-[25px]">Contact now</h4>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">187, GIDC Industrial Estate,</p>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Waghodia -391 760, Vadodara (Gujarat)</p>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Phone: +91 (2668) 262421</p>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Phone: +91 (2668) 262422</p>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Fax: +91 (2668) 262427</p>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Mobile: +91 9099978936</p>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Mobile: +91 9099978937</p>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">E-mail: <a href="mailto:mail@munjalauto.com" className="text-red-500">mail@munjalauto.com</a></p>
               </div>
             </div>
             
             {/* Haridwar Plant */}
-            <div className="flex flex-col md:flex-row bg-white rounded-lg overflow-hidden shadow-sm">
-              <div className="w-full md:w-1/3 bg-gradient-to-r from-pink-300 to-white p-8 flex items-center">
-                <h3 className="text-xl md:text-2xl text-white font-bold">Haridwar Plant</h3>
+            <div className="flex flex-col md:flex-row md:h-[380px] bg-[#2E2E2E] rounded-lg overflow-hidden shadow-sm items-center justify-center">
+              <div className="w-full md:w-1/3   p-8 flex items-center">
+                <h3 className="text-[32px] text-white font-bold">Haridwar Plant</h3>
               </div>
               <div className="w-full md:w-2/3 p-6">
-                <h4 className="text-red-500 font-medium mb-3">Contact now</h4>
-                <p className="mb-1">Plot no – 11 Industrial Park II,</p>
-                <p className="mb-1">Village Salempur Mehdood, Haridwar</p>
-                <p className="mb-1">(Uttrakhand)</p>
-                <p className="mb-1">Tel: +91 (1334) 235530/32</p>
-                <p className="mb-1">Fax: +91 (1334) 235533</p>
-                <p className="mb-1">E-mail: <a href="mailto:mail@munjalauto.com" className="text-red-500">mail@munjalauto.com</a></p>
+                <h4 className="text-red-500 font-medium mb-3 text-[25px]">Contact now</h4>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Plot no – 11 Industrial Park II,</p>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Village Salempur Mehdood, Haridwar</p>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">(Uttrakhand)</p>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Tel: +91 (1334) 235530/32</p>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Fax: +91 (1334) 235533</p>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">E-mail: <a href="mailto:mail@munjalauto.com" className="text-red-500">mail@munjalauto.com</a></p>
               </div>
             </div>
             
             {/* Bawal Plant */}
-            <div className="flex flex-col md:flex-row bg-white rounded-lg overflow-hidden shadow-sm">
-              <div className="w-full md:w-1/3 bg-gradient-to-r from-pink-300 to-white p-8 flex items-center">
-                <h3 className="text-xl md:text-2xl text-white font-bold">Bawal Plant</h3>
+            <div className="flex flex-col md:flex-row md:h-[380px] bg-[#2E2E2E] rounded-lg overflow-hidden shadow-sm items-center justify-center">
+              <div className="w-full md:w-1/3   p-8 flex items-center">
+                <h3 className="text-[32px] text-white font-bold">Bawal Plant</h3>
               </div>
               <div className="w-full md:w-2/3 p-6">
-                <h4 className="text-red-500 font-medium mb-3">Contact now</h4>
-                <p className="mb-1">Plot No. – 37, Sector 5 Phase II,</p>
-                <p className="mb-1">G.C Bawal- 123 501, Rewari (Haryana)</p>
-                <p className="mb-1">Tel: +91 (1284) 264435-36</p>
-                <p className="mb-1">Fax: +91 (1284) 264434</p>
-                <p className="mb-1">E-mail: <a href="mailto:mail@munjalauto.com" className="text-red-500">mail@munjalauto.com</a></p>
+                <h4 className="text-red-500 font-medium mb-3 text-[25px]">Contact now</h4>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Plot No. – 37, Sector 5 Phase II,</p>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">G.C Bawal- 123 501, Rewari (Haryana)</p>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Tel: +91 (1284) 264435-36</p>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Fax: +91 (1284) 264434</p>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">E-mail: <a href="mailto:mail@munjalauto.com" className="text-red-500">mail@munjalauto.com</a></p>
               </div>
             </div>
             
             {/* Dharuhera Plant */}
-            <div className="flex flex-col md:flex-row bg-white rounded-lg overflow-hidden shadow-sm">
-              <div className="w-full md:w-1/3 bg-gradient-to-r from-pink-300 to-white p-8 flex items-center">
-                <h3 className="text-xl md:text-2xl text-white font-bold">Dharuhera Plant</h3>
+            <div className="flex flex-col md:h-[380px] md:flex-row bg-[#2E2E2E] rounded-lg overflow-hidden shadow-sm items-center justify-center">
+              <div className="w-full md:w-1/3   p-8 flex items-center">
+                <h3 className="text-[32px] text-white font-bold">Dharuhera Plant</h3>
               </div>
               <div className="w-full md:w-2/3 p-6">
-                <h4 className="text-red-500 font-medium mb-3">Contact now</h4>
-                <p className="mb-1">Plot no. 32-A, Industrial Area,</p>
-                <p className="mb-1">Dharuhera-122106, Rewari, Haryana</p>
-                <p className="mb-1">Tel: +91 (1274) 243010-11</p>
-                <p className="mb-1">E-mail: <a href="mailto:mail@munjalauto.com" className="text-red-500">mail@munjalauto.com</a></p>
+                <h4 className="text-red-500 font-medium mb-3 text-[25px]">Contact now</h4>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Plot no. 32-A, Industrial Area,</p>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Dharuhera-122106, Rewari, Haryana</p>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Tel: +91 (1274) 243010-11</p>
+                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">E-mail: <a href="mailto:mail@munjalauto.com" className="text-red-500">mail@munjalauto.com</a></p>
               </div>
             </div>
           </motion.div>

@@ -3,6 +3,13 @@ import img from "../assets/faci-min.jpeg";
 import logo from "../assets/logo.png";
 import Footer from "./Footer";
 import { Link, useLocation } from "react-router-dom";
+import TopNav from "./TopNav";
+
+
+import icon1 from "../assets/hero/icon.png";
+import icon2 from "../assets/hero/icon2.png";
+import youtube from "../assets/hero/youtube.png";
+import insta from "../assets/hero/insta.png";
 
 const Facilities = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -28,7 +35,7 @@ const Facilities = () => {
     <div className=" overflow-hidden ">
       <div className="h-screen w-full   flex flex-col items-center justify-center relative">
         {/* Left Navigation */}
-        <div className="absolute text-sm left-20 top-20 transform -translate-y-1/2 md:flex hidden justify-between items-center z-[100] space-x-20">
+        {/* <div className="absolute text-sm left-20 top-20 transform -translate-y-1/2 md:flex hidden justify-between items-center z-[100] space-x-20">
           <Link
             to="/"
             className={`hover:text-gray-300 ${
@@ -63,10 +70,10 @@ const Facilities = () => {
           >
             philosophy
           </Link>
-        </div>
+        </div> */}
 
         {/* Right Navigation */}
-        <div className="absolute text-sm right-20 top-20 transform -translate-y-1/2 md:flex hidden  items-center justify-between z-[100] space-x-12">
+        {/* <div className="absolute text-sm right-20 top-20 transform -translate-y-1/2 md:flex hidden  items-center justify-between z-[100] space-x-12">
           <Link
             to="/quality"
             className={`hover:text-gray-300 ${
@@ -109,6 +116,9 @@ const Facilities = () => {
           >
             Contact
           </Link>
+        </div> */}
+        <div className="z-[100] absolute w-full top-20 flex justify-between items-center ">
+          <TopNav />
         </div>
 
         {/* Background Image with Logo */}
@@ -131,6 +141,52 @@ const Facilities = () => {
               className="absolute top-0 w-[60%] md:w-1/3 left-1/2 transform -translate-x-1/2"
             />
           </Link>
+
+
+
+          <div className="absolute bottom-5 right-5 flex flex-col items-center space-y-5 z-[999]">
+              <Link to="/contact">
+                <img
+                  src={icon1}
+                  alt="contact"
+                  className="w-[30px] md:w-[40px] cursor-pointer hover:scale-125"
+                />
+              </Link>
+
+              <Link to="/contact">
+                <img
+                  src={icon2}
+                  alt="contact"
+                  className="w-[55px] cursor-pointer hover:scale-125"
+                />
+              </Link>
+            </div>
+
+            <div className="absolute top-[38%] left-5 flex flex-col items-center space-y-4 z-[999]">
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={youtube}
+                  alt="YouTube"
+                  className="w-[40px] cursor-pointer hover:scale-105"
+                />
+              </a>
+
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={insta}
+                  alt="Instagram"
+                  className="w-[40px] cursor-pointer hover:scale-105"
+                />
+              </a>
+            </div>
           {/* <div className="absolute inset-0 flex flex-col items-center justify-center"> */}
           {/* Timeline Line with Animation */}
 
@@ -139,7 +195,7 @@ const Facilities = () => {
           {/* Centered Text and Timeline Container */}
           <div className=" md:block flex items-center justify-center flex-col absolute text-left left-0">
             <h1 className="text-[#FFFCFC] rounded-[10px] px-10 py-4 text-[54px] font-[500] mb-12">
-            Our Facilities
+              Our Facilities
             </h1>
 
             {/* Timeline Line with Animation */}
@@ -155,29 +211,29 @@ const Facilities = () => {
         setActiveTab={setActiveTab}
         tabs={tabs}
       />
-      <Footer />
+      <FooterMain />
     </div>
   );
 };
 export default Facilities;
 
-import faBento1 from "../assets/faBento1.png";
-import faBento2 from "../assets/faBento2.png";
+import faBento1 from "../assets/Facilities/img.png";
+import faBento2 from "../assets/Facilities/Rectangle 34625219.png";
 import faBento3 from "../assets/faBento3.png";
 
 const BentoGrid = ({ activeTab, setActiveTab, tabs }) => {
   // Content for each tab
   const tabContent = {
     Facilities: {
-      title: "Empowering Excellence",
+      title: "Driving Excellence Forward",
       description:
-        "At Munjal Auto, our facilities are the cornerstone of our success, blending innovation, technology, and sustainability.",
+        "With decades of expertise, we push the boundaries of precision engineering to deliver superior automotive solutions. Our commitment to quality and innovation fuels our journey toward excellence.",
       mainImage: faBento1,
       cards: [
         {
-          title: "State-of-the-Art Manufacturing Excellence",
+          title: "World-Class Manufacturing",
           description:
-            "Lorem ipsum dolor sit amet consectetur. Felis nisl lectus at ornare morbi egestas scelerisque lectus. Id non est magna risus libero tellus mi. Arcu massa feugiat volutpat vel.",
+            "From sheet metal components to complete assemblies, our manufacturing plants leverage cutting-edge technology to produce high-performance auto components. With a focus on sustainability and innovation, we ensure reliability at every stage of production.",
           image: faBento2,
         },
         {
@@ -231,7 +287,7 @@ const BentoGrid = ({ activeTab, setActiveTab, tabs }) => {
     <>
       {/* Tab Navigation */}
       <div className="flex justify-center mt-12 mb-8 px-4">
-        <div className="flex space-x-4 md:space-x-8 overflow-x-auto pb-2">
+        <div className="flex space-x-4 md:space-x-8 scrollbar-hide pb-2">
           {tabs.map((tab) => (
             <button
               key={tab}
@@ -285,16 +341,17 @@ const FacilitiesContent = ({ content }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 gap-4 lg:gap-8">
         <div className="lg:col-span-3 rounded-[20px] bg-[#EAEAEA] p-6 md:p-8 lg:p-6 xl:p-10">
           <h1 className="text-[#FF0000] text-xl lg:text-xl xl:text-2xl">
-            <span className="text-black"> State-of-the-Art </span> Manufacturing
-            Excellence
+            <span className="text-black"> World-</span>
+            Class Manufacturing
           </h1>
           <p className="text-base lg:text-sm xl:text-base mt-4">
-            Lorem ipsum dolor sit amet consectetur. Felis nisl lectus at ornare
-            morbi egestas scelerisque lectus. Id non est magna risus libero
-            tellus mi. Arcu massa feugiat volutpat vel.
+            From sheet metal components to complete assemblies, our
+            manufacturing plants leverage cutting-edge technology to produce
+            high-performance auto components. With a focus on sustainability and
+            innovation, we ensure reliability at every stage of production.
           </p>
         </div>
-        
+
         <div className="lg:col-span-2 rounded-[20px] h-[300px] lg:h-auto">
           <img
             src={faBento2}
@@ -302,21 +359,22 @@ const FacilitiesContent = ({ content }) => {
             className="w-full rounded-[20px] h-full object-cover"
           />
         </div>
-        
-        <div className="lg:col-span-5 bg-[#FFF983] overflow-hidden rounded-[20px] grid grid-cols-1 lg:grid-cols-2">
+
+        <div className="lg:col-span-5 bg-[#EAEAEA] overflow-hidden rounded-[20px] grid grid-cols-1 lg:grid-cols-2 md:px-10">
           <img
             src={faBento3}
             alt=""
-            className="h-[300px] lg:h-[95%] w-full object-cover lg:mt-5"
+            className="h-[300px] lg:h-[95%] w-full object-contain md:-ml-20 -ml-[50px] lg:mt-5"
           />
-          <div className="flex flex-col text-center lg:text-right items-center justify-center p-6 lg:p-0 gap-4 lg:gap-10">
+          <div className="flex flex-col text-center text-right items-center justify-center p-6 lg:p-0 gap-4 lg:gap-10">
             <h1 className="text-xl lg:text-xl xl:text-2xl w-full lg:w-[90%] font-medium">
-              Innovative Facilities for{" "}
-              <span className="text-[#FF0000]">Superior Performance</span>
+              Cutting- <span className="text-[#FF0000]"> Facilities</span>
             </h1>
             <p className="text-[#706C67] text-base lg:text-sm xl:text-base">
-              Lorem ipsum dolor sit amet consectetur. Felis nisl lectus at
-              ornare morbi egestas scelerisque lectus. Id non{" "}
+              Equipped with advanced manufacturing technology and in-house R&D,
+              our facilities are designed for efficiency, precision, and
+              scalability. We integrate the latest automation and quality
+              control systems to meet global industry standards.{" "}
             </p>
           </div>
         </div>
@@ -345,7 +403,11 @@ const PrecisionEngineeringContent = ({ content }) => {
         </h1>
       </div>
       <div className=" flex  md:flex-row flex-col my-28 gap-10">
-        <img src={faControl} className=" rounded-xl object-cover md:w-[45%]" alt="" />
+        <img
+          src={faControl}
+          className=" rounded-xl object-cover md:w-[45%]"
+          alt=""
+        />
         <div className=" rounded-xl bg-gray-50 flex flex-col items-start justify-around  md:w-1/2  px-10 py-6 ">
           <div className=" flex  flex-col  ">
             <h1 className="  mb-4 -mt-4 ml-4 text-2xl">
@@ -372,6 +434,26 @@ const PrecisionEngineeringContent = ({ content }) => {
         </div>
       </div>
 
+      <div className="flex flex-row justify-between items-start max-w-3xl">
+        <h1 className="text-[36px] font-medium">Tool Desgin</h1>
+
+        <div className="flex flex-col justify-center items-start space-y-5">
+          <h1 className="text-[#ED1C24] text-[26px] font-semibold">
+            Bawal Haryana
+          </h1>
+          <div className="w-80 text-left">
+            <ul className="list-disc pl-5 space-y-4 columns-2 gap-x-8  text-[#626367]">
+              <li>Unigraphics NX</li>
+              <li>Pampstamp</li>
+              <li>FTI - Fast blank</li>
+              <li>FTI - Blank Nest</li>
+              <li>Hyper form</li>
+              <li>Auto Cad</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       {/* R&D Centre Section */}
       <div className="flex gap-10 my-28">
         <div className="w-full rounded-3xl relative overflow-hidden">
@@ -388,7 +470,9 @@ const PrecisionEngineeringContent = ({ content }) => {
               background: "rgba(15, 15, 15, 0.22)",
             }}
           >
-            <h2 className="  text-base lg:text-3xl font-bold mb-4">R&D Centre</h2>
+            <h2 className="  text-base lg:text-3xl font-bold mb-4">
+              R&D Centre
+            </h2>
             <p className="  text-xs lg:text-lg font-normal leading-relaxed">
               The excellence reflected in the output of the product is the
               result of our inherent expertise in making the blueprint. The
@@ -440,10 +524,11 @@ import fab1 from "../assets/fab1.png";
 import fab2 from "../assets/fab2.png";
 import fab3 from "../assets/fab3.png";
 import fab4 from "../assets/fab4.png";
-import fab5 from "../assets/fab6.jpeg"; 
+import fab5 from "../assets/fab6.jpeg";
 import { motion } from "framer-motion";
 
 import fab6 from "../assets/fab6.jpeg";
+import { FooterMain } from "./FooterMain";
 const SustainableContent = ({ content }) => {
   return (
     <div className="max-w-7xl mx-auto px-4 mb-20">
