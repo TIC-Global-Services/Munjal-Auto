@@ -23,7 +23,7 @@ export const FooterMain = () => {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="#history"
+                  href="/about-us#history" 
                   className="text-gray-400 hover:text-white transition-colors duration-200"
                 >
                   History
@@ -31,7 +31,7 @@ export const FooterMain = () => {
               </li>
               <li>
                 <a
-                  href="#munjal-group"
+                  href="/about-us#munjal-group"
                   className="text-gray-400 hover:text-white transition-colors duration-200"
                 >
                   Munjal Group

@@ -592,7 +592,7 @@ const ProductsSec = () => {
   return (
     <div className="min-h-screen">
       {/* Products Section */}
-      <div className="container mx-auto md:px-20 py-16">
+      <div className="container mx-auto px-10 py-16">
         {/* Tabs */}
         <div className="mb-8">
 
@@ -628,47 +628,41 @@ const ProductsSec = () => {
         {/* Content for all tabs */}
 
         {getActiveContent().map((item, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 50, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="grid place-content-end bg-white md:grid-cols-2 lg:grid-cols-3 gap-8 rounded-xl items-center justify-center lg:items-end px-[20px] py-7 mb-12"
-          >
-            <div className="bg-[#EBEBEF] rounded w-80 flex items-center justify-center overflow-hidden">
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 50, scale: 0.9 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="  mb-12 overflow-hidden "
+        >
+          {/* Desktop Layout: Row with 3 columns */}
+          <div className="hidden md:grid md:grid-cols-12 lg:grid-cols-12 gap-0 items-center min-h-[320px] w-full">
+            {/* Image Section - Takes 4 columns on md, 3 on lg */}
+            <div className="md:col-span-4 lg:col-span-3 bg-[#EBEBEF] flex items-center justify-center p-6 h-full">
               <motion.div
                 initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
                 animate={{
                   opacity: 1,
                   scale: 1,
                   rotate: 0,
-                  height: expandedItems[index] ? "auto" : "288px",
                 }}
                 transition={{
                   delay: 0.3,
                   duration: 0.6,
                   ease: "easeOut",
-                  height: { duration: 0.8, ease: "easeInOut" },
                 }}
                 className="flex items-center justify-center"
               >
                 <motion.img
                   src={item.image}
                   alt={item.title}
-                  initial={{ height: "208px" }}
-                  animate={{
-                    height: expandedItems[index] ? "auto" : "208px",
-                  }}
-                  transition={{
-                    duration: 0.8,
-                    ease: "easeInOut",
-                  }}
-                  className="w-auto object-contain"
+                  className="w-full max-w-[240px] h-auto object-contain"
                 />
               </motion.div>
             </div>
 
-            <div className="text-[#ED1C24] lg:ml-0 xl:-ml-16 transition-all duration-500">
+            {/* Content Section - Takes 6 columns on md, 7 on lg */}
+            <div className="md:col-span-6 lg:col-span-7 p-8 text-[#ED1C24]">
               <motion.h2
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -683,7 +677,7 @@ const ProductsSec = () => {
                   <motion.p
                     initial={{ opacity: 1 }}
                     animate={{ opacity: 1 }}
-                    className="mb-2"
+                    className="mb-4 text-base leading-relaxed"
                   >
                     {item.description}
                   </motion.p>
@@ -706,14 +700,108 @@ const ProductsSec = () => {
                             transition={{
                               delay: expandedItems[index]
                                 ? descIndex * 0.1
-                                : (item.fullDescription.length -
-                                    descIndex -
-                                    1) *
-                                  0.05,
+                                : (item.fullDescription.length - descIndex - 1) * 0.05,
                               duration: 0.5,
                               ease: "easeOut",
                             }}
-                            className="mb-2"
+                            className="mb-3 text-base leading-relaxed"
+                          >
+                            {desc}
+                          </motion.p>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Button Section - Takes 2 columns, positioned bottom right */}
+            <div className="md:col-span-2 lg:col-span-2 p-6 flex items-end justify-end h-full">
+              <motion.button
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ delay: 0.6, duration: 0.3 }}
+                className="bg-black text-white px-6 py-3 rounded-xl text-base font-medium cursor-pointer transition-all duration-200 hover:bg-gray-800 shadow-md whitespace-nowrap"
+                onClick={() => toggleExpanded(index)}
+              >
+                {expandedItems[index] ? "Show Less" : "Explore More"}
+              </motion.button>
+            </div>
+          </div>
+
+          {/* Mobile Layout: Keep your original mobile design */}
+          <div className="md:hidden px-5">
+            {/* Image Section */}
+            <div className="bg-[#EBEBEF] flex items-center justify-center p-6">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  rotate: 0,
+                }}
+                transition={{
+                  delay: 0.3,
+                  duration: 0.6,
+                  ease: "easeOut",
+                }}
+                className="flex items-center justify-center"
+              >
+                <motion.img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-auto max-w-[280px] h-auto object-contain"
+                />
+              </motion.div>
+            </div>
+
+            {/* Content Section */}
+            <div className="p-6 text-[#ED1C24]">
+              <motion.h2
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                className="text-[28px] font-bold mb-4"
+              >
+                {item.title}
+              </motion.h2>
+
+              <div className="text-[#8C8989] mb-6">
+                <motion.div className="overflow-hidden">
+                  <motion.p
+                    initial={{ opacity: 1 }}
+                    animate={{ opacity: 1 }}
+                    className="mb-4 text-base leading-relaxed"
+                  >
+                    {item.description}
+                  </motion.p>
+
+                  <AnimatePresence>
+                    {expandedItems[index] && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.6, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        {item.fullDescription.map((desc, descIndex) => (
+                          <motion.p
+                            key={descIndex}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -20 }}
+                            transition={{
+                              delay: expandedItems[index]
+                                ? descIndex * 0.1
+                                : (item.fullDescription.length - descIndex - 1) * 0.05,
+                              duration: 0.5,
+                              ease: "easeOut",
+                            }}
+                            className="mb-3 text-base leading-relaxed"
                           >
                             {desc}
                           </motion.p>
@@ -724,34 +812,24 @@ const ProductsSec = () => {
                 </motion.div>
               </div>
 
-              <div className="text-white xl:hidden lg:hidden md:flex text-left relative top-4 hidden items-start justify-start">
-                <motion.h2
+              {/* Button for Mobile */}
+              <div className="flex justify-end">
+                <motion.button
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   transition={{ delay: 0.6, duration: 0.3 }}
-                  className="text-base text-right bg-black px-4 py-2 rounded-xl mb-4 cursor-pointer"
+                  className="bg-black text-white px-6 py-3 rounded-xl text-base font-medium cursor-pointer transition-all duration-200 hover:bg-gray-800 shadow-md"
                   onClick={() => toggleExpanded(index)}
                 >
                   {expandedItems[index] ? "Show Less" : "Explore More"}
-                </motion.h2>
+                </motion.button>
               </div>
             </div>
-
-            <div className="text-white xl:flex lg:flex md:hidden text-left relative top-4 flex lg:items-end items-start justify-start lg:justify-end">
-              <motion.h2
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                whileHover={{ scale: 1.05 }}
-                transition={{ delay: 0.6, duration: 0.9 }}
-                className="text-base text-right bg-black px-4 py-2 rounded-xl mb-4 cursor-pointer"
-                onClick={() => toggleExpanded(index)}
-              >
-                {expandedItems[index] ? "Show Less" : "Explore More"}
-              </motion.h2>
-            </div>
-          </motion.div>
-        ))}
+          </div>
+        </motion.div>
+      ))}
       </div>
     </div>
   );

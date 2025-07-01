@@ -114,6 +114,7 @@ const About = () => {
 
         {/* Background Image with Logo */}
         <div
+        id="history"
           className="h-[90%] w-[94%] flex flex-col items-center justify-center rounded-[24px] relative"
           style={{
             backgroundImage: `url(${img})`,
@@ -122,8 +123,6 @@ const About = () => {
             backgroundRepeat: "no-repeat",
           }}
         >
-
-          
           {/* Logo */}
           <Link to="/">
             <img
@@ -133,54 +132,49 @@ const About = () => {
             />
           </Link>
 
-
           <div className="absolute bottom-5 right-5 flex flex-col items-center space-y-5 z-[999]">
-              <Link to="/contact">
-                <img
-                  src={icon1}
-                  alt="contact"
-                  className="w-[30px] md:w-[40px] cursor-pointer hover:scale-125"
-                />
-              </Link>
+            <Link to="/contact">
+              <img
+                src={icon1}
+                alt="contact"
+                className="w-[30px] md:w-[40px] cursor-pointer hover:scale-125"
+              />
+            </Link>
 
-              <Link to="/contact">
-                <img
-                  src={icon2}
-                  alt="contact"
-                  className="w-[55px] cursor-pointer hover:scale-125"
-                />
-              </Link>
-            </div>
+            <Link to="/contact">
+              <img
+                src={icon2}
+                alt="contact"
+                className="w-[55px] cursor-pointer hover:scale-125"
+              />
+            </Link>
+          </div>
 
-            <div className="absolute top-[38%] left-5 flex flex-col items-center space-y-4 z-[999]">
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={youtube}
-                  alt="YouTube"
-                  className="w-[40px] cursor-pointer hover:scale-105"
-                />
-              </a>
+          <div className="absolute top-[38%] left-5 flex flex-col items-center space-y-4 z-[999]">
+            <a
+              href="https://youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={youtube}
+                alt="YouTube"
+                className="w-[40px] cursor-pointer hover:scale-105"
+              />
+            </a>
 
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={insta}
-                  alt="Instagram"
-                  className="w-[40px] cursor-pointer hover:scale-105"
-                />
-              </a>
-            </div>
-
-
-
-
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={insta}
+                alt="Instagram"
+                className="w-[40px] cursor-pointer hover:scale-105"
+              />
+            </a>
+          </div>
 
           {/* <div className="text-center md:block flex items-center justify-center flex-col absolute bottom-20">
             <h1
@@ -238,8 +232,6 @@ const About = () => {
           </div> */}
 
           <TimeLine />
-
-          
         </div>
       </div>
       <LegacySection />
@@ -293,15 +285,14 @@ const LegacySection = () => {
               aerospace, renewable energy, defense, and railways.
             </p>
 
-<Link to='/contact'>
-<button
-              className="bg-black  !mt-10  hidden text-white px-8 py-3 rounded-full 
+            <Link to="/contact">
+              <button
+                className="bg-black  !mt-10  hidden text-white px-8 py-3 rounded-full 
               hover:bg-gray-800 transition-colors duration-300 md:inline-flex"
-            >
-              Contact Us
-            </button>
-</Link>
-            
+              >
+                Contact Us
+              </button>
+            </Link>
           </div>
           <img
             src={legacy}
@@ -676,7 +667,7 @@ const MunjalAutoGroup = () => {
                 : "opacity-0 translate-y-10"
             }`}
           >
-            <div className="lg:space-y-6">
+            <div id="munjal-group" className="lg:space-y-6">
               <p className="text-black text-lg font-normal tracking-wide mb-2">
                 #GROUP COMPANY///
               </p>
@@ -972,10 +963,8 @@ const BoardOfDirectors = () => {
         </div>
       </div>
     </div>
-    
   );
 };
-
 
 // export default BoardOfDirectors;
 
@@ -984,7 +973,6 @@ const BoardOfDirectors = () => {
 // export default BoardOfDirectors;
 // export default MunjalAutoGroup;
 // export default LegacySection;
-
 
 // import React from 'react';
 import { Twitter, Facebook, Instagram, Github } from "lucide-react";
