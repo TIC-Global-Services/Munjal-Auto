@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import companyLogo from '../assets/munjalAutologo-.png';
 
 const TopNav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const contents = [
     { name: "Home", link: "/" },
@@ -73,12 +74,14 @@ const TopNav = () => {
       <div className="hidden lg:block">
         <div className="absolute flex justify-between items-center w-full text-white px-4 sm:px-6 md:px-10 lg:px-14 xl:px-[80px] py-2">
           {/* Left Side */}
-          <div className="flex xl:space-x-14 lg:space-x-12 ">
+          <div className="flex xl:space-x-15 lg:space-x-12 ">
             {leftContents.map((item, index) => (
               <Link
                 key={index}
                 to={item.link}
-                className="xl:text-[16px] font-medium lg:text-[14px]  hover:text-[#ED1C24]"
+                className={`xl:text-[16px] font-medium lg:text-[14px] hover:text-[#ED1C24] ${
+                  location.pathname === item.link ? 'text-[#ED1C24]' : ''
+                }`}
               >
                 {item.name}
               </Link>
@@ -91,7 +94,9 @@ const TopNav = () => {
               <Link
                 key={index}
                 to={item.link}
-                className="xl:text-[16px] lg:text-[14px] font-medium hover:text-[#ED1C24]"
+                className={`xl:text-[16px] lg:text-[14px] font-medium hover:text-[#ED1C24] ${
+                  location.pathname === item.link ? 'text-[#ED1C24]' : ''
+                }`}
               >
                 {item.name}
               </Link>
@@ -181,7 +186,9 @@ const TopNav = () => {
                     >
                       <Link
                         to={item.link}
-                        className="block py-3 text-center text-2xl font-medium text-gray-600 hover:text-[#A10E2B]"
+                        className={`block py-3 text-center text-2xl font-medium hover:text-[#A10E2B] ${
+                          location.pathname === item.link ? 'text-[#A10E2B]' : 'text-gray-600'
+                        }`}
                         onClick={() => {
                           toggleMenu();
                         }}

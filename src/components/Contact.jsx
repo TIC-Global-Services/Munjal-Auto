@@ -133,7 +133,7 @@ const Contact = () => {
 
 
             
-          <div className="absolute bottom-5 right-5 flex flex-col items-center space-y-5 z-[999]">
+            <div className="absolute bottom-5 right-5 flex flex-col items-center space-y-5 z-[999]">
               <Link to="/contact">
                 <img
                   src={icon1}
@@ -183,7 +183,7 @@ const Contact = () => {
             {/* Year Marker with Animation */}
   
             {/* Centered Text and Timeline Container */}
-            <div className=" md:block flex items-center justify-center flex-col absolute text-left left-0">
+            <div className=" md:block flex items-center justify-center flex-col absolute md:text-left text-center left-0">
               <h1 className="text-[#FFFCFC] rounded-[10px] px-10 py-4 text-[54px] font-[500] mb-12">
               Contact Us
               </h1>

@@ -13,6 +13,10 @@ import icon2 from "../assets/hero/icon2.png";
 import youtube from "../assets/hero/youtube.png";
 import insta from "../assets/hero/insta.png";
 
+import Testing from "./Testing";
+
+import Policy from "./Quality/Policy";
+
 const Quality = () => {
   const [isVisible, setIsVisible] = useState(false);
   const location = useLocation();
@@ -156,7 +160,7 @@ const Quality = () => {
               </Link>
             </div>
 
-            <div className="absolute top-[30%] left-5 flex flex-col items-center space-y-4 z-[999]">
+            <div className="absolute top-[25%] left-5 flex flex-col items-center space-y-4 z-[999]">
               <a
                 href="https://youtube.com"
                 target="_blank"
@@ -198,7 +202,7 @@ const Quality = () => {
           </div>
         </div>
       </div>
-      <QualityPolicy />
+      <Policy />
       <Testing />
       <Certification />
       {/* <Testi/> */}
@@ -415,49 +419,49 @@ const QualityPolicy = () => {
 };
 
 import standroom from "../assets/standroom.png";
-const Testing = () => {
-  return (
-    <div className=" my-28 md:px-0 px-4 rounded-xl flex max-w-7xl mx-auto flex-col items-center justify-center md:mt-0 mt-[300px] ">
-      <div className="  text-center flex flex-col items-center justify-center max-w-2xl">
-        <h1 className=" text-2xl md:text-[40px]  font-medium text-[#ED1C24]">Testing & Facilities Lab</h1>
-        <p className=" md:text-base   leading-[20px] text-xs md:w-full w-[80%] text-[#82848A] mt-4">
-          MAIL’s advanced Standard Room houses cutting-edge testing and
-          measuring instruments. Our metallurgical and chemical labs ensure
-          precise, routine, and periodic testing, guaranteeing unmatched quality
-          and reliability.
-        </p>
-      </div>
-      <div className="my-16 w-full px-4 md:rounded-xl rounded-md md:px-10 md:py-10 bg-[#ECECF0]">
-        <h1 className="md:block hidden text-2xl font-medium text-[#ED1C24]">Standard Room</h1>
-        <div className=" relative flex md:flex-row flex-col mt-6">
-          <img src={standroom}  className="  rounded-md md:mr-10 w-full md:w-[60%]"/>
-        <h1 className="block md:hidden text-lg my-7 font-medium text-[#ED1C24]">Standard Room</h1>
-          <div className=" md:ml-0 ml-6 text-[#151414]">
-            <ul className=" flex flex-col  list-disc  max-w-xs leading-[34px]">
-              <li> CMM -4 NO (at all plants)</li>
-              <li> Profile Projector</li>
-              <li>Micro Scope</li>
-              <li>Height Masters</li>
-              <li>
-                Others including Surface Table ,Height gauge ,Bevel Protector
-                ,Micrometer ( Inside/ outside), Verniers etc
-              </li>
-            </ul>
-          </div>
-          <div className="  scale-75 md:my-0 my-4 md:scale-100 w-fit px-4 py-4 rounded-full  md:ml-0 ml-4 md:absolute  md:bottom-0  right-0  h-fit  bg-[#FF0000]">
-      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M19.3332 25.3492C19.3364 25.0866 19.4363 24.8251 19.6461 24.6203L27.3957 17.0552L19.8306 9.30555C19.4346 8.89988 19.4426 8.23643 19.8482 7.84042C20.2539 7.44441 20.9174 7.4524 21.3134 7.85806L29.6023 16.3491C29.9983 16.7547 29.9903 17.4182 29.5846 17.8142L21.0936 26.1031C20.688 26.4991 20.0245 26.4911 19.6285 26.0854C19.4235 25.8894 19.3301 25.6118 19.3332 25.3492Z" fill="white"/>
-<path d="M4.32686 16.7774C4.33368 16.2107 4.80929 15.7464 5.37599 15.7532L28.6384 16.0334C29.2051 16.0402 29.6694 16.5158 29.6626 17.0825C29.6557 17.6492 29.1801 18.1135 28.6134 18.1067L5.35102 17.8265C4.78432 17.8197 4.32003 17.3441 4.32686 16.7774Z" fill="white"/>
-</svg>
+// const Testing = () => {
+//   return (
+//     <div className=" my-28 md:px-0 px-4 rounded-xl flex max-w-7xl mx-auto flex-col items-center justify-center md:mt-0 mt-[300px] ">
+//       <div className="  text-center flex flex-col items-center justify-center max-w-2xl">
+//         <h1 className=" text-2xl md:text-[40px]  font-medium text-[#ED1C24]">Testing & Facilities Lab</h1>
+//         <p className=" md:text-base   leading-[20px] text-xs md:w-full w-[80%] text-[#82848A] mt-4">
+//           MAIL’s advanced Standard Room houses cutting-edge testing and
+//           measuring instruments. Our metallurgical and chemical labs ensure
+//           precise, routine, and periodic testing, guaranteeing unmatched quality
+//           and reliability.
+//         </p>
+//       </div>
+//       <div className="my-16 w-full px-4 md:rounded-xl rounded-md md:px-10 md:py-10 bg-[#ECECF0]">
+//         <h1 className="md:block hidden text-2xl font-medium text-[#ED1C24]">Standard Room</h1>
+//         <div className=" relative flex md:flex-row flex-col mt-6">
+//           <img src={standroom}  className="  rounded-md md:mr-10 w-full md:w-[60%]"/>
+//         <h1 className="block md:hidden text-lg my-7 font-medium text-[#ED1C24]">Standard Room</h1>
+//           <div className=" md:ml-0 ml-6 text-[#151414]">
+//             <ul className=" flex flex-col  list-disc  max-w-xs leading-[34px]">
+//               <li> CMM -4 NO (at all plants)</li>
+//               <li> Profile Projector</li>
+//               <li>Micro Scope</li>
+//               <li>Height Masters</li>
+//               <li>
+//                 Others including Surface Table ,Height gauge ,Bevel Protector
+//                 ,Micrometer ( Inside/ outside), Verniers etc
+//               </li>
+//             </ul>
+//           </div>
+//           <div className="  scale-75 md:my-0 my-4 md:scale-100 w-fit px-4 py-4 rounded-full  md:ml-0 ml-4 md:absolute  md:bottom-0  right-0  h-fit  bg-[#FF0000]">
+//       <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+// <path d="M19.3332 25.3492C19.3364 25.0866 19.4363 24.8251 19.6461 24.6203L27.3957 17.0552L19.8306 9.30555C19.4346 8.89988 19.4426 8.23643 19.8482 7.84042C20.2539 7.44441 20.9174 7.4524 21.3134 7.85806L29.6023 16.3491C29.9983 16.7547 29.9903 17.4182 29.5846 17.8142L21.0936 26.1031C20.688 26.4991 20.0245 26.4911 19.6285 26.0854C19.4235 25.8894 19.3301 25.6118 19.3332 25.3492Z" fill="white"/>
+// <path d="M4.32686 16.7774C4.33368 16.2107 4.80929 15.7464 5.37599 15.7532L28.6384 16.0334C29.2051 16.0402 29.6694 16.5158 29.6626 17.0825C29.6557 17.6492 29.1801 18.1135 28.6134 18.1067L5.35102 17.8265C4.78432 17.8197 4.32003 17.3441 4.32686 16.7774Z" fill="white"/>
+// </svg>
 
-      </div>
-        </div>
+//       </div>
+//         </div>
        
-      </div>
+//       </div>
     
-    </div>
-  );
-};
+//     </div>
+//   );
+// };
 
 import cer1 from "../assets/cer1.jpeg"
 import cer2 from "../assets/cer2.jpeg"
@@ -467,7 +471,7 @@ import { FooterMain } from "./FooterMain";
 const Certification = ()=>{
   return(
     <div className=" max-w-6xl mx-auto my-20 pb-20">
-      <h1 className=" text-2xl md:text-4xl font-medium text-[#141313] text-center mb-10">Our Certification</h1>
+      <h1 className=" text-2xl md:text-4xl font-medium text-[#ED1C24] text-center mb-10">Our Certification</h1>
       <div className="  md:flex-row flex-col items-center justify-center w-full mx-auto  hidden md:flex">
         <div>
           <img src={cer1} className=" rounded-lg  w-[80%]" alt="" />

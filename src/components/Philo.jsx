@@ -3,7 +3,7 @@ import img from "../assets/PILO.jpeg";
 import logo from "../assets/logo.png";
 import pilo2 from "../assets/pilo2.jpeg";
 import Footer from "./Footer";
-import { motion, useInView } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import TopNav from "./TopNav";
 import { FooterMain } from "./FooterMain";
@@ -13,9 +13,53 @@ import icon2 from "../assets/hero/icon2.png";
 import youtube from "../assets/hero/youtube.png";
 import insta from "../assets/hero/insta.png";
 
+
+
+const fadeInUp2 = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+const contents = [
+  {
+    name: "Mission",
+    description:
+      "To innovate, manufacture, and deliver high-performance components with precision, integrity, and sustainability at the forefront.",
+  },
+  {
+    name: "Values",
+    description: [
+      "Be ethical",
+      "Be respectful",
+      "Care for the society",
+      "Safety",
+      "Pride in oneself",
+    ],
+  },
+];
+
+
 const Philo = () => {
   const [isVisible, setIsVisible] = useState(false);
   const location = useLocation();
+  const [index, setIndex] = useState(0);
+
+  // Auto-scroll logic
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % contents.length);
+    }, 5000); // Change every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const current = contents[index];
+
+
 
   const isActive = (path) => {
     return location.pathname === path;
@@ -191,18 +235,14 @@ const Philo = () => {
               className="absolute top-0 w-[60%] md:w-1/3 left-1/2 transform -translate-x-1/2"
             />
           </Link>
-          <div className="md:block flex items-center justify-center flex-col absolute text-left left-0">
+          <div className="md:block flex items-center justify-center flex-col absolute md:text-left text-center left-0">
             <h1 className="text-[#FFFCFC] rounded-[10px] px-10 py-4 text-[54px] font-[500] mb-12">
               Innovation with <br /> Integrity
             </h1>
           </div>
 
 
-          
-
-          
-
-          
+        
 
           
         </div>
@@ -241,27 +281,49 @@ const Philo = () => {
             viewport={{ once: true }}
             variants={fadeIn}
           />
-          <motion.div
-            className="absolute bottom-16 left-8 md:left-20 lg:left-20 xl:left-10 text-left max-w-[260px] md:max-w-3xl text-white p-4 md:p-8 rounded-md md:rounded-[20px]"
-            style={{
-              border: "1px solid #FFFFFF1A",
-              backdropFilter: "blur(22.200000762939453px)",
-              background: "#FFFFFF26",
-            }}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-          >
-            <h3 className="text-white text-base md:text-4xl">
-              Our <span className="text-[#FF0000]"> Mission</span>
-            </h3>
-            <p className=" text-[10px] md:text-base font-normal max-w-sm tracking-wider">
-              To innovate, manufacture, and deliver high-performance components
-              with precision, integrity, and sustainability at the forefront.
-            </p>
-          </motion.div>
-          <motion.button
+      <motion.div
+  className="absolute md:bottom-16 md:left-8 bottom-8 left-10 md:left-20 lg:left-20 xl:left-10 text-left md:w-[467px]  text-white p-4 md:p-8 rounded-md md:rounded-[20px]"
+  style={{
+    border: "1px solid #FFFFFF1A",
+    backdropFilter: "blur(22.2px)",
+    background: "#FFFFFF26",
+  }}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  variants={fadeInUp2}
+>
+  {/* Title - stays static */}
+  <h3 className="text-white text-base md:text-4xl">
+    Our <span className="text-[#FF0000]">{current.name}</span>
+  </h3>
+
+  {/* Content wrapper with animation */}
+  <AnimatePresence mode="wait">
+    <motion.div
+      key={current.name} 
+      initial={{ opacity: 0, x: 0 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 0 }}
+      transition={{ duration: 0.5 }}
+      className="transition-all duration-500 ease-in-out mt-2"
+    >
+      {Array.isArray(current.description) ? (
+        <ul className="list-disc text-[10px] md:text-base font-normal max-w-sm tracking-wider pl-4 space-y-1">
+          {current.description.map((item, idx) => (
+            <li key={idx}>{item}</li>
+          ))}
+        </ul>
+      ) : (
+        <p className="text-[10px] md:text-base font-normal max-w-sm tracking-wider">
+          {current.description}
+        </p>
+      )}
+    </motion.div>
+  </AnimatePresence>
+</motion.div>
+
+          {/* <motion.button
             className="absolute text-sm md:text-base bottom-4 lg:bottom-10  md:bottom-10  right-[65%]  md:right-24 lg:right-24 bg-red-600 text-white px-4 py-2 rounded-full"
             initial="hidden"
             whileInView="visible"
@@ -269,7 +331,7 @@ const Philo = () => {
             variants={fadeInUp}
           >
             Our Values
-          </motion.button>
+          </motion.button> */}
         </div>
         <motion.h2
           className="text-[#ED1C24] text-2xl mt-20 md:mt-40 mb-4"

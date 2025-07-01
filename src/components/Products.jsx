@@ -6,6 +6,11 @@ import SteelRing2 from "../assets/products/ring2.png";
 import TopNav from "./TopNav";
 
 import { Link, useLocation } from "react-router-dom";
+import icon1 from "../assets/hero/icon.png";
+import icon2 from "../assets/hero/icon2.png";
+import youtube from "../assets/hero/youtube.png";
+import insta from "../assets/hero/insta.png";
+
 
 const Products = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -128,8 +133,53 @@ const Products = () => {
             />
           </Link>
 
+
+          <div className="absolute bottom-5 right-5 flex flex-col items-center space-y-5 z-[999]">
+              <Link to="/contact">
+                <img
+                  src={icon1}
+                  alt="contact"
+                  className="w-[30px] md:w-[40px] cursor-pointer hover:scale-125"
+                />
+              </Link>
+
+              <Link to="/contact">
+                <img
+                  src={icon2}
+                  alt="contact"
+                  className="w-[55px] cursor-pointer hover:scale-125"
+                />
+              </Link>
+            </div>
+
+            <div className="absolute top-[38%] left-5 flex flex-col items-center space-y-4 z-[999]">
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={youtube}
+                  alt="YouTube"
+                  className="w-[40px] cursor-pointer hover:scale-105"
+                />
+              </a>
+
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={insta}
+                  alt="Instagram"
+                  className="w-[40px] cursor-pointer hover:scale-105"
+                />
+              </a>
+            </div>
+
           {/* Centered Text and Timeline Container */}
-          <div className=" md:block flex items-center justify-center flex-col absolute text-right right-0">
+          <div className=" md:block flex items-center justify-center flex-col absolute md:text-right text-center right-0">
             <h1 className="text-[#FFFCFC] rounded-[10px] px-10 py-4 text-[54px] font-[500] mb-12">
               We Stand For​ <br />
               Quality & Technology
@@ -137,6 +187,8 @@ const Products = () => {
 
 
             
+        
+
 
             {/* Timeline Line with Animation */}
           </div>

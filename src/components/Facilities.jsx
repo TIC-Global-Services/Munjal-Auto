@@ -5,7 +5,6 @@ import Footer from "./Footer";
 import { Link, useLocation } from "react-router-dom";
 import TopNav from "./TopNav";
 
-
 import icon1 from "../assets/hero/icon.png";
 import icon2 from "../assets/hero/icon2.png";
 import youtube from "../assets/hero/youtube.png";
@@ -142,58 +141,56 @@ const Facilities = () => {
             />
           </Link>
 
-
-
           <div className="absolute bottom-5 right-5 flex flex-col items-center space-y-5 z-[999]">
-              <Link to="/contact">
-                <img
-                  src={icon1}
-                  alt="contact"
-                  className="w-[30px] md:w-[40px] cursor-pointer hover:scale-125"
-                />
-              </Link>
+            <Link to="/contact">
+              <img
+                src={icon1}
+                alt="contact"
+                className="w-[30px] md:w-[40px] cursor-pointer hover:scale-125"
+              />
+            </Link>
 
-              <Link to="/contact">
-                <img
-                  src={icon2}
-                  alt="contact"
-                  className="w-[55px] cursor-pointer hover:scale-125"
-                />
-              </Link>
-            </div>
+            <Link to="/contact">
+              <img
+                src={icon2}
+                alt="contact"
+                className="w-[55px] cursor-pointer hover:scale-125"
+              />
+            </Link>
+          </div>
 
-            <div className="absolute top-[38%] left-5 flex flex-col items-center space-y-4 z-[999]">
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={youtube}
-                  alt="YouTube"
-                  className="w-[40px] cursor-pointer hover:scale-105"
-                />
-              </a>
+          <div className="absolute top-[26%] left-5 flex flex-col items-center space-y-4 z-[999]">
+            <a
+              href="https://youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={youtube}
+                alt="YouTube"
+                className="w-[40px] cursor-pointer hover:scale-105"
+              />
+            </a>
 
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={insta}
-                  alt="Instagram"
-                  className="w-[40px] cursor-pointer hover:scale-105"
-                />
-              </a>
-            </div>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={insta}
+                alt="Instagram"
+                className="w-[40px] cursor-pointer hover:scale-105"
+              />
+            </a>
+          </div>
           {/* <div className="absolute inset-0 flex flex-col items-center justify-center"> */}
           {/* Timeline Line with Animation */}
 
           {/* Year Marker with Animation */}
 
           {/* Centered Text and Timeline Container */}
-          <div className=" md:block flex items-center justify-center flex-col absolute text-left left-0">
+          <div className=" md:block flex items-center justify-center flex-col absolute md:text-left text-center left-0">
             <h1 className="text-[#FFFCFC] rounded-[10px] px-10 py-4 text-[54px] font-[500] mb-12">
               Our Facilities
             </h1>
@@ -491,7 +488,7 @@ const TestingContent = ({ content }) => {
   return (
     <div className="max-w-7xl mx-auto px-4 mb-20">
       {/* Showcase Layout */}
-      <div className="bg-gray-900 text-white rounded-[20px] overflow-hidden mb-8">
+      {/* <div className="bg-gray-900 text-white rounded-[20px] overflow-hidden mb-8">
         <div className="grid md:grid-cols-2 gap-0">
           <div className="p-10 flex flex-col justify-center">
             <h2 className="text-[#FF252E] text-[20px] font-medium mb-4">
@@ -513,6 +510,60 @@ const TestingContent = ({ content }) => {
             />
           </div>
         </div>
+      </div> */}
+
+      <h1 className="text-[#151414] text-[28px] leading-[57px] text-center max-w-4xl mx-auto mt-20">
+        Our state-of-the-art manufacturing facilities are equipped with advanced
+        machinery and automated processes, ensuring high-precision components
+        that meet global standards.
+      </h1>
+
+      <div className="flex flex-row justify-between items-start max-w-8xl mt-[120px]">
+        <h1 className="text-[36px] font-medium">Fuel Tank <br /> Manufactuirng</h1>
+
+        <div className="flex flex-col justify-center items-start space-y-5">
+          <div>
+            <h1 className="text-[#ED1C24] text-[26px] font-semibold mb-2">
+              Stamping
+            </h1>
+            <div className="w-full text-left">
+              <ul className="list-disc pl-5 space-y-4 columns-1 gap-x-8  text-[#626367]">
+                <li>
+                  Presses ranging from 200 – 1000 TON With Large bed sizes
+                </li>
+                <li>
+                  Bed Size from 850 mm X 1450 mm to 2350 mmX 3250 mm Shut Height
+                  550 mm to 1050 mm
+                </li>
+                <li>Supported By Following Hardware (Work Stations)</li>
+                <li>HP Z-600</li>
+                <li>HP Z-400 </li>
+                <li>Plotter HP-500</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h1 className="text-[#ED1C24] text-[26px] font-semibold mb-2">
+              Tool Design Center ( Waghodia)
+            </h1>
+            <div className="w-80 text-left">
+              <ul className="list-disc pl-5 space-y-4 columns-1 gap-x-8  text-[#626367]">
+                <li>
+                CATIA V-5 –R-60
+                </li>
+                <li>
+                Pro-E Wildfire
+                </li>
+                <li>Hyper Form ( Blank & Nest)</li>
+                <li>AutoCAD</li>
+                <li>Supported by Following Hardware (Work Stations)</li>
+                <li>HP XW-4600</li>
+                <li>IBM-Intelli-Star Z-Pro</li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -520,14 +571,14 @@ const TestingContent = ({ content }) => {
 
 // Component for the "Sustainable Manufacturing" tab
 // Component for the "Sustainable Manufacturing" tab
-import fab1 from "../assets/fab1.png";
-import fab2 from "../assets/fab2.png";
-import fab3 from "../assets/fab3.png";
-import fab4 from "../assets/fab4.png";
-import fab5 from "../assets/fab6.jpeg";
+import fab1 from "../assets/Facilities/1.png";
+import fab2 from "../assets/Facilities/2.png";
+import fab3 from "../assets/Facilities/3.png";
+import fab4 from "../assets/Facilities/4.png";
+import fab5 from "../assets/Facilities/5.png";
 import { motion } from "framer-motion";
 
-import fab6 from "../assets/fab6.jpeg";
+import fab6 from "../assets/Facilities/6.png";
 import { FooterMain } from "./FooterMain";
 const SustainableContent = ({ content }) => {
   return (
@@ -563,13 +614,13 @@ const SustainableContent = ({ content }) => {
               className="w-full h-40 sm:h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110"
             />
             <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black to-transparent"></div>
-            <div className="absolute bottom-0 left-0 p-4 md:p-6 w-full transform transition-transform duration-300 group-hover:translate-y-[-8px]">
-              <h3 className="text-[#FF0000] text-lg md:text-2xl font-medium mb-2">
+            <div className="absolute bottom-0 left-0 p-4 md:p-6 w-full transform transition-transform duration-300 group-hover:translate-y-[8px]">
+              <h3 className="text-[#FF0000] text-lg md:text-2xl font-medium ">
                 {card.title}
               </h3>
-              <p className="text-white text-sm md:text-base opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                Lorem ipsum dolor sit amet conse...
-              </p>
+              {/* <p className="text-white text-sm md:text-base opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Lorem ipsum dolor sit .
+              </p> */}
             </div>
           </motion.div>
         ))}
@@ -601,9 +652,9 @@ const SustainableContent = ({ content }) => {
               <h3 className="text-[#FF0000] text-lg md:text-2xl font-medium mb-2">
                 {card.title}
               </h3>
-              <p className="text-white text-sm md:text-base opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              {/* <p className="text-white text-sm md:text-base opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 Lorem ipsum dolor sit amet conse...
-              </p>
+              </p> */}
             </div>
           </motion.div>
         ))}

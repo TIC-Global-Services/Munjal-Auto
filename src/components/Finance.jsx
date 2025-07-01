@@ -183,7 +183,7 @@ const Finance = () => {
           {/* Year Marker with Animation */}
 
           {/* Centered Text and Timeline Container */}
-          <div className=" md:block flex items-center justify-center flex-col absolute text-left left-0">
+          <div className=" md:block flex items-center justify-center flex-col absolute md:text-left text-center left-0">
             <h1 className="text-[#FFFCFC] rounded-[10px] px-10 py-4 text-[54px] font-[500] mb-12">
             Our Finance
             </h1>
