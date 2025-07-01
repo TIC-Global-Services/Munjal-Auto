@@ -159,7 +159,7 @@ const Facilities = () => {
             </Link>
           </div>
 
-          <div className="absolute top-[26%] left-5 flex flex-col items-center space-y-4 z-[999]">
+          <div className="absolute  left-5 flex flex-col items-center space-y-4 z-[999]">
             <a
               href="https://youtube.com"
               target="_blank"
@@ -190,7 +190,7 @@ const Facilities = () => {
           {/* Year Marker with Animation */}
 
           {/* Centered Text and Timeline Container */}
-          <div className=" md:block flex items-center justify-center flex-col absolute md:text-left text-center left-0">
+          <div className=" md:block flex items-center justify-center flex-col absolute left-9 mt-10 md:text-left text-center left-0">
             <h1 className="text-[#FFFCFC] rounded-[10px] px-10 py-4 text-[54px] font-[500] mb-12">
               Our Facilities
             </h1>
@@ -321,9 +321,9 @@ const FacilitiesContent = ({ content }) => {
           <p className="text-gray-300 text-2xl w-full lg:w-[90%] mb-6">
             {content.description}
           </p>
-          <button className="bg-white text-black px-6 py-3 rounded-[12px] font-medium hover:bg-gray-100 transition-colors">
+          {/* <button className="bg-white text-black px-6 py-3 rounded-[12px] font-medium hover:bg-gray-100 transition-colors">
             Explore more
-          </button>
+          </button> */}
         </div>
         <div className="w-full lg:w-[45%] h-64 lg:h-auto lg:mr-10">
           <img
@@ -425,9 +425,9 @@ const PrecisionEngineeringContent = ({ content }) => {
               </li>
             </ul>
           </div>
-          <div className=" ml-4 border rounded-xl  border-black  px-6 py-2">
+          <Link to='/contact' className=" ml-4 border rounded-xl  border-black  px-6 py-2">
             Contact Us
-          </div>
+          </Link>
         </div>
       </div>
 

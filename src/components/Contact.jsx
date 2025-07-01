@@ -151,7 +151,7 @@ const Contact = () => {
               </Link>
             </div>
 
-            <div className="absolute top-[30%] left-5 flex flex-col items-center space-y-4 z-[999]">
+            <div className="absolute  left-5 flex flex-col items-center space-y-4 z-[999]">
               <a
                 href="https://youtube.com"
                 target="_blank"
@@ -183,7 +183,7 @@ const Contact = () => {
             {/* Year Marker with Animation */}
   
             {/* Centered Text and Timeline Container */}
-            <div className=" md:block flex items-center justify-center flex-col absolute md:text-left text-center left-0">
+            <div className=" md:block flex items-center justify-center flex-col absolute mt-10 left-9 md:text-left text-center left-0">
               <h1 className="text-[#FFFCFC] rounded-[10px] px-10 py-4 text-[54px] font-[500] mb-12">
               Contact Us
               </h1>

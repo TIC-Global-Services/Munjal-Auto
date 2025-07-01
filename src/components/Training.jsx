@@ -1,6 +1,6 @@
 import React, {useRef, useState, useEffect } from "react";
-import img from "../assets/trainingBanner.png";
-import logo from "../assets/logo.png";
+import img from "../assets/trHero.png";
+import logo from "../assets/companyLogo.png";
 import Footer from "./Footer";
 import { Link, useLocation } from "react-router-dom";
 import TopNav from "./TopNav";
@@ -152,7 +152,7 @@ const Training = () => {
               </Link>
             </div>
 
-            <div className="absolute top-[28%] left-5 flex flex-col items-center space-y-4 z-[999]">
+            <div className="absolute  left-5 flex flex-col items-center space-y-4 z-[999]">
               <a
                 href="https://youtube.com"
                 target="_blank"
@@ -185,7 +185,7 @@ const Training = () => {
           {/* Year Marker with Animation */}
 
           {/* Centered Text and Timeline Container */}
-          <div className=" md:block flex items-center justify-center flex-col absolute text-left left-0">
+          <div className=" md:block flex items-center justify-center flex-col absolute left-9 mt-10 text-left left-0">
             <h1 className="text-[#FFFCFC] rounded-[10px] px-10 py-4 text-[54px] font-[500] mb-12">
          Training
             </h1>
