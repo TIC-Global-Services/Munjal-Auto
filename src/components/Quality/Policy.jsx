@@ -74,7 +74,7 @@ const Policy = () => {
           </div>
   
           {/* 3D Model */}
-          <div className="absolute top-[70%] sm:top-[65%] md:top-[50%] lg:top-[15%] left-[2%] z-10">
+          <div className="absolute top-[70%] sm:top-[65%] md:top-[50%] lg:top-[15%] md:left-[2%] lg:left-[0%] z-10">
             <div className="scale-50 sm:scale-75 md:scale-90 lg:scale-100 origin-top-left">
               <ModelViewer />
             </div>

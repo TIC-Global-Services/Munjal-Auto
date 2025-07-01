@@ -365,7 +365,7 @@ const FacilitiesContent = ({ content }) => {
           />
           <div className="flex flex-col text-center text-right items-center justify-center p-6 lg:p-0 gap-4 lg:gap-10">
             <h1 className="text-xl lg:text-xl xl:text-2xl w-full lg:w-[90%] font-medium">
-              Cutting- <span className="text-[#FF0000]"> Facilities</span>
+              Cutting- <span className="text-[#FF0000]">Edge Facilities</span>
             </h1>
             <p className="text-[#706C67] text-base lg:text-sm xl:text-base">
               Equipped with advanced manufacturing technology and in-house R&D,
