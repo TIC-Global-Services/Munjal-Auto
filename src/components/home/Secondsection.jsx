@@ -67,10 +67,12 @@ const Secondsection = () => {
               assemblies using advanced sheet metal, composite materials, and
               precision molding techniques.
             </motion.p>
-
-            <motion.button variants={itemVariants} className="bg-white w-fit text-black md:mt-0 !mt-4 md:text-base text-xs px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
+<Link to='/about-us'>
+<motion.button variants={itemVariants} className="bg-white w-fit text-black md:mt-0 !mt-4 md:text-base text-xs px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
               More on Munjal
             </motion.button>
+</Link>
+            
           </motion.div>
 
           {/* Right Section */}

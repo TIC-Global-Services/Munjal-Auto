@@ -80,7 +80,7 @@ const Philo = () => {
   }, []);
 
   return (
-    <div className="bg-gray-50 overflow-hidden">
+    <div className=" overflow-hidden">
       <div className="h-screen w-full flex flex-col items-center justify-center relative">
         {/* Left Navigation */}
         {/* <div className="absolute text-sm left-20 top-20 transform -translate-y-1/2 md:flex hidden justify-between items-center z-[100] space-x-20">
@@ -201,7 +201,7 @@ const Philo = () => {
               </Link>
             </div>
 
-            <div className="absolute top-[28%] left-5 flex flex-col items-center space-y-4 z-[999]">
+            <div className="absolute top-[20%] left-5 flex flex-col items-center space-y-4 z-[999]">
               <a
                 href="https://youtube.com"
                 target="_blank"

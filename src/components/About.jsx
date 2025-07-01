@@ -269,7 +269,7 @@ const LegacySection = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-white">
+    <div className="relative min-h-screen w-full overflow-hidden bg-white px-10">
       <div className="container mx-auto px-6 lg:px-2">
         <div className="grid grid-cols-1 lg:grid-cols-12 md:gap-8 items-center min-h-screen">
           {/* Left Content - Take 5 columns */}
@@ -293,12 +293,15 @@ const LegacySection = () => {
               aerospace, renewable energy, defense, and railways.
             </p>
 
-            <button
+<Link to='/contact'>
+<button
               className="bg-black  !mt-10  hidden text-white px-8 py-3 rounded-full 
               hover:bg-gray-800 transition-colors duration-300 md:inline-flex"
             >
               Contact Us
             </button>
+</Link>
+            
           </div>
           <img
             src={legacy}
@@ -725,7 +728,7 @@ const MunjalAutoGroup = () => {
             isVisible ? "opacity-100 scale-100" : "opacity-0 scale-0"
           }`}
         >
-          <button
+          {/* <button
             className="bg-[#FF0000] hover:bg-red-600 transition-colors duration-300 w-10 h-10 md:w-16 md:h-16 rounded-full flex items-center justify-center group"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
@@ -744,7 +747,7 @@ const MunjalAutoGroup = () => {
                 d="M14 5l7 7m0 0l-7 7m7-7H3"
               />
             </svg>
-          </button>
+          </button> */}
         </div>
       </div>
 
