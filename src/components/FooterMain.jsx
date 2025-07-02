@@ -39,7 +39,7 @@ export const FooterMain = () => {
               </li>
               <li>
                 <a
-                  href="#board-directors"
+                  href="/about-us#board-directors"
                   className="text-gray-400 hover:text-white transition-colors duration-200"
                 >
                   Board Of Directors
@@ -54,7 +54,7 @@ export const FooterMain = () => {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="#steel-wheel-rim"
+                  href="/products#steel"
                   className="text-gray-400 hover:text-white transition-colors duration-200"
                 >
                   Steel Wheel Rim
@@ -62,7 +62,7 @@ export const FooterMain = () => {
               </li>
               <li>
                 <a
-                  href="#chase-parts"
+                  href="/products#auto"
                   className="text-gray-400 hover:text-white transition-colors duration-200"
                 >
                   Chase Parts & Assembly
@@ -70,23 +70,23 @@ export const FooterMain = () => {
               </li>
               <li>
                 <a
-                  href="#exhaust-system"
+                  href="/products#exhaust"
                   className="text-gray-400 hover:text-white transition-colors duration-200"
                 >
                   Exhaust System
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a
-                  href="#exhaust-wheel"
+                  href="/products#exhasut"
                   className="text-gray-400 hover:text-white transition-colors duration-200"
                 >
                   Exhaust Wheel
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a
-                  href="#biw-assembly"
+                  href="/products#fuel"
                   className="text-gray-400 hover:text-white transition-colors duration-200"
                 >
                   BIW Assembly
@@ -94,7 +94,7 @@ export const FooterMain = () => {
               </li>
               <li>
                 <a
-                  href="#lightweight-composite"
+                  href="/products#biw"
                   className="text-gray-400 hover:text-white transition-colors duration-200"
                 >
                   Lightweight Composite Parts
@@ -123,16 +123,16 @@ export const FooterMain = () => {
                 href="mailto:info@munjalauto.com"
                 className="hover:text-white transition-colors duration-200"
               >
-                info@munjalauto.com
+                mail@munjalauto.com
               </a>
             </p>
             <p className="text-gray-400 text-sm">
               <span className="font-medium">Phone:</span>{" "}
               <a
-                href="tel:+91XXXXXXXXX"
+                href="tel:+91 1244057891"
                 className="hover:text-white transition-colors duration-200"
               >
-                +91 XXXXX XXXXX
+                +91 1244057891/92
               </a>
             </p>
           </div>

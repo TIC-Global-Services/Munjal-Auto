@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import img from "../assets/aboutusbanner.png";
-import logo from "../assets/logo.png";
+import logo from "../assets/companyLogo.png";
 import { Link, useLocation } from "react-router-dom";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
@@ -12,6 +12,26 @@ import insta from "../assets/hero/insta.png";
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
   const location = useLocation();
+  
+  useEffect(() => {
+    const hash = window.location.hash;
+  
+    if (hash) {
+      const scrollToHash = () => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+          clearInterval(interval);
+        }
+      };
+  
+      const interval = setInterval(scrollToHash, 100); // Try every 100ms
+  
+      // Stop trying after 5 seconds (failsafe)
+      setTimeout(() => clearInterval(interval), 5000);
+    }
+  }, []);
+  
 
   // Function to check if the link is active
   const isActive = (path) => {
@@ -128,7 +148,7 @@ const About = () => {
             <img
               src={logo}
               alt="Logo"
-              className="absolute top-0 w-[60%] md:w-1/3 left-1/2 transform -translate-x-1/2"
+              className="absolute -top-[0.9px] w-[60%] md:w-1/3 left-1/2 transform -translate-x-1/2"
             />
           </Link>
 
@@ -786,27 +806,26 @@ const BoardOfDirectors = () => {
   const directors = [
     {
       id: 1,
-      name: "Sudhir Kumar Munjal",
+      name: "Mr. Sudhir Kumar Munjal",
       position: "Chairman & Managing Director",
       description:
         "A visionary entrepreneur with over 46 years of experience in the bicycle, automobile, and engineering industries, Mr. Sudhir Kumar Munjal is known for building high-performing teams and fostering a strong team spirit. An Arts graduate, he served as Director of Munjal Auto Industries Ltd. (1991-1993) before assuming the role of Managing Director in 1993 and Chairman & Managing Director in 2015. Under his leadership, the company successfully transitioned from bicycle manufacturing to auto components, driving a major turnaround in 1999-2000.",
-      image: placeholderImage, // Replace with aboutex1
+      image: placeholderImage,
     },
     {
       id: 2,
-      name: "Anju Munjal",
+      name: "Mrs. Anju Munjal",
       position: "Whole-time Director",
       description:
-        "A visionary entrepreneur with over 46 years of experience in the bicycle, automobile, and engineering industries, Mr. Sudhir Kumar Munjal is known for building high-performing teams and fostering a strong team spirit. An Arts graduate, he served as Director of Munjal Auto Industries Ltd. (1991-1993) before assuming the role of Managing Director in 1993 and Chairman & Managing Director in 2015. Under his leadership, the company successfully transitioned from bicycle manufacturing to auto components, driving a major turnaround in 1999-2000.",
-      image: placeholderImage, // Replace with aboutex2
+        "Mrs. Anju Munjal is an Arts Graduate. Mrs. Anju Munjal is having more than 30 years of rich experience in bicycle / automobile / engineering industry. In 1999, Mrs. Anju Munjal assumed charge as Whole Time Director of your Company. Under her stewardship, your Company is now one of the fastest growing auto component company in India.",
+      image: placeholderImage, 
     },
     {
       id: 3,
-      name: "Navi Kersi Sabavala",
+      name: "Mrs. Avi Kersi Sabavala",
       position: "Director",
-      description:
-        "A visionary entrepreneur with over 46 years of experience in the bicycle, automobile, and engineering industries, Mr. Sudhir Kumar Munjal is known for building high-performing teams and fostering a strong team spirit. An Arts graduate, he served as Director of Munjal Auto Industries Ltd. (1991-1993) before assuming the role of Managing Director in 1993 and Chairman & Managing Director in 2015. Under his leadership, the company successfully transitioned from bicycle manufacturing to auto components, driving a major turnaround in 1999-2000.",
-      image: placeholderImage, // Replace with aboutex3
+      description:'She is Post graduate in Social Sciences, Law and Management and a well-known Corporate Trainer with wide experience in conducting various soft skill training programmes for industrial personnel at all levels. She has wide experience in Business and Industry. She was President of Baroda Management Association (BMA) for the year 2016-17. In the year 2016-17, BMA won the Best Local Management Association Award from parent body – All India Management Association. Presently she is continuing to be on the Advisory Committee of Past Presidents. She has been past President of Vadodara Chamber of Commerce & Industry (VCCI) for 2 Terms i.e. 2010-12 & 2012-14.She is Professional Life member of All India Management Association (AIMA) and currently member of the Governing Council of AIMA.',
+      image: placeholderImage, 
     },
   ];
 
@@ -857,7 +876,8 @@ const BoardOfDirectors = () => {
   };
 
   return (
-    <div className="w-full  max-w-7xl mx-auto flex items-center p-8">
+    <div id="board-directors"
+     className="w-full  max-w-7xl mx-auto flex items-center p-8">
       <div className="w-full flex flex-col  lg:flex-row md:flex-col gap-8 items-start">
         {/* Left side - Title (30%) */}
         <div className="w-full md:w-3/12 md:flex hidden lg:flex flex-col md:whitespace-nowrap justify-center">

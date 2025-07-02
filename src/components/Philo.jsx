@@ -232,7 +232,7 @@ const Philo = () => {
             <img
               src={logo}
               alt="Logo"
-              className="absolute top-0 w-[60%] md:w-1/3 left-1/2 transform -translate-x-1/2"
+              className="absolute -top-[0.9px] w-[60%] md:w-1/3 left-1/2 transform -translate-x-1/2"
             />
           </Link>
           <div className="md:block flex items-center justify-center flex-col absolute left-10 mt-10 md:text-left text-center left-0">

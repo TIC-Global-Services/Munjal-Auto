@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import img from "../assets/faci-min.jpeg";
-import logo from "../assets/logo.png";
+import logo from "../assets/companyLogo.png";
 import Footer from "./Footer";
 import { Link, useLocation } from "react-router-dom";
 import TopNav from "./TopNav";
@@ -137,7 +137,7 @@ const Facilities = () => {
             <img
               src={logo}
               alt="Logo"
-              className="absolute top-0 w-[60%] md:w-1/3 left-1/2 transform -translate-x-1/2"
+              className="absolute -top-[0.9px] w-[60%] md:w-1/3 left-1/2 transform -translate-x-1/2"
             />
           </Link>
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import img from "../assets/products/quality.png";
-import logo from "../assets/logo.png";
+import logo from "../assets/CompanyLogo.png";
 import SteelRing1 from "../assets/products/ring1.png";
 import SteelRing2 from "../assets/products/ring2.png";
 import TopNav from "./TopNav";
@@ -12,9 +12,21 @@ import youtube from "../assets/hero/youtube.png";
 import insta from "../assets/hero/insta.png";
 
 
+
+const tabs = [
+  { id: "steel", label: "Steel wheel Rim" },
+  { id: "auto", label: "Chase parts & Assemble" },
+  { id: "exhaust", label: "Exhaust System" },
+  { id: "fuel", label: "BIW Assembly" },
+  { id: "biw", label: "Lightweight Composite Parts" },
+];
 const Products = () => {
   const [isVisible, setIsVisible] = useState(false);
   const location = useLocation();
+
+
+
+  
 
   // Function to check if the link is active
   const isActive = (path) => {
@@ -129,7 +141,7 @@ const Products = () => {
             <img
               src={logo}
               alt="Logo"
-              className="absolute top-0 w-[60%] md:w-1/3 left-1/2 transform -translate-x-1/2"
+              className="absolute -top-[0.9px] w-[60%] md:w-1/3 left-1/2 transform -translate-x-1/2"
             />
           </Link>
 
@@ -243,6 +255,44 @@ const ProductsSec = () => {
     return descObj ? descObj.wholeDescription : "";
   };
 
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '');
+      
+      if (hash && tabs.some(tab => tab.id === hash)) {
+        // Update active tab to match hash
+        setActiveTab(hash);
+        
+        // Small delay to ensure DOM is ready
+        setTimeout(() => {
+          const element = document.querySelector(`#${hash}`);
+          if (element) {
+            element.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }, 100);
+      }
+    };
+  
+    // Handle initial hash on component mount
+    handleHashChange();
+    
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+    
+    // Also listen for popstate (browser back/forward)
+    window.addEventListener('popstate', handleHashChange);
+    
+    // Cleanup
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener('popstate', handleHashChange);
+    };
+  }, [tabs]);
+
   const description = [
     {
       id: "steel",
@@ -271,13 +321,7 @@ const ProductsSec = () => {
     },
   ];
 
-  const tabs = [
-    { id: "steel", label: "Steel wheel Rim" },
-    { id: "auto", label: "Chase parts & Assemble" },
-    { id: "exhaust", label: "Exhaust System" },
-    { id: "fuel", label: "BIW Assembly" },
-    { id: "biw", label: "Lightweight Composite Parts" },
-  ];
+
 
   const steel = [
     {
@@ -601,6 +645,7 @@ const ProductsSec = () => {
             {tabs.map((tab) => (
               <motion.button
                 key={`scroll-${tab.id}`}
+                id={`scroll-${tab.id}`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setActiveTab(tab.id)}
@@ -627,14 +672,15 @@ const ProductsSec = () => {
         </div>
         {/* Content for all tabs */}
 
-        {getActiveContent().map((item, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 50, scale: 0.9 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="  mb-12 overflow-hidden "
-        >
+        <section id={activeTab} className="scroll-mt-20"> {/* ✅ This creates ID like "steel" */}
+  {getActiveContent().map((item, index) => (
+    <motion.div
+      key={index}  // ✅ Remove the ID from here
+      initial={{ opacity: 0, y: 50, scale: 0.9 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="mb-12 overflow-hidden"
+    >
           {/* Desktop Layout: Row with 3 columns */}
           <div className="hidden md:grid md:grid-cols-12 lg:grid-cols-12 gap-0 items-center min-h-[320px] w-full">
             {/* Image Section - Takes 4 columns on md, 3 on lg */}
@@ -830,6 +876,7 @@ const ProductsSec = () => {
           </div>
         </motion.div>
       ))}
+      </section>
       </div>
     </div>
   );

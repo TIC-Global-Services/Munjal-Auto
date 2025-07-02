@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import img from "../assets/contactBanner.png";
-import logo from "../assets/logo.png";
+import logo from "../assets/companyLogo.png";
 import Footer from "./Footer";
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
@@ -127,7 +127,7 @@ const Contact = () => {
               <img
                 src={logo}
                 alt="Logo"
-                className="absolute top-0 w-[60%] md:w-1/3 left-1/2 transform -translate-x-1/2"
+                className="absolute -top-[0.9px] w-[60%] md:w-1/3 left-1/2 transform -translate-x-1/2"
               />
             </Link>
 

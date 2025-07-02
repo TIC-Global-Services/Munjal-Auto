@@ -40,7 +40,7 @@ const Policy = () => {
   
           {/* Content overlay */}
           <div className="relative z-20 w-full h-full">
-            <div className="absolute top-[8%] left-[5%] sm:left-[10%] md:left-[12%] lg:left-[20%] xl:left-[15%]">
+            <div className="absolute top-[8%] left-[5%] sm:left-[10%] md:left-[12%] lg:left-[10%] xl:left-[15%]">
               <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-5xl font-[500] mb-4 lg:mt-10 xl:mt-0">
                 Quality Policy
               </h2>

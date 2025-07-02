@@ -232,7 +232,7 @@ const Home = () => {
             <img
               src={logo}
               alt="Company Logo"
-              className="absolute top-0 md:top-0 w-[60%] md:w-1/3 max-w-md left-1/2 transform -translate-x-1/2 z-20"
+              className="absolute -top-[0.9px] w-[60%] md:w-1/3 max-w-md left-1/2 transform -translate-x-1/2 z-20"
             />
 
             {/* Centered Content */}

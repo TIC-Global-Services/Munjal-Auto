@@ -317,7 +317,7 @@ const ProductionCapacity = () => {
           have the annual capacity to produce
         </h2>
 
-        <div className="grid grid-cols-4 md:grid-cols-2 gap-1 lg:grid-cols-4 md:gap-4">
+        <div className="grid grid-cols-4 md:grid-cols-2 gap-1 lg:grid-cols-2 xl:grid-cols-4 md:gap-4">
           {capacityData.map((item, index) => (
             <motion.div
               key={index}
