@@ -258,6 +258,7 @@ const About = () => {
       <MunjalAutoGroup />
       <Text />
       <BoardOfDirectors />
+      <Clients />
       <FooterMain />
     </div>
   );
@@ -999,6 +1000,7 @@ import { Twitter, Facebook, Instagram, Github } from "lucide-react";
 import TopNav from "./TopNav";
 import { FooterMain } from "./FooterMain";
 import TimeLine from "./home/TimeLine";
+import Clients from "./Clients";
 
 const Footer = () => {
   return (

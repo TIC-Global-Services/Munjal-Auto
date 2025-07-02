@@ -23,9 +23,6 @@ const tabs = [
 const Products = () => {
   const [isVisible, setIsVisible] = useState(false);
   const location = useLocation();
-
-
-
   
 
   // Function to check if the link is active
