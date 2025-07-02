@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import img from "../assets/products/quality.png";
-import logo from "../assets/CompanyLogo.png";
+import logo from "../assets/companyLogo.png";
 import SteelRing1 from "../assets/products/ring1.png";
 import SteelRing2 from "../assets/products/ring2.png";
 import TopNav from "./TopNav";
