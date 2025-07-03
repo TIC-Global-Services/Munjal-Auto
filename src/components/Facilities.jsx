@@ -159,7 +159,7 @@ const Facilities = () => {
             </Link>
           </div>
 
-          <div className="absolute  left-5 flex flex-col items-center space-y-4 z-[999]">
+          {/* <div className="absolute  left-5 flex flex-col items-center space-y-4 z-[999]">
             <a
               href="https://youtube.com"
               target="_blank"
@@ -183,14 +183,14 @@ const Facilities = () => {
                 className="w-[40px] cursor-pointer hover:scale-105"
               />
             </a>
-          </div>
+          </div> */}
           {/* <div className="absolute inset-0 flex flex-col items-center justify-center"> */}
           {/* Timeline Line with Animation */}
 
           {/* Year Marker with Animation */}
 
           {/* Centered Text and Timeline Container */}
-          <div className=" md:block flex items-center justify-center flex-col absolute left-9 mt-10 md:text-left text-center left-0">
+          <div className=" md:block flex items-center justify-center flex-col absolute  mt-10 md:text-left text-center left-0">
             <h1 className="text-[#FFFCFC] rounded-[10px] px-10 py-4 text-[54px] font-[500] mb-12">
               Our Facilities
             </h1>

@@ -170,7 +170,7 @@ const About = () => {
             </Link>
           </div>
 
-          <div className="absolute top-[38%] left-5 flex flex-col items-center space-y-4 z-[999]">
+          {/* <div className="absolute top-[38%] left-5 flex flex-col items-center space-y-4 z-[999]">
             <a
               href="https://youtube.com"
               target="_blank"
@@ -194,7 +194,7 @@ const About = () => {
                 className="w-[40px] cursor-pointer hover:scale-105"
               />
             </a>
-          </div>
+          </div> */}
 
           {/* <div className="text-center md:block flex items-center justify-center flex-col absolute bottom-20">
             <h1

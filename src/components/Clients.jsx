@@ -66,7 +66,7 @@ const Clients = () => {
     .splide__slide {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     transform: scale(0.8);
-    filter: blur(2px);
+    
     opacity: 0.6;
     z-index: 1; /* Lower z-index for inactive slides */
     }

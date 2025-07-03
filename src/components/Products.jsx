@@ -161,7 +161,7 @@ const Products = () => {
               </Link>
             </div>
 
-            <div className="absolute top-[38%] left-5 flex flex-col items-center space-y-4 z-[999]">
+            {/* <div className="absolute top-[38%] left-5 flex flex-col items-center space-y-4 z-[999]">
               <a
                 href="https://youtube.com"
                 target="_blank"
@@ -185,7 +185,7 @@ const Products = () => {
                   className="w-[40px] cursor-pointer hover:scale-105"
                 />
               </a>
-            </div>
+            </div> */}
 
           {/* Centered Text and Timeline Container */}
           <div className=" md:block flex items-center justify-center flex-col absolute md:text-right text-center right-0">

@@ -198,9 +198,9 @@ const TimeLine = () => {
                  <div
   className="text-center px-6 py-4 rounded-xl w-[188px] mx-auto group"
   style={{
-    backdropFilter: "blur(15px)",
+    backdropFilter: "blur(2px)",
     background: "rgba(0, 0, 0, 0.3)",
-    border: "2.5px solid rgba(192, 177, 177, 0.5)",
+    border: "2.5px solid rgba(192, 177, 177, 0.2)",
   }}
 >
   <p className="text-[#FFFCFC] font-bold text-[10px] leading-relaxed">

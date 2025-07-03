@@ -25,92 +25,10 @@ const Contact = () => {
     return (
       <div className=" ">
         <div className="h-screen w-full   flex flex-col items-center justify-center relative">
-          {/* Left Navigation */}
-          {/* <div className="absolute text-sm left-20 top-20 transform -translate-y-1/2 md:flex hidden justify-between items-center z-[100] space-x-20">
-            <Link
-              to="/"
-              className={`hover:text-gray-300 ${
-                isActive("/") ? "text-[#FF0000] font-bold" : "text-white"
-              }`}
-            >
-              Home
-            </Link>
-            <Link
-              to="/about-us"
-              className={`hover:text-gray-300 ${
-                isActive("/about-us") ? "text-[#FF0000] font-bold" : "text-white"
-              }`}
-            >
-              about-us
-            </Link>
-            <Link
-              to="/products"
-              className={`hover:text-gray-300 ${
-                isActive("/products") ? "text-[#FF0000] font-bold" : "text-white"
-              }`}
-            >
-              products
-            </Link>
-            <Link
-              to="/philosophy"
-              className={`hover:text-gray-300 ${
-                isActive("/philosophy")
-                  ? "text-[#FF0000] font-bold"
-                  : "text-white"
-              }`}
-            >
-              philosophy
-            </Link>
-          </div> */}
-  
-          {/* Right Navigation */}
-          {/* <div className="absolute text-sm right-20 top-20 transform -translate-y-1/2 md:flex hidden  items-center justify-between z-[100] space-x-12">
-            <Link
-              to="/quality"
-              className={`hover:text-gray-300 ${
-                isActive("/quality") ? "text-[#FF0000] font-bold" : "text-white"
-              }`}
-            >
-              Quality
-            </Link>
-            <Link
-              to="/finance"
-              className={`hover:text-gray-300 ${
-                isActive("/finance") ? "text-[#FF0000] font-bold" : "text-white"
-              }`}
-            >
-              Finance
-            </Link>
-            <Link
-              to="/training"
-              className={`hover:text-gray-300 ${
-                isActive("/training") ? "text-[#FF0000] font-bold" : "text-white"
-              }`}
-            >
-              Training
-            </Link>
-            <Link
-              to="/facilities"
-              className={`hover:text-gray-300 ${
-                isActive("/facilities") ? "text-[#FF0000] font-bold" : "text-white"
-              }`}
-            >
-              Facilities
-            </Link>
-            <Link
-              to="/contact"
-              className={`hover:text-gray-300 ${
-                isActive("/contact") ? "text-[#FF0000] font-bold" : "text-white"
-              }`}
-            >
-              Contact
-            </Link>
-          </div> */}
+          
           <div className="z-[100] absolute w-full top-20 flex justify-between items-center ">
   <TopNav />
 </div>
-  
-          {/* Background Image with Logo */}
           <div
             className="h-[90%] w-[94%] flex flex-col items-center justify-center rounded-[24px] relative"
             style={{
@@ -151,7 +69,7 @@ const Contact = () => {
               </Link>
             </div>
 
-            <div className="absolute  left-5 flex flex-col items-center space-y-4 z-[999]">
+            {/* <div className="absolute  left-5 flex flex-col items-center space-y-4 z-[999]">
               <a
                 href="https://youtube.com"
                 target="_blank"
@@ -175,15 +93,9 @@ const Contact = () => {
                   className="w-[40px] cursor-pointer hover:scale-105"
                 />
               </a>
-            </div>
-
-            {/* <div className="absolute inset-0 flex flex-col items-center justify-center"> */}
-            {/* Timeline Line with Animation */}
-  
-            {/* Year Marker with Animation */}
-  
+            </div> */}
             {/* Centered Text and Timeline Container */}
-            <div className=" md:block flex items-center justify-center flex-col absolute mt-10 left-9 md:text-left text-center left-0">
+            <div className=" md:block flex items-center justify-center flex-col absolute mt-10  md:text-left text-center left-0">
               <h1 className="text-[#FFFCFC] rounded-[10px] px-10 py-4 text-[54px] font-[500] mb-12">
               Contact Us
               </h1>
@@ -208,10 +120,178 @@ export default Contact
 import carPic from "../assets/CarPic.png"
 import carPic2 from "../assets/Carpic2.png"
 import { FooterMain } from "./FooterMain";
+import JobApplicationForm from "./JobApplicationForm";
 
 const TabNavigation = () => {
   const [activeTab, setActiveTab] = useState('office');
-  
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    mobile: '',
+    experience: '',
+    resume: null
+  });
+
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setFormData(prev => ({
+      ...prev,
+      resume: file
+    }));
+  };
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    // Show loading state
+    const submitButton = e.target.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton ? submitButton.textContent : '';
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Submitting...';
+    }
+    
+    try {
+      // Comprehensive validation
+      const validationErrors = [];
+      
+      if (!formData.name || formData.name.trim().length < 2) {
+        validationErrors.push('Name must be at least 2 characters long');
+      }
+      
+      if (!formData.email || !isValidEmail(formData.email)) {
+        validationErrors.push('Please enter a valid email address');
+      }
+      
+      if (!formData.mobile || !isValidMobile(formData.mobile)) {
+        validationErrors.push('Please enter a valid mobile number');
+      }
+      
+      if (!formData.experience || formData.experience.trim().length < 10) {
+        validationErrors.push('Experience description must be at least 10 characters long');
+      }
+      
+      if (!formData.resume) {
+        validationErrors.push('Please upload your resume');
+      } else {
+        // Validate file type and size
+        const allowedTypes = [
+          'application/pdf',
+          'application/msword',
+          'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+        ];
+        const maxSize = 5 * 1024 * 1024; // 5MB
+        
+        if (!allowedTypes.includes(formData.resume.type)) {
+          validationErrors.push('Resume must be a PDF, DOC, or DOCX file');
+        }
+        
+        if (formData.resume.size > maxSize) {
+          validationErrors.push('Resume file size must be less than 5MB');
+        }
+      }
+      
+      // Display validation errors
+      if (validationErrors.length > 0) {
+        alert('Please fix the following errors:\n\n' + validationErrors.join('\n'));
+        return;
+      }
+      
+      // Convert resume file to base64
+      const resumeBase64 = await convertFileToBase64(formData.resume);
+      
+      // Prepare form data for submission
+      const submitData = new FormData();
+      submitData.append('name', formData.name.trim());
+      submitData.append('email', formData.email.trim().toLowerCase());
+      submitData.append('mobile', formData.mobile.trim());
+      submitData.append('experience', formData.experience.trim());
+      submitData.append('resumeFileName', formData.resume.name);
+      submitData.append('resumeData', resumeBase64);
+      submitData.append('resumeType', formData.resume.type);
+      submitData.append('resumeSize', formData.resume.size);
+      submitData.append('timestamp', new Date().toISOString());
+      
+      // Replace with your actual Google Apps Script Web App URL
+      const SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+      
+      // Submit form with timeout
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
+      
+      const response = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: submitData,
+        signal: controller.signal
+      });
+      
+      clearTimeout(timeoutId);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const result = await response.json();
+      
+      if (result.result === 'success') {
+        // Success notification
+        alert('🎉 Application submitted successfully!\n\nThank you for your interest. We will review your application and get back to you soon.');
+        
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          mobile: '',
+          experience: '',
+          resume: null
+        });
+        
+        // Reset file input if it exists
+        const fileInput = document.querySelector('input[type="file"]');
+        if (fileInput) {
+          fileInput.value = '';
+        }
+        
+        // Optional: Redirect or show success page
+        // window.location.href = '/thank-you';
+        
+      } else {
+        throw new Error(result.error || 'Submission failed');
+      }
+      
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      
+      let errorMessage = 'Error submitting form. Please try again.';
+      
+      if (error.name === 'AbortError') {
+        errorMessage = 'Request timed out. Please check your internet connection and try again.';
+      } else if (error.message.includes('HTTP error')) {
+        errorMessage = 'Server error. Please try again later.';
+      } else if (error.message.includes('Failed to fetch')) {
+        errorMessage = 'Network error. Please check your internet connection.';
+      }
+      
+      alert( + errorMessage);
+      
+    } finally {
+      // Restore button state
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+      }
+    }
+  };
   const tabs = [
     { id: 'office', label: 'Office & Works' },
     { id: 'career', label: 'Career' },
@@ -346,7 +426,7 @@ const TabNavigation = () => {
             </div>
             
             <div className="w-full md:w-2/3">
-              <form className="space-y-10 h-full  flex flex-col   justify-center my-auto">
+              {/* <form className="space-y-10 h-full  flex flex-col   justify-center my-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <input 
@@ -403,7 +483,9 @@ const TabNavigation = () => {
                 <div>
                   <button className="bg-black text-white px-10 py-2 rounded">Apply</button>
                 </div>
-              </form>
+              </form> */}
+          <JobApplicationForm />
+
             </div>
           </motion.div>
         )}

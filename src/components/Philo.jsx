@@ -201,7 +201,7 @@ const Philo = () => {
               </Link>
             </div>
 
-            <div className="absolute  left-5 flex flex-col items-center space-y-4 z-[999]">
+            {/* <div className="absolute  left-5 flex flex-col items-center space-y-4 z-[999]">
               <a
                 href="https://youtube.com"
                 target="_blank"
@@ -225,7 +225,7 @@ const Philo = () => {
                   className="w-[40px] cursor-pointer hover:scale-105"
                 />
               </a>
-            </div>
+            </div> */}
 
           
           <Link to="/">
@@ -235,7 +235,7 @@ const Philo = () => {
               className="absolute -top-[0.9px] w-[60%] md:w-1/3 left-1/2 transform -translate-x-1/2"
             />
           </Link>
-          <div className="md:block flex items-center justify-center flex-col absolute left-10 mt-10 md:text-left text-center left-0">
+          <div className="md:block flex items-center justify-center flex-col absolute  mt-10 md:text-left text-center left-0">
             <h1 className="text-[#FFFCFC] rounded-[10px] px-10 py-4 text-[54px] font-[500] mb-12">
               Innovation with <br /> Integrity
             </h1>
