@@ -202,7 +202,7 @@ const Training = () => {
       <BoardOfDirectors /> */}
       {/* <CardStack/> */}
       <div className=" -mt-80">
-      <Footer />
+      <FooterMain />
       </div>
     </div>
   );
@@ -217,6 +217,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
  import train1 from "../assets/train1.png"
  import train2 from "../assets/train2.png"
  import train3 from "../assets/train3.png"
+import { FooterMain } from "./FooterMain";
 const PinnedScrollSection = () => {
   const containerRef = useRef(null);
   
