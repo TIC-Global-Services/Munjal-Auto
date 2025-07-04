@@ -770,7 +770,7 @@ const ProductsSec = () => {
                 className="bg-black text-white px-6 py-3 rounded-xl text-base font-medium cursor-pointer transition-all duration-200 hover:bg-gray-800 shadow-md whitespace-nowrap"
                 onClick={() => toggleExpanded(index)}
               >
-                {expandedItems[index] ? "Show Less" : "Explore More"}
+                {expandedItems[index] ? "Show Less" : "Learn More"}
               </motion.button>
             </div>
           </div>
@@ -866,7 +866,7 @@ const ProductsSec = () => {
                   className="bg-black text-white px-6 py-3 rounded-xl text-base font-medium cursor-pointer transition-all duration-200 hover:bg-gray-800 shadow-md"
                   onClick={() => toggleExpanded(index)}
                 >
-                  {expandedItems[index] ? "Show Less" : "Explore More"}
+                  {expandedItems[index] ? "Show Less" : "Learn More"}
                 </motion.button>
               </div>
             </div>
