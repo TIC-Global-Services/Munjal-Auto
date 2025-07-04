@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import img from "../assets/contactBanner.png";
+import img from "../assets/contact.png";
 import logo from "../assets/companyLogo.png";
 import Footer from "./Footer";
 import { motion } from "framer-motion";
@@ -327,81 +327,81 @@ const TabNavigation = () => {
             className="space-y-6"
           >
             {/* Corporate Office */}
-            <div className="flex flex-col md:flex-row md:h-[380px] py-2 h-full bg-[#2E2E2E] rounded-lg overflow-hidden shadow-sm items-center justify-center">
+            <div className="flex flex-col md:flex-row md:h-[380px] py-2 h-full  rounded-lg overflow-hidden shadow-sm items-center justify-center">
               <div className="w-full md:w-1/3  p-8 flex items-center ">
-                <h3 className="text-[32px] text-white font-bold">Corporate office</h3>
+                <h3 className="text-[32px] text-black font-bold">Corporate office</h3>
               </div>
               <div className="w-full md:w-2/3 px-6">
                 <h4 className="text-[#ED1C24] font-medium mb-3 text-[25px]">Contact now</h4>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">2nd Floor, Tower "C", Unitech Business Zone,</p>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Nirvana Country, South City – 2, Sector-50,</p>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Gurugram – 122018, Haryana</p>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Phone: +91 124 4057891/92</p>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Fax: +91 124 4057892</p>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">E-mail: <a href="mailto:mail@munjalauto.com" className="text-[#ED1C24]">mail@munjalauto.com</a></p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">2nd Floor, Tower "C", Unitech Business Zone,</p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Nirvana Country, South City – 2, Sector-50,</p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Gurugram – 122018, Haryana</p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Phone: +91 124 4057891/92</p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Fax: +91 124 4057892</p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">E-mail: <a href="mailto:mail@munjalauto.com" className="text-[#ED1C24]">mail@munjalauto.com</a></p>
               </div>
             </div>
             
             {/* Waghodia Plant */}
-            <div className="flex flex-col md:flex-row md:h-[380px] bg-[#2E2E2E] rounded-lg overflow-hidden shadow-sm items-center justify-center">
+            <div className="flex flex-col md:flex-row md:h-[380px]  rounded-lg overflow-hidden shadow-sm items-center justify-center">
               <div className="w-full md:w-1/3   md:p-8 p-8 flex items-center">
-                <h3 className="text-[32px] text-white font-bold">Waghodia plant</h3>
+                <h3 className="text-[32px] text-black font-bold">Waghodia plant</h3>
               </div>
               <div className="w-full md:w-2/3 p-6">
                 <h4 className="text-red-500 font-medium mb-3 text-[25px]">Contact now</h4>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">187, GIDC Industrial Estate,</p>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Waghodia -391 760, Vadodara (Gujarat)</p>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Phone: +91 (2668) 262421</p>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Phone: +91 (2668) 262422</p>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Fax: +91 (2668) 262427</p>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Mobile: +91 9099978936</p>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Mobile: +91 9099978937</p>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">E-mail: <a href="mailto:mail@munjalauto.com" className="text-red-500">mail@munjalauto.com</a></p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">187, GIDC Industrial Estate,</p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Waghodia -391 760, Vadodara (Gujarat)</p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Phone: +91 (2668) 262421</p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Phone: +91 (2668) 262422</p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Fax: +91 (2668) 262427</p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Mobile: +91 9099978936</p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Mobile: +91 9099978937</p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">E-mail: <a href="mailto:mail@munjalauto.com" className="text-red-500">mail@munjalauto.com</a></p>
               </div>
             </div>
             
             {/* Haridwar Plant */}
-            <div className="flex flex-col md:flex-row md:h-[380px] bg-[#2E2E2E] rounded-lg overflow-hidden shadow-sm items-center justify-center">
+            <div className="flex flex-col md:flex-row md:h-[380px]  rounded-lg overflow-hidden shadow-sm items-center justify-center">
               <div className="w-full md:w-1/3   p-8 flex items-center">
-                <h3 className="text-[32px] text-white font-bold">Haridwar Plant</h3>
+                <h3 className="text-[32px] text-black font-bold">Haridwar Plant</h3>
               </div>
               <div className="w-full md:w-2/3 p-6">
                 <h4 className="text-red-500 font-medium mb-3 text-[25px]">Contact now</h4>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Plot no – 11 Industrial Park II,</p>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Village Salempur Mehdood, Haridwar</p>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">(Uttrakhand)</p>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Tel: +91 (1334) 235530/32</p>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Fax: +91 (1334) 235533</p>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">E-mail: <a href="mailto:mail@munjalauto.com" className="text-red-500">mail@munjalauto.com</a></p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Plot no – 11 Industrial Park II,</p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Village Salempur Mehdood, Haridwar</p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">(Uttrakhand)</p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Tel: +91 (1334) 235530/32</p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Fax: +91 (1334) 235533</p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">E-mail: <a href="mailto:mail@munjalauto.com" className="text-red-500">mail@munjalauto.com</a></p>
               </div>
             </div>
             
             {/* Bawal Plant */}
-            <div className="flex flex-col md:flex-row md:h-[380px] bg-[#2E2E2E] rounded-lg overflow-hidden shadow-sm items-center justify-center">
+            <div className="flex flex-col md:flex-row md:h-[380px]  rounded-lg overflow-hidden shadow-sm items-center justify-center">
               <div className="w-full md:w-1/3   p-8 flex items-center">
-                <h3 className="text-[32px] text-white font-bold">Bawal Plant</h3>
+                <h3 className="text-[32px] text-black font-bold">Bawal Plant</h3>
               </div>
               <div className="w-full md:w-2/3 p-6">
                 <h4 className="text-red-500 font-medium mb-3 text-[25px]">Contact now</h4>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Plot No. – 37, Sector 5 Phase II,</p>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">G.C Bawal- 123 501, Rewari (Haryana)</p>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Tel: +91 (1284) 264435-36</p>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Fax: +91 (1284) 264434</p>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">E-mail: <a href="mailto:mail@munjalauto.com" className="text-red-500">mail@munjalauto.com</a></p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Plot No. – 37, Sector 5 Phase II,</p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">G.C Bawal- 123 501, Rewari (Haryana)</p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Tel: +91 (1284) 264435-36</p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Fax: +91 (1284) 264434</p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">E-mail: <a href="mailto:mail@munjalauto.com" className="text-red-500">mail@munjalauto.com</a></p>
               </div>
             </div>
             
             {/* Dharuhera Plant */}
-            <div className="flex flex-col md:h-[380px] md:flex-row bg-[#2E2E2E] rounded-lg overflow-hidden shadow-sm items-center justify-center">
+            <div className="flex flex-col md:h-[380px] md:flex-row  rounded-lg overflow-hidden shadow-sm items-center justify-center">
               <div className="w-full md:w-1/3   p-8 flex items-center">
-                <h3 className="text-[32px] text-white font-bold">Dharuhera Plant</h3>
+                <h3 className="text-[32px] text-black font-bold">Dharuhera Plant</h3>
               </div>
               <div className="w-full md:w-2/3 p-6">
                 <h4 className="text-red-500 font-medium mb-3 text-[25px]">Contact now</h4>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Plot no. 32-A, Industrial Area,</p>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Dharuhera-122106, Rewari, Haryana</p>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">Tel: +91 (1274) 243010-11</p>
-                <p className="mb-1 text-white md:text-[20px] md:leading-[31px]">E-mail: <a href="mailto:mail@munjalauto.com" className="text-red-500">mail@munjalauto.com</a></p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Plot no. 32-A, Industrial Area,</p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Dharuhera-122106, Rewari, Haryana</p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Tel: +91 (1274) 243010-11</p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">E-mail: <a href="mailto:mail@munjalauto.com" className="text-red-500">mail@munjalauto.com</a></p>
               </div>
             </div>
           </motion.div>

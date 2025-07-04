@@ -55,8 +55,8 @@ const MobileImageSlider = () => {
   };
 
   return (
-    <div className="relative   flex flex-col md:mt-40 items-center justify-center w-full h-full mb-[20%] overflow-hidden">
-         <h1 className="   text-2xl py-16 !font-[300] text-center">
+    <div className="relative flex flex-col md:mt-40 items-center justify-center w-full h-full mb-[20%] overflow-hidden">
+         <h1 className="text-2xl py-16 !font-[300] text-center">
         Where <span className="text-[#ED1C24] font-bold">Innovation Meets</span> <br />
         Engineering Excellence
       </h1>
@@ -65,7 +65,7 @@ const MobileImageSlider = () => {
           key={activeIndex}
           src={images[activeIndex]}
           alt={`Slide ${activeIndex + 1}`}
-          className="rounded-[16px] w-[60%]  -mt-10 -ml-20 object-cover"
+          className="rounded-[16px] w-[60%] -mt-10 -ml-20 object-cover"
           initial={{ x: 300, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
@@ -135,21 +135,20 @@ const MobileImageSlider = () => {
   );
 };
 
-// Desktop version
-// import { useEffect, useState } from "react";
-// import { motion, AnimatePresence } from "framer-motion";
-
 const DesktopImageSlider = () => {
   const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3, 4]);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      handleNext();
+      if (!isDragging) { // Only auto-advance if not dragging
+        handleNext();
+      }
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isDragging]);
 
   const handleNext = () => {
     setPositionIndexes((prevIndexes) => {
@@ -161,6 +160,33 @@ const DesktopImageSlider = () => {
     setActiveIndex((prev) => (prev + 1) % images.length);
   };
 
+  const handlePrevious = () => {
+    setPositionIndexes((prevIndexes) => {
+      const updatedIndexes = prevIndexes.map(
+        (prevIndex) => (prevIndex - 1 + images.length) % images.length
+      );
+      return updatedIndexes;
+    });
+    setActiveIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  const handleDragEnd = (event, info) => {
+    setIsDragging(false);
+    const threshold = 50; // Minimum drag distance to trigger slide change
+    
+    if (info.offset.x > threshold) {
+      // Dragged right - go to previous
+      handlePrevious();
+    } else if (info.offset.x < -threshold) {
+      // Dragged left - go to next
+      handleNext();
+    }
+  };
+
+  const handleDragStart = () => {
+    setIsDragging(true);
+  };
+
   const positions = ["center", "left1", "left", "right", "right1"];
   const imageVariants = {
     center: { x: "0%", scale: 0.7, zIndex: 500, opacity: 1 },
@@ -169,8 +195,7 @@ const DesktopImageSlider = () => {
     right: { x: "90%", scale: 0.4, zIndex: 1, opacity: 0 },
     right1: { x: "100%", scale: 0.5, zIndex: 3, opacity: 0.5 },
   };
-
-  
+     
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
@@ -178,7 +203,7 @@ const DesktopImageSlider = () => {
 
   return (
     <div>
-      <h1 className="   text-6xl pt-40 text-center">
+      <h1 className="text-6xl pt-40 text-center">
         Where <span className="text-[#ED1C24] font-bold">Innovation Meets</span>
         <div>Engineering Excellence</div>
       </h1>
@@ -188,22 +213,30 @@ const DesktopImageSlider = () => {
             key={index}
             src={image}
             alt={`Slide ${index + 1}`}
-            className={`rounded-[16px] md:w-[35%] md:h-[100%] w-[90%] object-cover`}
+            className={`rounded-[16px] md:w-[35%] md:h-[100%] w-[90%] object-cover ${
+              isDragging ? 'cursor-grabbing' : 'cursor-grab'
+            }`}
             initial="center"
             animate={positions[positionIndexes[index]]}
             variants={imageVariants}
             transition={{
-              duration: 1.5,
+              duration: isDragging ? 0.1 : 1.5,
               ease: [0.42, 0, 0.58, 1],
             }}
             style={{ position: "absolute" }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.2}
+            onDragStart={handleDragStart}
+            onDragEnd={handleDragEnd}
+            whileDrag={{ scale: 0.95 }}
           />
         ))}
 
         {/* Animated Caption */}
         <AnimatePresence mode="wait">
           <motion.div
-            className="absolute right-[28%] font-bold top-1/4 transform -translate-x-1/2 -translate-y-1/2 text-lg text-center text-black p-2 rounded-md"
+            className="absolute right-[28%] font-bold top-1/4 transform -translate-x-1/2 -translate-y-1/2 text-lg text-center text-black p-2 rounded-md pointer-events-none"
             key={`caption-${activeIndex}`}
             variants={textVariants}
             initial="hidden"
@@ -220,7 +253,7 @@ const DesktopImageSlider = () => {
 
         <AnimatePresence mode="wait">
           <motion.div
-            className="absolute  right-[27%] top-[32%] transform -translate-x-1/2 -translate-y-1/2 text-sm text-center text-[#8C8989] p-2 rounded-md"
+            className="absolute right-[27%] top-[32%] transform -translate-x-1/2 -translate-y-1/2 text-sm text-center text-[#8C8989] p-2 rounded-md pointer-events-none"
             key={`small-caption-${activeIndex}`}
             variants={textVariants}
             initial="hidden"
@@ -255,6 +288,5 @@ const DesktopImageSlider = () => {
   );
 };
 
-// export default DesktopImageSlider;
 
 export default ImageSlider;

@@ -236,7 +236,7 @@ const Philo = () => {
             />
           </Link>
           <div className="md:block flex items-center justify-center flex-col absolute  mt-10 md:text-left text-center left-0">
-            <h1 className="text-[#FFFCFC] rounded-[10px] px-10 py-4 text-[54px] font-[500] mb-12">
+            <h1 className="text-[#FFFCFC] rounded-[10px] leading-[3.9rem] px-10 py-4 text-[54px] font-[500] mb-12">
               Innovation with <br /> Integrity
             </h1>
           </div>
@@ -286,7 +286,7 @@ const Philo = () => {
   style={{
     border: "1px solid #FFFFFF1A",
     backdropFilter: "blur(22.2px)",
-    background: "#FFFFFF26",
+    background: "#FFFFFF",
   }}
   initial="hidden"
   whileInView="visible"
@@ -294,7 +294,7 @@ const Philo = () => {
   variants={fadeInUp2}
 >
   {/* Title - stays static */}
-  <h3 className="text-white text-base md:text-4xl">
+  <h3 className="text-black text-base md:text-4xl">
     Our <span className="text-[#FF0000]">{current.name}</span>
   </h3>
 
@@ -309,13 +309,13 @@ const Philo = () => {
       className="transition-all duration-500 ease-in-out mt-2"
     >
       {Array.isArray(current.description) ? (
-        <ul className="list-disc text-[10px] md:text-base font-normal max-w-sm tracking-wider pl-4 space-y-1">
+        <ul className="list-disc text-[10px] md:text-base font-normal max-w-sm tracking-wider pl-4 space-y-1 text-black">
           {current.description.map((item, idx) => (
             <li key={idx}>{item}</li>
           ))}
         </ul>
       ) : (
-        <p className="text-[10px] md:text-base font-normal max-w-sm tracking-wider">
+        <p className="text-[10px] md:text-base font-normal max-w-sm tracking-wider text-black">
           {current.description}
         </p>
       )}

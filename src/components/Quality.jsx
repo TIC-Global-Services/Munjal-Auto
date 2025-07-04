@@ -193,7 +193,7 @@ const Quality = () => {
 
           {/* Centered Text and Timeline Container */}
           <div className=" md:block flex items-center justify-center flex-col absolute   mt-10 text-left left-0">
-            <h1 className="text-[#FFFCFC] rounded-[10px] px-10 py-4 text-[54px] font-[500] mb-12">
+            <h1 className="text-[#FFFCFC] rounded-[10px] leading-[3.9rem]  px-10 py-4 text-[54px] font-[500] ">
               We Stand For​ <br />
               Quality & Technology
             </h1>

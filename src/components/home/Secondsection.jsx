@@ -106,14 +106,13 @@ const WhyMunjal = () => {
       description: "OEM partnerships, including Hero MotoCorp.",
     },
     {
-      title: "R&D & Engineering  Focus",
+      title: "R&D & Engineering Focus",
       description: "Over three decades of innovation and excellence.",
     },
     {
       title: "Trusted by Industry",
       description: "Eco-friendly processes and materials.",
     },
-  
   ];
 
   const containerRef = useRef(null);
@@ -123,89 +122,101 @@ const WhyMunjal = () => {
   });
 
   return (
-    <div className="md:pt-40 relative pt-10" ref={containerRef}>
-      <div className="sticky top-0 left-0 z-[70] bg-black pointer-events-none">
+    <div className="relative mt-10 md:mt-60 min-h-screen " ref={containerRef}>
+      {/* Background gradient - fixed positioning issues */}
+      <div className="sticky top-0 left-0 z-[70] bg-black pointer-events-none h-0 overflow-hidden">
         <img
           src={gradient}
           alt="Gradient"
-          className="absolute  z-[70]  md:w-1/2 object-cover"
+          className="absolute top-0 left-0 z-[70] w-full md:w-1/2 h-screen object-cover"
         />
       </div>
-      <div className="min-h-[600vh] md:px-20 p-4">
+      
+      {/* Main content container with proper height */}
+      <div className="min-h-[400vh] md:min-h-[600vh] px-4 md:px-20">
         <motion.div
-          className="container md:flex-row flex-col flex"
+          className="container flex flex-col md:flex-row gap-8 md:gap-0"
           style={{
             position: "sticky",
-            top: window.innerWidth < 768 ? "10vh" : "20vh",
-            height: window.innerWidth < 768 ? "90vh" : "80vh",
+            top: "clamp(5vh, 10vh, 15vh)",
+            height: "clamp(70vh, 80vh, 90vh)",
+            maxHeight: "90vh",
           }}
         >
-          <div className="md:space-y-6 z-[700] space-y-2 md:w-[70%] md:block flex items-center justify-center flex-col">
-            <div className="text-gray-600 md:text-left text-center text-sm tracking-wider">
+          {/* Left content section */}
+          <div className="flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-4 md:space-y-6 z-[700] w-full md:w-[45%] ">
+            <div className="text-gray-600 text-sm tracking-wider">
               // ABOUT US
             </div>
-            <h2 className="md:text-6xl text-2xl md:text-left text-center md:font-normal">
+            
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-normal leading-tight">
               Why <span className="text-red-500">Munjal</span>
               <br />
               Auto ?
             </h2>
-            <p className="text-gray-700 md:text-left text-center md:text-base text-[10px] leading-[16px] md:leading-relaxed">
+            
+            <p className="text-gray-700 text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl">
               In the automotive industry, we are trusted for producing critical
               components such as exhaust systems, fuel tanks, rims, and BIW
               parts, engineered to withstand the most demanding performance and
               safety standards. Beyond automotive, our renewable energy
               solutions, including windmill blades and other specialized
-              parts,play a vital role in advancing clean energy technologies. At
+              parts, play a vital role in advancing clean energy technologies. At
               Munjal Auto, we merge engineering excellence with forward-thinking
               design to deliver products that lead industries into the future.
             </p>
+            
             <Link to='/about-us'>
-            <button className="bg-black text-white px-8 py-3 md:text-base text-xs rounded-full hover:bg-gray-800 transition-colors mt-5">
-              More About Us
-            </button>
+              <button className="bg-black text-white px-6 py-3 md:px-8 md:py-3 text-sm md:text-base rounded-full hover:bg-gray-800 transition-colors mt-4 md:mt-6">
+                More About Us
+              </button>
             </Link>
-          
           </div>
 
-          <motion.div className="md:flex-row flex-col items-center w-full flex">
-            {/* Replace image with 3D model viewer */}
-            <div className="md:w-full w-[90%] md:block hidden   h-[300px] md:h-[400px] ">
+          {/* Right content section */}
+          <div className="flex flex-col md:flex-row items-center w-full md:w-[75%] space-y-6 md:space-y-0">
+            {/* 3D Model Viewer */}
+            <div className="w-full max-w-md md:max-w-none h-[250px] md:h-[350px] lg:h-[400px] hidden md:block">
               <ModelViewer scrollProgress={scrollYProgress} />
             </div>
 
-            <div className="space-y-6 mt-20 md:!-mt-40 whitespace-nowrap">
+            {/* Features list */}
+            <div className="space-y-6 w-full md:w-full md:ml-8 lg:ml-0 md:mt-0 lg:-mt-40">
               {features.map((feature, index) => {
-                // Modified transition points to require more scrolling
+                // Improved scroll trigger points
+                const startPoint = Math.min(0.1 + index * 0.15, 0.7);
+                const endPoint = Math.min(0.2 + index * 0.15, 0.8);
+                
                 const featureInView = useTransform(
                   scrollYProgress,
-                  [0.1 + index * 0.2, 0.15 + index * 0.2], // Further reduced spacing to ensure all features are visible
-                  [0, 1] // From invisible to visible
+                  [startPoint, endPoint],
+                  [0, 1]
                 );
 
                 return (
                   <motion.div
                     key={index}
-                    className="border-b border-gray-200 pb-4"
+                    className="border-b border-gray-200 pb-4 last:border-b-0"
                     style={{
                       opacity: featureInView,
                       transform: useTransform(
                         featureInView,
                         [0, 1],
-                        ["translateY(30px)", "translateY(0px)"] // Increased initial offset
+                        ["translateY(20px)", "translateY(0px)"]
                       ),
                     }}
                   >
-                    <h3 className="md:text-2xl text-[#151414] text-base font-medium md:font-medium mb-2">
+                    <h3 className="text-lg md:text-xl lg:text-2xl text-[#151414] font-medium mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-[#8C8989] md:text-base text-sm">
+                    <p className="text-[#8C8989] text-sm md:text-base leading-relaxed">
                       {feature.description}
                     </p>
                   </motion.div>
                 );
               })}
             </div>
-          </motion.div>
+          </div>
         </motion.div>
       </div>
     </div>
@@ -508,7 +519,7 @@ function ModelViewer({ scrollProgress }) {
 
 const Stayconnected = () => {
   return (
-    <div className=" md:-mt-14 mb-20">
+    <div className=" md:mt-12 mb-20">
       {/* Desktop and Tablet View */}
       <div className="hidden bg-[#ED1C24] md:flex bg-cover bg-center items-center justify-center relative">
         <img src={logo} className=" absolute top-12 w-32" alt="logo" />

@@ -238,11 +238,9 @@ const Home = () => {
             {/* Centered Content */}
             <div className="text-center relative z-20 px-4 max-w-4xl mx-auto">
               <h1
-                className={`text-white text-xl md:text-5xl  font-bold drop-shadow-2xl mb-4 transition-all  duration-1000 ${
-                  isVisible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-8"
-                }`}
+                className={`text-white text-xl md:text-5xl font-bold drop-shadow-2xl mb-4 transition-all duration-1000 
+    leading-relaxed md:leading-[3.9rem] 
+    ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               >
                 Pioneering Lightweight <br className="md:hidden block" />
                 Solutions <br className="md:block hidden" />
