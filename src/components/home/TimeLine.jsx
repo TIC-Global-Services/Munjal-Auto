@@ -196,7 +196,7 @@ const TimeLine = () => {
                     style={{ transitionDelay: `${300 + index * 100}ms` }}
                   >
                  <div
-  className="text-center px-6 py-4 rounded-xl w-[188px] mx-auto group"
+  className="text-center px-6 py-4 rounded-xl w-[200px] mx-auto group"
   style={{
     backdropFilter: "blur(2px)",
     background: "rgba(0, 0, 0, 0.3)",
