@@ -563,7 +563,7 @@ function ModelViewer() {
     // Load model with enhanced materials
     const loader = new GLTFLoader();
     loader.load(
-      "/2.gltf",
+      "/3.gltf",
       (gltf) => {
         const model = gltf.scene;
 

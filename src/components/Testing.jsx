@@ -134,15 +134,15 @@ const Testing = () => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-          setCurrentIndex((prevIndex) => 
-            prevIndex === contents.length - 1 ? 0 : prevIndex + 1
-          );
-        }, 4000); // Change slide every 4 seconds
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //       setCurrentIndex((prevIndex) => 
+    //         prevIndex === contents.length - 1 ? 0 : prevIndex + 1
+    //       );
+    //     }, 4000); // Change slide every 4 seconds
     
-        return () => clearInterval(interval);
-      }, [contents.length]);
+    //     return () => clearInterval(interval);
+    //   }, [contents.length]);
     
       const nextSlide = () => {
         setCurrentIndex(currentIndex === contents.length - 1 ? 0 : currentIndex + 1);
