@@ -795,7 +795,7 @@ function ModelViewer() {
       console.log('Starting to load model: /4mdln.glb');
       
       loader.load(
-        "/4mdln.glb",
+        "/4_final.glb",
         (gltf) => {
           console.log('Model loaded successfully:', gltf);
           const model = gltf.scene;
