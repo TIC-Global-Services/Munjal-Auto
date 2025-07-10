@@ -309,10 +309,75 @@ const ProductionCapacity = () => {
     },
   ];
 
+
+  const capacityData2 = [
+    {
+      quantity: "2000  ",
+      unit: " CR",
+      product: "Annual turnover FY23",
+    },
+    {
+      quantity:" 2",
+      unit: " Nos.",
+      product: "State of the art R&D center in India",
+    },
+    {
+      quantity: "5",
+      unit: "%",
+      product: "Spend on R&D",
+    },
+    {
+      quantity: '4000',
+      unit: "+ Nos",
+      product: "Employee strength",
+    },
+  ];
+
   return (
     <div ref={containerRef} className="bg-[#F3F4F6] rounded-lg md:rounded-[26px] md:px-6 md:py-16 py-6 px-2">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-base md:text-4xl lg:text-4xl font-[300] md:text-left text-center mb-4 md:mb-12">
+            <div className="max-w-7xl mx-auto">
+        <h2 className="text-base md:text-4xl lg:text-4xl font-[300] md:text-left text-center mb-4 md:mb-7">
+          A <span className="text-red-600 font-medium">Strong foundation</span> for the future
+      
+        </h2>
+
+        <div className="grid grid-cols-4 md:grid-cols-2 gap-1 lg:grid-cols-2 xl:grid-cols-4 md:gap-4">
+          {capacityData2.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-white hover:cursor-pointer rounded-md md:rounded-xl md:px-4 px-2 py-3 md:py-8 flex shadow-lg transform hover:scale-105 transition-transform duration-300"
+            >
+              <div className="space-y-2 flex flex-col items-start justify-center">
+                <motion.h3 
+                  className="md:text-2xl text-[12px] whitespace-nowrap font-bold"
+                  initial={{ opacity: 0 }}
+                  animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    {isInView && (
+                      <Counter from={0} to={item.quantity} duration={2} />
+                    )}
+                  </motion.span>
+                  {item.unit}
+                </motion.h3>
+                <p className="text-gray-600 md:text-base text-[5px] ">
+                  {item.product}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+      <div className="max-w-7xl mx-auto mt-16">
+        <h2 className="text-base md:text-4xl lg:text-4xl font-[300] md:text-left text-center mb-4 md:mb-7">
           Our <span className="text-red-600 font-medium">state-of-the-art</span> facilities
           have the annual capacity to produce
         </h2>

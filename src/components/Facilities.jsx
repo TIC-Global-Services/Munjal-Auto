@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import img from "../assets/faci-min.jpeg";
 import logo from "../assets/companyLogo.png";
 import Footer from "./Footer";
 import { Link, useLocation } from "react-router-dom";
 import TopNav from "./TopNav";
+import * as THREE from "three";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 import icon1 from "../assets/hero/icon.png";
 import icon2 from "../assets/hero/icon2.png";
@@ -312,25 +314,25 @@ const FacilitiesContent = ({ content }) => {
   return (
     <div className="max-w-7xl mx-auto px-4 mb-20">
       {/* Hero Section */}
-      <div className="flex flex-col md:flex-col lg:flex-row items-center justify-between bg-black text-white rounded-[20px] overflow-hidden mb-8">
-        <div className="p-8 lg:p-12 w-full lg:w-1/2">
+      <div className="flex flex-col lg:flex-row items-stretch bg-black text-white rounded-[20px] overflow-hidden mb-8">
+        {/* Left Side - Content */}
+        <div className="flex-1 p-8 lg:p-12 flex flex-col justify-center">
           <h2 className="text-[#FF252E] text-[20px] font-medium mb-4">
             {content.title}
           </h2>
-
-          <p className="text-gray-300 text-2xl w-full lg:w-[90%] mb-6">
+          
+          <p className="text-gray-300 text-2xl mb-6">
             {content.description}
           </p>
-          {/* <button className="bg-white text-black px-6 py-3 rounded-[12px] font-medium hover:bg-gray-100 transition-colors">
-            Explore more
-          </button> */}
+          
+          <button className="bg-white text-black px-6 py-3 rounded-[12px] font-medium hover:bg-gray-100 transition-colors w-fit">
+            Explore More
+          </button>
         </div>
-        <div className="w-full lg:w-[45%] h-64 lg:h-auto lg:mr-10">
-          <img
-            src={content.mainImage}
-            alt="Manufacturing facility"
-            className="lg:w-full lg:h-full md:w-[50%]  mx-auto w-[60%] lg:mt-0 md:-mt-24  lg:!-ml-10 md:!ml-44 object-cover"
-          />
+        
+        {/* Right Side - 3D Model */}
+        <div className="flex-1 h-64 lg:h-[500px] relative">
+          <ModelViewer />
         </div>
       </div>
 
@@ -670,3 +672,165 @@ const SustainableContent = ({ content }) => {
     </div>
   );
 };
+
+
+
+
+
+
+function ModelViewer() {
+  const [loading, setLoading] = useState(true);
+  const modelContainerRef = useRef(null);
+  const modelRef = useRef(null);
+  const animationFrameRef = useRef(null);
+
+  useEffect(() => {
+    const scene = new THREE.Scene();
+    scene.background = null;
+
+    const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 1000);
+    camera.position.set(0, 1.3, 5);
+
+    const renderer = new THREE.WebGLRenderer({ 
+      antialias: true, 
+      alpha: true,
+      physicallyCorrectLights: true, // Enable physically correct lighting
+    });
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.outputEncoding = THREE.sRGBEncoding;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 6.5;
+
+    const container = modelContainerRef.current;
+    if (container) {
+      container.innerHTML = '';
+      container.appendChild(renderer.domElement);
+    }
+
+    // Enhanced lighting setup
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(ambientLight);
+
+    // Main directional light
+    const mainLight = new THREE.DirectionalLight(0xffffff, 2);
+    mainLight.position.set(7, 7, 5);
+    mainLight.castShadow = true;
+    scene.add(mainLight);
+
+    // Add rim light for better definition
+    const rimLight = new THREE.DirectionalLight(0x9ca3af, 1);
+    rimLight.position.set(-5, 5, -5);
+    scene.add(rimLight);
+
+    // Add point lights for dynamic lighting
+    const pointLight1 = new THREE.PointLight(0xffffff, 1);
+    pointLight1.position.set(2, 2, 2);
+    scene.add(pointLight1);
+
+    const pointLight2 = new THREE.PointLight(0xffffff, 1);
+    pointLight2.position.set(-2, -2, -2);
+    scene.add(pointLight2);
+
+    const modelGroup = new THREE.Group();
+    scene.add(modelGroup);
+
+    // Load model with enhanced materials
+    const loader = new GLTFLoader();
+    loader.load(
+      '/2mn.gltf',
+      (gltf) => {
+        const model = gltf.scene;
+        
+        // Enhance materials for all meshes
+        model.traverse((child) => {
+          if (child.isMesh) {
+            // Enhance existing materials
+            if (child.material) {
+              child.material.roughness = 0.3;
+              child.material.metalness = 0.8;
+              child.material.envMapIntensity = 1.5;
+              child.material.needsUpdate = true;
+            }
+          }
+        });
+
+        // Center and scale model
+        const box = new THREE.Box3().setFromObject(model);
+        const center = box.getCenter(new THREE.Vector3());
+        const size = box.getSize(new THREE.Vector3());
+        const maxDim = Math.max(size.x, size.y, size.z);
+        const scale = 3 / maxDim;
+        
+        model.position.set(-center.x, -center.y + 1, -center.z);
+        model.scale.setScalar(scale);
+        
+        modelGroup.add(model);
+        modelRef.current = modelGroup;
+        setLoading(false);
+      },
+      undefined,
+      (error) => console.error('Model loading error:', error)
+    );
+
+    // Animate lights
+    let time = 0;
+    function animateLights() {
+      time += 0.01;
+      
+      // Animate point lights in a circular pattern
+      pointLight1.position.x = Math.sin(time) * 3;
+      pointLight1.position.z = Math.cos(time) * 3;
+      
+      pointLight2.position.x = Math.sin(time + Math.PI) * 3;
+      pointLight2.position.z = Math.cos(time + Math.PI) * 3;
+    }
+
+    function updateSize() {
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, height);
+    }
+    
+    window.addEventListener('resize', updateSize);
+    updateSize();
+
+    function animate() {
+      animationFrameRef.current = requestAnimationFrame(animate);
+      if (modelRef.current) {
+        modelRef.current.rotation.y += 0.01;
+        animateLights();
+      }
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    return () => {
+      window.removeEventListener('resize', updateSize);
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+      renderer.dispose();
+    };
+  }, []);
+
+  return (
+    <div className="absolute md:w-[650px] md:h-[450px] w-[500px] h-[600px]" style={{ zIndex: 50 }}>
+      <div
+        ref={modelContainerRef}
+        className="w-full h-full"
+        style={{
+          background: 'transparent',
+          position: 'relative',
+          zIndex: 50,
+        }}
+      />
+      {loading && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-white font-medium">Loading 3D Model...</div>
+        </div>
+      )}
+    </div>
+  );
+}
