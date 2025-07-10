@@ -312,29 +312,29 @@ const ProductionCapacity = () => {
 
   const capacityData2 = [
     {
-      quantity: "2000  ",
+      quantity: 2000,
       unit: " CR",
       product: "Annual turnover FY23",
     },
     {
-      quantity:" 2",
+      quantity:2,
       unit: " Nos.",
       product: "State of the art R&D center in India",
     },
     {
-      quantity: "5",
+      quantity: 5,
       unit: "%",
       product: "Spend on R&D",
     },
     {
-      quantity: '4000',
+      quantity: 4000,
       unit: "+ Nos",
       product: "Employee strength",
     },
   ];
 
   return (
-    <div ref={containerRef} className="bg-[#F3F4F6] rounded-lg md:rounded-[26px] md:px-6 md:py-16 py-6 px-2">
+    <div ref={containerRef} className="bg-[#F3F4F6] rounded-lg md:rounded-[26px] md:px-12 md:py-16 py-6 px-2">
             <div className="max-w-7xl mx-auto">
         <h2 className="text-base md:text-4xl lg:text-4xl font-[300] md:text-left text-center mb-4 md:mb-7">
           A <span className="text-red-600 font-medium">Strong foundation</span> for the future
@@ -352,7 +352,7 @@ const ProductionCapacity = () => {
             >
               <div className="space-y-2 flex flex-col items-start justify-center">
                 <motion.h3 
-                  className="md:text-2xl text-[12px] whitespace-nowrap font-bold"
+                  className="md:text-xl text-[12px] whitespace-nowrap font-bold"
                   initial={{ opacity: 0 }}
                   animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -368,7 +368,7 @@ const ProductionCapacity = () => {
                   </motion.span>
                   {item.unit}
                 </motion.h3>
-                <p className="text-gray-600 md:text-base text-[5px] ">
+                <p className="text-gray-600 md:text-[12px] text-[5px] ">
                   {item.product}
                 </p>
               </div>
@@ -393,7 +393,7 @@ const ProductionCapacity = () => {
             >
               <div className="space-y-2 flex flex-col items-start justify-center">
                 <motion.h3 
-                  className="md:text-2xl text-[12px] whitespace-nowrap font-bold"
+                  className="md:text-xl text-[12px] whitespace-nowrap font-bold"
                   initial={{ opacity: 0 }}
                   animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -409,7 +409,7 @@ const ProductionCapacity = () => {
                   </motion.span>
                   {item.unit}
                 </motion.h3>
-                <p className="text-gray-600 md:text-base text-[5px] whitespace-nowrap">
+                <p className="text-gray-600 md:text-[12px] text-[5px] whitespace-nowrap">
                   {item.product}
                 </p>
               </div>
@@ -442,7 +442,7 @@ const ManufacturingCapacity = () => {
   const locations = ["Vadodara", "Bawal", "Haridwar", "Dharuhera"];
 
   return (
-    <div className="bg-[#F3F4F6] rounded-lg md:rounded-[26px] h-full md:px-6 px-2  md:py-0 py-4 flex">
+    <div className="bg-[#F3F4F6] rounded-lg md:rounded-[26px] h-full md:px-12 px-2  md:py-0 py-4 flex">
       <div className="max-w-7xl mx-auto flex justify-center flex-col">
         {/* Comment Header */}
         <div className="md:text-sm text-[10px] whitespace-nowrap  text-gray-500 md:mb-1 mb-2">
@@ -492,7 +492,7 @@ const ManufacturingCapacity = () => {
 const ExpertiseSection = () => {
   return (
     <div className="bg-[#F3F4F6] px-6  flex rounded-lg md:py-0 py-4 md:rounded-[26px]  h-full">
-      <div className="max-w-7xl md:items-start items-center flex flex-col justify-center md:pl-6  mx-auto">
+      <div className="max-w-7xl md:items-start items-center flex flex-col justify-center md:pl-4  mx-auto">
         {/* Comment Header */}
         <div className="md:text-sm text-[10px] text-gray-500 mb-2 md:mb-8">
           //OUR EXPERTISE

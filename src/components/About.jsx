@@ -488,286 +488,10 @@ import nut from "../assets/home-slide-06 2.png";
 // }
 
 
-function ModelViewer() {
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const modelContainerRef = useRef(null);
-  const modelRef = useRef(null);
-  const animationFrameRef = useRef(null);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    // Check if mobile on initial render
-    const checkIfMobile = () => window.innerWidth <= 768;
-    setIsMobile(checkIfMobile());
-
-    // Set up resize listener for mobile detection
-    const handleResize = () => {
-      setIsMobile(checkIfMobile());
-    };
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
-    let scene, camera, renderer, container;
-    
-    try {
-      scene = new THREE.Scene();
-      scene.background = null;
-
-      // Create isometric camera (orthographic) - perfect isometric view
-      const frustumSize = isMobile ? 4 : 5;
-      camera = new THREE.OrthographicCamera(
-        -frustumSize / 2,
-        frustumSize / 2,
-        frustumSize / 2,
-        -frustumSize / 2,
-        0.1,
-        1000
-      );
-      
-      // Perfect isometric positioning: 35.264° elevation, 45° azimuth
-      // This creates the classic isometric view showing three faces equally
-      const distance = 10;
-      camera.position.set(
-        distance * Math.cos(Math.PI / 4) * Math.cos(Math.atan(Math.sqrt(2))),
-        distance * Math.sin(Math.atan(Math.sqrt(2))),
-        distance * Math.sin(Math.PI / 4) * Math.cos(Math.atan(Math.sqrt(2)))
-      );
-      camera.lookAt(0, 0, 0);
-
-      renderer = new THREE.WebGLRenderer({
-        antialias: true,
-        alpha: true,
-        physicallyCorrectLights: true,
-      });
-      renderer.setPixelRatio(window.devicePixelRatio);
-      renderer.outputEncoding = THREE.sRGBEncoding;
-      renderer.toneMapping = THREE.ACESFilmicToneMapping;
-      renderer.toneMappingExposure = 6.5;
-
-      container = modelContainerRef.current;
-      if (container) {
-        container.innerHTML = "";
-        container.appendChild(renderer.domElement);
-      }
-
-      // Enhanced lighting setup optimized for isometric view
-      const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
-      scene.add(ambientLight);
-
-      // Main directional light from isometric angle
-      const mainLight = new THREE.DirectionalLight(0xffffff, 2.5);
-      mainLight.position.set(5, 8, 5);
-      mainLight.castShadow = true;
-      scene.add(mainLight);
-
-      // Fill light to reduce harsh shadows
-      const fillLight = new THREE.DirectionalLight(0x9ca3af, 1.2);
-      fillLight.position.set(-3, 3, -3);
-      scene.add(fillLight);
-
-      // Rim light for better edge definition
-      const rimLight = new THREE.DirectionalLight(0xb0b0b0, 0.8);
-      rimLight.position.set(-5, 5, -5);
-      scene.add(rimLight);
-
-      // Point lights for dynamic lighting
-      const pointLight1 = new THREE.PointLight(0xffffff, 1.5);
-      pointLight1.position.set(2, 2, 2);
-      scene.add(pointLight1);
-
-      const pointLight2 = new THREE.PointLight(0xffffff, 1.5);
-      pointLight2.position.set(-2, -2, -2);
-      scene.add(pointLight2);
-
-      const modelGroup = new THREE.Group();
-      scene.add(modelGroup);
-
-      // Load model with enhanced materials
-      // Check if GLTFLoader is available
-      let loader;
-      if (typeof GLTFLoader !== 'undefined') {
-        loader = new GLTFLoader();
-      } else if (THREE.GLTFLoader) {
-        loader = new THREE.GLTFLoader();
-      } else {
-        console.error('GLTFLoader not found. Make sure to import it properly.');
-        setError('GLTFLoader not available');
-        setLoading(false);
-        return;
-      }
-
-      console.log('Starting to load model: /4mdln.glb');
-      
-      loader.load(
-        "/4mdln.glb",
-        (gltf) => {
-          console.log('Model loaded successfully:', gltf);
-          const model = gltf.scene;
-
-          // Enhance materials for all meshes
-          model.traverse((child) => {
-            if (child.isMesh) {
-              console.log('Processing mesh:', child.name, 'Material:', child.material);
-              if (child.material) {
-                // Make sure the material is visible
-                child.material.transparent = false;
-                child.material.opacity = 1;
-                child.material.visible = true;
-                child.material.roughness = 0.3;
-                child.material.metalness = 0.8;
-                child.material.envMapIntensity = 1.5;
-                child.material.needsUpdate = true;
-                
-                // Force basic material properties for visibility
-                if (!child.material.color) {
-                  child.material.color = new THREE.Color(0xffffff);
-                }
-              } else {
-                // If no material, create a basic one
-                child.material = new THREE.MeshStandardMaterial({
-                  color: 0xffffff,
-                  roughness: 0.1,
-                  metalness: 0.4
-                });
-              }
-              
-              // Make sure geometry is valid
-              if (child.geometry) {
-                child.geometry.computeBoundingBox();
-                child.geometry.computeVertexNormals();
-              }
-            }
-          });
-
-          // Center and scale model for isometric view
-          const box = new THREE.Box3().setFromObject(model);
-          const center = box.getCenter(new THREE.Vector3());
-          const size = box.getSize(new THREE.Vector3());
-          const maxDim = Math.max(size.x, size.y, size.z);
-          
-          // Adjusted scaling for isometric view
-          const scale = maxDim > 0 ? (isMobile ? 1.8 / maxDim : 2.8 / maxDim) : 1;
-
-          // Reset position and scale
-          model.position.set(0, 0, 0);
-          model.scale.setScalar(scale);
-          
-          // Center the model in isometric view
-          model.position.set(
-            -center.x * scale,
-            -center.y * scale + (isMobile ? 0.3 : 0.5),
-            -center.z * scale
-          );
-
-          modelGroup.add(model);
-          modelRef.current = modelGroup;
-          setLoading(false);
-          console.log('Model added to scene');
-        },
-        (progress) => {
-          console.log('Loading progress:', (progress.loaded / progress.total * 100) + '%');
-        },
-        (error) => {
-          console.error("Model loading error:", error);
-          setError(`Failed to load model: ${error.message}`);
-          setLoading(false);
-        }
-      );
-
-      // Animate lights in isometric-friendly pattern
-      let time = 0;
-      function animateLights() {
-        time += 0.008; // Slower animation for isometric feel
-        pointLight1.position.x = Math.sin(time) * 2.5;
-        pointLight1.position.z = Math.cos(time) * 2.5;
-        pointLight2.position.x = Math.sin(time + Math.PI) * 2.5;
-        pointLight2.position.z = Math.cos(time + Math.PI) * 2.5;
-      }
-
-      function updateSize() {
-        const width = container.clientWidth;
-        const height = container.clientHeight;
-        const aspect = width / height;
-        
-        // Update orthographic camera for isometric view
-        const currentFrustumSize = isMobile ? 4 : 5;
-        camera.left = -currentFrustumSize * aspect / 2;
-        camera.right = currentFrustumSize * aspect / 2;
-        camera.top = currentFrustumSize / 2;
-        camera.bottom = -currentFrustumSize / 2;
-        camera.updateProjectionMatrix();
-        
-        renderer.setSize(width, height);
-      }
-
-      window.addEventListener("resize", updateSize);
-      updateSize();
-
-      function animate() {
-        animationFrameRef.current = requestAnimationFrame(animate);
-        if (modelRef.current) {
-          // Slow rotation to maintain isometric aesthetic
-          modelRef.current.rotation.y += 0.006;
-          animateLights();
-        }
-        renderer.render(scene, camera);
-      }
-      animate();
-
-      return () => {
-        window.removeEventListener("resize", updateSize);
-        if (animationFrameRef.current) {
-          cancelAnimationFrame(animationFrameRef.current);
-        }
-        if (renderer) {
-          renderer.dispose();
-        }
-      };
-    } catch (err) {
-      console.error('Error setting up 3D scene:', err);
-      setError(`3D setup error: ${err.message}`);
-      setLoading(false);
-    }
-  }, [isMobile]);
-
-  return (
-    <div className="relative w-full h-full" style={{ zIndex: 50 }}>
-      <div
-        ref={modelContainerRef}
-        className="w-full h-full"
-        style={{
-          background: "transparent",
-          position: "relative",
-          zIndex: 50,
-          height: isMobile ? "450px" : "100%",
-        }}
-      />
-      {loading && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-white font-medium">Loading 3D Model...</div>
-        </div>
-      )}
-      {error && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-red-400 font-medium text-center p-4">
-            Error: {error}
-            <br />
-            <small>Check browser console for details</small>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
 
 // function ModelViewer() {
 //   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState(null);
 //   const modelContainerRef = useRef(null);
 //   const modelRef = useRef(null);
 //   const animationFrameRef = useRef(null);
@@ -790,135 +514,228 @@ function ModelViewer() {
 //   }, []);
 
 //   useEffect(() => {
-//     const scene = new THREE.Scene();
-//     scene.background = null;
+//     let scene, camera, renderer, container;
+    
+//     try {
+//       scene = new THREE.Scene();
+//       scene.background = null;
 
-//     const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 1000);
-//     camera.position.set(0, 1.3, 5);
+//       // Create isometric camera (orthographic) - perfect isometric view
+//       const frustumSize = isMobile ? 4 : 3.5;
+//       camera = new THREE.OrthographicCamera(
+//         -frustumSize / 2,
+//         frustumSize / 2,
+//         frustumSize / 2,
+//         -frustumSize / 2,
+//         0.1,
+//         1000
+//       );
+      
+//       // Perfect isometric positioning: 35.264° elevation, 45° azimuth
+//       // This creates the classic isometric view showing three faces equally
+//       const distance = 10;
+//       camera.position.set(
+//         distance * Math.cos(Math.PI / 4) * Math.cos(Math.atan(Math.sqrt(2))),
+//         distance * Math.sin(Math.atan(Math.sqrt(2))),
+//         distance * Math.sin(Math.PI / 4) * Math.cos(Math.atan(Math.sqrt(2)))
+//       );
+//       camera.lookAt(0, 0, 0);
 
-//     const renderer = new THREE.WebGLRenderer({
-//       antialias: true,
-//       alpha: true,
-//       physicallyCorrectLights: true,
-//     });
-//     renderer.setPixelRatio(window.devicePixelRatio);
-//     renderer.outputEncoding = THREE.sRGBEncoding;
-//     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-//     renderer.toneMappingExposure = 6.5;
+//       renderer = new THREE.WebGLRenderer({
+//         antialias: true,
+//         alpha: true,
+//         physicallyCorrectLights: true,
+//       });
+//       renderer.setPixelRatio(window.devicePixelRatio);
+//       renderer.outputEncoding = THREE.sRGBEncoding;
+//       renderer.toneMapping = THREE.ACESFilmicToneMapping;
+//       renderer.toneMappingExposure = 6.5;
 
-//     const container = modelContainerRef.current;
-//     if (container) {
-//       container.innerHTML = "";
-//       container.appendChild(renderer.domElement);
-//     }
+//       container = modelContainerRef.current;
+//       if (container) {
+//         container.innerHTML = "";
+//         container.appendChild(renderer.domElement);
+//       }
 
-//     // Enhanced lighting setup
-//     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-//     scene.add(ambientLight);
+//       // Enhanced lighting setup optimized for isometric view
+//       const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
+//       scene.add(ambientLight);
 
-//     // Main directional light
-//     const mainLight = new THREE.DirectionalLight(0xffffff, 2);
-//     mainLight.position.set(7, 7, 5);
-//     mainLight.castShadow = true;
-//     scene.add(mainLight);
+//       // Main directional light from isometric angle
+//       const mainLight = new THREE.DirectionalLight(0xffffff, 2.5);
+//       mainLight.position.set(5, 8, 5);
+//       mainLight.castShadow = true;
+//       scene.add(mainLight);
 
-//     // Add rim light for better definition
-//     const rimLight = new THREE.DirectionalLight(0x9ca3af, 1);
-//     rimLight.position.set(-5, 5, -5);
-//     scene.add(rimLight);
+//       // Fill light to reduce harsh shadows
+//       const fillLight = new THREE.DirectionalLight(0x9ca3af, 1.2);
+//       fillLight.position.set(-3, 3, -3);
+//       scene.add(fillLight);
 
-//     // Add point lights for dynamic lighting
-//     const pointLight1 = new THREE.PointLight(0xffffff, 1);
-//     pointLight1.position.set(2, 2, 2);
-//     scene.add(pointLight1);
+//       // Rim light for better edge definition
+//       const rimLight = new THREE.DirectionalLight(0xb0b0b0, 0.8);
+//       rimLight.position.set(-5, 5, -5);
+//       scene.add(rimLight);
 
-//     const pointLight2 = new THREE.PointLight(0xffffff, 1);
-//     pointLight2.position.set(-2, -2, -2);
-//     scene.add(pointLight2);
+//       // Point lights for dynamic lighting
+//       const pointLight1 = new THREE.PointLight(0xffffff, 1.5);
+//       pointLight1.position.set(2, 2, 2);
+//       scene.add(pointLight1);
 
-//     const modelGroup = new THREE.Group();
-//     scene.add(modelGroup);
+//       const pointLight2 = new THREE.PointLight(0xffffff, 1.5);
+//       pointLight2.position.set(-2, -2, -2);
+//       scene.add(pointLight2);
 
-//     // Load model with enhanced materials
-//     const loader = new GLTFLoader();
-//     loader.load(
-//       "/2mn.gltf",
-//       (gltf) => {
-//         const model = gltf.scene;
+//       const modelGroup = new THREE.Group();
+//       scene.add(modelGroup);
 
-//         // Enhance materials for all meshes
-//         model.traverse((child) => {
-//           if (child.isMesh) {
-//             if (child.material) {
-//               child.material.roughness = 0.3;
-//               child.material.metalness = 0.8;
-//               child.material.envMapIntensity = 1.5;
-//               child.material.needsUpdate = true;
-//             }
-//           }
-//         });
-
-//         // Center and scale model - adjust scale for mobile
-//         const box = new THREE.Box3().setFromObject(model);
-//         const center = box.getCenter(new THREE.Vector3());
-//         const size = box.getSize(new THREE.Vector3());
-//         const maxDim = Math.max(size.x, size.y, size.z);
-//         const scale = isMobile ? 2 / maxDim : 3 / maxDim;
-
-//         model.position.set(
-//           -center.x,
-//           -center.y + (isMobile ? 0.8 : 1),
-//           -center.z
-//         );
-//         model.scale.setScalar(scale);
-
-//         modelGroup.add(model);
-//         modelRef.current = modelGroup;
+//       // Load model with enhanced materials
+//       // Check if GLTFLoader is available
+//       let loader;
+//       if (typeof GLTFLoader !== 'undefined') {
+//         loader = new GLTFLoader();
+//       } else if (THREE.GLTFLoader) {
+//         loader = new THREE.GLTFLoader();
+//       } else {
+//         console.error('GLTFLoader not found. Make sure to import it properly.');
+//         setError('GLTFLoader not available');
 //         setLoading(false);
-//       },
-//       undefined,
-//       (error) => console.error("Model loading error:", error)
-//     );
-
-//     // Animate lights
-//     let time = 0;
-//     function animateLights() {
-//       time += 0.01;
-//       pointLight1.position.x = Math.sin(time) * 3;
-//       pointLight1.position.z = Math.cos(time) * 3;
-//       pointLight2.position.x = Math.sin(time + Math.PI) * 3;
-//       pointLight2.position.z = Math.cos(time + Math.PI) * 3;
-//     }
-
-//     function updateSize() {
-//       const width = container.clientWidth;
-//       const height = container.clientHeight;
-//       camera.aspect = width / height;
-//       camera.updateProjectionMatrix();
-//       renderer.setSize(width, height);
-//     }
-
-//     window.addEventListener("resize", updateSize);
-//     updateSize();
-
-//     function animate() {
-//       animationFrameRef.current = requestAnimationFrame(animate);
-//       if (modelRef.current) {
-//         modelRef.current.rotation.y += 0.01;
-//         animateLights();
+//         return;
 //       }
-//       renderer.render(scene, camera);
-//     }
-//     animate();
 
-//     return () => {
-//       window.removeEventListener("resize", updateSize);
-//       if (animationFrameRef.current) {
-//         cancelAnimationFrame(animationFrameRef.current);
+//       console.log('Starting to load model: /4mdln.glb');
+      
+//       loader.load(
+//         "/4mdln.glb",
+//         (gltf) => {
+//           console.log('Model loaded successfully:', gltf);
+//           const model = gltf.scene;
+
+//           // Enhance materials for all meshes
+//           model.traverse((child) => {
+//             if (child.isMesh) {
+//               console.log('Processing mesh:', child.name, 'Material:', child.material);
+//               if (child.material) {
+//                 // Make sure the material is visible
+//                 child.material.transparent = false;
+//                 child.material.opacity = 1;
+//                 child.material.visible = true;
+//                 child.material.roughness = 0.3;
+//                 child.material.metalness = 0.8;
+//                 child.material.envMapIntensity = 1.5;
+//                 child.material.needsUpdate = true;
+                
+//                 // Force basic material properties for visibility
+//                 if (!child.material.color) {
+//                   child.material.color = new THREE.Color(0xffffff);
+//                 }
+//               } else {
+//                 // If no material, create a basic one
+//                 child.material = new THREE.MeshStandardMaterial({
+//                   color: 0xffffff,
+//                   roughness: 0.1,
+//                   metalness: 0.4
+//                 });
+//               }
+              
+//               // Make sure geometry is valid
+//               if (child.geometry) {
+//                 child.geometry.computeBoundingBox();
+//                 child.geometry.computeVertexNormals();
+//               }
+//             }
+//           });
+
+//           // Center and scale model for isometric view
+//           const box = new THREE.Box3().setFromObject(model);
+//           const center = box.getCenter(new THREE.Vector3());
+//           const size = box.getSize(new THREE.Vector3());
+//           const maxDim = Math.max(size.x, size.y, size.z);
+          
+//           // Adjusted scaling for isometric view
+//           const scale = maxDim > 0 ? (isMobile ? 1.8 / maxDim : 3.5 / maxDim) : 1;
+
+//           // Reset position and scale
+//           model.position.set(0, 0, 0);
+//           model.scale.setScalar(scale);
+          
+//           // Center the model in isometric view
+//           model.position.set(
+//             -center.x * scale,
+//             -center.y * scale + (isMobile ? 0.3 : 0.5),
+//             -center.z * scale
+//           );
+
+//           modelGroup.add(model);
+//           modelRef.current = modelGroup;
+//           setLoading(false);
+//           console.log('Model added to scene');
+//         },
+//         (progress) => {
+//           console.log('Loading progress:', (progress.loaded / progress.total * 100) + '%');
+//         },
+//         (error) => {
+//           console.error("Model loading error:", error);
+//           setError(`Failed to load model: ${error.message}`);
+//           setLoading(false);
+//         }
+//       );
+
+//       // Animate lights in isometric-friendly pattern
+//       let time = 0;
+//       function animateLights() {
+//         time += 0.008; // Slower animation for isometric feel
+//         pointLight1.position.x = Math.sin(time) * 2.5;
+//         pointLight1.position.z = Math.cos(time) * 2.5;
+//         pointLight2.position.x = Math.sin(time + Math.PI) * 2.5;
+//         pointLight2.position.z = Math.cos(time + Math.PI) * 2.5;
 //       }
-//       renderer.dispose();
-//     };
-//   }, [isMobile]); // Add isMobile as dependency
+
+//       function updateSize() {
+//         const width = container.clientWidth;
+//         const height = container.clientHeight;
+//         const aspect = width / height;
+        
+//         // Update orthographic camera for isometric view
+//         const currentFrustumSize = isMobile ? 4 : 4.4;
+//         camera.left = -currentFrustumSize * aspect / 2;
+//         camera.right = currentFrustumSize * aspect / 2;
+//         camera.top = currentFrustumSize / 2;
+//         camera.bottom = -currentFrustumSize / 2;
+//         camera.updateProjectionMatrix();
+        
+//         renderer.setSize(width, height);
+//       }
+
+//       window.addEventListener("resize", updateSize);
+//       updateSize();
+
+//       function animate() {
+//         animationFrameRef.current = requestAnimationFrame(animate);
+//         if (modelRef.current) {
+//           // Slow rotation to maintain isometric aesthetic
+//           modelRef.current.rotation.y += 0.006;
+//           animateLights();
+//         }
+//         renderer.render(scene, camera);
+//       }
+//       animate();
+
+//       return () => {
+//         window.removeEventListener("resize", updateSize);
+//         if (animationFrameRef.current) {
+//           cancelAnimationFrame(animationFrameRef.current);
+//         }
+//         if (renderer) {
+//           renderer.dispose();
+//         }
+//       };
+//     } catch (err) {
+//       console.error('Error setting up 3D scene:', err);
+//       setError(`3D setup error: ${err.message}`);
+//       setLoading(false);
+//     }
+//   }, [isMobile]);
 
 //   return (
 //     <div className="relative w-full h-full" style={{ zIndex: 50 }}>
@@ -929,7 +746,7 @@ function ModelViewer() {
 //           background: "transparent",
 //           position: "relative",
 //           zIndex: 50,
-//           height: isMobile ? "450px" : "100%", // Different height for mobile
+//           height: isMobile ? "450px" : "100%",
 //         }}
 //       />
 //       {loading && (
@@ -937,9 +754,197 @@ function ModelViewer() {
 //           <div className="text-white font-medium">Loading 3D Model...</div>
 //         </div>
 //       )}
+//       {error && (
+//         <div className="absolute inset-0 flex items-center justify-center">
+//           <div className="text-red-400 font-medium text-center p-4">
+//             Error: {error}
+//             <br />
+//             <small>Check browser console for details</small>
+//           </div>
+//         </div>
+//       )}
 //     </div>
 //   );
 // }
+
+
+function ModelViewer() {
+  const [loading, setLoading] = useState(true);
+  const modelContainerRef = useRef(null);
+  const modelRef = useRef(null);
+  const animationFrameRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check if mobile on initial render
+    const checkIfMobile = () => window.innerWidth <= 768;
+    setIsMobile(checkIfMobile());
+
+    // Set up resize listener for mobile detection
+    const handleResize = () => {
+      setIsMobile(checkIfMobile());
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    const scene = new THREE.Scene();
+    scene.background = null;
+
+    const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 1000);
+    camera.position.set(0, 1.3, 5);
+
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true,
+      alpha: true,
+      physicallyCorrectLights: true,
+    });
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.outputEncoding = THREE.sRGBEncoding;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 6.5;
+
+    const container = modelContainerRef.current;
+    if (container) {
+      container.innerHTML = "";
+      container.appendChild(renderer.domElement);
+    }
+
+    // Enhanced lighting setup
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(ambientLight);
+
+    // Main directional light
+    const mainLight = new THREE.DirectionalLight(0xffffff, 2);
+    mainLight.position.set(7, 7, 5);
+    mainLight.castShadow = true;
+    scene.add(mainLight);
+
+    // Add rim light for better definition
+    const rimLight = new THREE.DirectionalLight(0x9ca3af, 1);
+    rimLight.position.set(-5, 5, -5);
+    scene.add(rimLight);
+
+    // Add point lights for dynamic lighting
+    const pointLight1 = new THREE.PointLight(0xffffff, 1);
+    pointLight1.position.set(2, 2, 2);
+    scene.add(pointLight1);
+
+    const pointLight2 = new THREE.PointLight(0xffffff, 1);
+    pointLight2.position.set(-2, -2, -2);
+    scene.add(pointLight2);
+
+    const modelGroup = new THREE.Group();
+    scene.add(modelGroup);
+
+    // Load model with enhanced materials
+    const loader = new GLTFLoader();
+    loader.load(
+      "/2mn.gltf",
+      (gltf) => {
+        const model = gltf.scene;
+
+        // Enhance materials for all meshes
+        model.traverse((child) => {
+          if (child.isMesh) {
+            if (child.material) {
+              child.material.roughness = 0.3;
+              child.material.metalness = 0.8;
+              child.material.envMapIntensity = 1.5;
+              child.material.needsUpdate = true;
+            }
+          }
+        });
+
+        // Center and scale model - increased scale for desktop
+        const box = new THREE.Box3().setFromObject(model);
+        const center = box.getCenter(new THREE.Vector3());
+        const size = box.getSize(new THREE.Vector3());
+        const maxDim = Math.max(size.x, size.y, size.z);
+        const scale = isMobile ? 2 / maxDim : 4.5 / maxDim; // Increased from 3 to 4.5
+
+        model.position.set(
+          -center.x,
+          -center.y + (isMobile ? 0.8 : 1),
+          -center.z
+        );
+        model.scale.setScalar(scale);
+
+        modelGroup.add(model);
+        modelRef.current = modelGroup;
+        setLoading(false);
+      },
+      undefined,
+      (error) => console.error("Model loading error:", error)
+    );
+
+    // Animate lights
+    let time = 0;
+    function animateLights() {
+      time += 0.01;
+      pointLight1.position.x = Math.sin(time) * 3;
+      pointLight1.position.z = Math.cos(time) * 3;
+      pointLight2.position.x = Math.sin(time + Math.PI) * 3;
+      pointLight2.position.z = Math.cos(time + Math.PI) * 3;
+    }
+
+    function updateSize() {
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, height);
+    }
+
+    window.addEventListener("resize", updateSize);
+    updateSize();
+
+    function animate() {
+      animationFrameRef.current = requestAnimationFrame(animate);
+      if (modelRef.current) {
+        modelRef.current.rotation.y += 0.01;
+        animateLights();
+      }
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    return () => {
+      window.removeEventListener("resize", updateSize);
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+      renderer.dispose();
+    };
+  }, [isMobile]); // Add isMobile as dependency
+
+  return (
+    <div className="relative w-full h-full" style={{ zIndex: 50 }}>
+      <div
+        ref={modelContainerRef}
+        className="w-full h-full"
+        style={{
+          background: "transparent",
+          position: "relative",
+          zIndex: 50,
+          height: isMobile ? "450px" : "100%", 
+        }}
+      />
+      {loading && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-white font-medium">Loading 3D Model...</div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+
+
 const MunjalAutoGroup = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -997,7 +1002,7 @@ const MunjalAutoGroup = () => {
                 : "opacity-0 translate-x-10"
             }`}
           >
-            <div className="absolute   inset-0 top-0   scale-125">
+            <div className="absolute   inset-0    scale-125">
               <ModelViewer />
             </div>
           </div>
