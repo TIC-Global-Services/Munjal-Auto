@@ -19,7 +19,7 @@ const captions = [
 const smallcaptions = [
   "Unmatched strength and precision\n to ensure automotive safety.",
   "First ensure automotive safety line\nSecond line",
-  "Unmatched strength and precision\n to ensure automotive safety.",
+  "MAIL has the capability to manufacture\n Steel Wheel Rim for two wheelers,\n three wheelers and passenger cars,\n of the following specifications:",
   "Another first line Another second \nline ensure automotive safety",
   "More ensure automotive safety lines\nLine two here",
 ];

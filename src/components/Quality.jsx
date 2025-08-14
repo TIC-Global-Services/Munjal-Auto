@@ -675,7 +675,7 @@ function ModelViewer() {
   }, []);
 
   return (
-    <div className="absolute md:w-[900px] md:h-[800px] w-[500px] h-[600px]" style={{ zIndex: 50 }}>
+    <div className="absolute md:w-[900px] md:h-[800px] w-[300px] h-[600px]" style={{ zIndex: 50 }}>
       <div
         ref={modelContainerRef}
         className="w-full h-full"

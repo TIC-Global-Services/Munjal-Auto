@@ -924,14 +924,14 @@ function ModelViewer() {
 
   return (
     <div className="relative w-full h-full" style={{ zIndex: 50 }}>
-      <div
+      <div  
         ref={modelContainerRef}
         className="w-full h-full"
         style={{
           background: "transparent",
           position: "relative",
           zIndex: 50,
-          height: isMobile ? "450px" : "100%", 
+          height: isMobile ? "470px" : "100%", 
         }}
       />
       {loading && (
@@ -996,13 +996,13 @@ const MunjalAutoGroup = () => {
           {/* <div className="  relative !z-[1000]  !bottom-40"> */}
 
           <div
-            className={`md:w-full relative h-[400px] transition-all duration-1000 delay-300 ${
+            className={`md:w-full relative md:h-[400px] h-[300px] transition-all duration-1000 delay-300 ${
               isVisible
                 ? "opacity-100 translate-x-0"
                 : "opacity-0 translate-x-10"
             }`}
           >
-            <div className="absolute   inset-0    scale-125">
+            <div className="absolute   inset-0    md:scale-115 md:-mt:0 -mt-[120px]">
               <ModelViewer />
             </div>
           </div>
@@ -1085,7 +1085,436 @@ import aboutex3 from "../assets/about-ex-3.jpeg";
 import placeholderImage from "../assets/placeholderImage.png";
 import { image } from "framer-motion/client";
 
+// const BoardOfDirectors = () => {
+//   // Sample data for directors
+//   const directors = [
+//     {
+//       id: 1,
+//       name: "Mr. Sudhir Kumar Munjal",
+//       position: "Chairman & Managing Director",
+//       description:
+//         "Mr. Sudhir Kumar Munjal is a visionary entrepreneur with over 46 years of experience in the bicycle, automotive, and engineering industries. He served as Director from 1991 to 1993, became Managing Director in 1993, and Chairman & Managing Director in 2015. He successfully led the company’s strategic shift from bicycle manufacturing to becoming a leading auto components manufacturer in India, fostering a culture of performance, teamwork, and innovation.",
+//       image: placeholderImage,
+//     },
+//     {
+//       id: 2,
+//       name: "Mrs. Anju Munjal",
+//       position: "Executive Director",
+//       description:
+//         "Mrs. Anju Munjal has over 30 years of experience in the bicycle, automotive, and engineering sectors. She played a pivotal role in the company’s revival as Chief Executive and has been serving as Whole-time Director since 1999. Her leadership has contributed significantly to Munjal Auto’s growth into one of India’s fastest-growing auto component manufacturers.",
+//       image: placeholderImage, 
+//     },
+//     {
+//       id: 3,
+//       name: "Mr. Anuj Munjal",
+//       position: "Executive Director",
+//       description:'Mr. Anuj Munjal holds an MBA in Finance and Marketing from Northeastern University, Boston (USA), and brings over 17 years of experience across marketing, finance, IT, administration, and operations. Formerly Chief Executive of Hero Cycles’ CR Division, he now oversees day-to-day operations at Munjal Auto as Whole-time Director, driving operational excellence and strategic growth.',
+//       image: placeholderImage, 
+//     },
+//     {
+//       id: 4,
+//       name: "Mrs. Avi Kersi Sabavala",
+//       position: "Director",
+//       description:'Mrs. Avi Sabavala is a postgraduate in Social Sciences, Law, and Management, and a reputed corporate trainer with extensive experience in industry-focused skill development. She has served as President of Baroda Management Association and Vadodara Chamber of Commerce & Industry. A governing council member of AIMA, she continues to contribute to industry leadership and business excellence.',
+//       image: placeholderImage, 
+//     },
+//     {
+//       id: 5,
+//       name: "Mr. Atul Haribhai Patel",
+//       position: "Independent Director",
+//       description:'Mr. Atul Haribhai Patel is a Textile Engineering graduate and a dynamic industrialist with deep experience in specialty chemicals. He currently serves as Managing Director of Tarak Chemicals Limited, leveraging his strategic vision and business acumen to support Munjal Auto’s governance and growth.',
+//       image: placeholderImage, 
+//     },
+//     {
+//       id: 6,
+//       name: "Mr. Sunil Chinubhai Vakil",
+//       position: "Independent Director",
+//       description:'A Chartered Accountant from ICAI, Mr. Sunil Vakil brings over 40 years of expertise in corporate finance and strategy. He has advised leading corporates and multinationals and has run a successful independent consultancy for more than two decades, offering deep financial insights to Munjal Auto’s board.',
+//       image: placeholderImage, 
+//     },
+//     {
+//       id: 7,
+//       name: "Mr. Sameer Subhash Khera",
+//       position: "Independent Director",
+//       description:'Mr. Sameer Khera is a Mechanical Engineer with a post-graduate degree in Manufacturing Management from SPJIMR, Mumbai. With over 30 years of experience in strategy, operations, and international business, he currently serves as Managing Director of SEE Linkages and Whole-time Director at Eclipse Global. He is also a founder trustee of the SEE Foundation, an organization dedicated to supporting education and healthcare initiatives that empower girls and promote gender equality.',
+//       image: placeholderImage, 
+//     },
+//   ];
+
+//   // State to track active card
+//   const [activeCard, setActiveCard] = useState(1);
+
+//   // Text animation variants
+//   const textVariants = {
+//     inactive: {
+//       opacity: 0.8,
+//       y: 5,
+//       transition: {
+//         duration: 0.5,
+//         ease: [0.43, 0.13, 0.23, 0.96],
+//       },
+//     },
+//     active: {
+//       opacity: 1,
+//       y: 0,
+//       transition: {
+//         duration: 0.5,
+//         ease: [0.43, 0.13, 0.23, 0.96],
+//       },
+//     },
+//   };
+
+//   // Additional info variants
+//   const infoVariants = {
+//     hidden: {
+//       opacity: 0,
+//       y: 15,
+//       height: 0,
+//       transition: {
+//         duration: 0.4,
+//         ease: [0.43, 0.13, 0.23, 0.96],
+//       },
+//     },
+//     visible: {
+//       opacity: 1,
+//       y: 15,
+//       height: "auto",
+//       transition: {
+//         duration: 0.6,
+//         ease: [0.43, 0.13, 0.23, 0.96],
+//         delay: 0.1,
+//       },
+//     },
+//   };
+
+//   return (
+//     <div id="board-directors"
+//      className="w-full  max-w-7xl mx-auto flex items-center p-2">
+//       <div className="w-full flex flex-col gap-2 items-start">
+//         {/* Left side - Title (30%) */}
+//         <div className="w-full md:w-3/12 md:flex hidden lg:flex flex-col md:whitespace-nowrap justify-center">
+//           <h1 className="text-5xl font-normal mb-2">Board of</h1>
+//           <h1 className="text-5xl font-normal text-red-500">Directors</h1>
+//         </div>
+//         <div className="w-full  text-2xl md:hidden flex lg:hidden flex-row md:whitespace-nowrap justify-center">
+//           <h1 className=" font-normal mb-2">Board of</h1>
+//           <h1 className=" font-normal  ml-2 text-red-500">Directors</h1>
+//         </div>
+//         {/* Right side - Cards (70%) */}
+//         <div className="w-full  flex justify-center mt-5">
+//           <div className="flex w-full max-w-8xl gap-5">
+//             {directors.map((director) => (
+//               <motion.div
+//                 key={director.id}
+//                 className="relative overflow-hidden lg:rounded-[20px] rounded-lg md:rounded-[20px]  shadow-xl cursor-pointer "
+//                 initial={false}
+//                 animate={{
+//                   flex: activeCard === director.id ? 5 : 2,
+//                 }}
+//                 transition={{
+//                   duration: 0.7,
+//                   ease: [0.43, 0.13, 0.23, 0.96],
+//                 }}
+//                 onHoverStart={() => setActiveCard(director.id)}
+//               >
+//                 <div className="h-[663px]  w-full relative">
+//                   <img
+//                     src={director.image}
+//                     alt={director.name}
+//                     className="h-full w-full object-cover"
+//                   />
+
+//                   {/* Text overlay at the bottom with shadow gradient */}
+//                   <div className="absolute bottom-0 left-0 right-0 px-6 py-2 text-white">
+//                     {/* Text container with animated variants */}
+//                     <motion.div
+//                       initial="inactive"
+//                       animate={
+//                         activeCard === director.id ? "active" : "inactive"
+//                       }
+//                       variants={textVariants}
+//                       className="transform-gpu"
+//                     >
+//                       <motion.h3
+//                         className="text-[20px] text-[#ED1C24] font-bold"
+//                         initial={{ opacity: 0.9 }}
+//                         animate={{
+//                           opacity: 1,
+//                           scale: activeCard === director.id ? 1.02 : 1,
+//                         }}
+//                         transition={{ duration: 0.5 }}
+//                       >
+//                         {director.name}
+//                       </motion.h3>
+
+//                       <motion.p
+//                         className="text-[16px] text-[#131316]"
+//                         initial={{ opacity: 0.7 }}
+//                         animate={{
+//                           opacity: activeCard === director.id ? 0.9 : 0.7,
+//                         }}
+//                         transition={{ duration: 0.5 }}
+//                       >
+//                         {director.position}
+//                       </motion.p>
+
+//                       {activeCard === director.id && (
+//                         <motion.p
+//                           className="text-[12px] text-[#75737C] leading-[18px] mt-1 hidden md:block"
+//                           initial={{ opacity: 0 }}
+//                           animate={{ opacity: 0.9 }}
+//                           exit={{ opacity: 0 }}
+//                           transition={{ duration: 0.3 }}
+//                         >
+//                           {director.description}
+//                         </motion.p>
+//                       )}
+//                     </motion.div>
+
+//                     {/* Additional info with animated presence */}
+//                     <AnimatePresence>
+//                       {activeCard === director.id && (
+//                         <motion.div
+//                           initial="hidden"
+//                           animate="visible"
+//                           exit="hidden"
+//                           variants={infoVariants}
+//                           className="mt-2 text-sm overflow-hidden"
+//                         >
+//                           {/* <p className="leading-relaxed opacity-90">
+//           Board member since 2022
+//         </p> */}
+//                         </motion.div>
+//                       )}
+//                     </AnimatePresence>
+//                   </div>
+//                 </div>
+//               </motion.div>
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+
+
+// import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+
+// const BoardOfDirectors = () => {
+//   // Sample placeholder image
+
+//   // Sample data for directors
+//   const directors = [
+//     {
+//       id: 1,
+//       name: "Mr. Sudhir Kumar Munjal",
+//       position: "Chairman & Managing Director",
+//       description:
+//         "Mr. Sudhir Kumar Munjal is a visionary entrepreneur with over 46 years of experience in the bicycle, automotive, and engineering industries. He served as Director from 1991 to 1993, became Managing Director in 1993, and Chairman & Managing Director in 2015. He successfully led the company's strategic shift from bicycle manufacturing to becoming a leading auto components manufacturer in India, fostering a culture of performance, teamwork, and innovation.",
+//       image: placeholderImage,
+//     },
+//     {
+//       id: 2,
+//       name: "Mrs. Anju Munjal",
+//       position: "Executive Director",
+//       description:
+//         "Mrs. Anju Munjal has over 30 years of experience in the bicycle, automotive, and engineering sectors. She played a pivotal role in the company's revival as Chief Executive and has been serving as Whole-time Director since 1999. Her leadership has contributed significantly to Munjal Auto's growth into one of India's fastest-growing auto component manufacturers.",
+//       image: placeholderImage, 
+//     },
+//     {
+//       id: 3,
+//       name: "Mr. Anuj Munjal",
+//       position: "Executive Director",
+//       description: 'Mr. Anuj Munjal holds an MBA in Finance and Marketing from Northeastern University, Boston (USA), and brings over 17 years of experience across marketing, finance, IT, administration, and operations. Formerly Chief Executive of Hero Cycles\' CR Division, he now oversees day-to-day operations at Munjal Auto as Whole-time Director, driving operational excellence and strategic growth.',
+//       image: placeholderImage, 
+//     },
+//     {
+//       id: 4,
+//       name: "Mrs. Avi Kersi Sabavala",
+//       position: "Director",
+//       description: 'Mrs. Avi Sabavala is a postgraduate in Social Sciences, Law, and Management, and a reputed corporate trainer with extensive experience in industry-focused skill development. She has served as President of Baroda Management Association and Vadodara Chamber of Commerce & Industry. A governing council member of AIMA, she continues to contribute to industry leadership and business excellence.',
+//       image: placeholderImage, 
+//     },
+//     {
+//       id: 5,
+//       name: "Mr. Atul Haribhai Patel",
+//       position: "Independent Director",
+//       description: 'Mr. Atul Haribhai Patel is a Textile Engineering graduate and a dynamic industrialist with deep experience in specialty chemicals. He currently serves as Managing Director of Tarak Chemicals Limited, leveraging his strategic vision and business acumen to support Munjal Auto\'s governance and growth.',
+//       image: placeholderImage, 
+//     },
+//     {
+//       id: 6,
+//       name: "Mr. Sunil Chinubhai Vakil",
+//       position: "Independent Director",
+//       description: 'A Chartered Accountant from ICAI, Mr. Sunil Vakil brings over 40 years of expertise in corporate finance and strategy. He has advised leading corporates and multinationals and has run a successful independent consultancy for more than two decades, offering deep financial insights to Munjal Auto\'s board.',
+//       image: placeholderImage, 
+//     },
+//     {
+//       id: 7,
+//       name: "Mr. Sameer Subhash Khera",
+//       position: "Independent Director",
+//       description: 'Mr. Sameer Khera is a Mechanical Engineer with a post-graduate degree in Manufacturing Management from SPJIMR, Mumbai. With over 30 years of experience in strategy, operations, and international business, he currently serves as Managing Director of SEE Linkages and Whole-time Director at Eclipse Global. He is also a founder trustee of the SEE Foundation, an organization dedicated to supporting education and healthcare initiatives that empower girls and promote gender equality.',
+//       image: placeholderImage, 
+//     },
+//   ];
+
+//   // State to track active card (for desktop)
+//   const [activeCard, setActiveCard] = useState(1);
+
+//   // Carousel state (for mobile)
+//   const [currentIndex, setCurrentIndex] = useState(0);
+
+//   // Navigation functions
+//   const goToNext = () => {
+//     setCurrentIndex((prevIndex) => 
+//       prevIndex === directors.length - 1 ? 0 : prevIndex + 1
+//     );
+//   };
+
+//   const goToPrev = () => {
+//     setCurrentIndex((prevIndex) => 
+//       prevIndex === 0 ? directors.length - 1 : prevIndex - 1
+//     );
+//   };
+
+//   const goToSlide = (index) => {
+//     setCurrentIndex(index);
+//   };
+
+//   const currentDirector = directors[currentIndex];
+
+//   // Text animation variants (for desktop)
+//   const textVariants = {
+//     inactive: {
+//       opacity: 0.8,
+//       y: 5,
+//       transition: {
+//         duration: 0.5,
+//         ease: [0.43, 0.13, 0.23, 0.96],
+//       },
+//     },
+//     active: {
+//       opacity: 1,
+//       y: 0,
+//       transition: {
+//         duration: 0.5,
+//         ease: [0.43, 0.13, 0.23, 0.96],
+//       },
+//     },
+//   };
+
+//   // Additional info variants (for desktop)
+//   const infoVariants = {
+//     hidden: {
+//       opacity: 0,
+//       y: 15,
+//       height: 0,
+//       transition: {
+//         duration: 0.4,
+//         ease: [0.43, 0.13, 0.23, 0.96],
+//       },
+//     },
+//     visible: {
+//       opacity: 1,
+//       y: 15,
+//       height: "auto",
+//       transition: {
+//         duration: 0.6,
+//         ease: [0.43, 0.13, 0.23, 0.96],
+//         delay: 0.1,
+//       },
+//     },
+//   };
+
+//   return (
+//     <div className="w-full min-h-screen bg-gray-50">
+//       {/* Desktop Version - Keep original expandable cards */}
+//       <div className="hidden md:block">
+//         {/* Your original desktop component would go here */}
+//         <div className="w-full max-w-7xl mx-auto flex items-center justify-center min-h-screen p-8">
+//           <div className="text-center">
+//             <h1 className="text-6xl font-light mb-4">Board of <span className="text-red-500">Directors</span></h1>
+//             <p className="text-gray-600">Desktop expandable view - original component</p>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Mobile Carousel Version */}
+//       <div className="block md:hidden">
+//         <div className="w-full px-4 py-8">
+//           {/* Title */}
+//           <div className="text-center mb-8">
+//             <h1 className="text-3xl font-light">
+//               Board of <span className="text-red-500">Directors</span>
+//             </h1>
+//           </div>
+
+//           {/* Carousel Container */}
+//           <div className="relative max-w-sm mx-auto">
+//             {/* Main Card */}
+//             <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+//               {/* Director Image */}
+//               <div className="relative h-80 overflow-hidden">
+//                 <img
+//                   src={currentDirector.image}
+//                   alt={currentDirector.name}
+//                   className="w-full h-full object-cover"
+//                 />
+                
+//                 {/* Navigation Arrows */}
+//                 <button
+//                   onClick={goToPrev}
+//                   className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-all"
+//                   aria-label="Previous director"
+//                 >
+//                   <ChevronLeft size={20} />
+//                 </button>
+                
+//                 <button
+//                   onClick={goToNext}
+//                   className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-all"
+//                   aria-label="Next director"
+//                 >
+//                   <ChevronRight size={20} />
+//                 </button>
+//               </div>
+
+//               {/* Director Info */}
+//               <div className="p-6">
+//                 <h3 className="text-xl font-bold text-red-500 mb-2">
+//                   {currentDirector.name}
+//                 </h3>
+                
+//                 <p className="text-lg text-gray-700 mb-4 font-medium">
+//                   {currentDirector.position}
+//                 </p>
+                
+//                 <p className="text-sm text-gray-600 leading-relaxed">
+//                   {currentDirector.description}
+//                 </p>
+//               </div>
+//             </div>
+
+            
+            
+//           </div>
+
+  
+          
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
 const BoardOfDirectors = () => {
+ 
   // Sample data for directors
   const directors = [
     {
@@ -1093,30 +1522,80 @@ const BoardOfDirectors = () => {
       name: "Mr. Sudhir Kumar Munjal",
       position: "Chairman & Managing Director",
       description:
-        "A visionary entrepreneur with over 46 years of experience in the bicycle, automobile, and engineering industries, Mr. Sudhir Kumar Munjal is known for building high-performing teams and fostering a strong team spirit. An Arts graduate, he served as Director of Munjal Auto Industries Ltd. (1991-1993) before assuming the role of Managing Director in 1993 and Chairman & Managing Director in 2015. Under his leadership, the company successfully transitioned from bicycle manufacturing to auto components, driving a major turnaround in 1999-2000.",
+        "Mr. Sudhir Kumar Munjal is a visionary entrepreneur with over 46 years of experience in the bicycle, automotive, and engineering industries. He served as Director from 1991 to 1993, became Managing Director in 1993, and Chairman & Managing Director in 2015. He successfully led the company’s strategic shift from bicycle manufacturing to becoming a leading auto components manufacturer in India, fostering a culture of performance, teamwork, and innovation.",
       image: placeholderImage,
     },
     {
       id: 2,
       name: "Mrs. Anju Munjal",
-      position: "Whole-time Director",
+      position: "Executive Director",
       description:
-        "Mrs. Anju Munjal is an Arts Graduate. Mrs. Anju Munjal is having more than 30 years of rich experience in bicycle / automobile / engineering industry. In 1999, Mrs. Anju Munjal assumed charge as Whole Time Director of your Company. Under her stewardship, your Company is now one of the fastest growing auto component company in India.",
+        "Mrs. Anju Munjal has over 30 years of experience in the bicycle, automotive, and engineering sectors. She played a pivotal role in the company’s revival as Chief Executive and has been serving as Whole-time Director since 1999. Her leadership has contributed significantly to Munjal Auto’s growth into one of India’s fastest-growing auto component manufacturers.",
       image: placeholderImage, 
     },
     {
       id: 3,
+      name: "Mr. Anuj Munjal",
+      position: "Executive Director",
+      description: 'Mr. Anuj Munjal holds an MBA in Finance and Marketing from Northeastern University, Boston (USA), and brings over 17 years of experience across marketing, finance, IT, administration, and operations. Formerly Chief Executive of Hero Cycles\' CR Division, he now oversees day-to-day operations at Munjal Auto as Whole-time Director, driving operational excellence and strategic growth.',
+      image: placeholderImage, 
+    },
+    {
+      id: 4,
       name: "Mrs. Avi Kersi Sabavala",
       position: "Director",
-      description:'She is Post graduate in Social Sciences, Law and Management and a well-known Corporate Trainer with wide experience in conducting various soft skill training programmes for industrial personnel at all levels. She has wide experience in Business and Industry. She was President of Baroda Management Association (BMA) for the year 2016-17. In the year 2016-17, BMA won the Best Local Management Association Award from parent body – All India Management Association. Presently she is continuing to be on the Advisory Committee of Past Presidents. She has been past President of Vadodara Chamber of Commerce & Industry (VCCI) for 2 Terms i.e. 2010-12 & 2012-14.She is Professional Life member of All India Management Association (AIMA) and currently member of the Governing Council of AIMA.',
+      description: 'Mrs. Avi Sabavala is a postgraduate in Social Sciences, Law, and Management, and a reputed corporate trainer with extensive experience in industry-focused skill development. She has served as President of Baroda Management Association and Vadodara Chamber of Commerce & Industry. A governing council member of AIMA, she continues to contribute to industry leadership and business excellence.',
+      image: placeholderImage, 
+    },
+    {
+      id: 5,
+      name: "Mr. Atul Haribhai Patel",
+      position: "Independent Director",
+      description: 'Mr. Atul Haribhai Patel is a Textile Engineering graduate and a dynamic industrialist with deep experience in specialty chemicals. He currently serves as Managing Director of Tarak Chemicals Limited, leveraging his strategic vision and business acumen to support Munjal Auto\'s governance and growth.',
+      image: placeholderImage, 
+    },
+    {
+      id: 6,
+      name: "Mr. Sunil Chinubhai Vakil",
+      position: "Independent Director",
+      description: 'A Chartered Accountant from ICAI, Mr. Sunil Vakil brings over 40 years of expertise in corporate finance and strategy. He has advised leading corporates and multinationals and has run a successful independent consultancy for more than two decades, offering deep financial insights to Munjal Auto\'s board.',
+      image: placeholderImage, 
+    },
+    {
+      id: 7,
+      name: "Mr. Sameer Subhash Khera",
+      position: "Independent Director",
+      description: 'Mr. Sameer Khera is a Mechanical Engineer with a post-graduate degree in Manufacturing Management from SPJIMR, Mumbai. With over 30 years of experience in strategy, operations, and international business, he currently serves as Managing Director of SEE Linkages and Whole-time Director at Eclipse Global. He is also a founder trustee of the SEE Foundation, an organization dedicated to supporting education and healthcare initiatives that empower girls and promote gender equality.',
       image: placeholderImage, 
     },
   ];
 
-  // State to track active card
+  // State to track active card (for desktop)
   const [activeCard, setActiveCard] = useState(1);
 
-  // Text animation variants
+  // Carousel state (for mobile)
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Navigation functions for mobile carousel
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === directors.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const goToPrev = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? directors.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToSlide = (index) => {
+    setCurrentIndex(index);
+  };
+
+  const currentDirector = directors[currentIndex];
+
+  // Text animation variants (for desktop)
   const textVariants = {
     inactive: {
       opacity: 0.8,
@@ -1136,7 +1615,7 @@ const BoardOfDirectors = () => {
     },
   };
 
-  // Additional info variants
+  // Additional info variants (for desktop)
   const infoVariants = {
     hidden: {
       opacity: 0,
@@ -1160,115 +1639,194 @@ const BoardOfDirectors = () => {
   };
 
   return (
-    <div id="board-directors"
-     className="w-full  max-w-7xl mx-auto flex items-center p-8">
-      <div className="w-full flex flex-col  lg:flex-row md:flex-col gap-8 items-start">
-        {/* Left side - Title (30%) */}
-        <div className="w-full md:w-3/12 md:flex hidden lg:flex flex-col md:whitespace-nowrap justify-center">
-          <h1 className="text-5xl font-normal mb-2">Board of</h1>
-          <h1 className="text-5xl font-normal text-red-500">Directors</h1>
-        </div>
-        <div className="w-full  text-2xl md:hidden flex lg:hidden flex-row md:whitespace-nowrap justify-center">
-          <h1 className=" font-normal mb-2">Board of</h1>
-          <h1 className=" font-normal  ml-2 text-red-500">Directors</h1>
-        </div>
-        {/* Right side - Cards (70%) */}
-        <div className="w-full md:w-9/12 flex justify-center">
-          <div className="flex w-full max-w-5xl gap-6">
-            {directors.map((director) => (
-              <motion.div
-                key={director.id}
-                className="relative overflow-hidden lg:rounded-[20px] rounded-lg md:rounded-[20px]  shadow-xl cursor-pointer "
-                initial={false}
-                animate={{
-                  flex: activeCard === director.id ? 5 : 2,
-                }}
-                transition={{
-                  duration: 0.7,
-                  ease: [0.43, 0.13, 0.23, 0.96],
-                }}
-                onHoverStart={() => setActiveCard(director.id)}
-              >
-                <div className="h-[663px]  w-full relative">
-                  <img
-                    src={director.image}
-                    alt={director.name}
-                    className="h-full w-full object-cover"
-                  />
+    <div className="w-full min-h-screen bg-gray-50">
+      {/* Desktop Version - Original expandable cards */}
+      <div className="hidden lg:block">
+        <div id="board-directors" className="w-full max-w-7xl mx-auto flex items-center p-2 min-h-screen">
+          <div className="w-full flex flex-col gap-2 items-start">
+            {/* Left side - Title (30%) */}
+            <div className="w-full md:w-3/12 md:flex hidden lg:flex flex-col md:whitespace-nowrap justify-center">
+              <h1 className="text-5xl font-normal mb-2">Board of</h1>
+              <h1 className="text-5xl font-normal text-red-500">Directors</h1>
+            </div>
+            
+            {/* Right side - Cards (70%) */}
+            <div className="w-full flex justify-center mt-5">
+              <div className="flex w-full max-w-8xl gap-5">
+                {directors.map((director) => (
+                  <motion.div
+                    key={director.id}
+                    className="relative overflow-hidden lg:rounded-[20px] rounded-lg md:rounded-[20px] shadow-xl cursor-pointer"
+                    initial={false}
+                    animate={{
+                      flex: activeCard === director.id ? 5 : 2,
+                    }}
+                    transition={{
+                      duration: 0.7,
+                      ease: [0.43, 0.13, 0.23, 0.96],
+                    }}
+                    onHoverStart={() => setActiveCard(director.id)}
+                  >
+                    <div className="h-[663px] w-full relative">
+                      <img
+                        src={director.image}
+                        alt={director.name}
+                        className="h-full w-full object-cover"
+                      />
 
-                  {/* Text overlay at the bottom with shadow gradient */}
-                  <div className="absolute bottom-0 left-0 right-0 px-6 py-2 text-white">
-                    {/* Text container with animated variants */}
-                    <motion.div
-                      initial="inactive"
-                      animate={
-                        activeCard === director.id ? "active" : "inactive"
-                      }
-                      variants={textVariants}
-                      className="transform-gpu"
-                    >
-                      <motion.h3
-                        className="text-[20px] text-[#ED1C24] font-bold"
-                        initial={{ opacity: 0.9 }}
-                        animate={{
-                          opacity: 1,
-                          scale: activeCard === director.id ? 1.02 : 1,
-                        }}
-                        transition={{ duration: 0.5 }}
-                      >
-                        {director.name}
-                      </motion.h3>
-
-                      <motion.p
-                        className="text-[16px] text-[#131316]"
-                        initial={{ opacity: 0.7 }}
-                        animate={{
-                          opacity: activeCard === director.id ? 0.9 : 0.7,
-                        }}
-                        transition={{ duration: 0.5 }}
-                      >
-                        {director.position}
-                      </motion.p>
-
-                      {activeCard === director.id && (
-                        <motion.p
-                          className="text-[14px] text-[#75737C] leading-[18px] mt-1 hidden md:block"
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 0.9 }}
-                          exit={{ opacity: 0 }}
-                          transition={{ duration: 0.3 }}
-                        >
-                          {director.description}
-                        </motion.p>
-                      )}
-                    </motion.div>
-
-                    {/* Additional info with animated presence */}
-                    <AnimatePresence>
-                      {activeCard === director.id && (
+                      {/* Text overlay at the bottom */}
+                      <div className="absolute bottom-0 left-0 right-0 px-6 py-2 text-white ">
+                        {/* Text container with animated variants */}
                         <motion.div
-                          initial="hidden"
-                          animate="visible"
-                          exit="hidden"
-                          variants={infoVariants}
-                          className="mt-2 text-sm overflow-hidden"
+                          initial="inactive"
+                          animate={
+                            activeCard === director.id ? "active" : "inactive"
+                          }
+                          variants={textVariants}
+                          className="transform-gpu"
                         >
-                          {/* <p className="leading-relaxed opacity-90">
-          Board member since 2022
-        </p> */}
+                          <motion.h3
+                            className="text-[20px] text-[#ED1C24] font-bold"
+                            initial={{ opacity: 0.9 }}
+                            animate={{
+                              opacity: 1,
+                              scale: activeCard === director.id ? 1.02 : 1,
+                            }}
+                            transition={{ duration: 0.5 }}
+                          >
+                            {director.name}
+                          </motion.h3>
+
+                          <motion.p
+                            className="text-[16px] text-[#131316]"
+                            initial={{ opacity: 0.7 }}
+                            animate={{
+                              opacity: activeCard === director.id ? 0.9 : 0.7,
+                            }}
+                            transition={{ duration: 0.5 }}
+                          >
+                            {director.position}
+                          </motion.p>
+
+                          {activeCard === director.id && (
+                            <motion.p
+                              className="text-[12px] text-blackleading-[18px] mt-1 hidden md:block text-[#75737C]"
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 0.9 }}
+                              exit={{ opacity: 0 }}
+                              transition={{ duration: 0.3 }}
+                            >
+                              {director.description}
+                            </motion.p>
+                          )}
                         </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+
+                        {/* Additional info with animated presence */}
+                        <AnimatePresence>
+                          {activeCard === director.id && (
+                            <motion.div
+                              initial="hidden"
+                              animate="visible"
+                              exit="hidden"
+                              variants={infoVariants}
+                              className="mt-2 text-sm overflow-hidden"
+                            >
+                              {/* Additional content can go here */}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Carousel Version */}
+      <div className="block lg:hidden">
+        <div className="w-full px-4 py-8 min-h-screen">
+          {/* Title */}
+          <div className="text-center mb-8">
+            <h1 className="text-3xl font-light">
+              Board of <span className="text-red-500">Directors</span>
+            </h1>
+          </div>
+
+          {/* Carousel Container */}
+          <div className="relative max-w-xl mx-auto">
+            {/* Main Card */}
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+              {/* Director Image */}
+              <div className="relative h-80 overflow-hidden">
+                <img
+                  src={currentDirector.image}
+                  alt={currentDirector.name}
+                  className="w-full h-full object-cover"
+                />
+                
+                {/* Navigation Arrows */}
+                <button
+                  onClick={goToPrev}
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-all"
+                  aria-label="Previous director"
+                >
+                  <ChevronLeft size={20} />
+                </button>
+                
+                <button
+                  onClick={goToNext}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-all"
+                  aria-label="Next director"
+                >
+                  <ChevronRight size={20} />
+                </button>
+              </div>
+
+              {/* Director Info */}
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-red-500 mb-2">
+                  {currentDirector.name}
+                </h3>
+                
+                <p className="text-lg text-gray-700 mb-4 font-medium">
+                  {currentDirector.position}
+                </p>
+                
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {currentDirector.description}
+                </p>
+              </div>
+            </div>
+
+            {/* Pagination Dots */}
+            {/* <div className="flex justify-center mt-6 space-x-2">
+              {directors.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentIndex
+                      ? 'bg-red-500 scale-110'
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div> */}
+
+           
           </div>
         </div>
       </div>
     </div>
   );
 };
+
+
+
 
 // export default BoardOfDirectors;
 

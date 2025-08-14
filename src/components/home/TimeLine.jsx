@@ -48,8 +48,8 @@ const TimeLine = () => {
       title: "New Partnership & Certification",
       description: [
         "Started supplying Piaggio with  exhaust systems for both domestic and export markets",
-        "Established Haridwar Plant",
-        "Received OHSAS certification"
+        " Established Haridwar Plant",
+        " Received OHSAS certification"
       ],
       position: "bottom",
     },
@@ -304,7 +304,7 @@ const TimeLine = () => {
             />
           </div>
 
-          {/* Navigation dots */}
+  
         </div>
       </div>
     </div>

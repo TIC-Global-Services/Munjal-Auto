@@ -8,8 +8,6 @@ import { useLocation } from "react-router-dom";
 import videoSrc from "../../assets/heroVideo.mp4";
 import icon1 from "../../assets/hero/icon.png";
 import icon2 from "../../assets/hero/icon2.png";
-import youtube from "../../assets/hero/youtube.png";
-import insta from "../../assets/hero/insta.png";
 import TopNav from "../TopNav";
 import { Link } from "react-router-dom";
 const Home = () => {
@@ -250,7 +248,7 @@ const Home = () => {
               </h1>
 
               <p
-                className={`md:hidden block text-white text-sm mt-4 mb-6 max-w-xs mx-auto leading-relaxed transition-all duration-1000 delay-300 ${
+                className={` block text-white md:text-md text-sm mt-4 mb-6 md:max-w-xl max-w-xs mx-auto leading-relaxed transition-all duration-1000 delay-300 ${
                   isVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-8"

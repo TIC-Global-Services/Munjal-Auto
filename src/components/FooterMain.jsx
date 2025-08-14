@@ -224,6 +224,7 @@ export const FooterMain = () => {
               </div>
             </div>
           </div>
+          
         </div>
 
         {/* Bottom Section */}
@@ -238,11 +239,11 @@ export const FooterMain = () => {
             Privacy Policy
           </a>
         </div>
+
       </div>
     </footer>
 
     <footer className="bg-black md:hidden text-white w-full mt-10 py-10">
-        <div className=" ">
         <div className="bg-black text-white px-6 py-10 text-left  ">
           <img src={munjallogo} alt="" className="  h-14" />
           <h1 className="  font-bold pb-2 pt-4">Stay in touch:</h1>
@@ -347,7 +348,6 @@ export const FooterMain = () => {
             </p>
           </div>
         </div>
-      </div>
     </footer>
     </>
   );

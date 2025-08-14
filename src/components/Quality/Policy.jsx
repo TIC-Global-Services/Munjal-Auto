@@ -121,7 +121,7 @@ const Policy = () => {
         
         </div>
           {/* 3D Model section */}
-       <div className="absolute -bottom-[520px] left-1 block md:hidden">
+       <div className="absolute -bottom-[520px] md:left-1 block md:hidden">
        <ModelViewer />
 
        </div>
@@ -133,7 +133,7 @@ const Policy = () => {
   
   export default Policy;
 
-function ModelViewer() {
+  function ModelViewer() {
   const [loading, setLoading] = useState(true);
   const modelContainerRef = useRef(null);
   const modelRef = useRef(null);
@@ -272,7 +272,7 @@ function ModelViewer() {
 
   return (
     <div
-      className="absolute md:w-[600px] md:h-[600px] w-[500px] h-[500px]"
+      className="absolute md:w-[600px] md:h-[600px] w-[400px] h-[500px] md:mt-0 mt-10"
       style={{ zIndex: 50 }}
     >
       <div

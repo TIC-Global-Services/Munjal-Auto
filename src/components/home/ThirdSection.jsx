@@ -18,7 +18,7 @@ const ThirdSection = () => {
       <MobileCapabilitiesSection/>
       <GlobalPresence />
       <FooterMain />
-      <MobileFooter />
+      {/* <MobileFooter /> */}
     </div>
   );
 };

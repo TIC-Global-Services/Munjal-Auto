@@ -45,38 +45,50 @@ const Secondsection = () => {
         animate={isInView ? "visible" : "hidden"}
         className="flex !z-[1000] relative items-center md:mt-0 mt-6 md:px-0 px-4 justify-center"
       >
-        <motion.div variants={itemVariants} className="bg-black w-[100%] md:w-[90%] text-white flex md:flex-row flex-col items-center justify-between rounded-[20px] overflow-hidden">
+        <motion.div
+          variants={itemVariants}
+          className="bg-black w-[100%] md:w-[90%] text-white flex md:flex-row flex-col items-center justify-between rounded-[20px] overflow-hidden"
+        >
           {/* Left Section */}
-          <motion.div variants={itemVariants} className="flex-1 px-6 md:pl-20 md:mt-0 mt-6 space-y-2 md:space-y-6">
-            <motion.div variants={itemVariants} className="uppercase tracking-wider text-[10px] md:text-sm text-gray-400">
+          <motion.div
+            variants={itemVariants}
+            className="flex-1 px-6 md:pl-20 md:mt-0 mt-6 space-y-2 md:space-y-6"
+          >
+            <motion.div
+              variants={itemVariants}
+              className="uppercase tracking-wider text-[10px] md:text-sm text-gray-400"
+            >
               // COMPANY PROFILE
             </motion.div>
 
-            <motion.h1 variants={itemVariants} className="md:text-4xl text-2xl font-[300] leading-tight">
+            <motion.h1
+              variants={itemVariants}
+              className="md:text-4xl text-2xl font-[300] leading-tight"
+            >
               Engineering the Future of <br className="md:block hidden" />
               <span className="text-[#ED1C24] font-bold">
                 Automotive Manufacturing
               </span>
             </motion.h1>
 
-            <motion.p variants={itemVariants} className="text-gray-300 md:text-lg text-xs md:pt-0 pt-2 md:w-[80%] leading-relaxed">
-              Munjal Auto Industries Limited is a trailblazer in the world of
-              engineering, offering cutting-edge solutions across diverse
-              industries. With over decades of expertise, we specialize in the
-              design and manufacturing of high-performance components and
-              assemblies using advanced sheet metal, composite materials, and
-              precision molding techniques.
+            <motion.p
+              variants={itemVariants}
+              className="text-gray-300 md:text-lg text-xs md:pt-0 pt-2 md:w-[80%] leading-relaxed"
+            >
+             Munjal Auto Industries Limited  is a diversified engineering group, delivering cutting - edge solutions. Driven by innovation, we design and manufacture lightweight, durable, and sustainable components using advanced sheet metal, composite materials, and precision molding techniques for automotive, aerospace, renewable energy, defense, and railways.
             </motion.p>
-<Link to='/about-us'>
-<motion.button variants={itemVariants} className="bg-white w-fit text-black md:mt-0 !mt-4 md:text-base text-xs px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
-              More on Munjal
-            </motion.button>
-</Link>
-            
+            <Link to="/about-us">
+              <motion.button
+                variants={itemVariants}
+                className="bg-white w-fit text-black md:mt-0 !mt-4 md:text-base text-xs px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors"
+              >
+                More on Munjal
+              </motion.button>
+            </Link>
           </motion.div>
 
           {/* Right Section */}
-          <motion.div 
+          <motion.div
             variants={itemVariants}
             className="w-[90%] md:py-0 py-4 md:w-[40%]"
           >
@@ -121,6 +133,17 @@ const WhyMunjal = () => {
     offset: ["start start", "end end"],
   });
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize(); // initial check
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="relative mt-10 md:mt-60 min-h-screen " ref={containerRef}>
       {/* Background gradient - fixed positioning issues */}
@@ -131,9 +154,9 @@ const WhyMunjal = () => {
           className="absolute top-0 left-0 z-[70] w-full md:w-1/2 h-screen object-cover"
         />
       </div>
-      
+
       {/* Main content container with proper height */}
-      <div className="min-h-[400vh] md:min-h-[600vh] px-4 md:px-20">
+      <div className=" md:min-h-[600vh] px-4 md:px-20">
         <motion.div
           className="container flex flex-col md:flex-row gap-8 md:gap-0"
           style={{
@@ -148,25 +171,18 @@ const WhyMunjal = () => {
             <div className="text-gray-600 text-sm tracking-wider">
               // ABOUT US
             </div>
-            
+
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-normal leading-tight">
               Why <span className="text-red-500">Munjal</span>
               <br />
               Auto ?
             </h2>
-            
+
             <p className="text-gray-700 text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl">
-              In the automotive industry, we are trusted for producing critical
-              components such as exhaust systems, fuel tanks, rims, and BIW
-              parts, engineered to withstand the most demanding performance and
-              safety standards. Beyond automotive, our renewable energy
-              solutions, including windmill blades and other specialized
-              parts, play a vital role in advancing clean energy technologies. At
-              Munjal Auto, we merge engineering excellence with forward-thinking
-              design to deliver products that lead industries into the future.
+             Munjal Auto is a trusted name in the automotive industry, delivering critical components like exhaust systems, fuel tanks, rims, and BIW parts—engineered for superior performance and safety. Beyond automotive, our renewable energy solutions, including windmill blades and specialized components, drive advancements in clean energy. With a blend of engineering excellence and forward-thinking design, we create solutions that power industries into the future.
             </p>
-            
-            <Link to='/about-us'>
+
+            <Link to="/about-us">
               <button className="bg-black text-white px-6 py-3 md:px-8 md:py-3 text-sm md:text-base rounded-full hover:bg-gray-800 transition-colors mt-4 md:mt-6">
                 More About Us
               </button>
@@ -176,17 +192,17 @@ const WhyMunjal = () => {
           {/* Right content section */}
           <div className="flex flex-col md:flex-row items-center w-full md:w-[75%] space-y-6 md:space-y-0">
             {/* 3D Model Viewer */}
-            <div className="w-full max-w-md md:max-w-none h-[250px] md:h-[350px] lg:h-[400px] hidden md:block">
+            <div className="w-full max-w-md md:max-w-none h-[250px] md:h-[350px] lg:h-[400px] ">
               <ModelViewer scrollProgress={scrollYProgress} />
             </div>
 
             {/* Features list */}
-            <div className="space-y-6 w-full md:w-full md:ml-8 lg:ml-0 md:mt-0 lg:-mt-40">
+            <div className="space-y-6 w-full md:w-full md:ml-8 lg:ml-0 md:mt-0 lg:-mt-40 ">
               {features.map((feature, index) => {
                 // Improved scroll trigger points
                 const startPoint = Math.min(0.1 + index * 0.15, 0.7);
                 const endPoint = Math.min(0.2 + index * 0.15, 0.8);
-                
+
                 const featureInView = useTransform(
                   scrollYProgress,
                   [startPoint, endPoint],
@@ -240,18 +256,18 @@ function ModelViewer({ scrollProgress }) {
     camera.position.set(5, 2.5, 5);
 
     // Enhanced renderer settings
-    const renderer = new THREE.WebGLRenderer({ 
-      antialias: true, 
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true,
       alpha: true,
       physicallyCorrectLights: true,
-      powerPreference: "high-performance"
+      powerPreference: "high-performance",
     });
     renderer.setClearColor(0xffffff, 0);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.outputEncoding = THREE.sRGBEncoding;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.0; // Reduced from 1.2
-    
+
     // Enable shadows for better quality
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
@@ -271,7 +287,7 @@ function ModelViewer({ scrollProgress }) {
     scene.add(ambientLight);
 
     const directionalLight1 = new THREE.DirectionalLight(0xffffff, 1.8);
-    directionalLight1.position.set(22, 85,25);
+    directionalLight1.position.set(22, 85, 25);
     directionalLight1.castShadow = true;
     directionalLight1.shadow.mapSize.width = 1024;
     directionalLight1.shadow.mapSize.height = 1024;
@@ -296,7 +312,14 @@ function ModelViewer({ scrollProgress }) {
 
     // Improved spotlight setup
     const createSpotlight = (color, intensity) => {
-      const light = new THREE.SpotLight(color, intensity, 15, Math.PI / 6, 0.3, 1);
+      const light = new THREE.SpotLight(
+        color,
+        intensity,
+        15,
+        Math.PI / 6,
+        0.3,
+        1
+      );
       light.castShadow = true;
       light.shadow.bias = -0.0001;
       light.shadow.mapSize.width = 1024;
@@ -309,14 +332,10 @@ function ModelViewer({ scrollProgress }) {
       createSpotlight(0xffffff, 1.8),
       createSpotlight(0xffffff, 2.6),
     ];
-    
+
     spotlights.forEach((light, i) => {
       const angle = (i / spotlights.length) * Math.PI * 2;
-      light.position.set(
-        Math.cos(angle) * 4,
-        3,
-        Math.sin(angle) * 4
-      );
+      light.position.set(Math.cos(angle) * 4, 3, Math.sin(angle) * 4);
       light.target = modelGroup;
       scene.add(light);
     });
@@ -333,7 +352,7 @@ function ModelViewer({ scrollProgress }) {
       "/1.glb",
       (gltf) => {
         const model = gltf.scene;
-        
+
         // Improved material settings
         model.traverse((child) => {
           if (child.isMesh) {
@@ -343,7 +362,7 @@ function ModelViewer({ scrollProgress }) {
             child.material.metalness = 0.3;
             child.castShadow = true;
             child.receiveShadow = true;
-            
+
             // Ensure proper material properties
             if (child.material.map) {
               child.material.map.encoding = THREE.sRGBEncoding;
@@ -355,10 +374,10 @@ function ModelViewer({ scrollProgress }) {
         const box = new THREE.Box3().setFromObject(model);
         const center = box.getCenter(new THREE.Vector3());
         const size = box.getSize(new THREE.Vector3());
-        
+
         // Position model within group
         model.position.set(-center.x, -center.y, -center.z);
-        
+
         // Bigger scaling for larger model
         const maxDim = Math.max(size.x, size.y, size.z);
         const scale = 3.0 / maxDim; // Increased for bigger size
@@ -393,20 +412,17 @@ function ModelViewer({ scrollProgress }) {
     // Three movements for three scroll sections
     const movements = [
       {
-   
         rotation: { x: 14.8, y: -1.6, z: 0 },
-        cameraPosition: { x: 3, y: 1.5, z: 3 }
+        cameraPosition: { x: 3, y: 1.5, z: 3 },
       },
       {
-
         rotation: { x: 14, y: -2, z: 0 },
-        cameraPosition: { x: 3, y: 1.5, z: 3 }
+        cameraPosition: { x: 3, y: 1.5, z: 3 },
       },
       {
-      
         rotation: { x: 12.5, y: Math.PI / -3, z: 0 },
-        cameraPosition: { x: 3, y: 1.5, z: 2 }
-      }
+        cameraPosition: { x: 3, y: 1.5, z: 2 },
+      },
     ];
 
     // Animation loop
@@ -419,7 +435,7 @@ function ModelViewer({ scrollProgress }) {
       spotlights.forEach((light, i) => {
         const angle = time * 0.5 + (i / spotlights.length) * Math.PI * 2;
         const radius = 4 + Math.sin(time * 0.3) * 0.5;
-        
+
         light.position.x = Math.cos(angle) * radius;
         light.position.z = Math.sin(angle) * radius;
         light.intensity = 0.8 + Math.sin(time + i) * 0.2;
@@ -440,7 +456,7 @@ function ModelViewer({ scrollProgress }) {
 
         // Smoother interpolation
         const lerpFactor = 0.02;
-        
+
         modelRef.current.rotation.x = THREE.MathUtils.lerp(
           modelRef.current.rotation.x,
           currentMovement.rotation.x,
@@ -473,7 +489,7 @@ function ModelViewer({ scrollProgress }) {
           currentMovement.cameraPosition.z,
           lerpFactor
         );
-        
+
         camera.lookAt(modelRef.current.position);
       }
 
@@ -505,7 +521,6 @@ function ModelViewer({ scrollProgress }) {
           background: "transparent",
           borderRadius: "8px",
           overflow: "visible",
-          
         }}
       />
       {loading && (
@@ -519,7 +534,7 @@ function ModelViewer({ scrollProgress }) {
 
 const Stayconnected = () => {
   return (
-    <div className=" md:mt-12 mb-20">
+    <div className=" md:mt-12 mb-30">
       {/* Desktop and Tablet View */}
       <div className="hidden bg-[#ED1C24] md:flex bg-cover bg-center items-center justify-center relative">
         <img src={logo} className=" absolute top-12 w-32" alt="logo" />
@@ -532,32 +547,45 @@ const Stayconnected = () => {
             <br />
             our manufacturing expertise.
           </p>
-          <Link to='/about-us'>
-          <button className="bg-white text-black  px-8 py-3 rounded-full hover:bg-gray-100 transition-colors">
-            More About Us
-          </button>
+          <Link to="/about-us">
+            <button className="bg-white text-black  px-8 py-3 rounded-full hover:bg-gray-100 transition-colors">
+              More About Us
+            </button>
           </Link>
-        
         </div>
       </div>
 
       {/* Mobile View */}
-      <div className="flex md:hidden bg-[#ED1C24]  items-center py-32 justify-center relative">
-      <img src={logo} className=" absolute top-10 w-20" alt="logo" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
+      {/* <div className="flex md:hidden bg-[#ED1C24]  items-center py-[80px]   justify-center relative">
+        <img src={logo} className=" absolute top-10 w-20" alt="logo" />
+        <div className=" inset-0 flex flex-col items-center justify-center text-white">
           <h2 className="text-2xl font-normal mt-8 ">Stay Connected</h2>
           <p className="text-xs  text-center mb-2">
             Reach out to explore more about
             <br />
             our manufacturing expertise.
           </p>
-          <Link to='/about-us'>
-          <button className="bg-white text-xs text-black px-6 py-2 rounded-full hover:bg-gray-100 transition-colors">
-            More About Us
-          </button>
+          <Link to="/about-us">
+            <button className="bg-white text-xs text-black px-6 py-2 rounded-full hover:bg-gray-100 transition-colors">
+              More About Us
+            </button>
           </Link>
-          
         </div>
+      </div> */}
+
+      <div className="flex flex-col md:hidden bg-[#ED1C24]  items-center py-[40px] mt-[250px]  justify-center ">
+        <img src={logo} alt="Logo" className="w-20"/>
+        <h2 className="text-2xl font-normal mt-3 text-white">Stay Connected</h2>
+        <p className="text-xs  text-center mb-2 text-white">
+            Reach out to explore more about
+            <br />
+            our manufacturing expertise.
+          </p>
+          <Link to="/about-us">
+            <button className="bg-white text-xs text-black px-6 py-2 rounded-full hover:bg-gray-100 transition-colors">
+              More About Us
+            </button>
+          </Link>
       </div>
     </div>
   );

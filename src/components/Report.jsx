@@ -156,50 +156,50 @@ const AnnualReport = () => {
   const [searchTerm, setSearchTerm] = useState('');
   
   const AnnualReportYears = [
-    { year: "2023 to 2024", pdf: "/public/pdfs/Annual-Report-2023-24.pdf" },
-    { year: "2022 to 2023", pdf: "/public/pdfs/Annual-Report-2022-23.pdf" },
-    { year: "2021 to 2022", pdf: "/public/pdfs/Annual-Report-2021-22.pdf" },
-    { year: "2020 to 2021", pdf: "/public/pdfs/Annual-Report-2020-21.pdf" }
+    { year: "2023 to 2024", pdf: "/pdfs/Annual-Report-2023-24.pdf" },
+    { year: "2022 to 2023", pdf: "/pdfs/Annual-Report-2022-23.pdf" },
+    { year: "2021 to 2022", pdf: "/pdfs/Annual-Report-2021-22.pdf" },
+    { year: "2020 to 2021", pdf: "/pdfs/Annual-Report-2020-21.pdf" }
   ];
   const AnnualReportMoreYears = [
-    { year: "2019 to 2020", pdf: "/public/pdfs/Annual-Report-2019-20.pdf" },
-    { year: "2018 to 2019", pdf: "/public/pdfs/Annual-Report-2018-19.pdf" },
-    { year: "2017 to 2018", pdf: "/public/pdfs/Annual-Report-2017-18.pdf" },
-    { year: "2016 to 2017", pdf: "/public/pdfs/Annual-Report-2016-17.pdf" },
-    { year: "2015 to 2016", pdf: "/public/pdfs/Annual-Report-2015-16.pdf" },
-    { year: "2014 to 2015", pdf: "/public/pdfs/Annual-Report-2014-15.pdf" },
-    { year: "2013 to 2014", pdf: "/public/pdfs/Annual-Report-2013-14.pdf" },
-    { year: "2012 to 2013", pdf: "/public/pdfs/Annual-Report-2012-13.pdf" },
-    { year: "2011 to 2012", pdf: "/public/pdfs/Annual-Report-2011-12.pdf" },
-    { year: "2010 to 2011", pdf: "/public/pdfs/Annual-Report-2010-11.pdf" },
-    { year: "2009 to 2010", pdf: "/public/pdfs/Annual-Report-2009-10.pdf" },
-    { year: "2008 to 2009", pdf: "/public/pdfs/Annual-Report-2008-09.pdf" },
-    { year: "2007 to 2008", pdf: "/public/pdfs/Annual-Report-2007-08.pdf" },
+    { year: "2019 to 2020", pdf: "/pdfs/Annual-Report-2019-20.pdf" },
+    { year: "2018 to 2019", pdf: "/pdfs/Annual-Report-2018-19.pdf" },
+    { year: "2017 to 2018", pdf: "/pdfs/Annual-Report-2017-18.pdf" },
+    { year: "2016 to 2017", pdf: "/pdfs/Annual-Report-2016-17.pdf" },
+    { year: "2015 to 2016", pdf: "/pdfs/Annual-Report-2015-16.pdf" },
+    { year: "2014 to 2015", pdf: "/pdfs/Annual-Report-2014-15.pdf" },
+    { year: "2013 to 2014", pdf: "/pdfs/Annual-Report-2013-14.pdf" },
+    { year: "2012 to 2013", pdf: "/pdfs/Annual-Report-2012-13.pdf" },
+    { year: "2011 to 2012", pdf: "/pdfs/Annual-Report-2011-12.pdf" },
+    { year: "2010 to 2011", pdf: "/pdfs/Annual-Report-2010-11.pdf" },
+    { year: "2009 to 2010", pdf: "/pdfs/Annual-Report-2009-10.pdf" },
+    { year: "2008 to 2009", pdf: "/pdfs/Annual-Report-2008-09.pdf" },
+    { year: "2007 to 2008", pdf: "/pdfs/Annual-Report-2007-08.pdf" },
   ];
   
   
   const AnnualReturnYears = [
-    { year: "2023 to 2024", pdf: "/public/pdfs/return/MGT_7-FY-2023-2024.pdf" },
-    { year: "2022 to 2023", pdf: "/public/pdfs/return/MGT-7-FY-2022-23.pdf" },
-    { year: "2021 to 2022", pdf: "/public/pdfs/return/MGT-7-FY-2021-22.pdf" },
-    { year: "2020 to 2021", pdf: "/public/pdfs/return/MGT-7-FY-2020-21.pdf" },
+    { year: "2023 to 2024", pdf: "/pdfs/return/MGT_7-FY-2023-2024.pdf" },
+    { year: "2022 to 2023", pdf: "/pdfs/return/MGT-7-FY-2022-23.pdf" },
+    { year: "2021 to 2022", pdf: "/pdfs/return/MGT-7-FY-2021-22.pdf" },
+    { year: "2020 to 2021", pdf: "/pdfs/return/MGT-7-FY-2020-21.pdf" },
 
   ];
   const AnnualReturnMoreYears = [
-    { year: "2019 to 2020", pdf: "/public/pdfs/return/MGT-7-FY-2019-20.pdf" },
+    { year: "2019 to 2020", pdf: "/pdfs/return/MGT-7-FY-2019-20.pdf" },
   ];
 
   const BusinessReturnYears = [
-    { year: "2019 to 2020", pdf: "/public/pdfs/business/BRR_2019-20.pdf" },
-    { year: "2020 to 2021", pdf: "/public/pdfs/business/BRR-2020-21.pdf" },
-    { year: "2021 to 2022", pdf: "/public/pdfs/business/BRR-2021-22.pdf" },
+    { year: "2019 to 2020", pdf: "/pdfs/business/BRR_2019-20.pdf" },
+    { year: "2020 to 2021", pdf: "/pdfs/business/BRR-2020-21.pdf" },
+    { year: "2021 to 2022", pdf: "/pdfs/business/BRR-2021-22.pdf" },
     
   ];
   const BusinessReturnMoreYears = [
-    { year: "2011 to 2012", pdf: "/public/pdfs/Business-Responsibility-2011-12.pdf" },
-    { year: "2010 to 2011", pdf: "/public/pdfs/Business-Responsibility-2010-11.pdf" },
-    { year: "2009 to 2010", pdf: "/public/pdfs/Business-Responsibility-2009-10.pdf" },
-    { year: "2008 to 2009", pdf: "/public/pdfs/Business-Responsibility-2008-09.pdf" }
+    { year: "2011 to 2012", pdf: "/pdfs/Business-Responsibility-2011-12.pdf" },
+    { year: "2010 to 2011", pdf: "/pdfs/Business-Responsibility-2010-11.pdf" },
+    { year: "2009 to 2010", pdf: "/pdfs/Business-Responsibility-2009-10.pdf" },
+    { year: "2008 to 2009", pdf: "/pdfs/Business-Responsibility-2008-09.pdf" }
   ];
   
   // Filter function for search

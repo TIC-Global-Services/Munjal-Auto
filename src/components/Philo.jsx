@@ -13,8 +13,6 @@ import icon2 from "../assets/hero/icon2.png";
 import youtube from "../assets/hero/youtube.png";
 import insta from "../assets/hero/insta.png";
 
-
-
 const fadeInUp2 = {
   hidden: { opacity: 0, y: 40 },
   visible: {
@@ -42,7 +40,6 @@ const contents = [
   },
 ];
 
-
 const Philo = () => {
   const [isVisible, setIsVisible] = useState(false);
   const location = useLocation();
@@ -58,8 +55,6 @@ const Philo = () => {
   }, []);
 
   const current = contents[index];
-
-
 
   const isActive = (path) => {
     return location.pathname === path;
@@ -166,9 +161,9 @@ const Philo = () => {
           </Link>
         </div> */}
 
-<div className="z-[100] absolute w-full top-20 flex justify-between items-center ">
-  <TopNav />
-</div>
+        <div className="z-[100] absolute w-full top-20 flex justify-between items-center ">
+          <TopNav />
+        </div>
 
         {/* Background Image with Logo */}
         <div
@@ -180,28 +175,25 @@ const Philo = () => {
             backgroundRepeat: "no-repeat",
           }}
         >
+          <div className="absolute bottom-5 right-5 flex flex-col items-center space-y-5 z-[999]">
+            <Link to="/contact">
+              <img
+                src={icon1}
+                alt="contact"
+                className="w-[30px] md:w-[40px] cursor-pointer hover:scale-125"
+              />
+            </Link>
 
+            <Link to="/contact">
+              <img
+                src={icon2}
+                alt="contact"
+                className="w-[55px] cursor-pointer hover:scale-125"
+              />
+            </Link>
+          </div>
 
-          
-<div className="absolute bottom-5 right-5 flex flex-col items-center space-y-5 z-[999]">
-              <Link to="/contact">
-                <img
-                  src={icon1}
-                  alt="contact"
-                  className="w-[30px] md:w-[40px] cursor-pointer hover:scale-125"
-                />
-              </Link>
-
-              <Link to="/contact">
-                <img
-                  src={icon2}
-                  alt="contact"
-                  className="w-[55px] cursor-pointer hover:scale-125"
-                />
-              </Link>
-            </div>
-
-            {/* <div className="absolute  left-5 flex flex-col items-center space-y-4 z-[999]">
+          {/* <div className="absolute  left-5 flex flex-col items-center space-y-4 z-[999]">
               <a
                 href="https://youtube.com"
                 target="_blank"
@@ -227,7 +219,6 @@ const Philo = () => {
               </a>
             </div> */}
 
-          
           <Link to="/">
             <img
               src={logo}
@@ -240,14 +231,7 @@ const Philo = () => {
               Innovation with <br /> Integrity
             </h1>
           </div>
-
-
-        
-
-          
         </div>
-
-        
       </div>
 
       {/* Vision Section */}
@@ -281,47 +265,47 @@ const Philo = () => {
             viewport={{ once: true }}
             variants={fadeIn}
           />
-      <motion.div
-  className="absolute md:bottom-16 md:left-8 bottom-8 left-10 md:left-20 lg:left-20 xl:left-10 text-left md:w-[467px]  text-white p-4 md:p-8 rounded-md md:rounded-[20px]"
-  style={{
-    border: "1px solid #FFFFFF1A",
-    backdropFilter: "blur(22.2px)",
-    background: "#FFFFFF",
-  }}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  variants={fadeInUp2}
->
-  {/* Title - stays static */}
-  <h3 className="text-black text-base md:text-4xl">
-    Our <span className="text-[#FF0000]">{current.name}</span>
-  </h3>
+          <motion.div
+            className="absolute md:bottom-16 md:left-8 bottom-8 left-10 md:left-20 lg:left-20 xl:left-10 text-left md:w-[467px]  text-white p-4 md:p-8 rounded-md md:rounded-[20px]"
+            style={{
+              border: "1px solid #FFFFFF1A",
+              backdropFilter: "blur(22.2px)",
+              background: "#FFFFFF",
+            }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp2}
+          >
+            {/* Title - stays static */}
+            <h3 className="text-black text-base md:text-4xl">
+              Our <span className="text-[#FF0000]">{current.name}</span>
+            </h3>
 
-  {/* Content wrapper with animation */}
-  <AnimatePresence mode="wait">
-    <motion.div
-      key={current.name} 
-      initial={{ opacity: 0, x: 0 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: 0 }}
-      transition={{ duration: 0.5 }}
-      className="transition-all duration-500 ease-in-out mt-2"
-    >
-      {Array.isArray(current.description) ? (
-        <ul className="list-disc text-[10px] md:text-base font-normal max-w-sm tracking-wider pl-4 space-y-1 text-black">
-          {current.description.map((item, idx) => (
-            <li key={idx}>{item}</li>
-          ))}
-        </ul>
-      ) : (
-        <p className="text-[10px] md:text-base font-normal max-w-sm tracking-wider text-black">
-          {current.description}
-        </p>
-      )}
-    </motion.div>
-  </AnimatePresence>
-</motion.div>
+            {/* Content wrapper with animation */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={current.name}
+                initial={{ opacity: 0, x: 0 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 0 }}
+                transition={{ duration: 0.5 }}
+                className="transition-all duration-500 ease-in-out mt-2"
+              >
+                {Array.isArray(current.description) ? (
+                  <ul className="list-disc text-[10px] md:text-base font-normal max-w-sm tracking-wider pl-4 space-y-1 text-black">
+                    {current.description.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-[8px] md:text-base font-normal max-w-[180px] tracking-wider text-black">
+                    {current.description}
+                  </p>
+                )}
+              </motion.div>
+            </AnimatePresence>
+          </motion.div>
 
           {/* <motion.button
             className="absolute text-sm md:text-base bottom-4 lg:bottom-10  md:bottom-10  right-[65%]  md:right-24 lg:right-24 bg-red-600 text-white px-4 py-2 rounded-full"
@@ -345,7 +329,7 @@ const Philo = () => {
         <motion.p
           className="lg:text-[40px] md:text-2xl text-lg md:px-0 px-6 lg:leading-[57px] font-[400] max-w-4xl mx-auto mb-28"
           initial="hidden"
-          whileInView="visible"
+          whileInView="visible" 
           viewport={{ once: true }}
           variants={fadeInUp}
         >
@@ -354,7 +338,7 @@ const Philo = () => {
         </motion.p>
       </div>
 
-      <FooterMain  />
+      <FooterMain />
     </div>
   );
 };
