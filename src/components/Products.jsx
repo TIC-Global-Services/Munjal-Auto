@@ -11,8 +11,6 @@ import icon2 from "../assets/hero/icon2.png";
 import youtube from "../assets/hero/youtube.png";
 import insta from "../assets/hero/insta.png";
 
-
-
 const tabs = [
   { id: "steel", label: "Steel wheel Rim" },
   { id: "auto", label: "Chase parts & Assemble" },
@@ -23,7 +21,6 @@ const tabs = [
 const Products = () => {
   const [isVisible, setIsVisible] = useState(false);
   const location = useLocation();
-  
 
   // Function to check if the link is active
   const isActive = (path) => {
@@ -142,26 +139,25 @@ const Products = () => {
             />
           </Link>
 
-
           <div className="absolute bottom-5 right-5 flex flex-col items-center space-y-5 z-[999]">
-              <Link to="/contact">
-                <img
-                  src={icon1}
-                  alt="contact"
-                  className="w-[30px] md:w-[40px] cursor-pointer hover:scale-125"
-                />
-              </Link>
+            <Link to="/contact">
+              <img
+                src={icon1}
+                alt="contact"
+                className="w-[30px] md:w-[40px] cursor-pointer hover:scale-125"
+              />
+            </Link>
 
-              <Link to="/contact">
-                <img
-                  src={icon2}
-                  alt="contact"
-                  className="w-[55px] cursor-pointer hover:scale-125"
-                />
-              </Link>
-            </div>
+            <Link to="/contact">
+              <img
+                src={icon2}
+                alt="contact"
+                className="w-[55px] cursor-pointer hover:scale-125"
+              />
+            </Link>
+          </div>
 
-            {/* <div className="absolute top-[38%] left-5 flex flex-col items-center space-y-4 z-[999]">
+          {/* <div className="absolute top-[38%] left-5 flex flex-col items-center space-y-4 z-[999]">
               <a
                 href="https://youtube.com"
                 target="_blank"
@@ -189,15 +185,10 @@ const Products = () => {
 
           {/* Centered Text and Timeline Container */}
           <div className=" md:block flex items-center justify-center flex-col absolute md:text-right text-center right-0">
-          <h1 className="text-[#FFFCFC] text-[54px] px-6 font-[500] mb-10 leading-[3.9rem]">
-  We Stand For​ <br />
-  Quality & Technology
-</h1>
-
-
-            
-        
-
+            <h1 className="text-[#FFFCFC] text-[54px] px-6 font-[500] mb-10 leading-[3.9rem]">
+              We Stand For​ <br />
+              Quality & Technology
+            </h1>
 
             {/* Timeline Line with Animation */}
           </div>
@@ -252,41 +243,40 @@ const ProductsSec = () => {
     return descObj ? descObj.wholeDescription : "";
   };
 
-
   useEffect(() => {
     const handleHashChange = () => {
-      const hash = window.location.hash.replace('#', '');
-      
-      if (hash && tabs.some(tab => tab.id === hash)) {
+      const hash = window.location.hash.replace("#", "");
+
+      if (hash && tabs.some((tab) => tab.id === hash)) {
         // Update active tab to match hash
         setActiveTab(hash);
-        
+
         // Small delay to ensure DOM is ready
         setTimeout(() => {
           const element = document.querySelector(`#${hash}`);
           if (element) {
             element.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
+              behavior: "smooth",
+              block: "start",
             });
           }
         }, 100);
       }
     };
-  
+
     // Handle initial hash on component mount
     handleHashChange();
-    
+
     // Listen for hash changes
-    window.addEventListener('hashchange', handleHashChange);
-    
+    window.addEventListener("hashchange", handleHashChange);
+
     // Also listen for popstate (browser back/forward)
-    window.addEventListener('popstate', handleHashChange);
-    
+    window.addEventListener("popstate", handleHashChange);
+
     // Cleanup
     return () => {
-      window.removeEventListener('hashchange', handleHashChange);
-      window.removeEventListener('popstate', handleHashChange);
+      window.removeEventListener("hashchange", handleHashChange);
+      window.removeEventListener("popstate", handleHashChange);
     };
   }, [tabs]);
 
@@ -317,8 +307,6 @@ const ProductsSec = () => {
         "Equipped with complete know-how of composites and lightweight solutions, including the design, engineering and manufacturing of COPV Type IV CNG Cylinder, Fenders for 2W, Composite Swing Arms, and more",
     },
   ];
-
-
 
   const steel = [
     {
@@ -636,244 +624,253 @@ const ProductsSec = () => {
       <div className="container mx-auto px-10 py-16">
         {/* Tabs */}
         <div className="mb-8">
-
-        <div className="overflow-x-auto scrollbar-hide mb-4 sm:mb-6 md:mb-8 ">
-          <div className="flex gap-2 sm:gap-3 md:gap-4 min-w-max px-2 sm:px-4 pb-2 justify-center items-center">
-            {tabs.map((tab) => (
-              <motion.button
-                key={`scroll-${tab.id}`}
-                id={`scroll-${tab.id}`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setActiveTab(tab.id)}
-                className={`rounded-full font-medium text-sm md:text-base px-4 md:px-6 py-2 md:py-3 transition-colors duration-300 flex-shrink-0 ${
-                  activeTab === tab.id ? "text-white" : "bg-[#F4F4F4] text-black"
-                }`}
-                style={{
-                  border: "1px solid #FFFFFF",
-                  background:
+          <div className="overflow-x-auto scrollbar-hide mb-4 sm:mb-6 md:mb-8 ">
+            <div className="flex gap-2 sm:gap-3 md:gap-4 min-w-max px-2 sm:px-4 pb-2 justify-center items-center">
+              {tabs.map((tab) => (
+                <motion.button
+                  key={`scroll-${tab.id}`}
+                  id={`scroll-${tab.id}`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`rounded-full font-medium text-sm md:text-base px-4 md:px-6 py-2 md:py-3 transition-colors duration-300 flex-shrink-0 ${
                     activeTab === tab.id
-                      ? "linear-gradient(102.23deg, #ED1C24 9.21%, #871015 122.12%)"
-                      : undefined,
-                }}
-              >
-                {tab.label}
-              </motion.button>
-            ))}
+                      ? "text-white"
+                      : "bg-[#F4F4F4] text-black"
+                  }`}
+                  style={{
+                    border: "1px solid #FFFFFF",
+                    background:
+                      activeTab === tab.id
+                        ? "linear-gradient(102.23deg, #ED1C24 9.21%, #871015 122.12%)"
+                        : undefined,
+                  }}
+                >
+                  {tab.label}
+                </motion.button>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
         <div className="text-black xl:text-[28px] xl:leading-[44px] py-10 text-center">
           {getActiveDescription()}
         </div>
         {/* Content for all tabs */}
 
-        <section id={activeTab} className="scroll-mt-20"> {/* ✅ This creates ID like "steel" */}
-  {getActiveContent().map((item, index) => (
-    <motion.div
-      key={index}  // ✅ Remove the ID from here
-      initial={{ opacity: 0, y: 50, scale: 0.9 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="mb-12 overflow-hidden"
-    >
-          {/* Desktop Layout: Row with 3 columns */}
-          <div className="hidden md:grid md:grid-cols-12 lg:grid-cols-12 gap-0 items-center min-h-[320px] w-full">
-            {/* Image Section - Takes 4 columns on md, 3 on lg */}
-            <div className="md:col-span-4 lg:col-span-3 bg-[#EBEBEF] flex items-center justify-center p-6 h-full">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
-                animate={{
-                  opacity: 1,
-                  scale: 1,
-                  rotate: 0,
-                }}
-                transition={{
-                  delay: 0.3,
-                  duration: 0.6,
-                  ease: "easeOut",
-                }}
-                className="flex items-center justify-center"
-              >
-                <motion.img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full max-w-[240px] h-auto object-contain"
-                />
-              </motion.div>
-            </div>
-
-            {/* Content Section - Takes 6 columns on md, 7 on lg */}
-            <div className="md:col-span-6 lg:col-span-7 p-8 text-[#ED1C24]">
-              <motion.h2
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4, duration: 0.5 }}
-                className="text-[28px] font-bold mb-4"
-              >
-                {item.title}
-              </motion.h2>
-
-              <div className="text-[#8C8989]">
-                <motion.div className="overflow-hidden">
-                  <motion.p
-                    initial={{ opacity: 1 }}
-                    animate={{ opacity: 1 }}
-                    className="mb-4 text-base leading-relaxed"
+        <section id={activeTab} className="scroll-mt-20">
+          {" "}
+          {/* ✅ This creates ID like "steel" */}
+          {getActiveContent().map((item, index) => (
+            <motion.div
+              key={index} // ✅ Remove the ID from here
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="mb-12 overflow-hidden"
+            >
+              {/* Desktop Layout: Row with 3 columns */}
+              <div className="hidden md:grid md:grid-cols-12 lg:grid-cols-12 gap-0 items-center min-h-[320px] w-full max-w-7xl mx-auto">
+                {/* Image Section - Takes 4 columns on md, 3 on lg */}
+                <div className="md:col-span-4 lg:col-span-3 bg-[#EBEBEF] flex items-center justify-center p-6 h-full">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
+                    animate={{
+                      opacity: 1,
+                      scale: 1,
+                      rotate: 0,
+                    }}
+                    transition={{
+                      delay: 0.3,
+                      duration: 0.6,
+                      ease: "easeOut",
+                    }}
+                    className="flex items-center justify-center"
                   >
-                    {item.description}
-                  </motion.p>
+                    <motion.img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full max-w-[240px] h-auto object-contain"
+                    />
+                  </motion.div>
+                </div>
 
-                  <AnimatePresence>
-                    {expandedItems[index] && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.6, ease: "easeInOut" }}
-                        className="overflow-hidden"
-                      >
-                        {item.fullDescription.map((desc, descIndex) => (
-                          <motion.p
-                            key={descIndex}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -20 }}
-                            transition={{
-                              delay: expandedItems[index]
-                                ? descIndex * 0.1
-                                : (item.fullDescription.length - descIndex - 1) * 0.05,
-                              duration: 0.5,
-                              ease: "easeOut",
-                            }}
-                            className="mb-3 text-base leading-relaxed"
-                          >
-                            {desc}
-                          </motion.p>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              </div>
-            </div>
-
-            {/* Button Section - Takes 2 columns, positioned bottom right */}
-            <div className="md:col-span-2 lg:col-span-2 p-6 flex items-end justify-end h-full">
-              <motion.button
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ delay: 0.6, duration: 0.3 }}
-                className="bg-black text-white px-6 py-3 rounded-xl text-base font-medium cursor-pointer transition-all duration-200 hover:bg-gray-800 shadow-md whitespace-nowrap"
-                onClick={() => toggleExpanded(index)}
-              >
-                {expandedItems[index] ? "Show Less" : "Learn More"}
-              </motion.button>
-            </div>
-          </div>
-
-          {/* Mobile Layout: Keep your original mobile design */}
-          <div className="md:hidden px-5">
-            {/* Image Section */}
-            <div className="bg-[#EBEBEF] flex items-center justify-center p-6">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
-                animate={{
-                  opacity: 1,
-                  scale: 1,
-                  rotate: 0,
-                }}
-                transition={{
-                  delay: 0.3,
-                  duration: 0.6,
-                  ease: "easeOut",
-                }}
-                className="flex items-center justify-center"
-              >
-                <motion.img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-auto max-w-[280px] h-auto object-contain"
-                />
-              </motion.div>
-            </div>
-
-            {/* Content Section */}
-            <div className="p-6 text-[#ED1C24]">
-              <motion.h2
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4, duration: 0.5 }}
-                className="text-[28px] font-bold mb-4"
-              >
-                {item.title}
-              </motion.h2>
-
-              <div className="text-[#8C8989] mb-6">
-                <motion.div className="overflow-hidden">
-                  <motion.p
-                    initial={{ opacity: 1 }}
-                    animate={{ opacity: 1 }}
-                    className="mb-4 text-base leading-relaxed"
+                {/* Content Section - Takes 6 columns on md, 7 on lg */}
+                <div className="md:col-span-6 lg:col-span-7 p-8 text-[#ED1C24]">
+                  <motion.h2
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.4, duration: 0.5 }}
+                    className="text-[28px] font-bold mb-4"
                   >
-                    {item.description}
-                  </motion.p>
+                    {item.title}
+                  </motion.h2>
 
-                  <AnimatePresence>
-                    {expandedItems[index] && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.6, ease: "easeInOut" }}
-                        className="overflow-hidden"
+                  <div className="text-[#8C8989]">
+                    <motion.div className="overflow-hidden">
+                      <motion.p
+                        initial={{ opacity: 1 }}
+                        animate={{ opacity: 1 }}
+                        className="mb-4 text-base leading-relaxed md:max-w-xl"
                       >
-                        {item.fullDescription.map((desc, descIndex) => (
-                          <motion.p
-                            key={descIndex}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -20 }}
-                            transition={{
-                              delay: expandedItems[index]
-                                ? descIndex * 0.1
-                                : (item.fullDescription.length - descIndex - 1) * 0.05,
-                              duration: 0.5,
-                              ease: "easeOut",
-                            }}
-                            className="mb-3 text-base leading-relaxed"
+                        {item.description}
+                      </motion.p>
+
+                      <AnimatePresence>
+                        {expandedItems[index] && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.6, ease: "easeInOut" }}
+                            className="overflow-hidden"
                           >
-                            {desc}
-                          </motion.p>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
+                            {item.fullDescription.map((desc, descIndex) => (
+                              <motion.p
+                                key={descIndex}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -20 }}
+                                transition={{
+                                  delay: expandedItems[index]
+                                    ? descIndex * 0.1
+                                    : (item.fullDescription.length -
+                                        descIndex -
+                                        1) *
+                                      0.05,
+                                  duration: 0.5,
+                                  ease: "easeOut",
+                                }}
+                                className="mb-3 text-base leading-relaxed"
+                              >
+                                {desc}
+                              </motion.p>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </motion.div>
+                  </div>
+                </div>
+
+                {/* Button Section - Takes 2 columns, positioned bottom right */}
+                <div className="md:col-span-2 lg:col-span-2 p-6 flex items-end justify-end h-full">
+                  <motion.button
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ delay: 0.6, duration: 0.3 }}
+                    className="bg-black text-white px-6 py-3 rounded-xl text-base font-medium cursor-pointer transition-all duration-200 hover:bg-gray-800 shadow-md whitespace-nowrap"
+                    onClick={() => toggleExpanded(index)}
+                  >
+                    {expandedItems[index] ? "Show Less" : "Learn More"}
+                  </motion.button>
+                </div>
               </div>
 
-              {/* Button for Mobile */}
-              <div className="flex justify-end">
-                <motion.button
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ delay: 0.6, duration: 0.3 }}
-                  className="bg-black text-white px-6 py-3 rounded-xl text-base font-medium cursor-pointer transition-all duration-200 hover:bg-gray-800 shadow-md"
-                  onClick={() => toggleExpanded(index)}
-                >
-                  {expandedItems[index] ? "Show Less" : "Learn More"}
-                </motion.button>
+              {/* Mobile Layout: Keep your original mobile design */}
+              <div className="md:hidden px-5">
+                {/* Image Section */}
+                <div className="bg-[#EBEBEF] flex items-center justify-center p-6">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
+                    animate={{
+                      opacity: 1,
+                      scale: 1,
+                      rotate: 0,
+                    }}
+                    transition={{
+                      delay: 0.3,
+                      duration: 0.6,
+                      ease: "easeOut",
+                    }}
+                    className="flex items-center justify-center"
+                  >
+                    <motion.img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-auto max-w-[280px] h-auto object-contain"
+                    />
+                  </motion.div>
+                </div>
+
+                {/* Content Section */}
+                <div className="p-6 text-[#ED1C24]">
+                  <motion.h2
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.4, duration: 0.5 }}
+                    className="text-[28px] font-bold mb-4"
+                  >
+                    {item.title}
+                  </motion.h2>
+
+                  <div className="text-[#8C8989] mb-6">
+                    <motion.div className="overflow-hidden">
+                      <motion.p
+                        initial={{ opacity: 1 }}
+                        animate={{ opacity: 1 }}
+                        className="mb-4 text-base leading-relaxed"
+                      >
+                        {item.description}
+                      </motion.p>
+
+                      <AnimatePresence>
+                        {expandedItems[index] && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.6, ease: "easeInOut" }}
+                            className="overflow-hidden"
+                          >
+                            {item.fullDescription.map((desc, descIndex) => (
+                              <motion.p
+                                key={descIndex}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -20 }}
+                                transition={{
+                                  delay: expandedItems[index]
+                                    ? descIndex * 0.1
+                                    : (item.fullDescription.length -
+                                        descIndex -
+                                        1) *
+                                      0.05,
+                                  duration: 0.5,
+                                  ease: "easeOut",
+                                }}
+                                className="mb-3 text-base leading-relaxed"
+                              >
+                                {desc}
+                              </motion.p>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </motion.div>
+                  </div>
+
+                  {/* Button for Mobile */}
+                  <div className="flex justify-end">
+                    <motion.button
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      transition={{ delay: 0.6, duration: 0.3 }}
+                      className="bg-black text-white px-6 py-3 rounded-xl text-base font-medium cursor-pointer transition-all duration-200 hover:bg-gray-800 shadow-md"
+                      onClick={() => toggleExpanded(index)}
+                    >
+                      {expandedItems[index] ? "Show Less" : "Learn More"}
+                    </motion.button>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </motion.div>
-      ))}
-      </section>
+            </motion.div>
+          ))}
+        </section>
       </div>
     </div>
   );
