@@ -19,6 +19,7 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.2.0",
+    "react-router-hash-link": "^2.4.3",
     "swiper": "^11.1.15",
     "tailwind-setup": "^2.2.0",
     "three": "^0.174.0"

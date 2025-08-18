@@ -27,10 +27,12 @@ const Certifications = () => {
   ];
 
   return (
-    <div className="flex flex-col space-y-10 justify-center items-center px-4 sm:px-6 md:px-10">
+    <div className="flex flex-col space-y-10 justify-center items-center px-4 sm:px-6 md:px-10 py-10">
+      
       <h1 className="text-[#ED1C24] text-[40px] sm:text-[50px] md:text-[60px] lg:text-[65px] leading-tight text-center font-semibold tracking-tight">
         Our Certifications
       </h1>
+
 
       <div className="flex flex-wrap justify-center gap-8 sm:gap-10 lg:gap-20">
         {contents.map((content, index) => (
@@ -57,7 +59,7 @@ const Certifications = () => {
       </div>
 
       <Link
-        to="/Quality"
+        to="/quality#quality-certification"
         className="flex items-center justify-center w-[180px] sm:w-[200px] h-[42px] sm:h-[46px] bg-black text-white rounded-full text-[14px] sm:text-[16px] font-medium hover:bg-gray-900 transition duration-300"
       >
         View More

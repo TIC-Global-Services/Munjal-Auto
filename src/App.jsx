@@ -1,32 +1,41 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./components/home/Home";
-import About from "./components/About";
-import Products from "./components/Products";
-import Philo from "./components/Philo";
-import Quality from "./components/Quality";
-import Finance from "./components/Finance";
-import Training from "./components/Training";
-import Facilities from "./components/Facilities";
-import Contact from "./components/Contact";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Products from "./pages/Products";
+import Philosophy from "./pages/Philosophy";
+import Quality from "./pages/Quality";
+import Finance from "./pages/Finance";
+import Training from "./pages/Training";
+import Facilities from "./pages/Facilities";
+import Contact from "./pages/Contact";
+import Layout from "./layout";
 // import NotFound from "./components/NotFound";
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />, 
+    children: [
+      { index: true, element: <Home /> }, 
+      { path: "about-us", element: <About /> },
+      { path: "products", element: <Products /> },
+      { path: "philosophy", element: <Philosophy /> },
+      { path: "quality", element: <Quality /> },
+      { path: "finance", element: <Finance /> },
+      { path: "training", element: <Training /> },
+      { path: "facilities", element: <Facilities /> },
+      { path: "contact", element: <Contact /> },
+      // { path: "*", element: <NotFound /> },
+    ],
+  },
+]);
+
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about-us" element={<About />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/philosophy" element={<Philo />} />
-        <Route path ="/quality"   element={<Quality/>} /> 
-        <Route path ="/finance" element={<Finance/>} />
-        <Route path ="/training" element={<Training/>} />
-        <Route path="/facilities" element={<Facilities />} />
-        <Route path="/contact" element={<Contact />} />
-      {/*   <Route path="*" element={<NotFound />} /> */}
-      </Routes>
-    </Router>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

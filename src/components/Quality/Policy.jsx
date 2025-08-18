@@ -30,12 +30,12 @@ const Policy = () => {
     return (
       <>
         {/* Desktop version */}
-        <div className="relative w-full h-screen items-center justify-center mt-20 hidden lg:block">
+        <div className="relative w-full h-screen items-center justify-center my-20 hidden lg:block">
           {/* Background image */}
           <img
             src={BgImage}
             alt="Background"
-            className="absolute inset-0 w-full h-full object-contain z-0 max-w-[1214px] max-h-[621px] mx-auto"
+            className="absolute inset-0 w-screen h-full object-contain z-0  max-h-[621px] mx-auto"
           />
   
           {/* Content overlay */}
