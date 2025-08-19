@@ -184,7 +184,7 @@ const ProductsList = () => {
         },
         {
             title: "Subframe Assembly for EV",
-            description: "Precision-engineered structural components",
+            description: "A subframe is a structural component within a vehicle's chassis, designed to carry specific components like the engine, suspension, and axles, while isolating vibrations and distributing loads across the vehicle body.",
             fullDescription: [
                 "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
                 "• Nominal Diameter: 10” ~ 14”",
@@ -199,7 +199,7 @@ const ProductsList = () => {
         },
         {
             title: "Fuel Tank",
-            description: "Fuel tanks for various vehicles",
+            description: "A fuel tank is a secure container for storing flammable fluids like gasoline or diesel, with features for safe filling, gauging, venting, and fuel delivery. Munjal Auto manufactures four-wheeler fuel tanks ranging from 15 to 100 litres using high-precision tooling, simulation, and advanced stamping systems, fully compliant with Indian safety standards and CMVR norms.",
             fullDescription: [
                 "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
                 "• Nominal Diameter: 10” ~ 14”",
@@ -217,7 +217,7 @@ const ProductsList = () => {
     const exhaustSystems = [
         {
             title: "440 CC",
-            description: "Advanced emission control systems",
+            description: "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
             fullDescription: [
                 "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
                 "• Nominal Diameter: 10” ~ 14”",
@@ -232,7 +232,7 @@ const ProductsList = () => {
         },
         {
             title: "125 CC",
-            description: "Noise reduction and flow optimization",
+            description: "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
             fullDescription: [
                 "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
                 "• Nominal Diameter: 10” ~ 14”",
@@ -247,7 +247,7 @@ const ProductsList = () => {
         },
         {
             title: "125 CC (Scooter)",
-            description: "Integrated exhaust solutions",
+            description: "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
             fullDescription: [
                 "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
                 "• Nominal Diameter: 10” ~ 14”",
@@ -262,7 +262,7 @@ const ProductsList = () => {
         },
         {
             title: "100 CC",
-            description: "Advanced emission control systems",
+            description: "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
             fullDescription: [
                 "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
                 "• Nominal Diameter: 10” ~ 14”",
@@ -280,7 +280,7 @@ const ProductsList = () => {
     const fuelTanks = [
         {
             title: "Battery Tray",
-            description: "Fuel tanks for various vehicles",
+            description: "A battery tray is a durable, protective container designed to hold and secure batteries, providing structural support and containment for potential spills, while ensuring electrical isolation and stability",
             fullDescription: [
                 "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
                 "• Nominal Diameter: 10” ~ 14”",
@@ -295,7 +295,7 @@ const ProductsList = () => {
         },
         {
             title: "Rear Bumper",
-            description: "Fuel tanks for various vehicles",
+            description: "The front and rear bumpers are protective components at the vehicle's ends, designed to absorb impact, protect vital parts, and enhance aesthetics, featuring a cover, energy absorber, and reinforcement bar.",
             fullDescription: [
                 "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
                 "• Nominal Diameter: 10” ~ 14”",
@@ -310,7 +310,7 @@ const ProductsList = () => {
         },
         {
             title: "Firewall Cross Member",
-            description: "Fuel tanks for various vehicles",
+            description: "structural component that connects and supports the firewall, often integrating with other parts like the instrument panel and A-pillars, to enhance vehicle stability and safety.",
             fullDescription: [
                 "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
                 "• Nominal Diameter: 10” ~ 14”",
@@ -325,7 +325,7 @@ const ProductsList = () => {
         },
         {
             title: "Swing Arm for 2W",
-            description: "Fuel tanks for various vehicles",
+            description: "movable arm that connects the bike's frame to the rear wheel, allowing it to pivot vertically and absorb bumps for a smoother ride.",
             fullDescription: [
                 "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
                 "• Nominal Diameter: 10” ~ 14”",
@@ -343,7 +343,7 @@ const ProductsList = () => {
     const biwAssemblies = [
         {
             title: "COPV Type IV CNG Cylinder ",
-            description: "Precision-engineered structural components",
+            description: "A Composite Overwrapped Pressure Vessel (COPV) is a lightweight, high-pressure storage vessel consisting of a non-structural liner wrapped in a structural fiber composite, ideal for aerospace and energy applications due to its strength and low weight.",
             fullDescription: [
                 "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
                 "• Nominal Diameter: 10” ~ 14”",
@@ -358,7 +358,7 @@ const ProductsList = () => {
         },
         {
             title: "Fenders for 2W",
-            description: "Precision-engineered structural components",
+            description: "Are protective covers that enclose tires to prevent water, mud, and debris from splashing onto the rider and bike, ensuring a cleaner and drier ride.",
             fullDescription: [
                 "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
                 "• Nominal Diameter: 10” ~ 14”",
@@ -373,7 +373,7 @@ const ProductsList = () => {
         },
         {
             title: "Composite Swing Arm",
-            description: "Precision-engineered structural components",
+            description: "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
             fullDescription: [
                 "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
                 "• Nominal Diameter: 10” ~ 14”",
@@ -388,7 +388,7 @@ const ProductsList = () => {
         },
         {
             title: "COPV Type IV Plastic Liner",
-            description: "Precision-engineered structural components",
+            description: "A COPV plastic liner is a thin, non-structural barrier made from materials like nylon or polyethylene, acting primarily as a gas boundary to prevent leaks and chemical degradation in composite overwrapped pressure vessels.",
             fullDescription: [
                 "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
                 "• Nominal Diameter: 10” ~ 14”",
@@ -475,7 +475,7 @@ const ProductsList = () => {
                             className="mb-12 overflow-hidden bg-white p-4 rounded-xl"
                         >
                             {/* Desktop Layout: Row with 3 columns */}
-                            <div className="hidden md:grid md:grid-cols-12 lg:grid-cols-12 gap-0 items-end min-h-[320px] w-full max-w-7xl mx-auto">
+                            <div className="hidden md:grid md:grid-cols-12 lg:grid-cols-12 gap-0 items-end min-h-[400px] w-full max-w-7xl mx-auto">
                                 {/* Image Section - Takes 4 columns on md, 3 on lg */}
                                 <div className="md:col-span-4 lg:col-span-3 bg-[#EBEBEF] flex items-center justify-center p-6 h-full">
                                     <motion.div

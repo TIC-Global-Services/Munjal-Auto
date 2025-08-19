@@ -8,15 +8,13 @@ const PrecisionEngineeringContent = ({ content }) => {
       {/* Split Grid Layout */}
       <div>
         <h1
-          className="  my-20  font-normal md:text-xl text-lg  lg:text-[40px] lg:leading-[57px] text-center"
+          className="  text-[#151414] text-[28px] leading-[57px] text-center max-w-4xl mx-auto mt-20"
           style={{
             letterSpacing: "2%",
             textAlign: "center",
           }}
         >
-          Our state-of-the-art manufacturing facilities are equipped with
-          advanced machinery and automated processes, ensuring high-precision
-          components that meet global standards.
+          Through intelligent design and high-performance machinery, we achieve unmatched precision, delivering components that meet the most stringent global standards.
         </h1>
       </div>
       <div className=" flex  md:flex-row flex-col my-28 gap-10">

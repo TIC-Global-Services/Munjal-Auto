@@ -176,7 +176,7 @@ const ContactTabs = () => {
     }
   };
   const tabs = [
-    { id: 'office', label: 'Office & Works' },
+    { id: 'office', label: 'Office & Plants' },
     { id: 'career', label: 'Career' },
     { id: 'inquiry', label: 'Business Inquiry' }
   ];
@@ -335,8 +335,7 @@ const ContactTabs = () => {
 
             <div className="w-full md:w-2/3">
               <p className="text-gray-600 mb-6">
-                To place an order or to avail more information regarding our products, do write in. Our customer care
-                executives will get back to you as soon as possible. We invite trade queries from India and abroad.
+              For product inquiries, orders, or detailed information, reach out to us using the form below. Our team will respond promptly to assist you. We welcome business queries from across India and around the world.
               </p>
 
               <form className="space-y-4">

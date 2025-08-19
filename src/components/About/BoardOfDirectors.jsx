@@ -8,7 +8,7 @@ const BoardOfDirectors = () => {
       name: "Mr. Sudhir Kumar Munjal",
       position: "Chairman & Managing Director",
       description:
-        "Mr. Sudhir Kumar Munjal is a visionary entrepreneur with over 46 years of experience in the bicycle, automotive, and engineering industries. He served as Director from 1991 to 1993, became Managing Director in 1993, and Chairman & Managing Director in 2015. He successfully led the company's strategic shift from bicycle manufacturing to becoming a leading auto components manufacturer in India, fostering a culture of performance, teamwork, and innovation.",
+        "Mr. Sudhir Kumar Munjal is a visionary entrepreneur with over 46 years of experience in the bicycle, automotive, and engineering industries. He served as Director from 1991 to 1993, became Managing Director in 1993, and Chairman & Managing Director in 2015. He successfully led the company’s strategic shift from bicycle manufacturing to becoming a leading auto components manufacturer in India, fostering a culture of performance, teamwork, and innovation.",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop&crop=face",
     },
     {

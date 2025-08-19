@@ -9,15 +9,15 @@ import slide7 from "../../assets/slider/CNG Cradle.png";
 const images = [slide1, slide2, slide3, slide4, slide7];
 const captions = [
   "100 cc",
-  "125 cc Scooter",
-  "125 cc",
-  "2W Fender",
   "CNG Cradle",
+  "Fenders for 2W",
+  "125 CC",
+  "125 CC (Scooter)",
 ];
 const smallCaptions = [
   "Unmatched strength and precision\nto ensure automotive safety",
-  "Premium quality scooters\nfor enhanced mobility",
-  "High-performance wheels\nfor all vehicle types",
+  "Securely holds cylinders in vehicles\n for safe, stable transport.",
+  "Protective covers that shield tires\n to keep riders and bikes clean and dry.",
   "Durable fenders for\ntwo-wheeler protection",
   "Innovative CNG storage\nfor eco-friendly transport",
 ];
