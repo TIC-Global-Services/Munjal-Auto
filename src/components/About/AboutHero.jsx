@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom';
+import React, { useEffect,  } from 'react'
+import { Link,  } from 'react-router-dom';
 import img from "../../assets/aboutusbanner.png";
 import logo from "../../assets/companyLogo.png";
 import icon1 from "../../assets/hero/icon.png";
@@ -11,9 +11,6 @@ import TimeLine from './TimeLine';
 
 
 const AboutHero = () => {
-
-    const [isVisible, setIsVisible] = useState(false);
-    const location = useLocation();
 
     useEffect(() => {
         const hash = window.location.hash;

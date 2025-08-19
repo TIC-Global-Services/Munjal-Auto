@@ -1,10 +1,10 @@
 import React from 'react'
-import AboutHero from '../components/about/AboutHero'
-import LegacySection from '../components/about/LegacySection'
-import MunjalAutoGroup from '../components/about/MunjalAutoGroup'
-import PioneeringText from '../components/about/PioneeringText'
-import BoardOfDirectors from '../components/about/BoardOfDirectors'
-import Clients from '../components/about/Clients'
+import AboutHero from '../components/About/AboutHero'
+import LegacySection from '../components/About/LegacySection'
+import MunjalAutoGroup from '../components/About/MunjalAutoGroup'
+import PioneeringText from '../components/About/PioneeringText'
+import BoardOfDirectors from '../components/About/BoardOfDirectors'
+import Clients from '../components/About/Clients'
 
 const About = () => {
   return (

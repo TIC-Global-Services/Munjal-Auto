@@ -1,6 +1,5 @@
-import React from 'react'
-import ProductHero from '../components/product/ProductHero'
-import ProductsList from '../components/product/ProductsList'
+import ProductHero from '../components/Product/ProductHero'
+import ProductsList from '../components/Product/ProductsList'
 
 const Products = () => {
   return (
