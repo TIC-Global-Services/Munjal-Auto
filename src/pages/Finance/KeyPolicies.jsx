@@ -95,7 +95,7 @@ const KeyPolicies = () => {
             key={index}
             title={policy.title}
             subtitle={policy.description}
-            period={policy.date}
+            dateRange={policy.date}
             pdfUrl="/sample-policy.pdf"
           />
         ))}

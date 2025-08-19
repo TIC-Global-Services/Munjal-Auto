@@ -21,8 +21,8 @@ const DownloadCard = ({ title, dateRange, pdfUrl, fileName }) => {
   }
 
   return (
-    <div className="bg-gray-900 rounded-2xl p-6 text-white max-w-sm">
-      <div className="text-center mb-6">
+    <div className="bg-gray-950 rounded-2xl p-4 text-white max-w-sm">
+      <div className="text-center mb-6 border p-6 rounded-2xl border-gray-400">
         <p className="text-gray-300 text-sm mb-4">Download the report here</p>
 
         <button
@@ -43,9 +43,9 @@ const DownloadCard = ({ title, dateRange, pdfUrl, fileName }) => {
         </button>
       </div>
 
-      <div className="text-center">
+      <div className="text-left">
         <p className="text-gray-400 text-sm">{title}</p>
-        <p className="text-white font-medium">{dateRange}</p>
+        <p className="text-white font-medium text-xl">{dateRange}</p>
       </div>
     </div>
   )

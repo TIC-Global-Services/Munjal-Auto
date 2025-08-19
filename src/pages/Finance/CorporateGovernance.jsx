@@ -49,7 +49,7 @@ const CorporateGovernance = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {yearData.reports.map((report) => (
-              <DownloadCard key={report.name} title={report.name} subtitle={report.date} pdfUrl={report.pdfUrl} />
+              <DownloadCard key={report.name} title={report.name} dateRange={report.date} subtitle={report.date} pdfUrl={report.pdfUrl} />
             ))}
           </div>
         </div>

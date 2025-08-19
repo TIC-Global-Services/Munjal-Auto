@@ -59,7 +59,7 @@ const Downloads = () => {
               key={index}
               title={item.title}
               description={item.description}
-              date={item.date}
+              dateRange={item.date}
               pdfUrl="/sample-document.pdf"
             />
           ))}

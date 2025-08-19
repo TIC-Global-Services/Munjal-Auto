@@ -52,7 +52,7 @@ const UnclaimedDividend = () => {
             <DownloadCard
               key={index}
               title={item.title}
-              subtitle={item.date}
+              dateRange={item.date}
               type={item.type}
               pdfUrl="/sample-report.pdf"
             />
@@ -71,7 +71,7 @@ const UnclaimedDividend = () => {
             <DownloadCard
               key={index}
               title={item.title}
-              subtitle={item.date}
+              dateRange={item.date}
               type={item.type}
               pdfUrl="/sample-report.pdf"
             />

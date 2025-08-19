@@ -58,7 +58,7 @@ const AnnualReports = () => {
               key={index}
               title={report.title}
               description={report.description}
-              date={report.date}
+              dateRange={report.date}
               pdfUrl="/sample-report.pdf"
             />
           ))}

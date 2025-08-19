@@ -54,13 +54,13 @@ const Notice = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-6">
         {notices.map((notice, index) => (
           <DownloadCard
             key={index}
             title={notice.description}
             subtitle={notice.title}
-            period={notice.date}
+            dateRange={notice.date}
             onDownload={() => window.open("/sample-report.pdf", "_blank")}
             onShare={() => {
               if (navigator.share) {

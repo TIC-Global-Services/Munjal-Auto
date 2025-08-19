@@ -87,7 +87,7 @@ const NewsPaper = () => {
             key={index}
             title={notification.title}
             description={notification.description}
-            date={notification.date}
+            dateRange={notification.date}
             pdfUrl="/sample-notification.pdf"
           />
         ))}
