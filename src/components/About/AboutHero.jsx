@@ -31,10 +31,7 @@ const AboutHero = () => {
         }
     }, []);
 
-    useEffect(() => {
-        // Trigger animation after component mount
-        setIsVisible(true);
-    }, []);
+
 
     return (
         <div id="history" className="h-screen w-full overflow-hidden   flex flex-col items-center justify-center relative">
