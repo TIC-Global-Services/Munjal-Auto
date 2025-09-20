@@ -117,7 +117,11 @@ const Investors = () => {
 
       {/* PCS Mandate Form Section */}
       <div className="bg-gray-100 rounded-lg p-6 text-center">
-        <div className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-800 cursor-pointer transition-colors">
+        <a
+          href="/form/ECS-Mandate-Form-1.doc"
+          download
+          className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-800 cursor-pointer transition-colors"
+        >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               strokeLinecap="round"
@@ -127,9 +131,10 @@ const Investors = () => {
             />
           </svg>
           <span className="text-lg font-semibold">PCS MANDATE FORM</span>
-        </div>
+        </a>
         <p className="text-gray-600 mt-2">Click to download the mandate form</p>
       </div>
+
     </div>
   )
 }

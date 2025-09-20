@@ -1,34 +1,5 @@
+import governanceData from "./corporate-governance.json"
 import DownloadCard from "../../components/Finance/DownloadCard"
-
-const governanceData = [
-  {
-    year: "2024-25",
-    reports: [
-      { name: "Annual Corporate Governance Report", date: "Mar'25", pdfUrl: "/pdfs/governance-annual-2025.pdf" },
-      { name: "Q3 Compliance Certificate", date: "Dec'24", pdfUrl: "/pdfs/governance-q3-2024.pdf" },
-      { name: "Q2 Compliance Certificate", date: "Sep'24", pdfUrl: "/pdfs/governance-q2-2024.pdf" },
-      { name: "Q1 Compliance Certificate", date: "Jun'24", pdfUrl: "/pdfs/governance-q1-2024.pdf" },
-    ],
-  },
-  {
-    year: "2023-24",
-    reports: [
-      { name: "Annual Corporate Governance Report", date: "Mar'24", pdfUrl: "/pdfs/governance-annual-2024.pdf" },
-      { name: "Q3 Compliance Certificate", date: "Dec'23", pdfUrl: "/pdfs/governance-q3-2023.pdf" },
-      { name: "Q2 Compliance Certificate", date: "Sep'23", pdfUrl: "/pdfs/governance-q2-2023.pdf" },
-      { name: "Q1 Compliance Certificate", date: "Jun'23", pdfUrl: "/pdfs/governance-q1-2023.pdf" },
-    ],
-  },
-  {
-    year: "2022-23",
-    reports: [
-      { name: "Annual Corporate Governance Report", date: "Mar'23", pdfUrl: "/pdfs/governance-annual-2023.pdf" },
-      { name: "Q3 Compliance Certificate", date: "Dec'22", pdfUrl: "/pdfs/governance-q3-2022.pdf" },
-      { name: "Q2 Compliance Certificate", date: "Sep'22", pdfUrl: "/pdfs/governance-q2-2022.pdf" },
-      { name: "Q1 Compliance Certificate", date: "Jun'22", pdfUrl: "/pdfs/governance-q1-2022.pdf" },
-    ],
-  },
-]
 
 const CorporateGovernance = () => {
   return (
@@ -49,7 +20,25 @@ const CorporateGovernance = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {yearData.reports.map((report) => (
-              <DownloadCard key={report.name} title={report.name} dateRange={report.date} subtitle={report.date} pdfUrl={report.pdfUrl} />
+              <DownloadCard
+                key={report.name}
+                title={report.name}
+                dateRange={report.date}
+                subtitle={report.date}
+                onDownload={() => window.open(report.pdfUrl, "_blank")}
+                onShare={() => {
+                  if (navigator.share) {
+                    navigator.share({
+                      title: report.name,
+                      text: report.name,
+                      url: report.pdfUrl,
+                    })
+                  } else {
+                    navigator.clipboard.writeText(report.pdfUrl)
+                    alert("Link copied to clipboard!")
+                  }
+                }}
+              />
             ))}
           </div>
         </div>

@@ -1,47 +1,7 @@
 import DownloadCard from "../../components/Finance/DownloadCard"
+import downloadData from './downloads.json'
 
 const Downloads = () => {
-  const downloadData = [
-    { title: "Download Ann-1", description: "Annual filing document", date: "2024" },
-    { title: "Download Ann-2", description: "Annual filing document", date: "2024" },
-    { title: "Download Ann-3", description: "Annual filing document", date: "2024" },
-    { title: "Download Ann-4", description: "Annual filing document", date: "2024" },
-    { title: "Download Ann-5", description: "Annual filing document", date: "2024" },
-    { title: "Download Ann-6", description: "Annual filing document", date: "2024" },
-    { title: "Download Ann-7", description: "Annual filing document", date: "2024" },
-    { title: "Download Ann-8", description: "Annual filing document", date: "2024" },
-    { title: "Download Ann-9", description: "Annual filing document", date: "2024" },
-    { title: "Download Ann-10", description: "Annual filing document", date: "2024" },
-    { title: "Download Ann-11", description: "Annual filing document", date: "2024" },
-    { title: "Download Ann-12", description: "Annual filing document", date: "2024" },
-    { title: "Download Ann-13", description: "Annual filing document", date: "2024" },
-    { title: "Download Ann-14", description: "Annual filing document", date: "2024" },
-    { title: "Download App-A", description: "Application form", date: "2024" },
-    {
-      title: "Download SH-1",
-      description:
-        "Request for Registering PAN, KYC details OR Changes/updations there of (only for securities held in physical)",
-      date: "2024",
-    },
-    {
-      title: "Download SH-2",
-      description: "Confirmation of Signature of securities holder by Banker",
-      date: "2024",
-    },
-    {
-      title: "Download SH-3",
-      description: "Declaration for Opting-out of Nomination by holders of physical securities in Listed Companies",
-      date: "2024",
-    },
-    { title: "Download SH-13", description: "Nomination Form", date: "2024" },
-    { title: "Download SH-14", description: "Cancellation OR Variation of Nomination", date: "2024" },
-    {
-      title: "Download SEBI Circular",
-      description:
-        "Common and simplified norms for pro-cessing investors service requests by RTAs and norms for furnishing PAN, KYC details and Nomination",
-      date: "2024",
-    },
-  ]
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">

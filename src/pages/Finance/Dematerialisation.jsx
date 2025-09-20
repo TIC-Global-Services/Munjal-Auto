@@ -4,9 +4,9 @@ const Dematerialisation = () => {
 
   const dematerialisationShares = [
     {
-      title: "Code of Conduct",
-      description: "Ethical guidelines and behavioral standards for all employees",
-      date: "Updated 2024",
+      title: "Dematerialisation of Shares",
+      description: "Dematerialisation of Shares",
+      fileLink: "/reports/2018/Dematerialisation-of-Shares.pdf"
     },
   ]
   return (

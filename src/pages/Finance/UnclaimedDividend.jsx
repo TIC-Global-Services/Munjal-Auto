@@ -1,36 +1,9 @@
 import DownloadCard from "../../components/Finance/DownloadCard"
+import unclaimedDividendData from './unclaimed-dividend.json'
+import epfSharesData from './epfshares.json'
 
 const UnclaimedDividend = () => {
-  const unclaimedDividendData = [
-    { title: "Unclaimed dividend as on March 2024", date: "March 2024", type: "Unclaimed Dividend" },
-    { title: "Unclaimed Dividend as of March 2023", date: "March 2023", type: "Unclaimed Dividend" },
-    { title: "Unclaimed Dividend as on 31.03.2022", date: "March 2022", type: "Unclaimed Dividend" },
-    { title: "Unclaimed Dividend as on 31.03.2021", date: "March 2021", type: "Unclaimed Dividend" },
-    { title: "Unclaimed Dividend as on 31.03.2020", date: "March 2020", type: "Unclaimed Dividend" },
-    { title: "Unclaimed Dividend as on 31.03.2019", date: "March 2019", type: "Unclaimed Dividend" },
-    { title: "Unclaimed Dividend 2017-18", date: "2017-18", type: "Unclaimed Dividend" },
-    { title: "Unclaimed Dividend 2016-17", date: "2016-17", type: "Unclaimed Dividend" },
-    { title: "Unclaimed Dividend 2015-16", date: "2015-16", type: "Unclaimed Dividend" },
-    { title: "Unclaimed Dividend 2014-15", date: "2014-15", type: "Unclaimed Dividend" },
-    { title: "Unclaimed Dividend 2013-14", date: "2013-14", type: "Unclaimed Dividend" },
-    { title: "Unclaimed Dividend 2012-13", date: "2012-13", type: "Unclaimed Dividend" },
-    { title: "Unclaimed Dividend 2011-12", date: "2011-12", type: "Unclaimed Dividend" },
-    { title: "Unclaimed Dividend 2010-11", date: "2010-11", type: "Unclaimed Dividend" },
-    { title: "Unclaimed Dividend 2009-10", date: "2009-10", type: "Unclaimed Dividend" },
-    { title: "Unclaimed Dividend 2007-09", date: "2007-09", type: "Unclaimed Dividend" },
-    { title: "Unpaid Dividend 2009-10 to 2015-16", date: "2009-16", type: "Unpaid Dividend" },
-    { title: "Unpaid Dividend 2009-10 to 2015-16", date: "2009-16", type: "Unpaid Dividend" },
-  ]
 
-  const epfSharesData = [
-    { title: "EPF Shares 2015-16 (Interim) to 2021-22", date: "2015-22", type: "EPF Shares" },
-    { title: "EPF Shares 2014-15 to 2020-21", date: "2014-21", type: "EPF Shares" },
-    { title: "EPF Shares FY 2019-14 to FY 2019-20", date: "2019-20", type: "EPF Shares" },
-    { title: "EPF Shares 2012-13 to 2018-19", date: "2012-19", type: "EPF Shares" },
-    { title: "EPF Shares 2011-12 to 2017-18", date: "2011-18", type: "EPF Shares" },
-    { title: "EPF Shares 2010-11 to 2016-17", date: "2010-17", type: "EPF Shares" },
-    { title: "EPF Shares 2009-10 to 2015-16", date: "2009-16", type: "EPF Shares" },
-  ]
 
   return (
     <div className="space-y-8">
@@ -54,7 +27,7 @@ const UnclaimedDividend = () => {
               title={item.title}
               dateRange={item.date}
               type={item.type}
-              pdfUrl="/sample-report.pdf"
+              pdfUrl={item.fileLink}
             />
           ))}
         </div>
@@ -73,7 +46,7 @@ const UnclaimedDividend = () => {
               title={item.title}
               dateRange={item.date}
               type={item.type}
-              pdfUrl="/sample-report.pdf"
+              pdfUrl={item.fileLink}
             />
           ))}
         </div>

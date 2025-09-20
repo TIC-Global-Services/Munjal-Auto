@@ -27,10 +27,10 @@ const FinanceLayout = () => {
       <FinanceHero />
 
       <div className="min-h-screen bg-gray-50">
-        <div className="container mx-auto px-4 py-8">
-          <div className="flex flex-col lg:flex-row gap-6">
+        <div className="container mx-auto px-4 py-8 relative">
+          <div className="flex flex-col lg:flex-row gap-6 sticky top-10">
             {/* Sidebar Navigation */}
-            <div className="lg:w-80 flex-shrink-0">
+            <div className="lg:w-80 flex-shrink-0 ">
               <div className="bg-white rounded-lg shadow-sm overflow-hidden">
                 {reportTabs.map((tab) => (
                   <Link

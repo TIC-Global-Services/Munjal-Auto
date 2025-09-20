@@ -1,12 +1,16 @@
 "use client"
 
-const DownloadCard = ({ title, dateRange, pdfUrl, fileName }) => {
+const DownloadCard = ({ title, dateRange, pdfUrl }) => {
   const handleDownload = () => {
     const link = document.createElement("a")
     link.href = pdfUrl
-    link.download = fileName
+    link.download = pdfUrl.split("/").pop() // get filename from url
+    document.body.appendChild(link)
     link.click()
+    document.body.removeChild(link)
   }
+  
+  
 
   const handleShare = () => {
     if (navigator.share) {

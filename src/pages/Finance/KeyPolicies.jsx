@@ -1,83 +1,8 @@
 import DownloadCard from "../../components/Finance/DownloadCard"
+import policies from './key-policies.json'
 
 const KeyPolicies = () => {
-  const policies = [
-    {
-      title: "Code of Conduct",
-      description: "Ethical guidelines and behavioral standards for all employees",
-      date: "Updated 2024",
-    },
-    {
-      title: "Whistle Blower Policy",
-      description: "Framework for reporting unethical practices and misconduct",
-      date: "Revised 2024",
-    },
-    {
-      title: "Related Party Transaction Policy",
-      description: "Guidelines for transactions with related parties and disclosure requirements",
-      date: "Effective 2024",
-    },
-    {
-      title: "Risk Management Policy",
-      description: "Comprehensive framework for identifying and managing business risks",
-      date: "Updated 2024",
-    },
-    {
-      title: "Dividend Distribution Policy",
-      description: "Policy governing dividend payments and distribution to shareholders",
-      date: "Approved 2024",
-    },
-    {
-      title: "Corporate Social Responsibility Policy",
-      description: "Guidelines for CSR activities and community development initiatives",
-      date: "Revised 2024",
-    },
-    {
-      title: "Nomination and Remuneration Policy",
-      description: "Framework for board appointments and executive compensation",
-      date: "Updated 2024",
-    },
-    {
-      title: "Board Diversity Policy",
-      description: "Guidelines for maintaining diversity in board composition",
-      date: "Effective 2024",
-    },
-    {
-      title: "Insider Trading Policy",
-      description: "Regulations for trading in company securities by insiders",
-      date: "Revised 2024",
-    },
-    {
-      title: "Document Retention Policy",
-      description: "Guidelines for document preservation and record management",
-      date: "Updated 2024",
-    },
-    {
-      title: "Information Technology Policy",
-      description: "Framework for IT governance and cybersecurity measures",
-      date: "Approved 2024",
-    },
-    {
-      title: "Environmental Policy",
-      description: "Commitment to environmental protection and sustainable practices",
-      date: "Effective 2024",
-    },
-    {
-      title: "Quality Policy",
-      description: "Standards and procedures for maintaining product quality",
-      date: "Revised 2024",
-    },
-    {
-      title: "Health and Safety Policy",
-      description: "Guidelines for workplace safety and employee health protection",
-      date: "Updated 2024",
-    },
-    {
-      title: "Anti-Corruption Policy",
-      description: "Framework for preventing bribery and corrupt practices",
-      date: "Approved 2024",
-    },
-  ]
+
 
   return (
     <div className="space-y-8">
@@ -96,7 +21,7 @@ const KeyPolicies = () => {
             title={policy.title}
             subtitle={policy.description}
             dateRange={policy.date}
-            pdfUrl="/sample-policy.pdf"
+            pdfUrl={policy.fileLink}
           />
         ))}
       </div>
