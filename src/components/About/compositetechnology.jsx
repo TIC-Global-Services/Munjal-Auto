@@ -167,7 +167,7 @@ const CompositeTechnology = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-6 mt-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-10 items-center">
           <div className="h-64">
             <img
               src={inductch}
@@ -185,7 +185,7 @@ const CompositeTechnology = () => {
                 business at Indutch.
               </p>
               <p>Indutch has 4 manufacturing facilities</p>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                 {["Chennai", "Halol", "Manjusar", "Waghodia"].map(
                   (process, index) => (
                     <div key={index} className="flex items-center">
