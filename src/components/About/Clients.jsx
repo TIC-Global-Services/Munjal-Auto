@@ -1,11 +1,11 @@
-import React, { useEffect, useRef } from 'react';
-import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/react-splide/css/core';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import image1 from '../../assets/clients/hero.png';
-import image2 from '../../assets/clients/piaggio.png';
-import image3 from '../../assets/clients/suzuki.png';
-import image4 from '../../assets/clients/tata.png';
+import { useEffect } from "react";
+// import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css/core";
+// import { ChevronLeft, ChevronRight } from "lucide-react";
+import image1 from "../../assets/clients/client-1.png";
+import image2 from "../../assets/clients/client-2.png";
+import image3 from "../../assets/clients/client-3.png";
+import image4 from "../../assets/clients/client-4.png";
 
 const contents = [
   { img: image1 },
@@ -15,35 +15,35 @@ const contents = [
 ];
 
 const Clients = () => {
-  const splideRef = useRef();
+  // const splideRef = useRef();
 
-  const splideOptions = {
-    type: 'loop',
-    perPage: 3,
-    perMove: 1,
-    pagination: true,
-    arrows: true,
-    autoplay: true,
-    interval: 3000,
-    focus: 'center',
-    gap: '2rem',
-    breakpoints: {
-      1024: {
-        perPage: 3,
-      },
-      768: {
-        perPage: 2,
-        gap: '1.5rem',
-      },
-      480: {
-        perPage: 1,
-        gap: '1rem',
-      },
-    },
-  };
+  // const splideOptions = {
+  //   type: "loop",
+  //   perPage: 3,
+  //   perMove: 1,
+  //   pagination: true,
+  //   arrows: true,
+  //   autoplay: true,
+  //   interval: 3000,
+  //   focus: "center",
+  //   gap: "2rem",
+  //   breakpoints: {
+  //     1024: {
+  //       perPage: 3,
+  //     },
+  //     768: {
+  //       perPage: 2,
+  //       gap: "1.5rem",
+  //     },
+  //     480: {
+  //       perPage: 1,
+  //       gap: "1rem",
+  //     },
+  //   },
+  // };
 
   useEffect(() => {
-    const style = document.createElement('style');
+    const style = document.createElement("style");
     style.textContent = `
       .clients-container {
         position: relative;
@@ -217,25 +217,25 @@ const Clients = () => {
   }, []);
 
   return (
-    <div className="py-20 max-w-3xl mx-auto mt-20">
-      <h1 className="text-[#141313] text-[40px] text-center mb-10 font-normal">Our Customers</h1>
-      <div className="clients-container">
-        <Splide ref={splideRef} options={splideOptions}>
-          {contents.map((item, index) => (
-            <SplideSlide key={index}>
-              <div className="flex justify-center items-center h-40">
-                <div className="client-logo">
-                  <img
-                    src={item.img}
-                    alt={`client-${index}`}
-                    className="w-16 h-16 object-contain"
-                  />
-                </div>
-              </div>
-            </SplideSlide>
-          ))}
-        </Splide>
-      </div>
+    <div className="py-20 max-w-5xl mx-auto mt-20">
+      <h1 className="text-[#141313] text-[40px] text-center mb-10 font-normal">
+        Our Customers
+      </h1>
+    <div className="flex justify-between">
+        {contents.map((item, index) => (
+        <div key={index}>
+          <div className="flex justify-center items-center h-40">
+            <div className="">
+              <img
+                src={item.img}
+                alt={`client-${index}`}
+                className={`${index==0? "w-30 h-30":"w-20 h-20"} object-contain`}
+             />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
     </div>
   );
 };

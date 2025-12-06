@@ -174,7 +174,7 @@ const BoardOfDirectors = () => {
                     <div
                       key={`${director.id}-${currentIndex}`}
                       className={`relative overflow-hidden rounded-2xl shadow-2xl bg-white transition-all duration-500 ease-out cursor-pointer hover:shadow-3xl ${
-                        isCenter ? 'w-80 h-[520px] z-20' : 'w-64 h-[420px] z-10'
+                        isCenter ? 'w-[500px]  h-[520px] z-20' : 'w-64 h-[420px] z-10'
                       } ${blur}`}
                       style={{
                         transform: `scale(${scale})`,

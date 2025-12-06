@@ -1,4 +1,4 @@
-import React, { useEffect,  } from 'react'
+import { useEffect,  } from 'react'
 import { Link,  } from 'react-router-dom';
 import img from "../../assets/aboutusbanner.png";
 import logo from "../../assets/companyLogo.png";
@@ -72,8 +72,6 @@ const AboutHero = () => {
                         />
                     </Link>
                 </div>
-
-
                 <TimeLine />
             </div>
         </div>

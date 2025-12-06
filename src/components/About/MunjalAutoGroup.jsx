@@ -30,8 +30,8 @@ function ModelViewer() {
       const scene = new THREE.Scene();
       scene.background = null;
   
-      const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 1000);
-      camera.position.set(0, 1.3, 5);
+      const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 1000);
+      camera.position.set(0, 2, 5);
   
       const renderer = new THREE.WebGLRenderer({
         antialias: true,
@@ -79,7 +79,7 @@ function ModelViewer() {
       // Load model with enhanced materials
       const loader = new GLTFLoader();
       loader.load(
-        "/2mn.gltf",
+        "/Model04.glb   ",
         (gltf) => {
           const model = gltf.scene;
   

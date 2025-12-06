@@ -11,7 +11,7 @@ const PioneeringText = () => {
         transition={{ duration: 1, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.3 }} 
       >
-        Pioneering Lightweight Solutions with Cutting-Edge Technology, Engineering a Smarter, More Innovative Future.
+        Pioneering Lightweight Solutions with Cutting-Edge Technology
       </motion.h1>
     </div>
   );
