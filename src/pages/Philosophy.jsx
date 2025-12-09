@@ -1,6 +1,9 @@
-import React from 'react'
+
 import PhiloHero from '../components/Philosophy/PhiloHero'
 import OurVision from '../components/Philosophy/OurVision'
+import StandOut from '../components/Philosophy/standOut'
+import Sustainability from '../components/Philosophy/sustainability'
+import Innovation from '../components/Philosophy/innovation'
 
 const Philosophy = () => {
 
@@ -8,7 +11,11 @@ const Philosophy = () => {
   return (
     <div>
       <PhiloHero />
-      <OurVision />
+      <StandOut/>
+      <Sustainability/>
+      <Innovation/>
+      {/* <OurVision /> */}
+      
     </div>
   )
 }
