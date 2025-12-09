@@ -3,14 +3,14 @@ import innovationimg from '../../assets/slider/innovationimg.jpg'
 
 const innovation = () => {
   return (
-    <div className='px-20'>
-         <div className="relative h-96">
+    <div className='lg:px-20 lg:mx-10 mx-3 py-4'>
+         <div className="relative h-96 ">
                     <img
                       src={innovationimg}
                       alt="inductch"
                       className="w-full h-full object-cover rounded-2xl"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent rounded-2xl flex items-start p-6">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent rounded-2xl flex items-start p-6 py-3">
                       <div className="text-white">
                         <h3 className="text-xl font-semibold mb-4 text-[#FF0000]">
                           Innovation & People
