@@ -12,6 +12,7 @@ const TopNav = () => {
     { name: "About", link: "/about-us" },
     { name: "Products", link: "/products" },
     { name: "Philosophy", link: "/philosophy" },
+    { name: "Electronics", link: "/electronics" },
     { name: "Quality", link: "/quality" },
     { name: "Finance", link: "/finance" },
     { name: "Training", link: "/training" },
@@ -20,8 +21,8 @@ const TopNav = () => {
   ];
 
   // Manually split: 4 on left, 5 on right
-  const leftContents = contents.slice(0, 4);
-  const rightContents = contents.slice(4);
+  const leftContents = contents.slice(0, 5);
+  const rightContents = contents.slice(5);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);

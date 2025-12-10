@@ -1,0 +1,20 @@
+# Build outputs
+dist
+build
+coverage
+
+# Dependencies
+node_modules
+
+# Logs
+*.log
+
+# Environment files
+.env*
+
+# Generated files
+*.min.js
+*.min.css
+
+# Public assets
+public/reports/**

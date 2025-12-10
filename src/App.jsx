@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom"
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Products from "./pages/Products"
+import Electronics from "./pages/Electronics"
 import Philosophy from "./pages/Philosophy"
 import Quality from "./pages/Quality"
 import Training from "./pages/Training"
@@ -34,6 +35,7 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "about-us", element: <About /> },
       { path: "products", element: <Products /> },
+      { path: "electronics", element: <Electronics /> },
       { path: "philosophy", element: <Philosophy /> },
       { path: "quality", element: <Quality /> },
       {
