@@ -12,23 +12,22 @@ const Certification = () => {
                         <img src={cer1} className="rounded-lg w-[80%] md:w-full max-w-[300px]" alt="" />
                         <div className="text-start mt-2">
                             <h1 className="text-[#ED1C24] text-2xl">2012</h1>
-                            <h2 className="mt-1">Certification of OHSAS 18001-2007</h2>
+                            <h2 className="mt-1">Certification of ISo/Ts 16949-2009</h2>
                         </div>
                     </div>
 
-                    <div className="flex flex-col items-start w-full md:w-auto">
+                    <div className="flex flex-col items-center w-full md:w-auto">
                         <img src={cer2} className="rounded-lg w-[80%] md:w-full max-w-[300px]" alt="" />
                         <div className="text-start mt-2">
-                            <h1 className="text-[#ED1C24] text-2xl">2012</h1>
-                            <h2 className="mt-1">Certification of OHSAS 18001-2007</h2>
+                            <h2 className="mt-1">Certification From Hero Honda Motors Limited</h2>
                         </div>
                     </div>
 
                     <div className="flex flex-col items-start w-full md:w-auto">
                         <img src={cer3} className="rounded-lg w-[80%] md:w-full max-w-[300px] md:ml-0" alt="" />
                         <div className="text-start mt-2">
-                            <h1 className="text-[#ED1C24] text-2xl">2012</h1>
-                            <h2 className="mt-1">Certification of OHSAS 18001-2007</h2>
+                            <h1 className="text-[#ED1C24] text-2xl">2009</h1>
+                            <h2 className="mt-1">Certification of ISO/TS 14001-2004</h2>
                         </div>
                     </div>
                 </div>

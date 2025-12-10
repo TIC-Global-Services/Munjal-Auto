@@ -30,21 +30,23 @@ const Policy = () => {
     return (
       <>
         {/* Desktop version */}
-        <div className="relative w-full h-screen items-center justify-center my-20 hidden lg:block">
+        <div className="relative w-full h-screen items-center justify-center my-20 hidden lg:block bg-white">
           {/* Background image */}
-          <img
-            src={BgImage}
-            alt="Background"
-            className="absolute inset-0 w-screen h-full object-contain z-0  max-h-[621px] mx-auto"
-          />
+          <div className="absolute inset-0 w-screen h-full z-0 max-h-[621px] mx-auto bg-white">
+            <img
+              src={BgImage}
+              alt="Background"
+              className="w-full h-full object-contain mix-blend-multiply opacity-10"
+            />
+          </div>
   
           {/* Content overlay */}
           <div className="relative z-20 w-full h-full">
-            <div className="absolute top-[8%] left-[5%] sm:left-[10%] md:left-[12%] lg:left-[10%] xl:left-[15%]">
-              <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-5xl font-[500] mb-4 lg:mt-10 xl:mt-0">
+            <div className="absolute top-[8%] left-[5%] sm:left-[10%] md:left-[12%] lg:left-[10%] xl:left-[15%] bg-[#F2F2F2)]  rounded-lg p-6 ">
+              <h2 className="text-[#ED1C24] text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-5xl font-[500] mb-4 lg:mt-0 xl:mt-0">
                 Quality Policy
               </h2>
-              <p className="text-white text-sm sm:text-base md:text-lg lg:text-sm xl:text-base max-w-[300px] mb-8">
+              <p className="text-gray-700 text-sm sm:text-base md:text-lg lg:text-sm xl:text-base max-w-[300px] mb-8 leading-relaxed">
                 At MAIL, quality is our foundation. Through a strong Total Quality
                 Management System, we ensure every product is "First time right,
                 every time right."
@@ -58,14 +60,14 @@ const Policy = () => {
               {contents.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-[#1E1F24] p-3 sm:p-4 rounded shadow flex flex-col w-[120px] sm:w-[160px] md:w-[200px] lg:w-[225px] h-[120px] sm:h-[160px] md:h-[200px] lg:h-[225px] text-center items-center justify-center"
+                  className="bg-[#F5EDED] p-3 sm:p-4 rounded shadow flex flex-col w-[120px] sm:w-[160px] md:w-[200px] lg:w-[225px] h-[120px] sm:h-[160px] md:h-[200px] lg:h-[225px] text-center items-center justify-center"
                 >
                   <img
                     src={item.image}
                     alt="image"
                     className="w-[20px] h-[20px] sm:w-[22px] sm:h-[22px] lg:w-[24px] lg:h-[24px] mb-2"
                   />
-                  <p className="text-white text-xs sm:text-sm lg:text-base">
+                  <p className="text-gray-700 text-xs sm:text-sm lg:text-base">
                     {item.description}
                   </p>
                 </div>
@@ -82,13 +84,13 @@ const Policy = () => {
         </div>
   
         {/* Mobile version */}
-        <div className="px-10"> <div className="bg-black relative px-8 py-20 mt-20 block lg:hidden mb-[380px] rounded-[6px]">
+        <div className="px-10 bg-white py-10"> <div className="bg-[#FBFBFC] relative px-8 py-20 mt-20 block lg:hidden mb-[380px] rounded-[6px] shadow-lg border border-gray-200">
           {/* Header section */}
           <div className="mb-8">
-            <h2 className="text-white text-2xl sm:text-3xl font-[500] mb-4">
+            <h2 className="text-[#ED1C24] text-2xl sm:text-3xl font-[500] mb-4">
               Quality Policy
             </h2>
-            <p className="text-white text-sm sm:text-base leading-relaxed">
+            <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
               At MAIL, quality is our foundation. Through a strong Total Quality
               Management System, we ensure every product is "First time right,
               every time right."
@@ -103,14 +105,14 @@ const Policy = () => {
               {contents.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-[#1E1F24] p-3 sm:p-4 rounded shadow flex flex-col w-full sm:w-[160px] h-[140px] sm:h-[160px] text-center items-center justify-center"
+                  className="bg-[#F5EDED] p-3 sm:p-4 rounded shadow flex flex-col w-full sm:w-[160px] h-[140px] sm:h-[160px] text-center items-center justify-center"
                 >
                   <img
                     src={item.image}
                     alt="image"
                     className="w-[20px] h-[20px] sm:w-[24px] sm:h-[24px] mb-2 flex-shrink-0"
                   />
-                  <p className="text-white text-xs sm:text-sm leading-tight">
+                  <p className="text-gray-700 text-xs sm:text-sm leading-tight">
                     {item.description}
                   </p>
                 </div>

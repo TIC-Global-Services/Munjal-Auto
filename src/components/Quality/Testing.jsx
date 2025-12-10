@@ -19,12 +19,11 @@ const contents = [
     title: 'Metallurgical Lab',
     image: image1,
     description: [
-
       "Computerized UTM",
-      "Vickers Hardness Testing",
-      "Facility for Weld Penetration Test",
-      "Weld Strength Tester",
-      "Automatic Absorption Spectrophotometer",
+      "Wickers Hardness Testing",
+      "Facility of weld penetration Test",
+      "Weld strength tester",
+      "Automatic absorption Spectrophotometer",
     ]
   },
   {
@@ -83,22 +82,16 @@ const contents = [
     image: image1,
     description: [
       "Online Testing",
-      "Leakage Test (after welding & assembly)",
-      "Offline Testing (periodically)",
+      "Leakage Test ( after welding & assembly)",
+      "Off line testing (periodically)",
       "Pressure & Vacuum Cycle Test",
-      "Vacuum Holding Test",
-      "Hydro Pressure Test",
+      "Vacuum Holding test",
+      "Hydro pressure Test",
       "Impulse Cycle Test",
-      "Venting Tip Angle Test",
-      "Slosh Test (Half Full & Full)",
-      "Vibration Test",
-      "Overturn Test",
-      "Salt Spray Test – Chamber Size (1400 x 800 x 1000 mm)",
-      "Volume Test",
-      "Millipore Contamination Test",
-      "Nugget Test",
-      "Seam Strength Test",
-    ]
+      "Venting Tip angle Test",
+      "Slosh Test ( Half Full & Full)",
+      "Salt spray Test With Chamber Size (1400X 800X1000)",
+          ]
   },
 
   {
