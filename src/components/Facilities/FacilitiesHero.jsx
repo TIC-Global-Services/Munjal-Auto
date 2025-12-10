@@ -1,5 +1,6 @@
 import React from 'react'
-import img from "../../assets/faci-min.jpeg";
+// import img from "../../assets/faci-min.jpeg";
+import legacy from "../../assets/legacy2.jpg";
 import logo from "../../assets/companyLogo.png";
 import icon1 from "../../assets/hero/icon.png";
 import icon2 from "../../assets/hero/icon2.png";
@@ -13,7 +14,7 @@ const FacilitiesHero = () => {
         <div
           className="h-[90%] w-[94%] flex flex-col items-center justify-center rounded-[24px] relative"
           style={{
-            backgroundImage: `url(${img})`,
+            backgroundImage: `url(${legacy})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",

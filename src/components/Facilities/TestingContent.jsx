@@ -1,63 +1,290 @@
 // Component for the "Cutting-Edge Testing" tab
-const TestingContent = ({ content }) => {
+import React from 'react';
+import innovationimg1 from '../../assets/slider/innovationimg.jpg'
+import innovationimg5 from '../../assets/slider/manufacturingimg2.png'
+import innovationimg3 from '../../assets/slider/manufacturingimg3.png'
+import innovationimg2 from '../../assets/slider/manufacturingimg4.png'
+import innovationimg4 from '../../assets/slider/manufacturingimg5.jpg'
+import exhust1 from '../../assets/Facilities/exhustsystem1.jpg'
+import exhust2 from '../../assets/Facilities/exhustsystem2.jpg'
+import exhaust3 from '../../assets/Facilities/exhustsystem3.jpg'
+import exhaust4 from '../../assets/Facilities/exhustsystem4.jpg'
+import exhaust6 from '../../assets/Facilities/exhustsystem6.png'
+import exhaust7 from '../../assets/Facilities/exhustsystem7.png'
+import exhaust8 from '../../assets/Facilities/exhustsystem8.jpg'
+import exhaust9 from '../../assets/Facilities/exhustsystem9.jpg'
+import {ArrowLeft, ArrowRight} from 'lucide-react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import './TestingContent.css'
+import Rimmanufacturing from './rimmanufacturing'
+
+const TestingContent = () => {
+    const [showAllExhaust, setShowAllExhaust] = React.useState(false);
+
+   
+    const manufacturingList=[
+        {
+            title:"Stamping",
+            points:["Presses ranging from 200 – 1000 TON with large bed sizes",
+                "Bed size: 850 mm × 1450 mm to 2350 mm × 3250 mm",
+                "Shut height: 550 mm to 1050 mm"
+            ],
+            img:innovationimg1
+        },
+        {
+    title: "Welding",
+    points: [
+      "Spot welding",
+      "Projection bonding",
+      "Seam welding",
+      "MIG welding",
+      "TIG welding"
+    ],
+    img: innovationimg2
+  },
+  {
+    title: "Online Testing",
+    points: [
+      "High-pressure flushing with water (before welding & assembly)",
+      "Air cleaning (before welding & assembly)",
+      "Leakage test (after welding & assembly)"
+    ],
+    img: innovationimg3
+  },
+  {
+    title: "Surface Treatment",
+    points: [
+      "Pre-treatment with 9-tank system",
+      "Powder coating with automatic conveyorised plant",
+      "IR paint on exhaust systems",
+      "Wet-on-wet paint on wheel rims",
+      "Nickel-chrome plating on rims"
+    ],
+    img: innovationimg4
+  },
+  {
+    title: "Offline Testing (Periodic)",
+    points: [
+      "Pressure & vacuum cycle test",
+      "Vacuum holding test",
+      "Hydro pressure test",
+      "Impulse cycle test",
+      "Venting tip angle test",
+      "Slosh test (half-full & full)",
+      "Vibration test",
+      "Overturn test",
+      "Salt spray test (Chamber size 1400 × 800 × 1000)",
+      "Volume test",
+      "Millipore contamination test"
+    ],
+    img: innovationimg5
+  }
+
+    ]
+    const exhaustSystemList=[
+     {
+    sectionTitle: "Pressing & Forming",
+    points: [
+      "Mechanical presses ranging from 5–180 TON",
+      "Hydraulic presses ranging from 20–160 TON",
+      "Blanking, piercing, forming, trimming, and seam locking with specialized SPMs",
+      "CNC bending machines for pipe-in-pipe exhaust systems"
+    ],
+    image: exhust1
+  },
+  {
+    sectionTitle: "Surface Preparation & Coating",
+    points: [
+      "Shot/grit blasting machines",
+      "Nine-stage pretreatment phosphating line",
+      "Heat-resistant painting (internal & external)",
+      "Fully automatic 34-stage tri-nickel chrome plating plant"
+    ],
+    image: exhust2
+  },
+  {
+    sectionTitle: "CNC Bending",
+    points: [
+      "Four-axis CNC machine (YLM) with bending capacity up to 30 mm diameter, 2 mm thickness",
+      "Max bending angle: 190°, CLR: 180 mm, mandrel working distance: 2000 mm",
+      "Current pipe sizes: up to OD 25.40 mm, thickness 1.5 mm"
+    ],
+    image: exhust1
+  },
+  {
+    sectionTitle: "Pressing & Forming",
+    points: [
+      "Mechanical presses ranging from 5–180 TON",
+      "Hydraulic presses ranging from 20–160 TON",
+      "Blanking, piercing, forming, trimming, and seam locking with specialized SPMs",
+      "CNC bending machines for pipe-in-pipe exhaust systems"
+    ],
+    image: exhaust3
+  },
+  {
+    sectionTitle: "Surface Preparation & Coating",
+    points: [
+      "Shot/grit blasting machines",
+      "Nine-stage pretreatment phosphating line",
+      "Heat-resistant painting (internal & external)",
+      "Fully automatic 34-stage tri-nickel chrome plating plant"
+    ],
+    image: exhaust4
+  },
+  {
+    sectionTitle: "CNC Bending",
+    points: [
+      "Four-axis CNC machine (YLM) with bending capacity up to 30 mm diameter, 2 mm thickness",
+      "Max bending angle: 190°, CLR: 180 mm, mandrel working distance: 2000 mm",
+      "Current pipe sizes: up to OD 25.40 mm, thickness 1.5 mm"
+    ],
+    image: exhaust6
+  },
+  {
+    sectionTitle: "Welding",
+    points: [
+      "TIG, MIG, seam, spot, projection & butt welding",
+      "Linear and circular SPMs with Argon inert gas welding"
+    ],
+    image: exhaust6
+  },
+  {
+    sectionTitle: "Stamping & Mitering",
+    points: [
+      "Presses from 18–250 TON",
+      "End flattening, tube diameter expansion, and precision mitering"
+    ],
+    image: exhaust7
+  },
+  {
+    sectionTitle: "Machining & Sub-Assembly",
+    points: [
+      "Drilling and grinding operations",
+      "MIG welding with advanced machines",
+      "Gauging & welding inspection during assembly",
+      "Fitting of rubber BOPs and seat recliners"
+    ],
+    image: exhaust8
+  },
+  {
+    sectionTitle: "Surface Treatment & Coating",
+    points: [
+      "Pretreatment with 8-tank system",
+      "Powder coating for enhanced durability"
+    ],
+    image: exhaust9
+  }
+    ]
+     // Show limited items when "Show Less" is active
+    const visibleExhaustItems = showAllExhaust ? exhaustSystemList : exhaustSystemList.slice(0, 3);
     return (
-        <div className="max-w-7xl mx-auto px-4 mb-20">
+        <div className="max-w-7xl mx-auto lg:px-4 px-3 mb-20">
 
             <h1 className="text-[#151414] text-[28px] leading-[57px] text-center max-w-4xl mx-auto mt-20">
-                Our state-of-the-art manufacturing facilities are equipped with advanced
-                machinery and automated processes, ensuring high-precision components
-                that meet global standards.
+                Our facilities go beyond manufacturing, every component undergoes rigorous testing and validation to meet the highest quality standards of global OEMs
             </h1>
+            <div className="mt-20 py-10">
+                <div>
+                    <h1 className="text-[36px]">Fuel Tank Manufacturing</h1>
+                    <p className="text-[20px] text-[#82848A]">
+                        At Munjal Auto Industries Limited (MAIL), we produce 500 passenger car fuel tanks per day, with a total installed capacity of 1,500 assemblies daily. Leveraging advanced technology, modern equipment, and precision tooling, we maintain uncompromising standards of quality through robust processes, multi-stage inspections, and stringent testing protocols.
+                    </p>
+                </div>
+            </div>
+           <div className="relative">
+             <Swiper
+               modules={[Navigation]}
+               spaceBetween={30}
+               slidesPerView={1}
+               navigation={{
+                 nextEl: '.custom-next',
+                 prevEl: '.custom-prev'
+               }}
+               className="manufacturing-carousel"
+             >
+               {manufacturingList.map((item, index) => (
+                 <SwiperSlide key={index}>
+                   <div className="flex gap-4 my-6">
+                     <img
+                       src={item.img}
+                       width={756}
+                       height={505}
+                       alt="manufacturing image"
+                       className="flex-shrink-0 lg:min-w-[756px] lg:min-h-[505px] h-[505px]"
+                     />
 
-            <div className="flex flex-row justify-between items-start max-w-8xl mt-[120px]">
-                <h1 className="text-[36px] font-medium">Fuel Tank <br /> Manufactuirng</h1>
+                     <div className="flex-1">
+                       <div>
+                         <h1 className="text-2xl font-bold mb-2 text-[#ED1C24]">{item.title}</h1>
+                         <ul className="list-disc ml-6">
+                           {item.points.map((point, i) => (
+                             <li key={i} className='font-light'>{point}</li>
+                           ))}
+                         </ul>
+                       </div>
+                     </div>
+                   </div>
+                 </SwiperSlide>
+               ))}
+             </Swiper>
 
-                <div className="flex flex-col justify-center items-start space-y-5">
-                    <div>
-                        <h1 className="text-[#ED1C24] text-[26px] font-semibold mb-2">
-                            Stamping
-                        </h1>
-                        <div className="w-full text-left">
-                            <ul className="list-disc pl-5 space-y-4 columns-1 gap-x-8  text-[#626367]">
-                                <li>
-                                    Presses ranging from 200 – 1000 TON With Large bed sizes
-                                </li>
-                                <li>
-                                    Bed Size from 850 mm X 1450 mm to 2350 mmX 3250 mm Shut Height
-                                    550 mm to 1050 mm
-                                </li>
-                                <li>Supported By Following Hardware (Work Stations)</li>
-                                <li>HP Z-600</li>
-                                <li>HP Z-400 </li>
-                                <li>Plotter HP-500</li>
-                            </ul>
+             {/* Custom navigation buttons */}
+             <div className="flex gap-2 absolute right-0 lg:bottom-20 bottom-20 z-10">
+               <ArrowLeft color="#ffffff" strokeWidth={1.5} absoluteStrokeWidth className='custom-prev bg-[#ED1C24] rounded-full p-2 w-10 h-10 cursor-pointer'/>
+               <ArrowRight color="#ffffff" strokeWidth={1.5} absoluteStrokeWidth className='custom-next bg-[#ED1C24] rounded-full p-2 w-10 h-10 cursor-pointer'/>
+             </div>
+           </div>
+
+              <div className="mt-20 py-10">
+                <div>
+                    <h1 className="text-[36px]">Exhaust Systems Manufacturing</h1>
+                    <p className="text-[20px] text-[#82848A]">
+                       We manufacture nearly 32,000 complete two-wheeler exhaust systems every day at MAIL. Our state-of-the-art facilities, equipped with precision-driven technology and automated systems, ensure seamless production. Every unit undergoes strict in-process gauging, inspection, and advanced testing to guarantee superior performance and reliability.
+                    </p>
+                </div>
+                <div className="relative mt-10">
+                 
+                    {visibleExhaustItems.map((item, index) => (
+                        <div key={index} className=''>
+                        <div className=" grid grid-cols-1 lg:grid-cols-2 my-6">
+                          <img
+                            src={item.image}
+                            width={595}
+                            height={250}
+                            alt="exhaust system image"
+                            className={`flex-shrink-0 lg:min-w-[595px]  rounded-md lg:min-h-[250px] px-5 ${index%2 ==0 ?"lg:order-last":""}`}
+                          />
+
+                          <div className="lg:flex-1">
+                            <div className='py-3'>
+                              <h1 className="lg:text-[26px] text-[20px] font-bold mb-2 text-[#ED1C24]">{item.sectionTitle}</h1>
+                              <ul className="list-disc px-4 lg:px-0">
+                                {item.points.map((point, i) => (
+                                  <li key={i} className='font-light text-[#82848A] leading-[34px] text-[16px]'>{point}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
                         </div>
-                    </div>
-                    <div>
-                        <h1 className="text-[#ED1C24] text-[26px] font-semibold mb-2">
-                            Tool Design Center ( Waghodia)
-                        </h1>
-                        <div className="w-80 text-left">
-                            <ul className="list-disc pl-5 space-y-4 columns-1 gap-x-8  text-[#626367]">
-                                <li>
-                                    CATIA V-5 –R-60
-                                </li>
-                                <li>
-                                    Pro-E Wildfire
-                                </li>
-                                <li>Hyper Form ( Blank & Nest)</li>
-                                <li>AutoCAD</li>
-                                <li>Supported by Following Hardware (Work Stations)</li>
-                                <li>HP XW-4600</li>
-                                <li>IBM-Intelli-Star Z-Pro</li>
-
-                            </ul>
-                        </div>
+                      </div>
+                    ))}
+                    <div className='flex justify-center mt-6'>
+                        <button
+                          onClick={() => setShowAllExhaust(!showAllExhaust)}
+                          className='show-more-btn text-[#ED1C24] font-medium'
+                        >
+                          {showAllExhaust ? 'View Less' : 'View More'}
+                        </button>
                     </div>
                 </div>
             </div>
+            <Rimmanufacturing/>
         </div>
     );
 };
 
 export default TestingContent
+

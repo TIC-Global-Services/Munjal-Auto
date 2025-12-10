@@ -2,7 +2,10 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { useEffect, useRef, useState } from "react";
 import faBento2 from "../../assets/Facilities/Rectangle 34625219.png";
+import faBento4 from "../../assets/Facilities/tools.jpeg";
 import faBento3 from "../../assets/faBento3.png";
+import tooldesign from "../../assets/Facilities/tooldesign.png";
+
 
 function ModelViewer() {
     const [loading, setLoading] = useState(true);
@@ -121,7 +124,7 @@ function ModelViewer() {
             console.log('Starting to load model: /4mdln.glb');
 
             loader.load(
-                "/4_final.glb",
+                "/Model02.glb",
                 (gltf) => {
                     console.log('Model loaded successfully:', gltf);
                     const model = gltf.scene;
@@ -287,18 +290,18 @@ const FacilitiesContent = ({ content }) => {
     return (
         <div className="max-w-7xl mx-auto px-4 mb-20">
             {/* Hero Section */}
-            <div className="flex flex-col lg:flex-row items-stretch bg-[#EAEAEA] text-white rounded-[20px] overflow-hidden mb-8">
+            <div className="flex flex-col lg:flex-row items-stretch bg-black text-white rounded-[20px] overflow-hidden mb-8">
                 {/* Left Side - Content */}
                 <div className="flex-1 p-8 lg:p-12 flex flex-col justify-center">
                     <h2 className="text-[#FF252E] text-[20px] font-medium mb-4">
                         {content.title}
                     </h2>
 
-                    <p className="text-black text-2xl mb-6">
+                    <p className="text-white text-2xl mb-6">
                         {content.description}
                     </p>
 
-                    <button className="bg-[#ed1c24] text-white px-6 py-3 rounded-[12px] font-medium hover:bg-gray-100 transition-colors w-fit">
+                    <button className="bg-white text-black px-6 py-3 rounded-[12px] font-medium hover:bg-gray-100 transition-colors w-fit">
                         Explore More
                     </button>
                 </div>
@@ -310,13 +313,13 @@ const FacilitiesContent = ({ content }) => {
             </div>
 
             {/* Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 gap-4 lg:gap-8">
-                <div className="lg:col-span-3 rounded-[20px] bg-black p-6 md:p-8 lg:p-6 xl:p-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 gap-4 lg:gap-5">
+                <div className="lg:col-span-3 rounded-[20px] bg-[#EAEAEA] p-6 md:p-8 lg:p-6 xl:p-10">
                     <h1 className="text-[#FF0000] text-xl lg:text-xl xl:text-2xl">
-                        <span className="text-white"> World-</span>
+                        <span className="text-black"> World-</span>
                         Class Manufacturing
                     </h1>
-                    <p className="text-base lg:text-sm xl:text-base mt-4 text-white">
+                    <p className="text-base lg:text-sm xl:text-base mt-4 text-black">
                         From sheet metal components to complete assemblies, our
                         manufacturing plants leverage cutting-edge technology to produce
                         high-performance auto components. With a focus on sustainability and
@@ -326,28 +329,76 @@ const FacilitiesContent = ({ content }) => {
 
                 <div className="lg:col-span-2 rounded-[20px] h-[300px] lg:h-auto">
                     <img
-                        src={faBento2}
+                        src={faBento4}
                         alt=""
                         className="w-full rounded-[20px] h-full object-cover"
                     />
                 </div>
 
-                <div className="lg:col-span-5 bg-black overflow-hidden rounded-[20px] grid grid-cols-1 lg:grid-cols-2 md:px-10">
+                <div className="lg:col-span-5 bg-[#9B9C9F33] overflow-hidden rounded-[20px] grid grid-cols-1 lg:grid-cols-2 md:px-10">
                     <img
                         src={faBento3}
                         alt=""
                         className="h-[300px] lg:h-[95%] w-full object-contain md:-ml-20 -ml-[50px] lg:mt-5"
                     />
                     <div className="flex flex-col  text-right items-center justify-center p-6 lg:p-0 gap-4 lg:gap-10">
-                        <h1 className="text-xl lg:text-xl xl:text-2xl w-full lg:w-[90%] font-medium text-white">
+                        <h1 className="text-xl lg:text-xl xl:text-2xl w-full lg:w-[90%] font-medium text-black">
                             Cutting- <span className="text-[#FF0000]">Edge Facilities</span>
                         </h1>
-                        <p className="text-white text-base lg:text-sm xl:text-base">
+                        <p className="text-black text-base lg:text-sm xl:text-base">
                             Equipped with advanced manufacturing technology and in-house R&D,
                             our facilities are designed for efficiency, precision, and
                             scalability. We integrate the latest automation and quality
                             control systems to meet global industry standards.{" "}
                         </p>
+                    </div>
+                </div>
+            </div>
+            <div className="mt-20">
+                <h1 className="text-[36px]">Tool Design</h1>
+                <div className="mt-10 grid grid-cols-2 p-10">
+                    <div>
+                        <img src={tooldesign} width={488} height={313} className="rounded-[20px]"/>
+                    </div>
+                    <div>
+                        <p>
+                            Our Tool Design centers at Bawal and Waghodia are equipped with the latest CAD/CAM software and highly qualified engineering designers. They specialize in designing press tools, jigs, fixtures, gauges, reverse engineering, and manufacturing processes, supported by advanced workstations and plotters for precise, efficient tool development.
+                        </p>
+                        <div className="grid grid-cols-2 mt-10">
+                            <div>
+                                <h1 className="text-[#ED1C24] font-semibold text-[26px]">Bawal Haryana</h1>
+                            <ul>
+                                <li>Unigraphics NX</li>
+                                <li>Pampstamp</li>
+                                <li>FTI -Fast blank</li>
+                                <li>FTI- Blank Nest</li>
+                                <li>Hyper form</li>
+                                <li>Auto Cad</li>
+                            </ul>
+                            </div>
+                            <div className="">
+                                <h1 className="text-[#ED1C24] font-semibold text-[26px]">Supported By Following Hardware (Work Stations)</h1>
+                            <ul>
+                                <li>Unigraphics NX</li>
+                                <li>Pampstamp</li>
+                                <li>FTI -Fast blank</li>
+                                <li>FTI- Blank Nest</li>
+                                <li>Hyper form</li>
+                                <li>Auto Cad</li>
+                                <li>HP XW-4600</li>
+                                <li>IBM-Intelli-Star Z-Pro</li>
+                            </ul>
+                            </div>
+                            <div>
+                                <h1 className="text-[#ED1C24] font-semibold text-[26px]">Waghodia</h1>
+                            <ul>
+                                <li>CATIA V-5 –R-60</li>
+                                <li>Pro-E Wildfire</li>
+                                <li>Hyper Form ( Blank & Nest)</li>
+                                <li>AutoCADt</li>
+                            </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

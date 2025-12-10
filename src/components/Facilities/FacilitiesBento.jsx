@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import faBento2 from "../../assets/Facilities/Rectangle 34625219.png";
 import faBento3 from "../../assets/faBento3.png";
 import faBento1 from "../../assets/Facilities/img.png";
@@ -14,7 +15,7 @@ const FacilitiesBentoGrid = ({ activeTab, setActiveTab, tabs }) => {
 
     // Content for each tab
     const tabContent = {
-        Facilities: {
+        "Manufacturing Line": {
             title: "Driving Excellence Forward",
             description:
                 "With decades of expertise, we push the boundaries of precision engineering to deliver superior automotive solutions. Our commitment to quality and innovation fuels our journey toward excellence.",
@@ -34,21 +35,21 @@ const FacilitiesBentoGrid = ({ activeTab, setActiveTab, tabs }) => {
                 },
             ],
         },
-        "Precision Engineering": {
+        "Special Processes": {
             title: "Precision at Every Step",
             description:
                 "Our engineering facilities utilize cutting-edge technology to ensure precision in every component we manufacture.",
             mainImage: faBento2,
             layout: "split-grid",
         },
-        "Cutting-Edge Testing": {
-            title: "Rigorous Testing Standards",
+        "Tooling & Engineering": {
+            title: "Driving Excellence Forwar",
             description:
-                "Our testing facilities ensure every product meets the highest quality and performance standards.",
+                "With decades of expertise, we push the boundaries of precision engineering to deliver superior automotive solutions. Our commitment to quality and innovation fuels our journey toward excellence",
             mainImage: faBento3,
             layout: "showcase",
         },
-        "Sustainable Manufacturing": {
+        "R&D and Prototyping": {
             title: "Eco-Friendly Production",
             description:
                 "Our sustainable manufacturing facilities minimize environmental impact while maximizing efficiency.",
@@ -60,16 +61,16 @@ const FacilitiesBentoGrid = ({ activeTab, setActiveTab, tabs }) => {
     // Render the appropriate component based on the active tab
     const renderTabContent = () => {
         switch (activeTab) {
-            case "Facilities":
-                return <FacilitiesContent content={tabContent[activeTab]} />;
-            case "Precision Engineering":
+            case "Manufacturing Line":
+                 return <TestingContent content={tabContent[activeTab]} />;   
+            case "Special Processes":
                 return <PrecisionEngineeringContent content={tabContent[activeTab]} />;
-            case "Cutting-Edge Testing":
-                return <TestingContent content={tabContent[activeTab]} />;
-            case "Sustainable Manufacturing":
+            case "Tooling & Engineering":
+               return <FacilitiesContent content={tabContent[activeTab]} />;
+            case "R&D and Prototyping":
                 return <SustainableContent content={tabContent[activeTab]} />;
             default:
-                return <FacilitiesContent content={tabContent["Facilities"]} />;
+                return <FacilitiesContent content={tabContent["Manufacturing Line"]} />;
         }
     };
 
@@ -97,6 +98,12 @@ const FacilitiesBentoGrid = ({ activeTab, setActiveTab, tabs }) => {
             {renderTabContent()}
         </>
     );
+};
+
+FacilitiesBentoGrid.propTypes = {
+    activeTab: PropTypes.string.isRequired,
+    setActiveTab: PropTypes.func.isRequired,
+    tabs: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default FacilitiesBentoGrid;
