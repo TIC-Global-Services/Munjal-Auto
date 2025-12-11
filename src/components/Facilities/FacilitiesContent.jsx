@@ -5,6 +5,7 @@ import faBento2 from "../../assets/Facilities/Rectangle 34625219.png";
 import faBento4 from "../../assets/Facilities/tools.jpeg";
 import faBento3 from "../../assets/faBento3.png";
 import tooldesign from "../../assets/Facilities/tooldesign.png";
+import  Toolmanufacturing from './toolmanufacturing'
 
 
 function ModelViewer() {
@@ -323,7 +324,7 @@ const FacilitiesContent = ({ content }) => {
                         From sheet metal components to complete assemblies, our
                         manufacturing plants leverage cutting-edge technology to produce
                         high-performance auto components. With a focus on sustainability and
-                        innovation, we ensure reliability at every stage of production.
+                        innovation, we ensure reliability at every stage of production.
                     </p>
                 </div>
 
@@ -356,15 +357,15 @@ const FacilitiesContent = ({ content }) => {
             </div>
             <div className="mt-20">
                 <h1 className="text-[36px]">Tool Design</h1>
-                <div className="mt-10 grid grid-cols-2 p-10">
-                    <div>
-                        <img src={tooldesign} width={488} height={313} className="rounded-[20px]"/>
+                <div className="mt-10 flex lg:flex-row flex-col gap-5 ">
+                    <div className="object-fit w-fit">
+                        <img src={tooldesign} width={488} height={313} className="rounded-[20px] w-full lg:h-[400px]"/>
                     </div>
                     <div>
                         <p>
                             Our Tool Design centers at Bawal and Waghodia are equipped with the latest CAD/CAM software and highly qualified engineering designers. They specialize in designing press tools, jigs, fixtures, gauges, reverse engineering, and manufacturing processes, supported by advanced workstations and plotters for precise, efficient tool development.
                         </p>
-                        <div className="grid grid-cols-2 mt-10">
+                        <div className="grid gap-3 lg:grid-cols-2 mt-10">
                             <div>
                                 <h1 className="text-[#ED1C24] font-semibold text-[26px]">Bawal Haryana</h1>
                             <ul>
@@ -376,7 +377,7 @@ const FacilitiesContent = ({ content }) => {
                                 <li>Auto Cad</li>
                             </ul>
                             </div>
-                            <div className="">
+                            <div>
                                 <h1 className="text-[#ED1C24] font-semibold text-[26px]">Supported By Following Hardware (Work Stations)</h1>
                             <ul>
                                 <li>Unigraphics NX</li>
@@ -402,6 +403,7 @@ const FacilitiesContent = ({ content }) => {
                     </div>
                 </div>
             </div>
+            <Toolmanufacturing/>
         </div>
     );
 };
