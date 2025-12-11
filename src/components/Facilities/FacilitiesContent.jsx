@@ -358,7 +358,7 @@ const FacilitiesContent = ({ content }) => {
             <div className="mt-20">
                 <h1 className="text-[36px]">Tool Design</h1>
                 <div className="mt-10 flex lg:flex-row flex-col gap-5 ">
-                    <div className="object-fit w-fit">
+                    <div className="object-fit lg:w-screen w-fit">
                         <img src={tooldesign} width={488} height={313} className="rounded-[20px] w-full lg:h-[400px]"/>
                     </div>
                     <div>
