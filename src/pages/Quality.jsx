@@ -10,7 +10,7 @@ const Quality = () => {
       <QualityHero />
       <Policy />
       <Testing />
-      <Certification />
+      <Certification /> 
 
     </div>
   )

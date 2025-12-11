@@ -62,7 +62,7 @@ const TrainingHero = () => {
                 </div>
             </div>
             <div>
-                <h1 className=" text-[28px]  leading-[48px]  text-center mx-auto  mt-10 w-[60%]">At <span className="   text-[#ED1C24]">Munjal Auto </span> , training is a very important aspects of journey towards world class emphasizing the growth and development of personnels includes</h1>
+                <h1 className=" text-[28px] lg:text-[28px] leading-[48px] text-center mx-auto  mt-10 lg:w-[60%] w-[80%]">At <span className="   text-[#ED1C24]">Munjal Auto </span> , training is a very important aspects of journey towards world class emphasizing the growth and development of personnels includes</h1>
             </div>
         </div>
     )

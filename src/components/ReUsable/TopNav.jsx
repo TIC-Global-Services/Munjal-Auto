@@ -9,14 +9,14 @@ const TopNav = () => {
 
   const contents = [
     { name: "Home", link: "/" },
-    { name: "About", link: "/about-us" },
+    { name: "About us", link: "/about-us" },
     { name: "Products", link: "/products" },
     { name: "Philosophy", link: "/philosophy" },
     { name: "Electronics", link: "/electronics" },
+    { name: "Facilities", link: "/facilities" },
     { name: "Quality", link: "/quality" },
     { name: "Finance", link: "/finance" },
     { name: "Training", link: "/training" },
-    { name: "Facilities", link: "/facilities" },
     { name: "Contact", link: "/contact" },
   ];
 

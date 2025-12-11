@@ -47,7 +47,7 @@ const ElectronicsHero = () => {
           </div>
 
           {/* Bottom Left Text */}
-          <div className="absolute bottom-10 left-10 text-left">
+          <div className="absolute lg:bottom-10 lg:left-10  text-left">
             <h1 className="text-[#FFFCFC] text-[54px] font-[500] leading-[3.9rem]">
               Electronics
             </h1>

@@ -32,7 +32,7 @@ const Policy = () => {
         {/* Desktop version */}
         <div className="relative w-full h-screen items-center justify-center my-20 hidden lg:block bg-white">
           {/* Background image */}
-          <div className="absolute inset-0 w-screen h-full z-0 max-h-[621px] mx-auto bg-white">
+          <div className="absolute inset-0 w-full h-full z-0 max-h-[621px] mx-auto bg-white">
             <img
               src={BgImage}
               alt="Background"
@@ -42,7 +42,7 @@ const Policy = () => {
   
           {/* Content overlay */}
           <div className="relative z-20 w-full h-full">
-            <div className="absolute top-[8%] left-[5%] sm:left-[10%] md:left-[12%] lg:left-[10%] xl:left-[15%] bg-[#F2F2F2)]  rounded-lg p-6 ">
+            <div className="absolute top-[8%] left-[5%] sm:left-[10%] md:left-[12%] lg:left-[10%] xl:left-[20%] bg-[#F2F2F2)]  rounded-lg p-6 ">
               <h2 className="text-[#ED1C24] text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-5xl font-[500] mb-4 lg:mt-0 xl:mt-0">
                 Quality Policy
               </h2>
@@ -76,7 +76,7 @@ const Policy = () => {
           </div>
   
           {/* 3D Model */}
-          <div className="absolute top-[70%] sm:top-[65%] md:top-[50%] lg:top-[15%] md:left-[2%] lg:left-[0%] z-10">
+          <div className="absolute  top-[70%] sm:top-[65%] md:top-[50%] lg:top-[15%] md:left-[2%] lg:left-[10%] z-10">
             <div className="scale-50 sm:scale-75 md:scale-90 lg:scale-100 origin-top-left">
               <ModelViewer />
             </div>
@@ -84,7 +84,7 @@ const Policy = () => {
         </div>
   
         {/* Mobile version */}
-        <div className="px-10 bg-white py-10"> <div className="bg-[#FBFBFC] relative px-8 py-20 mt-20 block lg:hidden mb-[380px] rounded-[6px] shadow-lg border border-gray-200">
+        <div className="lg:px-10 bg-white py-10"> <div className="bg-[#FBFBFC] relative px-8 py-20 mt-20 block lg:hidden mb-[380px] rounded-[6px] shadow-lg border border-gray-200">
           {/* Header section */}
           <div className="mb-8">
             <h2 className="text-[#ED1C24] text-2xl sm:text-3xl font-[500] mb-4">
@@ -123,7 +123,7 @@ const Policy = () => {
         
         </div>
           {/* 3D Model section */}
-       <div className="absolute -bottom-[520px] md:left-1 block md:hidden">
+       <div className="absolute -bottom-[520px] md:left-1 lg:block md:hiddenc hidden">
        <ModelViewer />
 
        </div>

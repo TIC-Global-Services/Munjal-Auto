@@ -133,9 +133,9 @@ const Testing = () => {
   return (
     <div className="relative min-h-screen py-14 w-full max-w-7xl mx-auto rounded-2xl overflow-hidden">
 
-      <div className="  text-center flex flex-col items-center justify-center ">
-        <h1 className=" text-2xl md:text-[40px]  font-medium text-[#ED1C24]">Testing & Facilities Lab</h1>
-        <p className=" md:text-base   leading-[20px] text-xs md:max-w-2xl w-[80%] text-[#82848A] mt-4">
+      <div className="text-center flex flex-col items-center justify-center px-4">
+        <h1 className="text-2xl md:text-[40px] font-medium text-[#ED1C24]">Testing & Facilities Lab</h1>
+        <p className="md:text-base leading-[20px] text-xs md:max-w-2xl w-[90%] text-[#82848A] mt-4">
           MAIL’s advanced Standard Room houses cutting-edge testing and
           measuring instruments. Our metallurgical and chemical labs ensure
           precise, routine, and periodic testing, guaranteeing unmatched quality
@@ -144,16 +144,16 @@ const Testing = () => {
       </div>
 
       {/* Carousel Container */}
-      <div className="relative overflow-hidden mt-10">
+      <div className="relative overflow-hidden mt-10 w-full">
         {/* Slides Container */}
 
         <div
-          className="flex transition-transform duration-500 ease-in-out"
+          className="flex transition-transform duration-500 ease-in-out w-full"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {contents.map((item, index) => (
             <div key={index} className="w-full flex-shrink-0">
-              <div className="rounded-lg p-4 sm:p-6 lg:p-8 m-2 sm:m-4">
+              <div className="rounded-lg p-4 sm:p-6 lg:p-8 mx-2 sm:mx-4">
                 {/* Title */}
                 <h2 className="text-xl sm:text-2xl font-semibold text-[#ED1C24] mb-4 sm:mb-6 text-start">
                   {item.title}
@@ -171,10 +171,10 @@ const Testing = () => {
                   </div>
 
                   {/* Description Section */}
-                  <div className="flex-1 flex items-start order-2 lg:order-2">
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-2 sm:space-y-3">
+                  <div className="flex-1 flex items-start order-2 lg:order-2 min-w-0">
+                    <ul className="list-disc pl-4 sm:pl-5 space-y-2 sm:space-y-3 w-full">
                       {item.description.map((desc, i) => (
-                        <li key={i} className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed">
+                        <li key={i} className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed break-words">
                           {desc}
                         </li>
                       ))}
@@ -188,7 +188,7 @@ const Testing = () => {
       </div>
 
       {/* Navigation Buttons - Responsive positioning */}
-      <div className="absolute md:bottom-4 bottom-[170px] sm:bottom-8 lg:bottom-20 right-4 sm:right-6 lg:right-4 flex gap-2 sm:gap-3 z-10">
+      <div className="absolute bottom-4 right-4 flex gap-2 z-10">
         <button
           onClick={prevSlide}
           className="bg-[#FF0000] hover:bg-[#ff0000e5] text-white rounded-full p-2 sm:p-3 shadow-lg transition-all duration-200 hover:scale-110 disabled:opacity-50"

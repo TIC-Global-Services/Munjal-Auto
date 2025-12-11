@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 const FacilitiesHero = () => {
   return (
     <div>
-            <div className="h-screen w-full   flex flex-col items-center justify-center relative">
+            <div className="h-screen w-full  flex flex-col items-center justify-center relative">
         {/* Background Image with Logo */}
         <div
           className="h-[90%] w-[94%] flex flex-col items-center justify-center rounded-[24px] relative"

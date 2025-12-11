@@ -34,7 +34,7 @@ const AboutHero = () => {
 
 
     return (
-        <div id="history" className="h-screen w-full overflow-hidden   flex flex-col items-center justify-center relative">
+        <div id="history" className="h-screen w-full overflow-hidden   flex flex-col items-center justify-center relative overflow-hidden">
             {/* Background Image with Logo */}
             <div
                 
@@ -51,7 +51,7 @@ const AboutHero = () => {
                     <img
                         src={logo}
                         alt="Logo"
-                        className="absolute -top-[0.9px] w-[60%] md:w-1/3 left-1/2 transform -translate-x-1/2"
+                        className="absolute top-0 w-[180px] md:w-[250px] left-1/2 transform -translate-x-1/2"
                     />
                 </Link>
 
