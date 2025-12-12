@@ -162,7 +162,7 @@ const Testing = () => {
                 {/* Mobile First Layout */}
                 <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-8">
                   {/* Image Section */}
-                  <div className="w-full lg:w-[755px] h-[250px] sm:h-[300px] md:h-[400px] lg:h-[609px] flex-shrink-0 order-1 lg:order-1">
+                  <div className="w-full lg:w-[600px] h-[200px] sm:h-[250px] md:h-[320px] lg:h-[480px] flex-shrink-0 order-1 lg:order-1">
                     <img
                       src={item.image}
                       alt={item.title}

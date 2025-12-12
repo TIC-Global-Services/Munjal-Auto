@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 function ModelViewer() {
   const [loading, setLoading] = useState(true);
@@ -105,8 +104,8 @@ function ModelViewer() {
 
         // Rotate model to stand upright (rotate 90 degrees around X-axis)
         model.rotation.x = Math.PI / 2;
-        // Rotate model to the right (90 degrees around Y-axis)
-        model.rotation.y = Math.PI / 2;
+        // Initial rotation to face front
+        model.rotation.y = 0;
         
         model.position.set(
           -center.x,
@@ -147,8 +146,8 @@ function ModelViewer() {
     function animate() {
       animationFrameRef.current = requestAnimationFrame(animate);
       if (modelRef.current) {
-        // Rotate around Y-axis to show front and back of the model
-        modelRef.current.rotation.y += 0.005;
+        // Rotate clockwise around Y-axis to show front and back of the model
+        modelRef.current.rotation.y += 0.008;
         animateLights();
       }
       renderer.render(scene, camera);
@@ -186,7 +185,6 @@ function ModelViewer() {
 
 const MunjalAutoGroup = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     // Set visible after component mount to trigger animations

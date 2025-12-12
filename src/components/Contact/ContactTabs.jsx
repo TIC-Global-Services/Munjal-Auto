@@ -338,11 +338,11 @@ const ContactTabs = () => {
             className="flex flex-col md:flex-row gap-8"
           >
             <div className="w-full md:w-1/3">
-              <div className="rounded-lg overflow-hidden">
+              <div className="rounded-lg overflow-hidden h-96 md:h-[500px]">
                 <img
                   src={carPic2}
-                  alt="Business Meeting"
-                  className="w-full h-full object-cover"
+                  alt="Career at Munjal Auto"
+                  className="w-full h-full object-cover object-right"
                 />
               </div>
             </div>
@@ -381,7 +381,7 @@ const ContactTabs = () => {
                   <div>
                     <input
                       type="tel"
-                      placeholder="Mobile Number"
+                      placeholder="Organization Name"
                       className="w-full px-4 py-2 border border-gray-200 rounded focus:outline-none focus:ring-1 focus:ring-gray-300"
                     />
                   </div>

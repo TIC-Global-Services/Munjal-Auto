@@ -32,13 +32,13 @@ const TrainingHero = () => {
                     </Link>
 
                     <div className="absolute bottom-5 right-5 flex flex-col items-center space-y-5 z-[999]">
-                        <Link to="/contact">
+                        {/* <Link to="/contact">
                             <img
                                 src={icon1}
                                 alt="contact"
                                 className="w-[30px] md:w-[40px] cursor-pointer hover:scale-125"
                             />
-                        </Link>
+                        </Link> */}
 
                         <Link to="/contact">
                             <img
@@ -52,13 +52,11 @@ const TrainingHero = () => {
 
 
                     {/* Centered Text and Timeline Container */}
-                    <div className=" md:block flex items-center justify-center flex-col absolute  mt-10 text-left left-0">
-                        <h1 className="text-[#FFFCFC] rounded-[10px] px-10 py-4 text-[54px] font-[500] mb-12">
-                            Training
-                        </h1>
-
-                        {/* Timeline Line with Animation */}
-                    </div>
+                    <div className="absolute lg:bottom-10 lg:left-10  text-left">
+            <h1 className="text-[#FFFCFC] text-[54px] font-[500] leading-[3.9rem]">
+              Training
+            </h1>
+          </div>
                 </div>
             </div>
             <div>
