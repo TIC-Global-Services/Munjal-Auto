@@ -7,7 +7,7 @@ const Facilities = () => {
 
     const [isVisible, setIsVisible] = useState(false);
     const location = useLocation();
-    const [activeTab, setActiveTab] = useState("Facilities");
+    const [activeTab, setActiveTab] = useState("Manufacturing Line");
     // Function to check if the link is active
     const isActive = (path) => {
         return location.pathname === path;
@@ -18,10 +18,10 @@ const Facilities = () => {
         setIsVisible(true);
     }, []);
     const tabs = [
-        "Facilities",
-        "Precision Engineering",
-        "Cutting-Edge Testing",
-        "Sustainable Manufacturing",
+        "Manufacturing Line",
+        "Special Processes",
+        "Tooling & Engineering",
+        "R&D and Prototyping",
     ];
 
     return (

@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const QualityHero = () => {
     return (
         <div>
-            <div className="h-screen w-full   flex flex-col items-center justify-center relative">
+            <div className="h-screen w-full  flex flex-col items-center justify-center relative  overflow-hidden">
 
 
                 {/* Background Image with Logo */}
@@ -25,11 +25,12 @@ const QualityHero = () => {
                 >
                     {/* Logo */}
                     <Link to="/">
-                        <img
-                            src={logo}
-                            alt="Logo"
-                            className="absolute -top-[0.9px] w-[60%] md:w-1/3 left-1/2 transform -translate-x-1/2"
-                        />
+   <img
+  src={logo}
+  alt="Logo"
+  className="absolute top-0 w-[180px] md:w-[250px] left-1/2 transform -translate-x-1/2"
+/>
+
                     </Link>
 
 
@@ -54,7 +55,7 @@ const QualityHero = () => {
 
 
                     {/* Centered Text and Timeline Container */}
-                    <div className=" md:block flex items-center justify-center flex-col absolute   mt-10 text-left left-0">
+                    <div className=" md:block flex items-center justify-center flex-col absolute  mt-10 text-left lg:left-0">
                         <h1 className="text-[#FFFCFC] rounded-[10px] leading-[3.9rem]  px-10 py-4 text-[54px] font-[500] ">
                             We Stand For​ <br />
                             Quality & Technology

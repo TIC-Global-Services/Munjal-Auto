@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import carPic from "../../assets/CarPic.png"
+import carPic from "../../assets/careerupdate.jpg"
 import carPic2 from "../../assets/Carpic2.png"
 import JobApplicationForm from "./JobApplicationForm";
 import { motion } from "framer-motion";
@@ -209,7 +209,7 @@ const ContactTabs = () => {
             className="space-y-6"
           >
             {/* Corporate Office */}
-            <div className="flex flex-col md:flex-row md:h-[380px] py-2 h-full  rounded-lg overflow-hidden shadow-sm items-center justify-center">
+            {/* <div className="flex flex-col md:flex-row md:h-[380px] py-2 h-full  rounded-lg overflow-hidden shadow-sm items-center justify-center">
               <div className="w-full md:w-1/3  p-8 flex items-center ">
                 <h3 className="text-[32px] text-black font-bold">Corporate office</h3>
               </div>
@@ -222,14 +222,14 @@ const ContactTabs = () => {
                 <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Fax: +91 124 4057892</p>
                 <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">E-mail: <a href="mailto:mail@munjalauto.com" className="text-[#ED1C24]">mail@munjalauto.com</a></p>
               </div>
-            </div>
+            </div> */}
 
             {/* Waghodia Plant */}
-            <div className="flex flex-col md:flex-row md:h-[380px]  rounded-lg overflow-hidden shadow-sm items-center justify-center">
-              <div className="w-full md:w-1/3   md:p-8 p-8 flex items-center">
+            <div className="flex flex-col md:flex-row md:h-[380px]  rounded-lg overflow-hidden shadow-sm items-start justify-between">
+              <div className="w-full md:w-1/3   md:p-8 p-8 flex items-start md:pt-6">
                 <h3 className="text-[32px] text-black font-bold">Waghodia plant</h3>
               </div>
-              <div className="w-full md:w-2/3 p-6">
+              <div className="w-full md:w-2/3 p-6 md:pl-40">
                 <h4 className="text-red-500 font-medium mb-3 text-[25px]">Contact now</h4>
                 <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">187, GIDC Industrial Estate,</p>
                 <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Waghodia -391 760, Vadodara (Gujarat)</p>
@@ -243,11 +243,11 @@ const ContactTabs = () => {
             </div>
 
             {/* Haridwar Plant */}
-            <div className="flex flex-col md:flex-row md:h-[380px]  rounded-lg overflow-hidden shadow-sm items-center justify-center">
-              <div className="w-full md:w-1/3   p-8 flex items-center">
+            <div className="flex flex-col md:flex-row md:h-[380px]  rounded-lg overflow-hidden shadow-sm items-start justify-center">
+              <div className="w-full md:w-1/3   p-8 flex items-start md:pt-6">
                 <h3 className="text-[32px] text-black font-bold">Haridwar Plant</h3>
               </div>
-              <div className="w-full md:w-2/3 p-6">
+              <div className="w-full md:w-2/3 p-6 md:pl-40">
                 <h4 className="text-red-500 font-medium mb-3 text-[25px]">Contact now</h4>
                 <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Plot no – 11 Industrial Park II,</p>
                 <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Village Salempur Mehdood, Haridwar</p>
@@ -259,11 +259,11 @@ const ContactTabs = () => {
             </div>
 
             {/* Bawal Plant */}
-            <div className="flex flex-col md:flex-row md:h-[380px]  rounded-lg overflow-hidden shadow-sm items-center justify-center">
-              <div className="w-full md:w-1/3   p-8 flex items-center">
-                <h3 className="text-[32px] text-black font-bold">Bawal Plant</h3>
+            <div className="flex flex-col md:flex-row md:h-[380px]  rounded-lg overflow-hidden shadow-sm items-start justify-center">
+              <div className="w-full md:w-1/3   p-8 flex items-start md:pt-6">
+                <h3 className="text-[32px] text-black font-bold">Bawal Plant & Cenral Tool Room</h3>
               </div>
-              <div className="w-full md:w-2/3 p-6">
+              <div className="w-full md:w-2/3 p-6 md:pl-40">
                 <h4 className="text-red-500 font-medium mb-3 text-[25px]">Contact now</h4>
                 <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Plot No. – 37, Sector 5 Phase II,</p>
                 <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">G.C Bawal- 123 501, Rewari (Haryana)</p>
@@ -274,15 +274,29 @@ const ContactTabs = () => {
             </div>
 
             {/* Dharuhera Plant */}
-            <div className="flex flex-col md:h-[380px] md:flex-row  rounded-lg overflow-hidden shadow-sm items-center justify-center">
-              <div className="w-full md:w-1/3   p-8 flex items-center">
+            <div className="flex flex-col md:h-[380px] md:flex-row  rounded-lg overflow-hidden shadow-sm items-start justify-center">
+              <div className="w-full md:w-1/3   p-8 flex items-start md:pt-6">
                 <h3 className="text-[32px] text-black font-bold">Dharuhera Plant</h3>
               </div>
-              <div className="w-full md:w-2/3 p-6">
+              <div className="w-full md:w-2/3 p-6 md:pl-40">
                 <h4 className="text-red-500 font-medium mb-3 text-[25px]">Contact now</h4>
                 <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Plot no. 32-A, Industrial Area,</p>
                 <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Dharuhera-122106, Rewari, Haryana</p>
                 <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Tel: +91 (1274) 243010-11</p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">E-mail: <a href="mailto:mail@munjalauto.com" className="text-red-500">mail@munjalauto.com</a></p>
+              </div>
+            </div>
+
+            {/*Sanand Plant*/}
+            <div className="flex flex-col md:h-[380px] md:flex-row  rounded-lg overflow-hidden shadow-sm items-start justify-center">
+              <div className="w-full md:w-1/3   p-8 flex items-start md:pt-6">
+                <h3 className="text-[32px] text-black font-bold">Sanand Plant</h3>
+              </div>
+              <div className="w-full md:w-2/3 p-6 md:pl-40">
+                <h4 className="text-red-500 font-medium mb-3 text-[25px]">Contact now</h4>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">BOL INDUSTRIAL ESTATE,</p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">GIDC SANAND 2, Chharodi,</p>
+                <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">Gujarat 382170</p>
                 <p className="mb-1 text-black md:text-[20px] md:leading-[31px]">E-mail: <a href="mailto:mail@munjalauto.com" className="text-red-500">mail@munjalauto.com</a></p>
               </div>
             </div>
@@ -298,11 +312,11 @@ const ContactTabs = () => {
             className="flex flex-col md:flex-row gap-8"
           >
             <div className="w-full md:w-1/3">
-              <div className="rounded-lg overflow-hidden">
+              <div className="rounded-lg overflow-hidden h-96 md:h-[500px]">
                 <img
                   src={carPic}
                   alt="Career at Munjal Auto"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-right"
                 />
               </div>
             </div>

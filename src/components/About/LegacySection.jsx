@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import legacy from "../../assets/legacy.jpeg";
+import  { useEffect, useState } from 'react';
+import legacy from "../../assets/legacy2.jpg";
 import { Link } from 'react-router-dom';
 
 const LegacySection = () => {
@@ -83,7 +83,7 @@ const LegacySection = () => {
                 </div>
             </div>
 
-            <style jsx>{`
+            <style >{`
         @keyframes fadeIn {
           from {
             opacity: 0;
