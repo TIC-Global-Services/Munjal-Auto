@@ -101,11 +101,16 @@ function ModelViewer() {
         const center = box.getCenter(new THREE.Vector3());
         const size = box.getSize(new THREE.Vector3());
         const maxDim = Math.max(size.x, size.y, size.z);
-        const scale = isMobile ? 2 / maxDim : 4.5 / maxDim; // Increased from 3 to 4.5
+        const scale = isMobile ? 1.8 / maxDim : 3.5 / maxDim; // Slightly increased size
 
+        // Rotate model to stand upright (rotate 90 degrees around X-axis)
+        model.rotation.x = Math.PI / 2;
+        // Rotate model to the right (90 degrees around Y-axis)
+        model.rotation.y = Math.PI / 2;
+        
         model.position.set(
           -center.x,
-          -center.y + (isMobile ? 0.8 : 1),
+          -center.y + (isMobile ? 1.5 : 2),
           -center.z
         );
         model.scale.setScalar(scale);
@@ -142,7 +147,8 @@ function ModelViewer() {
     function animate() {
       animationFrameRef.current = requestAnimationFrame(animate);
       if (modelRef.current) {
-        modelRef.current.rotation.y += 0.01;
+        // Rotate around Y-axis to show front and back of the model
+        modelRef.current.rotation.y += 0.005;
         animateLights();
       }
       renderer.render(scene, camera);

@@ -28,9 +28,9 @@ const AnnualReportCard = ({ yearData, onDownload, onShare, reportType }) => {
   }
 
   return (
-    <div className="bg-black border border-gray-200 p-6 hover:shadow-lg transition-shadow duration-300 rounded-[28px]">
+    <div className="bg-[#E8E8E8] border border-gray-200 p-6 hover:shadow-lg transition-shadow duration-300 rounded-[28px]">
       <div className="p-8 border rounded-[15px] flex flex-col space-y-5">
-        <p className="text-[#C3C1C1]">Download the report here</p>
+        <p className="text-gray-600">Download the report here</p>
         <button
           onClick={handleDownload}
           disabled={isDownloading}
@@ -38,7 +38,7 @@ const AnnualReportCard = ({ yearData, onDownload, onShare, reportType }) => {
         >
           {isDownloading ? (
             <>
-              <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+              <div className="w-4 h-4 border-2 border-red-500 border-t-transparent rounded-full animate-spin"></div>
               Downloading...
             </>
           ) : (
@@ -57,8 +57,8 @@ const AnnualReportCard = ({ yearData, onDownload, onShare, reportType }) => {
           Share
         </button>
       </div>
-      <h3 className="font-semibold text-[12px] mb-1 mt-4 text-[#C3C1C1]">{reportType}</h3>
-      <p className="text-[#F7F7F7] text-[20px] mb-1">{yearData.year}</p>
+      <h3 className="font-semibold text-[12px] mb-1 mt-4 text-gray-600">{reportType}</h3>
+      <p className="text-gray-800 text-[20px] mb-1">{yearData.year}</p>
     </div>
   )
 }

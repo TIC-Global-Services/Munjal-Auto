@@ -50,13 +50,13 @@ function ModelViewer() {
                 1000
             );
 
-            // Perfect isometric positioning: 35.264° elevation, 45° azimuth
-            // This creates the classic isometric view showing three faces equally
-            const distance = 10;
+            // Isometric-style camera positioning - angled view like in the image
+            const distance = 8;
+            
             camera.position.set(
-                distance * Math.cos(Math.PI / 4) * Math.cos(Math.atan(Math.sqrt(2))),
-                distance * Math.sin(Math.atan(Math.sqrt(2))),
-                distance * Math.sin(Math.PI / 4) * Math.cos(Math.atan(Math.sqrt(2)))
+                distance * 0.7,  // X position - to the right
+                distance * 0.5,  // Y position - elevated
+                distance * 0.7   // Z position - forward
             );
             camera.lookAt(0, 0, 0);
 
@@ -178,6 +178,11 @@ function ModelViewer() {
                     model.position.set(0, 0, 0);
                     model.scale.setScalar(scale);
 
+                    // Orient the model to match the perspective in the image
+                    model.rotation.x = -Math.PI / 8; // Slight tilt forward
+                    model.rotation.y = -Math.PI / 6; // Rotate to show the angled view
+                    model.rotation.z = Math.PI / 12; // Slight tilt for dynamic look
+                    
                     // Center the model in isometric view
                     model.position.set(
                         -center.x * scale,
@@ -232,8 +237,9 @@ function ModelViewer() {
             function animate() {
                 animationFrameRef.current = requestAnimationFrame(animate);
                 if (modelRef.current) {
-                    // Slow rotation to maintain isometric aesthetic
-                    modelRef.current.rotation.y += 0.006;
+                    // Spin around the model's own vertical axis (local Y-axis)
+                    // This maintains the model's orientation while spinning in place
+                    modelRef.current.rotateY(-0.006);
                     animateLights();
                 }
                 renderer.render(scene, camera);
