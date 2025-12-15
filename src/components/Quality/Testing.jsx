@@ -162,7 +162,7 @@ const Testing = () => {
                 {/* Mobile First Layout */}
                 <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-8">
                   {/* Image Section */}
-                  <div className="w-full lg:w-[755px] h-[250px] sm:h-[300px] md:h-[400px] lg:h-[609px] flex-shrink-0 order-1 lg:order-1">
+                  <div className="w-full lg:w-[600px] h-[200px] sm:h-[250px] md:h-[320px] lg:h-[480px] flex-shrink-0 order-1 lg:order-1">
                     <img
                       src={item.image}
                       alt={item.title}
@@ -188,7 +188,7 @@ const Testing = () => {
       </div>
 
       {/* Navigation Buttons - Responsive positioning */}
-      <div className="absolute bottom-4 right-4 flex gap-2 z-10">
+      <div className="absolute bottom-2 sm:bottom-4 right-4 flex gap-2 z-10">
         <button
           onClick={prevSlide}
           className="bg-[#FF0000] hover:bg-[#ff0000e5] text-white rounded-full p-2 sm:p-3 shadow-lg transition-all duration-200 hover:scale-110 disabled:opacity-50"

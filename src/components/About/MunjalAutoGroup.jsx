@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 function ModelViewer() {
   const [loading, setLoading] = useState(true);
@@ -105,8 +104,8 @@ function ModelViewer() {
 
         // Rotate model to stand upright (rotate 90 degrees around X-axis)
         model.rotation.x = Math.PI / 2;
-        // Rotate model to the right (90 degrees around Y-axis)
-        model.rotation.y = Math.PI / 2;
+        // Initial rotation to face front
+        model.rotation.y = 0;
         
         model.position.set(
           -center.x,
@@ -147,8 +146,8 @@ function ModelViewer() {
     function animate() {
       animationFrameRef.current = requestAnimationFrame(animate);
       if (modelRef.current) {
-        // Rotate around Y-axis to show front and back of the model
-        modelRef.current.rotation.y += 0.005;
+        // Rotate clockwise around Y-axis to show front and back of the model
+        modelRef.current.rotation.y += 0.008;
         animateLights();
       }
       renderer.render(scene, camera);
@@ -186,7 +185,6 @@ function ModelViewer() {
 
 const MunjalAutoGroup = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     // Set visible after component mount to trigger animations
@@ -198,8 +196,8 @@ const MunjalAutoGroup = () => {
   }, []);
 
   return (
-    <div id="munjal-group" className="max-w-7xl mx-auto p-4 my-12">
-      <div className="bg-[#f1eeee] rounded-3xl p-8 md:p-12 lg:p-16 relative overflow-hidden min-h-[50dvh]">
+    <div id="munjal-group" className="max-w-8xl  px-20 my-12">
+      <div className="bg-[#f1eeee] rounded-3xl p-8 md:p-12 lg:p-16 relative overflow-hidden min-h-[858px]">
         {/* Content Container */}
         <div className="grid grid-cols-1 md:grid-cols-2 w-full ">
           {/* Left Content */}
@@ -218,7 +216,7 @@ const MunjalAutoGroup = () => {
               <h2 className="lg:text-4xl  md:text-4xl  text-2xl font-semibold text-black tracking-tight mb-2">
                 <span className="text-[#FF0000]">Munjal Auto</span> Group
               </h2>
-              <p className="text-black md:text-lg  text-xs ld:text-lg leading-relaxed">
+              <p className="text-black md:text-[18px]  text-xs lg:text-[18px] leading-relaxed">
                 The Munjal Auto Group is a multi-sector engineering powerhouse
                 specializing in sheet metal components and composite mold
                 manufacturing. Our group companies deliver advanced solutions

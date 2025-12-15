@@ -1,7 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import React, { useRef } from 'react'
 import { Link } from 'react-router-dom';
-import secbanner from "../../assets/home/companyProfile.png";
+import secbanner from "../../assets/home/companyProfile1.jpg";
 
 
 const CompanyProfile = () => {
@@ -67,9 +67,9 @@ const CompanyProfile = () => {
 
                         <motion.p
                             variants={itemVariants}
-                            className="text-gray-300 md:text-lg text-xs md:pt-0 pt-2 md:w-[80%] leading-relaxed"
+                            className="text-gray-300 md:text-lg text-xs md:pt-0 pt-2 md:w-[80%] leading-[29px] tracking-[2%]"
                         >
-                            Munjal Auto Industries Limited  is a diversified engineering group, delivering cutting - edge solutions. Driven by innovation, we design and manufacture lightweight, durable, and sustainable components using advanced sheet metal, composite materials, and precision molding techniques for automotive, aerospace, renewable energy, defense, and railways.
+                           Munjal Auto Industries Limited  is a diversified engineering group, delivering cutting - edge solutions. Driven by innovation, we design and manufacture lightweight, durable, and sustainable components using advanced sheet metal, composite materials, and precision molding techniques for automotive, aerospace, renewable energy, defense, and railways.
                         </motion.p>
                         <Link to="/about-us">
                             <motion.button
@@ -89,7 +89,7 @@ const CompanyProfile = () => {
                         <img
                             src={secbanner}
                             alt="Automotive manufacturing assembly line"
-                            className="w-full h-full object-cover"
+                            className="w-full h-[870px] object-cover"
                         />
                     </motion.div>
                 </motion.div>

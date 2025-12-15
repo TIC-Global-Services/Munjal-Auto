@@ -7,8 +7,9 @@ import industry2 from '../../assets/Electronics/industry2.png'
 import industry3 from '../../assets/Electronics/industry3.jpg'
 import industry4 from '../../assets/Electronics/industry4.png'
 import whyUsImg from '../../assets/Electronics/whyus-elec.png'
-import teamImg from '../../assets/Electronics/teamimg-elec.png'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import founder1 from '../../assets/Electronics/founder1.jpeg'
+import founder2 from '../../assets/Electronics/founder2.png'
+import { ArrowLeft, ArrowRight } from 'lucide-react'
 
 const ElectronicsContent = () => {
   const [currentCard, setCurrentCard] = useState(0)
@@ -103,7 +104,7 @@ const ElectronicsContent = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-6 sm:gap-8 lg:gap-12 items-start px-4 sm:px-6 md:px-8 lg:px-10"
+          className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-6 sm:gap-8 lg:gap-12 items-start px-4 sm:px-6 md:px-8 lg:pl-2 lg:pr-10"
         >
           {/* Left Side - Heading */}
           <div>
@@ -135,15 +136,15 @@ const ElectronicsContent = () => {
             {/* Bullet Points */}
             <ul className="space-y-3 pt-4">
               <li className="flex items-start gap-2 text-base md:text-lg lg:text-xl xl:text-[20px] font-[400] leading-relaxed text-gray-600">
-                <span className="text-[#ED1C24] mt-1">•</span>
+                <span className="text-[#82848A] mt-1">•</span>
                 <span>Advanced facility for high-precision electronics.</span>
               </li>
               <li className="flex items-start gap-2 text-base md:text-lg lg:text-xl xl:text-[20px] font-[400] leading-relaxed text-gray-600">
-                <span className="text-[#ED1C24] mt-1">•</span>
+                <span className="text-[#82848A] mt-1">•</span>
                 <span>ISO 9001 Certified with zero-defect focus.</span>
               </li>
               <li className="flex items-start gap-2 text-base md:text-lg lg:text-xl xl:text-[20px] font-[400] leading-relaxed text-gray-600">
-                <span className="text-[#ED1C24] mt-1">•</span>
+                <span className="text-[#82848A] mt-1">•</span>
                 <span>100% Compliance with international quality and safety standards</span>
               </li>
             </ul>
@@ -235,14 +236,14 @@ const ElectronicsContent = () => {
                         className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#ED1C24] text-white flex items-center justify-center hover:bg-[#c41519] transition-colors shadow-lg"
                         aria-label="Previous card"
                       >
-                        <ChevronLeft size={20} className="sm:w-6 sm:h-6" />
+                        <ArrowLeft size={20} className="sm:w-6 sm:h-6" />
                       </button>
                       <button
                         onClick={nextCard}
                         className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#ED1C24] text-white flex items-center justify-center hover:bg-[#c41519] transition-colors shadow-lg"
                         aria-label="Next card"
                       >
-                        <ChevronRight size={20} className="sm:w-6 sm:h-6" />
+                        <ArrowRight size={20} className="sm:w-6 sm:h-6" />
                       </button>
                     </div>
                   </div>
@@ -375,19 +376,19 @@ const ElectronicsContent = () => {
             <div className="space-y-4 sm:space-y-5 order-1 lg:order-2">
               <ul className="space-y-2 sm:space-y-3">
                 <li className="flex items-start gap-2 sm:gap-3 text-base sm:text-lg md:text-[20px] font-[400] leading-relaxed sm:leading-[30px] text-[#82848A]">
-                  <span className="text-[#ED1C24] mt-1 flex-shrink-0">•</span>
+                  <span className="text-[#82848A] mt-1 flex-shrink-0">•</span>
                   <span>Experienced team with diverse technical expertise.</span>
                 </li>
                 <li className="flex items-start gap-2 sm:gap-3 text-base sm:text-lg md:text-[20px] font-[400] leading-relaxed sm:leading-[30px] text-[#82848A]">
-                  <span className="text-[#ED1C24] mt-1 flex-shrink-0">•</span>
+                  <span className="text-[#82848A] mt-1 flex-shrink-0">•</span>
                   <span>Rapid development cycles using agile methodologies.</span>
                 </li>
                 <li className="flex items-start gap-2 sm:gap-3 text-base sm:text-lg md:text-[20px] font-[400] leading-relaxed sm:leading-[30px] text-[#82848A]">
-                  <span className="text-[#ED1C24] mt-1 flex-shrink-0">•</span>
+                  <span className="text-[#82848A] mt-1 flex-shrink-0">•</span>
                   <span>Scalable and future-proof electronics solutions.</span>
                 </li>
                 <li className="flex items-start gap-2 sm:gap-3 text-base sm:text-lg md:text-[20px] font-[400] leading-relaxed sm:leading-[30px] text-[#82848A]">
-                  <span className="text-[#ED1C24] mt-1 flex-shrink-0">•</span>
+                  <span className="text-[#82848A] mt-1 flex-shrink-0">•</span>
                   <span>Strong financial backing for R&D and production scaling.</span>
                 </li>
               </ul>
@@ -402,53 +403,45 @@ const ElectronicsContent = () => {
           transition={{ duration: 0.6, delay: 1.1 }}
           className="mt-16 sm:mt-20 md:mt-24 lg:mt-32 px-4 sm:px-6 md:px-8 lg:px-10"
         >
-          <div className="bg-white w-full max-w-7xl mx-auto p-6 sm:p-8 md:p-12 lg:p-16 xl:p-20 rounded-[14px]">
-            <h2 className="text-2xl sm:text-3xl md:text-[36px] font-[600] mb-8 sm:mb-10 md:mb-12">Our Team</h2>
+          <div className="w-full max-w-7xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl md:text-[36px] font-[600] mb-8 sm:mb-10 md:mb-12 text-center">Our Team</h2>
             
-            <div className="space-y-8 sm:space-y-10 md:space-y-12">
-              {/* Team Member 1 - Horizontal Container */}
-              <div className="bg-transparent rounded-[14px] p-3 sm:p-4 md:p-6">
-                <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 items-center lg:items-start justify-start">
-                  <div className="w-full max-w-[629px] aspect-[629/400] lg:w-[629px] lg:h-[400px] rounded-[14px] relative overflow-hidden flex-shrink-0">
+            <div className="space-y-6 sm:space-y-8">
+              {/* Team Member 1 - Card Layout */}
+              <div className="bg-white rounded-[20px] p-6 sm:p-8 md:p-10 relative overflow-hidden">
+                <div className="flex flex-col md:flex-row gap-6 sm:gap-8 items-center relative z-10">
+                  <div className="w-full max-w-[500px] md:w-[500px] aspect-square rounded-[20px] overflow-hidden flex-shrink-0 relative -ml-2 md:-ml-6 pl-4 md:pl-8">
                     <img
-                      src={teamImg}
+                      src={founder1}
                       alt="Mr. Kulvinder Singh Seehra"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover scale-100"
                     />
-                    {/* Red circle with P */}
-                    <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 w-10 h-10 sm:w-12 sm:h-12 bg-[#ED1C24] rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold text-base sm:text-lg">P</span>
-                    </div>
                   </div>
-                  <div className="flex-1 lg:pl-6 xl:pl-8 text-center lg:text-left">
-                    <h3 className="text-xl sm:text-2xl md:text-[26px] font-[600] mb-2">Mr. Kulvinder Singh Seehra</h3>
-                    <h4 className="text-[#ED1C24] text-lg sm:text-xl md:text-[20px] font-[500] mb-3 sm:mb-4">Chief Technology Officer (Electronics)</h4>
-                    <p className="text-base sm:text-lg md:text-[20px] font-[400] leading-relaxed sm:leading-[30px] text-[#82848A]">
+                  <div className="flex-1 text-center md:text-left md:pl-6">
+                    <h3 className="text-xl sm:text-2xl md:text-[28px] font-[600] mb-2 text-black">Mr. Kulvinder Singh Seehra</h3>
+                    <h4 className="text-[#ED1C24] text-lg sm:text-xl md:text-[22px] font-[500] mb-4">Chief Technology Officer (Electronics)</h4>
+                    <p className="text-base sm:text-lg md:text-[18px] font-[400] leading-relaxed text-gray-600">
                       Embedded systems expert with over 40 years of experience in electronics and product development. He has developed many solutions for Army, Airforce, Railways, Public sectors companies viz. BEL, ECIL, ITI etc. He is a specialist in hardware-software integration and system architecture.
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Team Member 2 - Horizontal Container (Text Left, Image Right) */}
-              <div className="bg-transparent rounded-[14px] p-3 sm:p-4 md:p-6">
-                <div className="flex flex-col lg:flex-row-reverse gap-6 sm:gap-8 items-center lg:items-start justify-start">
-                  <div className="w-full max-w-[629px] aspect-[629/400] lg:w-[629px] lg:h-[400px] rounded-[14px] relative overflow-hidden flex-shrink-0">
+              {/* Team Member 2 - Card Layout (Reversed) */}
+              <div className="bg-white rounded-[20px] p-6 sm:p-8 md:p-10 relative overflow-hidden">
+                <div className="flex flex-col md:flex-row-reverse gap-6 sm:gap-8 items-center relative z-10">
+                  <div className="w-full max-w-[500px] md:w-[500px] aspect-square rounded-[20px] overflow-hidden flex-shrink-0 relative -mr-2 md:-mr-6 pr-4 md:pr-8">
                     <img
-                      src={teamImg}
+                      src={founder2}
                       alt="Mr. Sandeep Agrgawal"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover scale-100"
                     />
-                    {/* Red circle with P */}
-                    <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 w-10 h-10 sm:w-12 sm:h-12 bg-[#ED1C24] rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold text-base sm:text-lg">P</span>
-                    </div>
                   </div>
-                  <div className="flex-1 lg:pr-6 xl:pr-8 text-center lg:text-right">
-                    <h3 className="text-xl sm:text-2xl md:text-[26px] font-[600] mb-2">Mr. Sandeep Agrgawal</h3>
-                    <h4 className="text-[#ED1C24] text-lg sm:text-xl md:text-[20px] font-[500] mb-3 sm:mb-4">Founder & Executive Director</h4>
-                    <p className="text-base sm:text-lg md:text-[20px] font-[400] leading-relaxed sm:leading-[30px] text-[#82848A]">
-                      Under his strong leadership, the organization has continued to grow in impact, operational efficiency and community engagement. He brings a vision of innovation, coupled with a commitment to excellence and service. He is leading strategic growth initiatives and overseeing the company's expansion into new markets.
+                  <div className="flex-1 text-center md:text-right md:pr-6">
+                    <h3 className="text-xl sm:text-2xl md:text-[28px] font-[600] mb-2 text-black">Mr. Sandeep Agrgawal</h3>
+                    <h4 className="text-[#ED1C24] text-lg sm:text-xl md:text-[22px] font-[500] mb-4">General Manager-Electronics</h4>
+                    <p className="text-base sm:text-lg md:text-[18px] font-[400] leading-relaxed text-gray-600">
+                      Over 30 years of expertise in product development especially for railway domain- signalling and rolling stock. He has specialization in delivering end-to-end safety critical, operational, and customer-centric solutions tailored for the railway sector. He possesses added expertise in spearheading strategic growth initiatives and managing the electronics division vertical's expansion into new markets.
                     </p>
                   </div>
                 </div>

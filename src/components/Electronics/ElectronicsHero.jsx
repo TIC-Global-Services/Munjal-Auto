@@ -29,13 +29,13 @@ const ElectronicsHero = () => {
           </Link>
 
           <div className="absolute bottom-5 right-5 flex flex-col items-center space-y-5 z-[999]">
-            <Link to="/contact">
+            {/* <Link to="/contact">
               <img
                 src={icon1}
                 alt="contact"
                 className="w-[30px] md:w-[40px] cursor-pointer hover:scale-125"
               />
-            </Link>
+            </Link> */}
 
             <Link to="/contact">
               <img
@@ -47,8 +47,8 @@ const ElectronicsHero = () => {
           </div>
 
           {/* Bottom Left Text */}
-          <div className="absolute lg:bottom-10 lg:left-10  text-left">
-            <h1 className="text-[#FFFCFC] text-[54px] font-[500] leading-[3.9rem]">
+          <div className="absolute bottom-6 left-6 sm:bottom-8 sm:left-8 lg:bottom-10 lg:left-10 text-left">
+            <h1 className="text-[#FFFCFC] text-[32px] sm:text-[42px] md:text-[48px] lg:text-[54px] font-[500] leading-tight sm:leading-[3.2rem] lg:leading-[3.9rem]">
               Electronics
             </h1>
           </div>

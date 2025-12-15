@@ -15,8 +15,8 @@ const ExpertiseSection = () => {
                 {/* Title */}
                 <div className="max-w-3xl mb-2 md:mb-8">
                     <h2 className="text-base md:text-4xl font-[300]">
-                        With <span className="text-red-600 font-medium">40+ years</span> of{" "}
-                        <span className="text-red-600 font-medium">
+                        With <span className="text-red-600 font-bold">40+ years</span> of{" "}
+                        <span className="text-red-600 font-bold">
                             <br className=" md:block hidden" />
                             experience
                         </span>
@@ -26,9 +26,7 @@ const ExpertiseSection = () => {
                 {/* Description */}
                 <div className="max-w-3xl">
                     <p className="text-gray-800 text-[10px] md:text-left text-center md:text-base leading-[14px] md:leading-relaxed">
-                        Advanced manufacturing with robotic automation and CNC systems.
-                        Tailored, customer-centric designs for top global OEMs.
-                        ISO-certified systems ensuring quality and precision.
+                       we specialize in precision engineering and advanced manufacturing, delivering high-performance components that drive industries forward.
                     </p>
                 </div>
             </div>
@@ -56,7 +54,7 @@ const Counter = ({ from, to, duration }) => {
 };
 
 const ManufacturingCapacity = () => {
-    const locations = ["Vadodara", "Bawal", "Haridwar", "Dharuhera"];
+    const locations = [{name:"Vadodara"}, {name:"Bawal"}, {name:"Haridwar"}, {name:"Dharuhera"},{name:"Sanand"}];
 
     return (
         <div className="bg-[#F3F4F6] rounded-lg md:rounded-[26px] h-full md:px-12 px-2  md:py-0 py-4 flex">
@@ -74,30 +72,25 @@ const ManufacturingCapacity = () => {
                 {/* Description */}
                 <div className="md:space-y-6  max-w-3xl   md:mb-8">
                     <p className="text-gray-800 md:block hidden text-base">
-                        Munial Auto Industries is equipped to produce an impressive array of
-                        components to meet global demands. Our state-of-the-art facilities
-                        have the annual capacity to produce
+                        Munjal Auto Industries is equipped to produce an impressive array of components to meet global demands.
                     </p>
 
                     <p className="text-gray-800 md:block hidden    text-base">
-                        With a robust manufacturing setup across multiple locations
-                        including
+                       With a robust manufacturing setup across multiple locations—including
                     </p>
                     <p className=" text-[#151414] text-center  md:hidden block  text-[10px] leading-[13px]">
-                        Munjal Auto Industries is equipped to produce an impressive array of
-                        components to meet global demands. Our state-of-the-art facilities
-                        have the annual capacity to produce
+                         Munjal Auto Industries is equipped to produce an impressive array of components to meet global demands.
                     </p>
                 </div>
 
                 {/* Location Tags */}
-                <div className="md:flex -mt-4 hidden flex-wrap gap-2">
+                <div className="md:flex -mt-4 hidden flex-wrap gap-2 lg:max-w-[500px]">
                     {locations.map((location, index) => (
                         <div
                             key={index}
-                            className="bg-black text-white px-6 py-2 rounded-[12px] text-xs hover:bg-gray-800 transition-colors duration-300"
+                            className="bg-black text-white px-6 py-2 rounded-[12px] text-xs whitespace-nowrap hover:bg-gray-800 transition-colors duration-300"
                         >
-                            {location}
+                            {location.name}
                         </div>
                     ))}
                 </div>
@@ -139,6 +132,7 @@ const ProductionCapacity = () => {
             quantity: 2000,
             unit: " CR",
             product: "Annual turnover FY23",
+            prefix: "> ",
         },
         {
             quantity: 2,
@@ -149,6 +143,7 @@ const ProductionCapacity = () => {
             quantity: 5,
             unit: "%",
             product: "Spend on R&D",
+            prefix: "~ ",
         },
         {
             quantity: 4000,
@@ -172,11 +167,11 @@ const ProductionCapacity = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-white hover:cursor-pointer rounded-md md:rounded-xl md:px-4 px-2 py-3 md:py-8 flex shadow-lg transform hover:scale-105 transition-transform duration-300"
+                            className="bg-[#F3F4F6] hover:cursor-pointer   md:px-4 px-2 py-3 md:py-8 flex"
                         >
                             <div className="space-y-2 flex flex-col items-start justify-center">
                                 <motion.h3
-                                    className="md:text-xl text-[12px] whitespace-nowrap font-bold"
+                                    className="md:text-[32px] text-[12px]  whitespace-nowrap font-bold"
                                     initial={{ opacity: 0 }}
                                     animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                                     transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -186,13 +181,14 @@ const ProductionCapacity = () => {
                                         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                                         transition={{ duration: 0.5 }}
                                     >
+                                        {item.prefix && <span>{item.prefix}</span>}
                                         {isInView && (
                                             <Counter from={0} to={item.quantity} duration={2} />
                                         )}
                                     </motion.span>
                                     {item.unit}
                                 </motion.h3>
-                                <p className="text-gray-600 md:text-[12px] text-[5px] ">
+                                <p className="text-gray-600 md:text-[16px] text-[5px] ">
                                     {item.product}
                                 </p>
                             </div>
@@ -201,8 +197,8 @@ const ProductionCapacity = () => {
                 </div>
             </div>
             <div className="max-w-7xl mx-auto mt-16">
-                <h2 className="text-base md:text-4xl lg:text-4xl font-[300] md:text-left text-center mb-4 md:mb-7">
-                    Our <span className="text-red-600 font-medium">state-of-the-art</span> facilities
+                <h2 className="text-base md:text-4xl lg:text-4xl font-[500] md:text-left text-center mb-4 md:mb-7">
+                    Our <span className="text-red-600 font-medium">state of the art</span> facilities
                     have the annual capacity to produce
                 </h2>
 
@@ -213,11 +209,11 @@ const ProductionCapacity = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-white hover:cursor-pointer rounded-md md:rounded-xl md:px-4 px-2 py-3 md:py-8 flex shadow-lg transform hover:scale-105 transition-transform duration-300"
+                            className=" hover:cursor-pointer rounded-md md:rounded-xl md:px-4 px-2 py-3 md:py-8 flex "
                         >
                             <div className="space-y-2 flex flex-col items-start justify-center">
                                 <motion.h3
-                                    className="md:text-xl text-[12px] whitespace-nowrap font-bold"
+                                    className="md:text-[32px] text-xl uppercase whitespace-nowrap font-bold "
                                     initial={{ opacity: 0 }}
                                     animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                                     transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -226,14 +222,15 @@ const ProductionCapacity = () => {
                                         initial={{ opacity: 0 }}
                                         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                                         transition={{ duration: 0.5 }}
+                                        className="text-[32px]"
                                     >
                                         {isInView && (
-                                            <Counter from={0} to={item.quantity} duration={2} />
+                                            <Counter from={0} to={item.quantity} duration={2}/>
                                         )}
                                     </motion.span>
                                     {item.unit}
                                 </motion.h3>
-                                <p className="text-gray-600 md:text-[12px] text-[5px] whitespace-nowrap">
+                                <p className="text-gray-600 md:text-[16px] text-[5px] whitespace-nowrap">
                                     {item.product}
                                 </p>
                             </div>

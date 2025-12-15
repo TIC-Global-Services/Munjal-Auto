@@ -35,64 +35,83 @@ const PinnedScrollSection = () => {
   ];
 
   return (
-    <div className="relative -mt-20">
+    <div className="relative">
       {/* Container height set to 400vh for slow scroll */}
-      <div ref={containerRef} className="h-[400vh] md:h-[600vh] relative bg-transparent">
-        <div className="sticky top-0 h-screen w-full bg-transparent flex items-center justify-center">
-          <div className="px-4 md:px-6 lg:px-20 mx-auto w-full max-w-7xl bg-transparent h-full flex flex-col md:flex-row items-center gap-6 md:gap-8 lg:gap-26">
+      <div ref={containerRef} className="h-[400vh] sm:h-[500vh] md:h-[600vh] lg:h-[800vh] relative bg-white">
+        <div className="sticky top-0 h-screen w-full bg-white flex items-center justify-center">
+          <div className="px-3 sm:px-4 md:px-6 lg:px-20 mx-auto w-full max-w-7xl bg-white h-full flex flex-col md:flex-row items-center gap-8 sm:gap-10 md:gap-8 lg:gap-12">
             {/* Left Side - Stacked Images */}
-            <div className="w-full md:w-1/2 h-[40vh] md:h-[70vh] relative bg-transparent flex items-center justify-center md:justify-start md:-ml-16">
-              <div className="relative w-full max-w-sm md:max-w-lg aspect-[4/3] bg-transparent h-full">
+            <div className="w-full md:w-2/5 h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] relative bg-white flex items-center justify-center">
+              <div className="relative w-[280px] sm:w-[350px] md:w-[450px] lg:w-[600px] h-[180px] sm:h-[220px] md:h-[280px] lg:h-[380px]">
                 {cards.map((card, index) => {
-                  // Scroll ranges for slower transitions
-                  const scrollRange = [index * 0.4, (index + 1) * 0.4];
-                  // Extended range for smooth fade-in and fade-out
-                  const extendedRange = [
-                    (index * 0.4) - 0.15,
-                    index * 0.4,
-                    (index + 1) * 0.4,
-                    (index + 1) * 0.4 + 0.15,
-                  ];
-
-                  // Prevent last card from fading out or scaling down
+                  // Slower transitions - each card gets more scroll space with overlap
+                  const start = index * 0.25;
+                  const end = start + 0.4; // Longer transition period
+                  
+                  // Check if this is the last card
                   const isLast = index === cards.length - 1;
-                  const opacityValues = isLast
-                    ? [0, 1, 1, 1]
-                    : [0, 1, 1, 0];
-                  const scaleValues = isLast
-                    ? [0.85, 1, 1, 1]
-                    : [0.85, 1, 1, 0.85];
+                  
+                  // Rotation for stacking effect - freeze at start and end
+                  const rotateTransform = useTransform(
+                    scrollYProgress,
+                    [0, 0.05, start, end, 0.8, 1],
+                    isLast 
+                      ? [index * -4, index * -4, index * -4, 0, 0, 0] 
+                      : [index * -4, index * -4, index * -4, 0, 8, 8]
+                  );
+
+                  // Y position for stacking - freeze at start and end
+                  const yTransform = useTransform(
+                    scrollYProgress,
+                    [0, 0.05, start, end, 0.8, 1],
+                    isLast 
+                      ? [index * 8, index * 8, index * 8, 0, 0, 0] 
+                      : [index * 8, index * 8, index * 8, 0, -30, -30]
+                  );
+
+                  // Scale effect - freeze at start and end
+                  const scaleTransform = useTransform(
+                    scrollYProgress,
+                    [0, 0.05, start, end, 0.8, 1],
+                    isLast 
+                      ? [0.9 - (index * 0.03), 0.9 - (index * 0.03), 0.9 - (index * 0.03), 1, 1, 1] 
+                      : [0.9 - (index * 0.03), 0.9 - (index * 0.03), 0.9 - (index * 0.03), 1, 0.85, 0.85]
+                  );
+
+                  // Opacity - freeze at start and end
+                  const opacityTransform = useTransform(
+                    scrollYProgress,
+                    [0, 0.05, start, end, 0.8, 1],
+                    isLast 
+                      ? [0.5, 0.5, 0.5, 1, 1, 1] 
+                      : [0.5, 0.5, 0.5, 1, 0.6, 0.6]
+                  );
+
+                  // Dynamic z-index - freeze at start, active card on top, freeze after third card
+                  const zIndexTransform = useTransform(
+                    scrollYProgress,
+                    [0, 0.05, start, start + 0.15, end - 0.15, end, 0.8, 1],
+                    isLast 
+                      ? [cards.length - index, cards.length - index, cards.length - index, cards.length + 10, cards.length + 10, cards.length + 10, cards.length + 10, cards.length + 10]
+                      : [cards.length - index, cards.length - index, cards.length - index, cards.length + 10, cards.length + 10, cards.length - index, cards.length - index, cards.length - index]
+                  );
 
                   return (
                     <motion.div
                       key={index}
-                      className="absolute inset-0 w-full h-full bg-transparent rounded-2xl overflow-hidden"
+                      className="absolute top-0 left-0 w-full h-full rounded-2xl overflow-hidden shadow-lg"
                       style={{
-                        zIndex: useTransform(scrollYProgress, scrollRange, [
-                          cards.length - index,
-                          0,
-                        ]),
-                        rotateZ: useTransform(scrollYProgress, scrollRange, [
-                          index * 2 - 2,
-                          (index - 1) * 2 - 2,
-                        ]),
-                        x: useTransform(scrollYProgress, scrollRange, [
-                          index * 8,
-                          (index - 1) * 8,
-                        ]),
-                        y: useTransform(scrollYProgress, scrollRange, [
-                          index * 8,
-                          (index - 1) * 8,
-                        ]),
-                        scale: useTransform(scrollYProgress, extendedRange, scaleValues),
-                        opacity: useTransform(scrollYProgress, extendedRange, opacityValues),
-                        transition: { ease: 'easeInOut', duration: 0.3 },
+                        y: yTransform,
+                        scale: scaleTransform,
+                        rotate: rotateTransform,
+                        opacity: opacityTransform,
+                        zIndex: zIndexTransform,
                       }}
                     >
                       <img
                         src={card.image}
                         alt={card.title}
-                        className="h-full w-[90%] object-contain mx-auto rounded-[10px]"
+                        className="w-full h-full object-cover rounded-2xl"
                       />
                     </motion.div>
                   );
@@ -101,104 +120,61 @@ const PinnedScrollSection = () => {
             </div>
 
             {/* Right Side - Text */}
-            <div className="w-full md:w-3/5 h-[50vh] md:h-[70vh] relative flex items-center">
-              <div className="relative w-full space-y-4 md:space-y-10">
+            <div className="w-full md:w-3/5 h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] relative flex items-start justify-center flex-col">
+              <div className="relative w-full space-y-4 sm:space-y-6 md:space-y-8 lg:space-y-10">
                 {cards.map((card, index) => {
-                  // Determine which card is currently active based on scroll progress
-                  const activeCardIndex = Math.floor(scrollYProgress.get() / 0.4);
-                  const isActive = index === activeCardIndex;
+                  // Slower transitions - each card gets more scroll space with overlap
+                  const start = index * 0.25;
+                  const end = start + 0.4; // Longer transition period
                   
-                  // Blur effect for inactive cards
+                  // Check if this is the last card
+                  const isLast = index === cards.length - 1;
+                  
+                  // Blur effect - freeze at start, active card is clear, others are blurred
                   const blurValue = useTransform(
                     scrollYProgress,
-                    [
-                      (index * 0.4) - 0.2,
-                      index * 0.4,
-                      (index + 1) * 0.4,
-                      (index + 1) * 0.4 + 0.2,
-                    ],
-                    ['blur(4px)', 'blur(0px)', 'blur(0px)', 'blur(4px)']
+                    [0, 0.05, start - 0.1, start + 0.1, end - 0.1, end + 0.1, 0.8, 1],
+                    isLast 
+                      ? ['blur(4px)', 'blur(4px)', 'blur(4px)', 'blur(0px)', 'blur(0px)', 'blur(0px)', 'blur(0px)', 'blur(0px)']
+                      : index === 0 
+                        ? ['blur(0px)', 'blur(0px)', 'blur(0px)', 'blur(0px)', 'blur(0px)', 'blur(4px)', 'blur(4px)', 'blur(4px)']
+                        : ['blur(4px)', 'blur(4px)', 'blur(4px)', 'blur(0px)', 'blur(0px)', 'blur(4px)', 'blur(4px)', 'blur(4px)']
                   );
 
-                  // Opacity for better visual hierarchy
+                  // Opacity - all cards visible, freeze at start
                   const opacityValue = useTransform(
                     scrollYProgress,
-                    [
-                      (index * 0.4) - 0.2,
-                      index * 0.4,
-                      (index + 1) * 0.4,
-                      (index + 1) * 0.4 + 0.2,
-                    ],
-                    [0.4, 1, 1, 0.4]
+                    [0, 0.05, 0.1, 0.8, 1],
+                    [1, 1, 1, 1, 1]
                   );
 
-                  // Font size based on blur state - responsive
-                  const fontSizeValue = useTransform(
-                    scrollYProgress,
-                    [
-                      (index * 0.4) - 0.2,
-                      index * 0.4,
-                      (index + 1) * 0.4,
-                      (index + 1) * 0.4 + 0.2,
-                    ],
-                    ['12px', '16px', '16px', '12px'] // Smaller font sizes for mobile
-                  );
-
-                  // Font size for desktop
-                  const desktopFontSizeValue = useTransform(
-                    scrollYProgress,
-                    [
-                      (index * 0.4) - 0.2,
-                      index * 0.4,
-                      (index + 1) * 0.4,
-                      (index + 1) * 0.4 + 0.2,
-                    ],
-                    ['14px', '20px', '20px', '14px']
-                  );
-
-                  // Scale based on blur state - less dramatic on mobile
+                  // Scale effect for active text - freeze at start
                   const scaleValue = useTransform(
                     scrollYProgress,
-                    [
-                      (index * 0.4) - 0.2,
-                      index * 0.4,
-                      (index + 1) * 0.4,
-                      (index + 1) * 0.4 + 0.2,
-                    ],
-                    [0.98, 1.05, 1.05, 0.98] // Less scaling on mobile
-                  );
-
-                  // Desktop scale
-                  const desktopScaleValue = useTransform(
-                    scrollYProgress,
-                    [
-                      (index * 0.4) - 0.2,
-                      index * 0.4,
-                      (index + 1) * 0.4,
-                      (index + 1) * 0.4 + 0.2,
-                    ],
-                    [0.95, 1.1, 1.1, 0.95]
+                    [0, 0.05, start, start + 0.1, end - 0.1, end, 0.8, 1],
+                    isLast 
+                      ? [0.98, 0.98, 0.98, 1, 1, 1, 1, 1]
+                      : index === 0
+                        ? [1, 1, 1, 1, 1, 0.98, 0.98, 0.98]
+                        : [0.98, 0.98, 0.98, 1, 1, 0.98, 0.98, 0.98]
                   );
 
                   return (
                     <motion.div
                       key={index}
-                      className="w-full max-w-none bg-white p-4 md:p-10 rounded-xl md:rounded-2xl shadow-lg"
+                      className="w-full"
                       style={{
                         filter: blurValue,
                         opacity: opacityValue,
-                        scale: window.innerWidth >= 768 ? desktopScaleValue : scaleValue,
-                        transition: { ease: 'easeInOut', duration: 0.3 },
+                        scale: scaleValue,
+                        zIndex: index,
                       }}
                     >
-                      <motion.p 
-                        className="text-gray-600 leading-relaxed"
-                        style={{
-                          fontSize: window.innerWidth >= 768 ? desktopFontSizeValue : fontSizeValue,
-                        }}
-                      >
-                        {card.description}
-                      </motion.p>
+                      <div className="bg-white p-3 sm:p-4 md:p-6 lg:p-8 xl:p-10 rounded-xl shadow-md border border-gray-200">
+                        <p className="text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg lg:text-xl xl:text-[20px]">
+                          {card.description}
+                        </p>
+                      </div>
                     </motion.div>
                   );
                 })}

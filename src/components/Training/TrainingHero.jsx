@@ -32,13 +32,13 @@ const TrainingHero = () => {
                     </Link>
 
                     <div className="absolute bottom-5 right-5 flex flex-col items-center space-y-5 z-[999]">
-                        <Link to="/contact">
+                        {/* <Link to="/contact">
                             <img
                                 src={icon1}
                                 alt="contact"
                                 className="w-[30px] md:w-[40px] cursor-pointer hover:scale-125"
                             />
-                        </Link>
+                        </Link> */}
 
                         <Link to="/contact">
                             <img
@@ -52,17 +52,17 @@ const TrainingHero = () => {
 
 
                     {/* Centered Text and Timeline Container */}
-                    <div className=" md:block flex items-center justify-center flex-col absolute  mt-10 text-left left-0">
-                        <h1 className="text-[#FFFCFC] rounded-[10px] px-10 py-4 text-[54px] font-[500] mb-12">
-                            Training
-                        </h1>
-
-                        {/* Timeline Line with Animation */}
-                    </div>
+                    <div className="absolute bottom-6 left-6 sm:bottom-8 sm:left-8 lg:bottom-10 lg:left-10 text-left">
+            <h1 className="text-[#FFFCFC] text-[32px] sm:text-[42px] md:text-[48px] lg:text-[54px] font-[500] leading-tight sm:leading-[3.2rem] lg:leading-[3.9rem]">
+              Training
+            </h1>
+          </div>
                 </div>
             </div>
-            <div>
-                <h1 className=" text-[28px] lg:text-[28px] leading-[48px] text-center mx-auto  mt-10 lg:w-[60%] w-[80%]">At <span className="   text-[#ED1C24]">Munjal Auto </span> , training is a very important aspects of journey towards world class emphasizing the growth and development of personnels includes</h1>
+            <div className="px-4 sm:px-6 lg:px-8">
+                <h1 className="text-[20px] sm:text-[24px] md:text-[26px] lg:text-[28px] leading-[1.4] sm:leading-[1.5] lg:leading-[48px] text-center mx-auto mt-8 sm:mt-10 lg:w-[60%] md:w-[70%] sm:w-[85%] w-[95%]">
+                  At <span className="text-[#ED1C24]">Munjal Auto</span>, training is a very important aspect of journey towards world class emphasizing the growth and development of personnel includes
+                </h1>
             </div>
         </div>
     )

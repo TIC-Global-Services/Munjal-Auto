@@ -14,9 +14,9 @@ const StayConnectedCTA = () => {
               Stay Connected
             </h2>
             <p className="md:text-xl text-xs !leading-[25px] mx-auto mb-4">
-              Reach out to explore more about
+             Reach out to explore our manufacturing 
               <br />
-              our manufacturing expertise.
+               expertise and industry-leading solutions
             </p>
             <Link to="/about-us">
               <button className="bg-white text-black  px-8 py-3 rounded-full hover:bg-gray-100 transition-colors">
@@ -32,9 +32,9 @@ const StayConnectedCTA = () => {
           <img src={logo} alt="Logo" className="w-20"/>
           <h2 className="text-2xl font-normal mt-3 text-white">Stay Connected</h2>
           <p className="text-xs  text-center mb-2 text-white">
-              Reach out to explore more about
+             Reach out to explore our manufacturing
               <br />
-              our manufacturing expertise.
+              expertise and industry-leading solutions
             </p>
             <Link to="/about-us">
               <button className="bg-white text-xs text-black px-6 py-2 rounded-full hover:bg-gray-100 transition-colors">

@@ -48,7 +48,7 @@ const ProductHero = () => {
                     </div>
 
                     {/* Centered Text and Timeline Container */}
-                    <div className=" md:block flex items-center justify-center flex-col absolute md:text-right text-center right-0">
+                    <div className=" md:block flex items-center justify-center flex-col absolute md:text-left text-center left-0 bottom-0">
                         <h1 className="text-[#FFFCFC] text-[54px] px-6 font-[500] mb-10 leading-[3.9rem]">
                             We Stand For​ <br />
                             Quality & Technology

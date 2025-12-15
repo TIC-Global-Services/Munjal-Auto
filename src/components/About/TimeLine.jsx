@@ -9,7 +9,7 @@ const TimeLine = () => {
   const timelineData = [
     {
       year: "1987",
-      title: "HUmble Beginnings",
+      title: "Humble Beginnings",
       description: "Started with Gujrat Cycle in Vadodara, focusing on Export",
       position: "bottom",
     },
@@ -73,7 +73,7 @@ const TimeLine = () => {
       position: "bottom",
     },
     {
-      year: "2023",
+      year: "2025 & Beyond",
       title: "Progressing Towards Lightweight: Excellence & Diversification",
       description: [
         "Focused on lightweighting, R&D, and 3P engineering",
@@ -175,7 +175,7 @@ const TimeLine = () => {
                     }`}
                     style={{ transitionDelay: `${200 + index * 100}ms` }}
                   >
-                    <div className="text-[#ED1C24] font-bold text-lg text-center whitespace-nowrap">
+                    <div className="text-white font-bold text-lg text-center whitespace-nowrap">
                       {item.year}
                     </div>
                   </div>
@@ -183,7 +183,7 @@ const TimeLine = () => {
                   {/* Content Card */}
                   <div
                     className={`absolute left-1/2 transform -translate-x-1/2 transition-all duration-700 ${
-                      item.position === "top" ? "bottom-10" : "top-10"
+                      item.position === "top" ? "top-10" : "bottom-10"
                     } ${
                       visiblePoints.includes(index)
                         ? "opacity-100 translate-y-0"
@@ -206,7 +206,7 @@ const TimeLine = () => {
   <p className="text-[#FFFCFC] font-bold text-[10px] leading-relaxed">
     {item.title}
   </p>
-  <p className="text-white text-[10px] leading-relaxed mt-1 overflow-hidden max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out">
+  <p className="text-white text-[10px] leading-[11px] tracking-[0%] mt-1 overflow-hidden max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500 ease-in-out">
     {item.description}
   </p>
 </div>

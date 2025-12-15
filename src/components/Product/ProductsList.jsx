@@ -27,8 +27,8 @@ import SteelRing2 from "../../assets/products/ring2.png";
 
 const tabs = [
   { id: "exhaust", label: "Exhaust System" },
-  { id: "steel", label: "Steel wheel Rim" },
-  { id: "auto", label: "Chase parts & Assemble" },
+  { id: "steel", label: "Wheel Rim & Spoke Plate " },
+  { id: "auto", label: "Chassis parts and assemblies" },
   { id: "fuel", label: "BIW Assembly" },
   { id: "biw", label: "Lightweight Composite Parts" },
 ];
@@ -90,7 +90,7 @@ const ProductsList = () => {
     {
       id: "steel",
       wholeDescription:
-        "Munjal Auto Industries manufactures steel wheel rims for two-wheelers, three-wheelers, and passenger cars. Our rims are designed to meet international quality standards with precision engineering and robust performance specifications.",
+        "A steel wheel rim is a circular component that forms an airtight unit with the tire to bear weight, transmit power, enhance structural integrity and stability",
     },
     {
       id: "auto",
@@ -120,7 +120,7 @@ const ProductsList = () => {
       description:
         "The products made to match international quality standards to ensure uniformity of gauge, well-defined profile, and leak-proof weld joints",
       fullDescription: [
-        "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
+        // "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
         "• OBD II Sensors Integration",
         "• Pipe in Pipe design",
         "• Various SS grades to increase in life expectancy",
@@ -262,7 +262,7 @@ const ProductsList = () => {
       description:
         "Integrated exhaust solution for optimized flow and noise reduction, featuring catalytic converters, OBD II integration, and long-lasting heat-resistant finishes.",
       fullDescription: [
-        "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
+        // "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
         "• OBD II Sensors Integration",
         "• Usage of suitable catalytic converter for exhaust emission control",
         "• Various SS grades to increase in life expectanc",
@@ -414,7 +414,7 @@ const ProductsList = () => {
       description:
         "A COPV plastic liner is a thin, non-structural barrier made from materials like nylon or polyethylene, acting primarily as a gas boundary to prevent leaks and chemical degradation in composite overwrapped pressure vessels.",
       fullDescription: [
-        "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
+        // "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
         "• Low permeability",
         "• Blow molded",
         "• Radial thickness precision",
@@ -483,7 +483,7 @@ const ProductsList = () => {
           </div>
         </div>
 
-        <div className="text-black xl:text-[28px] xl:leading-[44px] py-10 text-center">
+        <div className={`text-black lg:text-[28px] lg:leading-[55px] py-10 text-center mx-auto ${activeTab === "steel" ? "max-w-[866px]" : activeTab==="auto" ?"max-w-[1138px]":activeTab==="biw"?"max-w-[1060px]":activeTab==="fuel"?"max-w-[1060px]":"max-w-[820px]"}`}>
           {getActiveDescription()}
         </div>
         {/* Content for all tabs */}
@@ -527,9 +527,11 @@ const ProductsList = () => {
 
                 {/* Content Section - Takes 6 columns on md, 7 on lg */}
                 <div className="md:col-span-6 lg:col-span-7 p-6 text-[#ED1C24] relative ">
-                  <h1 className="text-[130px] font-bold text-gray-400/20 mb-2 absolute -top-24">
-                    0{index + 1}
-                  </h1>
+                  {!expandedItems[index] && (
+                    <h1 className="text-[130px] font-bold text-gray-300/20 mb-2 absolute -top-24">
+                      0{index + 1}
+                    </h1>
+                  )}
                   <motion.h2
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -544,7 +546,7 @@ const ProductsList = () => {
                       <motion.p
                         initial={{ opacity: 1 }}
                         animate={{ opacity: 1 }}
-                        className="mb-4 text-base leading-relaxed md:max-w-xl"
+                        className="mb-4 text-base leading-[24px] md:max-w-xl"
                       >
                         {item.description}
                       </motion.p>
@@ -574,7 +576,7 @@ const ProductsList = () => {
                                   duration: 0.5,
                                   ease: "easeOut",
                                 }}
-                                className="mb-3 text-base leading-relaxed"
+                                className="text-base leading-[24px] text-start"
                               >
                                 {desc}
                               </motion.p>
@@ -639,7 +641,7 @@ const ProductsList = () => {
                     {item.title}
                   </motion.h2>
 
-                  <div className="text-[#8C8989] mb-6">
+                  <div className="text-[#8C8989] mb-6 ">
                     <motion.div className="overflow-hidden">
                       <motion.p
                         initial={{ opacity: 1 }}
@@ -674,7 +676,7 @@ const ProductsList = () => {
                                   duration: 0.5,
                                   ease: "easeOut",
                                 }}
-                                className="mb-3 text-base leading-relaxed"
+                                className="mb-0 text-base leading-relaxed"
                               >
                                 {desc}
                               </motion.p>

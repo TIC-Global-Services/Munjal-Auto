@@ -254,10 +254,10 @@ const DesktopImageSlider = () => {
           </motion.div>
         ))}
 
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-[-10rem] sm:bottom-[-5rem] text-center">
+        <div className="absolute left-[60%] -translate-x-1/2 lg:bottom-10  bottom-[-2rem] text-start">
           <AnimatePresence mode="wait">
             <motion.div
-              className="bg-white/80 px-3 py-1.5 rounded-lg font-bold text-base sm:text-lg text-black"
+              className="bg-white/80 px-3 py-1.52 rounded-lg font-bold text-base sm:text-lg text-black"
               key={`caption-${activeIndex}`}
               variants={textVariants}
               initial="hidden"
@@ -270,7 +270,7 @@ const DesktopImageSlider = () => {
 
           <AnimatePresence mode="wait">
             <motion.div
-              className="bg-white/80 px-3 py-1.5 rounded-lg text-xs sm:text-sm text-gray-600 mt-2"
+              className="bg-white/80 px-3 py-1.5 rounded-lg text-xs sm:text-sm text-gray-600"
               key={`small-caption-${activeIndex}`}
               variants={textVariants}
               initial="hidden"

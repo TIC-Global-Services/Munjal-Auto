@@ -5,7 +5,7 @@ import inductch4 from "../../assets/about/indutch_composite_4.png";
 import inductch from "../../assets/about/indutch5.jpg";
 const CompositeTechnology = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="px-10 mx-10 mt-20  py-12">
       <div className="bg-[#F5F5F5] rounded-[12px] p-6 md:p-8 lg:p-12">
         {/* Header Section */}
         <div className="mb-12">
@@ -22,7 +22,7 @@ const CompositeTechnology = () => {
         </div>
 
         {/* First Content Section */}
-        <div className="mb-16">
+        <div className="mb-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="order-2 lg:order-1">
               <img
@@ -57,7 +57,8 @@ const CompositeTechnology = () => {
         </div>
 
         {/* Second Content Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+       <div className="py-10">
+         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           <div>
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
               The company employs over 700 skilled technicians and 70 engineers,
@@ -91,8 +92,10 @@ const CompositeTechnology = () => {
             />
           </div>
         </div>
+       </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10">
+        <div className="py-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10">
           <div className="relative h-96">
             <img
               src={indutch3}
@@ -166,8 +169,10 @@ const CompositeTechnology = () => {
             </div>
           </div>
         </div>
+        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-10 items-center">
+        <div className="py-10">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-10 items-center">
           <div className="h-64">
             <img
               src={inductch}
@@ -199,6 +204,7 @@ const CompositeTechnology = () => {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>

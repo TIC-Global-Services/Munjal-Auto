@@ -15,14 +15,14 @@ const LegacySection = () => {
     }, []);
 
     return (
-        <div className="relative min-h-screen w-full overflow-hidden bg-white px-10">
+        <div className="relative min-h-screen w-full overflow-hidden bg-white px-20">
 
             <div className="container mx-auto px-6 lg:px-2">
                 <div className="grid grid-cols-1 lg:grid-cols-12 md:gap-8 items-center min-h-screen">
                     {/* Left Content - Take 5 columns */}
                     <div className="lg:col-span-5  -py-10 lg:py-24 space-y-2 md:space-y-5 opacity-0 animate-fade-in">
                         <div className="space-y-4 text-center md:text-left lg:text-left">
-                            <p className="text-[#8A8989]  md:text-lg text-xs md:font-medium tracking-wide">
+                            <p className="text-[#8A8989]  md:text-lg text-xs md:font-normal tracking-wide">
                                 #LEGACY///
                             </p>
                             <h2 className="text-[20px] lg:text-[40px]  font-normal md:leading-[41px] md:tracking-tight">
