@@ -93,7 +93,7 @@ const TestingContent = () => {
       "Blanking, piercing, forming, trimming, and seam locking with specialized SPMs",
       "CNC bending machines for pipe-in-pipe exhaust systems"
     ],
-    image: exhust1
+    image: exhust2
   },
   {
     sectionTitle: "Surface Preparation & Coating",
@@ -103,7 +103,7 @@ const TestingContent = () => {
       "Heat-resistant painting (internal & external)",
       "Fully automatic 34-stage tri-nickel chrome plating plant"
     ],
-    image: exhust2
+    image: exhust1
   },
   {
     sectionTitle: "CNC Bending",
@@ -183,13 +183,13 @@ const TestingContent = () => {
     return (
         <div className="max-w-7xl mx-auto lg:px-4 px-3 mb-20">
 
-            <h1 className="text-[#151414] text-[28px] leading-[57px] text-center max-w-4xl mx-auto mt-20">
+            <h1 className="text-[#151414] text-[28px] leading-[57px] text-center max-w-4xl mx-auto mt-24 py-5">
                 Our facilities go beyond manufacturing, every component undergoes rigorous testing and validation to meet the highest quality standards of global OEMs
             </h1>
             <div className="mt-20 py-10">
                 <div>
                     <h1 className="text-[36px]">Fuel Tank Manufacturing</h1>
-                    <p className="text-[20px] text-[#82848A]">
+                    <p className="text-[20px] mt-3 lg:max-w-[1116px] leading-[28px] text-[#82848A]">
                         At Munjal Auto Industries Limited (MAIL), we produce 500 passenger car fuel tanks per day, with a total installed capacity of 1,500 assemblies daily. Leveraging advanced technology, modern equipment, and precision tooling, we maintain uncompromising standards of quality through robust processes, multi-stage inspections, and stringent testing protocols.
                     </p>
                 </div>
@@ -207,21 +207,21 @@ const TestingContent = () => {
              >
                {manufacturingList.map((item, index) => (
                  <SwiperSlide key={index}>
-                   <div className="flex gap-4 my-6">
+                   <div className="flex lg:flex-row flex-col gap-4 my-6">
                      <img
                        src={item.img}
                        width={756}
-                       height={505}
+                       height={600}
                        alt="manufacturing image"
-                       className="flex-shrink-0 lg:min-w-[756px] lg:min-h-[505px] h-[505px]"
+                       className="flex-shrink-0 lg:min-w-[756px] lg:min-h-[505px] min-h-[505px] object-cover"
                      />
 
-                     <div className="flex-1">
+                     <div className="lg:flex-1">
                        <div>
                          <h1 className="text-2xl font-bold mb-2 text-[#ED1C24]">{item.title}</h1>
-                         <ul className="list-disc ml-6">
+                         <ul className="list-disc ml-6 lg:max-w-[380px]">
                            {item.points.map((point, i) => (
-                             <li key={i} className='font-light'>{point}</li>
+                             <li key={i} className='font-light text-[16px] leading-[34px]'>{point}</li>
                            ))}
                          </ul>
                        </div>
@@ -240,8 +240,8 @@ const TestingContent = () => {
 
               <div className="mt-20 py-10">
                 <div>
-                    <h1 className="text-[36px]">Exhaust Systems Manufacturing</h1>
-                    <p className="text-[20px] text-[#82848A]">
+                    <h1 className="lg:text-[36px] text-[24px] text-center lg:text-start">Exhaust Systems Manufacturing</h1>
+                    <p className="text-[20px] text-center lg:text-start lg:max-w-[1116px] mt-5 text-[#82848A]">
                        We manufacture nearly 32,000 complete two-wheeler exhaust systems every day at MAIL. Our state-of-the-art facilities, equipped with precision-driven technology and automated systems, ensure seamless production. Every unit undergoes strict in-process gauging, inspection, and advanced testing to guarantee superior performance and reliability.
                     </p>
                 </div>
@@ -255,7 +255,7 @@ const TestingContent = () => {
                             width={595}
                             height={250}
                             alt="exhaust system image"
-                            className={`flex-shrink-0 lg:min-w-[595px]  rounded-md lg:min-h-[250px] px-5 ${index%2 ==0 ?"lg:order-last":""}`}
+                            className={`flex-shrink-0 lg:min-w-[595px]  rounded-md lg:min-h-[250px] px-5 ${index%2 !=0 ?"lg:order-last":""}`}
                           />
 
                           <div className="lg:flex-1">

@@ -500,7 +500,7 @@ const ProductsList = () => {
               className="mb-12 overflow-hidden bg-white p-4 rounded-xl"
             >
               {/* Desktop Layout: Row with 3 columns */}
-              <div className="hidden md:grid md:grid-cols-12 lg:grid-cols-12 gap-0 items-end min-h-[400px] w-full max-w-7xl mx-auto">
+              <div className="hidden md:grid md:grid-cols-12 lg:grid-cols-12 gap-0 items-end min-h-[432px] w-full max-w-7xl mx-auto">
                 {/* Image Section - Takes 4 columns on md, 3 on lg */}
                 <div className="md:col-span-4 lg:col-span-3 bg-[#EBEBEF] flex items-center justify-center p-6 h-full">
                   <motion.div
@@ -593,7 +593,7 @@ const ProductsList = () => {
                   <motion.button
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    whileHover={{ scale: 1.05 }}
+                    whileHover={{ scale: 1.05 }} 
                     whileTap={{ scale: 0.95 }}
                     transition={{ delay: 0.6, duration: 0.3 }}
                     className="bg-black text-white px-6 py-3 rounded-xl text-base font-medium cursor-pointer transition-all duration-200 hover:bg-gray-800 shadow-md whitespace-nowrap"

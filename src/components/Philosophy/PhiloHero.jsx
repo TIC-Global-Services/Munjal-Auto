@@ -9,7 +9,7 @@ import { Instagram, Youtube } from "lucide-react";
 const PhiloHero = () => {
   return (
     <div>
-      <div className="h-screen w-full flex flex-col items-center justify-center relative">
+      <div className="h-screen w-full flex flex-col items-center justify-center relative overflow-hidden">
         {/* Background Image with Logo */}
         <div
           className="h-[90%] w-[94%] flex flex-col items-center justify-center rounded-[24px] relative"
@@ -21,13 +21,13 @@ const PhiloHero = () => {
           }}
         >
           <div className="absolute bottom-5 right-5 flex flex-col items-center space-y-5 z-[999]">
-            <Link to="/contact">
+            {/* <Link to="/contact">
               <img
                 src={icon1}
                 alt="contact"
                 className="w-[30px] md:w-[40px] cursor-pointer hover:scale-125"
               />
-            </Link>
+            </Link> */}
 
             <Link to="/contact">
               <img
@@ -46,7 +46,7 @@ const PhiloHero = () => {
             />
           </Link>
 
-          <div className="md:block flex  items-center justify-center absolute mx-3  mt-10 md:text-left text-center left-0">
+          <div className="md:block flex items-center justify-center bottom-0 absolute mx-3  mt-10 md:text-left text-center left-0">
             <div className="flex">
               <div className="flex flex-col gap-3  relative top-6">
                 <Youtube
@@ -58,8 +58,8 @@ const PhiloHero = () => {
                   className="bg-black w-7 h-7 p-1 rounded-full"
                 />
               </div>
-              <div>
-                <h1 className="text-[#FFFCFC] rounded-[10px] lg:leading-[3.9rem] text-left leading-[2.0rem] px-10 py-4 lg:text-[54px] text-[34px] font-[500] mb-12">
+              <div className="">
+                <h1 className="text-[#FFFCFC]  rounded-[10px] lg:leading-[3.9rem] text-left leading-[2.0rem] px-10 py-4 lg:text-[54px] text-[34px] font-[500] mb-12">
                   Innovation with <br /> Integrity
                 </h1>
               </div>

@@ -12,7 +12,7 @@ const PrecisionEngineeringContent = ({ content }) => {
       {/* Split Grid Layout */}
       <div>
         <h1
-          className="  text-[#151414] text-[28px] leading-[57px] text-center max-w-4xl mx-auto mt-20"
+          className="  text-[#151414] text-[28px] leading-[57px] text-center max-w-4xl mx-auto mt-20 mb-25 py-3"
           style={{
             letterSpacing: "2%",
             textAlign: "center",
@@ -30,7 +30,7 @@ const PrecisionEngineeringContent = ({ content }) => {
         </div>
         <div className="mt-5">
           <h1 className="text-[#82848A] text-[16px]">High-precision metal forming for complex parts using a range of stamping presses and tooling techniques</h1>
-          <ul className="list-disc px-10 text-[#82848A] space-y-3 mt-2">
+          <ul className="list-disc px-10 text-[#82848A] leading-[34px] mt-2">
             <li>Equipped with ~60 presses ranging from 10 – 1000 TON, sourced from world-renowned manufacturers.</li>
             <li>Hydraulic presses: 25 – 160 TON | Mechanical presses: 40 – 1000 TON.</li>
             <li>Best-in-class manufacturing and maintenance practices ensure consistency and repeatability in press components.</li>
@@ -44,8 +44,8 @@ const PrecisionEngineeringContent = ({ content }) => {
             </div>
             <div>
               <h1 className="text-[36px]">Roll Forming</h1>
-              <p className="text-[#82848A]">Multi-stage rim profile forming with high-end rolling mills from the UK, Japan, and Taiwan</p>
-              <ul className="list-disc px-10 text-[#82848A] space-y-4 mt-2">
+              <p className="text-[#82848A] leading-[34px]">Multi-stage rim profile forming with high-end rolling mills from the UK, Japan, and Taiwan</p>
+              <ul className="list-disc px-10 text-[#82848A] leading-[34px] mt-2">
                 <li>
                   High-tech roll forming facility with a range of SPMs
                 </li>
@@ -60,8 +60,8 @@ const PrecisionEngineeringContent = ({ content }) => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
             <div>
               <h1 className="text-[36px]">CNC Tube Bending</h1>
-              <p className="text-[#82848A]">Accurate and repeatable pipe bending for consistent, high-quality tubular components.</p>
-              <ul className="list-disc px-10 text-[#82848A] space-y-4 mt-2">
+              <p className="text-[#82848A] leading-[34px]">Accurate and repeatable pipe bending for consistent, high-quality tubular components.</p>
+              <ul className="list-disc px-10 leading-[32px] text-[#82848A]">
                 <li>
               Advanced bending facility with Single Axis, 3-Axis & 4-Axis CNC machines from global leaders like YLM (Korea).
                 </li>
@@ -76,19 +76,19 @@ const PrecisionEngineeringContent = ({ content }) => {
               </ul>
             </div>
             <div>
-              <img src={stampfacilityimg2} width={592} height={395} className="rounded-[8px]"/>
+              <img src={stampfacilityimg2} width={592} height={395} className="rounded-[8px] h-full"/>
             </div>
           </div>
       </div>
        <div className="bg-[#F5F5F5] mt-20 p-[30px] rounded-[14px]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
             <div>
-              <img src={stampfacilityimg3} width={592} height={395} className="rounded-[8px]"/>
+              <img src={stampfacilityimg3} width={592} height={360} className="rounded-[8px]"/>
             </div>
             <div>
               <h1 className="text-[36px]">Welding Facility</h1>
               <p className="text-[#82848A]">Comprehensive welding solutions for high-strength, precision assemblies</p>
-              <ul className="list-disc px-10 text-[#82848A] space-y-4 mt-2">
+              <ul className="list-disc px-10 leading-[24px] text-[#82848A] space-y-4 mt-2">
                 <li>
                   Plants equipped with highly automated welding systems.
                 </li>
@@ -108,8 +108,8 @@ const PrecisionEngineeringContent = ({ content }) => {
           <img src={stampfacilityimg4} width={1154} height={404} className="w-full h-[404px] object-cover rounded-[8px]"/>
         </div>
         <div className="mt-5">
-          <h1 className="text-[#82848A] text-[16px]">We ensure durability and corrosion resistance with advanced surface preparation and finishing processes. Our facilities include shot blasting across all plants, six automated heat-resistant painting shops, and eco-friendly lines focused on sustainability. At the Waghodia Plant, we operate:</h1>
-          <ul className="list-disc px-10 text-[#82848A] space-y-3 mt-2">
+          <h1 className="text-[#82848A] leading-[34px] text-[16px]">We ensure durability and corrosion resistance with advanced surface preparation and finishing processes. Our facilities include shot blasting across all plants, six automated heat-resistant painting shops, and eco-friendly lines focused on sustainability. At the Waghodia Plant, we operate:</h1>
+          <ul className="list-disc leading-[34px] px-10 text-[#82848A] space-y-3 mt-2">
             <li>2 x 32-Stage Tri-Nickel Chrome Coating Plants</li>
             <li>1 x Wet-on-Wet Painting Line.</li>
             <li>An Automatic Powder Coating Plant with 9-tank pre-treatment</li>

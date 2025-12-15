@@ -14,7 +14,7 @@ const SustainableContent = ({ content }) => {
       <div className="max-w-7xl mx-auto px-4 mb-20">
         {/* Header Section */}
         <div className="text-center my-20 mb-16">
-          <p className="lg:text-2xl md:text-xl  text-sm leading-[27px]  max-w-4xl mx-auto">
+          <p className="lg:text-[28px] md:text-xl  text-sm lg:leading-[57px]  tracking-[2%] max-w-4xl mx-auto">
           Our state-of-the-art manufacturing facilities are equipped with advanced machinery and automated processes, ensuring high-precision components that meet global standards.
           </p>
         </div>
@@ -97,7 +97,7 @@ const SustainableContent = ({ content }) => {
         <div className='flex lg:flex-row flex-col gap-3 mt-20 py-20'>
           <div>
             <h1 className='text-[24px]'>R&D Centre</h1>
-            <ul className="list-disc ml-6 py-5 space-y-4 text-[#82848A]">
+            <ul className="list-disc ml-4 py-5 space-y-4 text-[#82848A]">
             <li className='leading-[34px]'>
               The excellence of our products stems from our deep expertise in blueprint design. Every precise and systematic design lays a strong foundation for superior manufacturing. Munjal Auto Industries has achieved high operational maturity through rigorous adherence to advanced processes, benchmarked against world-class standards. 
             </li>
@@ -108,10 +108,10 @@ const SustainableContent = ({ content }) => {
           </div>
           <img src={img1} width={593} height={547} className='rounded-lg'/>
         </div>
-        <div className='flex lg:flex-row flex-col gap-5 mt-10 py-10 items-center'>
+        <div className='flex lg:flex-row flex-col gap-5 mt-20 py-10 items-center'>
           
           <div className='w-full lg:h-[489px]'>
-            <img src={img2} width={488} height={547} className='h-full object-cover rounded-lg w-[488px]'/>
+            <img src={img2} width={488} height={547} className='h-full object-cover rounded-lg lg:w-[733px]'/>
           </div>
           <div>
             <h1 className='text-[24px]'>R&D and Prototyping</h1>

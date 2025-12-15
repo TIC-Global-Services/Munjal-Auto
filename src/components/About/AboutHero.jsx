@@ -56,13 +56,13 @@ const AboutHero = () => {
                 </Link>
 
                 <div className="absolute bottom-5 right-5 flex flex-col items-center space-y-5 z-[999]">
-                    <Link to="/contact">
+                    {/* <Link to="/contact">
                         <img
                             src={icon1}
                             alt="contact"
                             className="w-[30px] md:w-[40px] cursor-pointer hover:scale-125"
                         />
-                    </Link>
+                    </Link> */}
 
                     <Link to="/contact">
                         <img

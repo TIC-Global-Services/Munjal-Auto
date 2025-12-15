@@ -43,8 +43,8 @@ const rimmanufacturing = () => {
     <div className="relative px-1">
        <div className="mt-20 py-10">
                 <div>
-                    <h1 className="text-[36px]">Steel Wheel Rim Manufacturing</h1>
-                    <p className="text-[20px] text-[#82848A] mt-5">
+                    <h1 className="lg:text-[36px] text-[24px] text-center lg:text-start">Steel Wheel Rim Manufacturing</h1>
+                    <p className="text-[20px] lg:text-start text-center max-w-[1116px] text-[#82848A] mt-5">
                       MAIL operates a state-of-the-art Steel Wheel Rim manufacturing facility, capable of producing wheel rims ranging from 10” to 14” for two-wheelers, three-wheelers, and four-wheelers. Built with cutting-edge technology and automated SPMs, our production line ensures consistency, durability, and precision in every rim manufactured.
                     </p>
                 </div>
@@ -75,11 +75,12 @@ const rimmanufacturing = () => {
                 alt="rim manufacturing"
                 className="w-full h-[500px] object-cover rounded-2xl"
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-transparent rounded-2xl flex flex-col items-start p-6">
+              <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-transparent rounded-2xl flex flex-col items-start p-6">
                 <h1 className='text-[#FF0000] text-[26px] font-bold mb-4'>{item.sectionTitle}</h1>
-                <ul className="list-disc ml-6">
+                <p className='text-white'>{item.subtitle}</p>
+                <ul className="list-disc ml-6 max-w-[515px]">
                   {item.points.map((point, i) => (
-                    <li key={i} className='font-light text-white text-[16px] leading-relaxed'>{point}</li>
+                    <li key={i} className='font-light text-white leading-[30px] text-[16px]'>{point}</li>
                   ))}
                 </ul>
               </div>
@@ -100,14 +101,14 @@ const rimmanufacturing = () => {
                     </p>
                 </div>
             </div>
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-3'>
-              <div className='lg:w-[600px] h-[350px] overflow-hidden rounded-lg'>
+            <div className='grid grid-cols-1 items-center lg:grid-cols-2 gap-3'>
+              <div className='lg:w-[600px] h-[400px] overflow-hidden rounded-lg'>
                 <img src={manufactureimage} width={871.5} height={400} alt='Motorcycle Rim Manufacturing Unit' className="w-full h-full object-cover object-left"/>
               </div>
               <div>
                 <h1 className='text-[26px] text-[#ED1C24] font-semibold'>Dedicated Motorcycle Rim 
 Manufacturing Line</h1>
-              <ul  className="list-disc ml-6 text-[#82848A] leading-[34px] space-y-5">
+              <ul  className="list-disc ml-6 text-[#82848A] leading-[34px] space-y-3">
                 <li>Roll Forming: Multi-stage, state-of-the-art rim profile forming rolling mills from the UK, Japan, and Taiwan</li>
                 <li>Welding: High-performance Butt Welding SPM for strong and reliable joints</li>
                 <li>Polishing: Multi-stage, fully automatic profile grinding and polishing SPM from Italy for superior finish.</li>

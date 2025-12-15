@@ -43,7 +43,7 @@ const FacilitiesBentoGrid = ({ activeTab, setActiveTab, tabs }) => {
             layout: "split-grid",
         },
         "Tooling & Engineering": {
-            title: "Driving Excellence Forwar",
+            title: "Driving Excellence Forward",
             description:
                 "With decades of expertise, we push the boundaries of precision engineering to deliver superior automotive solutions. Our commitment to quality and innovation fuels our journey toward excellence",
             mainImage: faBento3,
@@ -83,8 +83,8 @@ const FacilitiesBentoGrid = ({ activeTab, setActiveTab, tabs }) => {
                         <button
                             key={tab}
                             onClick={() => setActiveTab(tab)}
-                            className={`px-6 py-3 rounded-full text-xs whitespace-nowrap md:text-sm lg:text-base transition-all ${activeTab === tab
-                                ? "bg-[#E31E24] text-white font-medium"
+                            className={`px-6 py-6 rounded-full text-xs whitespace-nowrap md:text-sm lg:text-base transition-all ${activeTab === tab
+                                ? "bg-gradient-to-r from-[#ED1C24] to-[#871015] text-white font-medium"
                                 : "bg-white text-black border border-gray-200 hover:bg-gray-100"
                                 }`}
                         >

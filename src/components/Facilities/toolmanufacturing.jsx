@@ -9,10 +9,59 @@ const Toolmanufacturing = () => {
     
 
     const toolManufactureList = [
+      
+  {
+    title: "Double Column VMC",
+    points: [
+      "Specifications: \n3200(X) * 2500(Y) * 700(Z) * 800(W)",
+      "Make: Mitsubishi (MVR 25)",
+      "Quantity: 1"
+    ]
+  },
+  {
+    title: "EDM Wire Cut",
+    points: [
+      "Specifications:\n 600(X) * 400(Y) * 310(Z) * +-75(U&V)",
+      "Make: Mitsubishi (MVR 25)",
+      "Quantity: 1"
+    ]
+  },
+  {
+    title: "Die-Spotting",
+    points: [
+      "Specifications:\n 3000 * 2000(Table size) * 1700(Z) * 100T",
+      "Make: Sanki (DPM 3020–100)",
+      "Quantity: 1"
+    ]
+  },
+  {
+    title: "Cylindrical Grinder",
+    points: [
+      "Specifications:\n 260(Swing) * 800(Admit)",
+      "Make: HMT (K130)",
+      "Quantity: 1"
+    ]
+  },
+  {
+    title: "Surface Grinder",
+    points: [
+      "Specifications: 1650(X) * 660(Y)",
+      "Make: Proth (PSGC60150 AHR)",
+      "Quantity: 1"
+    ]
+  },
+  {
+    title: "Surface Grinder",
+    points: [
+      "Specifications: 700(X) * 340(Y)",
+      "Make: Proth (PSGC60150 AHR)",
+      "Quantity: 1"
+    ]
+  },
   {
     title: "Universal Milling",
     points: [
-      "Specifications: 1200(X) * 400(Y) * 400(Z) * 150 * 50 * 100",
+      "Specifications: \n 1200(X) * 400(Y) * 400(Z) * 150 * 50 * 100",
       "Make: Batliboi (BFCU 15)",
       "Quantity: 1"
     ]
@@ -20,7 +69,7 @@ const Toolmanufacturing = () => {
   {
     title: "Centre Lathe",
     points: [
-      "Specifications: 640(Swing) * 1500(Admit bt centers)",
+      "Specifications:\n 640(Swing) * 1500(Admit bt centers)",
       "Make: HMT (NH 32)",
       "Quantity: 1"
     ]
@@ -28,7 +77,7 @@ const Toolmanufacturing = () => {
   {
     title: "Centre Lathe",
     points: [
-      "Specifications: 575(Swing) * 3000(Admit bt centers)",
+      "Specifications:\n 575(Swing) * 3000(Admit bt centers)",
       "Make: HMT (NH 26)",
       "Quantity: 1"
     ]
@@ -36,7 +85,7 @@ const Toolmanufacturing = () => {
   {
     title: "Surface Grinder",
     points: [
-      "Specifications: 450(X) * 150(Y)",
+      "Specifications:\n 450(X) * 150(Y)",
       "Make: Praga (451 P)",
       "Quantity: 2"
     ]
@@ -116,75 +165,27 @@ const Toolmanufacturing = () => {
 
   // ------------------- SECOND IMAGE MACHINES -------------------
 
-  {
-    title: "Double Column VMC",
-    points: [
-      "Specifications: 3200(X) * 2500(Y) * 700(Z) * 800(W)",
-      "Make: Mitsubishi (MVR 25)",
-      "Quantity: 1"
-    ]
-  },
-  {
-    title: "EDM Wire Cut",
-    points: [
-      "Specifications: 600(X) * 400(Y) * 310(Z) * +-75(U&V)",
-      "Make: Mitsubishi (MVR 25)",
-      "Quantity: 1"
-    ]
-  },
-  {
-    title: "Die-Spotting",
-    points: [
-      "Specifications: 3000 * 2000(Table size) * 1700(Z) * 100T",
-      "Make: Sanki (DPM 3020–100)",
-      "Quantity: 1"
-    ]
-  },
-  {
-    title: "Cylindrical Grinder",
-    points: [
-      "Specifications: 260(Swing) * 800(Admit)",
-      "Make: HMT (K130)",
-      "Quantity: 1"
-    ]
-  },
-  {
-    title: "Surface Grinder",
-    points: [
-      "Specifications: 1650(X) * 660(Y)",
-      "Make: Proth (PSGC60150 AHR)",
-      "Quantity: 1"
-    ]
-  },
-  {
-    title: "Surface Grinder",
-    points: [
-      "Specifications: 700(X) * 340(Y)",
-      "Make: Proth (PSGC60150 AHR)",
-      "Quantity: 1"
-    ]
-  }
 ];
 
   return (
-    <div className='mt-5'>
+    <div className='mt-20 lg:mt-20 '>
         <div>
-            <h1 className='text-[36px]'>Tool Manufacturing</h1>
+            <h1 className='lg:text-[36px] text-[24px] lg:text-start text-center'>Tool Manufacturing</h1>
         </div>
-        <div className='flex flex-col lg:flex-row gap-4 items-center mt-5'>
+        <div className='flex flex-col lg:flex-row gap-10 items-center mt-5'>
             <div className='object-fit lg:min-w-[500px] overflow-hidden'>
-                <img src={toolimg1} width={488} height={325} alt='Tool Manufacturing' className='w-full rounded-lg lg:h-[300px]'/>
+                <img src={toolimg1} width={488} height={325} alt='Tool Manufacturing' className='w-full h-full rounded-lg lg:h-[300px]'/>
             </div>
-            <div>
-                    <p className='leading-[34px] text-[#222222]'>
+            <div className='max-w-[696px]'>
+                    <p className='leading-[34px] text-[#222222] text-[16px]'>
                     In 2010-11, Munjal Auto established a state-of-the-art high-tech Tool Manufacturing Facility at Bawal, Haryana, spanning 1,600 sq.m. The center is equipped with advanced CAD/CAM/CAE systems, large CNC machining centers, portable coordinate measuring machines, and die-spotting presses to manufacture and maintain mid-to-large sized tooling, jigs, fixtures, gauges, and panel checkers.
- The facility is capable of producing tooling for fuel tanks, exhaust systems, roll components, wheel rims, BIW, and structural parts of automobiles.
                 </p>
+                <p className='leading-[34px] text-[#222222] text-[16px]'> The facility is capable of producing tooling for fuel tanks, exhaust systems, roll components, wheel rims, BIW, and structural parts of automobiles.</p>
             </div>
         </div>
 
         {showAllExhaust ? (
-            <div className='grid grid-cols-3 gap-5 mt-20'>
+            <div className='grid grid-cols-3 whitespace-wrap gap-5 mt-20'>
             {toolManufactureList.map((item,index) => (
                 <div key={index} className='bg-[#F5F5F5] p-3 rounded-[12px]'>
                             <h1 className='bg-[#E3E3E3] text-[#ED1C24] py-2 font-semibold text-center rounded-[8px] text-[26px]'>{item.title}</h1>
@@ -203,7 +204,7 @@ const Toolmanufacturing = () => {
                             <h1 className='bg-[#E3E3E3] text-[#ED1C24] py-2 font-semibold text-center rounded-[8px] text-[26px]'>{item.title}</h1>
                         <ul className="list-disc ml-6 py-5 space-y-3">
                                 {item.points.map((point, i) => (
-                                  <li key={i} className='font-light'>{point}</li>
+                                  <li key={i} className='font-light whitespace-break-spaces'>{point}</li>
                                 ))}
                          </ul>
                 </div>
@@ -222,17 +223,17 @@ const Toolmanufacturing = () => {
               </span>
             </button>
         </div>
-        <div className='grid  grid-cols-1 lg:grid-cols-2 gap-5 mt-20'>
+        <div className='grid  grid-cols-1 lg:grid-cols-2 gap-10 mt-20 items-center'>
           <div className='object-fit overflow-hidden w-fit'>
-            <img src={toolimg2} width={593} height={547} alt='Central Room & Technical Room' className='w-full rounded-[12px]'/>
+            <img src={toolimg2} width={593} height={550} alt='Central Room & Technical Room' className='w-full h-full rounded-[10px]'/>
           </div>
           <div>
-            <h1 className='text-[24px] text-center'>Central Room & Technical Room</h1>
-            <ul className="list-disc ml-6 py-5 space-y-4 leading-[34px] text-[#82848A] ">
-              <li className=''>
+            <h1 className='text-[24px] lg:text-start text-center'>Central Room & Technical Room</h1>
+            <ul className="list-disc ml-6 py-5   text-[#82848A] ">
+              <li className='leading-[34px]'>
                 Spread in 1600 square meters area and operational since April 2011. A world-class facility for design & manufacturing of small to large sized tools, fixtures & gauges required in our various manufacturing locations to manufacture large parts & assemblies of automobiles
               </li>
-              <li>
+              <li className='leading-[34px]'>
                 Latest CAD / CAM & CAE software’s – Unigraphics, Catia V-5, FTI, and Hyperform are installed in the tool design section. Total number of design stations – 40. Advanced CNC machines from Mitsubishi Japan for tool machining, die-Spotting, and tryout presses are used for manufacturing of press tools
               </li>
             </ul>
