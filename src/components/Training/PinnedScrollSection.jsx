@@ -37,12 +37,12 @@ const PinnedScrollSection = () => {
   return (
     <div className="relative">
       {/* Container height set to 400vh for slow scroll */}
-      <div ref={containerRef} className="h-[600vh] md:h-[800vh] relative bg-white">
+      <div ref={containerRef} className="h-[400vh] sm:h-[500vh] md:h-[600vh] lg:h-[800vh] relative bg-white">
         <div className="sticky top-0 h-screen w-full bg-white flex items-center justify-center">
-          <div className="px-4 md:px-6 lg:px-20 mx-auto w-full max-w-7xl bg-white h-full flex flex-col md:flex-row items-center gap-6 md:gap-8 lg:gap-12">
+          <div className="px-3 sm:px-4 md:px-6 lg:px-20 mx-auto w-full max-w-7xl bg-white h-full flex flex-col md:flex-row items-center gap-8 sm:gap-10 md:gap-8 lg:gap-12">
             {/* Left Side - Stacked Images */}
-            <div className="w-full md:w-2/5 h-[400px] md:h-[500px] relative bg-white flex items-center justify-center">
-              <div className="relative w-[450px] md:w-[600px] h-[280px] md:h-[380px]">
+            <div className="w-full md:w-2/5 h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] relative bg-white flex items-center justify-center">
+              <div className="relative w-[280px] sm:w-[350px] md:w-[450px] lg:w-[600px] h-[180px] sm:h-[220px] md:h-[280px] lg:h-[380px]">
                 {cards.map((card, index) => {
                   // Slower transitions - each card gets more scroll space with overlap
                   const start = index * 0.25;
@@ -120,8 +120,8 @@ const PinnedScrollSection = () => {
             </div>
 
             {/* Right Side - Text */}
-            <div className="w-full md:w-3/5 h-[400px] md:h-[500px] relative flex items-start justify-center flex-col">
-              <div className="relative w-full space-y-8 md:space-y-10">
+            <div className="w-full md:w-3/5 h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] relative flex items-start justify-center flex-col">
+              <div className="relative w-full space-y-4 sm:space-y-6 md:space-y-8 lg:space-y-10">
                 {cards.map((card, index) => {
                   // Slower transitions - each card gets more scroll space with overlap
                   const start = index * 0.25;
@@ -170,8 +170,8 @@ const PinnedScrollSection = () => {
                         zIndex: index,
                       }}
                     >
-                      <div className="bg-white p-6 md:p-8 lg:p-10 rounded-xl shadow-md border border-gray-200">
-                        <p className="text-gray-700 leading-relaxed" style={{ fontSize: '20px' }}>
+                      <div className="bg-white p-3 sm:p-4 md:p-6 lg:p-8 xl:p-10 rounded-xl shadow-md border border-gray-200">
+                        <p className="text-gray-700 leading-relaxed text-sm sm:text-base md:text-lg lg:text-xl xl:text-[20px]">
                           {card.description}
                         </p>
                       </div>

@@ -49,8 +49,8 @@ const FinanceHero = () => {
                     </div>
 
                     {/* Centered Text and Timeline Container */}
-                    <div className="absolute lg:bottom-10 lg:left-10  text-left">
-            <h1 className="text-[#FFFCFC] text-[54px] font-[500] leading-[3.9rem]">
+                    <div className="absolute bottom-6 left-6 sm:bottom-8 sm:left-8 lg:bottom-10 lg:left-10 text-left">
+            <h1 className="text-[#FFFCFC] text-[32px] sm:text-[42px] md:text-[48px] lg:text-[54px] font-[500] leading-tight sm:leading-[3.2rem] lg:leading-[3.9rem]">
               Finance
             </h1>
           </div>

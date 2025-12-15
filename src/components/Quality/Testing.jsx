@@ -188,7 +188,7 @@ const Testing = () => {
       </div>
 
       {/* Navigation Buttons - Responsive positioning */}
-      <div className="absolute bottom-4 right-4 flex gap-2 z-10">
+      <div className="absolute bottom-2 sm:bottom-4 right-4 flex gap-2 z-10">
         <button
           onClick={prevSlide}
           className="bg-[#FF0000] hover:bg-[#ff0000e5] text-white rounded-full p-2 sm:p-3 shadow-lg transition-all duration-200 hover:scale-110 disabled:opacity-50"

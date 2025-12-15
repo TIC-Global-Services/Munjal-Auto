@@ -84,7 +84,8 @@ const Policy = () => {
         </div>
   
         {/* Mobile version */}
-        <div className="lg:px-10 bg-white py-10"> <div className="bg-white relative px-8 py-20 mt-20 block lg:hidden mb-[380px] rounded-[6px] shadow-lg border border-gray-200">
+        <div className="lg:px-10 bg-white py-10"> 
+          <div className="bg-white relative px-8 py-20 mt-20 block lg:hidden rounded-[6px] shadow-lg border border-gray-200">
           {/* Header section */}
           <div className="mb-8">
             <h2 className="text-[#ED1C24] text-2xl sm:text-3xl font-[500] mb-4">
@@ -123,9 +124,10 @@ const Policy = () => {
         
         </div>
           {/* 3D Model section */}
-       <div className="absolute -bottom-[520px] md:left-1 lg:block md:hiddenc hidden">
-       <ModelViewer />
-
+       <div className="block lg:hidden mt-4">
+         <div className="flex justify-center">
+           <ModelViewer />
+         </div>
        </div>
          
        
@@ -211,12 +213,24 @@ const Policy = () => {
           }
         });
 
-        // Center and scale model
+        // Center and scale model with responsive scaling
         const box = new THREE.Box3().setFromObject(model);
         const center = box.getCenter(new THREE.Vector3());
         const size = box.getSize(new THREE.Vector3());
         const maxDim = Math.max(size.x, size.y, size.z);
-        const scale = 3 / maxDim;
+        
+        // Responsive scaling based on screen size
+        const isMobile = window.innerWidth < 640;
+        const isTablet = window.innerWidth < 1024;
+        let scale;
+        
+        if (isMobile) {
+          scale = 2 / maxDim; // Smaller scale for mobile
+        } else if (isTablet) {
+          scale = 2.5 / maxDim; // Medium scale for tablet
+        } else {
+          scale = 3 / maxDim; // Full scale for desktop
+        }
 
         model.position.set(-center.x, -center.y + 1, -center.z);
         model.scale.setScalar(scale);
@@ -274,7 +288,7 @@ const Policy = () => {
 
   return (
     <div
-      className="absolute md:w-[600px] md:h-[600px] w-[400px] h-[500px] md:mt-0 mt-10"
+      className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[400px] md:h-[400px] lg:w-[600px] lg:h-[600px] mx-auto"
       style={{ zIndex: 50 }}
     >
       <div
@@ -288,7 +302,7 @@ const Policy = () => {
       />
       {loading && (
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-white font-medium">Loading 3D Model...</div>
+          <div className="text-gray-600 font-medium text-sm">Loading 3D Model...</div>
         </div>
       )}
     </div>

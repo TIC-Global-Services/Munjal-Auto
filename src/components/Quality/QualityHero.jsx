@@ -56,9 +56,9 @@ const QualityHero = () => {
 
 
                     {/* Centered Text and Timeline Container */}
-                        <div className="absolute lg:bottom-10 lg:left-10  text-left">
-            <h1 className="text-[#FFFCFC] text-[54px] font-[500] leading-[3.9rem]">
-              Quality And Technology
+                        <div className="absolute bottom-6 left-6 sm:bottom-8 sm:left-8 lg:bottom-10 lg:left-10 text-left">
+            <h1 className="text-[#FFFCFC] text-[28px] sm:text-[36px] md:text-[44px] lg:text-[54px] font-[500] leading-tight sm:leading-[2.8rem] lg:leading-[3.9rem]">
+            Quality And Technology
             </h1>
           </div>
 

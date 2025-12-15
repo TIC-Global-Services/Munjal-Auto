@@ -136,15 +136,15 @@ const ElectronicsContent = () => {
             {/* Bullet Points */}
             <ul className="space-y-3 pt-4">
               <li className="flex items-start gap-2 text-base md:text-lg lg:text-xl xl:text-[20px] font-[400] leading-relaxed text-gray-600">
-                <span className="text-[#ED1C24] mt-1">•</span>
+                <span className="text-[#82848A] mt-1">•</span>
                 <span>Advanced facility for high-precision electronics.</span>
               </li>
               <li className="flex items-start gap-2 text-base md:text-lg lg:text-xl xl:text-[20px] font-[400] leading-relaxed text-gray-600">
-                <span className="text-[#ED1C24] mt-1">•</span>
+                <span className="text-[#82848A] mt-1">•</span>
                 <span>ISO 9001 Certified with zero-defect focus.</span>
               </li>
               <li className="flex items-start gap-2 text-base md:text-lg lg:text-xl xl:text-[20px] font-[400] leading-relaxed text-gray-600">
-                <span className="text-[#ED1C24] mt-1">•</span>
+                <span className="text-[#82848A] mt-1">•</span>
                 <span>100% Compliance with international quality and safety standards</span>
               </li>
             </ul>
@@ -376,19 +376,19 @@ const ElectronicsContent = () => {
             <div className="space-y-4 sm:space-y-5 order-1 lg:order-2">
               <ul className="space-y-2 sm:space-y-3">
                 <li className="flex items-start gap-2 sm:gap-3 text-base sm:text-lg md:text-[20px] font-[400] leading-relaxed sm:leading-[30px] text-[#82848A]">
-                  <span className="text-[#ED1C24] mt-1 flex-shrink-0">•</span>
+                  <span className="text-[#82848A] mt-1 flex-shrink-0">•</span>
                   <span>Experienced team with diverse technical expertise.</span>
                 </li>
                 <li className="flex items-start gap-2 sm:gap-3 text-base sm:text-lg md:text-[20px] font-[400] leading-relaxed sm:leading-[30px] text-[#82848A]">
-                  <span className="text-[#ED1C24] mt-1 flex-shrink-0">•</span>
+                  <span className="text-[#82848A] mt-1 flex-shrink-0">•</span>
                   <span>Rapid development cycles using agile methodologies.</span>
                 </li>
                 <li className="flex items-start gap-2 sm:gap-3 text-base sm:text-lg md:text-[20px] font-[400] leading-relaxed sm:leading-[30px] text-[#82848A]">
-                  <span className="text-[#ED1C24] mt-1 flex-shrink-0">•</span>
+                  <span className="text-[#82848A] mt-1 flex-shrink-0">•</span>
                   <span>Scalable and future-proof electronics solutions.</span>
                 </li>
                 <li className="flex items-start gap-2 sm:gap-3 text-base sm:text-lg md:text-[20px] font-[400] leading-relaxed sm:leading-[30px] text-[#82848A]">
-                  <span className="text-[#ED1C24] mt-1 flex-shrink-0">•</span>
+                  <span className="text-[#82848A] mt-1 flex-shrink-0">•</span>
                   <span>Strong financial backing for R&D and production scaling.</span>
                 </li>
               </ul>
