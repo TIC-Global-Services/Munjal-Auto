@@ -94,7 +94,7 @@ Bawal
         <AnimatePresence>
           {hoveredHar && (
             <motion.p
-              initial={{ opacity: 0, x:- 10 }}
+              initial={{ opacity: 0, x:-10 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -10 }}
               transition={{ duration: 0.3 }}
@@ -137,7 +137,7 @@ Bawal
 
       {/* Dot 4 */}
       <div
-      className="absolute top-[40%] left-[10%] w-fit flex items-center"
+      className="absolute top-[41%] left-[12%] w-fit flex items-center"
       onMouseEnter={() => setHoveredDhar(true)}
       onMouseLeave={() => setHoveredDhar(false)}
     >
@@ -151,7 +151,7 @@ Bawal
         <AnimatePresence>
           {hoveredDhar && (
             <motion.p
-              initial={{ opacity: 0, x:- 10 }}
+              initial={{ opacity: 0, x:- 9 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -10 }}
               transition={{ duration: 0.3 }}
@@ -163,6 +163,7 @@ Bawal
         </AnimatePresence>
       </div>
     </div>
+     
 
     </div>
   );

@@ -67,13 +67,13 @@ const HomeHero = () => {
                 </video>
 
                 <div className="absolute bottom-5 right-5 flex flex-col items-center space-y-5 z-[999]">
-                    <Link to="/contact">
+                    {/* <Link to="/contact">
                         <img
                             src={icon1}
                             alt="contact"
                             className="w-[30px] md:w-[40px] cursor-pointer hover:scale-125"
                         />
-                    </Link>
+                    </Link> */}
 
                     <Link to="/contact">
                         <img
@@ -128,9 +128,13 @@ const HomeHero = () => {
                         Munjal Auto Industries delivers quality and cutting-edge
                         technology that drives progress.
                     </p>
-                    <Link to="/products">
+                    
+                </div>
+
+                         <div className='absolute left-2 lg:left-5 bottom-5 lg:bottom-10'>
+                                 <Link to="/products">
                         <button
-                            className={`mt-6 px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-gray-200 hover:scale-105 transition-all duration-300 shadow-lg ${isVisible
+                            className={`mt-6 px-3 lg:px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-gray-200 hover:scale-105 transition-all duration-300 shadow-lg ${isVisible
                                 ? "opacity-100 translate-y-0"
                                 : "opacity-0 translate-y-8"
                                 }`}
@@ -138,10 +142,9 @@ const HomeHero = () => {
                             Explore Our Innovations
                         </button>
                     </Link>
-                </div>
-
-
+                            </div>
             </div>
+                           
         </div>
     )
 }

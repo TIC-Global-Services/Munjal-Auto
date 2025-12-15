@@ -196,8 +196,8 @@ const MunjalAutoGroup = () => {
   }, []);
 
   return (
-    <div id="munjal-group" className="max-w-7xl mx-auto p-4 my-12">
-      <div className="bg-[#f1eeee] rounded-3xl p-8 md:p-12 lg:p-16 relative overflow-hidden min-h-[50dvh]">
+    <div id="munjal-group" className="max-w-8xl  px-20 my-12">
+      <div className="bg-[#f1eeee] rounded-3xl p-8 md:p-12 lg:p-16 relative overflow-hidden min-h-[858px]">
         {/* Content Container */}
         <div className="grid grid-cols-1 md:grid-cols-2 w-full ">
           {/* Left Content */}
@@ -216,7 +216,7 @@ const MunjalAutoGroup = () => {
               <h2 className="lg:text-4xl  md:text-4xl  text-2xl font-semibold text-black tracking-tight mb-2">
                 <span className="text-[#FF0000]">Munjal Auto</span> Group
               </h2>
-              <p className="text-black md:text-lg  text-xs ld:text-lg leading-relaxed">
+              <p className="text-black md:text-[18px]  text-xs lg:text-[18px] leading-relaxed">
                 The Munjal Auto Group is a multi-sector engineering powerhouse
                 specializing in sheet metal components and composite mold
                 manufacturing. Our group companies deliver advanced solutions

@@ -12,7 +12,7 @@ function ModelViewer({ scrollProgress }) {
     const modelContainerRef = useRef(null);
     const modelRef = useRef(null);
     const lightsRef = useRef([]);
-  
+   
     useEffect(() => {
       const scene = new THREE.Scene();
       scene.background = new THREE.Color(0xffffff);
@@ -277,7 +277,7 @@ function ModelViewer({ scrollProgress }) {
         scene.clear();
       };
     }, []);
-  
+   
     return (
       <div className="relative w-full h-full">
         <div
@@ -302,26 +302,26 @@ const WhyMunjalAutos = () => {
     const features = [
       {
         title: "Light Weight Solutions",
-        description: "OEM partnerships, including Hero MotoCorp.",
+        description: "Integrating composite and steel technology to reducing CO2 Footprint",
       },
       {
         title: "R&D & Engineering Focus",
-        description: "Over three decades of innovation and excellence.",
+        description: "Partnering with customer with end to end engineering solutions",
       },
       {
         title: "Trusted by Industry",
-        description: "Eco-friendly processes and materials.",
+        description: "Recognized by our esteemed customers\n 1. TATA Motors : Quality Excellence Award.\n 2. Hero MotoCorp Ltd: Sliver Award for fabrication category.",
       },
     ];
-  
+   
     const containerRef = useRef(null);
     const { scrollYProgress } = useScroll({
       target: containerRef,
       offset: ["start start", "end end"],
     });
-  
+   
     const [isMobile, setIsMobile] = useState(false);
-  
+   
     useEffect(() => {
       const handleResize = () => {
         setIsMobile(window.innerWidth < 768);
@@ -330,9 +330,9 @@ const WhyMunjalAutos = () => {
       window.addEventListener("resize", handleResize);
       return () => window.removeEventListener("resize", handleResize);
     }, []);
-  
+   
     return (
-      <div className="relative py-10 md:py-40 min-h-screen" ref={containerRef}>
+      <div className="relative lg:px-7 py-10 md:py-40 min-h-screen" ref={containerRef}>
         {/* Background gradient - fixed positioning issues */}
         <div className="sticky top-0 left-0 z-[70] bg-black pointer-events-none h-0 overflow-hidden">
           <img
@@ -343,7 +343,7 @@ const WhyMunjalAutos = () => {
         </div>
   
         {/* Main content container with proper height */}
-        <div className=" md:min-h-[600vh] px-4 md:px-20">
+        <div className="md:min-h-[600vh] px-4 md:px-20">
           <motion.div
             className="container flex flex-col md:flex-row gap-8 md:gap-0"
             style={{
@@ -365,7 +365,7 @@ const WhyMunjalAutos = () => {
                 Auto ?
               </h2>
   
-              <p className="text-gray-700 text-sm md:text-base  leading-relaxed max-w-2xl">
+              <p className="text-gray-700 text-[30px] md:text-base leading-[30px] max-w-2xl">
                Munjal Auto is a trusted name in the automotive industry, delivering critical components like exhaust systems, fuel tanks, rims, and BIW parts—engineered for superior performance and safety. Beyond automotive, our renewable energy solutions, including windmill blades and specialized components, drive advancements in clean energy. With a blend of engineering excellence and forward-thinking design, we create solutions that power industries into the future.
               </p>
   
@@ -379,12 +379,12 @@ const WhyMunjalAutos = () => {
             {/* Right content section */}
             <div className="flex flex-col md:flex-row items-center w-full md:w-[85%] space-y-6 md:space-y-0">
               {/* 3D Model Viewer */}
-              <div className="w-full max-w-md md:max-w-none h-[250px] md:h-[350px] lg:h-[400px] ">
+              <div className="w-full max-w-md md:max-w-none h-[250px] md:h-[350px] lg:h-[400px]">
                 <ModelViewer scrollProgress={scrollYProgress} />
               </div>
   
               {/* Features list */}
-              <div className="space-y-6 w-full md:w-full md:ml-8 lg:ml-0 md:mt-0 lg:-mt-40 ">
+              <div className="space-y-6 w-full md:w-full md:ml-8 lg:ml-0 md:mt-0 lg:-mt-40">
                 {features.map((feature, index) => {
                   // Improved scroll trigger points
                   const startPoint = Math.min(0.1 + index * 0.15, 0.7);
@@ -409,10 +409,10 @@ const WhyMunjalAutos = () => {
                         ),
                       }}
                     >
-                      <h3 className="text-lg md:text-xl lg:text-2xl text-[#151414] font-medium mb-2">
+                      <h3 className="text-lg md:text-xl lg:text-[36px] text-[#151414] font-medium mb-2">
                         {feature.title}
                       </h3>
-                      <p className="text-[#8C8989] text-sm md:text-base leading-relaxed">
+                      <p className="text-[#8C8989] text-sm whitespace-pre-line md:text-base leading-relaxed">
                         {feature.description}
                       </p>
                     </motion.div>
@@ -426,8 +426,5 @@ const WhyMunjalAutos = () => {
     );
   };
 
-
-
-  
 
 export default WhyMunjalAutos

@@ -4,7 +4,7 @@ const groupCompanies = () => {
       <div className="flex justify-center mt-10">
         <div className="text-center max-w-[884px]">
           <h1 className="text-[46px]">Group Companies</h1>
-          <p className="text-[18px]">
+          <p className="text-[18px] mt-5">
             Munjal Auto Industries and Indutch Composites Technology Limited
             together represent the group’s diverse strengths in engineering and
             manufacturing. While Munjal Auto is a leader in automotive systems
