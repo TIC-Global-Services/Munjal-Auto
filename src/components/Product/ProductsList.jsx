@@ -500,7 +500,10 @@ const ProductsList = () => {
               className="mb-12 overflow-hidden bg-white p-4 rounded-xl"
             >
               {/* Desktop Layout: Row with 3 columns */}
-              <div className="hidden md:grid md:grid-cols-12 lg:grid-cols-12 gap-0 items-end min-h-[432px] w-full max-w-7xl mx-auto">
+              <motion.div
+            layout
+  transition={{ duration: 1, ease: "easeInOut" }}
+              className={`hidden md:grid md:grid-cols-12 lg:grid-cols-12 gap-0  min-h-[432px] w-full max-w-7xl mx-auto   ${expandedItems[index] ? "items-start" : "items-end"} `}>
                 {/* Image Section - Takes 4 columns on md, 3 on lg */}
                 <div className="md:col-span-4 lg:col-span-3 bg-[#EBEBEF] flex items-center justify-center p-6 h-full">
                   <motion.div
@@ -511,7 +514,7 @@ const ProductsList = () => {
                       rotate: 0,
                     }}
                     transition={{
-                      delay: 0.3,
+                      delay: 0.4,
                       duration: 0.6,
                       ease: "easeOut",
                     }}
@@ -526,7 +529,7 @@ const ProductsList = () => {
                 </div>
 
                 {/* Content Section - Takes 6 columns on md, 7 on lg */}
-                <div className="md:col-span-6 lg:col-span-7 p-6 text-[#ED1C24] relative ">
+                <motion.div layout transition={{ duration: 0.6, ease: "easeInOut" }} className="md:col-span-6 lg:col-span-7 p-6 text-[#ED1C24] relative ">
                   {!expandedItems[index] && (
                     <h1 className="text-[130px] font-bold text-gray-300/20 mb-2 absolute -top-24">
                       0{index + 1}
@@ -586,7 +589,7 @@ const ProductsList = () => {
                       </AnimatePresence>
                     </motion.div>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Button Section - Takes 2 columns, positioned bottom right */}
                 <div className="md:col-span-2 lg:col-span-2 p-6 flex items-end justify-end h-full">
@@ -602,7 +605,7 @@ const ProductsList = () => {
                     {expandedItems[index] ? "Show Less" : "Learn More"}
                   </motion.button>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Mobile Layout: Keep your original mobile design */}
               <div className="md:hidden px-5">
