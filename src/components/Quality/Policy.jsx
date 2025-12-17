@@ -30,7 +30,7 @@ const Policy = () => {
     return (
       <>
         {/* Desktop version */}
-        <div className="relative w-full h-screen items-center justify-center my-20 hidden lg:block bg-white border border-gray-300 rounded-lg">
+        <div className="relative w-full h-screen items-center justify-center my-20 hidden lg:block rounded-lg">
           {/* Background image */}
           <div className="absolute inset-0 w-full h-full z-0 max-h-[621px] mx-auto bg-white">
             <img
