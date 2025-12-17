@@ -17,11 +17,23 @@ const GlobalPresence = () => {
             footprint spans across continents, delivering tailored engineering
             solutions to markets in Asia, Europe, North America, and beyond.
           </p>
-          <Link to="/about-us">
+          <div className="flex gap-4">
+            <Link to="/about-us">
             <button className="bg-white text-black md:text-base text-sm px-6 py-2 rounded-full hover:bg-gray-200 transition-colors">
               More About Us
             </button>
           </Link>
+          <Link to="/">
+            <button className="bg-[#FF0000] text-white md:text-base text-sm px-6 py-2 rounded-full hover:bg-gray-200 transition-colors">
+              Munjal Auto
+            </button>
+          </Link>
+          <Link to="/">
+            <button className="bg-[#139DBC] text-white md:text-base text-sm px-6 py-2 rounded-full hover:bg-gray-200 transition-colors">
+              Indutch Composite
+            </button>
+          </Link>
+          </div>
         </div>
 
         <div className="  md:w-1/3 ">

@@ -119,7 +119,7 @@ const HomeHero = () => {
                     </h1>
 
                     <p
-                        className={` block text-white md:text-md text-sm mt-4 mb-6 md:max-w-xl max-w-xs mx-auto leading-relaxed transition-all duration-1000 delay-300 ${isVisible
+                        className={` block text-white md:text-md text-sm mt-4 mb-3 md:max-w-xl max-w-xs mx-auto leading-relaxed transition-all duration-1000 delay-300 ${isVisible
                             ? "opacity-100 translate-y-0"
                             : "opacity-0 translate-y-8"
                             }`}
@@ -128,10 +128,21 @@ const HomeHero = () => {
                         Munjal Auto Industries delivers quality and cutting-edge
                         technology that drives progress.
                     </p>
-                    
+                         <div className='block lg:hidden'>
+                                 <Link to="/products">
+                        <button
+                            className={`mt-1 px-3 lg:px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-gray-200 hover:scale-105 transition-all duration-300 shadow-lg ${isVisible
+                                ? "opacity-100 translate-y-0"
+                                : "opacity-0 translate-y-8"
+                                }`}
+                        >
+                            Explore Our Innovations
+                        </button>
+                    </Link>
+                            </div>
                 </div>
 
-                         <div className='absolute left-2 lg:left-5 bottom-5 lg:bottom-10'>
+                         <div className='lg:absolute  hidden lg:block lg:left-5 lg:bottom-10'>
                                  <Link to="/products">
                         <button
                             className={`mt-6 px-3 lg:px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-gray-200 hover:scale-105 transition-all duration-300 shadow-lg ${isVisible

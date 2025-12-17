@@ -25,7 +25,7 @@ const Facilities = () => {
     ];
 
     return (
-        <div>
+        <div className='bg-[#fbfbfc]'>
             <FacilitiesHero />
             <FacilitiesBentoGrid
                 activeTab={activeTab}

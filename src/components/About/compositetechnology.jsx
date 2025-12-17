@@ -2,6 +2,7 @@ import indutch1 from "../../assets/about/indutch_composite.png";
 import indutch2 from "../../assets/about/inductch_composite_2.svg";
 import indutch3 from "../../assets/about/induch_composite_3.png";
 import inductch4 from "../../assets/about/indutch_composite_4.png";
+
 import inductch from "../../assets/about/indutch5.jpg";
 const CompositeTechnology = () => {
   return (
@@ -24,11 +25,11 @@ const CompositeTechnology = () => {
         {/* First Content Section */}
         <div className="mb-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="order-2 lg:order-1">
+            <div className="order-2 lg:order-1 max-w-[592px]">
               <img
                 src={indutch1}
                 alt="Indutch Composite Technology"
-                className="w-full h-auto rounded-xl shadow-lg"
+                className="object-cover  h-auto rounded-xl shadow-lg"
               />
             </div>
             <div className="order-1 lg:order-2">
@@ -96,7 +97,7 @@ const CompositeTechnology = () => {
 
         <div className="py-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10">
-          <div className="relative h-96">
+          <div className="relative h-full w-full">
             <img
               src={indutch3}
               alt="inductch"
@@ -124,7 +125,7 @@ const CompositeTechnology = () => {
               </div>
             </div>
           </div>
-          <div className="relative h-96">
+          <div className="relative h-full">
             <img
               src={inductch4}
               alt="inductch"
@@ -173,29 +174,29 @@ const CompositeTechnology = () => {
 
         <div className="py-10">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-10 items-center">
-          <div className="h-64">
+          <div className="w-full h-full">
             <img
               src={inductch}
               alt="windturbine"
-              className="w-full h-full object-cover rounded-[12px]"
+              className="object-cover h-[340px] w-full rounded-[12px]"
             />
           </div>
           <div>
             <div>
-              <p>
+              <p className="text-[20px] leading-[28px]">
                 Indutch has the capabilities to design and manufacture moulds
                 and products for various Engineering industries such as Auto,
                 Defence, Railways, Aviation, Space, Marine, Home appliances,
                 mass transit, just to name a few. Today Wind sector is the core
                 business at Indutch.
               </p>
-              <p>Indutch has 4 manufacturing facilities</p>
+              <p className="text-[18px] mt-4">Indutch has 4 manufacturing facilities</p>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                 {["Chennai", "Halol", "Manjusar", "Waghodia"].map(
                   (process, index) => (
-                    <div key={index} className="flex items-center">
+                    <div key={index} className="flex items-center mt-2">
                       <div className="w-2 h-2 bg-black rounded-full mr-3"></div>
-                      <span className="text-gray-700 font-medium">
+                      <span className="text-gray-700 font-medium text-[18px]">
                         {process}
                       </span>
                     </div>

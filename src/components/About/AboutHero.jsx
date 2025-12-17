@@ -1,7 +1,7 @@
 import { useEffect,  } from 'react'
 import { Link,  } from 'react-router-dom';
 import img from "../../assets/aboutusbanner.png";
-import logo from "../../assets/companyLogo.png";
+import logo from "../../assets/logo.png";
 import icon1 from "../../assets/hero/icon.png";
 import icon2 from "../../assets/hero/icon2.png";
 import TimeLine from './TimeLine';
@@ -37,7 +37,7 @@ const AboutHero = () => {
         <div id="history" className="h-screen w-full overflow-hidden   flex flex-col items-center justify-center relative overflow-hidden">
             {/* Background Image with Logo */}
             <div
-                
+                 
                 className="h-[90%] w-[94%] flex flex-col items-center justify-center rounded-[24px] relative"
                 style={{
                     backgroundImage: `url(${img})`,
@@ -48,27 +48,27 @@ const AboutHero = () => {
             >
                 {/* Logo */}
                 <Link to="/">
-                    <img
-                        src={logo}
-                        alt="Logo"
-                        className="absolute top-0 w-[180px] md:w-[250px] left-1/2 transform -translate-x-1/2"
-                    />
+                      <img
+                                        src={logo}
+                                        alt="Company Logo"
+                                        className="absolute -top-[0.9px] w-[80%] md:w-[60%] lg:w-1/3 max-w-md left-1/2 transform -translate-x-1/2 z-20"
+                                    />
                 </Link>
 
                 <div className="absolute bottom-5 right-5 flex flex-col items-center space-y-5 z-[999]">
-                    <Link to="/contact">
+                    {/* <Link to="/contact">
                         <img
                             src={icon1}
                             alt="contact"
                             className="w-[30px] md:w-[40px] cursor-pointer hover:scale-125"
                         />
-                    </Link>
+                    </Link> */}
 
                     <Link to="/contact">
                         <img
                             src={icon2}
                             alt="contact"
-                            className="w-[55px] cursor-pointer hover:scale-125"
+                            className="w-[45px] md:w-[55px] cursor-pointer hover:scale-125"
                         />
                     </Link>
                 </div>

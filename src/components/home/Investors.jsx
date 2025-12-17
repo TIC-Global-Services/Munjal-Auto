@@ -36,7 +36,7 @@ const Investors = () => {
           animate={isInView ? "visible" : "hidden"}
           className="md:flex mx-auto items-center  py-10 justify-center"
         >
-          <motion.div className="w-[100%] md:pr-20 mx-auto text-white flex md:flex-row flex-col items-center justify-between rounded-[20px] overflow-hidden">
+          <motion.div className="w-[100%] md:pr-20 mx-auto text-white flex md:flex-row flex-col items-start justify-between rounded-[20px] overflow-hidden">
             {/* Left Section */}
             <motion.div variants={itemVariants} className="flex-1 md:pl-20 md:px-0 px-4">
               <motion.div variants={itemVariants} className="uppercase tracking-wider text-xs md:text-sm text-black">
@@ -57,7 +57,7 @@ const Investors = () => {
                   Contact Us
                 </motion.button>
               </Link>
-  
+             
             </motion.div>
   
             {/* Right Section */}
@@ -67,12 +67,13 @@ const Investors = () => {
                 alt="Automotive manufacturing assembly line"
                 className="w-full h-full object-cover"
               />
-            </motion.div>
-            <Link to='/contact'>
-              <motion.button variants={itemVariants} className="bg-black flex items-start justify-start md:hidden relative  w-fit text-white px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
+               <Link to='/contact'>
+              <motion.button variants={itemVariants} className="bg-black flex items-start justify-start md:hidden relative mt-5  w-fit text-white px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors">
                 Contact Us
               </motion.button>
             </Link>
+            </motion.div>
+            
   
           </motion.div>
         </motion.div>

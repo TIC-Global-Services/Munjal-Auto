@@ -3,8 +3,9 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { useEffect, useRef, useState } from "react";
 import faBento2 from "../../assets/Facilities/Rectangle 34625219.png";
 import faBento4 from "../../assets/Facilities/tools.jpeg";
-import faBento3 from "../../assets/faBento3.png";
+import faBento3 from "../../assets/faBento4.png";
 import tooldesign from "../../assets/Facilities/tooldesign.png";
+import tooldesign1 from "../../assets/Facilities/tooldesign1.png";
 import  Toolmanufacturing from './toolmanufacturing'
 
 
@@ -297,18 +298,18 @@ const FacilitiesContent = ({ content }) => {
     return (
         <div className="max-w-7xl mx-auto px-4 mb-20">
             {/* Hero Section */}
-            <div className="flex flex-col lg:flex-row items-stretch bg-black text-white rounded-[20px] overflow-hidden mb-8">
+            <div className="flex flex-col py-10 lg:flex-row items-stretch bg-black text-white rounded-[20px] overflow-hidden mb-8">
                 {/* Left Side - Content */}
                 <div className="flex-1 p-8 lg:p-12 flex flex-col justify-center">
-                    <h2 className="text-[#FF252E] text-[20px] font-medium mb-4">
+                    <h2 className="text-[#FF252E] text-[14px] lg:text-[20px]  font-medium mb-4">
                         {content.title}
                     </h2>
 
-                    <p className="text-white text-2xl mb-6">
+                    <p className="text-white lg:leading-[34px] text-[14px] leading-[20px] lg:text-2xl mb-6 lg:max-w-[481px]">
                         {content.description}
                     </p>
 
-                    <button className="bg-white text-black px-6 py-3 rounded-[12px] font-medium hover:bg-gray-100 transition-colors w-fit">
+                    <button className="bg-white text-black lg:text-[16px] text-[14px]  px-6 py-3 rounded-[12px] font-medium hover:bg-gray-100 transition-colors w-fit">
                         Explore More
                     </button>
                 </div>
@@ -321,12 +322,12 @@ const FacilitiesContent = ({ content }) => {
 
             {/* Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 gap-4 lg:gap-5">
-                <div className="lg:col-span-3 rounded-[20px] bg-[#EAEAEA] p-6 md:p-8 lg:p-6 xl:p-10">
-                    <h1 className="text-[#FF0000] text-xl lg:text-xl xl:text-2xl">
-                        <span className="text-black"> World-</span>
+                <div className="lg:col-span-4 rounded-[20px] bg-[#EAEAEA] p-6 md:p-8 lg:p-6 xl:p-10">
+                    <h1 className="text-[#ED1C24]  text-[18px] lg:text-[24px] xl:text-[24px] w-full">
+                        <span className="text-black font-normal"> World-</span>
                         Class Manufacturing
                     </h1>
-                    <p className="text-base lg:text-sm xl:text-base mt-4 text-black">
+                    <p className="text-[12px]  lg:text-sm leading-[26px] xl:text-base mt-4 text-[#636161]">
                         From sheet metal components to complete assemblies, our
                         manufacturing plants leverage cutting-edge technology to produce
                         high-performance auto components. With a focus on sustainability and
@@ -334,7 +335,7 @@ const FacilitiesContent = ({ content }) => {
                     </p>
                 </div>
 
-                <div className="lg:col-span-2 rounded-[20px] h-[300px] lg:h-auto">
+                <div className="relative lg:col-span-2 rounded-[20px] h-[300px] lg:h-auto">
                     <img
                         src={faBento4}
                         alt=""
@@ -342,39 +343,52 @@ const FacilitiesContent = ({ content }) => {
                     />
                 </div>
 
-                <div className="lg:col-span-5 bg-[#9B9C9F33] overflow-hidden rounded-[20px] grid grid-cols-1 lg:grid-cols-2 md:px-10">
+                <div className=" relative lg:col-span-4 bg-[#9B9C9F33] overflow-hidden rounded-[20px]  grid grid-cols-1  gap-6 lg:grid-cols-5 px-3">
                     <img
                         src={faBento3}
                         alt=""
-                        className="h-[300px] lg:h-[95%] w-full object-contain md:-ml-20 -ml-[50px] lg:mt-5"
+                        className="absolute lg:left-[-130px] h-[300px] col-span-2 lg:block hidden lg:h-full w-full object-contain md:-ml-20 -ml-[50px] lg:mt-5"
                     />
-                    <div className="flex flex-col  text-right items-center justify-center p-6 lg:p-0 gap-4 lg:gap-10">
-                        <h1 className="text-xl lg:text-xl xl:text-2xl w-full lg:w-[90%] font-medium text-black">
+                    <div></div>
+                    <div></div>
+                    <div className="flex justify-end flex-col col-span-3 lg:h-[357px] lg:-translate-x-3 lg:-translate-y-6 lg:text-right text-center items-center  lg:py-4 gap-4 lg:gap-2">
+                        <h1 className="text-[18px] mb-3 lg:text-[24px] xl:text-[22px] lg:hidden block -translate-x-8 translate-y-6   lg:w-full font-medium text-black">
                             Cutting- <span className="text-[#FF0000]">Edge Facilities</span>
                         </h1>
-                        <p className="text-black text-base lg:text-sm xl:text-base">
+                        <h1 className="text-[18px] mb-3 lg:text-[24px] xl:text-[22px] lg:block  hidden lg:w-full font-medium text-black">
+                            Cutting- <span className="text-[#FF0000]">Edge Facilities</span>
+                        </h1>
+                        <p className="text-[12px] lg:text-right text-left mt-2 lg:mt-0 lg:text-sm xl:text-base w-full leading-[17px] lg:leading-[26px] text-[#706C67]">
                             Equipped with advanced manufacturing technology and in-house R&D,
                             our facilities are designed for efficiency, precision, and
                             scalability. We integrate the latest automation and quality
                             control systems to meet global industry standards.{" "}
                         </p>
                     </div>
+                    <div className="lg:max-w-[300px] mx-auto">
+                         <img
+                        src={faBento3}
+                        alt=""
+                        className= "h-[250px] col-span-2 lg:hidden block lg:h-full w-full lg:object-contain object-cover md:-ml-20 ml-[15px] lg:mt-5"
+                    />
+                    </div>
                 </div>
             </div>
             <div className="mt-20">
                 <h1 className="text-[36px]">Tool Design</h1>
-                <div className="mt-10 flex lg:flex-row flex-col gap-5 ">
+                <div className="mt-14 flex lg:flex-row flex-col gap-5 ">
                     <div className="object-fit lg:w-screen w-fit">
-                        <img src={tooldesign} width={488} height={313} className="rounded-[20px] w-full lg:h-[400px]"/>
+                        <img src={tooldesign} width={488} height={313} className="rounded-[20px] w-full lg:h-[313px] object-cover"/>
+                        <img src={tooldesign1} width={488} height={313} className="rounded-[20px] w-full lg:h-[313px] object-cover mt-4"/>
                     </div>
                     <div>
-                        <p>
+                        <p className="lg:text[16px] text-[14px]">
                             Our Tool Design centers at Bawal and Waghodia are equipped with the latest CAD/CAM software and highly qualified engineering designers. They specialize in designing press tools, jigs, fixtures, gauges, reverse engineering, and manufacturing processes, supported by advanced workstations and plotters for precise, efficient tool development.
                         </p>
                         <div className="grid gap-3 lg:grid-cols-2 mt-10">
                             <div>
-                                <h1 className="text-[#ED1C24] font-semibold text-[26px]">Bawal Haryana</h1>
-                            <ul>
+                                <h1 className="text-[#ED1C24] font-semibold text-[20px] lg:text-[26px]">Bawal Haryana</h1>
+                            <ul className="list-disc grid lg:grid-cols-1 grid-cols-2 gap-4 text-[13px] lg:text-[16px] leading-[20px] lg:leading-[34px] text-[#222222] px-4 mt-5">
                                 <li>Unigraphics NX</li>
                                 <li>Pampstamp</li>
                                 <li>FTI -Fast blank</li>
@@ -384,8 +398,8 @@ const FacilitiesContent = ({ content }) => {
                             </ul>
                             </div>
                             <div>
-                                <h1 className="text-[#ED1C24] font-semibold text-[26px]">Supported By Following Hardware (Work Stations)</h1>
-                            <ul>
+                                <h1 className="text-[#ED1C24] font-semibold text-[20px] lg:text-[26px]">Supported By Following Hardware (Work Stations)</h1>
+                            <ul className="list-disc grid lg:grid-cols-1 grid-cols-2 gap-4 text-[13px] lg:text-[16px] leading-[20px] lg:leading-[34px] text-[#222222] px-4 mt-5">
                                 <li>Unigraphics NX</li>
                                 <li>Pampstamp</li>
                                 <li>FTI -Fast blank</li>
@@ -397,12 +411,12 @@ const FacilitiesContent = ({ content }) => {
                             </ul>
                             </div>
                             <div>
-                                <h1 className="text-[#ED1C24] font-semibold text-[26px]">Waghodia</h1>
-                            <ul>
+                                <h1 className="text-[#ED1C24] font-semibold text-[20px] lg:text-[26px]">Waghodia</h1>
+                            <ul className="list-disc grid lg:grid-cols-1 grid-cols-2 gap-5  text-[13px] lg:text-[16px] leading-[20px] lg:leading-[34px] text-[#222222] px-4 mt-5">
                                 <li>CATIA V-5 –R-60</li>
                                 <li>Pro-E Wildfire</li>
                                 <li>Hyper Form ( Blank & Nest)</li>
-                                <li>AutoCADt</li>
+                                <li>AutoCAD</li>
                             </ul>
                             </div>
                         </div>

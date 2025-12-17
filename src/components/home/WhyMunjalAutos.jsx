@@ -1,26 +1,71 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import gradient from "../../assets/gradient.png";
 import { Link } from 'react-router-dom';
+import FeatureList from './featureList';
 
+// Feature Item Component to handle animations properly
+const FeatureItem = ({ feature, index, scrollYProgress }) => {
+  const startPoint = Math.min(0.1 + index * 0.15, 0.7);
+  const endPoint = Math.min(0.2 + index * 0.15, 0.8);
+  
+  const featureInView = useTransform(
+    scrollYProgress,
+    [startPoint, endPoint],
+    [0, 1]
+  );
+  
+  const transform = useTransform(
+    featureInView,
+    [0, 1],
+    ["translateY(20px)", "translateY(0px)"]
+  );
+  
+  return (
+    <motion.div
+      className="border-b border-gray-200 pb-4 last:border-b-0"
+      style={{
+        opacity: featureInView,
+        transform: transform,
+      }}
+    >
+      <h3 className="text-lg md:text-xl lg:text-2xl text-[#151414] font-medium mb-2">
+        {feature.title}
+      </h3>
+      <p className="text-[#8C8989] text-sm md:text-base leading-relaxed whitespace-pre-line">
+        {feature.description}
+      </p>
+    </motion.div>
+  );
+};
+
+FeatureItem.propTypes = {
+  feature: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+  }).isRequired,
+  index: PropTypes.number.isRequired,
+  scrollYProgress: PropTypes.object.isRequired,
+};
 
 function ModelViewer({ scrollProgress }) {
     const [loading, setLoading] = useState(true);
     const modelContainerRef = useRef(null);
     const modelRef = useRef(null);
     const lightsRef = useRef([]);
-   
+    
     useEffect(() => {
       const scene = new THREE.Scene();
       scene.background = new THREE.Color(0xffffff);
-  
+   
       // Camera positioned closer for bigger apparent size
       const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 1000);
       camera.position.set(5, 2.5, 5);
-  
+   
       // Enhanced renderer settings
       const renderer = new THREE.WebGLRenderer({
         antialias: true,
@@ -277,7 +322,7 @@ function ModelViewer({ scrollProgress }) {
         scene.clear();
       };
     }, []);
-   
+    
     return (
       <div className="relative w-full h-full">
         <div
@@ -298,6 +343,10 @@ function ModelViewer({ scrollProgress }) {
     );
   }
 
+ModelViewer.propTypes = {
+  scrollProgress: PropTypes.object.isRequired,
+};
+
 const WhyMunjalAutos = () => {
     const features = [
       {
@@ -313,78 +362,62 @@ const WhyMunjalAutos = () => {
         description: "Recognized by our esteemed customers\n 1. TATA Motors : Quality Excellence Award.\n 2. Hero MotoCorp Ltd: Sliver Award for fabrication category.",
       },
     ];
-   
+    
     const containerRef = useRef(null);
     const { scrollYProgress } = useScroll({
       target: containerRef,
       offset: ["start start", "end end"],
     });
-   
-    const [isMobile, setIsMobile] = useState(false);
-   
-    useEffect(() => {
-      const handleResize = () => {
-        setIsMobile(window.innerWidth < 768);
-      };
-      handleResize(); // initial check
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
-   
+    
     return (
-      <div className="relative lg:px-7 py-10 md:py-40 min-h-screen" ref={containerRef}>
-        {/* Background gradient - fixed positioning issues */}
-        <div className="sticky top-0 left-0 z-[70] bg-black pointer-events-none h-0 overflow-hidden">
-          <img
-            src={gradient}
-            alt="Gradient"
-            className="absolute top-0 left-0 z-[70] w-full md:w-1/2 h-screen object-cover"
-          />
-        </div>
+      <div className="relative px-2 sm:px-4 md:px-8 lg:px-12 py-6 md:py-16 lg:py-24 min-h-screen md:min-h-[600vh]" ref={containerRef}>
+          {/* Background gradient with responsive positioning and lower z-index */}
+          <div className="sticky top-0 left-0 z-[10] pointer-events-none w-full h-0 overflow-hidden">
+            <img
+              src={gradient}
+              alt="Gradient"
+              className="absolute top-0 left-0 z-[10] w-full md:w-1/2 lg:w-2/5 h-screen object-cover object-left"
+            />
+          </div>
   
-        {/* Main content container with proper height */}
-        <div className="md:min-h-[600vh] px-4 md:px-20">
+        {/* Main content container with responsive height and proper z-index */}
+        <div className="md:min-h-[600vh] px-0">
           <motion.div
-            className="container flex flex-col md:flex-row gap-8 md:gap-0"
-            style={{
-              position: "sticky",
-              top: "clamp(5vh, 10vh, 15vh)",
-              height: "clamp(70vh, 80vh, 90vh)",
-              maxHeight: "90vh",
-            }}
+            className="container mx-auto flex flex-col md:flex-row gap-4 md:gap-8 relative md:sticky z-20 md:top-[clamp(5vh,10vh,15vh)] md:h-[clamp(70vh,80vh,90vh)] md:max-h-[90vh]"
+            style={{}}
           >
-            {/* Left content section */}
-            <div className="flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-4 md:space-y-4 z-[700] w-full md:w-[40%] ">
-              <div className="text-gray-600 text-sm tracking-wider">
-                // ABOUT US
+            {/* Left content section - responsive layout with proper z-index */}
+            <div className="flex flex-col justify-center items-center text-center space-y-2 md:space-y-4 z-[700] w-full md:w-[50%] md:items-start md:text-left relative">
+              <div className="text-gray-600 text-xs sm:text-sm tracking-wider">
+                {"// ABOUT US"}
               </div>
-  
-              <h2 className="text-3xl md:text-5xl font-normal leading-tight">
+ 
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal leading-tight">
                 Why <span className="text-red-500">Munjal</span>
                 <br />
                 Auto ?
               </h2>
-  
-              <p className="text-gray-700 text-[30px] md:text-base leading-[30px] max-w-2xl">
+ 
+              <p className="text-gray-700 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl">
                Munjal Auto is a trusted name in the automotive industry, delivering critical components like exhaust systems, fuel tanks, rims, and BIW parts—engineered for superior performance and safety. Beyond automotive, our renewable energy solutions, including windmill blades and specialized components, drive advancements in clean energy. With a blend of engineering excellence and forward-thinking design, we create solutions that power industries into the future.
               </p>
-  
+ 
               <Link to="/about-us">
-                <button className="bg-black text-white px-6 py-3 md:px-8 md:py-3 text-sm md:text-base rounded-full hover:bg-gray-800 transition-colors ">
+                <button className="bg-black text-white px-4 sm:px-6 py-2 sm:py-3 md:px-8 md:py-3 text-xs sm:text-sm md:text-base rounded-full hover:bg-gray-800 transition-colors mt-2 md:mt-4 z-[710] relative">
                   More About Us
                 </button>
               </Link>
             </div>
   
-            {/* Right content section */}
-            <div className="flex flex-col md:flex-row items-center w-full md:w-[85%] space-y-6 md:space-y-0">
-              {/* 3D Model Viewer */}
-              <div className="w-full max-w-md md:max-w-none h-[250px] md:h-[350px] lg:h-[400px]">
+            {/* Right content section - responsive layout with proper z-index */}
+            <div className="flex flex-col md:flex-row items-center w-full md:w-[85%] space-y-4 md:space-y-0 relative z-[700]">
+              {/* 3D Model Viewer - responsive sizing with proper z-index */}
+              <div className="w-full max-w-md md:max-w-none h-[180px] sm:h-[200px] md:h-[300px] lg:h-[350px] relative z-[705]">
                 <ModelViewer scrollProgress={scrollYProgress} />
               </div>
   
-              {/* Features list */}
-              <div className="space-y-6 w-full md:w-full md:ml-8 lg:ml-0 md:mt-0 lg:-mt-40">
+              {/* Features list - responsive layout with proper z-index */}
+              <div className="space-y-4 w-full md:w-full md:ml-4 lg:ml-8  md:mt-0 lg:-mt-32 relative z-[705]">
                 {features.map((feature, index) => {
                   // Improved scroll trigger points
                   const startPoint = Math.min(0.1 + index * 0.15, 0.7);
@@ -428,3 +461,4 @@ const WhyMunjalAutos = () => {
 
 
 export default WhyMunjalAutos
+

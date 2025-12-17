@@ -73,13 +73,13 @@ const MobileImageSlider = () => {
         Engineering Excellence
       </h1>
 
-      <div className="relative w-full max-w-[90vw] sm:max-w-md h-[30dvh]">
+      <div className="relative w-full max-w-[90vw] sm:max-w-md h-[40vh] sm:h-[50vh]">
         <AnimatePresence initial={false}>
           <motion.img
             key={activeIndex}
             src={images[activeIndex]}
             alt={captions[activeIndex]}
-            className="w-full aspect-[4/3] object-cover rounded-xl"
+            className="w-full h-full object-cover rounded-xl"
             initial={{ x: 300, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: -300, opacity: 0 }}
@@ -100,49 +100,50 @@ const MobileImageSlider = () => {
           </div>
         )}
 
-        <div className=" absolute right-1/2 translate-x-1/2  -bottom-[10%] ">
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-full px-4">
+          <div className="flex flex-col items-center justify-center w-full">
+            <AnimatePresence mode="wait">
+              <motion.div
+                className="bg-white/80 px-3 py-2 rounded-lg font-bold text-sm sm:text-base text-black mb-2"
+                key={`caption-${activeIndex}`}
+                variants={textVariants}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                transition={{ duration: 0.5 }}
+              >
+                {captions[activeIndex]}
+              </motion.div>
+            </AnimatePresence>
 
-        <AnimatePresence mode="wait">
-          <motion.div
-            className=" bg-white/80 px-2 py-1 rounded-lg font-bold text-xs sm:text-sm text-black"
-            key={`caption-${activeIndex}`}
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            transition={{ duration: 0.5 }}
-          >
-            {captions[activeIndex]}
-          </motion.div>
-        </AnimatePresence>
-
-        <AnimatePresence mode="wait">
-          <motion.div
-            className=" text-[10px] sm:text-xs text-gray-600 bg-white/80 px-2 py-1 rounded-lg"
-            key={`small-caption-${activeIndex}`}
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            transition={{ duration: 0.5 }}
-          >
-            {smallCaptions[activeIndex].split("\n").map((line, idx) => (
-              <div key={idx} className="leading-relaxed">{line}</div>
-            ))}
-          </motion.div>
-        </AnimatePresence>
+            <AnimatePresence mode="wait">
+              <motion.div
+                className="bg-white/80 px-3 py-2 rounded-lg text-xs sm:text-sm text-gray-600 text-center"
+                key={`small-caption-${activeIndex}`}
+                variants={textVariants}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                transition={{ duration: 0.5 }}
+              >
+                {smallCaptions[activeIndex].split("\n").map((line, idx) => (
+                  <div key={idx} className="leading-relaxed">{line}</div>
+                ))}
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
 
         <button
           onClick={handlePrev}
-          className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 rounded-full p-2 text-gray-600 hover:bg-white transition-colors text-sm"
+          className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 rounded-full p-2 text-gray-600 hover:bg-white transition-colors text-sm z-10"
           aria-label="Previous slide"
         >
           {"<"}
         </button>
         <button
           onClick={handleNext}
-          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 rounded-full p-2 text-gray-600 hover:bg-white transition-colors text-sm"
+          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 rounded-full p-2 text-gray-600 hover:bg-white transition-colors text-sm z-10"
           aria-label="Next slide"
         >
           {">"}
@@ -254,10 +255,10 @@ const DesktopImageSlider = () => {
           </motion.div>
         ))}
 
-        <div className="absolute left-[60%] -translate-x-1/2 lg:bottom-10  bottom-[-2rem] text-start">
+        <div className="absolute left-[60%] -translate-x-1/2 lg:bottom-10  bottom-[-1rem] text-start">
           <AnimatePresence mode="wait">
             <motion.div
-              className="bg-white/80 px-3 py-1.52 rounded-lg font-bold text-base sm:text-lg text-black"
+              className=" px-3 py-1.52 rounded-lg font-bold text-base sm:text-lg text-black"
               key={`caption-${activeIndex}`}
               variants={textVariants}
               initial="hidden"
@@ -270,7 +271,7 @@ const DesktopImageSlider = () => {
 
           <AnimatePresence mode="wait">
             <motion.div
-              className="bg-white/80 px-3 py-1.5 rounded-lg text-xs sm:text-sm text-gray-600"
+              className=" px-3 py-1.5 rounded-lg text-xs sm:text-sm text-gray-600"
               key={`small-caption-${activeIndex}`}
               variants={textVariants}
               initial="hidden"
