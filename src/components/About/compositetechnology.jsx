@@ -6,14 +6,14 @@ import inductch4 from "../../assets/about/indutch_composite_4.png";
 import inductch from "../../assets/about/indutch5.jpg";
 const CompositeTechnology = () => {
   return (
-    <div className="px-10 mx-10 mt-20  py-12">
+    <div className="lg:px-10 px-3 lg:mx-10 mt-20  py-12">
       <div className="bg-[#F5F5F5] rounded-[12px] p-6 md:p-8 lg:p-12">
         {/* Header Section */}
         <div className="mb-12">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-6">
+          <h1 className="text-[24px] md:text-4xl lg:text-5xl font-semibold lg:text-left  text-center text-gray-900 mb-6">
             Indutch Composites <span className="text-red-600">Technology</span>
           </h1>
-          <p className="text-lg text-gray-700 leading-relaxed max-w-4xl">
+          <p className="text-[13px] lg:text-[18px] text-gray-700 leading-relaxed max-w-4xl">
             Founded in 2010, Indutch Composites Technology Limited is a leader
             in advanced composite molds and components, with a strong focus on
             renewable energy and wind power. Over the years, it has expanded its
@@ -33,7 +33,7 @@ const CompositeTechnology = () => {
               />
             </div>
             <div className="order-1 lg:order-2">
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              <p className="text-[13px] lg:text-[18px] text-gray-700 leading-relaxed mb-6">
                 Since inception, Indutch Composites Technology Limited has been
                 a trusted partner to the composites industry, specializing in
                 the design and manufacturing of composite moulds and components
@@ -49,7 +49,7 @@ const CompositeTechnology = () => {
                 ].map((process, index) => (
                   <div key={index} className="flex items-center">
                     <div className="w-2 h-2 bg-black rounded-full mr-3"></div>
-                    <span className="text-gray-700 font-medium">{process}</span>
+                    <span className="text-gray-700 font-medium text-[13px] lg:text-[18px]">{process}</span>
                   </div>
                 ))}
               </div>
@@ -58,14 +58,14 @@ const CompositeTechnology = () => {
         </div>
 
         {/* Second Content Section */}
-       <div className="py-10">
-         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+       <div className="lg:py-10">
+         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-12 items-start">
           <div>
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+            <p className="text-[13px] lg:text-[18px] text-gray-700 leading-relaxed mb-6">
               The company employs over 700 skilled technicians and 70 engineers,
               with in-house capabilities for mould design, jigs, and fixtures.
             </p>
-            <h3 className="text-xl font-normal text-gray-900 mb-4">
+            <h3 className="text-[13px] lg:text-[18px] font-normal text-gray-900 mb-4">
               Upcoming Facility (2019 launch):
             </h3>
             <ul className="leading-[28px]">
@@ -80,46 +80,46 @@ const CompositeTechnology = () => {
               ].map((item, index) => (
                 <li key={index} className="flex items-start">
                   <div className="w-2 h-2 bg-black rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span className="text-gray-700 leading-relaxed">{item}</span>
+                  <span className="text-gray-700 leading-relaxed text-[13px] lg:text-[18px]">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="flex justify-center lg:justify-end">
+          <div className="flex w-full justify-center lg:justify-end">
             <img
               src={indutch2}
               alt="Indutch Composite Technology Facility"
-              className="w-full max-w-md lg:max-w-none h-auto rounded-xl shadow-lg"
+              className="w-full lg:max-w-none h-auto rounded-xl shadow-lg"
             />
           </div>
         </div>
        </div>
 
-        <div className="py-10">
+        <div className="lg:py-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10">
           <div className="relative h-full w-full">
             <img
               src={indutch3}
               alt="inductch"
-              className="w-full h-full object-cover rounded-2xl"
+              className="w-full h-[500px] object-cover rounded-2xl"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-transparent rounded-2xl flex items-start p-6">
               <div className="text-white">
-                <h3 className="text-xl font-semibold mb-4 text-[#FF0000]">
+                <h3 className="text-[20px] lg:text-[26px] font-semibold mb-4 text-[#FF0000]">
                   Targeted Certifications (2019):
                 </h3>
                 <div className="space-y-2">
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></div>
-                    <span>ISO 9001:2015</span>
+                    <span className="text-[13px] lg:text-[18px]">ISO 9001:2015</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></div>
-                    <span>ISO 14001 & OSHA</span>
+                    <span className="text-[13px] lg:text-[18px]">ISO 14001 & OSHA</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></div>
-                    <span>AS 9100</span>
+                    <span className="text-[13px] lg:text-[18px]">AS 9100</span>
                   </div>
                 </div>
               </div>
@@ -129,41 +129,41 @@ const CompositeTechnology = () => {
             <img
               src={inductch4}
               alt="inductch"
-              className="w-full h-full object-cover rounded-2xl"
+              className="w-full h-[500px] object-cover rounded-2xl"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-transparent rounded-2xl flex items-start p-6">
               <div className="text-white">
-                <h3 className="text-xl font-semibold mb-4 text-[#FF0000]">
+                <h3 className="text-[20px] lg:text-[26px] font-semibold mb-4 text-[#FF0000]">
                   Product Capabilities:
                 </h3>
                 <div className="space-y-2">
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></div>
-                    <span>Wind blade moulds</span>
+                    <span className="text-[13px] lg:text-[18px]">Wind blade moulds</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></div>
-                    <span>Boat hulls</span>
+                    <span className="text-[13px] lg:text-[18px]">Boat hulls</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></div>
-                    <span>Aircraft fuselage and wings</span>
+                    <span className="text-[13px] lg:text-[18px]">Aircraft fuselage and wings</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></div>
-                    <span>Helicopter rotor blades</span>
+                    <span className="text-[13px] lg:text-[18px]">Helicopter rotor blades</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></div>
-                    <span>Ship propellers</span>
+                    <span className="text-[13px] lg:text-[18px]">Ship propellers</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></div>
-                    <span>Armoured vehicles and shelters</span>
+                    <span className="text-[13px] lg:text-[18px]">Armoured vehicles and shelters</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></div>
-                    <span>Antennas</span>
+                    <span className="text-[13px] lg:text-[18px]">Antennas</span>
                   </div>
                 </div>
               </div>
@@ -183,20 +183,20 @@ const CompositeTechnology = () => {
           </div>
           <div>
             <div>
-              <p className="text-[20px] leading-[28px]">
+              <p className="text-[13px] lg:text-[18px] leading-[28px]">
                 Indutch has the capabilities to design and manufacture moulds
                 and products for various Engineering industries such as Auto,
                 Defence, Railways, Aviation, Space, Marine, Home appliances,
                 mass transit, just to name a few. Today Wind sector is the core
                 business at Indutch.
               </p>
-              <p className="text-[18px] mt-4">Indutch has 4 manufacturing facilities</p>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              <p className="text-[13px] lg:text-[18px] mt-4">Indutch has 4 manufacturing facilities</p>
+              <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-4">
                 {["Chennai", "Halol", "Manjusar", "Waghodia"].map(
                   (process, index) => (
                     <div key={index} className="flex items-center mt-2">
                       <div className="w-2 h-2 bg-black rounded-full mr-3"></div>
-                      <span className="text-gray-700 font-medium text-[18px]">
+                      <span className="text-gray-700 font-medium text-[13px] lg:text-[18px]">
                         {process}
                       </span>
                     </div>

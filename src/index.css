@@ -28,8 +28,56 @@
       transform: translateX(-50%);
     }
   }
-  
   .animate-scroll {
     animation: scroll 20s linear infinite;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    /* Adjust font sizes for better readability on mobile */
+    body {
+      font-size: 14px;
+    }
+  
+    /* Ensure hero sections are responsive */
+    .h-screen {
+      height: 100vh;
+    }
+  
+    /* Adjust logo size for mobile */
+    .w-60-percent {
+      width: 80% !important;
+    }
+  
+    /* Adjust text sizes for mobile */
+    .text-xl {
+      font-size: 1.5rem !important;
+    }
+  
+    .text-5xl {
+      font-size: 2.5rem !important;
+    }
+  
+    /* Adjust button sizes for mobile */
+    .px-8 {
+      padding-left: 1.5rem !important;
+      padding-right: 1.5rem !important;
+    }
+  
+    /* Adjust padding and margins for mobile */
+    .px-4 {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+  
+    /* Adjust container widths for mobile */
+    .max-w-md {
+      max-width: 90% !important;
+    }
+  
+    /* Adjust image sizes for mobile */
+    .w-55px {
+      width: 40px !important;
+    }
   }
   

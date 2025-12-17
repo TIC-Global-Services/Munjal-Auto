@@ -73,13 +73,22 @@ const TimeLine = () => {
       position: "bottom",
     },
     {
+      year: "2021",
+      title: "Electronics Division ",
+      description: [
+        "Established in 2021, Munjal Auto Electronics Division (MAED)",
+        "builds on over four decades of Munjal Auto’s precision engineering legacy."
+      ],
+      position: "top",
+    },
+    {
       year: "2025 & Beyond",
       title: "Progressing Towards Lightweight: Excellence & Diversification",
       description: [
         "Focused on lightweighting, R&D, and 3P engineering",
         "Striving to become the supplier of choice through quality and advanced technology Expanding into new sectors",
       ],
-      position: "top",
+      position: "bottom",
     },
   ];
 
@@ -139,13 +148,13 @@ const TimeLine = () => {
           {/* Timeline Container */}
           <div className="relative h-96 flex items-center">
             {/* Main Horizontal Line */}
-            <div className="absolute bottom-10 left-0 w-full h-1 bg-gray-600 opacity-30 rounded-full transform -translate-y-1/2" />
+            <div className="absolute bottom-10 left-0 w-full h-1 bg-gray-600 opacity-30 rounded-full transform -translate-y-2" />
 
             {/* Animated Horizontal Line */}
             <div
-              className="absolute bottom-10 left-0 h-1 bg-gradient-to-r bg-[#ED1C24] rounded-full transform -translate-y-1/2 transition-all duration-2000 ease-out"
+              className="absolute bottom-10 left-0 h-1 bg-gradient-to-r bg-[#ED1C24] rounded-full transform -translate-y-1/2 -translate-x-10 transition-all duration-2000 ease-out"
               style={{
-                width: isVisible ? "100%" : "0%",
+                width: isVisible ? "110%" : "0%",
                 transitionDelay: "300ms",
               }}
             />
@@ -163,7 +172,7 @@ const TimeLine = () => {
                   {/* Year Label - positioned above/below the line */}
                   <div
                     className={`absolute left-1/2 transform -translate-x-1/2 transition-all duration-700 ${
-                      item.position === "bottom" ? "bottom-3" : "top-3"
+                      item.position === "bottom" ? "bottom-5" : "top-5"
                     } ${
                       visiblePoints.includes(index)
                         ? "opacity-100 translate-y-0"
@@ -183,7 +192,7 @@ const TimeLine = () => {
                   {/* Content Card */}
                   <div
                     className={`absolute left-1/2 transform -translate-x-1/2 transition-all duration-700 ${
-                      item.position === "top" ? "top-10" : "bottom-10"
+                      item.position === "top" ? "top-[50px]" : "bottom-[50px]"
                     } ${
                       visiblePoints.includes(index)
                         ? "opacity-100 translate-y-0"
@@ -218,7 +227,7 @@ const TimeLine = () => {
                   {/* Triangle Pointer */}
                   <div
                     className={`absolute left-1/2 transform -translate-x-1/2 transition-all duration-500 ${
-                      item.position === "bottom" ? "top-2" : "bottom-4"
+                      item.position === "top" ? "top-3" : "bottom-3"
                     } ${
                       visiblePoints.includes(index)
                         ? "opacity-100"
@@ -230,7 +239,7 @@ const TimeLine = () => {
                       height: 0,
                       borderLeft: "6px solid transparent",
                       borderRight: "6px solid transparent",
-                      ...(item.position === "bottom"
+                      ...(item.position === "top"
                         ? { borderBottom: "6px solid #ED1C24" }
                         : { borderTop: "6px solid #ED1C24" }),
                     }}

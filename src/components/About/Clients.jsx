@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 // import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css/core";
 // import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -218,12 +219,17 @@ const Clients = () => {
 
   return (
     <div className="py-20 max-w-5xl mx-auto mt-20">
-      <h1 className="text-[#141313] text-[40px] text-center mb-10 font-normal">
+      <h1 className="text-[#141313] lg:text-[40px] text-[24px] text-center mb-10 font-normal">
         Our Customers
       </h1>
-    <div className="flex justify-between">
+    <motion.div
+      className="flex justify-between overflow-x-auto scrollbar-hide"
+      drag="x"
+      dragConstraints={{ left: 0, right: 0 }}
+      whileTap={{ cursor: "grabbing" }}
+    >
         {contents.map((item, index) => (
-        <div key={index}>
+        <motion.div key={index} className="flex-shrink-0">
           <div className="flex justify-center items-center h-40">
             <div className="">
               <img
@@ -233,11 +239,12 @@ const Clients = () => {
              />
             </div>
           </div>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
     </div>
   );
 };
 
 export default Clients;
+

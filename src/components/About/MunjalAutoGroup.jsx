@@ -196,7 +196,7 @@ const MunjalAutoGroup = () => {
   }, []);
 
   return (
-    <div id="munjal-group" className="max-w-8xl  px-20 my-12">
+    <div id="munjal-group" className="lg:max-w-8xl px-5 lg:px-20 my-12">
       <div className="bg-[#f1eeee] rounded-3xl p-8 md:p-12 lg:p-16 relative overflow-hidden min-h-[858px]">
         {/* Content Container */}
         <div className="grid grid-cols-1 md:grid-cols-2 w-full ">
