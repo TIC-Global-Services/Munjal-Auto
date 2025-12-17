@@ -8,7 +8,7 @@ const BoardOfDirectors = () => {
       name: "Mr. Sudhir Kumar Munjal",
       position: "Chairman & Managing Director",
       description:
-        "Mr. Sudhir Kumar Munjal is a visionary entrepreneur with over 46 years of experience in the bicycle, automotive, and engineering industries. He served as Director from 1991 to 1993, became Managing Director in 1993, and Chairman & Managing Director in 2015. He successfully led the company’s strategic shift from bicycle manufacturing to becoming a leading auto components manufacturer in India, fostering a culture of performance, teamwork, and innovation.",
+        "Mr. Sudhir Kumar Munjal is a visionary entrepreneur with over 46 years of experience in the bicycle, automotive, and engineering industries. He served as Director from 1991 to 1993, became Managing Director in 1993, and Chairman & Managing Director in 2015. He successfully led the company’s strategic shift from bicycle manufacturing to becoming a leading auto components manufacturer in India, fostering a culture of performance, teamwork, and innovation",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop&crop=face",
     },
     {
@@ -16,7 +16,7 @@ const BoardOfDirectors = () => {
       name: "Mrs. Anju Munjal",
       position: "Executive Director",
       description:
-        "Mrs. Anju Munjal has over 30 years of experience in the bicycle, automotive, and engineering sectors. She played a pivotal role in the company's revival as Chief Executive and has been serving as Whole-time Director since 1999. Her leadership has contributed significantly to Munjal Auto's growth into one of India's fastest-growing auto component manufacturers.",
+        "Mrs. Anju Munjal has over 30 years of experience in the bicycle, automotive, and engineering sectors. She played a pivotal role in the company’s revival as Chief Executive and has been serving as Whole-time Director since 1999. Her leadership has contributed significantly to Munjal Auto’s growth into one of India’s fastest-growing auto component manufacturers",
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=600&fit=crop&crop=face",
     },
     {
@@ -24,7 +24,7 @@ const BoardOfDirectors = () => {
       name: "Mr. Anuj Munjal",
       position: "Executive Director",
       description:
-        "Mr. Anuj Munjal holds an MBA in Finance and Marketing from Northeastern University, Boston (USA), and brings over 17 years of experience across marketing, finance, IT, administration, and operations. Formerly Chief Executive of Hero Cycles' CR Division, he now oversees day-to-day operations at Munjal Auto as Whole-time Director, driving operational excellence and strategic growth.",
+        "Mr. Anuj Munjal holds an MBA in Finance and Marketing from Northeastern University, Boston (USA), and brings over 17 years of experience across marketing, finance, IT, administration, and operations. Formerly Chief Executive of Hero Cycles’ CR Division, he now oversees day-to-day operations at Munjal Auto as Whole-time Director, driving operational excellence and strategic growth",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=600&fit=crop&crop=face",
     },
     {
@@ -40,7 +40,7 @@ const BoardOfDirectors = () => {
       name: "Mr. Atul Haribhai Patel",
       position: "Independent Director",
       description:
-        "Mr. Atul Haribhai Patel is a Textile Engineering graduate and a dynamic industrialist with deep experience in specialty chemicals. He currently serves as Managing Director of Tarak Chemicals Limited, leveraging his strategic vision and business acumen to support Munjal Auto's governance and growth.",
+        "Mr. Atul Haribhai Patel is a Textile Engineering graduate and a dynamic industrialist with deep experience in specialty chemicals. He currently serves as Managing Director of Tarak Chemicals Limited, leveraging his strategic vision and business acumen to support Munjal Auto’s governance and growth.",
       image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=600&fit=crop&crop=face",
     },
     {
@@ -48,7 +48,7 @@ const BoardOfDirectors = () => {
       name: "Mr. Sunil Chinubhai Vakil",
       position: "Independent Director",
       description:
-        "A Chartered Accountant from ICAI, Mr. Sunil Vakil brings over 40 years of expertise in corporate finance and strategy. He has advised leading corporates and multinationals and has run a successful independent consultancy for more than two decades, offering deep financial insights to Munjal Auto's board.",
+        "A Chartered Accountant from ICAI, Mr. Sunil Vakil brings over 40 years of expertise in corporate finance and strategy. He has advised leading corporates and multinationals and has run a successful independent consultancy for more than two decades, offering deep financial insights to Munjal Auto’s board",
       image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=600&fit=crop&crop=face",
     },
     {
@@ -147,7 +147,7 @@ const BoardOfDirectors = () => {
           <div className="flex flex-col gap-8">
             {/* Header */}
             <div className="text-center space-y-4">
-              <h1 className="text-5xl lg:text-6xl font-light text-slate-900">
+              <h1 className="text-[24px] lg:text-6xl font-light text-slate-900">
                 Board of <span className="text-red-600 font-semibold">Directors</span>
               </h1>
               <p className="text-slate-600 max-w-2xl mx-auto text-lg">

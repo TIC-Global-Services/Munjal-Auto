@@ -14,10 +14,11 @@ const technologyalliance = () => {
  ]
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 px-15 ">
-      <div className="text-center max-w-[884px] m-auto">
-        <h1 className="leading-[56px] text-[46px] text-left">Technology Alliances</h1>
-        <p className="text-[18px] mt-5 text-left max-w-[592px]">
+    <div className="lg:px-20 px-3">
+       <div className="grid grid-cols-1 lg:grid-cols-2 items-center lg:px-15 px-1">
+      <div className="text-center">
+        <h1 className="leading-[56px] lg:text-[46px] text-[34px]  text-left">Technology Alliances</h1>
+        <p className="text-[13px] lg:text-[18px] mt-5 text-left max-w-[592px]">
           Working with Japanese company since last 2 decades, we have developed
           technical expertise & best manufacturing skills by practicing
           innovative strategies to deliver best to esteemed customers.
@@ -26,11 +27,13 @@ const technologyalliance = () => {
           leaders.
         </p>
       </div>
-      <div>
-        <img src={inductch5} width={592} height={157}/>
-        <p className="text-left text-[18px] max-w-[592px]">Technical collaboration for design of exhaust systems for 2-3 wheelers</p>
+      <div className="w-full">
+        <img src={inductch5} width={592} height={157} className="mb-7"/>
+        <p className="text-left text-[13px] lg:text-[18px] max-w-[592px]">Technical collaboration for design of exhaust systems for 2-3 wheelers</p>
       </div>
     </div>
+    </div>
+   
   );
 };
 
