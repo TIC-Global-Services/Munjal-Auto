@@ -43,7 +43,7 @@ const sustainability = () => {
     // </div>
     <div>
      <div className="text-center mt-10">
-        <h3 className="text-[24px] block lg:hidden font-medium  text-foreground">
+        <h3 className="text-[18px] block px-1 lg:hidden font-medium  text-foreground">
               Sustainability & Environment
             </h3>
      </div>

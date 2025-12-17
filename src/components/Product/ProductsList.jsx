@@ -451,7 +451,7 @@ const ProductsList = () => {
   return (
     <div id={activeTab} className="min-h-screen bg-[#fafafa]">
       {/* Products Section */}
-      <div className="container mx-auto px-10 py-16">
+      <div className="container mx-auto lg:px-10 px-5 py-16">
         {/* Tabs */}
         <div className="mb-8">
           <div className="overflow-x-auto scrollbar-hide mb-4 sm:mb-6 md:mb-8 ">
@@ -608,7 +608,7 @@ const ProductsList = () => {
               </motion.div>
 
               {/* Mobile Layout: Keep your original mobile design */}
-              <div className="md:hidden px-5">
+              <div className="md:hidden lg:px-5">
                 {/* Image Section */}
                 <div className="bg-[#EBEBEF] flex items-center justify-center p-6">
                   <motion.div
@@ -623,23 +623,23 @@ const ProductsList = () => {
                       duration: 0.6,
                       ease: "easeOut",
                     }}
-                    className="flex items-center justify-center"
+                    className="flex items-center  justify-center"
                   >
                     <motion.img
                       src={item.image}
                       alt={item.title}
-                      className="w-auto max-w-[280px] h-auto object-contain"
+                      className="w-auto lg:max-w-[280px] h-auto object-contain"
                     />
                   </motion.div>
                 </div>
 
                 {/* Content Section */}
-                <div className="p-6 text-[#ED1C24]">
+                <div className="lg:p-6 text-[#ED1C24] mt-4 lg:mt-0">
                   <motion.h2
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.4, duration: 0.5 }}
-                    className="text-[28px] font-bold mb-4"
+                    className="lg:text-[28px] text-[20px] font-bold mb-4"
                   >
                     {item.title}
                   </motion.h2>
@@ -649,7 +649,7 @@ const ProductsList = () => {
                       <motion.p
                         initial={{ opacity: 1 }}
                         animate={{ opacity: 1 }}
-                        className="mb-4 text-base leading-relaxed"
+                        className="mb-4 text-[16px] leading-relaxed"
                       >
                         {item.description}
                       </motion.p>

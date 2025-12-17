@@ -28,7 +28,7 @@ const Map = () => {
   </div> */}
 
 <div
-      className="absolute top-[22%] left-[24%] w-fit flex items-center"
+      className="absolute top-[10%] left-[12%] lg:top-[22%]  lg:left-[24%] xl:top-[23.8%] xl:left-[26%] w-fit flex items-center"
       onMouseEnter={() => setHoveredBa(true)}
       onMouseLeave={() => setHoveredBa(false)}
     >
@@ -46,7 +46,7 @@ const Map = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 10 }}
               transition={{ duration: 0.3 }}
-              className="absolute top-[36%]  -ml-5   -translate-y-1/2 bg-[#FF0003] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
+              className="absolute top-[36%]   -ml-5   -translate-y-1/2 bg-[#FF0003] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
             >
 Bawal
             </motion.p>
@@ -80,7 +80,7 @@ Bawal
 
 
 <div
-      className="absolute top-[14.5%] left-[28%] w-fit flex items-center"
+      className="absolute top-[8%] left-[21%] lg:top-[14.5%] lg:left-[28%] xl:top-[16.9%] xl:left-[29.5%] w-fit flex items-center"
       onMouseEnter={() => setHoveredHar(true)}
       onMouseLeave={() => setHoveredHar(false)}
     >
@@ -108,7 +108,7 @@ Bawal
     </div>
 
 <div
-      className="absolute top-[17%] left-[20%] w-fit flex items-center"
+      className="absolute top-[14%] left-[17%] lg:top-[17%] lg:left-[20%] xl:top-[18%] xl:left-[21%] w-fit flex items-center"
       onMouseEnter={() => setHoveredVad(true)}
       onMouseLeave={() => setHoveredVad(false)}
     >
@@ -137,7 +137,7 @@ Bawal
 
       {/* Dot 4 */}
       <div
-      className="absolute top-[40%] left-[11%] w-fit flex items-center"
+      className="absolute top-[28%] left-[0.5%] xl:top-[42%] xl:left-[13%] w-fit flex items-center"
       onMouseEnter={() => setHoveredDhar(true)}
       onMouseLeave={() => setHoveredDhar(false)}
     >
@@ -165,7 +165,7 @@ Bawal
     </div>
       {/* Dot 4 */}
       <div
-      className="absolute top-[35%] left-[8%] w-fit flex items-center"
+      className="absolute top-[34%] left-[4%] lg:top-[35%] lg:left-[8%] xl:top-[38%] xl:left-[10%] w-fit flex items-center"
       onMouseEnter={() => setHoveredDhar(true)}
       onMouseLeave={() => setHoveredDhar(false)}
     >
