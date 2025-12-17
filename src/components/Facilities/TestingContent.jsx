@@ -183,13 +183,13 @@ const TestingContent = () => {
     return (
         <div className="max-w-7xl mx-auto lg:px-4 px-3 mb-20">
 
-            <h1 className="text-[#151414] text-[28px] leading-[57px] text-center max-w-4xl mx-auto mt-24 py-5">
+            <h1 className="text-[#151414] lg:text-[28px] text-[14px] leading-[24px] lg:leading-[57px] text-center max-w-4xl mx-auto mt-24 py-5">
                 Our facilities go beyond manufacturing, every component undergoes rigorous testing and validation to meet the highest quality standards of global OEMs
             </h1>
-            <div className="mt-20 py-10">
+            <div className="lg:mt-20 mt-10 lg:py-10">
                 <div>
-                    <h1 className="text-[36px]">Fuel Tank Manufacturing</h1>
-                    <p className="text-[20px] mt-3 lg:max-w-[1116px] leading-[28px] text-[#82848A]">
+                    <h1 className="lg:text-[36px] text-[24px] text-center lg:text-start">Fuel Tank Manufacturing</h1>
+                    <p className="lg:text-[20px] text-[13px] mt-3 lg:max-w-[1116px] lg:text-start text-center leading-[28px] text-[#82848A]">
                         At Munjal Auto Industries Limited (MAIL), we produce 500 passenger car fuel tanks per day, with a total installed capacity of 1,500 assemblies daily. Leveraging advanced technology, modern equipment, and precision tooling, we maintain uncompromising standards of quality through robust processes, multi-stage inspections, and stringent testing protocols.
                     </p>
                 </div>
@@ -207,7 +207,7 @@ const TestingContent = () => {
              >
                {manufacturingList.map((item, index) => (
                  <SwiperSlide key={index}>
-                   <div className="flex lg:flex-row flex-col gap-4 my-6">
+                   <div className="flex lg:flex-row flex-col gap-10 my-6">
                      <img
                        src={item.img}
                        width={756}
@@ -221,7 +221,7 @@ const TestingContent = () => {
                          <h1 className="text-2xl font-bold mb-2 text-[#ED1C24]">{item.title}</h1>
                          <ul className="list-disc ml-6 lg:max-w-[380px]">
                            {item.points.map((point, i) => (
-                             <li key={i} className='font-light text-[16px] leading-[34px]'>{point}</li>
+                             <li key={i} className='font-light lg:text-[16px] text-[13px] text-[#82848A] leading-[20px] lg:leading-[34px]'>{point}</li>
                            ))}
                          </ul>
                        </div>
@@ -232,7 +232,7 @@ const TestingContent = () => {
              </Swiper>
 
              {/* Custom navigation buttons */}
-             <div className="flex gap-2 absolute right-0 lg:bottom-20 bottom-20 z-10">
+             <div className="flex gap-2 absolute right-0 lg:bottom-10 bottom-20 z-10">
                <ArrowLeft color="#ffffff" strokeWidth={1.5} absoluteStrokeWidth className='custom-prev bg-[#ED1C24] rounded-full p-2 w-10 h-10 cursor-pointer'/>
                <ArrowRight color="#ffffff" strokeWidth={1.5} absoluteStrokeWidth className='custom-next bg-[#ED1C24] rounded-full p-2 w-10 h-10 cursor-pointer'/>
              </div>
@@ -241,7 +241,7 @@ const TestingContent = () => {
               <div className="mt-20 py-10">
                 <div>
                     <h1 className="lg:text-[36px] text-[24px] text-center lg:text-start">Exhaust Systems Manufacturing</h1>
-                    <p className="text-[20px] text-center lg:text-start lg:max-w-[1116px] mt-5 text-[#82848A]">
+                    <p className="lg:text-[20px] text-[13px] leading-[20px] lg:leading-[28px]  text-center lg:text-start lg:max-w-[1116px] mt-5 text-[#82848A]">
                        We manufacture nearly 32,000 complete two-wheeler exhaust systems every day at MAIL. Our state-of-the-art facilities, equipped with precision-driven technology and automated systems, ensure seamless production. Every unit undergoes strict in-process gauging, inspection, and advanced testing to guarantee superior performance and reliability.
                     </p>
                 </div>
@@ -249,21 +249,21 @@ const TestingContent = () => {
                  
                     {visibleExhaustItems.map((item, index) => (
                         <div key={index} className=''>
-                        <div className=" grid grid-cols-1 lg:grid-cols-2 my-6">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 my-10">
                           <img
                             src={item.image}
                             width={595}
                             height={250}
                             alt="exhaust system image"
-                            className={`flex-shrink-0 lg:min-w-[595px]  rounded-md lg:min-h-[250px] px-5 ${index%2 !=0 ?"lg:order-last":""}`}
+                            className={`flex-shrink-0 lg:max-w-[595px] object-cover rounded-md lg:max-h-[250px]  ${index%2 !=0 ?"lg:order-last":""}`}
                           />
 
-                          <div className="lg:flex-1">
-                            <div className='py-3'>
-                              <h1 className="lg:text-[26px] text-[20px] font-bold mb-2 text-[#ED1C24]">{item.sectionTitle}</h1>
-                              <ul className="list-disc px-4 lg:px-0">
+                          <div className="max-w-[595px]">
+                            <div className='lg:-translate-y-2'>
+                              <h1 className="lg:text-[26px]  text-[20px] font-bold mt-5 lg:mt-0 mb-2 text-[#ED1C24]">{item.sectionTitle}</h1>
+                              <ul className="list-disc px-4 lg:px-7">
                                 {item.points.map((point, i) => (
-                                  <li key={i} className='font-light text-[#82848A] leading-[34px] text-[16px]'>{point}</li>
+                                  <li key={i} className='font-light text-[#82848A] lg:leading-[34px] leading-[20px] text-[13px] lg:text-[16px]'>{point}</li>
                                 ))}
                               </ul>
                             </div>

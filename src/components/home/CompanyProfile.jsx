@@ -31,7 +31,7 @@ const CompanyProfile = () => {
 
 
     return (
-        <div>
+        <div className=''>
             <motion.div
                 ref={containerRef}
                 variants={containerVariants}
@@ -41,12 +41,12 @@ const CompanyProfile = () => {
             >
                 <motion.div
                     variants={itemVariants}
-                    className="bg-black w-full text-white flex md:flex-row flex-col items-center justify-between rounded-[20px] overflow-hidden py-10 md:py-0"
+                    className="bg-black w-full lg:mt-20 text-white flex md:flex-row flex-col items-center justify-between rounded-[12px] md:rounded-[20px] overflow-hidden py-5 md:py-0"
                 >
                     {/* Left Section */}
                     <motion.div
                         variants={itemVariants}
-                        className="flex-1 px-6 md:pl-14  space-y-2 md:space-y-6"
+                        className="flex-1 px-3 md:px-6 md:pl-14  space-y-1 md:space-y-2 lg:space-y-6"
                     >
                         <motion.div
                             variants={itemVariants}
@@ -57,7 +57,7 @@ const CompanyProfile = () => {
 
                         <motion.h1
                             variants={itemVariants}
-                            className="md:text-4xl text-2xl font-[300] leading-tight"
+                            className="md:text-4xl text-[18px] sm:text-[24px] font-[300] tracking-[1%] md:tracking-[2%] leading-[25px] sm:leading-[31px]"
                         >
                             Engineering the Future of <br className="md:block hidden" />
                             <span className="text-[#ED1C24] font-bold">
@@ -67,14 +67,14 @@ const CompanyProfile = () => {
 
                         <motion.p
                             variants={itemVariants}
-                            className="text-gray-300 md:text-lg text-xs md:pt-0 pt-2 md:w-[80%] leading-[29px] tracking-[2%]"
+                            className="text-gray-300 md:text-lg text-[10px] sm:text-[12px] md:pt-0 pt-2 md:w-[80%] leading-[16px] sm:leading-[19px] tracking-[1%] sm:tracking-[2%]"
                         >
                            Munjal Auto Industries Limited  is a diversified engineering group, delivering cutting - edge solutions. Driven by innovation, we design and manufacture lightweight, durable, and sustainable components using advanced sheet metal, composite materials, and precision molding techniques for automotive, aerospace, renewable energy, defense, and railways.
                         </motion.p>
                         <Link to="/about-us">
                             <motion.button
                                 variants={itemVariants}
-                                className="bg-white w-fit text-black md:mt-0 !mt-4 md:text-base text-xs px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors"
+                                className="bg-white w-fit text-black md:mt-0 !mt-2 md:text-base text-xs sm:text-sm px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium hover:bg-gray-100 transition-colors"
                             >
                                 More on Munjal
                             </motion.button>
@@ -84,12 +84,12 @@ const CompanyProfile = () => {
                     {/* Right Section */}
                     <motion.div
                         variants={itemVariants}
-                        className="w-[90%] md:py-0 py-4 md:w-[40%]"
+                        className="w-[95%] md:py-0 mt-6 md:mt-10 lg:mt-0 md:w-[45%] lg:w-[40%] px-1"
                     >
                         <img
                             src={secbanner}
                             alt="Automotive manufacturing assembly line"
-                            className="w-full h-[870px] object-cover"
+                            className="w-full lg:h-[870px] md:h-[400px] h-[250px] sm:h-[294px] object-cover"
                         />
                     </motion.div>
                 </motion.div>

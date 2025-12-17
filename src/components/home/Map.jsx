@@ -28,7 +28,7 @@ const Map = () => {
   </div> */}
 
 <div
-      className="absolute top-[12%] left-[18%] w-fit flex items-center"
+      className="absolute top-[22%] left-[24%] w-fit flex items-center"
       onMouseEnter={() => setHoveredBa(true)}
       onMouseLeave={() => setHoveredBa(false)}
     >
@@ -80,7 +80,7 @@ Bawal
 
 
 <div
-      className="absolute top-[16%] left-[32%] w-fit flex items-center"
+      className="absolute top-[14.5%] left-[28%] w-fit flex items-center"
       onMouseEnter={() => setHoveredHar(true)}
       onMouseLeave={() => setHoveredHar(false)}
     >
@@ -108,7 +108,7 @@ Bawal
     </div>
 
 <div
-      className="absolute top-[23%] left-[23%] w-fit flex items-center"
+      className="absolute top-[17%] left-[20%] w-fit flex items-center"
       onMouseEnter={() => setHoveredVad(true)}
       onMouseLeave={() => setHoveredVad(false)}
     >
@@ -137,7 +137,7 @@ Bawal
 
       {/* Dot 4 */}
       <div
-      className="absolute top-[41%] left-[12%] w-fit flex items-center"
+      className="absolute top-[40%] left-[11%] w-fit flex items-center"
       onMouseEnter={() => setHoveredDhar(true)}
       onMouseLeave={() => setHoveredDhar(false)}
     >
@@ -158,6 +158,34 @@ Bawal
               className="absolute top-[36%] left-auto ml-12   -translate-y-1/2 bg-[#FF0003] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
             >
                Vadodara
+            </motion.p>
+          )}
+        </AnimatePresence>
+      </div>
+    </div>
+      {/* Dot 4 */}
+      <div
+      className="absolute top-[35%] left-[8%] w-fit flex items-center"
+      onMouseEnter={() => setHoveredDhar(true)}
+      onMouseLeave={() => setHoveredDhar(false)}
+    >
+      <div className="relative">
+        <img
+          src={animationGif}
+          alt="animationGif"
+          className="w-[80px] h-[80px] transition-transform duration-300 hover:scale-125 cursor-pointer"
+        />
+
+        <AnimatePresence>
+          {hoveredDhar && (
+            <motion.p
+              initial={{ opacity: 0, x:- 9 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -10 }}
+              transition={{ duration: 0.3 }}
+              className="absolute top-[10%] left-auto ml-12   -translate-y-1/2 bg-[#FF0003] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
+            >
+               Chharodi
             </motion.p>
           )}
         </AnimatePresence>

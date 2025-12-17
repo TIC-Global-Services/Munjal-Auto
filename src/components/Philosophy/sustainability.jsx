@@ -43,18 +43,20 @@ const sustainability = () => {
     // </div>
     <div>
      <div className="text-center mt-10">
-        <h3 className="text-[24px] font-medium  text-foreground">
+        <h3 className="text-[24px] block lg:hidden font-medium  text-foreground">
               Sustainability & Environment
             </h3>
      </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-[75px] gap-[25px]  justify-center items-center lg:px-20 lg:mx-10 lg:mt-20 mt-5 lg:mb-20 px-1 mx-1">
+      <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-[75px]  gap-[25px]  justify-center items-center lg:px-20 lg:mx-10 lg:mt-20 mt-5 lg:mb-20 px-1 mx-1">
           <img
             src={sustainabilityImage}
+            width={593}
+            height={547}
             alt="Sustainability and Environment"
-            className="rounded-2xl lg:h-[547px] h-[400px] w-full"
+            className="rounded-2xl lg:h-[547px] xl:w-full xl:h-full lg:w-[593px]  h-[400px] w-full"
           />
         <div className="">
-          <div className="flex flex-col justify-start items-start max-h-[429px]">
+          <div className="flex flex-col justify-start items-start lg:max-h-[429px]">
             <h3 className="text-[24px] font-medium hidden lg:block text-foreground mb-4">
               Sustainability & Environment
             </h3>

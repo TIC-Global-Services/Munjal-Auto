@@ -13,7 +13,7 @@ const ExpertiseSection = () => {
                 </div>
 
                 {/* Title */}
-                <div className="max-w-3xl mb-2 md:mb-8">
+                <div className="max-w-3xl mb-2 md:mb-8 text-center lg:text-start">
                     <h2 className="text-base md:text-4xl font-[300]">
                         With <span className="text-red-600 font-bold">40+ years</span> of{" "}
                         <span className="text-red-600 font-bold">
@@ -160,7 +160,7 @@ const ProductionCapacity = () => {
 
                 </h2>
 
-                <div className="grid grid-cols-4 md:grid-cols-2 gap-1 lg:grid-cols-2 xl:grid-cols-4 md:gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-2  lg:grid-cols-4  xl:grid-cols-4 md:gap-4">
                     {capacityData2.map((item, index) => (
                         <motion.div
                             key={index}
@@ -169,9 +169,9 @@ const ProductionCapacity = () => {
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             className="bg-[#F3F4F6] hover:cursor-pointer   md:px-4 px-2 py-3 md:py-8 flex"
                         >
-                            <div className="space-y-2 flex flex-col items-start justify-center">
+                            <div className="space-y-2 flex flex-col flex-wrap items-start justify-center">
                                 <motion.h3
-                                    className="md:text-[32px] text-[12px]  whitespace-nowrap font-bold"
+                                    className="lg:text-[32px] text-[11.65px]  whitespace-nowrap font-bold"
                                     initial={{ opacity: 0 }}
                                     animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                                     transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -213,7 +213,7 @@ const ProductionCapacity = () => {
                         >
                             <div className="space-y-2 flex flex-col items-start justify-center">
                                 <motion.h3
-                                    className="md:text-[32px] text-xl uppercase whitespace-nowrap font-bold "
+                                    className="lg:text-[32px] text-[11.65px] uppercase whitespace-nowrap font-bold "
                                     initial={{ opacity: 0 }}
                                     animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                                     transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -222,7 +222,7 @@ const ProductionCapacity = () => {
                                         initial={{ opacity: 0 }}
                                         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                                         transition={{ duration: 0.5 }}
-                                        className="text-[32px]"
+                                        className="lg:text-[32px] text-[11.65px]"
                                     >
                                         {isInView && (
                                             <Counter from={0} to={item.quantity} duration={2}/>
@@ -230,7 +230,7 @@ const ProductionCapacity = () => {
                                     </motion.span>
                                     {item.unit}
                                 </motion.h3>
-                                <p className="text-gray-600 md:text-[16px] text-[5px] whitespace-nowrap">
+                                <p className="text-gray-600 md:text-[16px] text-[5.83px] whitespace-nowrap">
                                     {item.product}
                                 </p>
                             </div>

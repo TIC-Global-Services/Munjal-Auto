@@ -16,7 +16,7 @@ const innovation = () => {
                     className="w-full h-full object-cover rounded-md"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/60 to-transparent rounded-md flex items-start px-3 p-2 md:p-4 lg:p-6">
-                      <div className="text-white max-w-[328px] max-h-[400px] sm:w-3/4 md:w-2/3 lg:w-full">
+                      <div className="text-white w-[328px] max-h-[400px] sm:w-3/4 md:w-2/3 lg:w-full">
                         <h3 className="text-base md:text-lg lg:text-xl font-normal lg:font-semibold mb-2 md:mb-4 text-[#FF0000]">
                           Innovation & People
                         </h3>
@@ -24,11 +24,11 @@ const innovation = () => {
                           <div className="flex items-center">
                            <h3 className="text-xs sm:text-sm md:text-base">Our people drive our success:</h3>
                           </div>
-                         <ul className="text-white text-[16px]">
+                         <ul className="text-white text-[16px] space-y-2">
               {inovations.map((point, index) => (
                 <li
                   key={index}
-                  className="flex font-light  items-start gap-1 max-w-[328px] lg:w-full  text-sm text-muted-foreground"
+                  className="flex font-light  items-start gap-1 text-sm text-muted-foreground"
                 >
                   <span className="text-muted-foreground mt-0.5">•</span>
                   <span className="lg:text-[16px] text-[11px] leading-[20px]">{point}</span>

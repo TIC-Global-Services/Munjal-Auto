@@ -87,20 +87,20 @@ const MobileCapabilitiesSection = () => {
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-4 lg:grid-cols-2 gap-1">
         {capabilities.map((capability, index) => (
           <div
             key={index}
-            className="relative rounded-lg overflow-hidden shadow-md"
+            className={`relative rounded-lg w-full overflow-hidden shadow-md ${index ==4|| index==5 ?"col-span-2":"col-span-1" }`}
           >
             <img
               src={capability.image}
               alt={capability.alt}
-              className="w-full h-40 object-cover"
+              className={`w-full h-40 object-cover ${index==4?"object-cover object-top" :""}`}
             />
             <div className="absolute bottom-0 left-0 w-full p-2 bg-gradient-to-t from-black/70 to-transparent">
-              <div className="border-l-2 border-red-500 pl-2">
-                <p className="text-white font-medium text-sm">
+                <div className="border-l-2 border-red-500 px-0.5 lg:pl-2">
+                <p className="text-white font-medium text-[10px] lg:text-sm">
                   {capability.title}
                 </p>
               </div>

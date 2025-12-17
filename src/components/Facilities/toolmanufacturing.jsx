@@ -177,10 +177,10 @@ const Toolmanufacturing = () => {
                 <img src={toolimg1} width={488} height={325} alt='Tool Manufacturing' className='w-full h-full rounded-lg lg:h-[300px]'/>
             </div>
             <div className='max-w-[696px]'>
-                    <p className='leading-[34px] text-[#222222] text-[16px]'>
+                    <p className='leading-[24px] lg:leading-[34px] text-[#222222] lg:text-[16px] text-[14px]'>
                     In 2010-11, Munjal Auto established a state-of-the-art high-tech Tool Manufacturing Facility at Bawal, Haryana, spanning 1,600 sq.m. The center is equipped with advanced CAD/CAM/CAE systems, large CNC machining centers, portable coordinate measuring machines, and die-spotting presses to manufacture and maintain mid-to-large sized tooling, jigs, fixtures, gauges, and panel checkers.
                 </p>
-                <p className='leading-[34px] text-[#222222] text-[16px]'> The facility is capable of producing tooling for fuel tanks, exhaust systems, roll components, wheel rims, BIW, and structural parts of automobiles.</p>
+                <p className='leading-[24px] lg:leading-[34px] text-[#222222] lg:text-[16px] text-[14px]'> The facility is capable of producing tooling for fuel tanks, exhaust systems, roll components, wheel rims, BIW, and structural parts of automobiles.</p>
             </div>
         </div>
 
@@ -188,7 +188,7 @@ const Toolmanufacturing = () => {
             <div className='grid grid-cols-3 whitespace-wrap gap-5 mt-20'>
             {toolManufactureList.map((item,index) => (
                 <div key={index} className='bg-[#F5F5F5] p-3 rounded-[12px]'>
-                            <h1 className='bg-[#E3E3E3] text-[#ED1C24] py-2 font-semibold text-center rounded-[8px] text-[26px]'>{item.title}</h1>
+                            <h1 className='bg-[#E3E3E3] text-[#ED1C24] py-2 font-semibold text-center rounded-[8px] text-[20px] lg:text-[26px]'>{item.title}</h1>
                         <ul className="list-disc ml-6 py-5 space-y-3">
                                 {item.points.map((point, i) => (
                                   <li key={i} className='font-light'>{point}</li>
@@ -201,10 +201,10 @@ const Toolmanufacturing = () => {
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 mt-20'>
             {toolManufactureList.slice(0, 6).map((item,index) => (
                 <div key={index} className='bg-[#F5F5F5] p-3 rounded-[12px]'>
-                            <h1 className='bg-[#E3E3E3] text-[#ED1C24] py-2 font-semibold text-center rounded-[8px] text-[26px]'>{item.title}</h1>
+                            <h1 className='bg-[#E3E3E3] text-[#ED1C24] py-2 font-semibold text-center rounded-[8px] text-[20px] lg:text-[26px]'>{item.title}</h1>
                         <ul className="list-disc ml-6 py-5 space-y-3">
                                 {item.points.map((point, i) => (
-                                  <li key={i} className='font-light whitespace-break-spaces'>{point}</li>
+                                  <li key={i} className='font-light text-[13px] whitespace-break-spaces'>{point}</li>
                                 ))}
                          </ul>
                 </div>
@@ -223,17 +223,18 @@ const Toolmanufacturing = () => {
               </span>
             </button>
         </div>
-        <div className='grid  grid-cols-1 lg:grid-cols-2 gap-10 mt-20 items-center'>
+        <div className='grid  grid-cols-1 lg:grid-cols-2 lg:gap-10 gap-5 lg:mt-20 mt-10 items-start'>
+          <h1 className='lg:text-[24px] lg:text-start text-center block lg:hidden'>Central Room & Technical Room</h1>
           <div className='object-fit overflow-hidden w-fit'>
             <img src={toolimg2} width={593} height={550} alt='Central Room & Technical Room' className='w-full h-full rounded-[10px]'/>
           </div>
           <div>
-            <h1 className='text-[24px] lg:text-start text-center'>Central Room & Technical Room</h1>
-            <ul className="list-disc ml-6 py-5   text-[#82848A] ">
-              <li className='leading-[34px]'>
+            <h1 className='lg:text-[24px] lg:text-start text-center hidden lg:block'>Central Room & Technical Room</h1>
+            <ul className="list-disc ml-6 py-6  text-[#82848A] ">
+              <li className='leading-[24px] lg:leading-[34px] text-[14px] lg:text-[16px]'>
                 Spread in 1600 square meters area and operational since April 2011. A world-class facility for design & manufacturing of small to large sized tools, fixtures & gauges required in our various manufacturing locations to manufacture large parts & assemblies of automobiles
               </li>
-              <li className='leading-[34px]'>
+              <li className='leading-[24px] lg:leading-[34px] text-[14px] lg:text-[16px]'>
                 Latest CAD / CAM & CAE software’s – Unigraphics, Catia V-5, FTI, and Hyperform are installed in the tool design section. Total number of design stations – 40. Advanced CNC machines from Mitsubishi Japan for tool machining, die-Spotting, and tryout presses are used for manufacturing of press tools
               </li>
             </ul>
