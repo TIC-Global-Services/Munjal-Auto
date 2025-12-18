@@ -11,6 +11,7 @@ const ProductHero = () => {
             <div className="h-screen w-full   flex flex-col items-center justify-center relative overflow-hidden">
 
                 {/* Background Image with Logo */}
+               
                 <div
                     className="h-[90%] w-[94%] flex flex-col items-center justify-center rounded-[24px] relative"
                     style={{
@@ -20,16 +21,17 @@ const ProductHero = () => {
                         backgroundRepeat: "no-repeat",
                     }}
                 >
+                     <div className='h-full  w-full bg-gradient-to-t from-black/50 via-black/40 rounded-[24px]'></div>
                     {/* Logo */}
                     <Link to="/">
                         <img
                             src={logo}
                             alt="Logo"
-                            className="absolute -top-[0.9px] w-[60%] md:w-1/3 left-1/2 transform -translate-x-1/2"
+                            className="absolute  -top-[0.9px] w-[60%] md:w-1/3 left-1/2 transform -translate-x-1/2"
                         />
                     </Link>
 
-                    <div className="absolute bottom-5 right-5 flex flex-col items-center space-y-5 z-[999]">
+                    <div className="absolute bottom-5  right-5 flex flex-col items-center space-y-5 z-[999]">
                         {/* <Link to="/contact">
                             <img
                                 src={icon1}

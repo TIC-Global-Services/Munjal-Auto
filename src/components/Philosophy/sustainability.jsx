@@ -53,7 +53,7 @@ const sustainability = () => {
             width={593}
             height={547}
             alt="Sustainability and Environment"
-            className="rounded-2xl lg:h-[547px] xl:w-full xl:h-full lg:w-[593px]  h-[400px] w-full"
+            className="rounded-2xl lg:h-[547px] lg:w-[593px]  h-[400px] w-full"
           />
         <div className="">
           <div className="flex flex-col justify-start items-start lg:max-h-[429px]">

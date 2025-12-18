@@ -7,6 +7,7 @@ import faBento3 from "../../assets/faBento4.png";
 import tooldesign from "../../assets/Facilities/tooldesign.png";
 import tooldesign1 from "../../assets/Facilities/tooldesign1.png";
 import  Toolmanufacturing from './toolmanufacturing'
+import { Link } from "react-router-dom";
 
 
 function ModelViewer() {
@@ -309,9 +310,11 @@ const FacilitiesContent = ({ content }) => {
                         {content.description}
                     </p>
 
+                    <Link to='/quality'>
                     <button className="bg-white text-black lg:text-[16px] text-[14px]  px-6 py-3 rounded-[12px] font-medium hover:bg-gray-100 transition-colors w-fit">
                         Explore More
                     </button>
+                    </Link>
                 </div>
 
                 {/* Right Side - 3D Model */}
@@ -410,7 +413,7 @@ const FacilitiesContent = ({ content }) => {
                                 <li>IBM-Intelli-Star Z-Pro</li>
                             </ul>
                             </div>
-                            <div>
+                            <div className="lg:-translate-y-10">
                                 <h1 className="text-[#ED1C24] font-semibold text-[20px] lg:text-[26px]">Waghodia</h1>
                             <ul className="list-disc grid lg:grid-cols-1 grid-cols-2 gap-5  text-[13px] lg:text-[16px] leading-[20px] lg:leading-[34px] text-[#222222] px-4 mt-5">
                                 <li>CATIA V-5 –R-60</li>

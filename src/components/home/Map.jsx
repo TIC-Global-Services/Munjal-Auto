@@ -108,7 +108,7 @@ Bawal
     </div>
 
 <div
-      className="absolute top-[14%] left-[17%] lg:top-[17%] lg:left-[20%] xl:top-[18%] xl:left-[21%] w-fit flex items-center"
+      className="absolute top-[14%] left-[17%] lg:top-[17%] lg:left-[20%] 2xl:top-[18%] 2xl:left-[21%] w-fit flex items-center"
       onMouseEnter={() => setHoveredVad(true)}
       onMouseLeave={() => setHoveredVad(false)}
     >
@@ -137,7 +137,7 @@ Bawal
 
       {/* Dot 4 */}
       <div
-      className="absolute top-[28%] left-[0.5%] xl:top-[42%] xl:left-[13%] w-fit flex items-center"
+      className="absolute top-[28%] left-[0.5%] 2xl:top-[42%] 2xl:left-[13%] w-fit flex items-center"
       onMouseEnter={() => setHoveredDhar(true)}
       onMouseLeave={() => setHoveredDhar(false)}
     >
@@ -165,7 +165,7 @@ Bawal
     </div>
       {/* Dot 4 */}
       <div
-      className="absolute top-[34%] left-[4%] lg:top-[35%] lg:left-[8%] xl:top-[38%] xl:left-[10%] w-fit flex items-center"
+      className="absolute top-[34%] left-[4%] md:top-[35%] md:left-[8%] 2xl:top-[38%] 2xl:left-[10%] w-fit flex items-center"
       onMouseEnter={() => setHoveredDhar(true)}
       onMouseLeave={() => setHoveredDhar(false)}
     >

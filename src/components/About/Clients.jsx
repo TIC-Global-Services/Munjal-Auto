@@ -235,7 +235,7 @@ const Clients = () => {
               <img
                 src={item.img}
                 alt={`client-${index}`}
-                className={`${index==0? "w-30 h-30":"w-20 h-20"} object-contain`}
+                className={`${index==0? "w-[396px] h-30":"w-[94px] h-[94px]"} object-contain`}
              />
             </div>
           </div>

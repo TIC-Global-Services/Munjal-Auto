@@ -48,7 +48,7 @@ const PhiloHero = () => {
 
           <div className="md:block flex items-center justify-center bottom-0 absolute mx-3  mt-10 md:text-left text-center left-0">
             <div className="flex">
-              <div className="flex flex-col gap-3  relative top-6">
+              {/* <div className="flex flex-col gap-3  relative top-6">
                 <Youtube
                   color="#ffffff"
                   className="bg-black p-1 w-7 h-7 rounded-full"
@@ -57,7 +57,7 @@ const PhiloHero = () => {
                   color="#ffffff"
                   className="bg-black w-7 h-7 p-1 rounded-full"
                 />
-              </div>
+              </div> */}
               <div className="">
                 <h1 className="text-[#FFFCFC]  rounded-[10px] lg:leading-[3.9rem] text-left leading-[2.0rem] px-10 py-4 lg:text-[54px] text-[34px] font-[500] mb-12">
                   Innovation with <br /> Integrity

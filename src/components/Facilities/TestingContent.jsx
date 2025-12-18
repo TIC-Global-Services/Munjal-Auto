@@ -9,6 +9,7 @@ import exhust1 from '../../assets/Facilities/exhustsystem1.jpg'
 import exhust2 from '../../assets/Facilities/exhustsystem2.jpg'
 import exhaust3 from '../../assets/Facilities/exhustsystem3.jpg'
 import exhaust4 from '../../assets/Facilities/exhustsystem4.jpg'
+import exhaust5 from '../../assets/Facilities/exhustsystem5.png'
 import exhaust6 from '../../assets/Facilities/exhustsystem6.png'
 import exhaust7 from '../../assets/Facilities/exhustsystem7.png'
 import exhaust8 from '../../assets/Facilities/exhustsystem8.jpg'
@@ -112,36 +113,7 @@ const TestingContent = () => {
       "Max bending angle: 190°, CLR: 180 mm, mandrel working distance: 2000 mm",
       "Current pipe sizes: up to OD 25.40 mm, thickness 1.5 mm"
     ],
-    image: exhust1
-  },
-  {
-    sectionTitle: "Pressing & Forming",
-    points: [
-      "Mechanical presses ranging from 5–180 TON",
-      "Hydraulic presses ranging from 20–160 TON",
-      "Blanking, piercing, forming, trimming, and seam locking with specialized SPMs",
-      "CNC bending machines for pipe-in-pipe exhaust systems"
-    ],
-    image: exhaust3
-  },
-  {
-    sectionTitle: "Surface Preparation & Coating",
-    points: [
-      "Shot/grit blasting machines",
-      "Nine-stage pretreatment phosphating line",
-      "Heat-resistant painting (internal & external)",
-      "Fully automatic 34-stage tri-nickel chrome plating plant"
-    ],
-    image: exhaust4
-  },
-  {
-    sectionTitle: "CNC Bending",
-    points: [
-      "Four-axis CNC machine (YLM) with bending capacity up to 30 mm diameter, 2 mm thickness",
-      "Max bending angle: 190°, CLR: 180 mm, mandrel working distance: 2000 mm",
-      "Current pipe sizes: up to OD 25.40 mm, thickness 1.5 mm"
-    ],
-    image: exhaust6
+    image: exhaust5
   },
   {
     sectionTitle: "Welding",
@@ -221,7 +193,7 @@ const TestingContent = () => {
                          <h1 className="text-2xl font-bold mb-2 text-[#ED1C24]">{item.title}</h1>
                          <ul className="list-disc ml-6 lg:max-w-[380px]">
                            {item.points.map((point, i) => (
-                             <li key={i} className='font-light lg:text-[16px] text-[13px] text-[#82848A] leading-[20px] lg:leading-[34px]'>{point}</li>
+                             <li key={i} className='lg:text-[16px] text-[13px] font-[400] text-[#82848A] leading-[20px] lg:leading-[34px]'>{point}</li>
                            ))}
                          </ul>
                        </div>
@@ -249,7 +221,7 @@ const TestingContent = () => {
                  
                     {visibleExhaustItems.map((item, index) => (
                         <div key={index} className=''>
-                        <div className="grid grid-cols-1 lg:grid-cols-2 my-10">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 my-10 py-3">
                           <img
                             src={item.image}
                             width={595}
@@ -263,7 +235,7 @@ const TestingContent = () => {
                               <h1 className="lg:text-[26px]  text-[20px] font-bold mt-5 lg:mt-0 mb-2 text-[#ED1C24]">{item.sectionTitle}</h1>
                               <ul className="list-disc px-4 lg:px-7">
                                 {item.points.map((point, i) => (
-                                  <li key={i} className='font-light text-[#82848A] lg:leading-[34px] leading-[20px] text-[13px] lg:text-[16px]'>{point}</li>
+                                  <li key={i} className='text-[#82848A] lg:leading-[34px] font-[400] leading-[20px] text-[13px] lg:text-[16px]'>{point}</li>
                                 ))}
                               </ul>
                             </div>
