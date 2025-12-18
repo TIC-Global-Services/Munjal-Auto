@@ -37,20 +37,7 @@ const ExpertiseSection = () => {
 
 
 const Counter = ({ from, to, duration }) => {
-    const count = useMotionValue(from);
-    const rounded = useTransform(count, (latest) => Math.round(latest * 10) / 10);
-    const [countText, setCountText] = useState(from);
-
-    useEffect(() => {
-        const controls = animate(count, to, {
-            duration: duration,
-            onUpdate: latest => setCountText(Math.round(latest * 10) / 10),
-        });
-
-        return controls.stop;
-    }, []);
-
-    return <>{countText}</>;
+    return <>{to}</>;
 };
 
 const ManufacturingCapacity = () => {
@@ -166,7 +153,7 @@ const ProductionCapacity = () => {
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
                             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            // transition={{ duration: 0.5, delay: index * 0.1 }}
                             className="bg-[#F3F4F6] hover:cursor-pointer   md:px-4 px-2 py-3 md:py-8 flex"
                         >
                             <div className="space-y-2 flex flex-col flex-wrap items-start justify-center">

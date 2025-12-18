@@ -113,7 +113,7 @@ const SustainableContent = ({ content }) => {
             </motion.div>
           ))}
         </div> */}
-       
+        
          <div className='grid grid-cols-1 lg:grid-cols-2 max-w-[1213px] mx-auto lg:py-10 items-center'>
           <div>
             <h1 className='text-[24px] lg:text-left text-center lg:mb-0 mb-5'>R&D Centre</h1>
