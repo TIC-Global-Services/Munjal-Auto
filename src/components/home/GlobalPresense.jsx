@@ -17,7 +17,7 @@ const GlobalPresence = () => {
             footprint spans across continents, delivering tailored engineering
             solutions to markets in Asia, Europe, North America, and beyond.
           </p>
-          <div className="flex gap-4">
+          <div className="flex lg:flex-row flex-col gap-4">
             <Link to="/about-us">
             <button className="bg-white text-black md:text-base text-sm px-6 py-2 rounded-full hover:bg-gray-200 transition-colors">
               More About Us

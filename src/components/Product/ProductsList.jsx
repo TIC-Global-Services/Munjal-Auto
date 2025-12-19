@@ -100,7 +100,7 @@ const ProductsList = () => {
     {
       id: "exhaust",
       wholeDescription:
-        "One of the largest muffler manufacturer in world, producing around 32,000 mufflers per day, ranging from 100 cc to 800 cc for motorcycle and Scooters ",
+        "One of the largest muffler manufacturer in world, producing around 32,000 mufflers per day, ranging from 100 cc to 810 cc for motorcycle and Scooters ",
     },
     {
       id: "fuel",
@@ -223,7 +223,7 @@ const ProductsList = () => {
   ];
   const exhaustSystems = [
     {
-      title: "883CC – HERO- HARLEY DAVIDSON",
+      title: "883CC",
       description:
         "High-performance exhaust with emission control, OBD II sensors, noise reduction, and durable heat-resistant internal and external coatings.",
       fullDescription: [

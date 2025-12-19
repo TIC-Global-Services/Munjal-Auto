@@ -89,7 +89,7 @@ const CompanyProfile = () => {
                         <img
                             src={secbanner}
                             alt="Automotive manufacturing assembly line"
-                            className="w-full lg:h-[870px]  h-[250px] object-cover"
+                            className="w-full lg:h-[858px]  h-[250px] object-cover"
                         />
                     </motion.div>
                 </motion.div>
