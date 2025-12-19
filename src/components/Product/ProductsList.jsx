@@ -221,20 +221,20 @@ const ProductsList = () => {
       image: pro4,
     },
   ];
-
   const exhaustSystems = [
     {
-      title: "880CC – HERO- HARLEY DAVIDSON",
+      title: "883CC – HERO- HARLEY DAVIDSON",
       description:
         "High-performance exhaust with emission control, OBD II sensors, noise reduction, and durable heat-resistant internal and external coatings.",
       fullDescription: [
         // "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
-        "• OBD II Sensors Integration”",
-        "• Usage of suitable catalytic converter for exhaust emission control",
-        "• Various SS grades to increase in life expectancy",
-        "• Heat resistant internal painting (up to 350 degree Celsius) – for better performance",
-        "• Heat resistant external painting (up to 600 degree Celsius) – for enhanced performance",
-        "",
+        "OBD II Sensors Integration”",
+        "Usage of suitable catalytic converter for exhaust emission control",
+        "Perforated tube for noise reduction",
+        "Various SS grades to increase in life expectancy",
+        "Heat resistant internal painting (up to 350 degree Celsius) – for better performance",
+        "Heat resistant external painting (up to 600 degree Celsius) – for enhanced performance",
+        "Tri nickel chrome electroplating for aesthetic looks",
         // "The products are made to match international quality standards to ensure uniformity of gauge, well-defined profile, and leak-proof weld joints.",
       ],
       image: pro5,
@@ -451,11 +451,14 @@ const ProductsList = () => {
   return (
     <div id={activeTab} className="min-h-screen bg-[#fafafa]">
       {/* Products Section */}
-      <div className="container mx-auto px-10 py-16">
+      <div className="mb-4 sm:mb-6 md:mb-8 ">
         {/* Tabs */}
-        <div className="mb-8">
-          <div className="overflow-x-auto scrollbar-hide mb-4 sm:mb-6 md:mb-8 ">
-            <div className="flex gap-2 sm:gap-3 md:gap-4 min-w-max px-2 sm:px-4 pb-2 justify-center items-center">
+        <div className="mb-8 lg:max-w-[1211px] lg:mx-auto ">
+          <div className="overflow-x-auto  lg:overflow-x-hidden scrollbar-hide mb-4 sm:mb-6 md:mb-8 ">
+            <div className="flex lg:gap-2 gap-3 md:gap-4 lg:px-2 px-4 pb-2
+                justify-start lg:justify-center
+                items-center
+                lg:flex-wrap">
               {tabs.map((tab) => (
                 <motion.button
                   key={`scroll-${tab.id}`}
@@ -463,7 +466,7 @@ const ProductsList = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`rounded-full font-medium text-sm md:text-base px-4 md:px-6 py-2 md:py-3 transition-colors duration-300 flex-shrink-0 ${
+                  className={`rounded-full font-medium text-sm md:text-base px-4 md:px-6 py-2 md:py-3 transition-colors duration-300 flex-shrink ${
                     activeTab === tab.id
                       ? "text-white"
                       : "bg-[#F4F4F4] text-black"
@@ -483,7 +486,7 @@ const ProductsList = () => {
           </div>
         </div>
 
-        <div className={`text-black lg:text-[28px] lg:leading-[55px] py-10 text-center mx-auto ${activeTab === "steel" ? "max-w-[866px]" : activeTab==="auto" ?"max-w-[1138px]":activeTab==="biw"?"max-w-[1060px]":activeTab==="fuel"?"max-w-[1060px]":"max-w-[820px]"}`}>
+        <div className={`text-black lg:text-[28px] lg:leading-[55px] py-10 lg:mt-10 lg:mb-20 text-center mx-auto ${activeTab === "steel" ? "max-w-[866px]" : activeTab==="auto" ?"max-w-[1138px]":activeTab==="biw"?"max-w-[1060px]":activeTab==="fuel"?"max-w-[1060px]":"max-w-[820px]"}`}>
           {getActiveDescription()}
         </div>
         {/* Content for all tabs */}
@@ -503,9 +506,9 @@ const ProductsList = () => {
               <motion.div
             layout
   transition={{ duration: 1, ease: "easeInOut" }}
-              className={`hidden md:grid md:grid-cols-12 lg:grid-cols-12 gap-0  min-h-[432px] w-full max-w-7xl mx-auto   ${expandedItems[index] ? "items-start" : "items-end"} `}>
+              className={`hidden md:grid md:grid-cols-12 lg:grid-cols-12 gap-0  min-h-[432px] w-full max-w-7xl mx-auto   ${expandedItems[index] ? "items-start" : "items-end"} overflow-hidden`}>
                 {/* Image Section - Takes 4 columns on md, 3 on lg */}
-                <div className="md:col-span-4 lg:col-span-3 bg-[#EBEBEF] flex items-center justify-center p-6 h-full">
+                <div className="md:col-span-4 lg:col-span-3 bg-[#EBEBEF] flex items-center justify-center p-6 h-full flex-shrink-0">
                   <motion.div
                     initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
                     animate={{
@@ -529,7 +532,7 @@ const ProductsList = () => {
                 </div>
 
                 {/* Content Section - Takes 6 columns on md, 7 on lg */}
-                <motion.div layout transition={{ duration: 0.6, ease: "easeInOut" }} className="md:col-span-6 lg:col-span-7 p-6 text-[#ED1C24] relative ">
+                <motion.div layout transition={{ duration: 0.6, ease: "easeInOut" }} className="md:col-span-6 lg:col-span-7 p-6 text-[#ED1C24] relative flex-shrink-0">
                   {!expandedItems[index] && (
                     <h1 className="text-[130px] font-bold text-gray-300/20 mb-2 absolute -top-24">
                       0{index + 1}
@@ -592,7 +595,7 @@ const ProductsList = () => {
                 </motion.div>
 
                 {/* Button Section - Takes 2 columns, positioned bottom right */}
-                <div className="md:col-span-2 lg:col-span-2 p-6 flex items-end justify-end h-full">
+                <div className="md:col-span-2 lg:col-span-2 p-6 flex items-end justify-end h-full flex-shrink-0">
                   <motion.button
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -608,7 +611,7 @@ const ProductsList = () => {
               </motion.div>
 
               {/* Mobile Layout: Keep your original mobile design */}
-              <div className="md:hidden px-5">
+              <div className="md:hidden lg:px-5">
                 {/* Image Section */}
                 <div className="bg-[#EBEBEF] flex items-center justify-center p-6">
                   <motion.div
@@ -623,23 +626,23 @@ const ProductsList = () => {
                       duration: 0.6,
                       ease: "easeOut",
                     }}
-                    className="flex items-center justify-center"
+                    className="flex items-center  justify-center"
                   >
                     <motion.img
                       src={item.image}
                       alt={item.title}
-                      className="w-auto max-w-[280px] h-auto object-contain"
+                      className="w-auto lg:max-w-[280px] h-auto object-contain"
                     />
                   </motion.div>
                 </div>
 
                 {/* Content Section */}
-                <div className="p-6 text-[#ED1C24]">
+                <div className="lg:p-6 text-[#ED1C24] mt-4 lg:mt-0">
                   <motion.h2
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.4, duration: 0.5 }}
-                    className="text-[28px] font-bold mb-4"
+                    className="lg:text-[28px] text-[20px] font-bold mb-4"
                   >
                     {item.title}
                   </motion.h2>
@@ -649,7 +652,7 @@ const ProductsList = () => {
                       <motion.p
                         initial={{ opacity: 1 }}
                         animate={{ opacity: 1 }}
-                        className="mb-4 text-base leading-relaxed"
+                        className="mb-4 text-[16px] leading-relaxed"
                       >
                         {item.description}
                       </motion.p>
@@ -715,3 +718,4 @@ const ProductsList = () => {
 };
 
 export default ProductsList;
+

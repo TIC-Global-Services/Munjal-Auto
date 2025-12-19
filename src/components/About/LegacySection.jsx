@@ -68,13 +68,12 @@ const LegacySection = () => {
                    </div>
 
                     {/* Right Image with Parallax - Take 8 columns and extend beyond container */}
-                    <div className="lg:col-span-7 hidden md:block relative h-full w-full rounded-3xl">
+                    <div className="lg:col-span-7 hidden md:block relative lg:h-[627px] w-full rounded-3xl">
                         <div
                             className="absolute inset-0 rounded-3xl overflow-hidden transform"
                             style={{
-                                transform: `translateY(${scrollY * 0.2}px)`,
-                                transition: "transform 0.1s ease-out",
                                 width: "calc(100% + 28vw)",
+                                height:"calc(40% + 28vw)",
                                 right: "-8vw",
                             }}
                         >

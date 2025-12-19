@@ -116,7 +116,7 @@ const committees = () => {
         {BoardOfDirectorsList.map((res, index) => (
           <div key={index} className="p-10 bg-[#F5F5F5] rounded-[12px] text-center w-full max-w-[385px]">
             <h1 className="text-[#ED1C24] font-bold lg:text-[20px] text-[16px]">{res.name}</h1>
-            <p className="lg:text-[20px] text-[16px]">({res.role})</p>
+            <p className="lg:text-[20px] font-[500] text-[16px]">({res.role})</p>
             <p className="text-[13px] lg:text-[16px]">{res.designation}</p>
           </div>
         ))}
@@ -130,7 +130,7 @@ const committees = () => {
         {NominationAndRemunerationCommitteeList.map((res, index) => (
           <div key={index} className="p-10 bg-[#F5F5F5] rounded-[12px] flex flex-col justify-center text-center w-full lg:min-h-[200px]">
             <h1 className="text-[#ED1C24] font-bold lg:text-[20px] text-[16px]">{res.name}</h1>
-            <p className="lg:text-[20px] text-[16px]">({res.role})</p>
+            <p className="lg:text-[20px] font-[500] text-[16px]">({res.role})</p>
             <p className="text-[13px] lg:text-[16px]">{res.designation}</p>
           </div>
         ))}
@@ -145,7 +145,7 @@ const committees = () => {
         {StakeholdersRelationshipCommitteeList.map((res, index) => (
           <div key={index} className="p-10 bg-[#F5F5F5] rounded-[12px] text-center flex flex-col justify-center text-center w-full lg:min-h-[200px]">
             <h1 className="text-[#ED1C24] font-bold lg:text-[20px] text-[16px]">{res.name}</h1>
-            <p className="lg:text-[20px] text-[16px]">({res.role})</p>
+            <p className="lg:text-[20px] font-[500] text-[16px]">({res.role})</p>
             <p className="text-[13px] lg:text-[16px]">{res.designation}</p>
           </div>
         ))}
@@ -160,7 +160,7 @@ const committees = () => {
         {RiskManagementCommitteeList.map((res, index) => (
           <div key={index} className="p-10 bg-[#F5F5F5] rounded-[12px] flex flex-col justify-center text-center w-full lg:min-h-[200px]">
             <h1 className="text-[#ED1C24] font-bold lg:text-[20px] text-[16px]">{res.name}</h1>
-            <p className="lg:text-[20px] text-[16px]">({res.role})</p>
+            <p className="lg:text-[20px] font-[500] text-[16px]">({res.role})</p>
             <p className="text-[13px] lg:text-[16px]">{res.designation}</p>
           </div>
         ))}
@@ -174,7 +174,7 @@ const committees = () => {
         {CorporateSocialResponsibilityCommitteeList.map((res, index) => (
           <div key={index} className="p-10 bg-[#F5F5F5] rounded-[12px] flex flex-col justify-center text-center w-full lg:min-h-[200px]">
             <h1 className="text-[#ED1C24] font-bold lg:text-[20px] text-[16px]">{res.name}</h1>
-            <p className="lg:text-[20px] text-[16px]">({res.role})</p>
+            <p className="lg:text-[20px] font-[500] text-[16px]">({res.role})</p>
             <p className="text-[13px] lg:text-[16px]">{res.designation}</p>
           </div>
         ))}
@@ -188,7 +188,7 @@ const committees = () => {
         {ShareTransferCommitteeList.map((res, index) => (
           <div key={index} className="p-10 bg-[#F5F5F5] rounded-[12px] flex flex-col justify-center text-center  lg:min-w-[385px] lg:min-h-[200px]">
             <h1 className="text-[#ED1C24] font-bold lg:text-[20px] text-[16px]">{res.name}</h1>
-            <p className="lg:text-[20px] text-[16px]">({res.role})</p>
+            <p className="lg:text-[20px] font-[500] text-[16px]">({res.role})</p>
             <p className="text-[13px] lg:text-[16px]">{res.designation}</p>
           </div>
         ))}

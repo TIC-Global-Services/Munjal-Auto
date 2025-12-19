@@ -13,9 +13,9 @@ const innovation = () => {
                 <img
                     src={innovationimg}
                     alt="inductch"
-                    className="w-full h-full object-cover rounded-md"
+                    className="w-full h-full object-cover rounded-[20px]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/60 to-transparent rounded-md flex items-start px-3 p-2 md:p-4 lg:p-6">
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/60 to-transparent rounded-[20px] flex items-start px-3 p-2 md:p-4 lg:p-6">
                       <div className="text-white w-[328px] max-h-[400px] sm:w-3/4 md:w-2/3 lg:w-full">
                         <h3 className="text-base md:text-lg lg:text-xl font-normal lg:font-semibold mb-2 md:mb-4 text-[#FF0000]">
                           Innovation & People

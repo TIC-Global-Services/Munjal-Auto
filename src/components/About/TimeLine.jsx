@@ -143,7 +143,7 @@ const TimeLine = () => {
   // Desktop version (unchanged)
   if (!isMobile) {
     return (
-      <div className="  min-h-screen w-full flex items-center justify-center p-4 px-[10%] mb-40">
+      <div className="  min-h-screen w-full flex items-center translate-y-0 lg:translate-y-14 lg:mt-10  justify-center p-4 px-[10%] mb-40">
         <div className="relative w-full max-w-7xl ">
           {/* Timeline Container */}
           <div className="relative h-96 flex items-center">
@@ -172,7 +172,7 @@ const TimeLine = () => {
                   {/* Year Label - positioned above/below the line */}
                   <div
                     className={`absolute left-1/2 transform -translate-x-1/2 transition-all duration-700 ${
-                      item.position === "bottom" ? "bottom-5" : "top-5"
+                      item.position === "top" ? "bottom-2" : "top-2"
                     } ${
                       visiblePoints.includes(index)
                         ? "opacity-100 translate-y-0"
@@ -184,7 +184,7 @@ const TimeLine = () => {
                     }`}
                     style={{ transitionDelay: `${200 + index * 100}ms` }}
                   >
-                    <div className="text-white font-bold text-lg text-center whitespace-nowrap">
+                    <div className="text-white font-bold text-[12px] text-center whitespace-nowrap">
                       {item.year}
                     </div>
                   </div>
@@ -192,7 +192,7 @@ const TimeLine = () => {
                   {/* Content Card */}
                   <div
                     className={`absolute left-1/2 transform -translate-x-1/2 transition-all duration-700 ${
-                      item.position === "top" ? "top-[50px]" : "bottom-[50px]"
+                      item.position === "top" ? "top-[20px]" : "bottom-[20px]"
                     } ${
                       visiblePoints.includes(index)
                         ? "opacity-100 translate-y-0"

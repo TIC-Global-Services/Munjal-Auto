@@ -94,7 +94,7 @@ const TopNav = () => {
       <div className="hidden lg:block">
         <div className="absolute flex justify-between items-center w-full text-white px-4 sm:px-6 md:px-10 lg:px-14 xl:px-[80px] py-2">
           {/* Left Side */}
-          <div className="flex xl:space-x-15 lg:space-x-12 ">
+          <div className="flex  xl:space-x-15 lg:space-x-12">
             {leftContents.map((item, index) => (
               <Link
                 key={index}

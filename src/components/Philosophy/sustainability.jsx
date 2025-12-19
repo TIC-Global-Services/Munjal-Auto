@@ -43,7 +43,7 @@ const sustainability = () => {
     // </div>
     <div>
      <div className="text-center mt-10">
-        <h3 className="text-[24px] block lg:hidden font-medium  text-foreground">
+        <h3 className="text-[18px] block px-1 lg:hidden font-medium  text-foreground">
               Sustainability & Environment
             </h3>
      </div>
@@ -53,7 +53,7 @@ const sustainability = () => {
             width={593}
             height={547}
             alt="Sustainability and Environment"
-            className="rounded-2xl lg:h-[547px] xl:w-full xl:h-full lg:w-[593px]  h-[400px] w-full"
+            className="rounded-2xl lg:h-[547px] lg:w-[593px]  h-[400px] w-full"
           />
         <div className="">
           <div className="flex flex-col justify-start items-start lg:max-h-[429px]">

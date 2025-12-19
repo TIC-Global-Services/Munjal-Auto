@@ -24,22 +24,22 @@ const CompositeTechnology = () => {
 
         {/* First Content Section */}
         <div className="mb-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             <div className="order-2 lg:order-1 max-w-[592px]">
               <img
                 src={indutch1}
                 alt="Indutch Composite Technology"
-                className="object-cover  h-auto rounded-xl shadow-lg"
+                className="object-cover  h-[340px] rounded-xl  shadow-lg"
               />
             </div>
             <div className="order-1 lg:order-2">
-              <p className="text-[13px] lg:text-[18px] text-gray-700 leading-relaxed mb-6">
+              <p className="text-[13px] lg:text-[18px] text-[#020202] leading-relaxed mb-6">
                 Since inception, Indutch Composites Technology Limited has been
                 a trusted partner to the composites industry, specializing in
                 the design and manufacturing of composite moulds and components
                 through advanced processes such as:
               </p>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4 lg:gap-0">
                 {[
                   "Wet lay-up",
                   "Dry lay-up",
@@ -48,8 +48,8 @@ const CompositeTechnology = () => {
                   "LRTM",
                 ].map((process, index) => (
                   <div key={index} className="flex items-center">
-                    <div className="w-2 h-2 bg-black rounded-full mr-3"></div>
-                    <span className="text-gray-700 font-medium text-[13px] lg:text-[18px]">{process}</span>
+                    <div className="w-1 h-1 bg-[#020202] rounded-full mr-3"></div>
+                    <span className="text-[#020202] font-[400] text-[13px] lg:text-[18px]">{process}</span>
                   </div>
                 ))}
               </div>
@@ -61,11 +61,11 @@ const CompositeTechnology = () => {
        <div className="lg:py-10">
          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-12 items-start">
           <div>
-            <p className="text-[13px] lg:text-[18px] text-gray-700 leading-relaxed mb-6">
+            <p className="text-[13px] lg:text-[18px] text-[#020202] leading-relaxed ">
               The company employs over 700 skilled technicians and 70 engineers,
               with in-house capabilities for mould design, jigs, and fixtures.
             </p>
-            <h3 className="text-[13px] lg:text-[18px] font-normal text-gray-900 mb-4">
+            <h3 className="text-[13px] lg:text-[18px] font-normal text-[#020202] mb-5">
               Upcoming Facility (2019 launch):
             </h3>
             <ul className="leading-[28px]">
@@ -79,8 +79,8 @@ const CompositeTechnology = () => {
                 "Paint booth and Class 8 cleanroom (12m × 10m × 3m)",
               ].map((item, index) => (
                 <li key={index} className="flex items-start">
-                  <div className="w-2 h-2 bg-black rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                  <span className="text-gray-700 leading-relaxed text-[13px] lg:text-[18px]">{item}</span>
+                  <div className="w-1 h-1 bg-black rounded-full mr-2 mt-3 flex-shrink-0"></div>
+                  <span className="text-[#020202] leading-relaxed text-[13px] lg:text-[18px]">{item}</span>
                 </li>
               ))}
             </ul>
@@ -183,20 +183,20 @@ const CompositeTechnology = () => {
           </div>
           <div>
             <div>
-              <p className="text-[13px] lg:text-[18px] leading-[28px]">
+              <p className="text-[13px] lg:text-[18px] text-[#020202] leading-[28px]">
                 Indutch has the capabilities to design and manufacture moulds
                 and products for various Engineering industries such as Auto,
                 Defence, Railways, Aviation, Space, Marine, Home appliances,
                 mass transit, just to name a few. Today Wind sector is the core
                 business at Indutch.
               </p>
-              <p className="text-[13px] lg:text-[18px] mt-4">Indutch has 4 manufacturing facilities</p>
-              <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-4">
+              <p className="text-[13px] text-[#020202] lg:text-[18px] mt-4 mb-4">Indutch has 4 manufacturing facilities</p>
+              <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-0">
                 {["Chennai", "Halol", "Manjusar", "Waghodia"].map(
                   (process, index) => (
-                    <div key={index} className="flex items-center mt-2">
-                      <div className="w-2 h-2 bg-black rounded-full mr-3"></div>
-                      <span className="text-gray-700 font-medium text-[13px] lg:text-[18px]">
+                    <div key={index} className="flex items-center">
+                      <div className="w-1 h-1 bg-black rounded-full mr-2"></div>
+                      <span className="text-[#020202] text-[13px] lg:text-[18px] font-[400]">
                         {process}
                       </span>
                     </div>

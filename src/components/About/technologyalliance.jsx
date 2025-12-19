@@ -14,7 +14,7 @@ const technologyalliance = () => {
  ]
 
   return (
-    <div className="lg:px-20 px-3">
+    <div className="lg:px-20 lg:mt-12 px-3">
        <div className="grid grid-cols-1 lg:grid-cols-2 items-center lg:px-15 px-1">
       <div className="text-center">
         <h1 className="leading-[56px] lg:text-[46px] text-[34px]  text-left">Technology Alliances</h1>
