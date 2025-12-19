@@ -417,7 +417,7 @@ const WhyMunjalAutos = () => {
               </div>
   
               {/* Features list - responsive layout with proper z-index */}
-              <div className="space-y-4 w-full md:w-full md:ml-4 lg:ml-8  md:mt-0 lg:-mt-32 relative z-[705]">
+              <div className="space-y-5 w-full md:w-full md:ml-4 lg:ml-8  md:mt-0 lg:-mt-32 relative z-[705]">
                 {features.map((feature, index) => {
                   // Improved scroll trigger points
                   const startPoint = Math.min(0.1 + index * 0.15, 0.7);
@@ -442,10 +442,10 @@ const WhyMunjalAutos = () => {
                         ),
                       }}
                     >
-                      <h3 className="text-lg md:text-xl lg:text-[36px] text-[#151414] font-medium mb-2">
+                      <h3 className="text-lg md:text-xl lg:text-[36px] leading-[50px] text-[#151414] font-medium mb-2">
                         {feature.title}
                       </h3>
-                      <p className="text-[#8C8989] text-sm whitespace-pre-line md:text-base leading-relaxed">
+                      <p className="text-[#8C8989] leading-[3 0px] text-sm whitespace-pre-line md:text-base leading-relaxed">
                         {feature.description}
                       </p>
                     </motion.div>

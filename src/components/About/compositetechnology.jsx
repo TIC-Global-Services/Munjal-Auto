@@ -39,19 +39,30 @@ const CompositeTechnology = () => {
                 the design and manufacturing of composite moulds and components
                 through advanced processes such as:
               </p>
-              <div className="grid grid-cols-2 gap-4 lg:gap-0">
-                {[
-                  "Wet lay-up",
-                  "Dry lay-up",
-                  "Vacuum bagging",
-                  "VARTM",
-                  "LRTM",
-                ].map((process, index) => (
-                  <div key={index} className="flex items-center">
-                    <div className="w-1 h-1 bg-[#020202] rounded-full mr-3"></div>
-                    <span className="text-[#020202] font-[400] text-[13px] lg:text-[18px]">{process}</span>
-                  </div>
-                ))}
+              <div className="grid grid-cols-1 lg:grid-cols-2">
+                <div>
+                  {[
+                    "Wet lay-up", 
+                    "Dry lay-up"
+                  ].map((process, index) => (
+                    <div key={index} className="flex items-center">
+                      <div className="w-1 h-1 bg-[#020202] rounded-full mr-3"></div>
+                      <span className="text-[#020202] font-[400] text-[13px] lg:text-[18px]">{process}</span>
+                    </div>
+                  ))}
+                </div>
+                <div>
+                  {[
+                    "Vacuum bagging",
+                    "VARTM",
+                    "LRTM",
+                  ].map((process, index) => (
+                    <div key={index} className="flex items-center">
+                      <div className="w-1 h-1 bg-[#020202] rounded-full mr-3"></div>
+                      <span className="text-[#020202] font-[400] text-[13px] lg:text-[18px]">{process}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -192,7 +203,7 @@ const CompositeTechnology = () => {
               </p>
               <p className="text-[13px] text-[#020202] lg:text-[18px] mt-4 mb-4">Indutch has 4 manufacturing facilities</p>
               <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-0">
-                {["Chennai", "Halol", "Manjusar", "Waghodia"].map(
+                {["Chennai", "Halol", "Manjusar", "Waghodia (Under Construction)"].map(
                   (process, index) => (
                     <div key={index} className="flex items-center">
                       <div className="w-1 h-1 bg-black rounded-full mr-2"></div>
