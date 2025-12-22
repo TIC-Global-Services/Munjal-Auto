@@ -39,9 +39,10 @@ const ProductsList = () => {
   const [expandedItems, setExpandedItems] = useState({});
 
   const toggleExpanded = (index) => {
+    const uniqueKey = `${activeTab}-${index}`;
     setExpandedItems((prev) => ({
       ...prev,
-      [index]: !prev[index],
+      [uniqueKey]: !prev[uniqueKey],
     }));
   };
   const getActiveDescription = () => {
@@ -292,7 +293,6 @@ const ProductsList = () => {
       image: pro8,
     },
   ];
-
   const fuelTanks = [
     {
       title: "Battery Tray",
@@ -359,7 +359,6 @@ const ProductsList = () => {
       image: pro12,
     },
   ];
-
   const biwAssemblies = [
     {
       title: "COPV Type IV CNG Cylinder ",
@@ -506,7 +505,7 @@ const ProductsList = () => {
               <motion.div
             layout
   transition={{ duration: 1, ease: "easeInOut" }}
-              className={`hidden md:grid md:grid-cols-12 lg:grid-cols-12  min-h-[368px]  w-full max-w-7xl mx-auto   ${expandedItems[index] ? "items-start" : "items-end"} overflow-hidden`}>
+              className={`hidden md:grid md:grid-cols-12 lg:grid-cols-12  min-h-[368px]  w-full max-w-7xl mx-auto   ${expandedItems[`${activeTab}-${index}`] ? "items-start" : "items-end"} overflow-hidden`}>
                 {/* Image Section - Takes 4 columns on md, 3 on lg */}
                 <div className="md:col-span-4 lg:col-span-3 bg-[#EBEBEF] rounded-md w-[385px] flex items-center justify-center p-6 h-full flex-shrink-0">
                   <motion.div
@@ -534,7 +533,7 @@ const ProductsList = () => {
                 {/* Content Section - Takes 6 columns on md, 7 on lg */}
                 <div className="md:col-span-6 lg:col-span-7 text-[#ED1C24] relative flex-shrink-0 translate-x-20">
                   <motion.div layout transition={{ duration: 0.6, ease: "easeInOut" }} className="md:col-span-6 lg:col-span-7 p-6 text-[#ED1C24] relative flex-shrink-0 ">
-                  {!expandedItems[index] && (
+                  {!expandedItems[`${activeTab}-${index}`] && (
                     <h1 className="text-[130px] font-bold text-gray-300/20 mb-2 absolute -top-24">
                       0{index + 1}
                     </h1>
@@ -559,7 +558,7 @@ const ProductsList = () => {
                       </motion.p>
 
                       <AnimatePresence>
-                        {expandedItems[index] && (
+                        {expandedItems[`${activeTab}-${index}`] && (
                           <motion.div
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: "auto" }}
@@ -574,7 +573,7 @@ const ProductsList = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -20 }}
                                 transition={{
-                                  delay: expandedItems[index]
+                                  delay: expandedItems[`${activeTab}-${index}`]
                                     ? descIndex * 0.1
                                     : (item.fullDescription.length -
                                         descIndex -
@@ -607,7 +606,7 @@ const ProductsList = () => {
                     className="bg-black text-white px-6 py-3 rounded-xl text-base font-medium cursor-pointer transition-all duration-200 hover:bg-gray-800 shadow-md whitespace-nowrap"
                     onClick={() => toggleExpanded(index)}
                   >
-                    {expandedItems[index] ? "Show Less" : "Learn More"}
+                    {expandedItems[`${activeTab}-${index}`] ? "Show Less" : "Learn More"}
                   </motion.button>
                 </div>
               </motion.div>
@@ -660,7 +659,7 @@ const ProductsList = () => {
                       </motion.p>
 
                       <AnimatePresence>
-                        {expandedItems[index] && (
+                        {expandedItems[`${activeTab}-${index}`] && (
                           <motion.div
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: "auto" }}
@@ -675,7 +674,7 @@ const ProductsList = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -20 }}
                                 transition={{
-                                  delay: expandedItems[index]
+                                  delay: expandedItems[`${activeTab}-${index}`]
                                     ? descIndex * 0.1
                                     : (item.fullDescription.length -
                                         descIndex -
@@ -706,7 +705,7 @@ const ProductsList = () => {
                       className="bg-black text-white px-6 py-3 rounded-xl text-base font-medium cursor-pointer transition-all duration-200 hover:bg-gray-800 shadow-md"
                       onClick={() => toggleExpanded(index)}
                     >
-                      {expandedItems[index] ? "Show Less" : "Learn More"}
+                      {expandedItems[`${activeTab}-${index}`] ? "Show Less" : "Learn More"}
                     </motion.button>
                   </div>
                 </div>
@@ -720,4 +719,3 @@ const ProductsList = () => {
 };
 
 export default ProductsList;
-
