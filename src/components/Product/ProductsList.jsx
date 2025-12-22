@@ -121,12 +121,12 @@ const ProductsList = () => {
         "The products made to match international quality standards to ensure uniformity of gauge, well-defined profile, and leak-proof weld joints",
       fullDescription: [
         // "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
-        "• OBD II Sensors Integration",
-        "• Pipe in Pipe design",
-        "• Various SS grades to increase in life expectancy",
-        "• Heat resistant internal painting (up to 350 degree Celsius) – for better performance",
-        "• Heat resistant external painting (up to 600 degree Celsius) – for enhanced performance",
-        "• Tri nickel chrome electroplating for aesthetic looks",
+        "OBD II Sensors Integration",
+        "Pipe in Pipe design",
+        "Various SS grades to increase in life expectancy",
+        "Heat resistant internal painting (up to 350 degree Celsius) – for better performance",
+        "Heat resistant external painting (up to 600 degree Celsius) – for enhanced performance",
+        "Tri nickel chrome electroplating for aesthetic looks",
         "",
         // "The products are made to match international quality standards to ensure uniformity of gauge, well-defined profile, and leak-proof weld joints.",
       ],
@@ -140,9 +140,9 @@ const ProductsList = () => {
         // "The installed plant capacity is 10,000 Rims per day using imported multistage, profile forming rolling mills from Japan and Taiwan.",
         "",
         "We have the capability to manufacture Spoke Rims of the following range using IS Grade cold rolled steel:",
-        "• Nominal Rim Diameter: 16” ~ 21”",
-        "• Rim Thickness: 1.4” ~ 3.0”",
-        "• Spoke Hole: 36 nos. or as per Customer Specifications",
+        "Nominal Rim Diameter: 16” ~ 21”",
+        "Rim Thickness: 1.4” ~ 3.0”",
+        "Spoke Hole: 36 nos. or as per Customer Specifications",
         "",
         "All Rims are Tri–Nickel chrome plated to International Standards.",
       ],
@@ -157,13 +157,13 @@ const ProductsList = () => {
         "A subframe arm is a structural component within a vehicle's chassis, designed to carry specific components like the EV motor, suspension, and axles, while isolating vibrations and distributing loads across the vehicle body.",
       fullDescription: [
         // "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
-        "• Press Toolings in house",
-        "• Specialised material grade E34",
-        "• Welding Distortion Tolerance Precision",
-        "• Automatic Robotic welding line",
-        "• Load recording system with PLC of bush pressing",
-        "• Production Traceability",
-        "• Projection welding of flanged nuts",
+        "Press Toolings in house",
+        "Specialised material grade E34",
+        "Welding Distortion Tolerance Precision",
+        "Automatic Robotic welding line",
+        "Load recording system with PLC of bush pressing",
+        "Production Traceability",
+        "Projection welding of flanged nuts",
         "",
         // "The products are made to match international quality standards to ensure uniformity of gauge, well-defined profile, and leak-proof weld joints.",
       ],
@@ -175,10 +175,10 @@ const ProductsList = () => {
         "A CNG cylinder mounting cradle is a structural arrangement designed to securely hold and support compressed natural gas cylinders on vehicles, ensuring safety and stability under various loading conditions",
       fullDescription: [
         // "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
-        "• Type 1 Steel cylinder integration",
-        "• Type IV Composite overwrap pressure vessel integration",
-        "• Robotic welding and auto nut runner",
-        "• Design and development",
+        "Type 1 Steel cylinder integration",
+        "Type IV Composite overwrap pressure vessel integration",
+        "Robotic welding and auto nut runner",
+        "Design and development",
         // "• Disc Thickness: 2.0 mm ~ 4.0 mm",
         "",
         // "The products are made to match international quality standards to ensure uniformity of gauge, well-defined profile, and leak-proof weld joints.",
@@ -191,14 +191,14 @@ const ProductsList = () => {
         "A subframe is a structural component within a vehicle's chassis, designed to carry specific components like the engine, suspension, and axles, while isolating vibrations and distributing loads across the vehicle body.",
       fullDescription: [
         // "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
-        "• Press Tooling in house",
-        "• Deep Drawing and intricate shapes of High tensile material grade like E46/BSK 46",
-        "• Specialised material grade E34",
-        "• Welding Distortion Tolerance Precision",
-        "• Automatic Robotic welding line",
-        "• Load recording system with PLC of bush pressing",
-        "• Production Traceability",
-        "• Projection welding of flanged nuts",
+        "Press Tooling in house",
+        "Deep Drawing and intricate shapes of High tensile material grade like E46/BSK 46",
+        "Specialised material grade E34",
+        "Welding Distortion Tolerance Precision",
+        "Automatic Robotic welding line",
+        "Load recording system with PLC of bush pressing",
+        "Production Traceability",
+        "Projection welding of flanged nuts",
         "",
         // "The products are made to match international quality standards to ensure uniformity of gauge, well-defined profile, and leak-proof weld joints.",
       ],
@@ -210,11 +210,11 @@ const ProductsList = () => {
         "A fuel tank is a safe container designed to store flammable fluids like gasoline or diesel, providing features such as secure filling, fuel level gauging, venting, and feeding the engine through a pump.",
       fullDescription: [
         // "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
-        "• Al Si coated material grades",
-        "• Seam welding, spot welding , mig welding, projection welding",
-        "• Leak proof testing",
-        "• Fuel pump and gauge integration",
-        "• All test facility available in house like Mill Pore testing, Vibration testing etc.",
+        "Al Si coated material grades",
+        "Seam welding, spot welding , mig welding, projection welding",
+        "Leak proof testing",
+        "Fuel pump and gauge integration",
+        "All test facility available in house like Mill Pore testing, Vibration testing etc.",
         "",
         // "The products are made to match international quality standards to ensure uniformity of gauge, well-defined profile, and leak-proof weld joints.",
       ],
@@ -245,13 +245,13 @@ const ProductsList = () => {
         "Advanced exhaust system with OBD II integration, catalytic converter, noise reduction, and heat-resistant finishes for enhanced performance and longevity.",
       fullDescription: [
         // "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
-        "• OBD II Sensors Integration",
-        "• Usage of suitable catalytic converter for exhaust emission control",
-        "• Perforated tube for noise reduction",
-        "• Various SS grades to increase in life expectancy",
-        "• Heat resistant internal painting (up to 350 degree Celsius) – for better performance",
-        "• Heat resistant external painting (up to 600 degree Celsius) – for enhanced performance",
-        "• Tri nickel chrome electroplating for aesthetic looks",
+        "OBD II Sensors Integration",
+        "Usage of suitable catalytic converter for exhaust emission control",
+        "Perforated tube for noise reduction",
+        "Various SS grades to increase in life expectancy",
+        "Heat resistant internal painting (up to 350 degree Celsius) – for better performance",
+        "Heat resistant external painting (up to 600 degree Celsius) – for enhanced performance",
+        "Tri nickel chrome electroplating for aesthetic looks",
         "",
         // "The products are made to match international quality standards to ensure uniformity of gauge, well-defined profile, and leak-proof weld joints.",
       ],
@@ -263,11 +263,11 @@ const ProductsList = () => {
         "Integrated exhaust solution for optimized flow and noise reduction, featuring catalytic converters, OBD II integration, and long-lasting heat-resistant finishes.",
       fullDescription: [
         // "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
-        "• OBD II Sensors Integration",
-        "• Usage of suitable catalytic converter for exhaust emission control",
-        "• Various SS grades to increase in life expectanc",
-        "• Heat resistant internal painting (up to 350 degree Celsius) – for better performance",
-        "• Heat resistant external painting (up to 600 degree Celsius) – for enhanced performance",
+        "OBD II Sensors Integration",
+        "Usage of suitable catalytic converter for exhaust emission control",
+        "Various SS grades to increase in life expectanc",
+        "Heat resistant internal painting (up to 350 degree Celsius) – for better performance",
+        "Heat resistant external painting (up to 600 degree Celsius) – for enhanced performance",
         "",
         // "The products are made to match international quality standards to ensure uniformity of gauge, well-defined profile, and leak-proof weld joints.",
       ],
@@ -279,13 +279,13 @@ const ProductsList = () => {
         "Efficient exhaust system with Pipe-in-Pipe design, OBD II sensors, emission control, and durable heat-resistant coatings for superior performance and aesthetics.",
       fullDescription: [
         // "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
-        "• OBD II Sensors Integration",
-        "• Usage of suitable catalytic converter for exhaust emission control",
-        "• Pipe in Pipe design",
-        "• Various SS grades to increase in life expectancy",
-        "• Heat resistant internal painting (up to 350 degree Celsius) – for better performance",
-        "• Heat resistant external painting (up to 600 degree Celsius) – for enhanced performance",
-        "• Tri nickel chrome electroplating for aesthetic looks",
+        "OBD II Sensors Integration",
+        "Usage of suitable catalytic converter for exhaust emission control",
+        "Pipe in Pipe design",
+        "Various SS grades to increase in life expectancy",
+        "Heat resistant internal painting (up to 350 degree Celsius) – for better performance",
+        "Heat resistant external painting (up to 600 degree Celsius) – for enhanced performance",
+        "Tri nickel chrome electroplating for aesthetic looks",
         "",
         // "The products are made to match international quality standards to ensure uniformity of gauge, well-defined profile, and leak-proof weld joints.",
       ],
@@ -300,9 +300,9 @@ const ProductsList = () => {
         "A battery tray is a durable, protective container designed to hold and secure batteries, providing structural support and containment for potential spills, while ensuring electrical isolation and stability",
       fullDescription: [
         // "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
-        "• CED coating",
-        "• Forming and bending",
-        "•  Spot Welding, mig welding, Projection welding",
+        "CED coating",
+        "Forming and bending",
+        "Spot Welding, mig welding, Projection welding",
         // "• Rim Profile: B, D, J and other International Standards",
         // "• Disc Thickness: 2.0 mm ~ 4.0 mm",
         "",
@@ -316,9 +316,9 @@ const ProductsList = () => {
         "The front and rear bumpers are protective components at the vehicle's ends, designed to absorb impact, protect vital parts, and enhance aesthetics, featuring a cover, energy absorber, and reinforcement bar.",
       fullDescription: [
         // "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
-        "• Robotic spot welding and mig welding",
-        "• High tensile material grade 780 and 590",
-        "• Drawing",
+        "Robotic spot welding and mig welding",
+        "High tensile material grade 780 and 590",
+        "Drawing",
         // "• Rim Profile: B, D, J and other International Standards",
         // "• Disc Thickness: 2.0 mm ~ 4.0 mm",
         "",
@@ -332,8 +332,8 @@ const ProductsList = () => {
         "A Firewall Cross Member is structural component that connects and supports the firewall, often integrating with other parts like the instrument panel and A-pillars, to enhance vehicle stability and safety",
       fullDescription: [
         // "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
-        "• Drawing",
-        "• Stud projection Welding",
+        "Drawing",
+        "Stud projection Welding",
         // "• Rim Thickness: 2.0 mm ~ 3.0 mm (using SAPH Equivalent High Tensile Strength Steel)",
         // "• Rim Profile: B, D, J and other International Standards",
         // "• Disc Thickness: 2.0 mm ~ 4.0 mm",
@@ -348,8 +348,8 @@ const ProductsList = () => {
         "A Swing Arm is a movable arm that connects the bike's frame to the rear wheel, allowing it to pivot vertically and absorb bumps for a smoother ride.",
       fullDescription: [
         // "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
-        "• Tube bending",
-        "• Mig Welding",
+        "Tube bending",
+        "Mig Welding",
         // "• Rim Thickness: 2.0 mm ~ 3.0 mm (using SAPH Equivalent High Tensile Strength Steel)",
         // "• Rim Profile: B, D, J and other International Standards",
         // "• Disc Thickness: 2.0 mm ~ 4.0 mm",
@@ -367,10 +367,10 @@ const ProductsList = () => {
         "A Composite Overwrapped Pressure Vessel (COPV) is a lightweight, high-pressure storage vessel consisting of a non-structural liner wrapped in a structural fiber composite, ideal for aerospace and energy applications due to its strength and low weight.",
       fullDescription: [
         // "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
-        "• High Strength to weight ratio",
-        "• Carbon fibre and hybrid Composite solutions",
-        "• Durable / Long life",
-        "• Corrosion resistant",
+        "High Strength to weight ratio",
+        "Carbon fibre and hybrid Composite solutions",
+        "Durable / Long life",
+        "Corrosion resistant",
         // "• Disc Thickness: 2.0 mm ~ 4.0 mm",
         "",
         // "The products are made to match international quality standards to ensure uniformity of gauge, well-defined profile, and leak-proof weld joints.",
@@ -383,10 +383,10 @@ const ProductsList = () => {
         "Are protective covers that enclose tires to prevent water, mud, and debris from splashing onto the rider and bike, ensuring a cleaner and drier ride.",
       fullDescription: [
         // "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
-        "• High Strength to weight ratio",
-        "• Carbon fibre and hybrid Composite solutions",
-        "• Durable / Long life",
-        "• Corrosion resistant",
+        "High Strength to weight ratio",
+        "Carbon fibre and hybrid Composite solutions",
+        "Durable / Long life",
+        "Corrosion resistant",
         // "• Disc Thickness: 2.0 mm ~ 4.0 mm",
         "",
         // "The products are made to match international quality standards to ensure uniformity of gauge, well-defined profile, and leak-proof weld joints.",
@@ -399,10 +399,10 @@ const ProductsList = () => {
         "High-strength, lightweight composite swing arms made from carbon fibre and hybrid materials, offering exceptional durability, long life, and corrosion resistance.",
       fullDescription: [
         // "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
-        "• High Strength to weight ratio",
-        "• Carbon fibre and hybrid Composite solutions",
-        "• Durable / Long life",
-        "• Corrosion resistant",
+        "High Strength to weight ratio",
+        "Carbon fibre and hybrid Composite solutions",
+        "Durable / Long life",
+        "Corrosion resistant",
         // "• Disc Thickness: 2.0 mm ~ 4.0 mm",
         "",
         // "The products are made to match international quality standards to ensure uniformity of gauge, well-defined profile, and leak-proof weld joints.",
@@ -415,10 +415,10 @@ const ProductsList = () => {
         "A COPV plastic liner is a thin, non-structural barrier made from materials like nylon or polyethylene, acting primarily as a gas boundary to prevent leaks and chemical degradation in composite overwrapped pressure vessels.",
       fullDescription: [
         // "MAIL has the capability to manufacture Steel Wheel Rim for two wheelers, three wheelers and passenger cars, of the following specifications:",
-        "• Low permeability",
-        "• Blow molded",
-        "• Radial thickness precision",
-        "• Lower material consumption",
+        "Low permeability",
+        "Blow molded",
+        "Radial thickness precision",
+        "Lower material consumption",
         // "• Disc Thickness: 2.0 mm ~ 4.0 mm",
         "",
         // "The products are made to match international quality standards to ensure uniformity of gauge, well-defined profile, and leak-proof weld joints.",
@@ -451,22 +451,22 @@ const ProductsList = () => {
   return (
     <div id={activeTab} className="min-h-screen bg-[#fafafa]">
       {/* Products Section */}
-      <div className="mb-4 sm:mb-6 md:mb-8 ">
+      <div className="mb-4 sm:mb-6 md:mb-8 lg:py-10">
         {/* Tabs */}
-        <div className="mb-8 lg:max-w-[1211px] lg:mx-auto ">
+        <div className="mb-8 lg:max-w-[1211px] lg:mx-auto mt-10">
           <div className="overflow-x-auto  lg:overflow-x-hidden scrollbar-hide mb-4 sm:mb-6 md:mb-8 ">
-            <div className="flex lg:gap-2 gap-3 md:gap-4 lg:px-2 px-4 pb-2
+            <div className="flex lg:gap-4 gap-3 md:gap-4 lg:px-2 px-4 pb-2
                 justify-start lg:justify-center
                 items-center
                 lg:flex-wrap">
               {tabs.map((tab) => (
-                <motion.button
+                <button
                   key={`scroll-${tab.id}`}
                   id={`scroll-${tab.id}`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`rounded-full font-medium text-sm md:text-base px-4 md:px-6 py-2 md:py-3 transition-colors duration-300 flex-shrink ${
+                  className={`rounded-full font-medium text-sm md:text-base lg:py-5 lg:px-5 px-4 py-2  transition-colors duration-300 flex-shrink ${
                     activeTab === tab.id
                       ? "text-white"
                       : "bg-[#F4F4F4] text-black"
@@ -480,7 +480,7 @@ const ProductsList = () => {
                   }}
                 >
                   {tab.label}
-                </motion.button>
+                </button>
               ))}
             </div>
           </div>
@@ -506,9 +506,9 @@ const ProductsList = () => {
               <motion.div
             layout
   transition={{ duration: 1, ease: "easeInOut" }}
-              className={`hidden md:grid md:grid-cols-12 lg:grid-cols-12 gap-0  min-h-[432px] w-full max-w-7xl mx-auto   ${expandedItems[index] ? "items-start" : "items-end"} overflow-hidden`}>
+              className={`hidden md:grid md:grid-cols-12 lg:grid-cols-12  min-h-[368px]  w-full max-w-7xl mx-auto   ${expandedItems[index] ? "items-start" : "items-end"} overflow-hidden`}>
                 {/* Image Section - Takes 4 columns on md, 3 on lg */}
-                <div className="md:col-span-4 lg:col-span-3 bg-[#EBEBEF] flex items-center justify-center p-6 h-full flex-shrink-0">
+                <div className="md:col-span-4 lg:col-span-3 bg-[#EBEBEF] rounded-md w-[385px] flex items-center justify-center p-6 h-full flex-shrink-0">
                   <motion.div
                     initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
                     animate={{
@@ -532,7 +532,8 @@ const ProductsList = () => {
                 </div>
 
                 {/* Content Section - Takes 6 columns on md, 7 on lg */}
-                <motion.div layout transition={{ duration: 0.6, ease: "easeInOut" }} className="md:col-span-6 lg:col-span-7 p-6 text-[#ED1C24] relative flex-shrink-0">
+                <div className="md:col-span-6 lg:col-span-7 text-[#ED1C24] relative flex-shrink-0 translate-x-20">
+                  <motion.div layout transition={{ duration: 0.6, ease: "easeInOut" }} className="md:col-span-6 lg:col-span-7 p-6 text-[#ED1C24] relative flex-shrink-0 ">
                   {!expandedItems[index] && (
                     <h1 className="text-[130px] font-bold text-gray-300/20 mb-2 absolute -top-24">
                       0{index + 1}
@@ -593,6 +594,7 @@ const ProductsList = () => {
                     </motion.div>
                   </div>
                 </motion.div>
+                </div>
 
                 {/* Button Section - Takes 2 columns, positioned bottom right */}
                 <div className="md:col-span-2 lg:col-span-2 p-6 flex items-end justify-end h-full flex-shrink-0">

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const PioneeringText = () => {
   return (
-    <div className=" h-1/2 md:h-[70dvh] w-full flex items-center text-center justify-center px-10">
+    <div className=" h-1/2 md:h-[35dvh] w-full flex items-center text-center justify-center px-10">
       <motion.h1
         className="text-[18px] lg:text-[40px] font-normal max-w-5xl"
         initial={{ opacity: 0, y: 40 }}

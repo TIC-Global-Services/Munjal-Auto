@@ -13,7 +13,7 @@ export const FooterMain = () => {
             <img
               src={munjallogo}
               alt="Munjal Auto Logo"
-              className="w-fit mr-4 h-20 object-contain"
+              className="w-auto mr-4 h-20 object-contain"
             />
           </div>
 

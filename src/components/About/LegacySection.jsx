@@ -18,16 +18,15 @@ const LegacySection = () => {
         <div className="relative lg:min-h-screen w-full overflow-hidden bg-white px-4 md:px-8 lg:px-20">
 
             <div className=" mx-auto  lg:px-2">
-                <div className="grid grid-cols-1 lg:grid-cols-12 md:gap-8 items-center min-h-screen">
+                <div className="grid grid-cols-1 lg:grid-cols-12 md:gap-8 gap-3 items-center lg:min-h-screen">
                     {/* Left Content - Take 5 columns */}
                     <div className="lg:col-span-5 -py-10 lg:py-24 space-y-2 md:space-y-5 opacity-0 animate-fade-in">
-                        <div className="space-y-4 text-center md:text-left lg:text-left">
+                        <div className="lg:space-y-4 text-center md:text-left lg:text-left">
                             <p className="text-[#8A8989]  md:text-lg text-xs md:font-normal tracking-wide">
                                 #LEGACY///
                             </p>
-                            <h2 className="text-[20px] lg:text-[40px]  font-normal md:leading-[41px] md:tracking-tight">
-                                With over <span className="text-red-500">40+ Years</span> of
-                                experience
+                            <h2 className="text-[16px] md:text-[20px] lg:text-[40px] font-[400] font-normal leading-[41px] whitespace-nowrap lg:whitespace-normal">
+                                With over <span className="text-red-500">40+ Years</span> of experience
                             </h2>
                         </div>
 

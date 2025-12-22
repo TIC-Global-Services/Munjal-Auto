@@ -297,7 +297,7 @@ function ModelViewer() {
 
 const FacilitiesContent = ({ content }) => {
     return (
-        <div className="max-w-7xl mx-auto px-4 mb-20">
+        <div className="max-w-7xl mx-auto px-4 mb-20 mt-14">
             {/* Hero Section */}
             <div className="flex flex-col py-10 lg:flex-row items-stretch bg-black text-white rounded-[20px] overflow-hidden mb-8">
                 {/* Left Side - Content */}
@@ -325,12 +325,12 @@ const FacilitiesContent = ({ content }) => {
 
             {/* Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 gap-4 lg:gap-5">
-                <div className="lg:col-span-4 rounded-[20px] bg-[#EAEAEA] p-6 md:p-8 lg:p-6 xl:p-10">
+                <div className="lg:col-span-4 rounded-[20px] bg-[#EAEAEA] max-h-[357px] p-6 md:p-8 lg:p-6 xl:p-10">
                     <h1 className="text-[#ED1C24]  text-[18px] lg:text-[24px] xl:text-[24px] w-full">
                         <span className="text-black font-normal"> World-</span>
                         Class Manufacturing
                     </h1>
-                    <p className="text-[12px]  lg:text-sm leading-[26px] xl:text-base mt-4 text-[#636161]">
+                    <p className="lg:text-[16px] text-[13px] lg:max-w-[319px] lg:max-h-[208px] leading-[26px]  mt-4 text-[#636161]">
                         From sheet metal components to complete assemblies, our
                         manufacturing plants leverage cutting-edge technology to produce
                         high-performance auto components. With a focus on sustainability and
@@ -338,7 +338,7 @@ const FacilitiesContent = ({ content }) => {
                     </p>
                 </div>
 
-                <div className="relative lg:col-span-2 rounded-[20px] h-[300px] lg:h-auto">
+                <div className="relative max-h-[357px] lg:col-span-2 rounded-[20px] h-[300px] lg:h-auto">
                     <img
                         src={faBento4}
                         alt=""
@@ -346,7 +346,7 @@ const FacilitiesContent = ({ content }) => {
                     />
                 </div>
 
-                <div className=" relative lg:col-span-4 bg-[#9B9C9F33] overflow-hidden rounded-[20px]  grid grid-cols-1  gap-6 lg:grid-cols-5 px-3">
+                <div className=" relative lg:col-span-4 bg-[#9B9C9F33] overflow-hidden rounded-[20px] max-h-[357px] grid grid-cols-1  gap-6 lg:grid-cols-5 px-3">
                     <img
                         src={faBento3}
                         alt=""
@@ -372,7 +372,7 @@ const FacilitiesContent = ({ content }) => {
                          <img
                         src={faBento3}
                         alt=""
-                        className= "h-[250px] col-span-2 lg:hidden block lg:h-full w-full lg:object-contain object-cover md:-ml-20 ml-[15px] lg:mt-5"
+                        className= "lg:h-[250px] col-span-2 lg:hidden block lg:h-full w-full lg:object-contain object-cover md:-ml-20 ml-[15px] lg:mt-5"
                     />
                     </div>
                 </div>
@@ -385,13 +385,13 @@ const FacilitiesContent = ({ content }) => {
                         <img src={tooldesign1} width={488} height={313} className="rounded-[20px] w-full lg:h-[313px] object-cover mt-4"/>
                     </div>
                     <div>
-                        <p className="lg:text[16px] text-[14px]">
+                        <p className="lg:text[16px] text-[14px] leading-[34px] text-left">
                             Our Tool Design centers at Bawal and Waghodia are equipped with the latest CAD/CAM software and highly qualified engineering designers. They specialize in designing press tools, jigs, fixtures, gauges, reverse engineering, and manufacturing processes, supported by advanced workstations and plotters for precise, efficient tool development.
                         </p>
                         <div className="grid gap-3 lg:grid-cols-2 mt-10">
                             <div>
                                 <h1 className="text-[#ED1C24] font-semibold text-[20px] lg:text-[26px]">Bawal Haryana</h1>
-                            <ul className="list-disc grid lg:grid-cols-1 grid-cols-2 gap-4 text-[13px] lg:text-[16px] leading-[20px] lg:leading-[34px] text-[#222222] px-4 mt-5">
+                            <ul className="list-disc grid lg:grid-cols-1 grid-cols-2 gap-1 text-[13px] lg:text-[16px] leading-[20px] lg:leading-[34px] text-[#222222] px-4 mt-5">
                                 <li>Unigraphics NX</li>
                                 <li>Pampstamp</li>
                                 <li>FTI -Fast blank</li>
@@ -400,9 +400,9 @@ const FacilitiesContent = ({ content }) => {
                                 <li>Auto Cad</li>
                             </ul>
                             </div>
-                            <div>
+                            <div className="-translate-x-12">
                                 <h1 className="text-[#ED1C24] font-semibold text-[20px] lg:text-[26px]">Supported By Following Hardware (Work Stations)</h1>
-                            <ul className="list-disc grid lg:grid-cols-1 grid-cols-2 gap-4 text-[13px] lg:text-[16px] leading-[20px] lg:leading-[34px] text-[#222222] px-4 mt-5">
+                            <ul className="list-disc grid lg:grid-cols-1 grid-cols-2 gap-1 text-[13px] lg:text-[16px] leading-[20px] lg:leading-[34px] text-[#222222] px-4 mt-5">
                                 <li>Unigraphics NX</li>
                                 <li>Pampstamp</li>
                                 <li>FTI -Fast blank</li>
@@ -415,7 +415,7 @@ const FacilitiesContent = ({ content }) => {
                             </div>
                             <div className="lg:-translate-y-10">
                                 <h1 className="text-[#ED1C24] font-semibold text-[20px] lg:text-[26px]">Waghodia</h1>
-                            <ul className="list-disc grid lg:grid-cols-1 grid-cols-2 gap-5  text-[13px] lg:text-[16px] leading-[20px] lg:leading-[34px] text-[#222222] px-4 mt-5">
+                            <ul className="list-disc grid lg:grid-cols-1 grid-cols-2 gap-1  text-[13px] lg:text-[16px] leading-[20px] lg:leading-[34px] text-[#222222] px-4 mt-5">
                                 <li>CATIA V-5 –R-60</li>
                                 <li>Pro-E Wildfire</li>
                                 <li>Hyper Form ( Blank & Nest)</li>

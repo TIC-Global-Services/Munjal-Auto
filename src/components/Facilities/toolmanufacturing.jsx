@@ -93,7 +93,7 @@ const Toolmanufacturing = () => {
   {
     title: "Knee Type Milling",
     points: [
-      "Specifications: 820(X) * 380(Y) * 360(Z) * 127 (Quill Travel) ISO40",
+      "Specifications:\n820(X) * 380(Y) * 360(Z) * 127 (Quill Travel) ISO40",
       "Make: Argo (5VHL)",
       "Quantity: 2"
     ]
@@ -109,7 +109,7 @@ const Toolmanufacturing = () => {
   {
     title: "Bench Lathe",
     points: [
-      "Specifications: 330(Swing) * 165(Cross) * 670(Admit)",
+      "Specifications:\n330(Swing) * 165(Cross) * 670(Admit)",
       "Make: Geede Weiler (LZ 280)",
       "Quantity: 1"
     ]
@@ -117,7 +117,7 @@ const Toolmanufacturing = () => {
   {
     title: "Radial Drilling",
     points: [
-      "Specifications: Dia 60 * 1800(R max) * MT 5",
+      "Specifications:\nDia 60 * 1800(R max) * MT 5",
       "Make: Batliboi (BR 618)",
       "Quantity: 2"
     ]
@@ -133,7 +133,7 @@ const Toolmanufacturing = () => {
   {
     title: "Trial Press",
     points: [
-      "Specifications: 315T * 300(stroke) * 1800 * 1200(Bed)",
+      "Specifications:\n315T * 300(stroke) * 1800 * 1200(Bed)",
       "Make: Kaushico (KCL-2-315)",
       "Quantity: 1"
     ]
@@ -157,7 +157,7 @@ const Toolmanufacturing = () => {
   {
     title: "Portable CMM",
     points: [
-      "Specifications: 10 Feet * 7 Axis * Blue Tooth",
+      "Specifications:\n10 Feet * 7 Axis * Blue Tooth",
       "Make: Faro Arm (Platinum)",
       "Quantity: 1"
     ]
@@ -174,7 +174,7 @@ const Toolmanufacturing = () => {
         </div>
         <div className='flex flex-col lg:flex-row gap-10 items-center mt-5'>
             <div className='object-fit lg:min-w-[500px] overflow-hidden'>
-                <img src={toolimg1} width={488} height={325} alt='Tool Manufacturing' className='w-full h-full rounded-lg lg:h-[300px]'/>
+                <img src={toolimg1} width={488} height={325} alt='Tool Manufacturing' className='w-full h-full rounded-[20px] lg:h-[300px]'/>
             </div>
             <div className='max-w-[696px]'>
                     <p className='leading-[24px] lg:leading-[34px] text-[#222222] lg:text-[16px] text-[14px]'>
@@ -185,13 +185,13 @@ const Toolmanufacturing = () => {
         </div>
 
         {showAllExhaust ? (
-            <div className='grid grid-cols-3 whitespace-wrap gap-5 mt-20'>
+            <div className='grid grid-cols-3  whitespace-wrap gap-5 mt-20'>
             {toolManufactureList.map((item,index) => (
                 <div key={index} className='bg-[#F5F5F5] p-3 rounded-[12px]'>
-                            <h1 className='bg-[#E3E3E3] text-[#ED1C24] py-2 font-semibold text-center rounded-[8px] text-[20px] lg:text-[26px]'>{item.title}</h1>
-                        <ul className="list-disc ml-6 py-5 space-y-3">
+                            <h1 className='bg-[#E3E3E3] text-[#ED1C24] py-2 mt-2 font-semibold text-center rounded-[8px] text-[20px] lg:text-[26px]'>{item.title}</h1>
+                        <ul className="list-disc ml-6 py-5 space-y-3 ">
                                 {item.points.map((point, i) => (
-                                  <li key={i} className='font-light'>{point}</li>
+                                  <li key={i} className='font-light text-[13px] lg:text-[16px] whitespace-break-spaces  '>{point}</li>
                                 ))}
                          </ul>
                 </div>
@@ -204,7 +204,7 @@ const Toolmanufacturing = () => {
                             <h1 className='bg-[#E3E3E3] text-[#ED1C24] py-2 font-semibold text-center rounded-[8px] text-[20px] lg:text-[26px]'>{item.title}</h1>
                         <ul className="list-disc ml-6 py-5 space-y-3">
                                 {item.points.map((point, i) => (
-                                  <li key={i} className='font-light text-[13px] whitespace-break-spaces'>{point}</li>
+                                  <li key={i} className='font-light text-[13px] lg:text-[16px] whitespace-break-spaces'>{point}</li>
                                 ))}
                          </ul>
                 </div>
@@ -223,14 +223,14 @@ const Toolmanufacturing = () => {
               </span>
             </button>
         </div>
-        <div className='grid  grid-cols-1 lg:grid-cols-2 lg:gap-10 gap-5 lg:mt-20 mt-10 items-start'>
+        <div className='grid  grid-cols-1 lg:grid-cols-2 lg:gap-[70px] gap-5 lg:mt-20 mt-10 items-start'>
           <h1 className='lg:text-[24px] lg:text-start text-center block lg:hidden'>Central Room & Technical Room</h1>
           <div className='object-fit overflow-hidden w-fit'>
-            <img src={toolimg2} width={593} height={550} alt='Central Room & Technical Room' className='w-full h-full rounded-[10px]'/>
+            <img src={toolimg2} width={593} height={550} alt='Central Room & Technical Room' className='w-full h-[444.75px] rounded-[10px]'/>
           </div>
           <div>
             <h1 className='lg:text-[24px] lg:text-start text-center hidden lg:block'>Central Room & Technical Room</h1>
-            <ul className="list-disc ml-6 py-6  text-[#82848A] ">
+            <ul className="list-disc ml-6 py-6  text-[#82848A] lg:w-[485px] lg:h-[374px]">
               <li className='leading-[24px] lg:leading-[34px] text-[14px] lg:text-[16px]'>
                 Spread in 1600 square meters area and operational since April 2011. A world-class facility for design & manufacturing of small to large sized tools, fixtures & gauges required in our various manufacturing locations to manufacture large parts & assemblies of automobiles
               </li>

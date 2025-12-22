@@ -21,15 +21,15 @@ const CompositeTechnology = () => {
             engineering innovation.
           </p>
         </div>
-
+    
         {/* First Content Section */}
-        <div className="mb-20">
+        <div className="lg:mb-20 mb-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-            <div className="order-2 lg:order-1 max-w-[592px]">
+            <div className="order-2 lg:order-1 w-full">
               <img
                 src={indutch1}
                 alt="Indutch Composite Technology"
-                className="object-cover  h-[340px] rounded-xl  shadow-lg"
+                className="object-cover  lg:h-[340px] h-[200px] w-[full] rounded-xl  shadow-lg"
               />
             </div>
             <div className="order-1 lg:order-2">
@@ -39,7 +39,7 @@ const CompositeTechnology = () => {
                 the design and manufacturing of composite moulds and components
                 through advanced processes such as:
               </p>
-              <div className="grid grid-cols-1 lg:grid-cols-2">
+              <div className="grid grid-cols-2">
                 <div>
                   {[
                     "Wet lay-up", 
@@ -112,7 +112,7 @@ const CompositeTechnology = () => {
             <img
               src={indutch3}
               alt="inductch"
-              className="w-full h-[500px] object-cover rounded-2xl"
+              className="w-full  lg:h-[500px] h-[366px] object-cover rounded-2xl"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-transparent rounded-2xl flex items-start p-6">
               <div className="text-white">
@@ -140,7 +140,7 @@ const CompositeTechnology = () => {
             <img
               src={inductch4}
               alt="inductch"
-              className="w-full h-[500px] object-cover rounded-2xl"
+              className="w-full  lg:h-[500px] h-[366px] object-cover rounded-2xl"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-transparent rounded-2xl flex items-start p-6">
               <div className="text-white">
@@ -182,19 +182,19 @@ const CompositeTechnology = () => {
           </div>
         </div>
         </div>
-
+       
         <div className="py-10">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-10 items-center">
           <div className="w-full h-full">
             <img
               src={inductch}
               alt="windturbine"
-              className="object-cover h-[340px] w-full rounded-[12px]"
+              className="object-cover lg:h-[340px] h-[200px] w-full rounded-[12px]"
             />
           </div>
           <div>
             <div>
-              <p className="text-[13px] lg:text-[18px] text-[#020202] leading-[28px]">
+              <p className="text-[13px] lg:text-[18px] text-[#020202] leading-[20px] lg:leading-[28px]">
                 Indutch has the capabilities to design and manufacture moulds
                 and products for various Engineering industries such as Auto,
                 Defence, Railways, Aviation, Space, Marine, Home appliances,
@@ -202,12 +202,12 @@ const CompositeTechnology = () => {
                 business at Indutch.
               </p>
               <p className="text-[13px] text-[#020202] lg:text-[18px] mt-4 mb-4">Indutch has 4 manufacturing facilities</p>
-              <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-0">
+              <div className="grid grid-cols-2 gap-x-4 gap-y-2 lg:gap-0">
                 {["Chennai", "Halol", "Manjusar", "Waghodia (Under Construction)"].map(
                   (process, index) => (
-                    <div key={index} className="flex items-center">
-                      <div className="w-1 h-1 bg-black rounded-full mr-2"></div>
-                      <span className="text-[#020202] text-[13px] lg:text-[18px] font-[400]">
+                    <div key={index} className="flex items-start">
+                      <div className="w-1 h-1 bg-black rounded-full mr-3 mt-2 lg:mt-2.5 flex-shrink-0"></div>
+                      <span className="text-[#020202] text-[13px] lg:text-[18px] font-[400] leading-tight lg:leading-normal">
                         {process}
                       </span>
                     </div>

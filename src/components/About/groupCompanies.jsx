@@ -1,7 +1,7 @@
 const groupCompanies = () => {
   return (
     <div>
-      <div className="flex justify-center mt-10">
+      <div className="flex justify-center mt-10 px-2">
         <div className="text-center max-w-[884px]">
           <h1 className="lg:text-[46px] text-[24px]">Group Companies</h1>
           <p className="lg:text-[18px] text-[14px] mt-5">

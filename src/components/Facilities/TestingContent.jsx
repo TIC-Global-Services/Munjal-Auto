@@ -182,10 +182,10 @@ const TestingContent = () => {
                    <div className="flex lg:flex-row flex-col gap-10 my-6">
                      <img
                        src={item.img}
-                       width={756}
-                       height={600}
+                       width={755}
+                       height={505}
                        alt="manufacturing image"
-                       className="flex-shrink-0 lg:min-w-[756px] lg:min-h-[505px] min-h-[505px] object-cover"
+                       className={`flex-shrink-0 lg:min-w-[755px] rounded-[24px] lg:min-h-[505px] min-h-[505px] object-cover ${index==0?"min-w-[755px] h-[400px]":""}`}
                      />
 
                      <div className="lg:flex-1">
@@ -246,7 +246,7 @@ const TestingContent = () => {
                     <div className='flex justify-center mt-6'>
                         <button
                           onClick={() => setShowAllExhaust(!showAllExhaust)}
-                          className='show-more-btn text-[#ED1C24] font-medium'
+                          className='show-more-btn text-black lg:text-[24px] text-[18px]  font-medium'
                         >
                           {showAllExhaust ? 'View Less' : 'View More'}
                         </button>

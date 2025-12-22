@@ -137,7 +137,7 @@ const SustainableContent = ({ content }) => {
             </ul>
         </div>
       
-        <div className='grid grid-cols-1 lg:grid-cols-2 max-w-[1213px] mx-auto items-center lg:mt-20 lg:py-10 mt-10'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 max-w-[1213px] mx-auto items-center lg:mt-10 lg:py-10 mt-10'>
           <h1 className='lg:text-[36px] text-[24px] lg:text-left text-center mb-4 lg:hidden block lg:mt-0'>R&D and Prototyping</h1>
             <img src={img2} width={488} height={547} className='object-cover rounded-[20px] lg:w-[593px] lg:h-[547px]'/>
             <div className='max-w-[696px]  lg:translate-x-6'>

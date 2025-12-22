@@ -13,7 +13,7 @@ const PrecisionEngineeringContent = ({ content }) => {
       {/* Split Grid Layout */}
       <div>
         <h1
-          className="  text-[#151414] lg:text-[28px] text-[14px] leading-[24px] lg:leading-[57px] text-center max-w-4xl mx-auto mt-24 py-5"
+          className="  text-[#151414] lg:text-[28px] text-[14px] leading-[24px] lg:leading-[44px] text-center max-w-[921px] mx-auto mt-24 py-5"
           style={{
             letterSpacing: "2%",
             textAlign: "center",
@@ -27,9 +27,9 @@ const PrecisionEngineeringContent = ({ content }) => {
           <h1 className="lg:text-[36px] text-[24px] text-center lg:text-start mb-4">Stamping Facility</h1>
         </div>
         <div className="object-fit">
-          <img src={stampfacilityimg} width={1154} height={404} className="w-full h-[404px] object-cover rounded-[8px]"/>
+          <img src={stampfacilityimg} width={1154} height={404} className="w-full h-[340px] object-cover rounded-[8px]"/>
         </div>
-        <div className="mt-5">
+        <div className="mt-8">
           <h1 className="text-[#82848A] text-[13px] lg:text-[16px]">High-precision metal forming for complex parts using a range of stamping presses and tooling techniques</h1>
           <ul className="list-disc px-10 text-[#82848A] leading-[20px] lg:leading-[34px] text-[13px] lg:text-[16px] mt-2">
             <li>Equipped with ~60 presses ranging from 10 – 1000 TON, sourced from world-renowned manufacturers.</li>
@@ -42,7 +42,7 @@ const PrecisionEngineeringContent = ({ content }) => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
             <h1 className="text-[24px] lg:text-[36px] lg:hidden block text-center">Roll Forming</h1>
             <div>
-              <img src={stampfacilityimg2} width={592} height={395} className="rounded-[8px]"/>
+              <img src={stampfacilityimg2} width={592} height={395} className="rounded-[8px] lg:w-[592px] lg:h-[340px]"/>
             </div>
             <div>
               <h1 className="text-[24px] lg:text-[36px] lg:block hidden">Roll Forming</h1>
@@ -109,7 +109,7 @@ const PrecisionEngineeringContent = ({ content }) => {
             <div>
               <h1 className="text-[24px] lg:text-[36px] lg:block hidden">Welding Facility</h1>
               <p className="text-[#82848A] leading-[20px] lg:leading-[34px] text-[13px] lg:text-[16px]">Comprehensive welding solutions for high-strength, precision assemblies</p>
-              <ul className="list-disc lg:px-10 px-5 leading-[20px] lg:leading-[24px] text-[13px] lg:text-[16px] text-[#82848A] space-y-4 mt-2">
+              <ul className="list-disc lg:px-10 px-5 leading-[20px] lg:leading-[24px] text-[13px] lg:text-[16px] text-[#82848A] space-y-2 mt-2">
                 <li>
                   Plants equipped with highly automated welding systems.
                 </li>

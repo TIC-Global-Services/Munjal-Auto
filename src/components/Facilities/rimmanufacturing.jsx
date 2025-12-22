@@ -106,9 +106,9 @@ const rimmanufacturing = () => {
                 <img src={manufactureimage} width={871.5} height={400} alt='Motorcycle Rim Manufacturing Unit' className="w-full h-full object-cover object-left"/>
               </div>
               <div>
-                <h1 className='lg:text-[26px] text-[20px] text-[#ED1C24] font-semibold'>Dedicated Motorcycle Rim 
+                <h1 className='lg:text-[26px] text-[20px] text-[#ED1C24] font-semibold'>Dedicated Motorcycle Rim <br/>
 Manufacturing Line</h1>
-              <ul  className="list-disc ml-6 text-[#82848A] text-[13px] lg:text-[16px] leading-[20px] mt-5 lg:mt-0 lg:leading-[34px] space-y-3">
+              <ul  className="list-disc ml-6 text-[#82848A] text-[13px] lg:text-[16px] leading-[20px] mt-5 lg:mt-3 lg:leading-[34px]">
                 <li>Roll Forming: Multi-stage, state-of-the-art rim profile forming rolling mills from the UK, Japan, and Taiwan</li>
                 <li>Welding: High-performance Butt Welding SPM for strong and reliable joints</li>
                 <li>Polishing: Multi-stage, fully automatic profile grinding and polishing SPM from Italy for superior finish.</li>
