@@ -8,13 +8,15 @@ const innovation = () => {
       "Team spirit – Motivational programs and outdoor gatherings strengthen collaboration and harmony"
   ]
   return (
-    <div className='md:px-10 lg:px-20 lg:mx-10 py-4 px-3'>
+    <div className='md:px-10 lg:px-20 lg:mx-10 py-4 px-3 mt-20 lg:mt-0 mb-[150px] lg:mb-0'>
          <div className="relative h-80 md:h-80 lg:h-96">
-                <img
+                <div className="h-[400px] ">
+                  <img
                     src={innovationimg}
                     alt="inductch"
                     className="w-full h-full object-cover rounded-[20px]"
                     />
+                </div>
                     <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/60 to-transparent rounded-[20px] flex items-start px-4 p-2 md:p-4 lg:p-8">
                       <div className="text-white w-[328px] max-h-[400px] sm:w-3/4 md:w-2/3 lg:w-full">
                         <h3 className="text-base md:text-lg lg:text-xl font-normal lg:font-semibold mb-2 md:mb-4 text-[#FF0000]">

@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, Play, Pause } from 'lucide-react';
+import boardofdir1 from '../../assets/about/boardofdirectors/Mrs. Munjal.jpeg';
+import boardofdir2 from '../../assets/about/boardofdirectors/Mr. Sudir Munjal.jpeg';
+import boardofdir3 from '../../assets/about/boardofdirectors/Anuj Munjal Photo.jpg';
 
 const BoardOfDirectors = () => {
   const directors = [
@@ -9,7 +12,7 @@ const BoardOfDirectors = () => {
       position: "Chairman & Managing Director",
       description:
         "Mr. Sudhir Kumar Munjal is a visionary entrepreneur with over 46 years of experience in the bicycle, automotive, and engineering industries. He served as Director from 1991 to 1993, became Managing Director in 1993, and Chairman & Managing Director in 2015. He successfully led the company’s strategic shift from bicycle manufacturing to becoming a leading auto components manufacturer in India, fostering a culture of performance, teamwork, and innovation",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop&crop=face",
+      image: boardofdir2,
     },
     {
       id: 2,
@@ -17,7 +20,7 @@ const BoardOfDirectors = () => {
       position: "Executive Director",
       description:
         "Mrs. Anju Munjal has over 30 years of experience in the bicycle, automotive, and engineering sectors. She played a pivotal role in the company’s revival as Chief Executive and has been serving as Whole-time Director since 1999. Her leadership has contributed significantly to Munjal Auto’s growth into one of India’s fastest-growing auto component manufacturers",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=600&fit=crop&crop=face",
+      image: boardofdir3,
     },
     {
       id: 3,
@@ -33,7 +36,7 @@ const BoardOfDirectors = () => {
       position: "Director",
       description:
         "Mrs. Avi Sabavala is a postgraduate in Social Sciences, Law, and Management, and a reputed corporate trainer with extensive experience in industry-focused skill development. She has served as President of Baroda Management Association and Vadodara Chamber of Commerce & Industry. A governing council member of AIMA, she continues to contribute to industry leadership and business excellence.",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=600&fit=crop&crop=face",
+      image: boardofdir1,
     },
     {
       id: 5,
@@ -140,7 +143,7 @@ const BoardOfDirectors = () => {
   const handleMouseLeave = () => setIsAutoPlaying(true);
 
   return (
-    <div id='board-directors' className="w-full bg-gradient-to-br from-slate-50 to-slate-100 py-12 lg:py-20">
+    <div id='board-directors' className="w-full bg-gradient-to-br from-slate-50 to-slate-100 py-12 lg:py-20 mt-10 ">
       {/* Desktop Carousel Version */}
       <div className="hidden lg:block">
         <div className="w-full max-w-7xl mx-auto px-6 lg:px-8">
@@ -301,23 +304,7 @@ const BoardOfDirectors = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 
                 {/* Mobile navigation buttons */}
-                <button
-                  onClick={goToPrev}
-                  disabled={isTransitioning}
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm text-slate-800 p-3 rounded-full hover:bg-white transition-all duration-200 shadow-lg disabled:opacity-50"
-                  aria-label="Previous director"
-                >
-                  <ChevronLeft size={20} />
-                </button>
-                
-                <button
-                  onClick={goToNext}
-                  disabled={isTransitioning}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm text-slate-800 p-3 rounded-full hover:bg-white transition-all duration-200 shadow-lg disabled:opacity-50"
-                  aria-label="Next director"
-                >
-                  <ChevronRight size={20} />
-                </button>
+               
 
                 {/* Auto-play indicator */}
                
@@ -339,9 +326,27 @@ const BoardOfDirectors = () => {
                 </div>
               </div>
             </div>
-            
+                <div className='flex justify-end gap-1 mt-10'>
+                   <button
+                  onClick={goToPrev}
+                  disabled={isTransitioning}
+                  className="transform -translate-y-1/2 bg-white/90 backdrop-blur-sm text-slate-800 p-3 rounded-full hover:bg-white transition-all duration-200 shadow-lg disabled:opacity-50"
+                  aria-label="Previous director"
+                >
+                  <ChevronLeft size={20} />
+                </button>
+                
+                <button
+                  onClick={goToNext}
+                  disabled={isTransitioning}
+                  className="transform -translate-y-1/2 bg-white/90 backdrop-blur-sm text-slate-800 p-3 rounded-full hover:bg-white transition-all duration-200 shadow-lg disabled:opacity-50"
+                  aria-label="Next director"
+                >
+                  <ChevronRight size={20} />
+                </button>
+                </div>
             {/* Mobile dots */}
-            <div className="flex justify-center mt-6 space-x-2">
+            {/* <div className="flex justify-center mt-6 space-x-2">
               {directors.map((_, index) => (
                 <button
                   key={index}
@@ -355,7 +360,7 @@ const BoardOfDirectors = () => {
                   aria-label={`Go to director ${index + 1}`}
                 />
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

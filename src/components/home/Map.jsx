@@ -137,7 +137,34 @@ Bawal
 
       {/* Dot 4 */}
       <div
-      className="absolute top-[28%] left-[0.5%] 2xl:top-[42%] 2xl:left-[13%] w-fit flex items-center"
+      className="absolute top-[28%] left-[0.5%] 2xl:top-[40%] 2xl:left-[12%] w-fit flex items-center"
+      onMouseEnter={() => setHoveredDhar(true)}
+      onMouseLeave={() => setHoveredDhar(false)}
+    >
+      <div className="relative">
+        <img
+          src={animationGif}
+          alt="animationGif"
+          className="w-[80px] h-[80px] transition-transform duration-300 hover:scale-125 cursor-pointer"
+        />
+
+        <AnimatePresence>
+          {hoveredDhar && (
+            <motion.p
+              initial={{ opacity: 0, x:- 9 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -10 }}
+              transition={{ duration: 0.3 }}
+              className="absolute top-[36%] left-auto ml-12   -translate-y-1/2 bg-[#FF0003] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
+            >
+               Vadodara
+            </motion.p>
+          )}
+        </AnimatePresence>
+      </div>
+    </div>
+      <div
+      className="absolute top-[28%] left-[0.5%] 2xl:top-[40%] 2xl:left-[11%] w-fit flex items-center"
       onMouseEnter={() => setHoveredDhar(true)}
       onMouseLeave={() => setHoveredDhar(false)}
     >
@@ -165,7 +192,7 @@ Bawal
     </div>
       {/* Dot 4 */}
       <div
-      className="absolute top-[34%] left-[4%] md:top-[35%] md:left-[8%] 2xl:top-[38%] 2xl:left-[10%] w-fit flex items-center"
+      className="absolute top-[34%] left-[4%] md:top-[35%] md:left-[8%] 2xl:top-[35%] 2xl:left-[8%] w-fit flex items-center"
       onMouseEnter={() => setHoveredDhar(true)}
       onMouseLeave={() => setHoveredDhar(false)}
     >

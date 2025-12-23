@@ -53,7 +53,7 @@ const sustainability = () => {
             width={593}
             height={547}
             alt="Sustainability and Environment"
-            className="rounded-2xl lg:h-[547px] lg:w-[593px]  h-[400px] w-full"
+            className="rounded-2xl lg:h-[547px] lg:w-[593px] 2xl:h-[547px] 2xl:w-[793px]  h-[400px] w-full"
           />
         <div className="">
           <div className="flex flex-col justify-start items-start lg:max-h-[429px]">
@@ -67,7 +67,7 @@ const sustainability = () => {
               {bulletPoints.map((point, index) => (
                 <li
                   key={index}
-                  className="flex items-start lg:leading-[34px] gap-3 py-1 text-sm text-muted-foreground"
+                  className="flex items-start lg:leading-[34px] leading-[17px] gap-3 py-1 text-sm text-muted-foreground"
                 >
                   <span className="text-muted-foreground mt-0.5">•</span>
                   <span className="lg:text-[16px] text-[12px]">{point}</span>

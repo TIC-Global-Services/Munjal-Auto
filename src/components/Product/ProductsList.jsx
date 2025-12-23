@@ -485,7 +485,7 @@ const ProductsList = () => {
           </div>
         </div>
 
-        <div className={`text-black lg:text-[28px] lg:leading-[55px] py-10 lg:mt-10 lg:mb-20 text-center mx-auto ${activeTab === "steel" ? "max-w-[866px]" : activeTab==="auto" ?"max-w-[1138px]":activeTab==="biw"?"max-w-[1060px]":activeTab==="fuel"?"max-w-[1060px]":"max-w-[820px]"}`}>
+        <div className={`text-black lg:text-[28px] lg:leading-[55px] py-10 lg:mt-10 lg:mb-20 text-center mx-auto ${activeTab === "steel" ? "max-w-[866px] px-3" : activeTab==="auto" ?"lg:max-w-[1138px] px-3":activeTab==="biw"?"max-w-[1060px] px-3":activeTab==="fuel"?"max-w-[1060px] px-3":"max-w-[820px] px-3"}`}>
           {getActiveDescription()}
         </div>
         {/* Content for all tabs */}
