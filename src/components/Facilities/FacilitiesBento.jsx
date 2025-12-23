@@ -77,7 +77,7 @@ const FacilitiesBentoGrid = ({ activeTab, setActiveTab, tabs }) => {
     return (
         <>
             {/* Tab Navigation */}
-            <div className="flex justify-center mt-12 mb-8 ">
+            <div className="flex justify-center mt-4 mb-8 ">
                 <div className="flex gap-[22px] md:space-x-14 px-3 scrollbar-hide pb-2">
                     {tabs.map((tab) => (
                         <button

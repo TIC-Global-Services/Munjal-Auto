@@ -85,7 +85,7 @@ const TestingContent = () => {
   }
 
     ]
-    const exhaustSystemList=[
+  const exhaustSystemList=[
      {
     sectionTitle: "Pressing & Forming",
     points: [
@@ -155,7 +155,7 @@ const TestingContent = () => {
     return (
         <div className="max-w-7xl mx-auto lg:px-4 px-3 mb-20">
 
-            <h1 className="text-[#151414] lg:text-[28px] text-[14px] leading-[24px] lg:leading-[57px] text-center max-w-4xl mx-auto mt-24 py-5">
+            <h1 className="text-[#151414] lg:text-[28px] text-[14px] leading-[24px] lg:leading-[57px] text-center max-w-4xl mx-auto mt-18 lg:mt-20 py-5">
                 Our facilities go beyond manufacturing, every component undergoes rigorous testing and validation to meet the highest quality standards of global OEMs
             </h1>
             <div className="lg:mt-20 mt-10 lg:py-10">
@@ -185,7 +185,7 @@ const TestingContent = () => {
                        width={755}
                        height={505}
                        alt="manufacturing image"
-                       className={`flex-shrink-0 lg:min-w-[755px] rounded-[24px] lg:min-h-[505px] min-h-[505px] object-cover ${index==0?"min-w-[755px] h-[400px]":""}`}
+                       className={`flex-shrink-0 lg:min-w-[755px] rounded-[12px] lg:min-h-[505px] min-h-[400px] object-cover `}
                      />
 
                      <div className="lg:flex-1">
@@ -212,7 +212,7 @@ const TestingContent = () => {
 
               <div className="mt-20 py-10">
                 <div>
-                    <h1 className="lg:text-[36px] text-[24px] text-center lg:text-start">Exhaust Systems Manufacturing</h1>
+                    <h1 className="lg:text-[36px]  text-[24px] text-center lg:text-start w-[203px] lg:w-full  mx-auto">Exhaust Systems Manufacturing</h1>
                     <p className="lg:text-[20px] text-[13px] leading-[20px] lg:leading-[28px]  text-center lg:text-start lg:max-w-[1116px] mt-5 text-[#82848A]">
                        We manufacture nearly 32,000 complete two-wheeler exhaust systems every day at MAIL. Our state-of-the-art facilities, equipped with precision-driven technology and automated systems, ensure seamless production. Every unit undergoes strict in-process gauging, inspection, and advanced testing to guarantee superior performance and reliability.
                     </p>
@@ -227,9 +227,7 @@ const TestingContent = () => {
                             width={595}
                             height={250}
                             alt="exhaust system image"
-                            className={`flex-shrink-0 lg:max-w-[595px] object-cover rounded-md lg:max-h-[250px]  ${index%2 !=0 ?"lg:order-last":""}`}
-                          />
-
+                            className={`flex-shrink-0 lg:max-w-[595px] object-cover rounded-md h-[180px] lg:h-[250px] ${index%2 !=0 ?"lg:order-last":""}`}/>
                           <div className="max-w-[595px]">
                             <div className='lg:-translate-y-2'>
                               <h1 className="lg:text-[26px]  text-[20px] font-bold mt-5 lg:mt-0 mb-2 text-[#ED1C24]">{item.sectionTitle}</h1>

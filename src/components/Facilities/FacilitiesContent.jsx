@@ -336,9 +336,16 @@ const FacilitiesContent = ({ content }) => {
                         high-performance auto components. With a focus on sustainability and
                         innovation, we ensure reliability at every stage of production.
                     </p>
+                    <div className="block lg:hidden">
+                    <img
+                        src={faBento4}
+                        alt=""
+                        className=""
+                    />
+                </div>
                 </div>
 
-                <div className="relative max-h-[357px] lg:col-span-2 rounded-[20px] h-[300px] lg:h-auto">
+                <div className="relative max-h-[357px] lg:col-span-2 rounded-[20px] h-[380px] lg:h-auto hidden lg:block">
                     <img
                         src={faBento4}
                         alt=""
@@ -346,7 +353,7 @@ const FacilitiesContent = ({ content }) => {
                     />
                 </div>
 
-                <div className=" relative lg:col-span-4 bg-[#9B9C9F33] overflow-hidden rounded-[20px] max-h-[357px] grid grid-cols-1  gap-6 lg:grid-cols-5 px-3">
+                <div className=" relative lg:col-span-4 bg-[#9B9C9F33] overflow-hidden rounded-[20px] max-h-[600px] grid grid-cols-1  gap-6 lg:grid-cols-5 px-3">
                     <img
                         src={faBento3}
                         alt=""
@@ -368,11 +375,11 @@ const FacilitiesContent = ({ content }) => {
                             control systems to meet global industry standards.{" "}
                         </p>
                     </div>
-                    <div className="lg:max-w-[300px] mx-auto">
+                    <div className="lg:max-w-[300px]  mx-auto">
                          <img
                         src={faBento3}
                         alt=""
-                        className= "lg:h-[250px] col-span-2 lg:hidden block lg:h-full w-full lg:object-contain object-cover md:-ml-20 ml-[15px] lg:mt-5"
+                        className= "lg:h-[250px] col-span-2 lg:hidden block  w-full lg:object-contain object-cover md:-ml-20 ml-[15px] lg:mt-5"
                     />
                     </div>
                 </div>

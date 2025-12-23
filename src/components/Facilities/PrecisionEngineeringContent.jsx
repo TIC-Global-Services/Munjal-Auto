@@ -13,7 +13,7 @@ const PrecisionEngineeringContent = ({ content }) => {
       {/* Split Grid Layout */}
       <div>
         <h1
-          className="  text-[#151414] lg:text-[28px] text-[14px] leading-[24px] lg:leading-[44px] text-center max-w-[921px] mx-auto mt-24 py-5"
+          className=" text-[#151414] lg:text-[28px] text-[14px] leading-[24px] lg:leading-[57px] text-center max-w-4xl mx-auto mt-18 lg:mt-20 py-5"
           style={{
             letterSpacing: "2%",
             textAlign: "center",
@@ -22,7 +22,7 @@ const PrecisionEngineeringContent = ({ content }) => {
          Our facilities integrate energy-efficient systems, waste reduction initiatives, and eco-friendly practices to drive sustainable innovation in engineering.
         </h1>
       </div>
-      <div className="bg-[#F5F5F5] p-[30px] mt-20 rounded-[14px]">
+      <div className="bg-[#F5F5F5] p-[30px] lg:mt-20 mt-8 rounded-[14px]">
         <div>
           <h1 className="lg:text-[36px] text-[24px] text-center lg:text-start mb-4">Stamping Facility</h1>
         </div>
@@ -42,7 +42,7 @@ const PrecisionEngineeringContent = ({ content }) => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
             <h1 className="text-[24px] lg:text-[36px] lg:hidden block text-center">Roll Forming</h1>
             <div>
-              <img src={stampfacilityimg2} width={592} height={395} className="rounded-[8px] lg:w-[592px] lg:h-[340px]"/>
+              <img src={stampfacilityimg2} width={592} height={395} className="rounded-[8px] lg:w-[592px] object-cover h-[370px]"/>
             </div>
             <div>
               <h1 className="text-[24px] lg:text-[36px] lg:block hidden">Roll Forming</h1>
@@ -61,7 +61,7 @@ const PrecisionEngineeringContent = ({ content }) => {
       <div className="bg-[#F5F5F5] mt-20 p-[30px] rounded-[14px]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
             <div>
-              <h1 className="text-[24px] lg:text-[36px]">CNC Tube Bending</h1>
+              <h1 className="text-[24px] lg:text-[36px] text-center lg:text-start">CNC Tube Bending</h1>
               <div className="lg:block hidden">
                 <p className="text-[#82848A] leading-[20px] lg:leading-[34px] text-[13px] lg:text-[16px]">Accurate and repeatable pipe bending for consistent, high-quality tubular components.</p>
               <ul className="list-disc lg:px-10 px-5 leading-[20px] lg:leading-[34px] text-[13px] lg:text-[16px] text-[#82848A]">
@@ -80,7 +80,7 @@ const PrecisionEngineeringContent = ({ content }) => {
               </div>
             </div>
             <div>
-              <img src={stampfacilityimg3} width={592} height={395} className="rounded-[8px] h-full"/>
+              <img src={stampfacilityimg3} width={592} height={395} className="rounded-[8px] object-cover h-[370px]"/>
             </div>
             <div className="lg:hidden block">
                 <p className="text-[#82848A] leading-[20px] lg:leading-[34px] text-[13px] lg:text-[16px]">Accurate and repeatable pipe bending for consistent, high-quality tubular components.</p>
@@ -104,7 +104,7 @@ const PrecisionEngineeringContent = ({ content }) => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
             <h1 className="text-[24px] lg:text-[36px] lg:hidden block text-center">Welding Facility</h1>
             <div>
-              <img src={stampfacilityimg4} width={592} height={360} className="rounded-[8px]"/>
+              <img src={stampfacilityimg4} width={592} height={360} className="rounded-[8px] h-[370px] object-cover"/>
             </div>
             <div>
               <h1 className="text-[24px] lg:text-[36px] lg:block hidden">Welding Facility</h1>
@@ -123,10 +123,10 @@ const PrecisionEngineeringContent = ({ content }) => {
           
             <div className="bg-[#F5F5F5] p-[30px] mt-20 rounded-[14px]">
         <div>
-          <h1 className="text-[24px] lg:text-[36px] mb-4">Surface Treatment</h1>
+          <h1 className="text-[24px] lg:text-[36px] mb-4 text-center lg:text-start">Surface Treatment</h1>
         </div>
         <div className="object-fit">
-          <img src={stampfacilityimg5} width={1154} height={404} className="w-full h-[404px] object-cover rounded-[8px]"/>
+          <img src={stampfacilityimg5} width={1154} height={404} className="w-full lg:h-[404px] h-[370px] object-cover rounded-[8px]"/>
         </div>
         <div className="mt-5">
           <h1 className="text-[#82848A] leading-[20px] lg:leading-[34px] text-[13px] lg:text-[16px]">We ensure durability and corrosion resistance with advanced surface preparation and finishing processes. Our facilities include shot blasting across all plants, six automated heat-resistant painting shops, and eco-friendly lines focused on sustainability. At the Waghodia Plant, we operate:</h1>
