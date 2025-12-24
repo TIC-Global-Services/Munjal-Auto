@@ -64,8 +64,10 @@ export default InnovationSlider;
 const MobileSlider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const next = () => setActiveIndex((p) => (p + 1) % slides.length);
-  const prev = () => setActiveIndex((p) => (p - 1 + slides.length) % slides.length);
+  const next = () =>
+    setActiveIndex((p) => (p + 1) % slides.length);
+  const prev = () =>
+    setActiveIndex((p) => (p - 1 + slides.length) % slides.length);
 
   return (
     <div className="relative flex flex-col items-center px-4 py-10">
@@ -76,6 +78,7 @@ const MobileSlider = () => {
       </h1>
 
       <div className="relative w-full max-w-md h-[45vh]">
+        {/* IMAGE */}
         <AnimatePresence initial={false}>
           <motion.img
             key={activeIndex}
@@ -96,7 +99,7 @@ const MobileSlider = () => {
           />
         </AnimatePresence>
 
-        {/* MOBILE TEXT (always centered) */}
+        {/* CAPTION */}
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-full px-4 text-center">
           <AnimatePresence mode="wait">
             <motion.div
@@ -109,7 +112,6 @@ const MobileSlider = () => {
               <div className="font-bold text-sm">
                 {slides[activeIndex].title}
               </div>
-
               <div className="text-xs text-gray-600 mt-1">
                 {slides[activeIndex].desc.split("\n").map((line, i) => (
                   <div key={i}>{line}</div>
@@ -119,9 +121,29 @@ const MobileSlider = () => {
           </AnimatePresence>
         </div>
       </div>
+
+      {/* BOTTOM ARROWS */}
+      <div className="mt-6 flex items-center justify-center gap-6">
+        <button
+          onClick={prev}
+          aria-label="Previous slide"
+          className="h-10 w-10 rounded-full bg-gray-100 text-gray-700 shadow-sm active:scale-95 transition"
+        >
+          ←
+        </button>
+
+        <button
+          onClick={next}
+          aria-label="Next slide"
+          className="h-10 w-10 rounded-full bg-gray-100 text-gray-700 shadow-sm active:scale-95 transition"
+        >
+          →
+        </button>
+      </div>
     </div>
   );
 };
+
 
 /*DESKTOP SLIDER*/
 
