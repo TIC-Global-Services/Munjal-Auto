@@ -1,291 +1,249 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
 import slide1 from "../../assets/slider/100 cc.png";
 import slide2 from "../../assets/slider/125 cc scooter.png";
 import slide3 from "../../assets/slider/125 cc.png";
 import slide4 from "../../assets/slider/2w Fender.png";
-import slide7 from "../../assets/slider/CNG Cradle.png";
+import slide5 from "../../assets/slider/CNG Cradle.png";
 
-const images = [slide1, slide2, slide3, slide4, slide7];
-const captions = [
-  "100 cc",
-  "CNG Cradle",
-  "Fenders for 2W",
-  "125 CC",
-  "125 CC (Scooter)",
+
+const slides = [
+  {
+    image: slide1,
+    title: "100 CC",
+    desc: "Unmatched strength and precision\nto ensure automotive safety",
+    captionAlignDesktop: "right-[17%] bottom-[15%] text-left",
+  },
+  {
+    image: slide2,
+    title: "CNG Cradle",
+    desc: "Securely holds cylinders in vehicles\nfor safe, stable transport",
+    captionAlignDesktop: "right-[17%] bottom-[15%] text-left",
+  },
+  {
+    image: slide3,
+    title: "Fenders for 2W",
+    desc: "Protective covers that shield tires\nto keep bikes clean and dry",
+    captionAlignDesktop: "left-1/2 top-[15%] text-center",
+  },
+  {
+    image: slide4,
+    title: "125 CC",
+    desc: "Durable fenders for\ntwo-wheeler protection",
+    captionAlignDesktop: "right-[30%] bottom-[10%] text-left",
+  },
+  {
+    image: slide5,
+    title: "125 CC (Scooter)",
+    desc: "Innovative CNG storage\nfor eco-friendly transport",
+    captionAlignDesktop: "right-[17%] bottom-[15%] text-left",
+  },
 ];
-const smallCaptions = [
-  "Unmatched strength and precision\nto ensure automotive safety",
-  "Securely holds cylinders in vehicles\n for safe, stable transport.",
-  "Protective covers that shield tires\n to keep riders and bikes clean and dry.",
-  "Durable fenders for\ntwo-wheeler protection",
-  "Innovative CNG storage\nfor eco-friendly transport",
-];
+
 
 const InnovationSlider = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    const onResize = () => setIsMobile(window.innerWidth <= 768);
+    onResize();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
   }, []);
 
   return (
-    <div className="w-full min-h-[300px] overflow-hidden bg-white">
-      {isMobile ? <MobileImageSlider /> : <DesktopImageSlider />}
-    </div>
-  );
-};
-
-const MobileImageSlider = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [imageError, setImageError] = useState(null);
-
-  const handleNext = () => {
-    setActiveIndex((prev) => (prev + 1) % images.length);
-  };
-
-  const handlePrev = () => {
-    setActiveIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
-
-  const handleTouchEnd = (event, info) => {
-    const threshold = 50;
-    if (info.offset.x > threshold) {
-      handlePrev();
-    } else if (info.offset.x < -threshold) {
-      handleNext();
-    }
-  };
-
-  const textVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
-
-  return (
-    <div className="relative flex flex-col items-center justify-center w-full h-full py-6 md:py-12 px-4">
-      <h1 className="text-xl sm:text-2xl md:text-3xl font-light text-center mb-6">
-        Where <span className="text-[#ED1C24] font-bold">Innovation Meets</span>
-        <br />
-        Engineering Excellence
-      </h1>
-
-      <div className="relative w-full max-w-[90vw] sm:max-w-md h-[30dvh]">
-        <AnimatePresence initial={false}>
-          <motion.img
-            key={activeIndex}
-            src={images[activeIndex]}
-            alt={captions[activeIndex]}
-            className="w-full aspect-[4/3] object-cover rounded-xl"
-            initial={{ x: 300, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: -300, opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            onError={() => setImageError(activeIndex)}
-            loading="lazy"
-            drag="x"
-            dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={0.2}
-            onDragEnd={handleTouchEnd}
-            whileDrag={{ scale: 0.95 }}
-          />
-        </AnimatePresence>
-
-        {imageError === activeIndex && (
-          <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-xl">
-            <p className="text-red-500 text-sm">Failed to load image</p>
-          </div>
-        )}
-
-        <div className=" absolute right-1/2 translate-x-1/2  -bottom-[10%] ">
-
-        <AnimatePresence mode="wait">
-          <motion.div
-            className=" bg-white/80 px-2 py-1 rounded-lg font-bold text-xs sm:text-sm text-black"
-            key={`caption-${activeIndex}`}
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            transition={{ duration: 0.5 }}
-          >
-            {captions[activeIndex]}
-          </motion.div>
-        </AnimatePresence>
-
-        <AnimatePresence mode="wait">
-          <motion.div
-            className=" text-[10px] sm:text-xs text-gray-600 bg-white/80 px-2 py-1 rounded-lg"
-            key={`small-caption-${activeIndex}`}
-            variants={textVariants}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            transition={{ duration: 0.5 }}
-          >
-            {smallCaptions[activeIndex].split("\n").map((line, idx) => (
-              <div key={idx} className="leading-relaxed">{line}</div>
-            ))}
-          </motion.div>
-        </AnimatePresence>
-        </div>
-
-        <button
-          onClick={handlePrev}
-          className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 rounded-full p-2 text-gray-600 hover:bg-white transition-colors text-sm"
-          aria-label="Previous slide"
-        >
-          {"<"}
-        </button>
-        <button
-          onClick={handleNext}
-          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 rounded-full p-2 text-gray-600 hover:bg-white transition-colors text-sm"
-          aria-label="Next slide"
-        >
-          {">"}
-        </button>
-      </div>
-    </div>
-  );
-};
-
-const DesktopImageSlider = () => {
-  const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3, 4]);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-  const [imageError, setImageError] = useState(null);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (!isDragging) {
-        handleNext();
-      }
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [isDragging]);
-
-  const handleNext = () => {
-    setPositionIndexes((prevIndexes) => {
-      const updatedIndexes = prevIndexes.map(
-        (prevIndex) => (prevIndex + 1) % images.length
-      );
-      return updatedIndexes;
-    });
-    setActiveIndex((prev) => (prev + 1) % images.length);
-  };
-
-  const handlePrevious = () => {
-    setPositionIndexes((prevIndexes) => {
-      const updatedIndexes = prevIndexes.map(
-        (prevIndex) => (prevIndex - 1 + images.length) % images.length
-      );
-      return updatedIndexes;
-    });
-    setActiveIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
-
-  const handleDragEnd = (event, info) => {
-    setIsDragging(false);
-    const threshold = 50;
-    if (info.offset.x > threshold) {
-      handlePrevious();
-    } else if (info.offset.x < -threshold) {
-      handleNext();
-    }
-  };
-
-  const positions = ["center", "left1", "left", "right", "right1"];
-
-  const imageVariants = {
-    center: { x: "0%", scale: 1.2, zIndex: 5, opacity: 1, filter: "blur(0px)" },
-    left1: { x: "-100%", scale: 0.6, zIndex: 3, opacity: 0.7, filter: "blur(2px)" },
-    left: { x: "-140%", scale: 0.4, zIndex: 2, opacity: 0.4, filter: "blur(4px)" },
-    right: { x: "140%", scale: 0.4, zIndex: 2, opacity: 0.4, filter: "blur(4px)" },
-    right1: { x: "100%", scale: 0.6, zIndex: 3, opacity: 0.7, filter: "blur(2px)" },
-  };
-
-  const textVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
-
-  return (
-    <div className="relative w-full my-16 py-20 min-h-[80vh]">
-      <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-center mb-10">
-        Where <span className="text-[#ED1C24] font-bold">Innovation Meets</span>
-        <br />
-        Engineering Excellence
-      </h1>
-
-      <div className="relative flex items-center justify-center h-[50vh] ">
-        {images.map((image, index) => (
-          <motion.div
-            key={index}
-            className="absolute"
-            animate={positions[positionIndexes[index]]}
-            variants={imageVariants}
-            transition={{
-              duration: isDragging ? 0.1 : 0.8,
-              ease: [0.42, 0, 0.58, 1],
-            }}
-          >
-            <motion.img
-              src={image}
-              alt={captions[index]}
-              className={`w-[400px] sm:w-[450px] max-w-[70vw] aspect-[4/3] object-cover rounded-xl ${isDragging ? 'cursor-grabbing' : 'cursor-grab'
-                }`}
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={0.2}
-              onDragStart={() => setIsDragging(true)}
-              onDragEnd={handleDragEnd}
-              whileDrag={{ scale: 0.95 }}
-              onError={() => setImageError(index)}
-              loading="lazy"
-            />
-            {imageError === index && (
-              <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-xl">
-                <p className="text-red-500 text-sm">Failed to load image</p>
-              </div>
-            )}
-          </motion.div>
-        ))}
-
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-[-10rem] sm:bottom-[-9rem] text-center">
-          <AnimatePresence mode="wait">
-            <motion.div
-              className="bg-white/80 px-3 py-1.5 rounded-lg font-bold text-base sm:text-lg text-black"
-              key={`caption-${activeIndex}`}
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-              transition={{ duration: 0.5 }}
-            >
-              {captions[activeIndex]}
-            </motion.div>
-          </AnimatePresence>
-
-          <AnimatePresence mode="wait">
-            <motion.div
-              className="bg-white/80 px-3 py-1.5 rounded-lg text-xs sm:text-sm text-gray-600 mt-2"
-              key={`small-caption-${activeIndex}`}
-              variants={textVariants}
-              initial="hidden"
-              animate="visible"
-              transition={{ duration: 0.5 }}
-            >
-              {smallCaptions[activeIndex].split("\n").map((line, idx) => (
-                <div key={idx} className="leading-relaxed">{line}</div>
-              ))}
-            </motion.div>
-          </AnimatePresence>
-        </div>
-      </div>
+    <div className="w-full overflow-hidden bg-white">
+      {isMobile ? <MobileSlider /> : <DesktopSlider />}
     </div>
   );
 };
 
 export default InnovationSlider;
+
+const MobileSlider = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const next = () => setActiveIndex((p) => (p + 1) % slides.length);
+  const prev = () => setActiveIndex((p) => (p - 1 + slides.length) % slides.length);
+
+  return (
+    <div className="relative flex flex-col items-center px-4 py-10">
+      <h1 className="text-xl font-light text-center mb-6">
+        Where <span className="text-[#ED1C24] font-bold">Innovation Meets</span>
+        <br />
+        Engineering Excellence
+      </h1>
+
+      <div className="relative w-full max-w-md h-[45vh]">
+        <AnimatePresence initial={false}>
+          <motion.img
+            key={activeIndex}
+            src={slides[activeIndex].image}
+            alt={slides[activeIndex].title}
+            className="w-full h-full object-contain rounded-xl"
+            initial={{ x: 300, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: -300, opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.2}
+            onDragEnd={(_, info) => {
+              if (info.offset.x > 50) prev();
+              if (info.offset.x < -50) next();
+            }}
+          />
+        </AnimatePresence>
+
+        {/* MOBILE TEXT (always centered) */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-full px-4 text-center">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeIndex}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="font-bold text-sm">
+                {slides[activeIndex].title}
+              </div>
+
+              <div className="text-xs text-gray-600 mt-1">
+                {slides[activeIndex].desc.split("\n").map((line, i) => (
+                  <div key={i}>{line}</div>
+                ))}
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/*DESKTOP SLIDER*/
+
+const DesktopSlider = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+
+  /*AUTOPLAY */
+  useEffect(() => {
+    if (isDragging) return;
+    const id = setInterval(
+      () => setActiveIndex((p) => (p + 1) % slides.length),
+      3000
+    );
+    return () => clearInterval(id);
+  }, [isDragging]);
+
+  const getPosition = (index) => {
+    const diff = (index - activeIndex + slides.length) % slides.length;
+    if (diff === 0) return "center";
+    if (diff === 1) return "right";
+    if (diff === slides.length - 1) return "left";
+    return "hidden";
+  };
+
+  const imageVariants = {
+    center: {
+      x: "0%",
+      scale: 1.15,
+      opacity: 1,
+      zIndex: 3,
+      filter: "blur(0px)",
+    },
+    left: {
+      x: "-120%",
+      scale: 0.7,
+      opacity: 0.5,
+      zIndex: 2,
+      filter: "blur(3px)",
+    },
+    right: {
+      x: "120%",
+      scale: 0.7,
+      opacity: 0.5,
+      zIndex: 2,
+      filter: "blur(3px)",
+    },
+    hidden: {
+      opacity: 0,
+      scale: 0.4,
+      pointerEvents: "none",
+    },
+  };
+
+  return (
+    <div className="relative w-full py-20 min-h-[80vh]">
+      <h1 className="text-4xl font-light text-center mb-12">
+        Where <span className="text-[#ED1C24] font-bold">Innovation Meets</span>
+        <br />
+        Engineering Excellence
+      </h1>
+
+      <div className="relative flex items-center justify-center h-[60vh]">
+        {slides.map((slide, index) => {
+          const position = getPosition(index);
+
+          return (
+            <motion.div
+              key={index}
+              className="absolute"
+              variants={imageVariants}
+              animate={position}
+              transition={{ duration: 0.7, ease: "easeInOut" }}
+            >
+              <motion.img
+                src={slide.image}
+                alt={slide.title}
+                className="w-[520px] aspect-[4/3] object-cover rounded-xl cursor-grab"
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.2}
+                onDragStart={() => setIsDragging(true)}
+                onDragEnd={(_, info) => {
+                  setIsDragging(false);
+                  if (info.offset.x > 50)
+                    setActiveIndex((p) => (p - 1 + slides.length) % slides.length);
+                  if (info.offset.x < -50)
+                    setActiveIndex((p) => (p + 1) % slides.length);
+                }}
+                whileDrag={{ scale: 0.95 }}
+              />
+            </motion.div>
+          );
+        })}
+
+        <div
+          className={`absolute transition-all duration-500 ${
+            slides[activeIndex].captionAlignDesktop
+          }`}
+        >
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeIndex}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.4 }}
+              className="max-w-sm"
+            >
+              <div className="font-bold text-lg">
+                {slides[activeIndex].title}
+              </div>
+
+              <div className="text-sm text-gray-600 mt-1">
+                {slides[activeIndex].desc.split("\n").map((line, i) => (
+                  <div key={i}>{line}</div>
+                ))}
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </div>
+    </div>
+  );
+};
