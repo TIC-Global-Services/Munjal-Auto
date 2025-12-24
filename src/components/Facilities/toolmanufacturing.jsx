@@ -174,9 +174,9 @@ const Toolmanufacturing = () => {
         </div>
         <div className='flex flex-col lg:flex-row gap-10 items-center mt-5'>
             <div className='object-fit lg:min-w-[500px] overflow-hidden'>
-                <img src={toolimg1} width={488} height={325} alt='Tool Manufacturing' className='w-full h-full rounded-[20px] lg:h-[300px]'/>
+                <img src={toolimg1} width={488} height={325} alt='Tool Manufacturing' className='w-full h-full rounded-[10px] lg:h-[300px]'/>
             </div>
-            <div className='max-w-[696px]'>
+            <div className='lg:max-w-[696px] px-5 lg:px-0'>
                     <p className='leading-[24px] lg:leading-[34px] text-[#222222] lg:text-[16px] text-[14px]'>
                     In 2010-11, Munjal Auto established a state-of-the-art high-tech Tool Manufacturing Facility at Bawal, Haryana, spanning 1,600 sq.m. The center is equipped with advanced CAD/CAM/CAE systems, large CNC machining centers, portable coordinate measuring machines, and die-spotting presses to manufacture and maintain mid-to-large sized tooling, jigs, fixtures, gauges, and panel checkers.
                 </p>
@@ -185,7 +185,7 @@ const Toolmanufacturing = () => {
         </div>
 
         {showAllExhaust ? (
-            <div className='grid grid-cols-3  whitespace-wrap gap-5 mt-20'>
+            <div className='grid lg:grid-cols-3 grid-cols-1 whitespace-wrap gap-5 mt-20'>
             {toolManufactureList.map((item,index) => (
                 <div key={index} className='bg-[#F5F5F5] p-3 rounded-[12px]'>
                             <h1 className='bg-[#E3E3E3] text-[#ED1C24] py-2 mt-2 font-semibold text-center rounded-[8px] text-[20px] lg:text-[26px]'>{item.title}</h1>
@@ -224,9 +224,9 @@ const Toolmanufacturing = () => {
             </button>
         </div>
         <div className='grid  grid-cols-1 lg:grid-cols-2 lg:gap-[70px] gap-5 lg:mt-20 mt-10 items-start'>
-          <h1 className='lg:text-[24px] lg:text-start text-center block lg:hidden'>Central Room & Technical Room</h1>
+          <h1 className='text-[20px] lg:text-start text-center block lg:hidden'>Central Room & Technical Room</h1>
           <div className='object-fit overflow-hidden w-fit'>
-            <img src={toolimg2} width={593} height={550} alt='Central Room & Technical Room' className='w-full h-[444.75px] rounded-[10px]'/>
+            <img src={toolimg2} width={593} height={550} alt='Central Room & Technical Room' className='w-full lg:h-[444.75px] h-[340px] rounded-[10px]'/>
           </div>
           <div>
             <h1 className='lg:text-[24px] lg:text-start text-center hidden lg:block'>Central Room & Technical Room</h1>

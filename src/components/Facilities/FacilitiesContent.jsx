@@ -353,11 +353,11 @@ const FacilitiesContent = ({ content }) => {
                     />
                 </div>
 
-                <div className=" relative lg:col-span-4 bg-[#9B9C9F33] overflow-hidden rounded-[20px] max-h-[600px] grid grid-cols-1  gap-6 lg:grid-cols-5 px-3">
+                <div className=" relative lg:col-span-4 bg-[#9B9C9F33] overflow-hidden rounded-[20px]  grid grid-cols-1  gap-6 lg:grid-cols-5 px-3">
                     <img
                         src={faBento3}
                         alt=""
-                        className="absolute lg:left-[-130px] h-[300px] col-span-2 lg:block hidden lg:h-full w-full object-contain md:-ml-20 -ml-[50px] lg:mt-5"
+                        className="absolute lg:left-[-130px] col-span-2 lg:block hidden lg:h-full w-full object-contain md:-ml-20 -ml-[50px] lg:mt-5"
                     />
                     <div></div>
                     <div></div>
@@ -385,14 +385,14 @@ const FacilitiesContent = ({ content }) => {
                 </div>
             </div>
             <div className="mt-20">
-                <h1 className="text-[36px]">Tool Design</h1>
-                <div className="mt-14 flex lg:flex-row flex-col gap-5 ">
+                <h1 className="text-[36px] text-center lg:text-start">Tool Design</h1>
+                <div className="lg:mt-14 mt-5 flex lg:flex-row flex-col gap-5 ">
                     <div className="object-fit lg:w-screen w-fit">
                         <img src={tooldesign} width={488} height={313} className="rounded-[20px] w-full lg:h-[313px] object-cover"/>
                         <img src={tooldesign1} width={488} height={313} className="rounded-[20px] w-full lg:h-[313px] object-cover mt-4"/>
                     </div>
                     <div>
-                        <p className="lg:text[16px] text-[14px] leading-[34px] text-left">
+                        <p className="lg:text[16px] text-[14px] leading-[24px] lg:leading-[34px] text-left px-3 lg:px-0">
                             Our Tool Design centers at Bawal and Waghodia are equipped with the latest CAD/CAM software and highly qualified engineering designers. They specialize in designing press tools, jigs, fixtures, gauges, reverse engineering, and manufacturing processes, supported by advanced workstations and plotters for precise, efficient tool development.
                         </p>
                         <div className="grid gap-3 lg:grid-cols-2 mt-10">
@@ -407,7 +407,7 @@ const FacilitiesContent = ({ content }) => {
                                 <li>Auto Cad</li>
                             </ul>
                             </div>
-                            <div className="-translate-x-12">
+                            <div className="lg:-translate-x-12 order-3 lg:order-2">
                                 <h1 className="text-[#ED1C24] font-semibold text-[20px] lg:text-[26px]">Supported By Following Hardware (Work Stations)</h1>
                             <ul className="list-disc grid lg:grid-cols-1 grid-cols-2 gap-1 text-[13px] lg:text-[16px] leading-[20px] lg:leading-[34px] text-[#222222] px-4 mt-5">
                                 <li>Unigraphics NX</li>
@@ -420,12 +420,12 @@ const FacilitiesContent = ({ content }) => {
                                 <li>IBM-Intelli-Star Z-Pro</li>
                             </ul>
                             </div>
-                            <div className="lg:-translate-y-10">
+                            <div className="lg:-translate-y-10 order-2 lg:order-3">
                                 <h1 className="text-[#ED1C24] font-semibold text-[20px] lg:text-[26px]">Waghodia</h1>
-                            <ul className="list-disc grid lg:grid-cols-1 grid-cols-2 gap-1  text-[13px] lg:text-[16px] leading-[20px] lg:leading-[34px] text-[#222222] px-4 mt-5">
+                            <ul className="list-disc grid lg:grid-cols-1 grid-cols-2 lg:gap-1 gap-3  text-[13px] lg:text-[16px] leading-[20px] lg:leading-[34px] text-[#222222] px-4 mt-5">
                                 <li>CATIA V-5 –R-60</li>
                                 <li>Pro-E Wildfire</li>
-                                <li>Hyper Form ( Blank & Nest)</li>
+                                <li>Hyper Form <br className="block lg:hidden"/> ( Blank & Nest)</li>
                                 <li>AutoCAD</li>
                             </ul>
                             </div>

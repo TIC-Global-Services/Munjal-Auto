@@ -204,7 +204,7 @@ const TestingContent = () => {
              </Swiper>
 
              {/* Custom navigation buttons */}
-             <div className="flex gap-2 absolute right-0 lg:bottom-10 bottom-20 z-10">
+             <div className="flex relative justify-end gap-2 -translate-y-15">
                <ArrowLeft color="#ffffff" strokeWidth={1.5} absoluteStrokeWidth className='custom-prev bg-[#ED1C24] rounded-full p-2 w-10 h-10 cursor-pointer'/>
                <ArrowRight color="#ffffff" strokeWidth={1.5} absoluteStrokeWidth className='custom-next bg-[#ED1C24] rounded-full p-2 w-10 h-10 cursor-pointer'/>
              </div>
