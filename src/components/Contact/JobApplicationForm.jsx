@@ -229,59 +229,71 @@ const JobApplicationForm = () => {
 
 
   return (
-    <div className="p-8">
-      <form onSubmit={handleSubmit} className="space-y-10 h-full flex flex-col justify-center my-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              value={formData.name}
-              onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-300"
-            />
+    <div className="h-auto md:h-[460px] -mt-0 md:-mt-8">
+      <form onSubmit={handleSubmit} className="h-full flex flex-col justify-between p-4 md:p-10 ml-0 md:ml-16 -mt-0 md:-mt-2">
+        <div className="space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 gap-y-6">
+            <div>
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                value={formData.name}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-300"
+              />
+            </div>
+            <div>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-300"
+              />
+            </div>
           </div>
-          <div>
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={formData.email}
-              onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-300"
-            />
-          </div>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <input
-              type="tel"
-              name="mobile"
-              placeholder="Mobile Number"
-              value={formData.mobile}
-              onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-300"
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 gap-y-6">
+            <div>
+              <input
+                type="tel"
+                name="mobile"
+                placeholder="Mobile Number"
+                value={formData.mobile}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-300"
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                name="experience"
+                placeholder="Total Experience"
+                value={formData.experience}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-300"
+              />
+            </div>
           </div>
-          <div>
-            <input
-              type="text"
-              name="experience"
-              placeholder="Total Experience"
-              value={formData.experience}
-              onChange={handleInputChange}
-              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-300"
-            />
-          </div>
-        </div>
 
-        <div>
-          <p className="mb-2">Upload your resume <span className='text-red-500'>*</span></p>
-          <div className="flex items-center">
-            <label className="cursor-pointer bg-gray-100 px-4 py-2 border border-gray-200 rounded">
-              Choose file
+          <div>
+            <label className="cursor-pointer block">
+              <div className="w-full max-w-[592px] md:w-[592px] h-[150px] md:h-[200px] border-2 border-dashed border-gray-300 rounded-xl bg-gray-50 flex flex-col items-center justify-center text-center hover:bg-gray-100 transition-colors">
+                <div className="text-gray-400 mb-2">
+                  <svg className="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                  </svg>
+                </div>
+                <div className="text-gray-600 font-medium">Upload your resume</div>
+                <div className="text-gray-400 text-sm mt-1">
+                  (Accepted formats: PDF / DOC | Max size: 5 MB)
+                </div>
+                {fileName !== 'No file Chosen' && (
+                  <div className="text-green-600 text-sm mt-2 font-medium">{fileName}</div>
+                )}
+              </div>
               <input 
                 type="file" 
                 className="hidden" 
@@ -289,16 +301,16 @@ const JobApplicationForm = () => {
                 onChange={handleFileChange}
               />
             </label>
-            <span className="ml-3 text-sm text-gray-500">{fileName}</span>
           </div>
         </div>
 
-        <div>
+        <div className="flex justify-start mb-4 md:mb-8 pt-[15px] md:pt-[30px]">
           <button 
             type="submit" 
             className="bg-black text-white px-10 py-2 rounded hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled={isSubmitting}
           >
-            Apply
+            {isSubmitting ? 'Submitting...' : 'Apply'}
           </button>
         </div>
       </form>

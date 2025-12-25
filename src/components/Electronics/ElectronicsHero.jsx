@@ -19,6 +19,8 @@ const ElectronicsHero = () => {
             backgroundRepeat: 'no-repeat',
           }}
         >
+        {/* Dark Overlay */}
+  <div className="absolute inset-0 bg-black/40 rounded-[24px] z-0" />
           {/* Logo */}
           <Link to="/">
             <img

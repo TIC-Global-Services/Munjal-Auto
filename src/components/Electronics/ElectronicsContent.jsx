@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import strategyImg from '../../assets/Electronics/strategy-elec.png'
 import coreCompImg from '../../assets/Electronics/corecomp-1.jpg'
+
 import industry1 from '../../assets/Electronics/industry1.jpg'
 import industry2 from '../../assets/Electronics/industry2.png'
 import industry3 from '../../assets/Electronics/industry3.jpg'
@@ -28,63 +29,66 @@ const ElectronicsContent = () => {
       ],
     },
     {
-      title: 'PCB Design & Manufacturing',
+      title: 'Embedded Software Development',
       image: coreCompImg,
       points: [
-        'Multi-layer PCB design',
-        'High-speed signal integrity',
-        'EMI/EMC compliance',
-        'Prototype to production',
-        'Component sourcing',
-        'Assembly and testing',
+        'C/C++ embedded firmware, Python',
+        'Real-time OS (Free RTOS, Zephyr, etc.)',
+        'Firmware for safety critical systems',
+        'EN50128 functional safety integration',
+        'MISRA-C compliant software architecture',
+        'Embedded IDEs (Keil, IAR, STM32Cube IDE)',
+        'Continuous Integration/Deployment (CI/CD)',
+        'Device drivers and middleware'
       ],
     },
     {
-      title: 'IoT & Connectivity Solutions',
+      title: 'Embedded Hardware Design',
       image: coreCompImg,
       points: [
-        'Wireless communication protocols',
-        'Cloud integration',
-        'Data analytics platforms',
-        'Remote monitoring systems',
-        'Edge computing solutions',
-        'Secure data transmission',
+        'Analog/digital circuit design',
+        'Schematic capture and PCB design & layout',
+        'Microcontroller and SoC selection and integration',
+        'Signal integrity and EMI/EMC compliance',
       ],
     },
     {
-      title: 'Testing & Validation',
+      title: 'System Integration',
       image: coreCompImg,
       points: [
-        'Functional testing',
-        'Environmental testing',
-        'Compliance certification',
-        'Reliability testing',
-        'Performance benchmarking',
-        'Quality assurance',
+        'Hardware-software co-design',
+        'Integration with sensors, actuators, wireless modules, and other peripherals',
+        'System artifacts and documentation practices',
       ],
     },
     {
-      title: 'Power Management Systems',
+      title: 'Connectivity & Protocols',
       image: coreCompImg,
       points: [
-        'Battery management systems',
-        'Energy optimization',
-        'Power conversion circuits',
-        'Thermal management',
-        'Fast charging solutions',
-        'Low-power design',
+        'Wired: SPI, I2C, UART, CAN, USB, Ethernet',
+        'Wireless: BLE, Wi-Fi, ZigBee, LoRa, NB-IoT',
+        'Protocol stacks: MQTT, HTTPS, MODBUS etc.',
       ],
     },
     {
-      title: 'Software Development',
+      title: 'Testing and Quality Assurance',
       image: coreCompImg,
       points: [
-        'Firmware development',
-        'Device drivers',
-        'Application software',
-        'Bootloader development',
-        'OTA updates',
-        'Version control & CI/CD',
+        'Unit and Integration testing',
+        'Code analysis and coverage tools',
+        'Coding Standards implementation: MISRA C',
+        'CENELEC Safety Standards EN 50128, EN50129 implementation',
+        'Debugging with JTAG, SWD, Logic analyzers, Oscilloscopes',
+      ],
+    },
+    {
+      title: 'Product Development and Lifecycle Management',
+      image: coreCompImg,
+      points: [
+        'Requirements gathering and specification writing',
+        'V-model development practices: EN 50126, EN50128',
+        'Design for Manufacturability (DFM) and Design for Testability (DFT)',
+        'Regulatory compliances & Approval (FCC, CE, UL, RoHS, RDSO)',
       ],
     },
   ]
@@ -137,15 +141,15 @@ const ElectronicsContent = () => {
             <ul className="space-y-3 pt-4">
               <li className="flex items-start gap-2 text-base md:text-lg lg:text-xl xl:text-[20px] font-[400] leading-relaxed text-gray-600">
                 <span className="text-[#82848A] mt-1">•</span>
-                <span>Advanced facility for high-precision electronics.</span>
+                <span className="text-[#82848A]">Advanced facility for high-precision electronics.</span>
               </li>
               <li className="flex items-start gap-2 text-base md:text-lg lg:text-xl xl:text-[20px] font-[400] leading-relaxed text-gray-600">
                 <span className="text-[#82848A] mt-1">•</span>
-                <span>ISO 9001 Certified with zero-defect focus.</span>
+                <span className="text-[#82848A]">ISO 9001 Certified with zero-defect focus.</span>
               </li>
               <li className="flex items-start gap-2 text-base md:text-lg lg:text-xl xl:text-[20px] font-[400] leading-relaxed text-gray-600">
                 <span className="text-[#82848A] mt-1">•</span>
-                <span>100% Compliance with international quality and safety standards</span>
+                <span className="text-[#82848A]">100% Compliance with international quality and safety standards</span>
               </li>
             </ul>
           </div>
@@ -158,29 +162,106 @@ const ElectronicsContent = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-12 sm:mt-16 md:mt-20 px-4 sm:px-6 md:px-8 lg:px-10"
         >
-          <div className="bg-[#F5F5F5] rounded-[14px] overflow-hidden min-h-[300px] sm:min-h-[350px]">
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr] gap-0 h-full">
-              {/* Left Side - Image */}
-              <div className="h-full py-6 sm:py-8 md:py-10 px-4 sm:px-6 flex items-center">
-                <div className="w-full overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+            {/* Vision Card */}
+            <div className="bg-[#F5F5F5] rounded-[14px] p-6 sm:p-8">
+              <div className="mb-4 sm:mb-6">
+                <img
+                  src={strategyImg}
+                  alt="Vision"
+                  className="w-[560px] h-[372px] object-cover rounded-[7px]"
+                />
+              </div>
+              <h3 className="text-[#ED1C24] text-2xl sm:text-3xl md:text-[32px] font-[500] mb-4">
+                Vision
+              </h3>
+              <p className="text-base sm:text-lg md:text-[18px] font-[400] leading-relaxed text-gray-700">
+                To be a recognized leader in embedded technology, driving
+                innovation through intelligent design and seamless hardware-
+                software integration.
+              </p>
+            </div>
+
+            {/* Mission Card */}
+            <div className="bg-[#F5F5F5] rounded-[14px] p-6 sm:p-8">
+              <div className="mb-4 sm:mb-6">
+                <img
+                  src={strategyImg}
+                  alt="Mission"
+                  className="w-[560px] h-[372px] object-cover rounded-[7px]"
+                />
+              </div>
+              <h3 className="text-[#ED1C24] text-2xl sm:text-3xl md:text-[32px] font-[500] mb-4">
+                Mission
+              </h3>
+              <ul className="space-y-2 sm:space-y-3">
+                <li className="flex items-start gap-2 text-base sm:text-lg md:text-[20px] font-[400] leading-relaxed text-gray-700">
+                  <span className="text-[#222222] mt-1 flex-shrink-0">•</span>
+                  <span className="text-[#222222]">Deliver reliable, high-performance embedded solutions tailored to client needs.</span>
+                </li>
+                <li className="flex items-start gap-2 text-base sm:text-lg md:text-[20px] font-[400] leading-relaxed text-gray-700">
+                  <span className="text-[#222222] mt-1 flex-shrink-0">•</span>
+                  <span className="text-[#222222]">Build long-term partnerships through technical excellence and customer-first service.</span>
+                </li>
+                <li className="flex items-start gap-2 text-base sm:text-lg md:text-[20px] font-[400] leading-relaxed text-gray-700">
+                  <span className="text-[#222222] mt-1 flex-shrink-0">•</span>
+                  <span className="text-[#222222]">Stay at the forefront of electronics innovation to create future-ready products.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Our Values Card - Full Width */}
+          <div className="mt-6 lg:mt-8">
+            <div className="bg-[#F5F5F5] rounded-[14px] overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-0">
+                {/* Left Side - Image */}
+                <div className="p-6 sm:p-8">
                   <img
                     src={strategyImg}
-                    alt="Strategy"
-                    className="w-full h-auto object-cover"
+                    alt="Our Values"
+                    className="w-[560px] h-[372px] object-cover rounded-[7px]"
                   />
                 </div>
-              </div>
-
-              {/* Right Side - Content */}
-              <div className="py-8 sm:py-12 md:py-16 px-6 sm:px-8 md:px-12 flex flex-col justify-center">
-                <h3 className="text-[#ED1C24] text-2xl sm:text-3xl md:text-[36px] font-[500] leading-tight sm:leading-[51px] mb-4 sm:mb-6">
-                  Strategy
-                </h3>
-                <p className="text-base sm:text-lg md:text-[20px] font-[400] leading-relaxed sm:leading-[30px] text-gray-700">
-                  To be a recognized leader in embedded technology, driving
-                  innovation through intelligent design and seamless hardware-
-                  software integration.
-                </p>
+                
+                {/* Right Side - Content */}
+                <div className="p-6 sm:p-8 lg:py-8">
+                  <h3 className="text-[#ED1C24] text-2xl sm:text-3xl md:text-[32px] font-[500] mb-4 sm:mb-6">
+                    Our Values
+                  </h3>
+                  <ul className="space-y-3 sm:space-y-4">
+                    <li className="flex items-start gap-3">
+                      <span className="text-[#222222] mt-1 flex-shrink-0">•</span>
+                      <div>
+                        <span className="text-[#222222]-400 text-[20px]">Innovation - We embrace challenges, turning complex technical problems into breakthrough solutions.</span>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-[#222222] mt-1 flex-shrink-0">•</span>
+                      <div>
+                        <span className="text-[#222222]-400 text-[20px]">Quality – A zero-defect mindset drives every stage of our design and manufacturing.</span>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-[#222222] mt-1 flex-shrink-0">•</span>
+                      <div>
+                        <span className="text-[#222222]-400 text-[20px]">Integrity – We operate with transparency, ethics, and uncompromising honesty.</span>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-[#222222] mt-1 flex-shrink-0">•</span>
+                      <div>
+                        <span className="text-[#222222]-400 text-[20px]">Customer-Centricity – Our mission is simple: enabling our customers to succeed.</span>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <span className="text-[#222222] mt-1 flex-shrink-0">•</span>
+                      <div>
+                        <span className="text-[#222222]-400 text-[20px]">Sustainability – We engineer smarter systems that conserve energy and protect the environment.</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -223,7 +304,7 @@ const ElectronicsContent = () => {
                     </h3>
                     <ul className="space-y-1 sm:space-y-2 mb-16 sm:mb-20">
                       {competencies[currentCard].points.map((point, index) => (
-                        <li key={index} className="text-sm sm:text-base md:text-[16px] font-[400] leading-relaxed sm:leading-[34px] text-gray-600">
+                        <li key={index} className="text-sm sm:text-base md:text-[16px] font-[400] leading-relaxed sm:leading-[34px] text-[#82848A]">
                           • {point}
                         </li>
                       ))}
@@ -258,7 +339,7 @@ const ElectronicsContent = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="mt-12 sm:mt-16 md:mt-20 px-4 sm:px-6 md:px-8 lg:px-10"
+          className="mt-20 sm:mt-24 md:mt-28 lg:mt-32 xl:mt-36 px-4 sm:px-6 md:px-8 lg:px-10"
         >
           <div className="text-center mb-8 sm:mb-10 md:mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-[36px] font-[500]">
@@ -268,7 +349,7 @@ const ElectronicsContent = () => {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
             {/* Industry 1 - Automotive */}
-            <div className="bg-transparent">
+            <div className="bg-transparent pb-8 lg:pb-12">
               <div className="w-full aspect-[630/400] overflow-hidden rounded-[14px]">
                 <img
                   src={industry1}
@@ -276,18 +357,18 @@ const ElectronicsContent = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="pt-4 sm:pt-6">
+              <div className="pt-6 sm:pt-8">
                 <h3 className="text-[#ED1C24] text-xl sm:text-2xl md:text-[28px] font-[500] leading-tight sm:leading-[34px] mb-2">
                   Automotive
                 </h3>
-                <p className="text-base sm:text-lg md:text-[20px] font-[400] leading-relaxed sm:leading-[34px] text-gray-600">
+                <p className="text-base sm:text-lg md:text-[16px] font-normal leading-relaxed sm:leading-[34px] text-gray-600">
                   Intelligent vehicle systems, IoT-enabled components.
                 </p>
               </div>
             </div>
 
             {/* Industry 2 - Railways */}
-            <div className="bg-transparent">
+            <div className="bg-transparent pb-8 lg:pb-12">
               <div className="w-full aspect-[630/400] overflow-hidden rounded-[14px]">
                 <img
                   src={industry2}
@@ -295,18 +376,18 @@ const ElectronicsContent = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="pt-4 sm:pt-6">
+              <div className="pt-6 sm:pt-8">
                 <h3 className="text-[#ED1C24] text-xl sm:text-2xl md:text-[28px] font-[500] leading-tight sm:leading-[34px] mb-2">
                   Railways
                 </h3>
-                <p className="text-base sm:text-lg md:text-[20px] font-[400] leading-relaxed sm:leading-[34px] text-gray-600">
+                <p className="text-base sm:text-lg md:text-[16px] font-normal leading-relaxed sm:leading-[34px] text-gray-600">
                   Safety-certified control systems.
                 </p>
               </div>
             </div>
 
             {/* Industry 3 - Industrial Automation */}
-            <div className="bg-transparent">
+            <div className="bg-transparent pb-8 lg:pb-12">
               <div className="w-full aspect-[630/400] overflow-hidden rounded-[14px]">
                 <img
                   src={industry3}
@@ -318,14 +399,14 @@ const ElectronicsContent = () => {
                 <h3 className="text-[#ED1C24] text-xl sm:text-2xl md:text-[28px] font-[500] leading-tight sm:leading-[34px] mb-2">
                   Industrial Automation
                 </h3>
-                <p className="text-base sm:text-lg md:text-[20px] font-[400] leading-relaxed sm:leading-[34px] text-gray-600">
+                <p className="text-base sm:text-lg md:text-[16px] font-[400] leading-relaxed sm:leading-[34px] text-gray-600">
                   Smart monitoring, control, and automation solutions.
                 </p>
               </div>
             </div>
 
             {/* Industry 4 - Defence */}
-            <div className="bg-transparent">
+            <div className="bg-transparent pb-8 lg:pb-12">
               <div className="w-full aspect-[630/400] overflow-hidden rounded-[14px]">
                 <img
                   src={industry4}
@@ -333,11 +414,11 @@ const ElectronicsContent = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="pt-4 sm:pt-6">
+              <div className="pt-6 sm:pt-8">
                 <h3 className="text-[#ED1C24] text-xl sm:text-2xl md:text-[28px] font-[500] leading-tight sm:leading-[34px] mb-2">
                   Defence
                 </h3>
-                <p className="text-base sm:text-lg md:text-[20px] font-[400] leading-relaxed sm:leading-[34px] text-gray-600">
+                <p className="text-base sm:text-lg md:text-[16px] font-[400] leading-relaxed sm:leading-[34px] text-gray-600">
                   High-reliability electronics for mission-critical applications.
                 </p>
               </div>
@@ -420,7 +501,7 @@ const ElectronicsContent = () => {
                   <div className="flex-1 text-center md:text-left md:pl-6">
                     <h3 className="text-xl sm:text-2xl md:text-[28px] font-[600] mb-2 text-black">Mr. Kulvinder Singh Seehra</h3>
                     <h4 className="text-[#ED1C24] text-lg sm:text-xl md:text-[22px] font-[500] mb-4">Chief Technology Officer (Electronics)</h4>
-                    <p className="text-base sm:text-lg md:text-[18px] font-[400] leading-relaxed text-gray-600">
+                    <p className="text-base sm:text-lg md:text-[20px] font-[400] leading-relaxed text-[#82848A]">
                       Embedded systems expert with over 40 years of experience in electronics and product development. He has developed many solutions for Army, Airforce, Railways, Public sectors companies viz. BEL, ECIL, ITI etc. He is a specialist in hardware-software integration and system architecture.
                     </p>
                   </div>
@@ -437,10 +518,10 @@ const ElectronicsContent = () => {
                       className="w-full h-full object-cover scale-100"
                     />
                   </div>
-                  <div className="flex-1 text-center md:text-right md:pr-6">
+                  <div className="flex-1 text-center md:text-left md:pr-6">
                     <h3 className="text-xl sm:text-2xl md:text-[28px] font-[600] mb-2 text-black">Mr. Sandeep Agrgawal</h3>
                     <h4 className="text-[#ED1C24] text-lg sm:text-xl md:text-[22px] font-[500] mb-4">General Manager-Electronics</h4>
-                    <p className="text-base sm:text-lg md:text-[18px] font-[400] leading-relaxed text-gray-600">
+                    <p className="text-base sm:text-lg md:text-[20px] font-[400] leading-relaxed text-[#82848A]">
                       Over 30 years of expertise in product development especially for railway domain- signalling and rolling stock. He has specialization in delivering end-to-end safety critical, operational, and customer-centric solutions tailored for the railway sector. He possesses added expertise in spearheading strategic growth initiatives and managing the electronics division vertical's expansion into new markets.
                     </p>
                   </div>

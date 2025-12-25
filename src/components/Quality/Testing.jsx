@@ -1,12 +1,19 @@
 import React, { useState } from 'react'
-import image1 from '../../assets/Mask group (7).png'
+import image1 from '/Users/batcomputer/Desktop/TIC/Munjal-Auto/src/assets/quality/fueltank.png'
+import image2 from '/Users/batcomputer/Desktop/TIC/Munjal-Auto/src/assets/quality/Chemicallab.png'
+import image3 from '/Users/batcomputer/Desktop/TIC/Munjal-Auto/src/assets/quality/Metallurgylab.png'
+import image4 from '/Users/batcomputer/Desktop/TIC/Munjal-Auto/src/assets/quality/Specialtesting.png'
+import image5 from '/Users/batcomputer/Desktop/TIC/Munjal-Auto/src/assets/quality/spokewheelrim.png'
+import image6 from '/Users/batcomputer/Desktop/TIC/Munjal-Auto/src/assets/quality/standard.png'
+import image7 from '/Users/batcomputer/Desktop/TIC/Munjal-Auto/src/assets/quality/testingfacilities.png'
+import image8 from '/Users/batcomputer/Desktop/TIC/Munjal-Auto/src/assets/quality/testingwheelrim.png'
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 
 const contents = [
   {
     title: 'Standard Room',
-    image: image1,
+    image: image6,
     description: [
       "CMM - 4 NO (at all plants)",
       "Profile Projector",
@@ -17,7 +24,7 @@ const contents = [
   },
   {
     title: 'Metallurgical Lab',
-    image: image1,
+    image: image3,
     description: [
       "Computerized UTM",
       "Wickers Hardness Testing",
@@ -28,7 +35,7 @@ const contents = [
   },
   {
     title: 'Chemical Lab',
-    image: image1,
+    image: image2,
     description: [
       "Cass Test Equipment",
       "Salt Spray Testing",
@@ -43,14 +50,14 @@ const contents = [
 
   {
     title: 'Specialized Testing facilities & Endurance Testing',
-    image: image1,
+    image: image4,
     description: [
       " We at Munjal Auto carry out online / off line testing regularly & periodically. To meet ultimate demand of customers we have endurance testing facilities with specially developed equipments & SPMs to meet Quality standard, Durability & specifications given by customers. Our testing labs has appropriate testing facility for exhaust system, Wheel Rims, Fuel tanks & other parts & assemblies made in-house."
     ]
   },
   {
     title: 'Testing Facility for Exhaust systems',
-    image: image1,
+    image: image7,
     description: [
       "Online / Offline Testing",
       "Muffler Leak Test",
@@ -62,7 +69,7 @@ const contents = [
 
   {
     title: 'Testing Facility for Wheel Rims',
-    image: image1,
+    image: image8,
     description: [
       "Online Testing",
       "Wheel rim run out measuring and low point marking SPM",
@@ -90,13 +97,13 @@ const contents = [
       "Impulse Cycle Test",
       "Venting Tip angle Test",
       "Slosh Test ( Half Full & Full)",
-      "Salt spray Test With Chamber Size (1400X 800X1000)",
+      "Salt spray Test With Chamber Size (1400 X 800 X 1000)",
           ]
   },
 
   {
     title: 'Testing facility for Spoke Wheel Rim',
-    image: image1,
+    image: image5,
     description: [
       "Run-out Test",
       "CASS Test",
@@ -131,10 +138,10 @@ const Testing = () => {
 
 
   return (
-    <div className="relative min-h-screen py-14 w-full max-w-7xl mx-auto rounded-2xl overflow-hidden">
+    <div className="relative min-h-screen pt-10 pb-10 w-full max-w-7xl mx-auto rounded-2xl overflow-hidden">
 
       <div className="text-center flex flex-col items-center justify-center px-4">
-        <h1 className="text-2xl md:text-[40px] font-medium text-[#ED1C24]">Testing & Facilities Lab</h1>
+        <h1 className="text-2xl md:text-[40px] font-medium text-[#141313]">Testing & Facilities Lab</h1>
         <p className="md:text-base leading-[20px] text-xs md:max-w-2xl w-[90%] text-[#82848A] mt-4">
           MAIL’s advanced Standard Room houses cutting-edge testing and
           measuring instruments. Our metallurgical and chemical labs ensure
@@ -155,7 +162,7 @@ const Testing = () => {
             <div key={index} className="w-full flex-shrink-0">
               <div className="rounded-lg p-4 sm:p-6 lg:p-8 mx-2 sm:mx-4">
                 {/* Title */}
-                <h2 className="text-xl sm:text-2xl font-semibold text-[#ED1C24] mb-4 sm:mb-6 text-start">
+                <h2 className="text-xl sm:text-2xl font-medium text-[#ED1C24] mb-4 sm:mb-6 text-start">
                   {item.title}
                 </h2>
 
@@ -172,13 +179,25 @@ const Testing = () => {
 
                   {/* Description Section */}
                   <div className="flex-1 flex items-start order-2 lg:order-2 min-w-0">
-                    <ul className="list-disc pl-4 sm:pl-5 space-y-2 sm:space-y-3 w-full">
-                      {item.description.map((desc, i) => (
-                        <li key={i} className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed break-words">
-                          {desc}
-                        </li>
-                      ))}
-                    </ul>
+                    {item.title === 'Specialized Testing facilities & Endurance Testing' ? (
+                      // No bullet points for Specialized Testing
+                      <div className="w-full">
+                        {item.description.map((desc, i) => (
+                          <p key={i} className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed break-words mb-2 sm:mb-3">
+                            {desc}
+                          </p>
+                        ))}
+                      </div>
+                    ) : (
+                      // Bullet points for all other sections with smaller bullets
+                      <ul className="pl-4 sm:pl-5 space-y-2 sm:space-y-3 w-full">
+                        {item.description.map((desc, i) => (
+                          <li key={i} className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed break-words relative pl-3 before:content-['•'] before:absolute before:left-0 before:text-xs before:text-gray-500 before:top-0">
+                            {desc}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </div>
               </div>
@@ -189,25 +208,31 @@ const Testing = () => {
 
       {/* Navigation Buttons - Responsive positioning */}
       <div className="absolute bottom-2 sm:bottom-4 right-4 flex gap-2 z-10">
-        <button
-          onClick={prevSlide}
-          className="bg-[#FF0000] hover:bg-[#ff0000e5] text-white rounded-full p-2 sm:p-3 shadow-lg transition-all duration-200 hover:scale-110 disabled:opacity-50"
-          aria-label="Previous slide"
-        >
-          <ArrowLeft size={16} className="sm:hidden" />
-          <ArrowLeft size={20} className="hidden sm:block lg:hidden" />
-          <ArrowLeft size={24} className="hidden lg:block" />
-        </button>
+        {/* Previous button - only show if not on first card */}
+        {currentIndex > 0 && (
+          <button
+            onClick={prevSlide}
+            className="bg-[#FF0000] hover:bg-[#ff0000e5] text-white rounded-full p-2 sm:p-3 shadow-lg transition-all duration-200 hover:scale-110 disabled:opacity-50"
+            aria-label="Previous slide"
+          >
+            <ArrowLeft size={16} className="sm:hidden" />
+            <ArrowLeft size={20} className="hidden sm:block lg:hidden" />
+            <ArrowLeft size={24} className="hidden lg:block" />
+          </button>
+        )}
 
-        <button
-          onClick={nextSlide}
-          className="bg-[#FF0000] hover:bg-[#ff0000e5] text-white rounded-full p-2 sm:p-3 shadow-lg transition-all duration-200 hover:scale-110 disabled:opacity-50"
-          aria-label="Next slide"
-        >
-          <ArrowRight size={16} className="sm:hidden" />
-          <ArrowRight size={20} className="hidden sm:block lg:hidden" />
-          <ArrowRight size={24} className="hidden lg:block" />
-        </button>
+        {/* Next button - only show if not on last card */}
+        {currentIndex < contents.length - 1 && (
+          <button
+            onClick={nextSlide}
+            className="bg-[#FF0000] hover:bg-[#ff0000e5] text-white rounded-full p-2 sm:p-3 shadow-lg transition-all duration-200 hover:scale-110 disabled:opacity-50"
+            aria-label="Next slide"
+          >
+            <ArrowRight size={16} className="sm:hidden" />
+            <ArrowRight size={20} className="hidden sm:block lg:hidden" />
+            <ArrowRight size={24} className="hidden lg:block" />
+          </button>
+        )}
       </div>
     </div>
   )

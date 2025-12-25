@@ -30,105 +30,99 @@ const Policy = () => {
     return (
       <>
         {/* Desktop version */}
-        <div className="relative w-full h-screen items-center justify-center my-20 hidden lg:block rounded-lg">
-          {/* Background image */}
-          <div className="absolute inset-0 w-full h-full z-0 max-h-[621px] mx-auto bg-white">
-            <img
-              src={BgImage}
-              alt="Background"
-              className="w-full h-full object-contain mix-blend-normal opacity-0"
-            />
-          </div>
-  
-          {/* Content overlay */}
-          <div className="relative z-20 w-full h-full">
-            <div className="absolute top-[8%] left-[5%] sm:left-[10%] md:left-[12%] lg:left-[10%] xl:left-[20%] bg-white rounded-lg p-6 ">
-              <h2 className="text-[#ED1C24] text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-5xl font-[500] mb-4 lg:mt-0 xl:mt-0">
-                Quality Policy
-              </h2>
-              <p className="text-gray-700 text-sm sm:text-base md:text-lg lg:text-sm xl:text-base max-w-[300px] mb-8 leading-relaxed">
-                At MAIL, quality is our foundation. Through a strong Total Quality
-                Management System, we ensure every product is "First time right,
-                every time right."
-              </p>
+        <div className="w-full mt-20 mb-20 px-4 lg:px-8 xl:px-16 hidden lg:block relative">
+          {/* 3D Model Container */}
+          <div className="absolute left-64 top-[60%] transform -translate-y-1/2 z-20">
+            <div className="relative bg-transparent p-4 rounded-2xl">
+              <div className="scale-110 lg:scale-125 xl:scale-150">
+                <ModelViewer />
+              </div>
             </div>
           </div>
-  
-          {/* Grid cards */}
-          <div className="absolute top-[40%] sm:top-[35%] md:top-[30%] lg:top-[10%] left-[50%] transform -translate-x-1/2 lg:transform-none lg:left-[50%]">
-            <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:gap-4">
-              {contents.map((item, index) => (
-                <div
-                  key={index}
-                  className="bg-[#F5EDED] p-3 sm:p-4 rounded shadow flex flex-col w-[120px] sm:w-[160px] md:w-[200px] lg:w-[225px] h-[120px] sm:h-[160px] md:h-[200px] lg:h-[225px] text-center items-center justify-center"
-                >
-                  <img
-                    src={item.image}
-                    alt="image"
-                    className="w-[20px] h-[20px] sm:w-[22px] sm:h-[22px] lg:w-[24px] lg:h-[24px] mb-2"
-                  />
-                  <p className="text-gray-700 text-xs sm:text-sm lg:text-base">
-                    {item.description}
-                  </p>
+          
+          <div className="relative w-full max-w-[90rem] mx-auto bg-[#F5F5F5] rounded-3xl p-12 lg:p-16 xl:p-20 border-2 border-[#F5EDED] shadow-lg min-h-[500px] lg:min-h-[600px]">
+            {/* Content Layout */}
+            <div className="grid grid-cols-8 gap-8 items-start h-full pt-8">
+              {/* Left side - Text content */}
+              <div className="col-span-4 pl-8 pr-16 -mt-4">
+                <h2 className="text-[#ED1C24] text-3xl lg:text-4xl xl:text-5xl font-[500] mb-6">
+                  Quality Policy
+                </h2>
+                <p className="text-gray-700 text-base lg:text-lg leading-relaxed">
+                  At MAIL, quality is our foundation. Through a strong Total Quality
+                  Management System, we ensure every product is "First time right,
+                  every time right."
+                </p>
+              </div>
+
+              {/* Right side - Grid cards */}
+              <div className="col-span-4">
+                <div className="grid grid-cols-2 gap-3 lg:gap-4">
+                  {contents.map((item, index) => (
+                    <div
+                      key={index}
+                      className="bg-[#f7f7f7] p-4 rounded-2xl shadow-md flex flex-col w-[225px] h-[225px] text-center items-center justify-center border border-gray-100"
+                    >
+                      <img
+                        src={item.image}
+                        alt="quality icon"
+                        className="w-[24px] h-[24px] mb-3 flex-shrink-0"
+                      />
+                      <p className="text-gray-700 text-sm leading-tight">
+                        {item.description}
+                      </p>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </div>
-  
-          {/* 3D Model */}
-          <div className="absolute  top-[70%] sm:top-[65%] md:top-[50%] lg:top-[15%] md:left-[2%] lg:left-[10%] z-10">
-            <div className="scale-50 sm:scale-75 md:scale-90 lg:scale-100 origin-top-left">
-              <ModelViewer />
+              </div>
             </div>
           </div>
         </div>
   
         {/* Mobile version */}
-        <div className="lg:px-10 bg-white py-10"> 
-          <div className="bg-white relative px-8 py-20 mt-20 block lg:hidden rounded-[6px] shadow-lg border border-gray-200">
-          {/* Header section */}
-          <div className="mb-8">
-            <h2 className="text-[#ED1C24] text-2xl sm:text-3xl font-[500] mb-4">
-              Quality Policy
-            </h2>
-            <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-              At MAIL, quality is our foundation. Through a strong Total Quality
-              Management System, we ensure every product is "First time right,
-              every time right."
-            </p>
-          </div>
-  
-        
-  
-          {/* Grid cards section */}
-          <div className="flex justify-center">
-            <div className="grid grid-cols-2 gap-3 sm:gap-4 max-w-sm">
-              {contents.map((item, index) => (
-                <div
-                  key={index}
-                  className="bg-[#F5EDED] p-3 sm:p-4 rounded shadow flex flex-col w-full sm:w-[160px] h-[140px] sm:h-[160px] text-center items-center justify-center"
-                >
-                  <img
-                    src={item.image}
-                    alt="image"
-                    className="w-[20px] h-[20px] sm:w-[24px] sm:h-[24px] mb-2 flex-shrink-0"
-                  />
-                  <p className="text-gray-700 text-xs sm:text-sm leading-tight">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
+        <div className="w-full mt-20 mb-20 px-4 block lg:hidden">
+          <div className="bg-[#F5F5F5] rounded-3xl p-6 shadow-lg border-2 border-[#F5EDED]">
+            {/* Header section */}
+            <div className="mb-8 text-center">
+              <h2 className="text-[#ED1C24] text-2xl sm:text-3xl font-[500] mb-4">
+                Quality Policy
+              </h2>
+              <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                At MAIL, quality is our foundation. Through a strong Total Quality
+                Management System, we ensure every product is "First time right,
+                every time right."
+              </p>
+            </div>
+
+            {/* Grid cards section */}
+            <div className="flex justify-center mb-8">
+              <div className="grid grid-cols-2 gap-4 max-w-sm">
+                {contents.map((item, index) => (
+                  <div
+                    key={index}
+                    className="bg-white p-4 rounded-2xl shadow-md flex flex-col w-full h-[140px] sm:h-[160px] text-center items-center justify-center border border-gray-100"
+                  >
+                    <img
+                      src={item.image}
+                      alt="quality icon"
+                      className="w-[20px] h-[20px] sm:w-[24px] sm:h-[24px] mb-2 flex-shrink-0"
+                    />
+                    <p className="text-gray-700 text-xs sm:text-sm leading-tight">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 3D Model section */}
+            <div className="flex justify-center">
+              <div className="scale-75">
+                <ModelViewer />
+              </div>
             </div>
           </div>
         </div>
-        
-        </div>
-          {/* 3D Model section */}
-       <div className="block lg:hidden mt-4">
-         <div className="flex justify-center">
-           <ModelViewer />
-         </div>
-       </div>
          
        
       </>
@@ -288,7 +282,7 @@ const Policy = () => {
 
   return (
     <div
-      className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[400px] md:h-[400px] lg:w-[600px] lg:h-[600px] mx-auto"
+      className="relative w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] lg:w-[350px] lg:h-[350px] mx-auto"
       style={{ zIndex: 50 }}
     >
       <div
