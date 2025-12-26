@@ -1,6 +1,6 @@
 import React from 'react'
 import img from "../../assets/quaHero.png";
-import logo from "../../assets/companyLogo.png";
+import logo from "../../assets/logo.png";
 import icon1 from "../../assets/hero/icon.png";
 import icon2 from "../../assets/hero/icon2.png";
 import { Link } from 'react-router-dom';

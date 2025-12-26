@@ -1,6 +1,6 @@
 import React from 'react';
 import img from "../../assets/products/quality.png";
-import logo from "../../assets/companyLogo.png";
+import logo from "../../assets/logo.png";
 import { Link } from 'react-router-dom';
 import icon1 from "../../assets/hero/icon.png";
 import icon2 from "../../assets/hero/icon2.png";
@@ -24,11 +24,11 @@ const ProductHero = () => {
                      <div className='h-full  w-full bg-gradient-to-t from-black/50 via-black/40 rounded-[24px]'></div>
                     {/* Logo */}
                     <Link to="/">
-                        <img
-                                                               src={logo}
-                                                               alt="Company Logo"
-                                                               className="absolute -top-[0.9px] w-[80%] md:w-[60%] lg:w-1/3 max-w-md left-1/2 transform -translate-x-1/2 z-20"
-                                                           />
+                       <img
+                                                       src={logo}
+                                                       alt="Company Logo"
+                                                       className="absolute -top-[0.9px] w-[80%] md:w-[60%] lg:w-1/3 max-w-md left-1/2 transform -translate-x-1/2 z-20"
+                                                   />
                     </Link>
 
                     <div className="absolute bottom-5  right-5 flex flex-col items-center space-y-5 z-[999]">

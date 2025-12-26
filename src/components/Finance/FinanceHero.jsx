@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import img from "../../assets/fiHero.png";
-import logo from "../../assets/companyLogo.png";
+import logo from "../../assets/logo.png";
 import icon1 from "../../assets/hero/icon.png";
 import icon2 from "../../assets/hero/icon2.png";
 

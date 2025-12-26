@@ -101,9 +101,9 @@ Bawal
         <AnimatePresence>
           {hoveredHar && (
             <motion.p
-              initial={{ opacity: 0, x:-10 }}
+              initial={{ opacity: 0, x:10 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -10 }}
+              exit={{ opacity: 0, x: 10 }}
               transition={{ duration: 0.3 }}
               className="absolute top-[36%] left-auto ml-12   -translate-y-1/2 bg-[#FF0003] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
             >
@@ -158,7 +158,7 @@ Bawal
         <AnimatePresence>
           {hoveredDhar && (
             <motion.p
-              initial={{ opacity: 0, x:- 9 }}
+              initial={{ opacity: 0, x:-10 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -10 }}
               transition={{ duration: 0.3 }}
@@ -192,9 +192,9 @@ Bawal
         <AnimatePresence>
           {hoveredVadodaraSmall1 && (
             <motion.p
-              initial={{ opacity: 0, x:- 9 }}
+              initial={{ opacity: 0, x:10 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -10 }}
+              exit={{ opacity: 0, x: 10 }}
               transition={{ duration: 0.3 }}
               className="absolute top-[14%] left-auto ml-3  -translate-y-1/2 bg-[#139DBC] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
             >
@@ -227,9 +227,9 @@ Bawal
         <AnimatePresence>
           {hoveredVadodaraSmall2 && (
             <motion.p
-              initial={{ opacity: 0, x:- 9 }}
+              initial={{ opacity: 0, x:10 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -10 }}
+              exit={{ opacity: 0, x: 10 }}
               transition={{ duration: 0.3 }}
               className="absolute -top-6 left-auto ml-3  -translate-y-1/2 bg-[#139DBC] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
             >
@@ -240,7 +240,7 @@ Bawal
       </div>
 
     </div>
-      {/* Dot 4 */}
+      {/* Dot 5 */}
       <div
       className="absolute top-[34%] left-[4%] md:top-[35%] md:left-[8%] 2xl:top-[35%] 2xl:left-[8%] w-fit flex items-center"
       onMouseEnter={() => setHoveredChharodi(true)}
@@ -256,7 +256,7 @@ Bawal
         <AnimatePresence>
           {hoveredChharodi && (
             <motion.p
-              initial={{ opacity: 0, x:- 9 }}
+              initial={{ opacity: 0, x:-10 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -10 }}
               transition={{ duration: 0.3 }}
@@ -290,9 +290,9 @@ Bawal
         <AnimatePresence>
           {hoveredMeppedu && (
             <motion.p
-              initial={{ opacity: 0, x:- 9 }}
+              initial={{ opacity: 0, x:10 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -10 }}
+              exit={{ opacity: 0, x: 10 }}
               transition={{ duration: 0.3 }}
               className="absolute top-[14%] left-auto ml-3  -translate-y-1/2 bg-[#139DBC] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
             >
@@ -325,9 +325,9 @@ Bawal
         <AnimatePresence>
           {hoveredNellor && (
             <motion.p
-              initial={{ opacity: 0, x:- 9 }}
+              initial={{ opacity: 0, x:10 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -10 }}
+              exit={{ opacity: 0, x: 10 }}
               transition={{ duration: 0.3 }}
               className="absolute -top-[10%] -left-14  -translate-y-1/2 bg-[#139DBC] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
             >
