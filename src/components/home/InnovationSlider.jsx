@@ -77,7 +77,7 @@ const MobileSlider = () => {
         Engineering Excellence
       </h1>
 
-      <div className="relative w-full max-w-md h-[45vh]">
+      <div className="relative w-full max-w-md h-[45vh] overflow-hidden">
         {/* IMAGE */}
         <AnimatePresence initial={false}>
           <motion.img
@@ -100,7 +100,7 @@ const MobileSlider = () => {
         </AnimatePresence>
 
         {/* CAPTION */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-full px-4 text-center">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full px-4 text-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIndex}
