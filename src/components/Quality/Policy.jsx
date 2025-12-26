@@ -23,7 +23,7 @@ const Policy = () => {
           <div className="absolute bottom-0 left-[30%] md:left-[40.1%] w-6 h-6 rounded-full shadow-[-10px_10px_0_#fff] z-0 " />
 
 
-          {/* ✅ 3D MODEL – FIXED CONTAINER */}
+          {/* 3D MODEL – FIXED CONTAINER */}
           <div className="absolute bottom-0 left-0 z-50 w-[620px] h-[420px] ">
             <ModelViewer />
           </div>
@@ -103,7 +103,7 @@ const Policy = () => {
             </div>
           </div>
 
-          {/* ✅ Mobile 3D Model */}
+          {/* Mobile 3D Model */}
           <div className="flex justify-center">
             <div className="w-[620px] h-[280px]">
               <ModelViewer />
