@@ -41,17 +41,17 @@ const ProductHero = () => {
                         </Link> */}
 
                         <Link to="/contact">
-                            <img
-                                src={icon2}
-                                alt="contact"
-                                className="w-[55px] cursor-pointer hover:scale-125"
-                            />
+                           <img
+                            src={logo}
+                             alt="Company Logo"
+                             className="absolute -top-[0.9px] w-[80%] md:w-[60%] lg:w-1/3 max-w-md left-1/2 transform -translate-x-1/2 z-20"
+                             />
                         </Link>
                     </div>
 
                     {/* Centered Text and Timeline Container */}
                     <div className=" md:block flex items-center justify-center flex-col absolute md:text-left text-center left-0 bottom-0">
-                        <h1 className="text-[#FFFCFC] text-[54px] px-6 font-[500] hidden lg:block mb-10 leading-[3.9rem]">
+                        <h1 className="text-[#FFFCFC]  lg:text-[54px] text-[34px] text-left px-6 font-[500]  lg:block mb-10 lg:leading-[3.9rem]">
                             We Stand For​ <br />
                             Quality & Technology
                         </h1>

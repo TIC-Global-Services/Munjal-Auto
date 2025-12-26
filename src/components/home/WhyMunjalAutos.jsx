@@ -350,11 +350,11 @@ ModelViewer.propTypes = {
 const WhyMunjalAutos = () => {
     const features = [
       {
-        title: "Light Weight Solutions",
+        title: "Lightweight Solutions",
         description: "Integrating composite and steel technology to reducing CO2 Footprint",
       },
       {
-        title: "R&D & Engineering Focus",
+        title: "R&D & Engineering\n Focus",
         description: "Partnering with customer with end to end engineering solutions",
       },
       {
@@ -370,7 +370,7 @@ const WhyMunjalAutos = () => {
     });
     
     return (
-      <div className="relative px-2 sm:px-4 md:px-8 lg:px-12 py-6 md:py-16 lg:py-24 min-h-screen md:min-h-[600vh]" ref={containerRef}>
+      <div className="relative px-2 sm:px-4 md:px-8 lg:px-20 lg:mx-8 py-6 md:py-16 lg:py-14 min-h-screen md:min-h-[600vh]" ref={containerRef}>
           {/* Background gradient with responsive positioning and lower z-index */}
           <div className="sticky top-0 left-0 z-[10] pointer-events-none w-full h-0 overflow-hidden">
             <img
@@ -403,7 +403,7 @@ const WhyMunjalAutos = () => {
               </p>
  
               <Link to="/about-us">
-                <button className="bg-black text-white px-4 sm:px-6 py-2 sm:py-3 md:px-8 md:py-3 text-xs sm:text-sm md:text-base rounded-full hover:bg-gray-800 transition-colors mt-2 md:mt-4 z-[710] relative">
+                <button className="bg-black w-fit text-white md:mt-0 !mt-10 md:text-base text-xs lg:text-[16px] px-5 sm:px-10 py-2 sm:py-2 rounded-full font-medium hover:bg-gray-100 transition-colors">
                   More About Us
                 </button>
               </Link>
@@ -442,10 +442,10 @@ const WhyMunjalAutos = () => {
                         ),
                       }}
                     >
-                      <h3 className="text-lg md:text-xl lg:text-[36px] leading-[50px] text-[#151414] font-medium mb-2">
+                      <h3 className="text-lg md:text-xl lg:text-[30px] leading-[50px] text-[#151414] font-medium mb-2 whitespace-pre-line">
                         {feature.title}
                       </h3>
-                      <p className="text-[#8C8989] leading-[3 0px] text-sm whitespace-pre-line md:text-base leading-relaxed">
+                      <p className="text-[#8C8989] leading-[30px] text-sm whitespace-pre-line md:text-base">
                         {feature.description}
                       </p>
                     </motion.div>

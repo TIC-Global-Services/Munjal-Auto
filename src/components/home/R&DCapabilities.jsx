@@ -79,7 +79,7 @@ const MobileCapabilitiesSection = () => {
   ];
 
   return (
-    <div className="bg-white md:hidden block px-4 py-12 max-w-md mx-auto">
+    <div className="bg-white md:hidden block px-4 py-12 ">
       {/* Header */}
       <div className="mb-6">
         <p className="text-gray-600 text-sm mb-1">// R&D & Capabilities</p>
@@ -100,7 +100,7 @@ const MobileCapabilitiesSection = () => {
             />
             <div className="absolute bottom-0 left-0 w-full p-2 bg-gradient-to-t from-black/70 to-transparent">
                 <div className="border-l-2 border-red-500 px-0.5 lg:pl-2">
-                <p className="text-white font-medium text-[10px] lg:text-sm">
+                <p className="text-white font-medium text-[8px] lg:text-sm">
                   {capability.title}
                 </p>
               </div>

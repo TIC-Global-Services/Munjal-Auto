@@ -325,24 +325,22 @@ const FacilitiesContent = ({ content }) => {
 
             {/* Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 gap-4 lg:gap-5">
-                <div className="lg:col-span-4 rounded-[20px] bg-[#EAEAEA] max-h-[357px] p-6 md:p-8 lg:p-6 xl:p-10">
+                <div className="relative lg:col-span-4 rounded-[20px] bg-[#EAEAEA] lg:max-h-[357px] max-h-[600px] overflow-hidden p-6 md:p-8 lg:p-6 xl:p-10">
                     <h1 className="text-[#ED1C24]  text-[18px] lg:text-[24px] xl:text-[24px] w-full">
                         <span className="text-black font-normal"> World-</span>
                         Class Manufacturing
                     </h1>
-                    <p className="lg:text-[16px] text-[13px] lg:max-w-[319px] lg:max-h-[208px] leading-[26px]  mt-4 text-[#636161]">
+                    <p className="lg:text-[16px] text-[12px] lg:max-w-[319px] lg:max-h-[208px] lg:leading-[26px] leading-[17px]  mt-4 text-[#636161]">
                         From sheet metal components to complete assemblies, our
                         manufacturing plants leverage cutting-edge technology to produce
                         high-performance auto components. With a focus on sustainability and
                         innovation, we ensure reliability at every stage of production.
                     </p>
-                    <div className="block lg:hidden">
-                    <img
-                        src={faBento4}
-                        alt=""
-                        className=""
-                    />
-                </div>
+                   <img
+  src={faBento4}
+  alt=""
+  className="w-full h-[280px] lg:h-[180px] rounded-[10px] object-cover mt-4 block lg:hidden"
+/>
                 </div>
 
                 <div className="relative max-h-[357px] lg:col-span-2 rounded-[20px] h-[380px] lg:h-auto hidden lg:block">
@@ -361,7 +359,7 @@ const FacilitiesContent = ({ content }) => {
                     />
                     <div></div>
                     <div></div>
-                    <div className="flex justify-end flex-col col-span-3 lg:h-[357px] lg:-translate-x-3 lg:-translate-y-6 lg:text-right text-center items-center  lg:py-4 gap-4 lg:gap-2">
+                    <div className="flex justify-end flex-col col-span-3 max-h-[600px] lg:max-h-[357px] lg:-translate-x-3 lg:-translate-y-6 lg:text-right text-center items-center  lg:py-4 gap-4 lg:gap-2">
                         <h1 className="text-[18px] mb-3 lg:text-[24px] xl:text-[22px] lg:hidden block -translate-x-8 translate-y-6   lg:w-full font-medium text-black">
                             Cutting- <span className="text-[#FF0000]">Edge Facilities</span>
                         </h1>
@@ -379,7 +377,7 @@ const FacilitiesContent = ({ content }) => {
                          <img
                         src={faBento3}
                         alt=""
-                        className= "lg:h-[250px] col-span-2 lg:hidden block  w-full lg:object-contain object-cover md:-ml-20 ml-[15px] lg:mt-5"
+                        className= "lg:h-[250px] h-[262px] w-full col-span-2 lg:hidden block  lg:object-contain object-cover md:-ml-20 ml-[15px] lg:mt-5"
                     />
                     </div>
                 </div>

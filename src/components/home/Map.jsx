@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import mapIndia from '../../assets/home/map.png';
 import animationGif from '../../assets/home/hover.gif';
+import animationGif1 from '../../assets/home/Vector (2).png';
+import animationGif2 from '../../assets/home/Vector (3).png';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Map = () => {
@@ -155,7 +157,7 @@ Bawal
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -10 }}
               transition={{ duration: 0.3 }}
-              className="absolute top-[36%] left-auto ml-12   -translate-y-1/2 bg-[#FF0003] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
+              className="absolute top-[36%] -left-24 ml-12   -translate-y-1/2 bg-[#FF0003] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
             >
                Vadodara
             </motion.p>
@@ -164,15 +166,22 @@ Bawal
       </div>
     </div>
       <div
-      className="absolute top-[28%] left-[0.5%] 2xl:top-[40%] 2xl:left-[11%] w-fit flex items-center"
+      className="absolute top-[47%] left-[22%] w-fit flex items-center"
       onMouseEnter={() => setHoveredDhar(true)}
       onMouseLeave={() => setHoveredDhar(false)}
     >
-      <div className="relative">
-        <img
-          src={animationGif}
+       <div className="relative w-[10px] h-[10px]">
+        <motion.img
+          src={animationGif1}
           alt="animationGif"
-          className="w-[80px] h-[80px] transition-transform duration-300 hover:scale-125 cursor-pointer"
+          className="absolute top-0 left-0 w-[10px] h-[10px] cursor-pointer z-2 opacity-50 rounded-full"
+          animate={{ scale: [0.5, 1.7, 1.4] }}
+          transition={{ duration: 1, repeat: Infinity }}
+        />
+        <img
+          src={animationGif2}
+          alt="animationGif"
+          className="absolute top-0 left-0 w-[10px] h-[10px] cursor-pointer z-10 rounded-full"
         />
 
         <AnimatePresence>
@@ -182,13 +191,49 @@ Bawal
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -10 }}
               transition={{ duration: 0.3 }}
-              className="absolute top-[36%] left-auto ml-12   -translate-y-1/2 bg-[#FF0003] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
+              className="absolute top-[14%] left-auto ml-3  -translate-y-1/2 bg-[#139DBC] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
             >
                Vadodara
             </motion.p>
           )}
         </AnimatePresence>
       </div>
+
+    </div>
+      <div
+      className="absolute top-[45%] left-[21%] w-fit flex items-center"
+      onMouseEnter={() => setHoveredDhar(true)}
+      onMouseLeave={() => setHoveredDhar(false)}
+    >
+       <div className="relative w-[10px] h-[10px]">
+        <motion.img
+          src={animationGif1}
+          alt="animationGif"
+          className="absolute top-0 left-0 w-[10px] h-[10px] cursor-pointer z-2 opacity-50 rounded-full"
+          animate={{ scale: [0.5, 1.7, 1.4] }}
+          transition={{ duration: 1, repeat: Infinity }}
+        />
+        <img
+          src={animationGif2}
+          alt="animationGif"
+          className="absolute top-0 left-0 w-[10px] h-[10px] cursor-pointer z-10 rounded-full"
+        />
+
+        <AnimatePresence>
+          {hoveredDhar && (
+            <motion.p
+              initial={{ opacity: 0, x:- 9 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -10 }}
+              transition={{ duration: 0.3 }}
+              className="absolute -top-6 left-auto ml-3  -translate-y-1/2 bg-[#139DBC] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
+            >
+               Vadodara
+            </motion.p>
+          )}
+        </AnimatePresence>
+      </div>
+
     </div>
       {/* Dot 4 */}
       <div
@@ -210,7 +255,7 @@ Bawal
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -10 }}
               transition={{ duration: 0.3 }}
-              className="absolute top-[10%] left-auto ml-12   -translate-y-1/2 bg-[#FF0003] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
+              className="absolute top-[20%] -left-10    -translate-y-1/2 bg-[#FF0003] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
             >
                Chharodi
             </motion.p>
@@ -218,7 +263,76 @@ Bawal
         </AnimatePresence>
       </div>
     </div>
-     
+        <div
+      className="absolute top-[77.5%] left-[40%] w-fit flex items-center"
+      onMouseEnter={() => setHoveredDhar(true)}
+      onMouseLeave={() => setHoveredDhar(false)}
+    >
+       <div className="relative w-[10px] h-[10px]">
+        <motion.img
+          src={animationGif1}
+          alt="animationGif"
+          className="absolute top-0 left-0 w-[10px] h-[10px] cursor-pointer z-2 opacity-50 rounded-full"
+          animate={{ scale: [0.5, 1.7, 1.4] }}
+          transition={{ duration: 1, repeat: Infinity }}
+        />
+        <img
+          src={animationGif2}
+          alt="animationGif"
+          className="absolute top-0 left-0 w-[10px] h-[10px] cursor-pointer z-10 rounded-full"
+        />
+
+        <AnimatePresence>
+          {hoveredDhar && (
+            <motion.p
+              initial={{ opacity: 0, x:- 9 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -10 }}
+              transition={{ duration: 0.3 }}
+              className="absolute top-[14%] left-auto ml-3  -translate-y-1/2 bg-[#139DBC] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
+            >
+               Meppedu
+            </motion.p>
+          )}
+        </AnimatePresence>
+      </div>
+
+    </div>
+        <div
+      className="absolute top-[73%] left-[39%]  2xl:top-[73%] 2xl:left-[39%] w-fit flex items-center"
+      onMouseEnter={() => setHoveredDhar(true)}
+      onMouseLeave={() => setHoveredDhar(false)}
+    >
+       <div className="relative w-[10px] h-[10px]">
+        <motion.img
+          src={animationGif1}
+          alt="animationGif"
+          className="absolute top-0 left-0 w-[10px] h-[10px] cursor-pointer z-2 opacity-50 rounded-full"
+          animate={{ scale: [0.5, 1.7, 1.4] }}
+          transition={{ duration: 1, repeat: Infinity }}
+        />
+        <img
+          src={animationGif2}
+          alt="animationGif"
+          className="absolute top-0 left-0 w-[10px] h-[10px] cursor-pointer z-10 rounded-full"
+        />
+
+        <AnimatePresence>
+          {hoveredDhar && (
+            <motion.p
+              initial={{ opacity: 0, x:- 9 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -10 }}
+              transition={{ duration: 0.3 }}
+              className="absolute -top-[10%] -left-14  -translate-y-1/2 bg-[#139DBC] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
+            >
+               Nellor
+            </motion.p>
+          )}
+        </AnimatePresence>
+      </div>
+
+    </div>
 
     </div>
   );

@@ -13,19 +13,19 @@ const StayConnectedCTA = () => {
             <h2 className="md:text-[55px] text-2xl md:text-[55px] mt-6 md:mt-10 md:font-normal mb-4 md:mb-6">
               Stay Connected
             </h2>
-            <p className="md:text-xl text-sm md:text-xl !leading-[22px] md:!leading-[25px] mx-auto mb-3 md:mb-4">
+            <p className="md:text-xl text-sm  !leading-[22px] md:!leading-[25px] mx-auto mb-3 md:mb-4">
              Reach out to explore our manufacturing
               <br />
                expertise and industry-leading solutions
             </p>
             <Link to="/about-us">
-              <button className="bg-white text-black text-sm md:text-base px-6 md:px-8 py-2 md:py-3 rounded-full hover:bg-gray-100 transition-colors">
+              <button className="bg-white text-black text-sm md:text-base px-6 md:px-[41px] py-2 md:py-3 font-[500] rounded-full hover:bg-gray-100 transition-colors">
                 More About Us
               </button>
             </Link>
           </div>
         </div>
-  
+
        
   
         <div className="flex flex-col md:hidden bg-[#ED1C24]  items-center py-[30px] sm:py-[40px] mt-6 sm:mt-10 mb-16 sm:mb-20  justify-center ">

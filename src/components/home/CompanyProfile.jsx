@@ -31,13 +31,13 @@ const CompanyProfile = () => {
 
 
     return (
-        <div className='max-h-[858px]'>
+        <div className='relative '>
             <motion.div
                 ref={containerRef}
                 variants={containerVariants}
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
-                className="flex !z-[1000] relative items-center md:px-10 px-4 justify-center"
+                className="flex !z-[1000] relative items-center md:px-10 px-4 justify-center "
             >
                 <motion.div
                     variants={itemVariants}
@@ -67,14 +67,14 @@ const CompanyProfile = () => {
 
                         <motion.p
                             variants={itemVariants}
-                            className="text-gray-300 md:text-lg text-[10px] sm:text-[12px] md:pt-0 pt-2 md:w-[80%] leading-[16px] sm:leading-[19px] tracking-[1%] sm:tracking-[2%]"
+                            className="text-gray-300 md:text-lg text-[10px] sm:text-[12px] md:pt-0 pt-2 md:w-[90%] leading-[16px] sm:leading-[29px] tracking-[2%] sm:tracking-[2%]"
                         >
                            Munjal Auto Industries Limited  is a diversified engineering group, delivering cutting - edge solutions. Driven by innovation, we design and manufacture lightweight, durable, and sustainable components using advanced sheet metal, composite materials, and precision molding techniques for automotive, aerospace, renewable energy, defense, and railways.
                         </motion.p>
                         <Link to="/about-us">
                             <motion.button
                                 variants={itemVariants}
-                                className="bg-white w-fit text-black md:mt-0 !mt-2 md:text-base text-xs sm:text-sm px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium hover:bg-gray-100 transition-colors"
+                                className="bg-white w-fit text-black md:mt-0 !mt-10 md:text-base text-xs lg:text-[16px] px-5 sm:px-10 py-2 sm:py-2 rounded-full font-medium hover:bg-gray-100 transition-colors"
                             >
                                 More on Munjal
                             </motion.button>
@@ -84,12 +84,12 @@ const CompanyProfile = () => {
                     {/* Right Section */}
                     <motion.div
                         variants={itemVariants}
-                        className="w-[95%] md:py-0 mt-6 md:mt-10 lg:mt-0 md:w-[45%] lg:w-[40%]"
+                        className="w-[95%] md:py-0 mt-6 md:mt-10 lg:mt-0 md:w-[45%] lg:w-[50%]"
                     >
                         <img
                             src={secbanner}
                             alt="Automotive manufacturing assembly line"
-                            className="w-full lg:h-[858px]  h-[250px] object-cover"
+                            className="w-[823px] lg:h-[758px] h-[250px] object-cover"
                         />
                     </motion.div>
                 </motion.div>

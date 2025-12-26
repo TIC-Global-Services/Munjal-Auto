@@ -147,16 +147,16 @@ const ProductionCapacity = () => {
 
                 </h2>
 
-                <div className="grid grid-cols-2 md:grid-cols-2  lg:grid-cols-4  xl:grid-cols-4 md:gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-2 gap-4 lg:grid-cols-4  xl:grid-cols-4 md:gap-4">
                     {capacityData2.map((item, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
                             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                             // transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-[#F3F4F6] hover:cursor-pointer   md:px-4 px-2 py-3 md:py-8 flex"
+                            className="bg-[#F3F4F6] hover:cursor-pointer   md:px-4 px-2 lg:py-3 md:py-8 flex"
                         >
-                            <div className="space-y-2 flex flex-col flex-wrap items-start justify-center">
+                            <div className="lg:space-y-2 flex flex-col flex-wrap items-start justify-center">
                                 <motion.h3
                                     className="lg:text-[32px] text-[11.65px]  whitespace-nowrap font-bold"
                                     initial={{ opacity: 0 }}
@@ -183,8 +183,9 @@ const ProductionCapacity = () => {
                     ))}
                 </div>
             </div>
-            <div className="max-w-7xl mx-auto mt-16">
-                <h2 className="text-base md:text-4xl lg:text-4xl font-[500] md:text-left text-center mb-4 md:mb-7">
+            
+            <div className="max-w-7xl mx-auto lg:mt-16 mt-4">
+                <h2 className="text-base md:text-4xl lg:text-4xl font-[500] text-left mb-4 md:mb-7">
                     Our <span className="text-red-600 font-medium">state of the art</span> facilities
                     have the annual capacity to produce
                 </h2>
@@ -198,7 +199,7 @@ const ProductionCapacity = () => {
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             className=" hover:cursor-pointer rounded-md md:rounded-xl md:px-4 px-2 py-3 md:py-8 flex "
                         >
-                            <div className="space-y-2 flex flex-col items-start justify-center">
+                            <div className="lg:space-y-2 flex flex-col items-start justify-center">
                                 <motion.h3
                                     className="lg:text-[32px] text-[11.65px] uppercase whitespace-nowrap font-bold "
                                     initial={{ opacity: 0 }}
@@ -269,7 +270,7 @@ export const HomeBento = () => {
                 className="hidden py-20 md:flex flex-col md:px-16 gap-4"
             >
                 <motion.div variants={itemVariants} className="flex h-full gap-4">
-                    <motion.div variants={itemVariants} className="w-[50%] md:w-1/2">
+                    <motion.div variants={itemVariants} className="w-[60%] md:w-1/2">
                         <img src={machine} alt="" />
                     </motion.div>
                     <motion.div variants={itemVariants} className="w-[50%]">
@@ -303,7 +304,7 @@ export const HomeBento = () => {
                     <motion.div variants={itemVariants} className="h-1/4 md:w-[50%]">
                         <img
                             src={machine}
-                            className="!h-[20rem] object-cover rounded-[12px]"
+                            className="h-[250px]  lg:!h-[20rem] object-cover rounded-[26px]"
                             alt=""
                         />
                     </motion.div>
