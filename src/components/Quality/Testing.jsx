@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import image1 from '/Users/batcomputer/Desktop/TIC/Munjal-Auto/src/assets/quality/fueltank.png'
-import image2 from '/Users/batcomputer/Desktop/TIC/Munjal-Auto/src/assets/quality/Chemicallab.png'
-import image3 from '/Users/batcomputer/Desktop/TIC/Munjal-Auto/src/assets/quality/Metallurgylab.png'
-import image4 from '/Users/batcomputer/Desktop/TIC/Munjal-Auto/src/assets/quality/Specialtesting.png'
-import image5 from '/Users/batcomputer/Desktop/TIC/Munjal-Auto/src/assets/quality/spokewheelrim.png'
-import image6 from '/Users/batcomputer/Desktop/TIC/Munjal-Auto/src/assets/quality/standard.png'
-import image7 from '/Users/batcomputer/Desktop/TIC/Munjal-Auto/src/assets/quality/testingfacilities.png'
-import image8 from '/Users/batcomputer/Desktop/TIC/Munjal-Auto/src/assets/quality/testingwheelrim.png'
+import image1 from '../../assets/quality/fueltank.png'
+import image2 from '../../assets/quality/Chemicallab.png'
+import image3 from '../../assets/quality/Metallurgylab.png'
+import image4 from '../../assets/quality/Specialtesting.png'
+import image5 from '../../assets/quality/spokewheelrim.png'
+import image6 from '../../assets/quality/standard.png'
+import image7 from '../../assets/quality/testingfacilities.png'
+import image8 from '../../assets/quality/testingwheelrim.png'
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 
