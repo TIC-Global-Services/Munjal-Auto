@@ -614,7 +614,7 @@ const ProductsList = () => {
               {/* Mobile Layout: Keep your original mobile design */}
               <div className="md:hidden lg:px-5">
                 {/* Image Section */}
-                <div className="bg-[#EBEBEF] flex items-center justify-center p-6">
+                <div className="bg-[#EBEBEF] flex items-center justify-center  w-full h-[298px] m-auto rounded-md">
                   <motion.div
                     initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
                     animate={{
