@@ -3,7 +3,7 @@ import mapIndia from '../../assets/home/map.png';
 import animationGif from '../../assets/home/hover.gif';
 import animationGif1 from '../../assets/home/Vector (2).png';
 import animationGif2 from '../../assets/home/Vector (3).png';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const Map = () => {
   
@@ -46,19 +46,11 @@ const Map = () => {
           className="w-[80px] h-[80px] transition-transform duration-300 hover:scale-125 cursor-pointer"
         />
 
-        <AnimatePresence>
-          {hoveredBa && (
-            <motion.p
-              initial={{ opacity: 0, x:10 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 10 }}
-              transition={{ duration: 0.3 }}
-              className="absolute top-[36%]   -ml-5   -translate-y-1/2 bg-[#FF0003] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
-            >
-Bawal
-            </motion.p>
-          )}
-        </AnimatePresence>
+        <p
+          className={`absolute top-[36%] -ml-5 -translate-y-1/2 bg-[#FF0003] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap transition-opacity duration-300 ${hoveredBa ? 'opacity-100' : 'opacity-0'}`}
+        >
+          Bawal
+        </p>
       </div>
     </div>
 
@@ -98,19 +90,11 @@ Bawal
           className="w-[80px] h-[80px] transition-transform duration-300 hover:scale-125 cursor-pointer"
         />
 
-        <AnimatePresence>
-          {hoveredHar && (
-            <motion.p
-              initial={{ opacity: 0, x:10 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 10 }}
-              transition={{ duration: 0.3 }}
-              className="absolute top-[36%] left-auto ml-12   -translate-y-1/2 bg-[#FF0003] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
-            >
-              Haridwar
-            </motion.p>
-          )}
-        </AnimatePresence>
+        <p
+          className={`absolute top-[36%] left-auto ml-12 -translate-y-1/2 bg-[#FF0003] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap transition-opacity duration-300 ${hoveredHar ? 'opacity-100' : 'opacity-0'}`}
+        >
+          Haridwar
+        </p>
       </div>
     </div>
 
@@ -126,19 +110,11 @@ Bawal
           className="w-[80px] h-[80px] transition-transform duration-300 hover:scale-125 cursor-pointer"
         />
 
-        <AnimatePresence>
-          {hoveredVad && (
-            <motion.p
-              initial={{ opacity: 0, x:- 10 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -10 }}
-              transition={{ duration: 0.3 }}
-              className="absolute top-[36%] left-auto ml-12   -translate-y-1/2 bg-[#FF0003] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
-            >
-              Dharuheru
-            </motion.p>
-          )}
-        </AnimatePresence>
+        <p
+          className={`absolute top-[26%] left-auto ml-12 -translate-y-1/2 bg-[#FF0003] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap transition-opacity duration-300 ${hoveredVad ? 'opacity-100' : 'opacity-0'}`}
+        >
+          Dharuheru
+        </p>
       </div>
     </div>
 
@@ -155,19 +131,11 @@ Bawal
           className="w-[80px] h-[80px] transition-transform duration-300 hover:scale-125 cursor-pointer"
         />
 
-        <AnimatePresence>
-          {hoveredDhar && (
-            <motion.p
-              initial={{ opacity: 0, x:-10 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -10 }}
-              transition={{ duration: 0.3 }}
-              className="absolute top-[36%] -left-24 ml-12   -translate-y-1/2 bg-[#FF0003] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
-            >
-               Vadodara
-            </motion.p>
-          )}
-        </AnimatePresence>
+        <p
+          className={`absolute top-[29%] -left-24 ml-12 -translate-y-1/2 bg-[#FF0003] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap transition-opacity duration-300 ${hoveredDhar ? 'opacity-100' : 'opacity-0'}`}
+        >
+          Vadodara
+        </p>
       </div>
     </div>
       <div
@@ -189,19 +157,11 @@ Bawal
           className="absolute top-0 left-0 w-[10px] h-[10px] cursor-pointer z-10 rounded-full"
         />
 
-        <AnimatePresence>
-          {hoveredVadodaraSmall1 && (
-            <motion.p
-              initial={{ opacity: 0, x:10 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 10 }}
-              transition={{ duration: 0.3 }}
-              className="absolute top-[14%] left-auto ml-3  -translate-y-1/2 bg-[#139DBC] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
-            >
-               Vadodara
-            </motion.p>
-          )}
-        </AnimatePresence>
+        <p
+          className={`absolute top-[14%] left-auto ml-3 -translate-y-1/2 bg-[#139DBC] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap transition-opacity duration-300 ${hoveredVadodaraSmall1 ? 'opacity-100' : 'opacity-0'}`}
+        >
+          Vadodara
+        </p>
       </div>
 
     </div>
@@ -224,49 +184,41 @@ Bawal
           className="absolute top-0 left-0 w-[10px] h-[10px] cursor-pointer z-10 rounded-full"
         />
 
-        <AnimatePresence>
-          {hoveredVadodaraSmall2 && (
-            <motion.p
-              initial={{ opacity: 0, x:10 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 10 }}
-              transition={{ duration: 0.3 }}
-              className="absolute -top-6 left-auto ml-3  -translate-y-1/2 bg-[#139DBC] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
-            >
-               Vadodara
-            </motion.p>
-          )}
-        </AnimatePresence>
+        <p
+          className={`absolute -top-6 left-auto ml-3 -translate-y-1/2 bg-[#139DBC] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap transition-opacity duration-300 ${hoveredVadodaraSmall2 ? 'opacity-100' : 'opacity-0'}`}
+        >
+          Vadodara
+        </p>
       </div>
 
     </div>
       {/* Dot 5 */}
-      <div
-      className="absolute top-[34%] left-[4%] md:top-[35%] md:left-[8%] 2xl:top-[35%] 2xl:left-[8%] w-fit flex items-center"
-      onMouseEnter={() => setHoveredChharodi(true)}
-      onMouseLeave={() => setHoveredChharodi(false)}
+         <div
+      className="absolute top-[41.5%] left-[15%] w-fit flex items-center"
+      onMouseEnter={() => setHoveredMeppedu(true)}
+      onMouseLeave={() => setHoveredMeppedu(false)}
     >
-      <div className="relative">
-        <img
-          src={animationGif}
+       <div className="relative w-[10px] h-[10px]">
+        <motion.img
+          src={animationGif1}
           alt="animationGif"
-          className="w-[80px] h-[80px] transition-transform duration-300 hover:scale-125 cursor-pointer"
+          className="absolute top-0 left-0 w-[10px] h-[10px] cursor-pointer z-2 opacity-50 rounded-full"
+          animate={{ scale: [0.5, 1.7, 1.4] }}
+          transition={{ duration: 1, repeat: Infinity }}
+        />
+        <img
+          src={animationGif2}
+          alt="animationGif"
+          className="absolute top-0 left-0 w-[10px] h-[10px] cursor-pointer z-10 rounded-full"
         />
 
-        <AnimatePresence>
-          {hoveredChharodi && (
-            <motion.p
-              initial={{ opacity: 0, x:-10 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -10 }}
-              transition={{ duration: 0.3 }}
-              className="absolute top-[20%] -left-10    -translate-y-1/2 bg-[#FF0003] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
-            >
-               Chharodi
-            </motion.p>
-          )}
-        </AnimatePresence>
+        <p
+          className={`absolute top-[41.5%] left-auto ml-3 -translate-y-1/2 bg-[#139DBC] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap transition-opacity duration-300 ${hoveredMeppedu ? 'opacity-100' : 'opacity-0'}`}
+        >
+          Chharodi
+        </p>
       </div>
+
     </div>
         <div
       className="absolute top-[77.5%] left-[40%] w-fit flex items-center"
@@ -287,19 +239,11 @@ Bawal
           className="absolute top-0 left-0 w-[10px] h-[10px] cursor-pointer z-10 rounded-full"
         />
 
-        <AnimatePresence>
-          {hoveredMeppedu && (
-            <motion.p
-              initial={{ opacity: 0, x:10 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 10 }}
-              transition={{ duration: 0.3 }}
-              className="absolute top-[14%] left-auto ml-3  -translate-y-1/2 bg-[#139DBC] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
-            >
-               Meppedu
-            </motion.p>
-          )}
-        </AnimatePresence>
+        <p
+          className={`absolute top-[14%] left-auto ml-3 -translate-y-1/2 bg-[#139DBC] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap transition-opacity duration-300 ${hoveredMeppedu ? 'opacity-100' : 'opacity-0'}`}
+        >
+          Meppedu
+        </p>
       </div>
 
     </div>
@@ -322,19 +266,11 @@ Bawal
           className="absolute top-0 left-0 w-[10px] h-[10px] cursor-pointer z-10 rounded-full"
         />
 
-        <AnimatePresence>
-          {hoveredNellor && (
-            <motion.p
-              initial={{ opacity: 0, x:10 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 10 }}
-              transition={{ duration: 0.3 }}
-              className="absolute -top-[10%] -left-14  -translate-y-1/2 bg-[#139DBC] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap"
-            >
-               Nellor
-            </motion.p>
-          )}
-        </AnimatePresence>
+        <p
+          className={`absolute -top-[10%] -left-14 -translate-y-1/2 bg-[#139DBC] text-white text-[12px] font-medium rounded-lg px-2 py-1 whitespace-nowrap transition-opacity duration-300 ${hoveredNellor ? 'opacity-100' : 'opacity-0'}`}
+        >
+          Nellor
+        </p>
       </div>
 
     </div>

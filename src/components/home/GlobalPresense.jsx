@@ -23,12 +23,12 @@ const GlobalPresence = () => {
               More About Us
             </button>
           </Link>
-          <Link to="/">
+          <Link to="/about-us">
             <button className="bg-[#FF0000] text-white md:text-base text-sm px-6 py-2 rounded-full hover:bg-gray-200 transition-colors">
               Munjal Auto
             </button>
           </Link>
-          <Link to="/">
+          <Link to="/about-us">
             <button className="bg-[#139DBC] text-white md:text-base text-sm px-6 py-2 rounded-full hover:bg-gray-200 transition-colors">
               Indutch Composite
             </button>
