@@ -30,8 +30,8 @@ const Policy = () => {
     return (
       <>
         {/* Desktop version */}
-        <div className="w-full mt-20 mb-20 px-4 lg:px-8 xl:px-16 hidden lg:block relative">
-          <div className="relative w-full max-w-[90rem] mx-auto bg-[#F5F5F5] rounded-3xl p-12 lg:p-16 xl:p-20 border-2 border-[#F5EDED] min-h-[500px] lg:min-h-[600px] overflow-visible">
+        <div className="w-full mt-20 mb-20 px-4 lg:px-8 xl:px-16 hidden lg:block relative" style={{ overflow: 'visible' }}>
+          <div className="relative w-full max-w-[90rem] mx-auto bg-[#F5F5F5] rounded-3xl p-12 lg:p-16 xl:p-20 border-2 border-[#F5EDED] min-h-[500px] lg:min-h-[600px] overflow-visible" style={{ overflow: 'visible' }}>
             {/* Content Layout - Flexbox for better control */}
             <div className="flex flex-col lg:flex-row items-start justify-between h-full pt-8 relative">
               {/* Left side - Text content */}
@@ -39,7 +39,7 @@ const Policy = () => {
                 <h2 className="text-[#ED1C24] text-3xl lg:text-4xl xl:text-5xl font-[500] mb-6">
                   Quality Policy
                 </h2>
-                <p className="text-gray-700 text-[16px] lg:text-lg leading-relaxed">
+                <p className="text-[#82848A] font-['Poppins'] font-normal text-[16px] leading-[25px] tracking-[0%]">
                   At MAIL, quality is our foundation. Through a strong Total Quality
                   Management System, we ensure every product is "First time right,
                   every time right."
@@ -48,7 +48,7 @@ const Policy = () => {
 
               {/* Right side - Grid cards */}
               <div className="w-full lg:w-2/5 lg:ml-auto">
-                <div className="grid grid-cols-2 gap-3 lg:gap-4 justify-items-center">
+                <div className="grid grid-cols-2 gap-6 lg:gap-8 justify-items-center">
                   {contents.map((item, index) => (
                     <div
                       key={index}
@@ -69,7 +69,7 @@ const Policy = () => {
             </div>
 
             {/* 3D Model Container - Inside the main container */}
-            <div className="absolute -bottom-4 -left-8 z-20" style={{ clipPath: 'inset(0 0 0 0 round 24px)' }}>
+            <div className="absolute -bottom-4 -left-8 z-20">
               <div className="relative bg-transparent">
                 <ModelViewer />
               </div>
@@ -94,7 +94,7 @@ const Policy = () => {
 
             {/* Grid cards section */}
             <div className="flex justify-center mb-8">
-              <div className="grid grid-cols-2 gap-4 max-w-sm">
+              <div className="grid grid-cols-2 gap-6 max-w-sm">
                 {contents.map((item, index) => (
                   <div
                     key={index}
@@ -140,8 +140,8 @@ const Policy = () => {
     // Set white background for the scene
     scene.background = new THREE.Color(0xffffff);
 
-    const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 1000);
-    camera.position.set(0, 1.3, 5);
+    const camera = new THREE.PerspectiveCamera(60, 1, 0.1, 1000);
+    camera.position.set(0, 0.5, 6);
 
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
@@ -227,6 +227,11 @@ const Policy = () => {
         }
 
         model.position.set(-center.x + 0.5, -center.y + 0.3, -center.z);
+        
+        // Add a slight tilt to the model for dynamic positioning
+        model.rotation.x = Math.PI / 24; // 7.5 degrees tilt on X-axis
+        model.rotation.z = Math.PI / 18; // 10 degrees tilt on Z-axis
+        
         model.scale.setScalar(scale);
 
         modelGroup.add(model);
@@ -288,18 +293,19 @@ const Policy = () => {
 
   return (
     <div
-      className="w-[500px] h-[200px] sm:w-[600px] sm:h-[230px] md:w-[850px] md:h-[280px] lg:w-[110%] lg:max-w-[1600px] lg:h-[300px] bg-white rounded-3xl"
+      className="w-[500px] h-[220px] sm:w-[600px] sm:h-[250px] md:w-[850px] md:h-[300px] lg:w-[110%] lg:max-w-[1600px] lg:h-[320px] bg-white rounded-3xl"
       style={{ zIndex: 100, overflow: 'visible' }}
     >
       <div
         ref={modelContainerRef}
-        className="w-full h-full rounded-3xl"
+        className="w-full h-full"
         style={{
           position: "relative",
           zIndex: 100,
           minWidth: "500px",
-          minHeight: "200px",
+          minHeight: "220px",
           overflow: "visible",
+          clipPath: "none",
         }}
       />
       {loading && (
