@@ -229,8 +229,8 @@ const JobApplicationForm = () => {
 
 
   return (
-    <div className="h-auto md:h-[460px] -mt-0 md:-mt-8">
-      <form onSubmit={handleSubmit} className="h-full flex flex-col justify-between p-4 md:p-10 ml-0 md:ml-16 -mt-0 md:-mt-2">
+    <div className="h-auto md:h-[480px] -mt-0 md:-mt-12">
+      <form onSubmit={handleSubmit} className="h-full flex flex-col justify-between p-4 md:p-10 ml-0 md:ml-16 -mt-0 md:-mt-6">
         <div className="space-y-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 gap-y-6">
             <div>

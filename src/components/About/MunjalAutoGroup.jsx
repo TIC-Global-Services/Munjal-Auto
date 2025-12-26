@@ -104,8 +104,8 @@ function ModelViewer() {
 
         // Rotate model to stand upright (rotate 90 degrees around X-axis)
         model.rotation.x = Math.PI / 2;
-        // Initial rotation to face front
-        model.rotation.y = 0;
+        // Initial rotation to face front - rotate 90 degrees clockwise around Y-axis
+        model.rotation.y = Math.PI / 2;
         
         model.position.set(
           -center.x,

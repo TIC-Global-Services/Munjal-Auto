@@ -341,7 +341,7 @@ const ElectronicsContent = () => {
           transition={{ duration: 0.6, delay: 0.7 }}
           className="mt-20 sm:mt-24 md:mt-28 lg:mt-32 xl:mt-36 px-4 sm:px-6 md:px-8 lg:px-10"
         >
-          <div className="text-center mb-8 sm:mb-10 md:mb-12">
+          <div className="text-center mb-6 sm:mb-10 md:mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-[36px] font-[500]">
               Industries we Serve
             </h2>
@@ -491,7 +491,7 @@ const ElectronicsContent = () => {
               {/* Team Member 1 - Card Layout */}
               <div className="bg-white rounded-[20px] p-6 sm:p-8 md:p-10 relative overflow-hidden">
                 <div className="flex flex-col md:flex-row gap-6 sm:gap-8 items-center relative z-10">
-                  <div className="w-full max-w-[500px] md:w-[500px] aspect-square rounded-[20px] overflow-hidden flex-shrink-0 relative -ml-2 md:-ml-6 pl-4 md:pl-8">
+                  <div className="w-full max-w-[500px] md:w-[500px] aspect-square rounded-[12px] overflow-hidden flex-shrink-0 relative -ml-2 md:-ml-6 pl-4 md:pl-8">
                     <img
                       src={founder1}
                       alt="Mr. Kulvinder Singh Seehra"
@@ -499,8 +499,8 @@ const ElectronicsContent = () => {
                     />
                   </div>
                   <div className="flex-1 text-center md:text-left md:pl-6">
-                    <h3 className="text-xl sm:text-2xl md:text-[28px] font-[600] mb-2 text-black">Mr. Kulvinder Singh Seehra</h3>
-                    <h4 className="text-[#ED1C24] text-lg sm:text-xl md:text-[22px] font-[500] mb-4">Chief Technology Officer (Electronics)</h4>
+                    <h3 className="text-xl sm:text-2xl md:text-[26px] font-[600] mb-2 text-black">Mr. Kulvinder Singh Seehra</h3>
+                    <h4 className="text-[#ED1C24] text-lg sm:text-xl md:text-[20px] font-[500] mb-6">Chief Technology Officer (Electronics)</h4>
                     <p className="text-base sm:text-lg md:text-[20px] font-[400] leading-relaxed text-[#82848A]">
                       Embedded systems expert with over 40 years of experience in electronics and product development. He has developed many solutions for Army, Airforce, Railways, Public sectors companies viz. BEL, ECIL, ITI etc. He is a specialist in hardware-software integration and system architecture.
                     </p>
@@ -519,8 +519,8 @@ const ElectronicsContent = () => {
                     />
                   </div>
                   <div className="flex-1 text-center md:text-left md:pr-6">
-                    <h3 className="text-xl sm:text-2xl md:text-[28px] font-[600] mb-2 text-black">Mr. Sandeep Agrgawal</h3>
-                    <h4 className="text-[#ED1C24] text-lg sm:text-xl md:text-[22px] font-[500] mb-4">General Manager-Electronics</h4>
+                    <h3 className="text-xl sm:text-2xl md:text-[26px] font-[600] mb-2 text-black">Mr. Sandeep Agrgawal</h3>
+                    <h4 className="text-[#ED1C24] text-lg sm:text-xl md:text-[20px] font-[500] mb-6">General Manager-Electronics</h4>
                     <p className="text-base sm:text-lg md:text-[20px] font-[400] leading-relaxed text-[#82848A]">
                       Over 30 years of expertise in product development especially for railway domain- signalling and rolling stock. He has specialization in delivering end-to-end safety critical, operational, and customer-centric solutions tailored for the railway sector. He possesses added expertise in spearheading strategic growth initiatives and managing the electronics division vertical's expansion into new markets.
                     </p>

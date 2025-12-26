@@ -309,7 +309,7 @@ const ContactTabs = () => {
             className="flex flex-col md:flex-row gap-8"
           >
             <div className="w-full md:w-1/3">
-              <div className="rounded-lg overflow-hidden w-full max-w-[488px] h-[300px] md:w-[488px] md:h-[460px] mx-auto md:mx-0">
+              <div className="rounded-lg overflow-hidden w-full max-w-[488px] h-[300px] md:w-[488px] md:h-[480px] mx-auto md:mx-0">
                 <img
                   src={carPic}
                   alt="Career at Munjal Auto"
@@ -335,7 +335,7 @@ const ContactTabs = () => {
             className="flex flex-col md:flex-row gap-8"
           >
             <div className="w-full md:w-1/3 -mt-4 md:-mt-6">
-              <div className="rounded-lg overflow-hidden w-full max-w-[488px] h-[300px] md:w-[488px] md:h-[460px] mx-auto md:mx-0">
+              <div className="rounded-lg overflow-hidden w-full max-w-[488px] h-[300px] md:w-[488px] md:h-[480px] mx-auto md:mx-0">
                 <img
                   src={carPic2}
                   alt="Career at Munjal Auto"
@@ -345,7 +345,7 @@ const ContactTabs = () => {
             </div>
 
             <div className="w-full md:w-2/3">
-              <div className="h-auto md:h-[460px] flex flex-col justify-between ml-0 md:ml-28 mt-0 md:-mt-4">
+              <div className="h-auto md:h-[480px] flex flex-col justify-between ml-0 md:ml-28 mt-0 md:-mt-4">
                 <div className="mt-0 md:-mt-2">
                   <p className="text-gray-600 mb-8">
                   To place an order or to avail more information regarding our products, do write in. Our customer care executives will get back to you as soon as possible. We invite trade queries from India and abroad.
