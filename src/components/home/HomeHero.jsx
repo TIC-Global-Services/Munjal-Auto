@@ -99,10 +99,10 @@ const HomeHero = () => {
 
                 {/* Logo */}
                 <img
-                    src={logo}
-                    alt="Company Logo"
-                    className="absolute -top-[0.9px] w-[60%] md:w-1/3 max-w-md left-1/2 transform -translate-x-1/2 z-20"
-                />
+                                                       src={logo}
+                                                       alt="Company Logo"
+                                                       className="absolute -top-[0.9px] w-[80%] md:w-[60%] lg:w-1/3 max-w-md left-1/2 transform -translate-x-1/2 z-20"
+                                                   />
 
                 {/* Centered Content */}
                 <div className="text-center relative z-20 px-4 max-w-4xl mx-auto">

@@ -11,6 +11,11 @@ const Map = () => {
   const [hoveredVad, setHoveredVad] = useState(false);
   const [hoveredHar, setHoveredHar] = useState(false);
   const [hoveredBa, setHoveredBa] = useState(false);
+  const [hoveredVadodaraSmall1, setHoveredVadodaraSmall1] = useState(false);
+  const [hoveredVadodaraSmall2, setHoveredVadodaraSmall2] = useState(false);
+  const [hoveredChharodi, setHoveredChharodi] = useState(false);
+  const [hoveredMeppedu, setHoveredMeppedu] = useState(false);
+  const [hoveredNellor, setHoveredNellor] = useState(false);
 
 
   
@@ -167,8 +172,8 @@ Bawal
     </div>
       <div
       className="absolute top-[47%] left-[22%] w-fit flex items-center"
-      onMouseEnter={() => setHoveredDhar(true)}
-      onMouseLeave={() => setHoveredDhar(false)}
+      onMouseEnter={() => setHoveredVadodaraSmall1(true)}
+      onMouseLeave={() => setHoveredVadodaraSmall1(false)}
     >
        <div className="relative w-[10px] h-[10px]">
         <motion.img
@@ -185,7 +190,7 @@ Bawal
         />
 
         <AnimatePresence>
-          {hoveredDhar && (
+          {hoveredVadodaraSmall1 && (
             <motion.p
               initial={{ opacity: 0, x:- 9 }}
               animate={{ opacity: 1, x: 0 }}
@@ -202,8 +207,8 @@ Bawal
     </div>
       <div
       className="absolute top-[45%] left-[21%] w-fit flex items-center"
-      onMouseEnter={() => setHoveredDhar(true)}
-      onMouseLeave={() => setHoveredDhar(false)}
+      onMouseEnter={() => setHoveredVadodaraSmall2(true)}
+      onMouseLeave={() => setHoveredVadodaraSmall2(false)}
     >
        <div className="relative w-[10px] h-[10px]">
         <motion.img
@@ -220,7 +225,7 @@ Bawal
         />
 
         <AnimatePresence>
-          {hoveredDhar && (
+          {hoveredVadodaraSmall2 && (
             <motion.p
               initial={{ opacity: 0, x:- 9 }}
               animate={{ opacity: 1, x: 0 }}
@@ -238,8 +243,8 @@ Bawal
       {/* Dot 4 */}
       <div
       className="absolute top-[34%] left-[4%] md:top-[35%] md:left-[8%] 2xl:top-[35%] 2xl:left-[8%] w-fit flex items-center"
-      onMouseEnter={() => setHoveredDhar(true)}
-      onMouseLeave={() => setHoveredDhar(false)}
+      onMouseEnter={() => setHoveredChharodi(true)}
+      onMouseLeave={() => setHoveredChharodi(false)}
     >
       <div className="relative">
         <img
@@ -249,7 +254,7 @@ Bawal
         />
 
         <AnimatePresence>
-          {hoveredDhar && (
+          {hoveredChharodi && (
             <motion.p
               initial={{ opacity: 0, x:- 9 }}
               animate={{ opacity: 1, x: 0 }}
@@ -265,8 +270,8 @@ Bawal
     </div>
         <div
       className="absolute top-[77.5%] left-[40%] w-fit flex items-center"
-      onMouseEnter={() => setHoveredDhar(true)}
-      onMouseLeave={() => setHoveredDhar(false)}
+      onMouseEnter={() => setHoveredMeppedu(true)}
+      onMouseLeave={() => setHoveredMeppedu(false)}
     >
        <div className="relative w-[10px] h-[10px]">
         <motion.img
@@ -283,7 +288,7 @@ Bawal
         />
 
         <AnimatePresence>
-          {hoveredDhar && (
+          {hoveredMeppedu && (
             <motion.p
               initial={{ opacity: 0, x:- 9 }}
               animate={{ opacity: 1, x: 0 }}
@@ -300,8 +305,8 @@ Bawal
     </div>
         <div
       className="absolute top-[73%] left-[39%]  2xl:top-[73%] 2xl:left-[39%] w-fit flex items-center"
-      onMouseEnter={() => setHoveredDhar(true)}
-      onMouseLeave={() => setHoveredDhar(false)}
+      onMouseEnter={() => setHoveredNellor(true)}
+      onMouseLeave={() => setHoveredNellor(false)}
     >
        <div className="relative w-[10px] h-[10px]">
         <motion.img
@@ -318,7 +323,7 @@ Bawal
         />
 
         <AnimatePresence>
-          {hoveredDhar && (
+          {hoveredNellor && (
             <motion.p
               initial={{ opacity: 0, x:- 9 }}
               animate={{ opacity: 1, x: 0 }}
