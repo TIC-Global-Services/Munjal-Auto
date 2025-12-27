@@ -60,10 +60,10 @@ const sustainability = () => {
             <h3 className="text-[24px] font-medium hidden lg:block text-foreground mb-4">
               Sustainability & Environment
             </h3>
-            <p className="lg:text-[16px] text-[14px] text-[#82848A] mb-4">
+            <p className="lg:text-[16px] text-[14px] text-[#82848A] mb-4 mx-2 lg:mx-0">
               We take our responsibility to the planet seriously:
             </p>
-            <ul className=" text-[#82848A] lg:text-[16px]lg:max-w-[487px] ">
+            <ul className=" text-[#82848A] lg:text-[16px]lg:max-w-[487px] mx-2 lg:mx-0">
               {bulletPoints.map((point, index) => (
                 <li
                   key={index}

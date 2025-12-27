@@ -330,7 +330,7 @@ const FacilitiesContent = ({ content }) => {
                         <span className="text-black font-normal"> World-</span>
                         Class Manufacturing
                     </h1>
-                    <p className="lg:text-[16px] text-[14px] lg:max-w-[319px] lg:max-h-[208px] lg:leading-[26px] leading-[17px]  mt-4 text-[#636161]">
+                    <p className="lg:text-[16px] text-[14px] lg:max-w-[319px] lg:max-h-[208px] lg:leading-[26px] leading-[23px]  mt-4 text-[#636161]">
                         From sheet metal components to complete assemblies, our
                         manufacturing plants leverage cutting-edge technology to produce
                         high-performance auto components. With a focus on sustainability and
@@ -360,13 +360,13 @@ const FacilitiesContent = ({ content }) => {
                     <div></div>
                     <div></div>
                     <div className="flex justify-end flex-col col-span-3 max-h-[600px] lg:max-h-[357px] lg:-translate-x-3 lg:-translate-y-6 lg:text-right text-center items-center  lg:py-4 gap-4 lg:gap-2">
-                        <h1 className="text-[18px] mb-3 lg:text-[24px] xl:text-[22px] lg:hidden block -translate-x-8 translate-y-6   lg:w-full font-medium text-black">
+                        <h1 className="text-[18px] mb-3 lg:text-[24px] xl:text-[22px] lg:hidden block -translate-x-20 translate-y-6   lg:w-full font-medium text-black">
                             Cutting- <span className="text-[#FF0000]">Edge Facilities</span>
                         </h1>
                         <h1 className="text-[18px] mb-3 lg:text-[24px] xl:text-[22px] lg:block  hidden lg:w-full font-medium text-black">
                             Cutting- <span className="text-[#FF0000]">Edge Facilities</span>
                         </h1>
-                        <p className="text-[14px] lg:text-right text-left mt-2 lg:mt-0 lg:text-sm xl:text-base w-full leading-[17px] lg:leading-[26px] text-[#706C67]">
+                        <p className="text-[14px] lg:text-right text-left mt-2 lg:mt-0 lg:text-sm translate-x-3 lg:translate-x-0 xl:text-base w-full leading-[23px] lg:leading-[26px] text-[#706C67]">
                             Equipped with advanced manufacturing technology and in-house R&D,
                             our facilities are designed for efficiency, precision, and
                             scalability. We integrate the latest automation and quality
@@ -393,7 +393,7 @@ const FacilitiesContent = ({ content }) => {
                         <p className="lg:text[16px] text-[14px] leading-[24px] lg:leading-[34px] text-left px-3 lg:px-0">
                             Our Tool Design centers at Bawal and Waghodia are equipped with the latest CAD/CAM software and highly qualified engineering designers. They specialize in designing press tools, jigs, fixtures, gauges, reverse engineering, and manufacturing processes, supported by advanced workstations and plotters for precise, efficient tool development.
                         </p>
-                        <div className="grid gap-3 lg:grid-cols-2 mt-10">
+                        <div className="grid gap-3 lg:grid-cols-2 mt-10 px-3 lg:px-0">
                             <div>
                                 <h1 className="text-[#ED1C24] font-semibold text-[20px] lg:text-[26px]">Bawal Haryana</h1>
                             <ul className="list-disc grid lg:grid-cols-1 grid-cols-2 gap-1 text-[14px] lg:text-[16px] leading-[20px] lg:leading-[34px] text-[#222222] px-4 mt-5">

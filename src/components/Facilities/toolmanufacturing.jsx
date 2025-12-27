@@ -176,7 +176,7 @@ const Toolmanufacturing = () => {
             <div className='object-fit lg:min-w-[500px] overflow-hidden'>
                 <img src={toolimg1} width={488} height={325} alt='Tool Manufacturing' className='w-full h-full rounded-[10px] lg:h-[300px]'/>
             </div>
-            <div className='lg:max-w-[696px] px-5 lg:px-0'>
+            <div className='lg:max-w-[696px] px-2 lg:px-0'>
                     <p className='leading-[24px] lg:leading-[34px] text-[#222222] lg:text-[16px] text-[14px]'>
                     In 2010-11, Munjal Auto established a state-of-the-art high-tech Tool Manufacturing Facility at Bawal, Haryana, spanning 1,600 sq.m. The center is equipped with advanced CAD/CAM/CAE systems, large CNC machining centers, portable coordinate measuring machines, and die-spotting presses to manufacture and maintain mid-to-large sized tooling, jigs, fixtures, gauges, and panel checkers.
                 </p>

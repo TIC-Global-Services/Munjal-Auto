@@ -254,14 +254,14 @@ export const FooterMain = () => {
             Sector-50, Gurugram - 122018, Haryana
           </p>
           <p className=" text-xs leading-[23px] font-[400] mt-4 ">
-            Email: info@[YourCompanyName].com <br />
-            Phone: +91 XXXXX XXXXX
+            Email: mail@munjalauto.com <br />
+            Phone: +91 124 405 7891/92
           </p>
 
           <h1 className=" font-bold mt-4">Contact Us:</h1>
           <p className=" text-xs leading-[23px] font-[400]  ">
-            Email: info@[YourCompanyName].com <br />
-            Phone: +91 XXXXX XXXXX
+            Email: mail@munjalauto.com <br />
+            Phone: +91 124 405 7891/92
           </p>
 
           <button className=" bg-white text-black text-xs px-6 py-2 rounded-full mt-6">

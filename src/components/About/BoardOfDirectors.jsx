@@ -330,7 +330,7 @@ const BoardOfDirectors = () => {
                    <button
                   onClick={goToPrev}
                   disabled={isTransitioning}
-                  className="transform -translate-y-1/2 bg-white/90 backdrop-blur-sm text-slate-800 p-3 rounded-full hover:bg-white transition-all duration-200 shadow-lg disabled:opacity-50"
+                  className="transform -translate-y-1/2 bg-red-600 backdrop-blur-sm text-white p-3 rounded-full  transition-all duration-200 shadow-lg disabled:opacity-50"
                   aria-label="Previous director"
                 >
                   <ChevronLeft size={20} />
@@ -339,7 +339,7 @@ const BoardOfDirectors = () => {
                 <button
                   onClick={goToNext}
                   disabled={isTransitioning}
-                  className="transform -translate-y-1/2 bg-white/90 backdrop-blur-sm text-slate-800 p-3 rounded-full hover:bg-white transition-all duration-200 shadow-lg disabled:opacity-50"
+                  className="transform -translate-y-1/2 bg-red-600 backdrop-blur-sm text-white p-3 rounded-full  transition-all duration-200 shadow-lg disabled:opacity-50"
                   aria-label="Next director"
                 >
                   <ChevronRight size={20} />

@@ -27,7 +27,7 @@ const standOut = () => {
             <ul className="mt-3 space-y-1">
               {bulletPoints.map((point, index) => (
                 <li key={index} className="">
-                  <span className="text-muted-foreground mt-0.5">•</span>
+                  <span className="text-muted-foreground mt-0.5 mr-1">•</span>
                   <span className="px-0.5 text-[14px]">{point}</span>
                 </li>
               ))}

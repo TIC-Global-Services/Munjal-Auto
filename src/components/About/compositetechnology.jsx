@@ -90,7 +90,7 @@ const CompositeTechnology = () => {
                 "Paint booth and Class 8 cleanroom (12m × 10m × 3m)",
               ].map((item, index) => (
                 <li key={index} className="flex items-start">
-                  <div className="w-1 h-1 bg-black rounded-full mr-2 mt-3 flex-shrink-0"></div>
+                  <div className="w-1 h-1 bg-black rounded-full mr-2 mt-2 lg:mt-3 flex-shrink-0"></div>
                   <span className="text-[#020202] leading-relaxed text-[13px] lg:text-[18px]">{item}</span>
                 </li>
               ))}
@@ -206,7 +206,7 @@ const CompositeTechnology = () => {
                 {["Chennai", "Halol", "Manjusar", "Waghodia (Under Construction)"].map(
                   (process, index) => (
                     <div key={index} className="flex items-start">
-                      <div className="w-1 h-1 bg-black rounded-full mr-3 mt-2 lg:mt-2.5 flex-shrink-0"></div>
+                      <div className="w-1 h-1 bg-black rounded-full mr-2 mt-1.5 lg:mt-2.5 flex-shrink-0"></div>
                       <span className="text-[#020202] text-[13px] lg:text-[18px] font-[400] leading-tight lg:leading-normal">
                         {process}
                       </span>
