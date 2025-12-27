@@ -33,7 +33,7 @@ const standOut = () => {
               ))}
             </ul>
           </div>
-          <div className="absolute bg-[#EBEBEB] w-[650px] md:w-[640px] -z-20 -bottom-6 md:-left-[31px] md:h-[312px]  rounded-bl-[12px] rounded-tl-[12px] rounded-br-[1px] hidden lg:block "></div>
+          {/* <div className="absolute bg-[#EBEBEB] w-[650px] md:w-[640px] -z-20 -bottom-6 md:-left-[31px] md:h-[312px]  rounded-bl-[12px] rounded-tl-[12px] rounded-br-[1px] hidden lg:block "></div> */}
          </div>
  
           {/* Top Right */}
@@ -68,7 +68,7 @@ const standOut = () => {
           </div>
 
           </div>
-                    <div className="absolute bg-[#EBEBEB] hidden lg:block w-[652px] -z-20 -bottom-3 md:right-[0px] md:h-[30px] rounded-bl-[12px] rounded-br-[12px]"></div>
+                    {/* <div className="absolute bg-[#EBEBEB] hidden lg:block w-[652px] -z-20 -bottom-3 md:right-[0px] md:h-[30px] rounded-bl-[12px] rounded-br-[12px]"></div> */}
         </div>
       </div>
     </div>
