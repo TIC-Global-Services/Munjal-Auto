@@ -100,7 +100,7 @@ function ModelViewer() {
         const center = box.getCenter(new THREE.Vector3());
         const size = box.getSize(new THREE.Vector3());
         const maxDim = Math.max(size.x, size.y, size.z);
-        const scale = isMobile ? 1.8 / maxDim : 3.5 / maxDim; // Slightly increased size
+        const scale = isMobile ? 2.0 / maxDim : 3.5 / maxDim; // Reduced mobile scale
 
         // Rotate model to stand upright (rotate 90 degrees around X-axis)
         model.rotation.x = Math.PI / 2;
@@ -167,7 +167,7 @@ function ModelViewer() {
     <div className="relative " style={{ zIndex: 50 }}>
       <div
         ref={modelContainerRef}
-        className=" h-[500px] w-[800px]"
+        className="h-[300px] w-[300px] md:h-[320px] md:w-[600px]"
         style={{
           background: "transparent",
           position: "relative",
@@ -197,9 +197,9 @@ const MunjalAutoGroup = () => {
 
   return (
     <div id="munjal-group" className="lg:max-w-8xl px-5 lg:px-20 my-12">
-      <div className="bg-[#f1eeee] rounded-3xl p-8 md:p-12 lg:p-16 relative overflow-hidden min-h-[858px]">
+      <div className="bg-[#f1eeee] rounded-3xl p-8 md:p-12 lg:p-16 relative overflow-hidden min-h-[500px]">
         {/* Content Container */}
-        <div className="grid grid-cols-1 md:grid-cols-2 w-full ">
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full h-full items-center gap-4 md:gap-0">
           {/* Left Content */}
           <div
             className={` w-full md:pr-8 z-10 transition-all duration-1000 transform ${
@@ -228,14 +228,16 @@ const MunjalAutoGroup = () => {
               </p>
             </div>
           </div>
-        </div>
-        <div
-          className={` w-full relative transition-all duration-1000 delay-300 ${
-            isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
-          }`}
-        >
-          <div className="w-full flex items-center justify-center">
-            <ModelViewer />
+
+          {/* Right Side - 3D Model */}
+          <div
+            className={`w-full relative transition-all duration-1000 delay-300 -mt-4 md:mt-0 ${
+              isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+            }`}
+          >
+            <div className="w-full flex items-center justify-center">
+              <ModelViewer />
+            </div>
           </div>
         </div>
 
