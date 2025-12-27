@@ -11,6 +11,7 @@ const JobApplicationForm = () => {
 
   const [fileName, setFileName] = useState('No file Chosen');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState({});
 
   // Email validation function
   const isValidEmail = (email) => {
@@ -22,6 +23,43 @@ const JobApplicationForm = () => {
   const isValidMobile = (mobile) => {
     const mobileRegex = /^[+]?[\d\s\-()]+$/;
     return mobileRegex.test(mobile) && mobile.replace(/\D/g, '').length >= 10;
+  };
+
+  // Validate individual field
+  const validateField = (name, value) => {
+    let error = '';
+    
+    switch (name) {
+      case 'name':
+        if (!value || value.trim().length < 2) {
+          error = 'Name must be at least 2 characters long';
+        }
+        break;
+      case 'email':
+        if (!value || !isValidEmail(value)) {
+          error = 'Please enter a valid email address';
+        }
+        break;
+      case 'mobile':
+        if (!value || !isValidMobile(value)) {
+          error = 'Please enter a valid mobile number (at least 10 digits)';
+        }
+        break;
+      case 'experience':
+        if (!value || value.trim().length < 1) {
+          error = 'Experience field cannot be empty';
+        }
+        break;
+      case 'resume':
+        if (!value) {
+          error = 'Please upload your resume';
+        }
+        break;
+      default:
+        break;
+    }
+    
+    return error;
   };
   
   // Convert file to base64
@@ -45,6 +83,14 @@ const JobApplicationForm = () => {
       ...prev,
       [name]: value
     }));
+    
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
   };
 
   // Handle file upload
@@ -59,7 +105,10 @@ const JobApplicationForm = () => {
       ];
       
       if (!allowedTypes.includes(file.type)) {
-        alert('Please select a PDF, DOC, or DOCX file');
+        setErrors(prev => ({
+          ...prev,
+          resume: 'Please select a PDF, DOC, or DOCX file'
+        }));
         e.target.value = '';
         return;
       }
@@ -67,7 +116,10 @@ const JobApplicationForm = () => {
       // Validate file size (5MB limit)
       const maxSize = 5 * 1024 * 1024; // 5MB
       if (file.size > maxSize) {
-        alert('File size must be less than 5MB');
+        setErrors(prev => ({
+          ...prev,
+          resume: 'File size must be less than 5MB'
+        }));
         e.target.value = '';
         return;
       }
@@ -77,6 +129,14 @@ const JobApplicationForm = () => {
         resume: file
       }));
       setFileName(file.name);
+      
+      // Clear resume error
+      if (errors.resume) {
+        setErrors(prev => ({
+          ...prev,
+          resume: ''
+        }));
+      }
     } else {
       setFormData(prev => ({
         ...prev,
@@ -92,32 +152,19 @@ const JobApplicationForm = () => {
     setIsSubmitting(true);
     
     try {
-      // Comprehensive validation
-      const validationErrors = [];
+      // Validate all fields
+      const newErrors = {};
       
-      if (!formData.name || formData.name.trim().length < 2) {
-        validationErrors.push('Name must be at least 2 characters long');
-      }
+      Object.keys(formData).forEach(key => {
+        const error = validateField(key, formData[key]);
+        if (error) {
+          newErrors[key] = error;
+        }
+      });
       
-      if (!formData.email || !isValidEmail(formData.email)) {
-        validationErrors.push('Please enter a valid email address');
-      }
-      
-      if (!formData.mobile || !isValidMobile(formData.mobile)) {
-        validationErrors.push('Please enter a valid mobile number (at least 10 digits)');
-      }
-      
-      if (!formData.experience || formData.experience.trim().length < 1) {
-        validationErrors.push('Experience field cannot be empty');
-      }
-      
-      if (!formData.resume) {
-        validationErrors.push('Please upload your resume');
-      }
-      
-      // Display validation errors
-      if (validationErrors.length > 0) {
-        alert('Please fix the following errors:\\n\\n' + validationErrors.join('\\n'));
+      // Set errors and stop if validation fails
+      if (Object.keys(newErrors).length > 0) {
+        setErrors(newErrors);
         return;
       }
       
@@ -194,6 +241,7 @@ const JobApplicationForm = () => {
         });
         
         setFileName('No file Chosen');
+        setErrors({});
         
         // Reset file input
         const fileInput = document.querySelector('input[type="file"]');
@@ -240,8 +288,11 @@ const JobApplicationForm = () => {
                 placeholder="Name"
                 value={formData.name}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-300"
+                className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-1 ${
+                  errors.name ? 'border-red-500 focus:ring-red-300' : 'border-gray-200 focus:ring-gray-300'
+                }`}
               />
+              {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
             </div>
             <div>
               <input
@@ -250,8 +301,11 @@ const JobApplicationForm = () => {
                 placeholder="Email"
                 value={formData.email}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-300"
+                className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-1 ${
+                  errors.email ? 'border-red-500 focus:ring-red-300' : 'border-gray-200 focus:ring-gray-300'
+                }`}
               />
+              {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
             </div>
           </div>
 
@@ -263,8 +317,11 @@ const JobApplicationForm = () => {
                 placeholder="Mobile Number"
                 value={formData.mobile}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-300"
+                className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-1 ${
+                  errors.mobile ? 'border-red-500 focus:ring-red-300' : 'border-gray-200 focus:ring-gray-300'
+                }`}
               />
+              {errors.mobile && <p className="text-red-500 text-sm mt-1">{errors.mobile}</p>}
             </div>
             <div>
               <input
@@ -273,14 +330,19 @@ const JobApplicationForm = () => {
                 placeholder="Total Experience"
                 value={formData.experience}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-300"
+                className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-1 ${
+                  errors.experience ? 'border-red-500 focus:ring-red-300' : 'border-gray-200 focus:ring-gray-300'
+                }`}
               />
+              {errors.experience && <p className="text-red-500 text-sm mt-1">{errors.experience}</p>}
             </div>
           </div>
 
           <div>
             <label className="cursor-pointer block">
-              <div className="w-full max-w-[592px] md:w-[592px] h-[150px] md:h-[200px] border-2 border-dashed border-gray-300 rounded-xl bg-gray-50 flex flex-col items-center justify-center text-center hover:bg-gray-100 transition-colors">
+              <div className={`w-full max-w-[592px] md:w-[592px] h-[150px] md:h-[200px] border-2 border-dashed rounded-xl bg-gray-50 flex flex-col items-center justify-center text-center hover:bg-gray-100 transition-colors ${
+                errors.resume ? 'border-red-500' : 'border-gray-300'
+              }`}>
                 <div className="text-gray-400 mb-2">
                   <svg className="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
@@ -301,6 +363,7 @@ const JobApplicationForm = () => {
                 onChange={handleFileChange}
               />
             </label>
+            {errors.resume && <p className="text-red-500 text-sm mt-1">{errors.resume}</p>}
           </div>
         </div>
 

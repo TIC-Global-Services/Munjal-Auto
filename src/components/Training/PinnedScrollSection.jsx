@@ -78,22 +78,24 @@ const PinnedScrollSection = () => {
                       : [0.9 - (index * 0.03), 0.9 - (index * 0.03), 0.9 - (index * 0.03), 1, 0.85, 0.85]
                   );
 
-                  // Opacity - freeze at start and end
+                  // Opacity - zero initial opacity to prevent overlapping
                   const opacityTransform = useTransform(
                     scrollYProgress,
-                    [0, 0.05, start, end, 0.8, 1],
+                    [0, 0.05, start - 0.1, start, end, end + 0.1, 0.8, 1],
                     isLast 
-                      ? [0.5, 0.5, 0.5, 1, 1, 1] 
-                      : [0.5, 0.5, 0.5, 1, 0.6, 0.6]
+                      ? [0, 0, 0, 0.2, 1, 1, 1, 1] 
+                      : [0, 0, 0, 0.3, 1, 0, 0, 0]
                   );
 
-                  // Dynamic z-index - freeze at start, active card on top, freeze after third card
+                  // Dynamic z-index - better layering control
                   const zIndexTransform = useTransform(
                     scrollYProgress,
-                    [0, 0.05, start, start + 0.15, end - 0.15, end, 0.8, 1],
+                    [0, 0.05, start - 0.1, start, start + 0.1, end - 0.1, end, end + 0.1, 0.8, 1],
                     isLast 
-                      ? [cards.length - index, cards.length - index, cards.length - index, cards.length + 10, cards.length + 10, cards.length + 10, cards.length + 10, cards.length + 10]
-                      : [cards.length - index, cards.length - index, cards.length - index, cards.length + 10, cards.length + 10, cards.length - index, cards.length - index, cards.length - index]
+                      ? [1, 1, 1, 2, 20, 20, 20, 2, 2, 2]
+                      : index === 1
+                        ? [2, 2, 2, 3, 20, 20, 3, 2, 2, 2]
+                        : [3, 3, 3, 4, 20, 20, 4, 3, 3, 3]
                   );
 
                   return (

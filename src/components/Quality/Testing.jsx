@@ -189,11 +189,12 @@ const Testing = () => {
                         ))}
                       </div>
                     ) : (
-                      // Bullet points for all other sections with smaller bullets
-                      <ul className="pl-4 sm:pl-5 space-y-2 sm:space-y-3 w-full">
+                      // Bullet points for all other sections with properly aligned bullets
+                      <ul className="space-y-2 sm:space-y-3 w-full">
                         {item.description.map((desc, i) => (
-                          <li key={i} className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed break-words relative pl-3 before:content-['•'] before:absolute before:left-0 before:text-xs before:text-gray-500 before:top-0">
-                            {desc}
+                          <li key={i} className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed break-words flex items-start">
+                            <span className="text-gray-500 mr-3 mt-1 flex-shrink-0">•</span>
+                            <span className="flex-1">{desc}</span>
                           </li>
                         ))}
                       </ul>

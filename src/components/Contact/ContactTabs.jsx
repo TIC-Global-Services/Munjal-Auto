@@ -7,174 +7,119 @@ import { motion } from "framer-motion";
 
 const ContactTabs = () => {
   const [activeTab, setActiveTab] = useState('office');
-  const [formData, setFormData] = useState({
+  
+  // Business inquiry form state
+  const [inquiryData, setInquiryData] = useState({
     name: '',
     email: '',
     mobile: '',
-    experience: '',
-    resume: null
+    organization: '',
+    message: ''
   });
+  
+  const [inquiryErrors, setInquiryErrors] = useState({});
 
+  // Validation functions
+  const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
 
-  const handleInputChange = (e) => {
+  const isValidMobile = (mobile) => {
+    const mobileRegex = /^[+]?[\d\s\-()]+$/;
+    return mobileRegex.test(mobile) && mobile.replace(/\D/g, '').length >= 10;
+  };
+
+  // Validate inquiry form field
+  const validateInquiryField = (name, value) => {
+    let error = '';
+    
+    switch (name) {
+      case 'name':
+        if (!value || value.trim().length < 2) {
+          error = 'Name must be at least 2 characters long';
+        }
+        break;
+      case 'email':
+        if (!value || !isValidEmail(value)) {
+          error = 'Please enter a valid email address';
+        }
+        break;
+      case 'mobile':
+        if (!value || !isValidMobile(value)) {
+          error = 'Please enter a valid mobile number';
+        }
+        break;
+      case 'organization':
+        if (!value || value.trim().length < 2) {
+          error = 'Organization name is required';
+        }
+        break;
+      case 'message':
+        if (!value || value.trim().length < 10) {
+          error = 'Message must be at least 10 characters long';
+        }
+        break;
+      default:
+        break;
+    }
+    
+    return error;
+  };
+
+  // Handle inquiry form input changes
+  const handleInquiryChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setInquiryData(prev => ({
       ...prev,
       [name]: value
     }));
+    
+    // Clear error when user starts typing
+    if (inquiryErrors[name]) {
+      setInquiryErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
   };
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    setFormData(prev => ({
-      ...prev,
-      resume: file
-    }));
-  };
-
-
-  const handleSubmit = async (e) => {
+  // Handle inquiry form submission
+  const handleInquirySubmit = (e) => {
     e.preventDefault();
-
-    // Show loading state
-    const submitButton = e.target.querySelector('button[type="submit"]');
-    const originalButtonText = submitButton ? submitButton.textContent : '';
-    if (submitButton) {
-      submitButton.disabled = true;
-      submitButton.textContent = 'Submitting...';
+    
+    // Validate all fields
+    const newErrors = {};
+    
+    Object.keys(inquiryData).forEach(key => {
+      const error = validateInquiryField(key, inquiryData[key]);
+      if (error) {
+        newErrors[key] = error;
+      }
+    });
+    
+    // Set errors and stop if validation fails
+    if (Object.keys(newErrors).length > 0) {
+      setInquiryErrors(newErrors);
+      return;
     }
-
-    try {
-      // Comprehensive validation
-      const validationErrors = [];
-
-      if (!formData.name || formData.name.trim().length < 2) {
-        validationErrors.push('Name must be at least 2 characters long');
-      }
-
-      if (!formData.email || !isValidEmail(formData.email)) {
-        validationErrors.push('Please enter a valid email address');
-      }
-
-      if (!formData.mobile || !isValidMobile(formData.mobile)) {
-        validationErrors.push('Please enter a valid mobile number');
-      }
-
-      if (!formData.experience || formData.experience.trim().length < 10) {
-        validationErrors.push('Experience description must be at least 10 characters long');
-      }
-
-      if (!formData.resume) {
-        validationErrors.push('Please upload your resume');
-      } else {
-        // Validate file type and size
-        const allowedTypes = [
-          'application/pdf',
-          'application/msword',
-          'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-        ];
-        const maxSize = 5 * 1024 * 1024; // 5MB
-
-        if (!allowedTypes.includes(formData.resume.type)) {
-          validationErrors.push('Resume must be a PDF, DOC, or DOCX file');
-        }
-
-        if (formData.resume.size > maxSize) {
-          validationErrors.push('Resume file size must be less than 5MB');
-        }
-      }
-
-      // Display validation errors
-      if (validationErrors.length > 0) {
-        alert('Please fix the following errors:\n\n' + validationErrors.join('\n'));
-        return;
-      }
-
-      // Convert resume file to base64
-      const resumeBase64 = await convertFileToBase64(formData.resume);
-
-      // Prepare form data for submission
-      const submitData = new FormData();
-      submitData.append('name', formData.name.trim());
-      submitData.append('email', formData.email.trim().toLowerCase());
-      submitData.append('mobile', formData.mobile.trim());
-      submitData.append('experience', formData.experience.trim());
-      submitData.append('resumeFileName', formData.resume.name);
-      submitData.append('resumeData', resumeBase64);
-      submitData.append('resumeType', formData.resume.type);
-      submitData.append('resumeSize', formData.resume.size);
-      submitData.append('timestamp', new Date().toISOString());
-
-      // Replace with your actual Google Apps Script Web App URL
-      const SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
-
-      // Submit form with timeout
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
-
-      const response = await fetch(SCRIPT_URL, {
-        method: 'POST',
-        body: submitData,
-        signal: controller.signal
-      });
-
-      clearTimeout(timeoutId);
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const result = await response.json();
-
-      if (result.result === 'success') {
-        // Success notification
-        alert('🎉 Application submitted successfully!\n\nThank you for your interest. We will review your application and get back to you soon.');
-
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          mobile: '',
-          experience: '',
-          resume: null
-        });
-
-        // Reset file input if it exists
-        const fileInput = document.querySelector('input[type="file"]');
-        if (fileInput) {
-          fileInput.value = '';
-        }
-
-        // Optional: Redirect or show success page
-        // window.location.href = '/thank-you';
-
-      } else {
-        throw new Error(result.error || 'Submission failed');
-      }
-
-    } catch (error) {
-      console.error('Error submitting form:', error);
-
-      let errorMessage = 'Error submitting form. Please try again.';
-
-      if (error.name === 'AbortError') {
-        errorMessage = 'Request timed out. Please check your internet connection and try again.';
-      } else if (error.message.includes('HTTP error')) {
-        errorMessage = 'Server error. Please try again later.';
-      } else if (error.message.includes('Failed to fetch')) {
-        errorMessage = 'Network error. Please check your internet connection.';
-      }
-
-      alert(+ errorMessage);
-
-    } finally {
-      // Restore button state
-      if (submitButton) {
-        submitButton.disabled = false;
-        submitButton.textContent = originalButtonText;
-      }
-    }
+    
+    // If validation passes, you can submit the form
+    console.log('Inquiry form submitted:', inquiryData);
+    alert('Thank you for your inquiry! We will get back to you soon.');
+    
+    // Reset form
+    setInquiryData({
+      name: '',
+      email: '',
+      mobile: '',
+      organization: '',
+      message: ''
+    });
+    setInquiryErrors({});
   };
+
+
   const tabs = [
     { id: 'office', label: 'Office & Plants' },
     { id: 'career', label: 'Career' },
@@ -351,21 +296,33 @@ const ContactTabs = () => {
                   To place an order or to avail more information regarding our products, do write in. Our customer care executives will get back to you as soon as possible. We invite trade queries from India and abroad.
                   </p>
 
-                  <form className="space-y-6">
+                  <form onSubmit={handleInquirySubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 gap-y-6">
                       <div>
                         <input
                           type="text"
+                          name="name"
                           placeholder="Name"
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-300"
+                          value={inquiryData.name}
+                          onChange={handleInquiryChange}
+                          className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-1 ${
+                            inquiryErrors.name ? 'border-red-500 focus:ring-red-300' : 'border-gray-200 focus:ring-gray-300'
+                          }`}
                         />
+                        {inquiryErrors.name && <p className="text-red-500 text-sm mt-1">{inquiryErrors.name}</p>}
                       </div>
                       <div>
                         <input
                           type="email"
+                          name="email"
                           placeholder="Email"
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-300"
+                          value={inquiryData.email}
+                          onChange={handleInquiryChange}
+                          className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-1 ${
+                            inquiryErrors.email ? 'border-red-500 focus:ring-red-300' : 'border-gray-200 focus:ring-gray-300'
+                          }`}
                         />
+                        {inquiryErrors.email && <p className="text-red-500 text-sm mt-1">{inquiryErrors.email}</p>}
                       </div>
                     </div>
 
@@ -373,31 +330,49 @@ const ContactTabs = () => {
                       <div>
                         <input
                           type="tel"
+                          name="mobile"
                           placeholder="Mobile Number"
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-300"
+                          value={inquiryData.mobile}
+                          onChange={handleInquiryChange}
+                          className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-1 ${
+                            inquiryErrors.mobile ? 'border-red-500 focus:ring-red-300' : 'border-gray-200 focus:ring-gray-300'
+                          }`}
                         />
+                        {inquiryErrors.mobile && <p className="text-red-500 text-sm mt-1">{inquiryErrors.mobile}</p>}
                       </div>
                       <div>
                         <input
-                          type="tel"
+                          type="text"
+                          name="organization"
                           placeholder="Organization Name"
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-300"
+                          value={inquiryData.organization}
+                          onChange={handleInquiryChange}
+                          className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-1 ${
+                            inquiryErrors.organization ? 'border-red-500 focus:ring-red-300' : 'border-gray-200 focus:ring-gray-300'
+                          }`}
                         />
+                        {inquiryErrors.organization && <p className="text-red-500 text-sm mt-1">{inquiryErrors.organization}</p>}
                       </div>
                     </div>
 
                     <div>
                       <textarea
+                        name="message"
                         placeholder="Write a Message"
                         rows={4}
-                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-1 focus:ring-gray-300"
+                        value={inquiryData.message}
+                        onChange={handleInquiryChange}
+                        className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-1 ${
+                          inquiryErrors.message ? 'border-red-500 focus:ring-red-300' : 'border-gray-200 focus:ring-gray-300'
+                        }`}
                       ></textarea>
+                      {inquiryErrors.message && <p className="text-red-500 text-sm mt-1">{inquiryErrors.message}</p>}
+                    </div>
+
+                    <div className="mb-4 md:mb-8 pt-[15px] md:pt-[30px]">
+                      <button type="submit" className="bg-black text-white px-10 py-2 rounded hover:bg-gray-800">Submit</button>
                     </div>
                   </form>
-                </div>
-
-                <div className="mb-4 md:mb-8 pt-[15px] md:pt-[30px]">
-                  <button className="bg-black text-white px-10 py-2 rounded">Submit</button>
                 </div>
               </div>
             </div>
