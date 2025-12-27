@@ -97,30 +97,57 @@ const RegDisclosure = () => {
         {disclosureItems.map((item, index) => (
           <div
             key={index}
-            className="group flex items-center justify-between p-6 bg-white border border-gray-100 rounded-xl hover:border-red-200 hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5"
+            className="group p-6 bg-white border border-gray-100 rounded-xl hover:border-red-200 hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5"
           >
-            <div className="flex items-start gap-4 flex-1">
-              <div className="flex-shrink-0 w-8 h-8 bg-red-50 text-red-700 font-semibold rounded-full flex items-center justify-center text-sm group-hover:bg-red-100 transition-colors">
-                {index + 1}
+            {/* Desktop Layout */}
+            <div className="hidden md:flex items-center justify-between">
+              <div className="flex items-start gap-4 flex-1">
+                <div className="flex-shrink-0 w-8 h-8 bg-red-50 text-red-700 font-semibold rounded-full flex items-center justify-center text-sm group-hover:bg-red-100 transition-colors">
+                  {index + 1}
+                </div>
+                <span className="text-gray-800 leading-relaxed font-medium text-base pr-4">{item.title}</span>
               </div>
-
-              <span className="text-gray-800 leading-relaxed font-medium text-base pr-4">{item.title}</span>
+              <button
+                onClick={() => handleKnowMore(item.url)}
+                className="flex items-center gap-2 px-5 py-2.5 text-red-600 hover:text-white hover:bg-red-600 border border-red-200 hover:border-red-600 rounded-lg transition-all duration-200 font-medium text-sm group-hover:shadow-md"
+              >
+                Know More
+                <svg
+                  className="w-4 h-4 transition-transform group-hover:translate-x-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
             </div>
 
-            <button
-              onClick={() => handleKnowMore(item.url)}
-              className="flex items-center gap-2 px-5 py-2.5 text-red-600 hover:text-white hover:bg-red-600 border border-red-200 hover:border-red-600 rounded-lg transition-all duration-200 font-medium text-sm group-hover:shadow-md"
-            >
-              Know More
-              <svg
-                className="w-4 h-4 transition-transform group-hover:translate-x-0.5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
+            {/* Mobile Layout */}
+            <div className="md:hidden">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="flex-shrink-0 w-8 h-8 bg-red-50 text-red-700 font-semibold rounded-full flex items-center justify-center text-sm group-hover:bg-red-100 transition-colors">
+                  {index + 1}
+                </div>
+                <span className="text-gray-800 leading-relaxed font-medium text-base">{item.title}</span>
+              </div>
+              <div className="ml-12">
+                <button
+                  onClick={() => handleKnowMore(item.url)}
+                  className="flex items-center gap-2 px-5 py-2.5 text-red-600 hover:text-white hover:bg-red-600 border border-red-200 hover:border-red-600 rounded-lg transition-all duration-200 font-medium text-sm group-hover:shadow-md"
+                >
+                  Know More
+                  <svg
+                    className="w-4 h-4 transition-transform group-hover:translate-x-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+            </div>
           </div>
         ))}
       </div>
