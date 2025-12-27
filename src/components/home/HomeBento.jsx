@@ -25,7 +25,7 @@ const ExpertiseSection = () => {
 
                 {/* Description */}
                 <div className="max-w-3xl">
-                    <p className="text-gray-800 text-[10px] md:text-left text-center md:text-base leading-[14px] md:leading-relaxed">
+                    <p className="text-gray-800 text-[10px] text-left md:text-base leading-[14px] md:leading-relaxed">
                        we specialize in precision engineering and advanced manufacturing, delivering high-performance components that drive industries forward.
                     </p>
                 </div>
@@ -45,7 +45,7 @@ const ManufacturingCapacity = () => {
 
     return (
         <div className="bg-[#F3F4F6] rounded-lg md:rounded-[26px] lg:h-[601px] h-[250px] md:px-12 px-2  md:py-0 py-4 flex">
-            <div className="max-w-7xl  mx-auto flex justify-center mt-10 flex-col">
+            <div className="max-w-7xl  mx-auto flex justify-start  flex-col">
                 {/* Comment Header */}
                 <div className="md:text-[18px] text-[10px] whitespace-nowrap  text-gray-500 md:mb-1 mb-2">
             //MANUFACTURING CAPACITY

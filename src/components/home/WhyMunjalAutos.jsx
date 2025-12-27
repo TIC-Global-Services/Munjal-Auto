@@ -432,7 +432,7 @@ const WhyMunjalAutos = () => {
                   return (
                     <motion.div
                       key={index}
-                      className="border-b border-gray-200 pb-4 last:border-b-0"
+                      className="border-b border-gray-200 pb-4 px-3 lg:px-0 last:border-b-0"
                       style={{
                         opacity: featureInView,
                         transform: useTransform(
@@ -442,10 +442,10 @@ const WhyMunjalAutos = () => {
                         ),
                       }}
                     >
-                      <h3 className="text-lg md:text-xl lg:text-[30px] leading-[50px] text-[#151414] font-medium mb-2 whitespace-pre-line">
+                      <h3 className="text-lg md:text-xl lg:text-[30px] lg:leading-[50px] text-[#151414] font-medium m-1 lg:mb-2 whitespace-pre-line">
                         {feature.title}
                       </h3>
-                      <p className="text-[#8C8989] leading-[30px] text-sm whitespace-pre-line md:text-base">
+                      <p className="text-[#8C8989] leading-[30px] px-1 lg:px-0 text-sm whitespace-pre-line md:text-base">
                         {feature.description}
                       </p>
                     </motion.div>
