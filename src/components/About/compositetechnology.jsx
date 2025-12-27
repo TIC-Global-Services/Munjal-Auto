@@ -13,7 +13,7 @@ const CompositeTechnology = () => {
           <h1 className="text-[24px] md:text-4xl lg:text-5xl font-semibold lg:text-left  text-center text-gray-900 mb-6">
             Indutch Composites <span className="text-red-600">Technology</span>
           </h1>
-          <p className="text-[13px] lg:text-[18px] text-gray-700 leading-relaxed max-w-4xl">
+          <p className="text-[14px] lg:text-[18px] text-gray-700 leading-relaxed max-w-4xl">
             Founded in 2010, Indutch Composites Technology Limited is a leader
             in advanced composite molds and components, with a strong focus on
             renewable energy and wind power. Over the years, it has expanded its
@@ -33,7 +33,7 @@ const CompositeTechnology = () => {
               />
             </div>
             <div className="order-2 lg:order-2">
-              <p className="text-[13px] lg:text-[18px] text-[#020202] leading-relaxed mb-6">
+              <p className="text-[14px] lg:text-[18px] text-[#020202] leading-relaxed mb-6">
                 Since inception, Indutch Composites Technology Limited has been
                 a trusted partner to the composites industry, specializing in
                 the design and manufacturing of composite moulds and components
@@ -72,11 +72,11 @@ const CompositeTechnology = () => {
        <div className="lg:py-10">
          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-12 items-start">
           <div className="order-last  lg:order-first">
-            <p className="text-[13px] lg:text-[18px] text-[#020202] leading-relaxed ">
+            <p className="text-[14px] lg:text-[18px] text-[#020202] leading-relaxed ">
               The company employs over 700 skilled technicians and 70 engineers,
               with in-house capabilities for mould design, jigs, and fixtures.
             </p>
-            <h3 className="text-[13px] lg:text-[18px] font-normal text-[#020202] mb-5">
+            <h3 className="text-[14px] lg:text-[18px] font-normal text-[#020202] mb-5">
               Upcoming Facility (2019 launch):
             </h3>
             <ul className="leading-[28px]">
@@ -194,14 +194,14 @@ const CompositeTechnology = () => {
           </div>
           <div>
             <div>
-              <p className="text-[13px] lg:text-[18px] text-[#020202] leading-[20px] lg:leading-[28px]">
+              <p className="text-[14px] lg:text-[18px] text-[#020202] leading-[20px] lg:leading-[28px]">
                 Indutch has the capabilities to design and manufacture moulds
                 and products for various Engineering industries such as Auto,
                 Defence, Railways, Aviation, Space, Marine, Home appliances,
                 mass transit, just to name a few. Today Wind sector is the core
                 business at Indutch.
               </p>
-              <p className="text-[13px] text-[#020202] lg:text-[18px] mt-4 mb-4">Indutch has 4 manufacturing facilities</p>
+              <p className="text-[14px] text-[#020202] lg:text-[18px] mt-4 mb-4">Indutch has 4 manufacturing facilities</p>
               <div className="grid grid-cols-2 gap-x-4 gap-y-2 lg:gap-0">
                 {["Chennai", "Halol", "Manjusar", "Waghodia (Under Construction)"].map(
                   (process, index) => (

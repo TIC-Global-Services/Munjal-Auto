@@ -398,7 +398,7 @@ const WhyMunjalAutos = () => {
                 Auto ?
               </h2>
  
-              <p className="text-gray-700 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl">
+              <p className="text-gray-700 text-sm sm:text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl">
                Munjal Auto is a trusted name in the automotive industry, delivering critical components like exhaust systems, fuel tanks, rims, and BIW parts—engineered for superior performance and safety. Beyond automotive, our renewable energy solutions, including windmill blades and specialized components, drive advancements in clean energy. With a blend of engineering excellence and forward-thinking design, we create solutions that power industries into the future.
               </p>
  

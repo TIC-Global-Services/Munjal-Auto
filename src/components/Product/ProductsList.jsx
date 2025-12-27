@@ -499,7 +499,7 @@ const ProductsList = () => {
               initial={{ opacity: 0, y: 50, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="mb-12 overflow-hidden bg-white p-4 rounded-xl max-w-[1214px] mx-auto "
+              className="mb-12 overflow-hidden bg-white p-4 rounded-xl max-w-[1214px] lg:mx-auto mx-4"
             >
               {/* Desktop Layout: Row with 3 columns */}
               <motion.div
@@ -614,7 +614,7 @@ const ProductsList = () => {
               {/* Mobile Layout: Keep your original mobile design */}
               <div className="md:hidden lg:px-5">
                 {/* Image Section */}
-                <div className="bg-[#EBEBEF] flex items-center justify-center  ">
+                <div className="bg-[#EBEBEF] flex items-center justify-center  rounded-md">
                   <motion.div
                     initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
                     animate={{
@@ -653,7 +653,7 @@ const ProductsList = () => {
                       <motion.p
                         initial={{ opacity: 1 }}
                         animate={{ opacity: 1 }}
-                        className="mb-4 text-[16px] leading-relaxed"
+                        className="mb-4 text-[14px] leading-relaxed"
                       >
                         {item.description}
                       </motion.p>

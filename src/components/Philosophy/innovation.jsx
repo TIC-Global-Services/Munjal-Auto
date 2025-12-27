@@ -26,14 +26,14 @@ const innovation = () => {
                           <div className="flex items-center">
                            <h3 className="text-xs sm:text-sm md:text-base">Our people drive our success:</h3>
                           </div>
-                         <ul className="text-white text-[16px] space-y-2 lg:translate-x-2">
+                         <ul className="text-white text-[16px] space-y-2 lg:translate-x-2 mt-2 lg:mt-0">
               {inovations.map((point, index) => (
                 <li
                   key={index}
                   className="flex font-light  items-start gap-1 text-sm text-muted-foreground"
                 >
                   <span className="text-muted-foreground mt-0.5">•</span>
-                  <span className="lg:text-[16px] text-[11px] leading-[20px]">{point}</span>
+                  <span className="lg:text-[16px] text-[14px] leading-[20px]">{point}</span>
                 </li>
               ))}
             </ul>

@@ -128,10 +128,10 @@ const SustainableContent = ({ content }) => {
           </div>
           <img src={img1} width={593} height={547} className='rounded-lg w-[593px] lg:h-[547px] object-cover' />
           <ul className="list-disc ml-4 py-5 max-w-[485px] lg:hidden block space-y-4 text-[#82848A]">
-              <li className='leading-[24px] text-[12px] lg:text-[16px]'>
+              <li className='leading-[24px] text-[14px] lg:text-[16px]'>
                 The excellence of our products stems from our deep expertise in blueprint design. Every precise and systematic design lays a strong foundation for superior manufacturing. Munjal Auto Industries has achieved high operational maturity through rigorous adherence to advanced processes, benchmarked against world-class standards.
               </li>
-              <li className='leading-[24px] text-[12px] lg:text-[16px]'>
+              <li className='leading-[24px] text-[14px] lg:text-[16px]'>
                 Quality begins at the design stage, where our multi-disciplinary approach optimizes process design. High-end software such as Mechanical Desktop, AutoCAD, and Pro-E Wildfire 2.0 form the core of our tool, die, fixture, and gauge development.
               </li>
             </ul>
@@ -142,7 +142,7 @@ const SustainableContent = ({ content }) => {
             <img src={img2} width={488} height={547} className='object-cover rounded-[20px] lg:w-[593px] lg:h-[547px]'/>
             <div className='max-w-[696px]  lg:translate-x-6'>
             <h1 className='lg:text-[36px] text-[24px] lg:text-left text-center mt-4 lg:block hidden lg:mt-0'>R&D and Prototyping</h1>
-            <p className='mt-5 lg:leading-[34px] leading-[24px] text-[12px] lg:text-[18px] lg:text-left text-center'>
+            <p className='mt-5 lg:leading-[34px] leading-[24px] text-[14px] lg:text-[18px] lg:text-left text-center'>
               Munjal Auto has complete in-house prototyping capabilities, enabling cost-effective design and development of components. This facility ensures rapid iteration from concept to functional prototype, supporting precision, quality, and timely validation for all automotive parts.
             </p>
           </div>

@@ -330,7 +330,7 @@ const FacilitiesContent = ({ content }) => {
                         <span className="text-black font-normal"> World-</span>
                         Class Manufacturing
                     </h1>
-                    <p className="lg:text-[16px] text-[12px] lg:max-w-[319px] lg:max-h-[208px] lg:leading-[26px] leading-[17px]  mt-4 text-[#636161]">
+                    <p className="lg:text-[16px] text-[14px] lg:max-w-[319px] lg:max-h-[208px] lg:leading-[26px] leading-[17px]  mt-4 text-[#636161]">
                         From sheet metal components to complete assemblies, our
                         manufacturing plants leverage cutting-edge technology to produce
                         high-performance auto components. With a focus on sustainability and
@@ -366,7 +366,7 @@ const FacilitiesContent = ({ content }) => {
                         <h1 className="text-[18px] mb-3 lg:text-[24px] xl:text-[22px] lg:block  hidden lg:w-full font-medium text-black">
                             Cutting- <span className="text-[#FF0000]">Edge Facilities</span>
                         </h1>
-                        <p className="text-[12px] lg:text-right text-left mt-2 lg:mt-0 lg:text-sm xl:text-base w-full leading-[17px] lg:leading-[26px] text-[#706C67]">
+                        <p className="text-[14px] lg:text-right text-left mt-2 lg:mt-0 lg:text-sm xl:text-base w-full leading-[17px] lg:leading-[26px] text-[#706C67]">
                             Equipped with advanced manufacturing technology and in-house R&D,
                             our facilities are designed for efficiency, precision, and
                             scalability. We integrate the latest automation and quality
@@ -396,7 +396,7 @@ const FacilitiesContent = ({ content }) => {
                         <div className="grid gap-3 lg:grid-cols-2 mt-10">
                             <div>
                                 <h1 className="text-[#ED1C24] font-semibold text-[20px] lg:text-[26px]">Bawal Haryana</h1>
-                            <ul className="list-disc grid lg:grid-cols-1 grid-cols-2 gap-1 text-[13px] lg:text-[16px] leading-[20px] lg:leading-[34px] text-[#222222] px-4 mt-5">
+                            <ul className="list-disc grid lg:grid-cols-1 grid-cols-2 gap-1 text-[14px] lg:text-[16px] leading-[20px] lg:leading-[34px] text-[#222222] px-4 mt-5">
                                 <li>Unigraphics NX</li>
                                 <li>Pampstamp</li>
                                 <li>FTI -Fast blank</li>
@@ -407,7 +407,7 @@ const FacilitiesContent = ({ content }) => {
                             </div>
                             <div className="lg:-translate-x-12 order-3 lg:order-2">
                                 <h1 className="text-[#ED1C24] font-semibold text-[20px] lg:text-[26px]">Supported By Following Hardware (Work Stations)</h1>
-                            <ul className="list-disc grid lg:grid-cols-1 grid-cols-2 gap-1 text-[13px] lg:text-[16px] leading-[20px] lg:leading-[34px] text-[#222222] px-4 mt-5">
+                            <ul className="list-disc grid lg:grid-cols-1 grid-cols-2 gap-1 text-[14px] lg:text-[16px] leading-[20px] lg:leading-[34px] text-[#222222] px-4 mt-5">
                                 <li>Unigraphics NX</li>
                                 <li>Pampstamp</li>
                                 <li>FTI -Fast blank</li>
@@ -420,7 +420,7 @@ const FacilitiesContent = ({ content }) => {
                             </div>
                             <div className="lg:-translate-y-10 order-2 lg:order-3">
                                 <h1 className="text-[#ED1C24] font-semibold text-[20px] lg:text-[26px]">Waghodia</h1>
-                            <ul className="list-disc grid lg:grid-cols-1 grid-cols-2 lg:gap-1 gap-3  text-[13px] lg:text-[16px] leading-[20px] lg:leading-[34px] text-[#222222] px-4 mt-5">
+                            <ul className="list-disc grid lg:grid-cols-1 grid-cols-2 lg:gap-1 gap-3  text-[14px] lg:text-[16px] leading-[20px] lg:leading-[34px] text-[#222222] px-4 mt-5">
                                 <li>CATIA V-5 –R-60</li>
                                 <li>Pro-E Wildfire</li>
                                 <li>Hyper Form <br className="block lg:hidden"/> ( Blank & Nest)</li>

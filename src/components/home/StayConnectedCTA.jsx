@@ -10,10 +10,10 @@ const StayConnectedCTA = () => {
         <div className="hidden bg-[#ED1C24] md:flex bg-cover bg-center items-center justify-center relative">
           <img src={logo} className=" absolute top-8 md:top-12 w-24 md:w-32" alt="logo" />
           <div className="container mx-auto px-4 py-16 md:py-20 mt-6 md:mt-8 text-center text-white relative z-10">
-            <h2 className="md:text-[55px] text-2xl md:text-[55px] mt-6 md:mt-10 md:font-normal mb-4 md:mb-6">
+            <h2 className="md:text-[55px] text-2xl  mt-6 md:mt-10 md:font-normal mb-4 md:mb-6">
               Stay Connected
             </h2>
-            <p className="md:text-xl text-sm  !leading-[22px] md:!leading-[25px] mx-auto mb-3 md:mb-4">
+            <p className="md:text-xl text-base  !leading-[22px] md:!leading-[25px] mx-auto mb-3 md:mb-4">
              Reach out to explore our manufacturing
               <br />
                expertise and industry-leading solutions
@@ -31,7 +31,7 @@ const StayConnectedCTA = () => {
         <div className="flex flex-col md:hidden bg-[#ED1C24]  items-center py-[30px] sm:py-[40px] mt-6 sm:mt-10 mb-16 sm:mb-20  justify-center ">
           <img src={logo} alt="Logo" className="w-16 sm:w-20"/>
           <h2 className="text-xl sm:text-2xl font-normal mt-2 sm:mt-3 text-white">Stay Connected</h2>
-          <p className="text-xs sm:text-sm text-center mb-2 sm:mb-3 text-white">
+          <p className="text-sm sm:text-sm text-center mt-4 mb-2 sm:mb-3 text-white">
              Reach out to explore our manufacturing
               <br />
               expertise and industry-leading solutions

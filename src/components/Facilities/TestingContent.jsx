@@ -161,7 +161,7 @@ const TestingContent = () => {
             <div className="lg:mt-20 mt-10 lg:py-10">
                 <div>
                     <h1 className="lg:text-[36px] text-[24px] text-center lg:text-start">Fuel Tank Manufacturing</h1>
-                    <p className="lg:text-[20px] text-[13px] mt-3 lg:max-w-[1116px] lg:text-start text-center leading-[28px] text-[#82848A]">
+                    <p className="lg:text-[20px] text-[14px] mt-3 lg:max-w-[1116px] lg:text-start text-center leading-[28px] text-[#82848A]">
                         At Munjal Auto Industries Limited (MAIL), we produce 500 passenger car fuel tanks per day, with a total installed capacity of 1,500 assemblies daily. Leveraging advanced technology, modern equipment, and precision tooling, we maintain uncompromising standards of quality through robust processes, multi-stage inspections, and stringent testing protocols.
                     </p>
                 </div>
@@ -194,7 +194,7 @@ const TestingContent = () => {
                          <h1 className="text-2xl font-bold mb-2 text-[#ED1C24]">{item.title}</h1>
                          <ul className="list-disc ml-6 lg:max-w-[380px]">
                            {item.points.map((point, i) => (
-                             <li key={i} className='lg:text-[16px] text-[13px] font-[400] text-[#82848A] leading-[20px] lg:leading-[34px]'>{point}</li>
+                             <li key={i} className='lg:text-[16px] text-[14px] font-[400] text-[#82848A] leading-[20px] lg:leading-[34px]'>{point}</li>
                            ))}
                          </ul>
                        </div>
@@ -214,7 +214,7 @@ const TestingContent = () => {
               <div className="mt-20 py-10">
                 <div>
                     <h1 className="lg:text-[36px]  text-[24px] text-center lg:text-start w-[203px] lg:w-full  mx-auto">Exhaust Systems Manufacturing</h1>
-                    <p className="lg:text-[20px] text-[13px] leading-[20px] lg:leading-[28px]  text-center lg:text-start lg:max-w-[1116px] mt-5 text-[#82848A]">
+                    <p className="lg:text-[20px] text-[14px] leading-[20px] lg:leading-[28px]  text-center lg:text-start lg:max-w-[1116px] mt-5 text-[#82848A]">
                        We manufacture nearly 32,000 complete two-wheeler exhaust systems every day at MAIL. Our state-of-the-art facilities, equipped with precision-driven technology and automated systems, ensure seamless production. Every unit undergoes strict in-process gauging, inspection, and advanced testing to guarantee superior performance and reliability.
                     </p>
                 </div>
@@ -234,7 +234,7 @@ const TestingContent = () => {
                               <h1 className="lg:text-[26px]  text-[20px] font-bold mt-5 lg:mt-0 mb-2 text-[#ED1C24]">{item.sectionTitle}</h1>
                               <ul className="list-disc px-4 lg:px-7">
                                 {item.points.map((point, i) => (
-                                  <li key={i} className='text-[#82848A] lg:leading-[34px] font-[400] leading-[20px] text-[13px] lg:text-[16px]'>{point}</li>
+                                  <li key={i} className='text-[#82848A] lg:leading-[34px] font-[400] leading-[20px] text-[14px] lg:text-[16px]'>{point}</li>
                                 ))}
                               </ul>
                             </div>

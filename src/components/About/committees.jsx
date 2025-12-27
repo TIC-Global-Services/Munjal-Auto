@@ -117,7 +117,7 @@ const committees = () => {
           <div key={index} className="p-10 bg-[#F5F5F5] rounded-[12px] text-center  w-full lg:max-w-[385px] lg:max-h-[200px] max-h-[140px] max-w-[358px] flex flex-col justify-center">
             <h1 className="text-[#ED1C24] font-bold lg:text-[20px] text-[16px]">{res.name}</h1>
             <p className="lg:text-[20px] font-[700] lg:font-[500] text-[16px]">({res.role})</p>
-            <p className="text-[13px] lg:text-[16px]">{res.designation}</p>
+            <p className="text-[14px] lg:text-[16px]">{res.designation}</p>
           </div>
         ))}
       </div>
@@ -131,7 +131,7 @@ const committees = () => {
           <div key={index} className="p-10 bg-[#F5F5F5] w-full rounded-[12px] text-center  lg:max-h-[200px] max-h-[140px] max-w-[358px] flex flex-col justify-center">
             <h1 className="text-[#ED1C24] font-bold lg:text-[20px] text-[16px]">{res.name}</h1>
             <p className="lg:text-[20px] font-[500] text-[16px]">({res.role})</p>
-            <p className="text-[13px] lg:text-[16px]">{res.designation}</p>
+            <p className="text-[14px] lg:text-[16px]">{res.designation}</p>
           </div>
         ))}
       </div>
@@ -146,7 +146,7 @@ const committees = () => {
           <div key={index} className="p-10 bg-[#F5F5F5] w-full rounded-[12px] text-center flex flex-col justify-center text-center lg:max-h-[200px] max-h-[140px] max-w-[358px]">
             <h1 className="text-[#ED1C24] font-bold lg:text-[20px] text-[16px]">{res.name}</h1>
             <p className="lg:text-[20px] font-[500] text-[16px]">({res.role})</p>
-            <p className="text-[13px] lg:text-[16px]">{res.designation}</p>
+            <p className="text-[14px] lg:text-[16px]">{res.designation}</p>
           </div>
         ))}
       </div>
@@ -161,7 +161,7 @@ const committees = () => {
           <div key={index} className="p-10 bg-[#F5F5F5] w-full rounded-[12px] flex flex-col justify-center text-center lg:max-h-[200px] max-h-[140px] max-w-[358px]">
             <h1 className="text-[#ED1C24] font-bold lg:text-[20px] text-[16px]">{res.name}</h1>
             <p className="lg:text-[20px] font-[500] text-[16px]">({res.role})</p>
-            <p className="text-[13px] lg:text-[16px]">{res.designation}</p>
+            <p className="text-[14px] lg:text-[16px]">{res.designation}</p>
           </div>
         ))}
       </div>
@@ -175,7 +175,7 @@ const committees = () => {
           <div key={index} className="p-10 bg-[#F5F5F5] w-full rounded-[12px] flex flex-col justify-center text-center lg:max-h-[200px] max-h-[140px] max-w-[358px]">
             <h1 className="text-[#ED1C24] font-bold lg:text-[20px] text-[16px]">{res.name}</h1>
             <p className="lg:text-[20px] font-[500] text-[16px]">({res.role})</p>
-            <p className="text-[13px] lg:text-[16px]">{res.designation}</p>
+            <p className="text-[14px] lg:text-[16px]">{res.designation}</p>
           </div>
         ))}
       </div>
@@ -189,7 +189,7 @@ const committees = () => {
           <div key={index} className="p-10 bg-[#F5F5F5] w-full rounded-[12px] flex flex-col justify-center text-center lg:max-h-[200px] max-h-[140px] max-w-[358px]">
             <h1 className="text-[#ED1C24] font-bold lg:text-[20px] text-[16px]">{res.name}</h1>
             <p className="lg:text-[20px] font-[500] text-[16px]">({res.role})</p>
-            <p className="text-[13px] lg:text-[16px]">{res.designation}</p>
+            <p className="text-[14px] lg:text-[16px]">{res.designation}</p>
           </div>
         ))}
       </div>

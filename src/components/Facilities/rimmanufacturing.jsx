@@ -44,7 +44,7 @@ const rimmanufacturing = () => {
        <div className="lg:mt-20 mt-8 lg:py-10">
                 <div>
                     <h1 className="lg:text-[36px]  text-[24px] text-center lg:text-start w-[203px] lg:w-full  mx-auto">Steel Wheel Rim Manufacturing</h1>
-                    <p className="lg:text-[20px] text-[13px] leading-[20px] lg:leading-[28px]  text-center lg:text-start lg:max-w-[1116px] mt-5 text-[#82848A] mb-7">
+                    <p className="lg:text-[20px] text-[14px] leading-[20px] lg:leading-[28px]  text-center lg:text-start lg:max-w-[1116px] mt-5 text-[#82848A] mb-7">
                       MAIL operates a state-of-the-art Steel Wheel Rim manufacturing facility, capable of producing wheel rims ranging from 10” to 14” for two-wheelers, three-wheelers, and four-wheelers. Built with cutting-edge technology and automated SPMs, our production line ensures consistency, durability, and precision in every rim manufactured.
                     </p>
                 </div>
@@ -80,7 +80,7 @@ const rimmanufacturing = () => {
                 <p className='text-white'>{item.subtitle}</p>
                 <ul className="list-disc ml-6 max-w-[515px]">
                   {item.points.map((point, i) => (
-                    <li key={i} className='font-light text-white lg:leading-[30px] leading-[24px] lg:text-[16px] text-[13px]'>{point}</li>
+                    <li key={i} className='font-light text-white lg:leading-[30px] leading-[24px] lg:text-[16px] text-[14px]'>{point}</li>
                   ))}
                 </ul>
               </div>
@@ -96,7 +96,7 @@ const rimmanufacturing = () => {
           <div className="mt-20 py-10">
                 <div>
                     <h1 className="lg:text-[36px]  text-[24px] text-center lg:text-start w-[203px] lg:w-full  mx-auto">Motorcycle Rim Manufacturing</h1>
-                    <p className="lg:text-[20px] text-[13px] leading-[20px] lg:leading-[28px]  text-center lg:text-start lg:max-w-[1116px] mt-5 text-[#82848A]">
+                    <p className="lg:text-[20px] text-[14px] leading-[20px] lg:leading-[28px]  text-center lg:text-start lg:max-w-[1116px] mt-5 text-[#82848A]">
                      Our dedicated Motorcycle Rim Manufacturing Line is equipped with the latest automated technology to deliver high-quality rims with superior finish, strength, and accuracy. Each rim undergoes meticulous processing and testing to ensure it meets global standards of safety, durability, and performance.
                     </p>
                 </div>
@@ -108,7 +108,7 @@ const rimmanufacturing = () => {
               <div className='mt-5'>
                 <h1 className='lg:text-[26px] text-[20px] text-[#ED1C24] font-semibold'>Dedicated Motorcycle Rim <br/>
 Manufacturing Line</h1>
-              <ul  className="list-disc ml-6 text-[#82848A] text-[13px] lg:text-[16px] leading-[20px] mt-5 lg:mt-3 lg:leading-[34px]">
+              <ul  className="list-disc ml-6 text-[#82848A] text-[14px] lg:text-[16px] leading-[20px] mt-5 lg:mt-3 lg:leading-[34px]">
                 <li>Roll Forming: Multi-stage, state-of-the-art rim profile forming rolling mills from the UK, Japan, and Taiwan</li>
                 <li>Welding: High-performance Butt Welding SPM for strong and reliable joints</li>
                 <li>Polishing: Multi-stage, fully automatic profile grinding and polishing SPM from Italy for superior finish.</li>

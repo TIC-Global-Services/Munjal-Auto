@@ -30,7 +30,7 @@ const LegacySection = () => {
                             </h2>
                         </div>
 
-                        <p className="text-[#8C8989] font-medium text-[12px] md:text-base  md:text-left text-center leading-[19px] md:leading-[25px] lg:max-w-xl">
+                        <p className="text-[#8C8989] font-medium text-sm md:text-base  md:text-left text-center leading-[19px] md:leading-[25px] lg:max-w-xl">
                             Munjal Auto Industries Limited is a leader in engineering,
                             delivering cutting-edge solutions across industries. Driven by
                             innovation, we design and manufacture lightweight, durable, and

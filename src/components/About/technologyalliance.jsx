@@ -18,7 +18,7 @@ const technologyalliance = () => {
        <div className="grid grid-cols-1 lg:grid-cols-2 items-center lg:px-15 px-1">
       <div className="text-center">
         <h1 className="leading-[56px] lg:text-[46px] text-[24px]  text-left">Technology Alliances</h1>
-        <p className="text-[13px] lg:text-[18px] mt-3 text-left max-w-[592px]">
+        <p className="text-[14px] lg:text-[18px] mt-3 text-left max-w-[592px]">
           Working with Japanese company since last 2 decades, we have developed
           technical expertise & best manufacturing skills by practicing
           innovative strategies to deliver best to esteemed customers.
@@ -31,7 +31,7 @@ const technologyalliance = () => {
         <div className="bg-[#F5F5F5] rounded-[10px] p-5 lg:mt-0 mt-5 mb-5 max-h-[200px]">
           <img src={inductch5} width={592} height={157} className=""/>
         </div>
-        <p className="text-left text-[13px] lg:text-[18px] max-w-[592px]">Technical collaboration for design of exhaust systems for 2-3 wheelers</p>
+        <p className="text-left text-[14px] lg:text-[18px] max-w-[592px]">Technical collaboration for design of exhaust systems for 2-3 wheelers</p>
       </div>
     </div>
     </div>

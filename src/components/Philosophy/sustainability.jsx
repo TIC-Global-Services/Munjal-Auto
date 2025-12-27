@@ -60,7 +60,7 @@ const sustainability = () => {
             <h3 className="text-[24px] font-medium hidden lg:block text-foreground mb-4">
               Sustainability & Environment
             </h3>
-            <p className="lg:text-[16px] text-[12px] text-[#82848A] mb-4">
+            <p className="lg:text-[16px] text-[14px] text-[#82848A] mb-4">
               We take our responsibility to the planet seriously:
             </p>
             <ul className=" text-[#82848A] lg:text-[16px]lg:max-w-[487px] ">
@@ -70,7 +70,7 @@ const sustainability = () => {
                   className="flex items-start lg:leading-[34px] leading-[17px] gap-3 py-1 text-sm text-muted-foreground"
                 >
                   <span className="text-muted-foreground mt-0.5">•</span>
-                  <span className="lg:text-[16px] text-[12px]">{point}</span>
+                  <span className="lg:text-[16px] text-[14px]">{point}</span>
                 </li> 
               ))}
             </ul>

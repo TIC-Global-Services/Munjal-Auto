@@ -112,7 +112,7 @@ const MobileSlider = () => {
               <div className="font-bold text-sm">
                 {slides[activeIndex].title}
               </div>
-              <div className="text-xs text-gray-600 mt-1">
+              <div className="text-sm text-gray-600 mt-1">
                 {slides[activeIndex].desc.split("\n").map((line, i) => (
                   <div key={i}>{line}</div>
                 ))}

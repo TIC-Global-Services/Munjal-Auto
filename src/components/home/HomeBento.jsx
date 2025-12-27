@@ -25,8 +25,8 @@ const ExpertiseSection = () => {
 
                 {/* Description */}
                 <div className="max-w-3xl">
-                    <p className="text-gray-800 text-[10px] text-left md:text-base leading-[14px] md:leading-relaxed">
-                       we specialize in precision engineering and advanced manufacturing, delivering high-performance components that drive industries forward.
+                    <p className="text-gray-800 text-sm text-left md:text-base leading-[23px] md:leading-relaxed">
+                       We specialize in precision engineering and advanced manufacturing, delivering high-performance components that drive industries forward.
                     </p>
                 </div>
             </div>
@@ -175,7 +175,7 @@ const ProductionCapacity = () => {
                                     </motion.span>
                                     {item.unit}
                                 </motion.h3>
-                                <p className="text-gray-600 md:text-[16px] lg:leading-[27px] text-[5px] md:whitespace-normal whitespace-nowrap">
+                                <p className="text-gray-600 md:text-[16px] lg:leading-[27px] text-[10px] md:whitespace-normal">
                                     {item.product}
                                 </p>
                             </div>
@@ -218,7 +218,7 @@ const ProductionCapacity = () => {
                                     </motion.span>
                                     {item.unit}
                                 </motion.h3>
-                                <p className="text-gray-600 md:text-[16px] text-[5.83px] whitespace-nowrap">
+                                <p className="text-gray-600 md:text-[16px] text-[10px] whitespace-nowrap">
                                     {item.product}
                                 </p>
                             </div>

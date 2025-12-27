@@ -11,7 +11,7 @@ const GlobalPresence = () => {
           <h2 className="md:text-4xl text-2xl font-bold mb-4 md:mb-6">
             <span className="text-red-600">OEM</span> Collaborations
           </h2>
-          <p className="text-gray-300 md:text-base md:leading-6  leading-6 text-xs mb-6 ">
+          <p className="text-gray-300 md:text-base md:leading-6  leading-6 text-sm mb-6 ">
             Serving a global network of OEMs, Munjal Auto has established
             strategic collaborations with top-tier brands worldwide. Our
             footprint spans across continents, delivering tailored engineering
