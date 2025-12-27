@@ -36,8 +36,8 @@ const PinnedScrollSection = () => {
 
   return (
     <div className="relative">
-      {/* Container height set to 400vh for slow scroll */}
-      <div ref={containerRef} className="h-[400vh] sm:h-[500vh] md:h-[600vh] lg:h-[800vh] relative bg-white">
+      {/* Container height set to 300vh for slow scroll */}
+      <div ref={containerRef} className="h-[300vh] sm:h-[350vh] md:h-[400vh] lg:h-[450vh] relative bg-white">
         <div className="sticky top-0 h-screen w-full bg-white flex items-center justify-center">
           <div className="px-3 sm:px-4 md:px-6 lg:px-20 mx-auto w-full max-w-7xl bg-white h-full flex flex-col md:flex-row items-center gap-8 sm:gap-10 md:gap-8 lg:gap-12">
             {/* Left Side - Stacked Images */}

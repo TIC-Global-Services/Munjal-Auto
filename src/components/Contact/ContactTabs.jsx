@@ -185,7 +185,7 @@ const ContactTabs = () => {
     <div className="w-full max-w-6xl mx-auto bg-#2E2E2E">
 
       {/* Navigation Tabs */}
-      <div className="flex border-b">
+      <div className="flex">
         {tabs.map((tab) => (
           <button
             key={tab.id}
@@ -225,8 +225,8 @@ const ContactTabs = () => {
             </div> */}
 
             {/* Waghodia Plant */}
-            <div className="flex flex-col md:flex-row md:h-[380px]  rounded-lg overflow-hidden shadow-sm items-start justify-between">
-              <div className="w-full md:w-2/5   md:p-8 p-8 flex items-start md:pt-6">
+            <div className="flex flex-col md:flex-row md:h-[380px] rounded-lg overflow-hidden shadow-sm items-start justify-between">
+              <div className="w-full md:w-2/5 md:p-8 p-8 flex items-start md:pt-6">
                 <h3 className="text-[38px] text-black font-bold">Waghodia plant</h3>
               </div>
               <div className="w-full md:w-3/5 p-6 md:pl-60 flex flex-col justify-center md:pt-16">
