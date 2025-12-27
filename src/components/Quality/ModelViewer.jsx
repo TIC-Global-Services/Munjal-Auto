@@ -4,7 +4,6 @@ import { useGLTF, Center } from "@react-three/drei";
 
 import { Canvas } from "@react-three/fiber";
 import { Bounds, OrbitControls, Stage } from "@react-three/drei";
-import { Leva, useControls } from "leva";
 
 
 function Model({ rotationSpeed = 0.01 }) {
@@ -29,22 +28,14 @@ function Model({ rotationSpeed = 0.01 }) {
 useGLTF.preload("/3m.gltf");
 
 function ModelViewer() {
-  const {
-    fov,
-    scale,
-    rotationSpeed,
-    intensity,
-  } = useControls("3D Controls", {
-    fov: { value: 35, min: 20, max: 70 },
-    scale: { value: 0.8, min:0.2, max: 1.6, step: 0.01 },
-    rotationSpeed: { value: 0.02, min: 0, max: 0.03 },
-    intensity: { value: 1, min: 0.2, max: 3 },
-  });
+  // Static values instead of leva controls
+  const fov = 35;
+  const scale = 0.6;
+  const rotationSpeed = 0.02;
+  const intensity = 1;
 
   return (
     <>
-      {/* <Leva collapsed={false} /> */}
-
       <Canvas
         camera={{ fov, position: [0, 0, 5] }}
         dpr={[1, 2]}

@@ -18,13 +18,13 @@ const Policy = () => {
       <div className="hidden lg:block w-full px-4 lg:px-8 xl:px-16">
         <div className="relative w-full max-w-[90rem] mx-auto bg-[#F5F5F5] rounded-2xl px-12 lg:px-16  h-screen flex items-center justify-center">
 
-          <div className=" w-[520px] h-[320px] bg-white absolute -bottom-2 -left-2 x-20 rounded-2xl"/>
+          <div className=" w-[580px] h-[320px] bg-white absolute -bottom-8 -left-2 x-20 rounded-2xl"/>
           <div className="absolute top-[45.2%] left-0 w-6 h-6 rounded-full shadow-[-10px_10px_0_#fff] z-0 " />
           <div className="absolute bottom-0 left-[30%] md:left-[40.1%] w-6 h-6 rounded-full shadow-[-10px_10px_0_#fff] z-0 " />
 
 
           {/* 3D MODEL – FIXED CONTAINER */}
-          <div className="absolute bottom-0 left-0 z-50 w-[620px] h-[420px] ">
+          <div className="absolute -bottom-6 left-0 z-50 w-[720px] h-[420px] ">
             <ModelViewer />
           </div>
 
