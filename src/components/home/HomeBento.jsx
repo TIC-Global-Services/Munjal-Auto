@@ -44,7 +44,7 @@ const ManufacturingCapacity = () => {
     const locations = [{name:"Vadodara"}, {name:"Bawal"}, {name:"Haridwar"}, {name:"Dharuhera"},{name:"Sanand"}];
 
     return (
-        <div className="bg-[#F3F4F6] rounded-lg md:rounded-[26px] h-[601px] md:px-12 px-2  md:py-0 py-4 flex">
+        <div className="bg-[#F3F4F6] rounded-lg md:rounded-[26px] lg:h-[601px] h-[250px] md:px-12 px-2  md:py-0 py-4 flex">
             <div className="max-w-7xl  mx-auto flex justify-center mt-10 flex-col">
                 {/* Comment Header */}
                 <div className="md:text-[18px] text-[10px] whitespace-nowrap  text-gray-500 md:mb-1 mb-2">
@@ -57,7 +57,7 @@ const ManufacturingCapacity = () => {
                 </h2>
 
                 {/* Description */}
-                <div className="md:space-y-6  max-w-[469px]  md:mb-8 mt-10">
+                <div className="md:space-y-6  lg:max-w-[469px]  md:mb-8 mt-10">
                     <p className="text-gray-800 md:block hidden text-base">
                         Munjal Auto Industries is equipped to produce an impressive array of components to meet global demands.
                     </p>
@@ -140,9 +140,9 @@ const ProductionCapacity = () => {
     ];
 
     return (
-        <div ref={containerRef} className="bg-[#F3F4F6] h-[601px] rounded-lg md:rounded-[26px] md:px-12 md:py-16 py-6">
+        <div ref={containerRef} className="bg-[#F3F4F6] lg:h-[601px] rounded-lg md:rounded-[26px] md:px-12 md:py-16 py-6 px-3">
             <div className="max-w-7xl mx-auto">
-                <h2 className="text-base md:text-4xl lg:text-4xl font-[300] md:text-left text-center mb-4 md:mb-4">
+                <h2 className="text-base md:text-4xl lg:text-4xl font-[300] text-left mb-4 md:mb-4">
                     A <span className="text-red-600 font-medium">Strong foundation</span> for the future
 
                 </h2>
@@ -175,7 +175,7 @@ const ProductionCapacity = () => {
                                     </motion.span>
                                     {item.unit}
                                 </motion.h3>
-                                <p className="text-gray-600 md:text-[16px] leading-[27px] text-[5px] md:whitespace-normal whitespace-nowrap">
+                                <p className="text-gray-600 md:text-[16px] lg:leading-[27px] text-[5px] md:whitespace-normal whitespace-nowrap">
                                     {item.product}
                                 </p>
                             </div>
@@ -185,7 +185,7 @@ const ProductionCapacity = () => {
             </div>
             
             <div className="max-w-7xl mx-auto lg:mt-16 mt-4">
-                <h2 className="text-base md:text-[38px] leading-[48px] lg:text-4xl font-[500] text-left mb-4 md:mb-7 max-w-[965px]">
+                <h2 className="text-base md:text-[38px] lg:leading-[48px] lg:text-4xl font-[500] text-left mb-4 md:mb-7 max-w-[965px]">
                     Our <span className="text-red-600 font-medium">state of the art</span> facilities
                     have the annual capacity to produce
                 </h2>
@@ -197,7 +197,7 @@ const ProductionCapacity = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className=" hover:cursor-pointer rounded-md md:rounded-xl md:px-4 px-2 py-3 md:py-8 flex "
+                            className=" hover:cursor-pointer rounded-md md:rounded-xl md:px-4 px-2 md:py-8 flex "
                         >
                             <div className="flex flex-col items-start justify-start">
                                 <motion.h3
