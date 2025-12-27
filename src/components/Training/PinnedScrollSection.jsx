@@ -36,10 +36,10 @@ const PinnedScrollSection = () => {
 
   return (
     <div className="relative">
-      {/* Container height set to 300vh for slow scroll */}
-      <div ref={containerRef} className="h-[300vh] sm:h-[350vh] md:h-[400vh] lg:h-[450vh] relative bg-white">
+      {/* Container height set to reduced height for less gap */}
+      <div ref={containerRef} className="h-[250vh] sm:h-[280vh] md:h-[320vh] lg:h-[350vh] relative bg-white">
         <div className="sticky top-0 h-screen w-full bg-white flex items-center justify-center">
-          <div className="px-3 sm:px-4 md:px-6 lg:px-20 mx-auto w-full max-w-7xl bg-white h-full flex flex-col md:flex-row items-center gap-8 sm:gap-10 md:gap-8 lg:gap-12">
+          <div className="px-3 sm:px-4 md:px-6 lg:px-20 mx-auto w-full max-w-7xl bg-white h-full flex flex-col md:flex-row items-center gap-8 sm:gap-10 md:gap-4 lg:gap-8">
             {/* Left Side - Stacked Images */}
             <div className="w-full md:w-2/5 h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] relative bg-white flex items-center justify-center">
               <div className="relative w-[280px] sm:w-[350px] md:w-[450px] lg:w-[600px] h-[180px] sm:h-[220px] md:h-[280px] lg:h-[380px]">
@@ -78,13 +78,15 @@ const PinnedScrollSection = () => {
                       : [0.9 - (index * 0.03), 0.9 - (index * 0.03), 0.9 - (index * 0.03), 1, 0.85, 0.85]
                   );
 
-                  // Opacity - zero initial opacity to prevent overlapping
+                  // Opacity - zero initial opacity to prevent overlapping, except for first card
                   const opacityTransform = useTransform(
                     scrollYProgress,
                     [0, 0.05, start - 0.1, start, end, end + 0.1, 0.8, 1],
                     isLast 
                       ? [0, 0, 0, 0.2, 1, 1, 1, 1] 
-                      : [0, 0, 0, 0.3, 1, 0, 0, 0]
+                      : index === 0
+                        ? [1, 1, 1, 1, 1, 0, 0, 0] // First card starts visible
+                        : [0, 0, 0, 0.3, 1, 0, 0, 0]
                   );
 
                   // Dynamic z-index - better layering control

@@ -67,7 +67,7 @@ const Policy = () => {
       </div>
 
       {/* ================= MOBILE ================= */}
-      <div className="block lg:hidden w-full mt-20 mb-20 px-4">
+      <div className="block lg:hidden w-full mt-10 mb-10 px-4">
         <div className="bg-[#F5F5F5] rounded-3xl p-6 shadow-lg border-2 border-[#F5EDED]">
 
           {/* Header */}

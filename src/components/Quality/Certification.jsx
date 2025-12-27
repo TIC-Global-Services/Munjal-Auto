@@ -9,6 +9,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 
 const Certification = () => {
     const [currentSlide, setCurrentSlide] = useState(0)
+    const [currentMobileSlide, setCurrentMobileSlide] = useState(1)
 
     const certificates = [
         {
@@ -43,13 +44,13 @@ const Certification = () => {
         }
     ]
 
-    // Group certificates into slides of 3
+    // Group certificates into slides of 3 for desktop
     const slides = []
     for (let i = 0; i < certificates.length; i += 3) {
         slides.push(certificates.slice(i, i + 3))
     }
 
-    // Auto-scroll functionality
+    // Auto-scroll functionality for desktop
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentSlide((prev) => (prev + 1) % slides.length)
@@ -58,12 +59,29 @@ const Certification = () => {
         return () => clearInterval(interval)
     }, [slides.length])
 
+    // Auto-scroll functionality for mobile
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentMobileSlide((prev) => (prev + 1) % certificates.length)
+        }, 4000) // Change slide every 4 seconds
+
+        return () => clearInterval(interval)
+    }, [certificates.length])
+
     const nextSlide = () => {
         setCurrentSlide((prev) => (prev + 1) % slides.length)
     }
 
     const prevSlide = () => {
         setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
+    }
+
+    const nextMobileSlide = () => {
+        setCurrentMobileSlide((prev) => (prev + 1) % certificates.length)
+    }
+
+    const prevMobileSlide = () => {
+        setCurrentMobileSlide((prev) => (prev - 1 + certificates.length) % certificates.length)
     }
 
     return (
@@ -133,19 +151,63 @@ const Certification = () => {
                 </div>
             </div>
 
-            {/* Mobile Version - Static Display */}
-            <div className="md:hidden flex flex-col items-center w-full mx-auto gap-8">
-                {certificates.map((cert, index) => (
-                    <div key={index} className="flex flex-col items-center w-full">
-                        <img src={cert.image} className="rounded-lg w-[80%] max-w-[300px]" alt={cert.title} />
-                        <div className="text-center mt-2">
-                            {cert.year && (
-                                <h1 className="text-[#ED1C24] text-2xl">{cert.year}</h1>
-                            )}
-                            <h2 className="mt-1">{cert.title}</h2>
-                        </div>
+            {/* Mobile Version - Carousel */}
+            <div className="md:hidden relative">
+                <div className="overflow-hidden">
+                    <div 
+                        className="flex transition-transform duration-500 ease-in-out"
+                        style={{ transform: `translateX(-${currentMobileSlide * 100}%)` }}
+                    >
+                        {certificates.map((cert, index) => (
+                            <div key={index} className="w-full flex-shrink-0 flex flex-col items-center justify-center px-4 min-h-[400px]">
+                                <div className="flex flex-col items-center justify-center w-full">
+                                    <img 
+                                        src={cert.image} 
+                                        className="rounded-lg w-[80%] max-w-[300px] h-auto object-cover mx-auto" 
+                                        alt={cert.title} 
+                                    />
+                                    <div className="text-center mt-4 w-full">
+                                        {cert.year && (
+                                            <h1 className="text-[#ED1C24] text-2xl font-medium">{cert.year}</h1>
+                                        )}
+                                        <h2 className="mt-2 text-gray-700 text-sm leading-relaxed px-4">{cert.title}</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                ))}
+                </div>
+
+                {/* Mobile Navigation Buttons */}
+                {/* <button
+                    onClick={prevMobileSlide}
+                    className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-[#ED1C24] hover:bg-[#d91820] text-white rounded-full p-2 shadow-lg transition-all duration-200"
+                    aria-label="Previous certificate"
+                >
+                    <ArrowLeft size={16} />
+                </button>
+
+                <button
+                    onClick={nextMobileSlide}
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#ED1C24] hover:bg-[#d91820] text-white rounded-full p-2 shadow-lg transition-all duration-200"
+                    aria-label="Next certificate"
+                >
+                    <ArrowRight size={16} />
+                </button> */}
+
+                {/* Mobile Slide Indicators */}
+                <div className="flex justify-center mt-6 space-x-2">
+                    {certificates.map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => setCurrentMobileSlide(index)}
+                            className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                                currentMobileSlide === index ? 'bg-[#ED1C24]' : 'bg-gray-300'
+                            }`}
+                            aria-label={`Go to certificate ${index + 1}`}
+                        />
+                    ))}
+                </div>
             </div>
         </div>
     )

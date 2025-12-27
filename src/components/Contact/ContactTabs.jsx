@@ -172,7 +172,7 @@ const ContactTabs = () => {
             {/* Waghodia Plant */}
             <div className="flex flex-col md:flex-row md:h-[380px] rounded-lg overflow-hidden shadow-sm items-start justify-between">
               <div className="w-full md:w-2/5 md:p-8 p-8 flex items-start md:pt-6">
-                <h3 className="text-[38px] text-black font-bold">Waghodia plant</h3>
+                <h3 className="text-[30px] md:text-[38px] text-black font-bold">Waghodia plant</h3>
               </div>
               <div className="w-full md:w-3/5 p-6 md:pl-60 flex flex-col justify-center md:pt-16">
                 <h4 className="text-red-500 font-medium mb-3 text-[25px]">Contact now</h4>
@@ -187,7 +187,7 @@ const ContactTabs = () => {
             {/* Haridwar Plant */}
             <div className="flex flex-col md:flex-row md:h-[380px]  rounded-lg overflow-hidden shadow-sm items-start justify-center">
               <div className="w-full md:w-2/5   p-8 flex items-start md:pt-6">
-                <h3 className="text-[38px] text-black font-bold">Haridwar Plant</h3>
+                <h3 className="text-[30px] md:text-[38px] text-black font-bold">Haridwar Plant</h3>
               </div>
               <div className="w-full md:w-3/5 p-6 md:pl-60 flex flex-col justify-center md:pt-16">
                 <h4 className="text-red-500 font-medium mb-3 text-[25px]">Contact now</h4>
@@ -203,7 +203,7 @@ const ContactTabs = () => {
             {/* Bawal Plant */}
             <div className="flex flex-col md:flex-row md:h-[380px]  rounded-lg overflow-hidden shadow-sm items-start justify-center">
               <div className="w-full md:w-2/5   p-8 flex items-start md:pt-6">
-                <h3 className="text-[38px] text-black font-bold">Bawal Plant & Cenral Tool Room</h3>
+                <h3 className="text-[30px] md:text-[38px] text-black font-bold">Bawal Plant & Cenral Tool Room</h3>
               </div>
               <div className="w-full md:w-3/5 p-6 md:pl-60 flex flex-col justify-center md:pt-16">
                 <h4 className="text-red-500 font-medium mb-3 text-[25px]">Contact now</h4>
@@ -218,7 +218,7 @@ const ContactTabs = () => {
             {/* Dharuhera Plant */}
             <div className="flex flex-col md:h-[380px] md:flex-row  rounded-lg overflow-hidden shadow-sm items-start justify-center">
               <div className="w-full md:w-2/5   p-8 flex items-start md:pt-6">
-                <h3 className="text-[38px] text-black font-bold">Dharuhera Plant</h3>
+                <h3 className="text-[30px] md:text-[38px] text-black font-bold">Dharuhera Plant</h3>
               </div>
               <div className="w-full md:w-3/5 p-6 md:pl-60 flex flex-col justify-center md:pt-16">
                 <h4 className="text-red-500 font-medium mb-3 text-[25px]">Contact now</h4>
@@ -232,7 +232,7 @@ const ContactTabs = () => {
             {/*Sanand Plant*/}
             <div className="flex flex-col md:h-[380px] md:flex-row  rounded-lg overflow-hidden shadow-sm items-start justify-center">
               <div className="w-full md:w-2/5   p-8 flex items-start md:pt-6">
-                <h3 className="text-[38px] text-black font-bold">Sanand Plant</h3>
+                <h3 className="text-[30px] md:text-[38px] text-black font-bold">Sanand Plant</h3>
               </div>
               <div className="w-full md:w-3/5 p-6 md:pl-60 flex flex-col justify-center md:pt-16">
                 <h4 className="text-red-500 font-medium mb-3 text-[25px]">Contact now</h4>

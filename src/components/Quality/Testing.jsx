@@ -136,9 +136,20 @@ const Testing = () => {
     setCurrentIndex(currentIndex === 0 ? contents.length - 1 : currentIndex - 1);
   };
 
+  // Function to calculate dynamic spacing based on content length
+  const getDynamicSpacing = (contentLength) => {
+    if (contentLength <= 3) return 'pb-4 sm:pb-5 md:pb-6'; // Short content
+    if (contentLength <= 6) return 'pb-3 sm:pb-4 md:pb-5'; // Medium content  
+    if (contentLength <= 8) return 'pb-2 sm:pb-3 md:pb-4';  // Long content
+    return 'pb-1 sm:pb-2 md:pb-3'; // Very long content
+  };
+
+  // Get current card's content length
+  const currentContentLength = contents[currentIndex]?.description.length || 0;
+
 
   return (
-    <div className="relative min-h-screen pt-10 pb-10 w-full max-w-7xl mx-auto rounded-2xl overflow-hidden">
+    <div className={`relative min-h-screen pt-10 w-full max-w-7xl mx-auto rounded-2xl overflow-hidden transition-all duration-500 ${getDynamicSpacing(currentContentLength)}`}>
 
       <div className="text-center flex flex-col items-center justify-center px-4">
         <h1 className="text-2xl md:text-[40px] font-medium text-[#141313]">Testing & Facilities Lab</h1>
@@ -160,7 +171,7 @@ const Testing = () => {
         >
           {contents.map((item, index) => (
             <div key={index} className="w-full flex-shrink-0">
-              <div className="rounded-lg p-4 sm:p-6 lg:p-8 mx-2 sm:mx-4">
+              <div className="rounded-lg p-4 sm:p-6 lg:p-8 mx-2 sm:mx-4 relative">
                 {/* Title */}
                 <h2 className="text-xl sm:text-2xl font-medium text-[#ED1C24] mb-4 sm:mb-6 text-start">
                   {item.title}
@@ -201,39 +212,39 @@ const Testing = () => {
                     )}
                   </div>
                 </div>
+
+                {/* Navigation Buttons - Inside each card */}
+                <div className="flex justify-end gap-2 mt-6 sm:mt-8">
+                  {/* Previous button - only show if not on first card */}
+                  {currentIndex > 0 && (
+                    <button
+                      onClick={prevSlide}
+                      className="bg-[#FF0000] hover:bg-[#ff0000e5] text-white rounded-full p-2 sm:p-3 shadow-lg transition-all duration-200 hover:scale-110 disabled:opacity-50"
+                      aria-label="Previous slide"
+                    >
+                      <ArrowLeft size={16} className="sm:hidden" />
+                      <ArrowLeft size={20} className="hidden sm:block lg:hidden" />
+                      <ArrowLeft size={24} className="hidden lg:block" />
+                    </button>
+                  )}
+
+                  {/* Next button - only show if not on last card */}
+                  {currentIndex < contents.length - 1 && (
+                    <button
+                      onClick={nextSlide}
+                      className="bg-[#FF0000] hover:bg-[#ff0000e5] text-white rounded-full p-2 sm:p-3 shadow-lg transition-all duration-200 hover:scale-110 disabled:opacity-50"
+                      aria-label="Next slide"
+                    >
+                      <ArrowRight size={16} className="sm:hidden" />
+                      <ArrowRight size={20} className="hidden sm:block lg:hidden" />
+                      <ArrowRight size={24} className="hidden lg:block" />
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
           ))}
         </div>
-      </div>
-
-      {/* Navigation Buttons - Responsive positioning */}
-      <div className="absolute bottom-2 sm:bottom-4 right-4 flex gap-2 z-10">
-        {/* Previous button - only show if not on first card */}
-        {currentIndex > 0 && (
-          <button
-            onClick={prevSlide}
-            className="bg-[#FF0000] hover:bg-[#ff0000e5] text-white rounded-full p-2 sm:p-3 shadow-lg transition-all duration-200 hover:scale-110 disabled:opacity-50"
-            aria-label="Previous slide"
-          >
-            <ArrowLeft size={16} className="sm:hidden" />
-            <ArrowLeft size={20} className="hidden sm:block lg:hidden" />
-            <ArrowLeft size={24} className="hidden lg:block" />
-          </button>
-        )}
-
-        {/* Next button - only show if not on last card */}
-        {currentIndex < contents.length - 1 && (
-          <button
-            onClick={nextSlide}
-            className="bg-[#FF0000] hover:bg-[#ff0000e5] text-white rounded-full p-2 sm:p-3 shadow-lg transition-all duration-200 hover:scale-110 disabled:opacity-50"
-            aria-label="Next slide"
-          >
-            <ArrowRight size={16} className="sm:hidden" />
-            <ArrowRight size={20} className="hidden sm:block lg:hidden" />
-            <ArrowRight size={24} className="hidden lg:block" />
-          </button>
-        )}
       </div>
     </div>
   )

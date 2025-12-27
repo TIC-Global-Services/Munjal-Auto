@@ -38,13 +38,13 @@ const ContactHero = () => {
                             />
                         </Link> */}
 
-                        <Link to="/contact">
+                        {/* <Link to="/contact">
                             <img
                                 src={icon2}
                                 alt="contact"
                                 className="w-[55px] cursor-pointer hover:scale-125"
                             />
-                        </Link>
+                        </Link> */}
                     </div>
 
                     {/* Centered Text and Timeline Container */}
