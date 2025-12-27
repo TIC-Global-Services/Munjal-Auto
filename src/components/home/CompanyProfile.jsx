@@ -84,7 +84,7 @@ const CompanyProfile = () => {
                     {/* Right Section */}
                     <motion.div
                         variants={itemVariants}
-                        className="w-[95%] md:py-0 mt-6 md:mt-10 lg:mt-0 md:w-[45%] lg:w-[50%]"
+                        className="w-[95%] md:py-0 mt-6 md:mt-10 lg:mt-0 md:w-[45%] lg:w-[50%] flex justify-end"
                     >
                         <img
                             src={secbanner}

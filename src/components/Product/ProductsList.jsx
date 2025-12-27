@@ -499,7 +499,7 @@ const ProductsList = () => {
               initial={{ opacity: 0, y: 50, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="mb-12 overflow-hidden bg-white p-4 rounded-xl"
+              className="mb-12 overflow-hidden bg-white p-4 rounded-xl max-w-[1214px] mx-auto "
             >
               {/* Desktop Layout: Row with 3 columns */}
               <motion.div
@@ -520,12 +520,12 @@ const ProductsList = () => {
                       duration: 0.6,
                       ease: "easeOut",
                     }}
-                    className="flex items-center justify-center rounded-lg"
+                    className="flex items-center  justify-center rounded-lg"
                   >
                     <motion.img
                       src={item.image}
                       alt={item.title}
-                      className="w-full max-w-[240px] h-auto object-contain rounded-lg"
+                      className="w-full max-w-[240px]  h-auto object-contain rounded-lg"
                     />
                   </motion.div>
                 </div>
@@ -614,7 +614,7 @@ const ProductsList = () => {
               {/* Mobile Layout: Keep your original mobile design */}
               <div className="md:hidden lg:px-5">
                 {/* Image Section */}
-                <div className="bg-[#EBEBEF] flex items-center justify-center  w-full h-[298px] m-auto rounded-md">
+                <div className="bg-[#EBEBEF] flex items-center justify-center  ">
                   <motion.div
                     initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
                     animate={{
@@ -627,12 +627,12 @@ const ProductsList = () => {
                       duration: 0.6,
                       ease: "easeOut",
                     }}
-                    className="flex items-center  justify-center"
+                    className="flex  items-center p-10 justify-center max-w-[310px] h-[298px] m-auto rounded-md"
                   >
                     <motion.img
                       src={item.image}
                       alt={item.title}
-                      className="w-auto lg:max-w-[280px] h-auto object-contain"
+                      className="w-full h-auto object-contain"
                     />
                   </motion.div>
                 </div>

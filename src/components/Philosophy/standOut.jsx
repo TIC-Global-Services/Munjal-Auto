@@ -49,7 +49,7 @@ const standOut = () => {
           {/* Bottom Left */}
           <div className="hidden lg:block order-3">
             <div className="flex justify-center z-10 relative">
-              <h1 className="text-2xl md:text-3xl mt-10 lg:text-4xl xl:text-[48px] font-semibold ">
+              <h1 className="text-2xl md:text-3xl mt-16 lg:text-4xl leading-[60px] xl:text-[48px] font-[500] ">
                 What We <br className="hidden md:block"/> Stand For
               </h1>
               <div className="absolute bg-white w-[750px] lg:w-[850px] top-0 right-0  -z-10 h-[250px] rounded-[12px] hidden lg:block "></div>
@@ -66,8 +66,9 @@ const standOut = () => {
              To produce excellent quality products by adopting best business practices by dedicated proactive & accountable group of people having quest of excellence through latest technology & people empowerment.
             </p>
           </div>
-          <div className="absolute bg-[#EBEBEB] hidden lg:block lg:min-w-[650px] 2xl:max-w-[844px] -z-20 -bottom-8 md:-left-[24px] md:h-[50px] rounded-bl-[12px] rounded-br-[12px]"></div>
+
           </div>
+                    <div className="absolute bg-[#EBEBEB] hidden lg:block w-[652px] -z-20 -bottom-3 md:right-[0px] md:h-[30px] rounded-bl-[12px] rounded-br-[12px]"></div>
         </div>
       </div>
     </div>

@@ -48,7 +48,7 @@ const Certifications = () => {
       </h1>
 
 
-      <div className="flex flex-wrap justify-center gap-8 sm:gap-10 lg:gap-10">
+      <div className="grid lg:grid-cols-5 grid-cols-1">
         {contents.map((content, index) => (
           <div
             key={index}

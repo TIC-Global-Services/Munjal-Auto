@@ -6,7 +6,7 @@ import machine from "../../assets/machine.png";
 const ExpertiseSection = () => {
     return (
         <div className="bg-[#F3F4F6] px-6  flex rounded-lg md:py-0 py-4 md:rounded-[26px]  h-full">
-            <div className="max-w-7xl md:items-start items-center flex flex-col justify-center md:pl-4  mx-auto">
+            <div className="max-w-7xl md:items-start items-start flex flex-col justify-center md:pl-4  mx-auto">
                 {/* Comment Header */}
                 <div className="md:text-sm text-[10px] text-gray-500 mb-2 md:mb-8">
             //OUR EXPERTISE
@@ -44,20 +44,20 @@ const ManufacturingCapacity = () => {
     const locations = [{name:"Vadodara"}, {name:"Bawal"}, {name:"Haridwar"}, {name:"Dharuhera"},{name:"Sanand"}];
 
     return (
-        <div className="bg-[#F3F4F6] rounded-lg md:rounded-[26px] h-full md:px-12 px-2  md:py-0 py-4 flex">
-            <div className="max-w-7xl mx-auto flex justify-center flex-col">
+        <div className="bg-[#F3F4F6] rounded-lg md:rounded-[26px] h-[601px] md:px-12 px-2  md:py-0 py-4 flex">
+            <div className="max-w-7xl  mx-auto flex justify-center mt-10 flex-col">
                 {/* Comment Header */}
-                <div className="md:text-sm text-[10px] whitespace-nowrap  text-gray-500 md:mb-1 mb-2">
+                <div className="md:text-[18px] text-[10px] whitespace-nowrap  text-gray-500 md:mb-1 mb-2">
             //MANUFACTURING CAPACITY
                 </div>
 
                 {/* Title */}
-                <h2 className="text-base whitespace-nowrap md:text-left text-center md:whitespace-normal md:text-4xl  font-[300] md:mb-5 mb-2">
+                <h2 className="text-base whitespace-nowrap md:text-left text-center md:whitespace-normal md:text-[40px] md:leading-[48px]  font-[500] md:mb-10 mb-2">
                     Daily <span className="text-red-600 font-medium">Outputs</span>
                 </h2>
 
                 {/* Description */}
-                <div className="md:space-y-6  max-w-3xl   md:mb-8">
+                <div className="md:space-y-6  max-w-[469px]  md:mb-8 mt-10">
                     <p className="text-gray-800 md:block hidden text-base">
                         Munjal Auto Industries is equipped to produce an impressive array of components to meet global demands.
                     </p>
@@ -71,7 +71,7 @@ const ManufacturingCapacity = () => {
                 </div>
 
                 {/* Location Tags */}
-                <div className="md:flex -mt-4 hidden flex-wrap gap-2 lg:max-w-[500px]">
+                <div className="md:flex -mt-1 hidden flex-wrap gap-2 lg:max-w-[500px]">
                     {locations.map((location, index) => (
                         <div
                             key={index}
@@ -122,9 +122,9 @@ const ProductionCapacity = () => {
             prefix: "> ",
         },
         {
-            quantity: 2,
+            quantity: 12,
             unit: " Nos.",
-            product: "State of the art R&D center in India",
+            product: "State of the art 10 Manufacturing plants and 2 R&D",
         },
         {
             quantity: 5,
@@ -140,23 +140,23 @@ const ProductionCapacity = () => {
     ];
 
     return (
-        <div ref={containerRef} className="bg-[#F3F4F6] rounded-lg md:rounded-[26px] md:px-12 md:py-16 py-6 px-2">
+        <div ref={containerRef} className="bg-[#F3F4F6] h-[601px] rounded-lg md:rounded-[26px] md:px-12 md:py-16 py-6">
             <div className="max-w-7xl mx-auto">
-                <h2 className="text-base md:text-4xl lg:text-4xl font-[300] md:text-left text-center mb-4 md:mb-7">
+                <h2 className="text-base md:text-4xl lg:text-4xl font-[300] md:text-left text-center mb-4 md:mb-4">
                     A <span className="text-red-600 font-medium">Strong foundation</span> for the future
 
                 </h2>
 
-                <div className="grid grid-cols-2 md:grid-cols-2 gap-4 lg:grid-cols-4  xl:grid-cols-4 md:gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-2 gap-4 lg:grid-cols-4 items-start xl:grid-cols-4 md:gap-4">
                     {capacityData2.map((item, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
                             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                             // transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-[#F3F4F6] hover:cursor-pointer   md:px-4 px-2 lg:py-3 md:py-8 flex"
+                            className="bg-[#F3F4F6] hover:cursor-pointer lg:py-3 md:py-8 flex"
                         >
-                            <div className="lg:space-y-2 flex flex-col flex-wrap items-start justify-center">
+                            <div className=" flex flex-col flex-wrap items-start justify-center ">
                                 <motion.h3
                                     className="lg:text-[32px] text-[11.65px]  whitespace-nowrap font-bold"
                                     initial={{ opacity: 0 }}
@@ -175,7 +175,7 @@ const ProductionCapacity = () => {
                                     </motion.span>
                                     {item.unit}
                                 </motion.h3>
-                                <p className="text-gray-600 md:text-[16px] text-[5px] ">
+                                <p className="text-gray-600 md:text-[16px] leading-[27px] text-[5px] md:whitespace-normal whitespace-nowrap">
                                     {item.product}
                                 </p>
                             </div>
@@ -185,7 +185,7 @@ const ProductionCapacity = () => {
             </div>
             
             <div className="max-w-7xl mx-auto lg:mt-16 mt-4">
-                <h2 className="text-base md:text-4xl lg:text-4xl font-[500] text-left mb-4 md:mb-7">
+                <h2 className="text-base md:text-[38px] leading-[48px] lg:text-4xl font-[500] text-left mb-4 md:mb-7 max-w-[965px]">
                     Our <span className="text-red-600 font-medium">state of the art</span> facilities
                     have the annual capacity to produce
                 </h2>
@@ -199,7 +199,7 @@ const ProductionCapacity = () => {
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             className=" hover:cursor-pointer rounded-md md:rounded-xl md:px-4 px-2 py-3 md:py-8 flex "
                         >
-                            <div className="lg:space-y-2 flex flex-col items-start justify-center">
+                            <div className="flex flex-col items-start justify-start">
                                 <motion.h3
                                     className="lg:text-[32px] text-[11.65px] uppercase whitespace-nowrap font-bold "
                                     initial={{ opacity: 0 }}
