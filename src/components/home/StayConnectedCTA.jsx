@@ -28,7 +28,7 @@ const StayConnectedCTA = () => {
 
        
   
-        <div className="flex flex-col md:hidden bg-[#ED1C24]  items-center py-[30px] sm:py-[40px] mt-6 sm:mt-10 mb-16 sm:mb-20  justify-center ">
+        <div className="flex flex-col md:hidden bg-[#ED1C24]  items-center py-[30px] sm:py-[40px] mt-5 sm:mt-10 mb-5 sm:mb-20  justify-center ">
           <img src={logo} alt="Logo" className="w-16 sm:w-20"/>
           <h2 className="text-xl sm:text-2xl font-normal mt-2 sm:mt-3 text-white">Stay Connected</h2>
           <p className="text-sm sm:text-sm text-center mt-4 mb-2 sm:mb-3 text-white">
@@ -37,7 +37,7 @@ const StayConnectedCTA = () => {
               expertise and industry-leading solutions
             </p>
             <Link to="/about-us">
-              <button className="bg-white text-xs sm:text-sm text-black px-4 sm:px-6 py-2 rounded-full hover:bg-gray-100 transition-colors">
+              <button className="bg-white text-xs sm:text-sm text-black px-4 sm:px-6 py-2 rounded-full hover:bg-gray-100 transition-colors mb-5">
                 More About Us
               </button>
             </Link>

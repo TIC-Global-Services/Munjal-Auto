@@ -370,13 +370,13 @@ const WhyMunjalAutos = () => {
     });
     
     return (
-      <div className="relative mt-5 px-2 sm:px-4 md:px-8 lg:px-20 lg:mx-8 py-6 md:py-16 lg:py-14 min-h-screen md:min-h-[600vh]" ref={containerRef}>
+      <div className="relative mt-5 px-2 sm:px-4 md:px-20 lg:px-20 md:mx-8 lg:mx-8 py-6 md:py-16 lg:py-14 min-h-screen md:min-h-[600vh]" ref={containerRef}>
           {/* Background gradient with responsive positioning and lower z-index */}
           <div className="sticky top-0 left-0 z-[10] pointer-events-none w-full h-0 overflow-hidden">
             <img
               src={gradient}
               alt="Gradient"
-              className="absolute top-0 left-0 z-[10] w-full md:w-1/2 lg:w-2/5 h-screen object-cover object-left"
+              className="absolute top-0 left-0 z-[10] w-full md:w-2/5 lg:w-2/5 h-screen object-cover object-left"
             />
           </div>
   
@@ -398,7 +398,7 @@ const WhyMunjalAutos = () => {
                 Auto ?
               </h2>
  
-              <p className="text-gray-700 text-sm sm:text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl">
+              <p className="text-gray-700 text-lg leading-relaxed max-w-2xl mx-auto">
                Munjal Auto is a trusted name in the automotive industry, delivering critical components like exhaust systems, fuel tanks, rims, and BIW parts—engineered for superior performance and safety. Beyond automotive, our renewable energy solutions, including windmill blades and specialized components, drive advancements in clean energy. With a blend of engineering excellence and forward-thinking design, we create solutions that power industries into the future.
               </p>
  
@@ -412,12 +412,12 @@ const WhyMunjalAutos = () => {
             {/* Right content section - responsive layout with proper z-index */}
             <div className="flex flex-col md:flex-row items-center w-full md:w-[85%] space-y-4 md:space-y-0 relative z-[700]">
               {/* 3D Model Viewer - responsive sizing with proper z-index */}
-              <div className="w-full max-w-md md:max-w-none h-[180px] sm:h-[200px] md:h-[300px] lg:h-[350px] relative z-[705]">
+              <div className="w-full max-w-md md:max-w-none h-[180px] sm:h-[200px] md:h-[350px] lg:h-[350px] relative z-[705]">
                 <ModelViewer scrollProgress={scrollYProgress} />
               </div>
   
               {/* Features list - responsive layout with proper z-index */}
-              <div className="space-y-5 w-full md:w-full md:ml-4 lg:ml-8  md:mt-0 lg:-mt-32 relative z-[705]">
+              <div className=" w-full md:w-full md:ml-8 lg:ml-8  md:-mt-32 lg:-mt-32 relative z-[705]">
                 {features.map((feature, index) => {
                   // Improved scroll trigger points
                   const startPoint = Math.min(0.1 + index * 0.15, 0.7);
@@ -432,7 +432,7 @@ const WhyMunjalAutos = () => {
                   return (
                     <motion.div
                       key={index}
-                      className="border-b border-gray-200 pb-4 px-3 lg:px-0 last:border-b-0"
+                      className="border-b border-gray-200 pb-4 md:px-0 lg:px-0 last:border-b-0"
                       style={{
                         opacity: featureInView,
                         transform: useTransform(
@@ -442,10 +442,10 @@ const WhyMunjalAutos = () => {
                         ),
                       }}
                     >
-                      <h3 className="text-lg md:text-xl lg:text-[30px] lg:leading-[50px] text-[#151414] font-medium m-1 lg:mb-2 whitespace-pre-line">
+                      <h3 className="text-lg md:text-[30px] lg:text-[30px] sm:leading-[24px] md:leading-[30px] lg:leading-[30px] text-[#151414] md:text-left lg:text-left font-medium m-1 md:mb-2 lg:mb-2 whitespace-pre-line">
                         {feature.title}
                       </h3>
-                      <p className="text-[#8C8989] leading-[30px] px-1 lg:px-0 text-sm whitespace-pre-line md:text-base">
+                      <p className="text-[#8C8989] md:leading-[20px] lg:leading-[24px] px-1 lg:px-0 text-sm whitespace-pre-line text-center lg:text-left md:text-base">
                         {feature.description}
                       </p>
                     </motion.div>
@@ -461,4 +461,5 @@ const WhyMunjalAutos = () => {
 
 
 export default WhyMunjalAutos
+
 

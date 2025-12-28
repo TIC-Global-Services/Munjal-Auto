@@ -50,7 +50,7 @@ const CompanyProfile = () => {
                     >
                         <motion.div
                             variants={itemVariants}
-                            className="uppercase tracking-wider text-[10px] md:text-sm text-gray-400"
+                            className="uppercase tracking-wider text-[10px] md:text-sm text-gray-400 mb-[20px] lg:mb-0 mt-[10px]"
                         >
                          // COMPANY PROFILE
                         </motion.div>
@@ -67,7 +67,7 @@ const CompanyProfile = () => {
 
                         <motion.p
                             variants={itemVariants}
-                            className="text-gray-300 md:text-lg text-sm md:pt-0 pt-2 md:w-[90%] leading-[23px] sm:leading-[29px] tracking-[2%] sm:tracking-[2%]"
+                            className="text-gray-300 md:text-lg text-sm md:pt-0 pt-3 md:w-[90%] leading-[23px] sm:leading-[29px] tracking-[2%] sm:tracking-[2%]"
                         >
                            Munjal Auto Industries Limited  is a diversified engineering group, delivering cutting - edge solutions. Driven by innovation, we design and manufacture lightweight, durable, and sustainable components using advanced sheet metal, composite materials, and precision molding techniques for automotive, aerospace, renewable energy, defense, and railways.
                         </motion.p>

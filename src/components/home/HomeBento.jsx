@@ -47,12 +47,12 @@ const ManufacturingCapacity = () => {
         <div className="bg-[#F3F4F6] rounded-lg md:rounded-[26px] lg:h-[601px] h-[250px] md:px-12 px-2  md:py-0 py-4 flex">
             <div className="max-w-7xl  mx-auto flex justify-start  flex-col">
                 {/* Comment Header */}
-                <div className="md:text-[18px] text-[10px] whitespace-nowrap  text-gray-500 md:mb-1 mb-2">
+                <div className="md:text-[18px] text-[10px] whitespace-nowrap mt-5 text-gray-500 md:mb-1 mb-2">
             //MANUFACTURING CAPACITY
                 </div>
 
                 {/* Title */}
-                <h2 className="text-base whitespace-nowrap md:text-left text-center md:whitespace-normal md:text-[40px] md:leading-[48px]  font-[500] md:mb-10 mb-2">
+                <h2 className="text-base whitespace-nowrap md:text-left text-left md:whitespace-normal md:text-[40px] md:leading-[48px]  font-[500] md:mb-10 mb-2">
                     Daily <span className="text-red-600 font-medium">Outputs</span>
                 </h2>
 
@@ -65,7 +65,7 @@ const ManufacturingCapacity = () => {
                     <p className="text-gray-800 md:block hidden    text-base">
                        With a robust manufacturing setup across multiple locations—including
                     </p>
-                    <p className=" text-[#151414] text-center  md:hidden block  text-[10px] leading-[13px]">
+                    <p className=" text-[#151414] md:hidden block  text-[10px] leading-[13px]  text-left lg:text-center">
                          Munjal Auto Industries is equipped to produce an impressive array of components to meet global demands.
                     </p>
                 </div>

@@ -51,7 +51,7 @@ export const CoreValuesSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:justify-between md:gap-44">
           {/* Left Column - Title */}
           <motion.div variants={titleVariants} className="mt-4">
-            <h1 className="text-2xl md:text-left font-[300] lg:leading-[63px] text-center md:text-4xl lg:text-[3rem] ">
+            <h1 className=" md:text-left font-[300] lg:leading-[63px] text-center text-[1.5rem] sm:text-[1.5rem] md:text-[1rem] lg:text-[3rem] ">
               <span className="whitespace-nowrap">
                 {" "}
                 The Core of {" "}
@@ -72,7 +72,14 @@ export const CoreValuesSection = () => {
           <div className="grid grid-cols-2 gap-2 md:gap-5 lg:gap-x-20">
             {/* Quality Card */}
             <motion.div
-              variants={cardVariants} className="bg-[#F3F4F6] p-3 md:px-6 rounded-lg md:rounded-[32px] lg:w-[284px] lg:max-h-[270px]" >
+              variants={cardVariants} className=" bg-[#F3F4F6]
+    p-3 md:p-6
+    rounded-lg md:rounded-[32px]
+    w-full
+    min-w-[284px]
+    mx-auto
+    min-h-[220px]
+    flex flex-col" >
               <div className="lg:w-[20px] lg:h-[20px] h-[16px] w-[16px] mt-2 md:mt-3">
                 <img src={ssvglogo} className="w-full h-full" />
               </div>
