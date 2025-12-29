@@ -153,20 +153,22 @@ const TestingContent = () => {
      // Show limited items when "Show Less" is active
     const visibleExhaustItems = showAllExhaust ? exhaustSystemList : exhaustSystemList.slice(0, 3);
     return (
-        <div className="max-w-7xl mx-auto lg:px-4 px-3 mb-20">
+        <div className="max-w-7xl mx-auto  mb-20 ">
 
-            <h1 className="text-[#151414] lg:text-[28px] text-[14px] leading-[24px] lg:leading-[57px] text-center max-w-4xl mx-auto mt-18 lg:mt-20 py-5">
+            <div className='px-6 lg:px-0 xl:px-0 sm:px-0'>
+              <h1 className="text-[#151414] lg:text-[28px]  text-base leading-[24px] lg:leading-[57px] text-center  lg:max-w-4xl mx-auto mt-18 lg:mt-20 py-5">
                 Our facilities go beyond manufacturing, every component undergoes rigorous testing and validation to meet the highest quality standards of global OEMs
             </h1>
-            <div className="lg:mt-20 mt-10 lg:py-10">
+            </div>
+            <div className="lg:mt-20 mt-10 lg:py-10 lg:px-6 sm:px-3 px-3">
                 <div>
-                    <h1 className="lg:text-[36px] text-[24px] text-center lg:text-start">Fuel Tank Manufacturing</h1>
-                    <p className="lg:text-[20px] text-[14px] mt-3 lg:max-w-[1116px] lg:text-start text-center leading-[28px] text-[#82848A]">
+                    <h1 className="lg:text-[36px] text-[24px] lg:text-start sm:text-center text-start">Fuel Tank Manufacturing</h1>
+                    <p className="lg:text-[20px] text-[14px] mt-3 lg:max-w-[1116px] lg:text-start sm:text-center text-start leading-[28px] text-[#82848A]">
                         At Munjal Auto Industries Limited (MAIL), we produce 500 passenger car fuel tanks per day, with a total installed capacity of 1,500 assemblies daily. Leveraging advanced technology, modern equipment, and precision tooling, we maintain uncompromising standards of quality through robust processes, multi-stage inspections, and stringent testing protocols.
                     </p>
                 </div>
             </div>
-           <div className="relative">
+           <div className="relative md:px-6 sm:px-3 px-3">
              <Swiper
                modules={[Navigation]}
                spaceBetween={30}
@@ -180,7 +182,7 @@ const TestingContent = () => {
              >
                {manufacturingList.map((item, index) => (
                  <SwiperSlide key={index}>
-                   <div className="flex lg:flex-row flex-col gap-10 my-6">
+                   <div className="flex xl:flex-row md:flex-col lg:flex-col gap-10 my-6">
                      <img
                        src={item.img}
                        width={755}
@@ -205,16 +207,16 @@ const TestingContent = () => {
              </Swiper>
 
              {/* Custom navigation buttons */}
-             <div className="flex justify-end gap-2 absolute -bottom-10 right-4 z-10">
+             <div className="flex justify-end gap-2 absolute lg:bottom-4 right-4 z-10">
                <ArrowLeft color="#ffffff" strokeWidth={1.5} absoluteStrokeWidth className='custom-prev bg-[#ED1C24] rounded-full p-2 w-10 h-10 cursor-pointer'/>
                <ArrowRight color="#ffffff" strokeWidth={1.5} absoluteStrokeWidth className='custom-next bg-[#ED1C24] rounded-full p-2 w-10 h-10 cursor-pointer'/>
              </div>
            </div>
 
-              <div className="mt-20 py-10">
+              <div className="mt-20 py-10 lg:px-6 sm:px-6 px-3">
                 <div>
-                    <h1 className="lg:text-[36px]  text-[24px] text-center lg:text-start w-[203px] lg:w-full  mx-auto">Exhaust Systems Manufacturing</h1>
-                    <p className="lg:text-[20px] text-[14px] leading-[20px] lg:leading-[28px]  text-center lg:text-start lg:max-w-[1116px] mt-5 text-[#82848A]">
+                    <h1 className="lg:text-[36px]  text-[24px] text-start  w-full">Exhaust Systems Manufacturing</h1>
+                    <p className="lg:text-[1.25rem] md:text-base sm:text-sm leading-[20px] lg:leading-[28px]  text-start lg:max-w-[1116px] mt-5 text-[#82848A]">
                        We manufacture nearly 32,000 complete two-wheeler exhaust systems every day at MAIL. Our state-of-the-art facilities, equipped with precision-driven technology and automated systems, ensure seamless production. Every unit undergoes strict in-process gauging, inspection, and advanced testing to guarantee superior performance and reliability.
                     </p>
                 </div>
@@ -222,15 +224,15 @@ const TestingContent = () => {
                  
                     {visibleExhaustItems.map((item, index) => (
                         <div key={index} className=''>
-                        <div className="grid grid-cols-1 lg:grid-cols-2 my-10 py-3">
+                        <div className="grid grid-cols-1 lg:grid-cols-1 xl:grid-cols-2 my-10 py-3">
                           <img
                             src={item.image}
                             width={595}
                             height={250}
                             alt="exhaust system image"
-                            className={`flex-shrink-0 lg:max-w-[595px] object-cover rounded-md h-[180px] lg:h-[250px] ${index%2 !=0 ?"lg:order-last":""}`}/>
+                            className={`flex-shrink-0 xl:max-w-[595px] md:w-full lg:w-full object-cover rounded-md md:h-[300px] lg:h-[300px] xl:h-[250px] ${index%2 !=0 ?"xl:order-last":""}`}/>
                           <div className="max-w-[595px]">
-                            <div className='lg:-translate-y-2'>
+                            <div className='xl:-translate-y-2 lg:mt-5 xl:mt-0'>
                               <h1 className="lg:text-[26px]  text-[20px] font-bold mt-5 lg:mt-0 mb-2 text-[#ED1C24]">{item.sectionTitle}</h1>
                               <ul className="list-disc px-4 lg:px-7">
                                 {item.points.map((point, i) => (

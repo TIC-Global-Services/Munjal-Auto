@@ -36,7 +36,7 @@ const Investors = () => {
           animate={isInView ? "visible" : "hidden"}
           className="md:flex mx-auto items-center  py-10 justify-center"
         >
-          <motion.div className="w-[100%] md:pr-20 mx-auto text-white flex md:flex-row flex-col items-start justify-between rounded-[20px] overflow-hidden">
+          <motion.div className="w-[100%] lg:pr-20 mx-auto text-white flex md:flex-col lg:flex-row flex-col items-start justify-between rounded-[20px] overflow-hidden">
             {/* Left Section */}
             <motion.div variants={itemVariants} className="flex-1 md:pl-20 md:px-0 px-4">
               <motion.div variants={itemVariants} className="uppercase tracking-wider text-xs md:text-sm text-black">
@@ -61,7 +61,7 @@ const Investors = () => {
             </motion.div>
   
             {/* Right Section */}
-            <motion.div variants={itemVariants} className="md:px-0 px-4 md:py-0 py-10 md:w-[40%]">
+            <motion.div variants={itemVariants} className="md:px-0 px-4 md:py-10 lg:py-0 py-10 md:w-full lg:w-[40%] xl:w-[40%]">
               <img
                 src={contactus}
                 alt="Automotive manufacturing assembly line"

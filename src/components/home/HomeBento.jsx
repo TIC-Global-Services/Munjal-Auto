@@ -8,13 +8,13 @@ const ExpertiseSection = () => {
         <div className="bg-[#F3F4F6] px-6  flex rounded-lg md:py-0 py-4 md:rounded-[26px]  h-full">
             <div className="max-w-7xl md:items-start items-start flex flex-col justify-center md:pl-4  mx-auto">
                 {/* Comment Header */}
-                <div className="md:text-sm text-[10px] text-gray-500 mb-2 md:mb-8">
+                <div className="md:text-sm text-[10px] text-gray-500 mb-2 md:mb-5 md:mt-5 lg:mb-12 xl:mb-12">
             //OUR EXPERTISE
                 </div>
 
                 {/* Title */}
-                <div className="max-w-3xl mb-2 md:mb-8 text-center lg:text-start">
-                    <h2 className="text-base md:text-4xl font-[300]">
+                <div className="max-w-3xl mb-2 md:mb-8 text-start lg:text-start">
+                    <h2 className="text-base md:text-2xl lg:text-4xl xl:text-4xl font-[300]">
                         With <span className="text-red-600 font-bold">40+ years</span> of{" "}
                         <span className="text-red-600 font-bold">
                             <br className=" md:block hidden" />
@@ -24,8 +24,8 @@ const ExpertiseSection = () => {
                 </div>
 
                 {/* Description */}
-                <div className="max-w-3xl">
-                    <p className="text-gray-800 text-sm text-left md:text-base leading-[23px] md:leading-relaxed">
+                <div className="max-w-3xl mb-2 sm:mb-2 md:mb-8 lg:mb-12 xl:mb-12">
+                    <p className="text-gray-800 text-sm text-left md:text-base lg:text-base xl:text-base leading-[23px] md:leading-relaxed">
                        We specialize in precision engineering and advanced manufacturing, delivering high-performance components that drive industries forward.
                     </p>
                 </div>
@@ -44,7 +44,7 @@ const ManufacturingCapacity = () => {
     const locations = [{name:"Vadodara"}, {name:"Bawal"}, {name:"Haridwar"}, {name:"Dharuhera"},{name:"Sanand"}];
 
     return (
-        <div className="bg-[#F3F4F6] rounded-lg md:rounded-[26px] lg:h-[601px] h-[250px] md:px-12 px-2  md:py-0 py-4 flex">
+        <div className="bg-[#F3F4F6] h-full justify-center items-center rounded-lg md:rounded-[26px] md:px-12 px-2  md:py-10 py-4 flex">
             <div className="max-w-7xl  mx-auto flex justify-start  flex-col">
                 {/* Comment Header */}
                 <div className="md:text-[18px] text-[10px] whitespace-nowrap mt-5 text-gray-500 md:mb-1 mb-2">
@@ -71,7 +71,7 @@ const ManufacturingCapacity = () => {
                 </div>
 
                 {/* Location Tags */}
-                <div className="md:flex -mt-1 hidden flex-wrap gap-2 lg:max-w-[500px]">
+                <div className="md:flex -mt-1 mb-3 hidden flex-wrap gap-2 lg:max-w-[500px]">
                     {locations.map((location, index) => (
                         <div
                             key={index}
@@ -140,14 +140,14 @@ const ProductionCapacity = () => {
     ];
 
     return (
-        <div ref={containerRef} className="bg-[#F3F4F6] lg:h-[601px] rounded-lg md:rounded-[26px] md:px-12 md:py-16 py-6 px-3">
+        <div ref={containerRef} className="bg-[#F3F4F6] lg:h-full rounded-lg md:rounded-[26px] md:px-12 md:py-10 py-6 px-3">
             <div className="max-w-7xl mx-auto">
-                <h2 className="text-sm sm:text-base md:text-xl lg:text-4xl font-[300] text-left mb-4 md:mb-4">
+                <h2 className="text-sm sm:text-base md:text-[2rem] lg:text-4xl font-[300] text-left mb-4 md:mb-4">
                     A <span className="text-red-600 font-medium">Strong foundation</span> for the future
 
                 </h2>
 
-                <div className="grid grid-cols-2 md:grid-cols-2 gap-4 lg:grid-cols-4 items-start xl:grid-cols-4 md:gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-2 gap-4 lg:grid-cols-2 xl:grid-cols-4 items-start md:gap-4">
                     {capacityData2.map((item, index) => (
                         <motion.div
                             key={index}
@@ -158,7 +158,7 @@ const ProductionCapacity = () => {
                         >
                             <div className=" flex flex-col flex-wrap items-start justify-center ">
                                 <motion.h3
-                                    className="lg:text-[32px] text-[11.65px]  whitespace-nowrap font-bold"
+                                    className="lg:text-[2rem] md:text-[2rem] sm:text-[1rem] text-[1rem]  whitespace-nowrap font-bold"
                                     initial={{ opacity: 0 }}
                                     animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                                     transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -175,7 +175,7 @@ const ProductionCapacity = () => {
                                     </motion.span>
                                     {item.unit}
                                 </motion.h3>
-                                <p className="text-gray-600 md:text-[16px] lg:leading-[27px] text-[10px] md:whitespace-normal">
+                                <p className="text-gray-600 text-xs md:text-base sm:text-xs lg:text-base xl:text-base lg:leading-[27px] md:whitespace-normal">
                                     {item.product}
                                 </p>
                             </div>
@@ -185,7 +185,7 @@ const ProductionCapacity = () => {
             </div>
             
             <div className="max-w-7xl mx-auto lg:mt-16 mt-4">
-                <h2 className="text-base md:text-[38px] lg:leading-[48px] lg:text-4xl font-[500] text-left mb-4 md:mb-7 max-w-[965px]">
+                <h2 className="text-sm sm:text-base md:text-[2rem] lg:leading-[48px] md:leading-[34px] lg:text-4xl font-[500] text-left mb-4 md:mb-7 max-w-[965px]">
                     Our <span className="text-red-600 font-medium">state of the art</span> facilities
                     have the annual capacity to produce
                 </h2>
@@ -201,7 +201,7 @@ const ProductionCapacity = () => {
                         >
                             <div className="flex flex-col items-start justify-start">
                                 <motion.h3
-                                    className="lg:text-[32px] text-[11.65px] uppercase whitespace-nowrap font-bold "
+                                    className="lg:text-[2rem] md:text-[2rem] sm:text-[1rem] text-[1rem] uppercase whitespace-nowrap font-bold "
                                     initial={{ opacity: 0 }}
                                     animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                                     transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -210,7 +210,7 @@ const ProductionCapacity = () => {
                                         initial={{ opacity: 0 }}
                                         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                                         transition={{ duration: 0.5 }}
-                                        className="lg:text-[32px] text-[11.65px]"
+                                        className="lg:text-[2rem] md:text-[2rem] sm:text-[1rem] text-[1rem]"
                                     >
                                         {isInView && (
                                             <Counter from={0} to={item.quantity} duration={2}/>
@@ -218,7 +218,7 @@ const ProductionCapacity = () => {
                                     </motion.span>
                                     {item.unit}
                                 </motion.h3>
-                                <p className="text-gray-600 md:text-[16px] text-[10px] whitespace-nowrap">
+                                <p className="text-gray-600 md:text-base text-[10px] md:text-base sm:text-[10px] lg:text-base xl:text-base whitespace-nowrap">
                                     {item.product}
                                 </p>
                             </div>
@@ -267,11 +267,11 @@ export const HomeBento = () => {
                 variants={containerVariants}
                 initial="hidden"
                 animate={isDesktopInView ? "visible" : "hidden"}
-                className="hidden py-20 md:flex flex-col md:px-16 gap-4"
+                className="hidden py-20 lg:flex flex-col px-5 sm:px-5 md:px-5 lg:px-10 xl:px-14 gap-4"
             >
                 <motion.div variants={itemVariants} className="flex h-full gap-4">
-                    <motion.div variants={itemVariants} className="w-[60%] md:w-1/2">
-                        <img src={machine} alt="" />
+                    <motion.div variants={itemVariants} className="w-[60%]  md:w-1/2">
+                        <img src={machine} alt="" className="w-full h-full md:w-full md:h-full lg:w-full lg:h-full object-cover rounded-lg"/>
                     </motion.div>
                     <motion.div variants={itemVariants} className="w-[50%]">
                         <ExpertiseSection />
@@ -293,7 +293,7 @@ export const HomeBento = () => {
                 variants={containerVariants}
                 initial="hidden"
                 animate={isMobileInView ? "visible" : "hidden"}
-                className="-mt-8 flex py-20 md:hidden flex-col md:px-16 gap-4"
+                className="-mt-8 flex py-20 lg:hidden flex-col  gap-4"
             >
                 <motion.div variants={itemVariants} className="px-4 flex flex-col h-full gap-4">
                     <motion.div variants={itemVariants} className="w-[100%]">
@@ -301,10 +301,10 @@ export const HomeBento = () => {
                     </motion.div>
                 </motion.div>
                 <motion.div variants={itemVariants} className="h-1/2 flex px-4 gap-2">
-                    <motion.div variants={itemVariants} className="h-1/4 md:w-[50%]">
+                    <motion.div variants={itemVariants} className="h-90% w-50%">
                         <img
                             src={machine}
-                            className="h-[250px]  lg:!h-[20rem] object-cover rounded-[26px]"
+                            className="w-full h-full object-cover rounded-[26px]"
                             alt=""
                         />
                     </motion.div>

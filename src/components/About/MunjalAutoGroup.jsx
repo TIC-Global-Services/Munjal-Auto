@@ -216,7 +216,7 @@ const MunjalAutoGroup = () => {
               <h2 className="lg:text-4xl  md:text-4xl  text-2xl font-semibold text-black tracking-tight mb-2">
                 <span className="text-[#FF0000]">Munjal Auto</span> Group
               </h2>
-              <p className="text-black md:text-[18px]  text-sm lg:text-[18px] leading-relaxed">
+              <p className="text-black md:text-sm  sm:text-sm lg:text-[1.125rem] leading-relaxed">
                 The Munjal Auto Group is a multi-sector engineering powerhouse
                 specializing in sheet metal components and composite mold
                 manufacturing. Our group companies deliver advanced solutions

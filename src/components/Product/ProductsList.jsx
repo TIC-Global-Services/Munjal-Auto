@@ -505,9 +505,9 @@ const ProductsList = () => {
               <motion.div
             layout
   transition={{ duration: 1, ease: "easeInOut" }}
-              className={`hidden md:grid md:grid-cols-12 lg:grid-cols-12  min-h-[368px]  w-full max-w-7xl mx-auto   ${expandedItems[`${activeTab}-${index}`] ? "items-start" : "items-end"} overflow-hidden`}>
+              className={`hidden lg:grid md:grid-cols-12 lg:grid-cols-12  min-h-[368px]  w-full max-w-7xl mx-auto   ${expandedItems[`${activeTab}-${index}`] ? "items-start" : "items-end"} overflow-hidden`}>
                 {/* Image Section - Takes 4 columns on md, 3 on lg */}
-                <div className="md:col-span-4 lg:col-span-3 bg-[#EBEBEF] rounded-md w-[385px] flex items-center justify-center p-6 h-full flex-shrink-0">
+                <div className="md:col-span-4 lg:col-span-3 bg-[#EBEBEF] rounded-md lg:w-[385px] flex  items-center justify-center p-6 h-full flex-shrink-0">
                   <motion.div
                     initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
                     animate={{
@@ -525,13 +525,13 @@ const ProductsList = () => {
                     <motion.img
                       src={item.image}
                       alt={item.title}
-                      className="w-full max-w-[240px]  h-auto object-contain rounded-lg"
+                      className="w-full max-w-[240px] h-auto object-contain rounded-lg"
                     />
                   </motion.div>
                 </div>
 
                 {/* Content Section - Takes 6 columns on md, 7 on lg */}
-                <div className="md:col-span-6 lg:col-span-7 text-[#ED1C24] relative flex-shrink-0 translate-x-20">
+                <div className="md:col-span-6 lg:col-span-7 text-[#ED1C24] relative flex-shrink-0 xl:translate-x-20 lg:translate-x-32 translate-x-8">
                   <motion.div layout transition={{ duration: 0.6, ease: "easeInOut" }} className="md:col-span-6 lg:col-span-7 p-6 text-[#ED1C24] relative flex-shrink-0 ">
                   {!expandedItems[`${activeTab}-${index}`] && (
                     <h1 className="text-[130px] font-bold text-gray-300/20 mb-2 absolute -top-24">
@@ -542,7 +542,7 @@ const ProductsList = () => {
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.4, duration: 0.5 }}
-                    className="text-[28px] font-bold mb-4"
+                    className="md:text-[1.5rem] lg:text-[1.2rem] xl:text-[1.5rem] text-[1rem] font-bold mb-4"
                   >
                     {item.title}
                   </motion.h2>
@@ -596,7 +596,7 @@ const ProductsList = () => {
                 </div>
 
                 {/* Button Section - Takes 2 columns, positioned bottom right */}
-                <div className="md:col-span-2 lg:col-span-2 p-6 flex items-end justify-end h-full flex-shrink-0">
+                <div className="flex items-end justify-end h-full flex-shrink-0 relative z-50 translate-x-16">
                   <motion.button
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -612,7 +612,7 @@ const ProductsList = () => {
               </motion.div>
 
               {/* Mobile Layout: Keep your original mobile design */}
-              <div className="md:hidden lg:px-5">
+              <div className="lg:hidden lg:px-5">
                 {/* Image Section */}
                 <div className="bg-[#EBEBEF] flex items-center justify-center  rounded-md">
                   <motion.div

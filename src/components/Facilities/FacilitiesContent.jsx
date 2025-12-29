@@ -360,7 +360,7 @@ const FacilitiesContent = ({ content }) => {
                     <div></div>
                     <div></div>
                     <div className="flex justify-end flex-col col-span-3 max-h-[600px] lg:max-h-[357px] lg:-translate-x-3 lg:-translate-y-6 lg:text-right text-center items-center  lg:py-4 gap-4 lg:gap-2">
-                        <h1 className="text-[18px] mb-3 lg:text-[24px] xl:text-[22px] lg:hidden block -translate-x-20 translate-y-6   lg:w-full font-medium text-black">
+                        <h1 className="text-[18px] mb-3 lg:text-[24px] xl:text-[22px] lg:hidden block  md:-translate-x-12 lg:-translate-x-20 translate-y-6   lg:w-full font-medium text-black">
                             Cutting- <span className="text-[#FF0000]">Edge Facilities</span>
                         </h1>
                         <h1 className="text-[18px] mb-3 lg:text-[24px] xl:text-[22px] lg:block  hidden lg:w-full font-medium text-black">

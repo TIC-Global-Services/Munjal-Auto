@@ -8,7 +8,7 @@ const innovation = () => {
       "Team spirit – Motivational programs and outdoor gatherings strengthen collaboration and harmony"
   ]
   return (
-    <div className='md:px-10 lg:px-20 lg:mx-10 py-4 px-3 mt-20 lg:mt-0 mb-[150px] lg:mb-0'>
+    <div className='px-4 sm:px-6 lg:px-12 py-4  mt-20 lg:mt-0 mb-[150px] lg:mb-0'>
          <div className="relative h-80 md:h-80 lg:h-96">
                 <div className="h-[400px] ">
                   <img

@@ -117,7 +117,7 @@ const SustainableContent = ({ content }) => {
          <div className='grid grid-cols-1 lg:grid-cols-2 max-w-[1213px] mx-auto lg:py-10 items-center'>
           <div>
             <h1 className='text-[24px] lg:text-left text-center lg:mb-0 mb-5'>R&D Centre</h1>
-            <ul className="list-disc ml-4 py-5 max-w-[485px] lg:block hidden space-y-4 text-[#82848A]">
+            <ul className="list-disc ml-4 py-5 xl:max-w-[485px] lg:block hidden space-y-4 text-[#82848A]">
               <li className='leading-[34px] text-[16px]'>
                 The excellence of our products stems from our deep expertise in blueprint design. Every precise and systematic design lays a strong foundation for superior manufacturing. Munjal Auto Industries has achieved high operational maturity through rigorous adherence to advanced processes, benchmarked against world-class standards.
               </li>
@@ -126,12 +126,12 @@ const SustainableContent = ({ content }) => {
               </li>
             </ul>
           </div>
-          <img src={img1} width={593} height={547} className='rounded-lg w-[593px] lg:h-[547px] object-cover' />
-          <ul className="list-disc ml-4 py-5 max-w-[485px] lg:hidden block space-y-4 text-[#82848A]">
-              <li className='leading-[24px] text-[14px] lg:text-[16px]'>
+          <img src={img1} width={593} height={547} className='rounded-lg md:w-[793px] lg:w-[593px] lg:h-[547px] object-cover' />
+          <ul className="list-disc ml-4 py-5 lg:max-w-[485px] lg:hidden block space-y-4 ">
+              <li className='leading-[24px] text-base lg:text-base'>
                 The excellence of our products stems from our deep expertise in blueprint design. Every precise and systematic design lays a strong foundation for superior manufacturing. Munjal Auto Industries has achieved high operational maturity through rigorous adherence to advanced processes, benchmarked against world-class standards.
               </li>
-              <li className='leading-[24px] text-[14px] lg:text-[16px]'>
+              <li className='leading-[24px] text-base lg:text-base'>
                 Quality begins at the design stage, where our multi-disciplinary approach optimizes process design. High-end software such as Mechanical Desktop, AutoCAD, and Pro-E Wildfire 2.0 form the core of our tool, die, fixture, and gauge development.
               </li>
             </ul>
@@ -139,7 +139,7 @@ const SustainableContent = ({ content }) => {
       
         <div className='grid grid-cols-1 lg:grid-cols-2 max-w-[1213px] mx-auto items-center lg:mt-10 lg:py-10 mt-10'>
           <h1 className='lg:text-[36px] text-[24px] lg:text-left text-center mb-4 lg:hidden block lg:mt-0'>R&D and Prototyping</h1>
-            <img src={img2} width={488} height={547} className='object-cover rounded-[20px] lg:w-[593px] lg:h-[547px]'/>
+            <img src={img2} width={488} height={547} className='object-cover rounded-[20px] md:w-[793px] lg:w-[593px] lg:h-[547px]'/>
             <div className='max-w-[696px]  lg:translate-x-6'>
             <h1 className='lg:text-[36px] text-[24px] lg:text-left text-center mt-4 lg:block hidden lg:mt-0'>R&D and Prototyping</h1>
             <p className='mt-5 lg:leading-[34px] leading-[24px] text-[14px] lg:text-[18px] lg:text-left text-center'>

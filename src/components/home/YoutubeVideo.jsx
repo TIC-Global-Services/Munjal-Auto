@@ -22,7 +22,7 @@ export const YouTubeVideo = () => {
   };
 
   return (
-    <div className="relative w-full max-w-6xl md:px-0 px-4 my-20 aspect-video mx-auto rounded-3xl overflow-hidden bg-gray-100" onClick={handleTogglePlay}>
+    <div className="relative w-full max-w-6xl px-5 sm:px-5 md:px-5 lg:px-10 xl:px-14 my-20 aspect-video mx-auto rounded-3xl overflow-hidden " onClick={handleTogglePlay}>
       {!isPlaying ? (
         <div className="relative cursor-pointer group w-full h-full" >
           {/* Placeholder Image */}

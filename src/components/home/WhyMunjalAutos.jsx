@@ -370,7 +370,7 @@ const WhyMunjalAutos = () => {
     });
     
     return (
-      <div className="relative mt-5 px-2 sm:px-4 md:px-20 lg:px-20 md:mx-8 lg:mx-8 py-6 md:py-16 lg:py-14 min-h-screen md:min-h-[600vh]" ref={containerRef}>
+      <div className="relative mt-5 px-5 sm:px-5 md:px-8 lg:px-10 xl:px-0 2xl:px-0 min-h-screen md:min-h-[600vh]" ref={containerRef}>
           {/* Background gradient with responsive positioning and lower z-index */}
           <div className="sticky top-0 left-0 z-[10] pointer-events-none w-full h-0 overflow-hidden">
             <img
@@ -392,13 +392,13 @@ const WhyMunjalAutos = () => {
                 {"// ABOUT US"}
               </div>
  
-              <h2 className="text-2xl sm:text-3xl md:text-2xl lg:text-5xl font-normal leading-tight">
+              <h2 className="text-xl md:text-3xl lg:text-4xl xl:text-5xl font-normal leading-tight">
                 Why <span className="text-red-500">Munjal</span>
                 <br />
                 Auto ?
               </h2>
  
-              <p className="text-gray-700 text-lg md:text-sm lg:text-lg leading-relaxed max-w-2xl mx-auto md:mx-0">
+              <p className="text-gray-700 text-sm md:text-sm lg:text-lg xl:text-xl leading-relaxed max-w-2xl mx-auto md:mx-0">
                Munjal Auto is a trusted name in the automotive industry, delivering critical components like exhaust systems, fuel tanks, rims, and BIW parts—engineered for superior performance and safety. Beyond automotive, our renewable energy solutions, including windmill blades and specialized components, drive advancements in clean energy. With a blend of engineering excellence and forward-thinking design, we create solutions that power industries into the future.
               </p>
  
@@ -442,7 +442,7 @@ const WhyMunjalAutos = () => {
                         ),
                       }}
                     >
-                      <h3 className="text-lg md:text-lg lg:text-[30px] sm:leading-[24px] md:leading-[24px] lg:leading-[30px] text-[#151414] md:text-left lg:text-left font-medium m-1 md:mb-2 lg:mb-2 whitespace-pre-line">
+                      <h3 className="text-sm md:text-base lg:text-xl xl:text-xl text-[#151414] md:text-left lg:text-left font-medium m-1 md:mb-2 lg:mb-2 whitespace-pre-line">
                         {feature.title}
                       </h3>
                       <p className="text-[#8C8989] md:leading-[18px] lg:leading-[24px] px-1 lg:px-0 text-sm whitespace-pre-line text-left lg:text-left md:text-xs lg:text-base">

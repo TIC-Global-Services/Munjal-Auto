@@ -29,7 +29,7 @@ const CompositeTechnology = () => {
               <img
                 src={indutch1}
                 alt="Indutch Composite Technology"
-                className="object-cover  lg:h-[340px] h-[200px] w-[full] rounded-xl  shadow-lg"
+                className="object-cover  lg:h-[340px] h-[200px] w-full rounded-xl  shadow-lg"
               />
             </div>
             <div className="order-2 lg:order-2">

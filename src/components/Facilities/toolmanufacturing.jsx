@@ -226,7 +226,7 @@ const Toolmanufacturing = () => {
         <div className='grid  grid-cols-1 lg:grid-cols-2 lg:gap-[70px] gap-5 lg:mt-20 mt-10 items-start'>
           <h1 className='text-[20px] lg:text-start text-center block lg:hidden'>Central Room & Technical Room</h1>
           <div className='object-fit overflow-hidden w-fit'>
-            <img src={toolimg2} width={593} height={550} alt='Central Room & Technical Room' className='w-full lg:h-[444.75px] h-[340px] rounded-[10px]'/>
+            <img src={toolimg2} width={593} height={550} alt='Central Room & Technical Room' className='md:w-full xl:h-[444.75px] lg:h-[340px] rounded-[10px]'/>
           </div>
           <div>
             <h1 className='lg:text-[24px] lg:text-start text-center hidden lg:block'>Central Room & Technical Room</h1>

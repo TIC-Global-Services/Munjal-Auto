@@ -40,10 +40,10 @@ const rimmanufacturing = () => {
 ];
   return (
     
-    <div className="relative px-1">
+    <div className="relative px-1 lg:px-6 sm:px-3 md:px-6">
        <div className="lg:mt-20 mt-8 lg:py-10">
                 <div>
-                    <h1 className="lg:text-[36px]  text-[24px] text-center lg:text-start w-[203px] lg:w-full  mx-auto">Steel Wheel Rim Manufacturing</h1>
+                    <h1 className="lg:text-[36px]  text-[24px] text-center lg:text-start md:w-full sm:w-[203px] w-[203px] lg:w-full  mx-auto">Steel Wheel Rim Manufacturing</h1>
                     <p className="lg:text-[20px] text-[14px] leading-[20px] lg:leading-[28px]  text-center lg:text-start lg:max-w-[1116px] mt-5 text-[#82848A] mb-7">
                       MAIL operates a state-of-the-art Steel Wheel Rim manufacturing facility, capable of producing wheel rims ranging from 10” to 14” for two-wheelers, three-wheelers, and four-wheelers. Built with cutting-edge technology and automated SPMs, our production line ensures consistency, durability, and precision in every rim manufactured.
                     </p>
@@ -89,7 +89,7 @@ const rimmanufacturing = () => {
         ))}
       </Swiper>
 
-      <div className="flex gap-2 absolute right-0 mt-5 z-10">
+      <div className="flex gap-2 absolute right-10 md:right-10 lg:right-5 xl:right-5 mt-5 z-10">
                <ArrowLeft color="#ffffff" strokeWidth={1.5} absoluteStrokeWidth className='rim-prev bg-[#ED1C24] rounded-full p-2 w-10 h-10 cursor-pointer'/>
                <ArrowRight color="#ffffff" strokeWidth={1.5} absoluteStrokeWidth className='rim-next bg-[#ED1C24] rounded-full p-2 w-10 h-10 cursor-pointer'/>
           </div>

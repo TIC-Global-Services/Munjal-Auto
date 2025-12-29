@@ -41,7 +41,7 @@ const sustainability = () => {
     //     </div>
     //   </div>
     // </div>
-    <div>
+    <div className="px-4 sm:px-6 lg:px-12">
      <div className="text-center mt-10">
         <h3 className="text-[18px] block px-1 lg:hidden font-medium  text-foreground">
               Sustainability & Environment

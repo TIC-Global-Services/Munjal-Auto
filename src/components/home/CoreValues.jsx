@@ -41,17 +41,17 @@ export const CoreValuesSection = () => {
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
-        className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        className="mx-auto  px-4 sm:px-6 md:px-10 lg:px-10 xl:px-14 py-12 md:py-16">
         {/* Comment Header */}
         <div className="text-sm text-gray-500 mb-2 md:block hidden">
           // CORE VALUES
         </div>
    
         {/* Main Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:justify-between md:gap-44">
+        <div className="grid grid-cols-1 lg:grid-cols-1 md:grid-cols-1 xl:grid-cols-2 gap-6 md:justify-between md:gap-10 lg:gap-40">
           {/* Left Column - Title */}
           <motion.div variants={titleVariants} className="mt-4">
-            <h1 className=" md:text-left font-[300] lg:leading-[63px] text-center text-[1.5rem] sm:text-[1.5rem] md:text-[1rem] lg:text-[3rem] ">
+            <h1 className=" md:text-left font-[300] lg:leading-[63px] text-center text-[1.5rem] sm:text-[1.5rem] md:text-[2rem] lg:text-[3rem] ">
               <span className="whitespace-nowrap">
                 {" "}
                 The Core of {" "}
@@ -69,17 +69,10 @@ export const CoreValuesSection = () => {
           </motion.div>
   
           {/* Right Column - Values Grid */}
-          <div className="grid grid-cols-2 gap-2 md:gap-5 lg:gap-x-20">
+          <div className="grid grid-cols-2 gap-2 md:gap-5 lg:gap-10 xl:gap-5">
             {/* Quality Card */}
             <motion.div
-              variants={cardVariants} className=" bg-[#F3F4F6]
-    p-3 md:p-6
-    rounded-lg md:rounded-[32px]
-    w-full
-    min-w-[284px]
-    mx-auto
-    min-h-[220px]
-    flex flex-col" >
+              variants={cardVariants} className="bg-[#F3F4F6] p-3 md:px-6 rounded-lg md:rounded-[32px] lg:w-full lg:h-[270px] md:h-[15rem]" >
               <div className="lg:w-[20px] lg:h-[20px] h-[16px] w-[16px] mt-2 md:mt-3">
                 <img src={ssvglogo} className="w-full h-full" />
               </div>
@@ -93,7 +86,7 @@ export const CoreValuesSection = () => {
    
             {/* Technology Card */}
             <motion.div
-              variants={cardVariants} className="bg-[#F3F4F6] p-3 md:px-6 rounded-lg md:rounded-[32px] lg:w-[284px] lg:h-[270px]">
+              variants={cardVariants} className="bg-[#F3F4F6] p-3 md:px-6 rounded-lg md:rounded-[32px] lg:w-full lg:h-[270px] md:h-[15rem]">
               <div className="lg:w-[20px] lg:h-[20px] h-[16px] w-[16px] mt-2 md:mt-3">
                 <img src={ssvglogo} className="w-full h-full" />
               </div>
@@ -107,7 +100,7 @@ export const CoreValuesSection = () => {
    
             {/* Innovation Card */}
             <motion.div
-              variants={cardVariants} className="bg-[#F3F4F6] p-3 md:px-6 rounded-lg md:rounded-[32px] lg:w-[284px] lg:h-[270px]">
+              variants={cardVariants} className="bg-[#F3F4F6] p-3 md:px-6 rounded-lg md:rounded-[32px] lg:w-full lg:h-[270px] md:h-[15rem]">
               <div className="lg:w-[20px] lg:h-[20px] h-[16px] w-[16px] mt-2 md:mt-3">
                 <img src={ssvglogo} className="w-full h-full" />
               </div>
@@ -121,7 +114,7 @@ export const CoreValuesSection = () => {
    
             {/* Sustainability Card */}
             <motion.div
-              variants={cardVariants} className="bg-[#F3F4F6] p-3 md:px-6 rounded-lg md:rounded-[32px] lg:w-[284px] lg:h-[270px]">
+              variants={cardVariants} className="bg-[#F3F4F6] p-3 md:px-6 rounded-lg md:rounded-[32px] lg:w-full lg:h-[270px] md:h-[15rem]">
               <div className="lg:w-[20px] lg:h-[20px] h-[16px] w-[16px] mt-2 md:mt-3">
                 <img src={ssvglogo} className="w-full h-full" />
               </div>

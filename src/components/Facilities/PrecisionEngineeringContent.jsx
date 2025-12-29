@@ -9,9 +9,9 @@ import stampfacilityimg5 from '../../assets/Facilities/stampfacilityimg5.png'
 
 const PrecisionEngineeringContent = ({ content }) => {
   return (
-    <div className="md:max-w-7xl mx-auto px-4 mb-20">
+    <div className="md:max-w-7xl mx-auto px-6 lg:px-4 mb-20">
       {/* Split Grid Layout */}
-      <div>
+      <div className="px-6 lg:px-0 xl:px-0 sm:px-0">
         <h1
           className=" text-[#151414] lg:text-[28px] text-[14px] leading-[24px] lg:leading-[57px] text-center max-w-4xl mx-auto mt-18 lg:mt-20 py-5"
           style={{
@@ -22,7 +22,7 @@ const PrecisionEngineeringContent = ({ content }) => {
          Our facilities integrate energy-efficient systems, waste reduction initiatives, and eco-friendly practices to drive sustainable innovation in engineering.
         </h1>
       </div>
-      <div className="bg-[#F5F5F5] p-[30px] lg:mt-20 mt-8 rounded-[14px]">
+      <div className="bg-[#F5F5F5] p-6 lg:mt-20 mt-8 rounded-[14px]">
         <div>
           <h1 className="lg:text-[36px] text-[24px] text-center lg:text-start mb-4">Stamping Facility</h1>
         </div>

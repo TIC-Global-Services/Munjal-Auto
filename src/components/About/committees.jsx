@@ -110,7 +110,7 @@ const committees = () => {
           Composition of <span className="text-[#ED1C24]">Committees</span>
         </h1>
 
-        <h1 className="mt-10 text-[16px] lg:text-[24px]">Audit Committee (AC)</h1>
+        <h1 className="mt-10 text-[16px] lg:text-[24px] sm:text-center lg:text-left md:text-center">Audit Committee (AC)</h1>
       </div>
       <div className="flex gap-5 flex-wrap justify-center lg:mt-10 mt-5">
         {BoardOfDirectorsList.map((res, index) => (
@@ -124,7 +124,7 @@ const committees = () => {
      </div>
      <div>
        <div>
-        <h1 className="text-[16px] lg:text-[24px] mt-10">Nomination & Remuneration Committee (NRC)</h1>
+        <h1 className="text-[16px] lg:text-[24px] mt-10 sm:text-center lg:text-left md:text-center">Nomination & Remuneration Committee (NRC)</h1>
       </div>
        <div className="flex gap-5 flex-wrap lg:flex-nowrap justify-center lg:mt-10 mt-5">
         {NominationAndRemunerationCommitteeList.map((res, index) => (
@@ -139,7 +139,7 @@ const committees = () => {
      <div>
       <div>
          <div>
-        <h1 className="text-[16px] lg:text-[24px] mt-10">Stakeholder’s Relationship Committee (SRC)</h1>
+        <h1 className="text-[16px] lg:text-[24px] mt-10 sm:text-center lg:text-left md:text-center">Stakeholder’s Relationship Committee (SRC)</h1>
       </div>
       <div className="flex gap-5 flex-wrap lg:flex-nowrap justify-center lg:mt-10 mt-5">
         {StakeholdersRelationshipCommitteeList.map((res, index) => (
@@ -154,7 +154,7 @@ const committees = () => {
      </div>
      <div>
        <div>
-        <h1 className="text-[16px] lg:text-[24px] mt-10">Risk Management Committee </h1>
+        <h1 className="text-[16px] lg:text-[24px] mt-10 sm:text-center lg:text-left md:text-center">Risk Management Committee </h1>
       </div>
       <div className="flex gap-5 flex-wrap lg:flex-nowrap justify-center lg:mt-10 mt-5">
         {RiskManagementCommitteeList.map((res, index) => (
@@ -168,7 +168,7 @@ const committees = () => {
      </div>
       <div>
         <div>
-        <h1 className="text-[14px] whitespace-nowrap lg:whitespace-normal lg:text-[24px] mt-10">Corporate Social Responsibility Committee</h1>
+        <h1 className="text-[14px] whitespace-nowrap lg:whitespace-normal lg:text-[24px] mt-10 sm:text-center lg:text-left md:text-center">Corporate Social Responsibility Committee</h1>
       </div>
       <div className="flex gap-5 flex-wrap lg:flex-nowrap justify-center lg:mt-10 mt-5">
         {CorporateSocialResponsibilityCommitteeList.map((res, index) => (
@@ -182,7 +182,7 @@ const committees = () => {
       </div>
          <div>
         <div>
-        <h1 className="text-[14px] whitespace-nowrap lg:whitespace-normal lg:text-[24px] mt-10">Share Transfer Committee</h1>
+        <h1 className="text-[14px] whitespace-nowrap lg:whitespace-normal lg:text-[24px] mt-10 sm:text-center lg:text-left md:text-center">Share Transfer Committee</h1>
       </div>
       <div className="flex gap-5 flex-wrap lg:flex-nowrap justify-center lg:mt-10 mt-5">
         {ShareTransferCommitteeList.map((res, index) => (
