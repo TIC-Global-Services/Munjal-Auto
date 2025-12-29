@@ -387,18 +387,18 @@ const WhyMunjalAutos = () => {
             style={{}}
           >
             {/* Left content section - responsive layout with proper z-index */}
-            <div className="flex flex-col justify-center items-center text-center space-y-2 md:space-y-4 z-[700] w-full md:w-[50%] md:items-start md:text-left relative">
+            <div className="flex flex-col justify-center items-center text-center space-y-2 md:space-y-4 z-[700] w-full md:w-[45%] md:items-start md:text-left relative">
               <div className="text-gray-600 text-xs sm:text-sm tracking-wider">
                 {"// ABOUT US"}
               </div>
  
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-2xl lg:text-5xl font-normal leading-tight">
                 Why <span className="text-red-500">Munjal</span>
                 <br />
                 Auto ?
               </h2>
  
-              <p className="text-gray-700 text-lg leading-relaxed max-w-2xl mx-auto">
+              <p className="text-gray-700 text-lg md:text-sm lg:text-lg leading-relaxed max-w-2xl mx-auto md:mx-0">
                Munjal Auto is a trusted name in the automotive industry, delivering critical components like exhaust systems, fuel tanks, rims, and BIW parts—engineered for superior performance and safety. Beyond automotive, our renewable energy solutions, including windmill blades and specialized components, drive advancements in clean energy. With a blend of engineering excellence and forward-thinking design, we create solutions that power industries into the future.
               </p>
  
@@ -410,14 +410,14 @@ const WhyMunjalAutos = () => {
             </div>
   
             {/* Right content section - responsive layout with proper z-index */}
-            <div className="flex flex-col md:flex-row items-center w-full md:w-[85%] space-y-4 md:space-y-0 relative z-[700]">
+            <div className="flex flex-col md:flex-row items-center w-full md:w-[55%] space-y-4 md:space-y-0 relative z-[700]">
               {/* 3D Model Viewer - responsive sizing with proper z-index */}
-              <div className="w-full max-w-md md:max-w-none h-[180px] sm:h-[200px] md:h-[350px] lg:h-[350px] relative z-[705]">
+              <div className="w-full md:w-1/2 max-w-md md:max-w-none h-[180px] sm:h-[200px] md:h-[250px] lg:h-[350px] relative z-[705]">
                 <ModelViewer scrollProgress={scrollYProgress} />
               </div>
   
               {/* Features list - responsive layout with proper z-index */}
-              <div className=" w-full md:w-full md:ml-8 lg:ml-8  md:-mt-32 lg:-mt-32 relative z-[705]">
+              <div className=" w-full md:w-1/2 md:ml-4 lg:ml-8 md:mt-0 lg:-mt-32 relative z-[705]">
                 {features.map((feature, index) => {
                   // Improved scroll trigger points
                   const startPoint = Math.min(0.1 + index * 0.15, 0.7);
@@ -442,10 +442,10 @@ const WhyMunjalAutos = () => {
                         ),
                       }}
                     >
-                      <h3 className="text-lg md:text-[30px] lg:text-[30px] sm:leading-[24px] md:leading-[30px] lg:leading-[30px] text-[#151414] md:text-left lg:text-left font-medium m-1 md:mb-2 lg:mb-2 whitespace-pre-line">
+                      <h3 className="text-lg md:text-lg lg:text-[30px] sm:leading-[24px] md:leading-[24px] lg:leading-[30px] text-[#151414] md:text-left lg:text-left font-medium m-1 md:mb-2 lg:mb-2 whitespace-pre-line">
                         {feature.title}
                       </h3>
-                      <p className="text-[#8C8989] md:leading-[20px] lg:leading-[24px] px-1 lg:px-0 text-sm whitespace-pre-line text-center lg:text-left md:text-base">
+                      <p className="text-[#8C8989] md:leading-[18px] lg:leading-[24px] px-1 lg:px-0 text-sm whitespace-pre-line text-left lg:text-left md:text-xs lg:text-base">
                         {feature.description}
                       </p>
                     </motion.div>

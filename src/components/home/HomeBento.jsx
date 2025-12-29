@@ -142,7 +142,7 @@ const ProductionCapacity = () => {
     return (
         <div ref={containerRef} className="bg-[#F3F4F6] lg:h-[601px] rounded-lg md:rounded-[26px] md:px-12 md:py-16 py-6 px-3">
             <div className="max-w-7xl mx-auto">
-                <h2 className="text-base md:text-4xl lg:text-4xl font-[300] text-left mb-4 md:mb-4">
+                <h2 className="text-sm sm:text-base md:text-xl lg:text-4xl font-[300] text-left mb-4 md:mb-4">
                     A <span className="text-red-600 font-medium">Strong foundation</span> for the future
 
                 </h2>
