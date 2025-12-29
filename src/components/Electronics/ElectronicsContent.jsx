@@ -214,53 +214,54 @@ const ElectronicsContent = () => {
           {/* Our Values Card - Full Width */}
           <div className="mt-6 lg:mt-8">
             <div className="bg-[#F5F5F5] rounded-[14px] overflow-hidden">
-              <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-0">
-                {/* Left Side - Image */}
-                <div className="p-6 sm:p-8">
+              {/* Combined Content Container */}
+              <div className="p-6 sm:p-8 lg:py-0 lg:pb-6 lg:pl-8 lg:pr-8">
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-6 lg:gap-8 items-start">
+                  {/* Left Side - Image */}
                   <img
                     src={strategyImg}
                     alt="Our Values"
-                    className="w-full h-auto object-cover rounded-[7px]"
+                    className="w-full h-auto lg:w-[480px] lg:h-[370px] object-cover rounded-[7px] lg:mt-6"
                   />
-                </div>
-                
-                {/* Right Side - Content */}
-                <div className="p-6 sm:p-8 lg:py-8">
-                  <h3 className="text-[#ED1C24] text-2xl sm:text-3xl md:text-[32px] font-[500] mb-4 sm:mb-6">
-                    Our Values
-                  </h3>
-                  <ul className="space-y-3 sm:space-y-4">
-                    <li className="flex items-start gap-3">
-                      <span className="text-[#222222] flex-shrink-0">•</span>
-                      <div>
-                        <span className="text-[#222222] text-[14px]">Innovation - We embrace challenges, turning complex technical problems into breakthrough solutions.</span>
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-[#222222] flex-shrink-0">•</span>
-                      <div>
-                        <span className="text-[#222222] text-[14px]">Quality – A zero-defect mindset drives every stage of our design and manufacturing.</span>
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-[#222222] flex-shrink-0">•</span>
-                      <div>
-                        <span className="text-[#222222] text-[14px]">Integrity – We operate with transparency, ethics, and uncompromising honesty.</span>
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-[#222222] flex-shrink-0">•</span>
-                      <div>
-                        <span className="text-[#222222] text-[14px]">Customer-Centricity – Our mission is simple: enabling our customers to succeed.</span>
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-[#222222] flex-shrink-0">•</span>
-                      <div>
-                        <span className="text-[#222222] text-[14px]">Sustainability – We engineer smarter systems that conserve energy and protect the environment.</span>
-                      </div>
-                    </li>
-                  </ul>
+                  
+                  {/* Right Side - Content */}
+                  <div className="lg:pt-6">
+                    <h3 className="text-[#ED1C24] text-2xl sm:text-3xl md:text-[32px] font-[500] mb-4 sm:mb-6 mt-4 sm:mt-6 lg:mt-0">
+                      Our Values
+                    </h3>
+                    <ul className="space-y-3 sm:space-y-4">
+                      <li className="flex items-start gap-3">
+                        <span className="text-[#222222] flex-shrink-0">•</span>
+                        <div>
+                          <span className="text-[#222222] text-[14px] lg:text-[20px]">Innovation - We embrace challenges, turning complex technical problems into breakthrough solutions.</span>
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="text-[#222222] flex-shrink-0">•</span>
+                        <div>
+                          <span className="text-[#222222] text-[14px] lg:text-[20px]">Quality – A zero-defect mindset drives every stage of our design and manufacturing.</span>
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="text-[#222222] flex-shrink-0">•</span>
+                        <div>
+                          <span className="text-[#222222] text-[14px] lg:text-[20px]">Integrity – We operate with transparency, ethics, and uncompromising honesty.</span>
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="text-[#222222] flex-shrink-0">•</span>
+                        <div>
+                          <span className="text-[#222222] text-[14px] lg:text-[20px]">Customer-Centricity – Our mission is simple: enabling our customers to succeed.</span>
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="text-[#222222] flex-shrink-0">•</span>
+                        <div>
+                          <span className="text-[#222222] text-[14px] lg:text-[20px]">Sustainability – We engineer smarter systems that conserve energy and protect the environment.</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -433,7 +434,7 @@ const ElectronicsContent = () => {
           transition={{ duration: 0.6, delay: 0.9 }}
           className="mt-16 sm:mt-20 md:mt-24 lg:mt-32 px-4 sm:px-6 md:px-8 lg:px-10"
         >
-          <div className="text-center mb-8 sm:mb-10 md:mb-12">
+          <div className="text-left mb-8 sm:mb-10 md:mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-[36px] font-[600]">
               Why <span className="text-[#ED1C24]">Us</span> ?
             </h2>
@@ -485,7 +486,7 @@ const ElectronicsContent = () => {
           className="mt-16 sm:mt-20 md:mt-24 lg:mt-32 px-4 sm:px-6 md:px-8 lg:px-10"
         >
           <div className="w-full max-w-7xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl md:text-[36px] font-[600] mb-8 sm:mb-10 md:mb-12 text-center">Our Team</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-[36px] font-[600] mb-8 sm:mb-10 md:mb-12 text-left">Our Team</h2>
             
             <div className="space-y-6 sm:space-y-8">
               {/* Team Member 1 - Card Layout */}
@@ -501,7 +502,7 @@ const ElectronicsContent = () => {
                   <div className="flex-1 text-center md:text-left md:pl-6">
                     <h3 className="text-xl sm:text-2xl md:text-[26px] font-[600] mb-2 text-black">Mr. Kulvinder Singh Seehra</h3>
                     <h4 className="text-[#ED1C24] text-lg sm:text-xl md:text-[20px] font-[500] mb-6">Chief Technology Officer (Electronics)</h4>
-                    <p className="text-[14px] sm:text-lg md:text-[20px] font-[400] leading-relaxed text-[#82848A]">
+                    <p className="text-[14px] sm:text-lg md:text-[20px] font-[400] leading-relaxed text-[#82848A] text-left">
                       Embedded systems expert with over 40 years of experience in electronics and product development. He has developed many solutions for Army, Airforce, Railways, Public sectors companies viz. BEL, ECIL, ITI etc. He is a specialist in hardware-software integration and system architecture.
                     </p>
                   </div>
@@ -521,7 +522,7 @@ const ElectronicsContent = () => {
                   <div className="flex-1 text-center md:text-left md:pr-6">
                     <h3 className="text-xl sm:text-2xl md:text-[26px] font-[600] mb-2 text-black">Mr. Sandeep Agrgawal</h3>
                     <h4 className="text-[#ED1C24] text-lg sm:text-xl md:text-[20px] font-[500] mb-6">General Manager-Electronics</h4>
-                    <p className="text-[14px] sm:text-lg md:text-[20px] font-[400] leading-relaxed text-[#82848A]">
+                    <p className="text-[14px] sm:text-lg md:text-[20px] font-[400] leading-relaxed text-[#82848A] text-left">
                       Over 30 years of expertise in product development especially for railway domain- signalling and rolling stock. He has specialization in delivering end-to-end safety critical, operational, and customer-centric solutions tailored for the railway sector. He possesses added expertise in spearheading strategic growth initiatives and managing the electronics division vertical's expansion into new markets.
                     </p>
                   </div>

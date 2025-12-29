@@ -18,6 +18,7 @@ const ContactTabs = () => {
   });
   
   const [inquiryErrors, setInquiryErrors] = useState({});
+  const [isSubmittingInquiry, setIsSubmittingInquiry] = useState(false);
 
   // Validation functions
   const isValidEmail = (email) => {
@@ -32,6 +33,7 @@ const ContactTabs = () => {
 
   // Validate inquiry form field
   const validateInquiryField = (name, value) => {
+    console.log(`Validating field ${name}:`, value, `(length: ${value ? value.length : 0})`);
     let error = '';
     
     switch (name) {
@@ -64,12 +66,15 @@ const ContactTabs = () => {
         break;
     }
     
+    console.log(`Field ${name} validation result:`, error || 'VALID');
     return error;
   };
 
   // Handle inquiry form input changes
   const handleInquiryChange = (e) => {
     const { name, value } = e.target;
+    console.log(`📝 Field ${name} changed to:`, value);
+    
     setInquiryData(prev => ({
       ...prev,
       [name]: value
@@ -84,41 +89,117 @@ const ContactTabs = () => {
     }
   };
 
-  // Handle inquiry form submission
-  const handleInquirySubmit = (e) => {
+  // ENHANCED HIDDEN IFRAME FORM SUBMISSION - Handle inquiry form submission
+  const handleInquirySubmit = async (e) => {
     e.preventDefault();
+    console.log('🚀 Business Inquiry Form submission started');
+    console.log('📋 Current form data:', inquiryData);
     
     // Validate all fields
-    const newErrors = {};
-    
-    Object.keys(inquiryData).forEach(key => {
-      const error = validateInquiryField(key, inquiryData[key]);
-      if (error) {
-        newErrors[key] = error;
-      }
+    const errors = {};
+    Object.keys(inquiryData).forEach(field => {
+      const error = validateInquiryField(field, inquiryData[field]);
+      if (error) errors[field] = error;
     });
     
-    // Set errors and stop if validation fails
-    if (Object.keys(newErrors).length > 0) {
-      setInquiryErrors(newErrors);
+    if (Object.keys(errors).length > 0) {
+      setInquiryErrors(errors);
+      console.log('❌ Validation errors:', errors);
       return;
     }
     
-    // If validation passes, you can submit the form
-    console.log('Inquiry form submitted:', inquiryData);
-    alert('Thank you for your inquiry! We will get back to you soon.');
-    
-    // Reset form
-    setInquiryData({
-      name: '',
-      email: '',
-      mobile: '',
-      organization: '',
-      message: ''
-    });
+    setIsSubmittingInquiry(true);
     setInquiryErrors({});
+    
+    try {
+      console.log('📤 Submitting business inquiry data via hidden iframe:', inquiryData);
+      
+      // Create hidden iframe with unique name
+      const iframeName = `business_inquiry_iframe_${Date.now()}`;
+      const iframe = document.createElement('iframe');
+      iframe.style.display = 'none';
+      iframe.name = iframeName;
+      iframe.id = iframeName;
+      document.body.appendChild(iframe);
+      console.log('📺 Created iframe:', iframeName);
+      
+      // Create form element
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = 'https://script.google.com/macros/s/AKfycbzCRUNRfiLiy_TYAUOwdRZI5_6Txo4sZ4jnL79s4PkJDWx-ku7YqONJLwfZPHeu2jE/exec';
+      form.target = iframeName;
+      form.enctype = 'application/x-www-form-urlencoded';
+      
+      // Add form fields with validation
+      const fields = ['name', 'email', 'mobile', 'organization', 'message'];
+      fields.forEach(fieldName => {
+        const value = inquiryData[fieldName];
+        if (value && value.trim()) {
+          const input = document.createElement('input');
+          input.type = 'hidden';
+          input.name = fieldName;
+          input.value = value.trim();
+          form.appendChild(input);
+          console.log(`📝 Added field ${fieldName}:`, value.trim());
+        } else {
+          console.warn(`⚠️ Empty field ${fieldName}:`, value);
+        }
+      });
+      
+      // Add timestamp for tracking
+      const timestampInput = document.createElement('input');
+      timestampInput.type = 'hidden';
+      timestampInput.name = 'timestamp';
+      timestampInput.value = new Date().toISOString();
+      form.appendChild(timestampInput);
+      console.log('📅 Added timestamp:', new Date().toISOString());
+      
+      // Add form to document
+      document.body.appendChild(form);
+      console.log('📋 Form created with', form.children.length, 'fields');
+      
+      // Submit form
+      console.log('📤 Submitting form via iframe...');
+      form.submit();
+      console.log('✅ Form submitted');
+      
+      // Wait a bit longer before cleanup to ensure submission completes
+      setTimeout(() => {
+        try {
+          if (document.body.contains(form)) {
+            document.body.removeChild(form);
+            console.log('🧹 Removed form');
+          }
+          if (document.body.contains(iframe)) {
+            document.body.removeChild(iframe);
+            console.log('🧹 Removed iframe');
+          }
+        } catch (cleanupError) {
+          console.log('⚠️ Cleanup error (non-critical):', cleanupError);
+        }
+      }, 5000); // Increased cleanup delay
+      
+      console.log('✅ Business inquiry submitted successfully via iframe');
+      
+      // Show success message
+      alert('✅ SUCCESS! Your business inquiry has been submitted successfully. We will contact you soon!');
+      
+      // Reset form
+      setInquiryData({
+        name: '',
+        email: '',
+        mobile: '',
+        organization: '',
+        message: ''
+      });
+      
+    } catch (error) {
+      console.error('❌ Business inquiry submission failed:', error);
+      alert('❌ There was an error submitting your inquiry. Please try again or contact us directly at mail@munjalauto.com');
+    } finally {
+      setIsSubmittingInquiry(false);
+    }
   };
-
 
   const tabs = [
     { id: 'office', label: 'Office & Plants' },
@@ -302,27 +383,29 @@ const ContactTabs = () => {
                         <input
                           type="text"
                           name="name"
-                          placeholder="Name"
                           value={inquiryData.name}
                           onChange={handleInquiryChange}
-                          className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-1 ${
-                            inquiryErrors.name ? 'border-red-500 focus:ring-red-300' : 'border-gray-200 focus:ring-gray-300'
-                          }`}
+                          placeholder="Name"
+                          required
+                          className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-1 border-gray-200 focus:ring-gray-300"
                         />
-                        {inquiryErrors.name && <p className="text-red-500 text-sm mt-1">{inquiryErrors.name}</p>}
+                        {inquiryErrors.name && (
+                          <p className="text-red-500 text-sm mt-1">{inquiryErrors.name}</p>
+                        )}
                       </div>
                       <div>
                         <input
                           type="email"
                           name="email"
-                          placeholder="Email"
                           value={inquiryData.email}
                           onChange={handleInquiryChange}
-                          className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-1 ${
-                            inquiryErrors.email ? 'border-red-500 focus:ring-red-300' : 'border-gray-200 focus:ring-gray-300'
-                          }`}
+                          placeholder="Email"
+                          required
+                          className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-1 border-gray-200 focus:ring-gray-300"
                         />
-                        {inquiryErrors.email && <p className="text-red-500 text-sm mt-1">{inquiryErrors.email}</p>}
+                        {inquiryErrors.email && (
+                          <p className="text-red-500 text-sm mt-1">{inquiryErrors.email}</p>
+                        )}
                       </div>
                     </div>
 
@@ -331,46 +414,55 @@ const ContactTabs = () => {
                         <input
                           type="tel"
                           name="mobile"
-                          placeholder="Mobile Number"
                           value={inquiryData.mobile}
                           onChange={handleInquiryChange}
-                          className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-1 ${
-                            inquiryErrors.mobile ? 'border-red-500 focus:ring-red-300' : 'border-gray-200 focus:ring-gray-300'
-                          }`}
+                          placeholder="Mobile Number"
+                          required
+                          className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-1 border-gray-200 focus:ring-gray-300"
                         />
-                        {inquiryErrors.mobile && <p className="text-red-500 text-sm mt-1">{inquiryErrors.mobile}</p>}
+                        {inquiryErrors.mobile && (
+                          <p className="text-red-500 text-sm mt-1">{inquiryErrors.mobile}</p>
+                        )}
                       </div>
                       <div>
                         <input
                           type="text"
                           name="organization"
-                          placeholder="Organization Name"
                           value={inquiryData.organization}
                           onChange={handleInquiryChange}
-                          className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-1 ${
-                            inquiryErrors.organization ? 'border-red-500 focus:ring-red-300' : 'border-gray-200 focus:ring-gray-300'
-                          }`}
+                          placeholder="Organization Name"
+                          required
+                          className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-1 border-gray-200 focus:ring-gray-300"
                         />
-                        {inquiryErrors.organization && <p className="text-red-500 text-sm mt-1">{inquiryErrors.organization}</p>}
+                        {inquiryErrors.organization && (
+                          <p className="text-red-500 text-sm mt-1">{inquiryErrors.organization}</p>
+                        )}
                       </div>
                     </div>
 
                     <div>
                       <textarea
                         name="message"
-                        placeholder="Write a Message"
-                        rows={4}
                         value={inquiryData.message}
                         onChange={handleInquiryChange}
-                        className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-1 ${
-                          inquiryErrors.message ? 'border-red-500 focus:ring-red-300' : 'border-gray-200 focus:ring-gray-300'
-                        }`}
+                        placeholder="Write a Message"
+                        rows={4}
+                        required
+                        className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-1 border-gray-200 focus:ring-gray-300"
                       ></textarea>
-                      {inquiryErrors.message && <p className="text-red-500 text-sm mt-1">{inquiryErrors.message}</p>}
+                      {inquiryErrors.message && (
+                        <p className="text-red-500 text-sm mt-1">{inquiryErrors.message}</p>
+                      )}
                     </div>
 
                     <div className="mb-4 md:mb-8 pt-[15px] md:pt-[30px]">
-                      <button type="submit" className="bg-black text-white px-10 py-2 rounded hover:bg-gray-800">Submit</button>
+                      <button 
+                        type="submit"
+                        disabled={isSubmittingInquiry}
+                        className="bg-black text-white px-10 py-2 rounded hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        {isSubmittingInquiry ? 'Submitting...' : 'Submit Inquiry'}
+                      </button>
                     </div>
                   </form>
                 </div>

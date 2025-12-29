@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import cer1 from "../../assets/cer1.jpeg"
 import cer2 from "../../assets/cer2.jpeg"
 import cer3 from "../../assets/cer3.jpeg"
@@ -10,6 +10,9 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 const Certification = () => {
     const [currentSlide, setCurrentSlide] = useState(0)
     const [currentMobileSlide, setCurrentMobileSlide] = useState(1)
+    const mobileCarouselRef = useRef(null)
+    const touchStartX = useRef(0)
+    const touchEndX = useRef(0)
 
     const certificates = [
         {
@@ -48,6 +51,34 @@ const Certification = () => {
     const slides = []
     for (let i = 0; i < certificates.length; i += 3) {
         slides.push(certificates.slice(i, i + 3))
+    }
+
+    // Touch/Swipe handlers for mobile
+    const handleTouchStart = (e) => {
+        touchStartX.current = e.touches[0].clientX
+    }
+
+    const handleTouchMove = (e) => {
+        touchEndX.current = e.touches[0].clientX
+    }
+
+    const handleTouchEnd = () => {
+        if (!touchStartX.current || !touchEndX.current) return
+        
+        const distance = touchStartX.current - touchEndX.current
+        const isLeftSwipe = distance > 50
+        const isRightSwipe = distance < -50
+
+        if (isLeftSwipe) {
+            nextMobileSlide()
+        }
+        if (isRightSwipe) {
+            prevMobileSlide()
+        }
+
+        // Reset touch positions
+        touchStartX.current = 0
+        touchEndX.current = 0
     }
 
     // Auto-scroll functionality for desktop
@@ -155,8 +186,12 @@ const Certification = () => {
             <div className="md:hidden relative">
                 <div className="overflow-hidden">
                     <div 
+                        ref={mobileCarouselRef}
                         className="flex transition-transform duration-500 ease-in-out"
                         style={{ transform: `translateX(-${currentMobileSlide * 100}%)` }}
+                        onTouchStart={handleTouchStart}
+                        onTouchMove={handleTouchMove}
+                        onTouchEnd={handleTouchEnd}
                     >
                         {certificates.map((cert, index) => (
                             <div key={index} className="w-full flex-shrink-0 flex flex-col items-center justify-center px-4 min-h-[400px]">

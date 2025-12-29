@@ -138,10 +138,10 @@ const Testing = () => {
 
   // Function to calculate dynamic spacing based on content length
   const getDynamicSpacing = (contentLength) => {
-    if (contentLength <= 3) return 'pb-4 sm:pb-5 md:pb-6'; // Short content
-    if (contentLength <= 6) return 'pb-3 sm:pb-4 md:pb-5'; // Medium content  
-    if (contentLength <= 8) return 'pb-2 sm:pb-3 md:pb-4';  // Long content
-    return 'pb-1 sm:pb-2 md:pb-3'; // Very long content
+    if (contentLength <= 3) return 'pb-2 sm:pb-3 md:pb-4'; // Short content
+    if (contentLength <= 6) return 'pb-1 sm:pb-2 md:pb-3'; // Medium content  
+    if (contentLength <= 8) return 'pb-1 sm:pb-1 md:pb-2';  // Long content
+    return 'pb-0 sm:pb-1 md:pb-1'; // Very long content
   };
 
   // Get current card's content length
@@ -204,7 +204,7 @@ const Testing = () => {
                       <ul className="space-y-2 sm:space-y-3 w-full">
                         {item.description.map((desc, i) => (
                           <li key={i} className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed break-words flex items-start">
-                            <span className="text-gray-500 mr-3 mt-1 flex-shrink-0">•</span>
+                            <span className="text-gray-500 mr-3 flex-shrink-0">•</span>
                             <span className="flex-1">{desc}</span>
                           </li>
                         ))}

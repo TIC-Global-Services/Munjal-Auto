@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const JobApplicationForm = () => {
   const [formData, setFormData] = useState({
@@ -61,24 +61,12 @@ const JobApplicationForm = () => {
     
     return error;
   };
-  
-  // Convert file to base64
-  const convertFileToBase64 = (file) => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = () => {
-        // Remove the data URL prefix (data:application/pdf;base64,)
-        const base64String = reader.result.split(',')[1];
-        resolve(base64String);
-      };
-      reader.onerror = reject;
-      reader.readAsDataURL(file);
-    });
-  };
 
   // Handle input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    console.log(`📝 Job form field ${name} changed to:`, value);
+    
     setFormData(prev => ({
       ...prev,
       [name]: value
@@ -97,6 +85,8 @@ const JobApplicationForm = () => {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
+      console.log('📎 File selected:', file.name, file.type, file.size);
+      
       // Validate file type
       const allowedTypes = [
         'application/pdf',
@@ -146,130 +136,127 @@ const JobApplicationForm = () => {
     }
   };
 
-  // Handle form submission
+  // HIDDEN IFRAME FORM SUBMISSION WITH FILE UPLOAD - Handle job application form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('🚀 Job Application Form submission started');
+    
+    // Validate all fields
+    const newErrors = {};
+    Object.keys(formData).forEach(key => {
+      const error = validateField(key, formData[key]);
+      if (error) {
+        newErrors[key] = error;
+      }
+    });
+    
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      console.log('❌ Job form validation errors:', newErrors);
+      return;
+    }
+    
     setIsSubmitting(true);
     
     try {
-      // Validate all fields
-      const newErrors = {};
-      
-      Object.keys(formData).forEach(key => {
-        const error = validateField(key, formData[key]);
-        if (error) {
-          newErrors[key] = error;
-        }
+      console.log('📤 Submitting job application via hidden iframe with file:', {
+        name: formData.name,
+        email: formData.email,
+        mobile: formData.mobile,
+        experience: formData.experience,
+        resumeFileName: formData.resume?.name,
+        resumeSize: formData.resume?.size
       });
       
-      // Set errors and stop if validation fails
-      if (Object.keys(newErrors).length > 0) {
-        setErrors(newErrors);
-        return;
-      }
+      // Create hidden iframe
+      const iframe = document.createElement('iframe');
+      iframe.style.display = 'none';
+      iframe.name = 'job_application_iframe';
+      document.body.appendChild(iframe);
       
-      console.log('Starting file conversion...');
+      // Create form element with multipart encoding for file upload
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = 'https://script.google.com/macros/s/AKfycbxyN8HqU14p-7R8wMokntmuB54s9URXc80Norz1PUgunwrvbx3nhGxIaIJD9IGpkP8V/exec';
+      form.target = 'job_application_iframe';
+      form.enctype = 'multipart/form-data';
       
-      // Convert resume file to base64
-      const resumeBase64 = await convertFileToBase64(formData.resume);
-      
-      console.log('File converted to base64, length:', resumeBase64.length);
-      
-      // Create URLSearchParams for proper form encoding
-      const submitData = new URLSearchParams();
-      submitData.append('name', formData.name.trim());
-      submitData.append('email', formData.email.trim().toLowerCase());
-      submitData.append('mobile', formData.mobile.trim());
-      submitData.append('experience', formData.experience.trim());
-      submitData.append('resumeFileName', formData.resume.name);
-      submitData.append('resumeData', resumeBase64);
-      submitData.append('resumeType', formData.resume.type);
-      submitData.append('resumeSize', formData.resume.size.toString());
-      submitData.append('timestamp', new Date().toISOString());
-      
-      console.log('Submitting data...');
-      
-      // Replace with your actual Google Apps Script Web App URL
-      const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyu8SUwbW_TH1lbU1vI1ogvguTQBRuRZexq3aBSk4WsBAjYic6pWrKuapBz7cqR1qH_/exec';
-      
-      // Submit form with timeout
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 45000); // 45 second timeout
-      
-      const response = await fetch(SCRIPT_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: submitData.toString(),
-        signal: controller.signal,
-        mode: 'cors'
+      // Add text fields
+      const textFields = ['name', 'email', 'mobile', 'experience'];
+      textFields.forEach(fieldName => {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = fieldName;
+        input.value = formData[fieldName].trim();
+        form.appendChild(input);
+        console.log(`📝 Added text field ${fieldName}:`, formData[fieldName].trim());
       });
       
-      clearTimeout(timeoutId);
-      
-      console.log('Response status:', response.status);
-      console.log('Response headers:', response.headers);
-      
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+      // Add file field
+      if (formData.resume) {
+        const fileInput = document.createElement('input');
+        fileInput.type = 'file';
+        fileInput.name = 'resume';
+        fileInput.style.display = 'none';
+        
+        // Create a new FileList with our file
+        const dataTransfer = new DataTransfer();
+        dataTransfer.items.add(formData.resume);
+        fileInput.files = dataTransfer.files;
+        
+        form.appendChild(fileInput);
+        console.log('📎 Added file field:', formData.resume.name);
       }
       
-      const responseText = await response.text();
-      console.log('Response text:', responseText);
+      // Add timestamp
+      const timestampInput = document.createElement('input');
+      timestampInput.type = 'hidden';
+      timestampInput.name = 'timestamp';
+      timestampInput.value = new Date().toISOString();
+      form.appendChild(timestampInput);
       
-      let result;
-      try {
-        result = JSON.parse(responseText);
-      } catch (parseError) {
-        console.error('Error parsing JSON response:', parseError);
-        console.log('Raw response:', responseText);
-        throw new Error('Invalid response format from server');
-      }
+      // Add form to document and submit
+      document.body.appendChild(form);
+      console.log('📤 Submitting job application form via iframe...');
+      form.submit();
       
-      if (result.result === 'success') {
-        // Success notification
-        alert('🎉 Application submitted successfully!\\n\\nThank you for your interest. We will review your application and get back to you soon.');
-        
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          mobile: '',
-          experience: '',
-          resume: null
-        });
-        
-        setFileName('No file Chosen');
-        setErrors({});
-        
-        // Reset file input
-        const fileInput = document.querySelector('input[type="file"]');
-        if (fileInput) {
-          fileInput.value = '';
+      // Clean up after a delay
+      setTimeout(() => {
+        try {
+          document.body.removeChild(form);
+          document.body.removeChild(iframe);
+          console.log('🧹 Cleaned up job application form and iframe');
+        } catch (cleanupError) {
+          console.log('⚠️ Job form cleanup error (non-critical):', cleanupError);
         }
-        
-      } else {
-        throw new Error(result.error || 'Submission failed');
+      }, 3000);
+      
+      console.log('✅ Job application submitted successfully via iframe');
+      
+      // Show success message
+      alert('🎉 Job application submitted successfully!\\n\\nThank you for your interest. We will review your application and get back to you soon.');
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        mobile: '',
+        experience: '',
+        resume: null
+      });
+      
+      setFileName('No file Chosen');
+      setErrors({});
+      
+      // Reset file input
+      const fileInput = document.querySelector('input[type="file"]');
+      if (fileInput) {
+        fileInput.value = '';
       }
       
     } catch (error) {
-      console.error('Error submitting form:', error);
-      
-      let errorMessage = 'Error submitting form. Please try again.';
-      
-      if (error.name === 'AbortError') {
-        errorMessage = 'Request timed out. Please check your internet connection and try again.';
-      } else if (error.message.includes('HTTP error')) {
-        errorMessage = 'Server error. Please try again later.';
-      } else if (error.message.includes('Failed to fetch')) {
-        errorMessage = 'Network error. Please check your internet connection.';
-      } else if (error.message.includes('Invalid response format')) {
-        errorMessage = 'Server returned an invalid response. Please try again.';
-      }
-      
-      alert(errorMessage);
-      
+      console.error('❌ Job application submission failed:', error);
+      alert('❌ There was an error submitting your job application. Please try again or contact us directly at mail@munjalauto.com');
     } finally {
       setIsSubmitting(false);
     }
@@ -278,6 +265,82 @@ const JobApplicationForm = () => {
 
   return (
     <div className="h-auto md:h-[480px] -mt-0 md:-mt-12">
+      {/* DEBUG: Test buttons for development */}
+      {process.env.NODE_ENV === 'development' && (
+        <div className="mb-4 p-3 bg-blue-100 border border-blue-300 rounded">
+          <button 
+            type="button"
+            onClick={() => {
+              console.log('🧪 Filling job application test data...');
+              setFormData({
+                name: 'React Job Test User',
+                email: 'jobtestuser@example.com',
+                mobile: '9876543215',
+                experience: '3 years in software development',
+                resume: null // File needs to be selected manually
+              });
+              setFileName('No file Chosen');
+            }}
+            className="bg-blue-500 text-white px-4 py-2 rounded text-sm hover:bg-blue-600 mr-2"
+          >
+            🧪 Fill Job Test Data
+          </button>
+          <button 
+            type="button"
+            onClick={() => {
+              console.log('🔧 Testing job application iframe method without file...');
+              const testData = {
+                name: 'Direct Job Iframe Test',
+                email: 'jobtest@example.com',
+                mobile: '9876543216',
+                experience: '2 years experience'
+              };
+              
+              // Create hidden iframe
+              const iframe = document.createElement('iframe');
+              iframe.style.display = 'none';
+              iframe.name = 'job_test_iframe';
+              document.body.appendChild(iframe);
+              
+              // Create form
+              const form = document.createElement('form');
+              form.method = 'POST';
+              form.action = 'https://script.google.com/macros/s/AKfycbxyN8HqU14p-7R8wMokntmuB54s9URXc80Norz1PUgunwrvbx3nhGxIaIJD9IGpkP8V/exec';
+              form.target = 'job_test_iframe';
+              form.enctype = 'multipart/form-data';
+              
+              Object.keys(testData).forEach(key => {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = key;
+                input.value = testData[key];
+                form.appendChild(input);
+              });
+              
+              // Add timestamp
+              const timestampInput = document.createElement('input');
+              timestampInput.type = 'hidden';
+              timestampInput.name = 'timestamp';
+              timestampInput.value = new Date().toISOString();
+              form.appendChild(timestampInput);
+              
+              document.body.appendChild(form);
+              form.submit();
+              
+              setTimeout(() => {
+                document.body.removeChild(form);
+                document.body.removeChild(iframe);
+              }, 3000);
+              
+              alert('🔧 Direct job iframe test submitted (no file)! Check Google Sheet.');
+            }}
+            className="bg-green-500 text-white px-4 py-2 rounded text-sm hover:bg-green-600"
+          >
+            🔧 Test Job Iframe (No File)
+          </button>
+        </div>
+      )}
+      
       <form onSubmit={handleSubmit} className="h-full flex flex-col justify-between p-4 md:p-10 ml-0 md:ml-16 -mt-0 md:-mt-6">
         <div className="space-y-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 gap-y-6">
