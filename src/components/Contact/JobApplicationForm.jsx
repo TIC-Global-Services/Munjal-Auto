@@ -136,7 +136,21 @@ const JobApplicationForm = () => {
     }
   };
 
-  // HIDDEN IFRAME FORM SUBMISSION WITH FILE UPLOAD - Handle job application form submission
+  // Convert file to base64
+  const convertFileToBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        // Remove the data URL prefix (data:application/pdf;base64,)
+        const base64String = reader.result.split(',')[1];
+        resolve(base64String);
+      };
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  };
+
+  // WORKING HIDDEN IFRAME METHOD - Based on test-job-application.html
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('🚀 Job Application Form submission started');
@@ -159,77 +173,97 @@ const JobApplicationForm = () => {
     setIsSubmitting(true);
     
     try {
-      console.log('📤 Submitting job application via hidden iframe with file:', {
-        name: formData.name,
-        email: formData.email,
-        mobile: formData.mobile,
-        experience: formData.experience,
-        resumeFileName: formData.resume?.name,
-        resumeSize: formData.resume?.size
-      });
+      console.log('📤 Starting job application submission with working method');
       
-      // Create hidden iframe
+      // Convert resume file to base64
+      let resumeBase64 = '';
+      if (formData.resume) {
+        console.log('📎 Converting file to base64...');
+        resumeBase64 = await convertFileToBase64(formData.resume);
+        console.log('✅ File converted, base64 length:', resumeBase64.length);
+      } else {
+        console.error('❌ No resume file found');
+        alert('Please select a resume file');
+        return;
+      }
+      
+      // Create hidden iframe with unique name (exactly like working test)
+      const iframeName = `job_application_iframe_${Date.now()}`;
       const iframe = document.createElement('iframe');
       iframe.style.display = 'none';
-      iframe.name = 'job_application_iframe';
+      iframe.name = iframeName;
+      iframe.id = iframeName;
       document.body.appendChild(iframe);
+      console.log('📺 Created iframe:', iframeName);
       
-      // Create form element with multipart encoding for file upload
+      // Create form element (exactly like working test)
       const form = document.createElement('form');
       form.method = 'POST';
       form.action = 'https://script.google.com/macros/s/AKfycbxyN8HqU14p-7R8wMokntmuB54s9URXc80Norz1PUgunwrvbx3nhGxIaIJD9IGpkP8V/exec';
-      form.target = 'job_application_iframe';
-      form.enctype = 'multipart/form-data';
+      form.target = iframeName;
+      form.enctype = 'application/x-www-form-urlencoded';
       
-      // Add text fields
-      const textFields = ['name', 'email', 'mobile', 'experience'];
-      textFields.forEach(fieldName => {
+      // Add text fields (exactly like working test)
+      const textFields = {
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        mobile: formData.mobile.trim(),
+        experience: formData.experience.trim()
+      };
+      
+      Object.keys(textFields).forEach(key => {
         const input = document.createElement('input');
         input.type = 'hidden';
-        input.name = fieldName;
-        input.value = formData[fieldName].trim();
+        input.name = key;
+        input.value = textFields[key];
         form.appendChild(input);
-        console.log(`📝 Added text field ${fieldName}:`, formData[fieldName].trim());
+        console.log(`📝 Added field ${key}: "${textFields[key]}"`);
       });
       
-      // Add file field
-      if (formData.resume) {
-        const fileInput = document.createElement('input');
-        fileInput.type = 'file';
-        fileInput.name = 'resume';
-        fileInput.style.display = 'none';
-        
-        // Create a new FileList with our file
-        const dataTransfer = new DataTransfer();
-        dataTransfer.items.add(formData.resume);
-        fileInput.files = dataTransfer.files;
-        
-        form.appendChild(fileInput);
-        console.log('📎 Added file field:', formData.resume.name);
-      }
+      // Add file data (exactly like working test)
+      const fileFields = {
+        resumeFileName: formData.resume.name,
+        resumeData: resumeBase64,
+        resumeType: formData.resume.type,
+        resumeSize: formData.resume.size.toString(),
+        timestamp: new Date().toISOString()
+      };
       
-      // Add timestamp
-      const timestampInput = document.createElement('input');
-      timestampInput.type = 'hidden';
-      timestampInput.name = 'timestamp';
-      timestampInput.value = new Date().toISOString();
-      form.appendChild(timestampInput);
+      Object.keys(fileFields).forEach(key => {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = fileFields[key];
+        form.appendChild(input);
+        if (key === 'resumeData') {
+          console.log(`📝 Added ${key}: [base64 data, ${fileFields[key].length} chars]`);
+        } else {
+          console.log(`📝 Added ${key}: "${fileFields[key]}"`);
+        }
+      });
       
-      // Add form to document and submit
+      // Add form to document and submit (exactly like working test)
       document.body.appendChild(form);
-      console.log('📤 Submitting job application form via iframe...');
+      console.log(`📋 Form created with ${form.children.length} fields`);
+      console.log('📤 Submitting form via iframe...');
       form.submit();
+      console.log('✅ Form submitted via iframe');
       
-      // Clean up after a delay
+      // Clean up after delay (exactly like working test)
       setTimeout(() => {
         try {
-          document.body.removeChild(form);
-          document.body.removeChild(iframe);
-          console.log('🧹 Cleaned up job application form and iframe');
+          if (document.body.contains(form)) {
+            document.body.removeChild(form);
+            console.log('🧹 Removed form');
+          }
+          if (document.body.contains(iframe)) {
+            document.body.removeChild(iframe);
+            console.log('🧹 Removed iframe');
+          }
         } catch (cleanupError) {
-          console.log('⚠️ Job form cleanup error (non-critical):', cleanupError);
+          console.log('⚠️ Cleanup error (non-critical):', cleanupError);
         }
-      }, 3000);
+      }, 5000);
       
       console.log('✅ Job application submitted successfully via iframe');
       
@@ -265,82 +299,6 @@ const JobApplicationForm = () => {
 
   return (
     <div className="h-auto md:h-[480px] -mt-0 md:-mt-12">
-      {/* DEBUG: Test buttons for development */}
-      {process.env.NODE_ENV === 'development' && (
-        <div className="mb-4 p-3 bg-blue-100 border border-blue-300 rounded">
-          <button 
-            type="button"
-            onClick={() => {
-              console.log('🧪 Filling job application test data...');
-              setFormData({
-                name: 'React Job Test User',
-                email: 'jobtestuser@example.com',
-                mobile: '9876543215',
-                experience: '3 years in software development',
-                resume: null // File needs to be selected manually
-              });
-              setFileName('No file Chosen');
-            }}
-            className="bg-blue-500 text-white px-4 py-2 rounded text-sm hover:bg-blue-600 mr-2"
-          >
-            🧪 Fill Job Test Data
-          </button>
-          <button 
-            type="button"
-            onClick={() => {
-              console.log('🔧 Testing job application iframe method without file...');
-              const testData = {
-                name: 'Direct Job Iframe Test',
-                email: 'jobtest@example.com',
-                mobile: '9876543216',
-                experience: '2 years experience'
-              };
-              
-              // Create hidden iframe
-              const iframe = document.createElement('iframe');
-              iframe.style.display = 'none';
-              iframe.name = 'job_test_iframe';
-              document.body.appendChild(iframe);
-              
-              // Create form
-              const form = document.createElement('form');
-              form.method = 'POST';
-              form.action = 'https://script.google.com/macros/s/AKfycbxyN8HqU14p-7R8wMokntmuB54s9URXc80Norz1PUgunwrvbx3nhGxIaIJD9IGpkP8V/exec';
-              form.target = 'job_test_iframe';
-              form.enctype = 'multipart/form-data';
-              
-              Object.keys(testData).forEach(key => {
-                const input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = key;
-                input.value = testData[key];
-                form.appendChild(input);
-              });
-              
-              // Add timestamp
-              const timestampInput = document.createElement('input');
-              timestampInput.type = 'hidden';
-              timestampInput.name = 'timestamp';
-              timestampInput.value = new Date().toISOString();
-              form.appendChild(timestampInput);
-              
-              document.body.appendChild(form);
-              form.submit();
-              
-              setTimeout(() => {
-                document.body.removeChild(form);
-                document.body.removeChild(iframe);
-              }, 3000);
-              
-              alert('🔧 Direct job iframe test submitted (no file)! Check Google Sheet.');
-            }}
-            className="bg-green-500 text-white px-4 py-2 rounded text-sm hover:bg-green-600"
-          >
-            🔧 Test Job Iframe (No File)
-          </button>
-        </div>
-      )}
-      
       <form onSubmit={handleSubmit} className="h-full flex flex-col justify-between p-4 md:p-10 ml-0 md:ml-16 -mt-0 md:-mt-6">
         <div className="space-y-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 gap-y-6">

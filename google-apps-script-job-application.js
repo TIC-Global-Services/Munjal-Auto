@@ -9,12 +9,12 @@ const CONFIG = {
   // STEP 1: Create a folder in Google Drive for resumes
   // Go to drive.google.com → New → Folder → Name it "Job Application Resumes"
   // Open the folder and copy the ID from URL: https://drive.google.com/drive/folders/[FOLDER_ID]
-  RESUME_FOLDER_ID: 'https://drive.google.com/drive/u/0/folders/1eXc1MwVBgKhAKCP2luturWiHcQf9siiA',
+  RESUME_FOLDER_ID: '1eXc1MwVBgKhAKCP2luturWiHcQf9siiA',
   
   // STEP 2: Create a Google Sheet for applications  
   // Go to sheets.google.com → Blank → Rename to "Job Applications"
   // Copy the ID from URL: https://docs.google.com/spreadsheets/d/[SHEET_ID]/edit
-  SHEET_ID: 'https://docs.google.com/spreadsheets/d/1uLVyXzQdoKOivU9KqlDgnabogw6HIilLxCR3W-1PGSw/edit?gid=0#gid=0',
+  SHEET_ID: '1uLVyXzQdoKOivU9KqlDgnabogw6HIilLxCR3W-1PGSw',
   
   // Sheet name (tab name in your Google Sheet)
   SHEET_NAME: 'Job Applications'
@@ -29,6 +29,19 @@ function doPost(e) {
     console.log('Event object:', e);
     console.log('Parameters:', e ? e.parameter : 'No parameters');
     console.log('Post data:', e ? e.postData : 'No post data');
+    
+    // Log all parameter keys and values for debugging
+    if (e && e.parameter) {
+      console.log('All parameters received:');
+      Object.keys(e.parameter).forEach(key => {
+        const value = e.parameter[key];
+        if (key === 'resumeData') {
+          console.log(`  ${key}: [base64 data, length: ${value ? value.length : 0}]`);
+        } else {
+          console.log(`  ${key}: "${value}"`);
+        }
+      });
+    }
     
     // Check if we have parameters
     if (!e || !e.parameter) {
@@ -55,15 +68,24 @@ function doPost(e) {
       experience: formData.experience,
       resumeFileName: formData.resumeFileName,
       resumeType: formData.resumeType,
-      resumeSize: formData.resumeSize
+      resumeSize: formData.resumeSize,
+      hasResumeData: !!formData.resumeData
     });
     
-    // Validate required fields
-    if (!formData.name || !formData.email || !formData.mobile || !formData.experience) {
-      throw new Error('Missing required fields');
+    // Validate required fields with detailed logging
+    const missingFields = [];
+    if (!formData.name || formData.name.trim() === '') missingFields.push('name');
+    if (!formData.email || formData.email.trim() === '') missingFields.push('email');
+    if (!formData.mobile || formData.mobile.trim() === '') missingFields.push('mobile');
+    if (!formData.experience || formData.experience.trim() === '') missingFields.push('experience');
+    
+    if (missingFields.length > 0) {
+      console.log('Missing required fields:', missingFields);
+      throw new Error(`Missing required fields: ${missingFields.join(', ')}`);
     }
     
     if (!formData.resumeData || !formData.resumeFileName) {
+      console.log('Missing resume data or filename');
       throw new Error('Resume file is required');
     }
     
@@ -76,6 +98,11 @@ function doPost(e) {
     console.log('Saving application data to Google Sheet...');
     const rowNumber = saveToGoogleSheet(formData, resumeUrl);
     console.log('Data saved to sheet, row number:', rowNumber);
+    
+    // Send email notification
+    console.log('Sending email notification...');
+    sendEmailNotification(formData, resumeUrl);
+    console.log('Email notification sent');
     
     // Return success response
     return ContentService
@@ -329,5 +356,96 @@ function testPost() {
       result: 'error',
       error: error.toString()
     });
+  }
+}
+
+/**
+ * Send email notification for new job application
+ */
+function sendEmailNotification(formData, resumeUrl) {
+  // Using your email address
+  const RECIPIENT_EMAIL = '1049viveksubramaniang@gmail.com';
+  const CC_EMAIL = ''; 
+  
+  try {
+    const subject = `New Job Application from ${formData.name} - ${formData.experience}`;
+    const htmlBody = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #151414; border-bottom: 2px solid #ED1C24; padding-bottom: 10px;">
+          New Job Application Submission
+        </h2>
+        <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+          <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+              <td style="padding: 8px 0; font-weight: bold; color: #555; width: 150px;">Timestamp:</td>
+              <td style="padding: 8px 0; color: #151414;">${new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' })}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; font-weight: bold; color: #555;">Name:</td>
+              <td style="padding: 8px 0; color: #151414;">${formData.name}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; font-weight: bold; color: #555;">Email:</td>
+              <td style="padding: 8px 0; color: #151414;">
+                <a href="mailto:${formData.email}" style="color: #ED1C24; text-decoration: none;">${formData.email}</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; font-weight: bold; color: #555;">Mobile:</td>
+              <td style="padding: 8px 0; color: #151414;">
+                <a href="tel:${formData.mobile}" style="color: #ED1C24; text-decoration: none;">${formData.mobile}</a>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; font-weight: bold; color: #555;">Experience:</td>
+              <td style="padding: 8px 0; color: #151414;">${formData.experience}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; font-weight: bold; color: #555;">Resume:</td>
+              <td style="padding: 8px 0; color: #151414;">
+                <a href="${resumeUrl}" style="color: #ED1C24; text-decoration: none;" target="_blank">📎 ${formData.resumeFileName}</a>
+                <br><small style="color: #666;">${formData.resumeType} • ${Math.round(parseInt(formData.resumeSize) / 1024)} KB</small>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 12px;">
+          <p>This email was automatically generated from the job application form on the Munjal Auto website.</p>
+          <p>Please respond to the candidate directly at: <a href="mailto:${formData.email}" style="color: #ED1C24;">${formData.email}</a></p>
+          <p>Resume file: <a href="${resumeUrl}" style="color: #ED1C24;" target="_blank">View Resume</a></p>
+        </div>
+      </div>
+    `;
+    
+    const textBody = `
+New Job Application Submission
+
+Timestamp: ${new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' })}
+Name: ${formData.name}
+Email: ${formData.email}
+Mobile: ${formData.mobile}
+Experience: ${formData.experience}
+Resume: ${formData.resumeFileName} (${formData.resumeType})
+Resume URL: ${resumeUrl}
+
+Please respond to the candidate directly at: ${formData.email}
+    `;
+    
+    // Send email
+    GmailApp.sendEmail(
+      RECIPIENT_EMAIL,
+      subject,
+      textBody,
+      {
+        htmlBody: htmlBody,
+        cc: CC_EMAIL,
+        replyTo: formData.email
+      }
+    );
+    
+    console.log('Email notification sent successfully');
+  } catch (error) {
+    console.error('Error sending email notification:', error);
+    throw error;
   }
 }
