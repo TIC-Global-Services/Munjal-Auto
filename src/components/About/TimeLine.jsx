@@ -33,7 +33,7 @@ const TimeLine = () => {
     },
     {
       year: "2010",
-      title: "Advamced collaboration & New Facilties",
+      title: "Advanced collaboration & New Facilties",
       description: [
         "Established a techinical collaboration with Samsung Industries",
         "Began producing fuel tanks for 4-wheelers",

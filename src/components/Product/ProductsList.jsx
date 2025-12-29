@@ -525,7 +525,7 @@ const ProductsList = () => {
                     <motion.img
                       src={item.image}
                       alt={item.title}
-                      className="w-full max-w-[240px] h-auto object-contain rounded-lg"
+                      className="w-full max-w-[340px] h-auto object-contain rounded-lg"
                     />
                   </motion.div>
                 </div>

@@ -370,7 +370,7 @@ const WhyMunjalAutos = () => {
     });
     
     return (
-      <div className="relative mt-5 px-5 sm:px-5 md:px-8 lg:px-10 xl:px-0 2xl:px-0 min-h-screen md:min-h-[600vh]" ref={containerRef}>
+      <div className="relative mt-5 px-5 sm:px-5 md:px-8 lg:px-10 xl:px-16 2xl:px-16 min-h-screen md:min-h-[600vh]" ref={containerRef}>
           {/* Background gradient with responsive positioning and lower z-index */}
           <div className="sticky top-0 left-0 z-[10] pointer-events-none w-full h-0 overflow-hidden">
             <img
