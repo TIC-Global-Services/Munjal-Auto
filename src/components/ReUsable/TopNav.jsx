@@ -87,6 +87,12 @@ const TopNav = () => {
       }
     })
   };
+  const isActive = (path, itemLink) => {
+  if (itemLink === '/') {
+    return path === '/';
+  }
+  return path.startsWith(itemLink);
+};
 
   return (
     <>
@@ -100,7 +106,7 @@ const TopNav = () => {
                 key={index}
                 to={item.link}
                 className={`xl:text-[16px] font-medium lg:text-[14px] hover:text-[#ED1C24] ${
-                  location.pathname === item.link ? 'text-[#ED1C24]' : ''
+                  isActive(location.pathname, item.link) ? 'text-[#ED1C24]' : ''
                 }`}
               >
                 {item.name}
@@ -115,7 +121,7 @@ const TopNav = () => {
                 key={index}
                 to={item.link}
                 className={`xl:text-[16px] lg:text-[14px] font-medium hover:text-[#ED1C24] ${
-                  location.pathname === item.link ? 'text-[#ED1C24]' : ''
+                   isActive(location.pathname, item.link) ? 'text-[#ED1C24]' : ''
                 }`}
               >
                 {item.name}
@@ -312,4 +318,4 @@ const TopNav = () => {
   );
 };
 
-export default TopNav;
+export default TopNav;  
